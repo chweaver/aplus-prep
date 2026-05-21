@@ -6,6 +6,7 @@ import type { Question } from '../content/schemas';
 import QuestionRenderer from '../questions/QuestionRenderer';
 import { isCorrect } from '../questions/grading';
 import type { Answer } from '../questions/types';
+import { useQuiz } from '../quiz/QuizContext';
 
 interface SessionState {
   index: number;
@@ -61,6 +62,7 @@ function LearnSession({
   objectiveId: ObjectiveId;
 }) {
   const meta = OBJECTIVES_BY_ID[objectiveId];
+  const { recordResult } = useQuiz();
 
   const [session, setSession] = useState<SessionState>({
     index: 0,
@@ -98,6 +100,7 @@ function LearnSession({
 
   function handleSubmit() {
     const result = isCorrect(q, currentAnswer);
+    recordResult(q.id, result, objectiveId);
     setSession((s) => ({
       ...s,
       submitted: { ...s.submitted, [q.id]: true },

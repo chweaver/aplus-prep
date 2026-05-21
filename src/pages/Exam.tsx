@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { OBJECTIVES_BY_ID } from '../content/objectives';
 import { loadContent } from '../content/content-loader';
 import type { Question } from '../content/schemas';
 import QuestionRenderer from '../questions/QuestionRenderer';
 import { isCorrect, seededShuffle } from '../questions/grading';
 import type { Answer } from '../questions/types';
+import { useQuiz } from '../quiz/QuizContext';
 
 const EXAM_QUESTIONS = 90;
 const EXAM_SECONDS = 90 * 60;
@@ -39,11 +40,16 @@ export default function Exam() {
   const [secondsLeft, setSecondsLeft] = useState(EXAM_SECONDS);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startRef = useRef<string>('');
+  const questionsRef = useRef<ExamQuestion[]>([]);
+  const answersRef = useRef<Record<string, Answer | null>>({});
+  const { recordResult } = useQuiz();
 
   function startExam() {
     const seed = Date.now().toString();
     startRef.current = seed;
     const shuffled = seededShuffle(pool, seed).slice(0, EXAM_QUESTIONS);
+    questionsRef.current = shuffled;
+    answersRef.current = {};
     setQuestions(shuffled);
     setIndex(0);
     setAnswers({});
@@ -51,10 +57,14 @@ export default function Exam() {
     setPhase('active');
   }
 
-  function submitExam() {
+  const submitExam = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    for (const q of questionsRef.current) {
+      const a = answersRef.current[q.id] ?? null;
+      if (a !== null) recordResult(q.id, isCorrect(q, a), q.objectiveId);
+    }
     setPhase('review');
-  }
+  }, [recordResult]);
 
   useEffect(() => {
     if (phase !== 'active') return;
@@ -126,7 +136,10 @@ export default function Exam() {
           question={q}
           answer={answers[q.id] ?? null}
           submitted={false}
-          onChange={(a) => setAnswers((prev) => ({ ...prev, [q.id]: a }))}
+          onChange={(a) => {
+            answersRef.current = { ...answersRef.current, [q.id]: a };
+            setAnswers((prev) => ({ ...prev, [q.id]: a }));
+          }}
         />
       </div>
 

@@ -11,12 +11,20 @@ export default function Layout() {
           >
             A+ Core 2 (220-1202) Prep
           </Link>
-          <Link
-            to="/exam"
-            className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-          >
-            Exam mode
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/weak-spots"
+              className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
+            >
+              Weak spots
+            </Link>
+            <Link
+              to="/exam"
+              className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
+            >
+              Exam mode
+            </Link>
+          </div>
         </div>
       </header>
       <main className="mx-auto max-w-3xl px-6 py-8">

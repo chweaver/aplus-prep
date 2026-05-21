@@ -9,7 +9,7 @@ import {
 } from 'react';
 import { loadSrs, saveSrs } from './storage';
 import { review } from './sm2';
-import { EMPTY_SRS, type CardSrsState, type Grade, type SrsState } from './types';
+import { type CardSrsState, type Grade, type SrsState } from './types';
 
 interface SrsContextValue {
   state: SrsState;
@@ -20,11 +20,7 @@ interface SrsContextValue {
 const Ctx = createContext<SrsContextValue | null>(null);
 
 export function SrsProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<SrsState>(EMPTY_SRS);
-
-  useEffect(() => {
-    setState(loadSrs());
-  }, []);
+  const [state, setState] = useState<SrsState>(loadSrs);
 
   useEffect(() => {
     saveSrs(state);

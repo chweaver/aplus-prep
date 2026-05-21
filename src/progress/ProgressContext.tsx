@@ -10,7 +10,6 @@ import {
 import type { ObjectiveId } from '../content/objectives';
 import { loadProgress, saveProgress } from './storage';
 import {
-  EMPTY_PROGRESS,
   type ObjectiveStatus,
   type ProgressState,
 } from './types';
@@ -24,11 +23,7 @@ interface ProgressContextValue {
 const Ctx = createContext<ProgressContextValue | null>(null);
 
 export function ProgressProvider({ children }: { children: ReactNode }) {
-  const [state, setState] = useState<ProgressState>(EMPTY_PROGRESS);
-
-  useEffect(() => {
-    setState(loadProgress());
-  }, []);
+  const [state, setState] = useState<ProgressState>(loadProgress);
 
   useEffect(() => {
     saveProgress(state);
