@@ -39,9 +39,12 @@ export default function Domain() {
   const objectives = OBJECTIVES_BY_DOMAIN[domain];
   const content = loadContent();
   const { getStatus } = useProgress();
+  const estimatedMinutesFor = (objective: (typeof objectives)[number]) => {
+    const topic = content.topics.get(objective.id);
+    return topic?.estimatedMinutes ?? objective.estimatedMinutes;
+  };
   const totalMinutes = objectives.reduce((sum, o) => {
-    const topic = content.topics.get(o.id);
-    return sum + (topic?.estimatedMinutes ?? o.estimatedMinutes);
+    return sum + estimatedMinutesFor(o);
   }, 0);
 
   return (
@@ -93,7 +96,7 @@ export default function Domain() {
                   <div className="mt-0.5 text-sm leading-snug">{o.title}</div>
                 </div>
                 <div className="shrink-0 pt-0.5 text-xs tabular-nums text-[var(--color-muted)]">
-                  ~{o.estimatedMinutes} min
+                  ~{estimatedMinutesFor(o)} min
                 </div>
               </Link>
             </li>
