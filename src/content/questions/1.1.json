@@ -1,0 +1,90 @@
+{
+  "objective": "1.1",
+  "questions": [
+    {
+      "id": "1.1.q.template-mc",
+      "type": "multiple-choice",
+      "stem": "Template multiple-choice question stem?",
+      "choices": [
+        { "id": "a", "text": "Option A" },
+        { "id": "b", "text": "Option B" },
+        { "id": "c", "text": "Option C" },
+        { "id": "d", "text": "Option D" }
+      ],
+      "correct": "b",
+      "explanation": "Why B is the correct answer.",
+      "trap": "Why A looks tempting but is wrong.",
+      "tags": ["template"],
+      "weakSpotTags": [],
+      "sourceTranscript": "",
+      "needsReview": true
+    },
+    {
+      "id": "1.1.q.template-ms",
+      "type": "multi-select",
+      "stem": "Template multi-select stem. Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "Option A" },
+        { "id": "b", "text": "Option B" },
+        { "id": "c", "text": "Option C" },
+        { "id": "d", "text": "Option D" }
+      ],
+      "correct": ["a", "c"],
+      "explanation": "Why A and C are correct.",
+      "tags": ["template"],
+      "weakSpotTags": [],
+      "sourceTranscript": "",
+      "needsReview": true
+    },
+    {
+      "id": "1.1.q.template-order",
+      "type": "ordering",
+      "stem": "Template ordering PBQ. Place the steps in the correct order.",
+      "items": [
+        { "id": "s1", "text": "First step" },
+        { "id": "s2", "text": "Second step" },
+        { "id": "s3", "text": "Third step" }
+      ],
+      "correctOrder": ["s1", "s2", "s3"],
+      "explanation": "Why this order is correct.",
+      "tags": ["template"],
+      "weakSpotTags": [],
+      "sourceTranscript": "",
+      "needsReview": true
+    },
+    {
+      "id": "1.1.q.template-match",
+      "type": "matching",
+      "stem": "Template matching PBQ. Match each item on the left to the correct item on the right.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "Left A", "rightId": "r1", "rightText": "Right A" },
+        { "leftId": "l2", "leftText": "Left B", "rightId": "r2", "rightText": "Right B" },
+        { "leftId": "l3", "leftText": "Left C", "rightId": "r3", "rightText": "Right C" }
+      ],
+      "explanation": "Why these are the correct pairings.",
+      "tags": ["template"],
+      "weakSpotTags": [],
+      "sourceTranscript": "",
+      "needsReview": true
+    },
+    {
+      "id": "1.1.q.template-sort",
+      "type": "sorting",
+      "stem": "Template sorting PBQ. Drag each item into the correct bucket.",
+      "buckets": [
+        { "id": "b1", "label": "Bucket A" },
+        { "id": "b2", "label": "Bucket B" }
+      ],
+      "items": [
+        { "id": "i1", "text": "Item one", "correctBucket": "b1" },
+        { "id": "i2", "text": "Item two", "correctBucket": "b2" },
+        { "id": "i3", "text": "Item three", "correctBucket": "b1" }
+      ],
+      "explanation": "Why each item belongs in its bucket.",
+      "tags": ["template"],
+      "weakSpotTags": [],
+      "sourceTranscript": "",
+      "needsReview": true
+    }
+  ]
+}

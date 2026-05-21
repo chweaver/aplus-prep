@@ -1,0 +1,19 @@
+{
+  "objective": "1.1",
+  "title": "Explain common operating system (OS) types and their purposes",
+  "domain": 1,
+  "estimatedMinutes": 12,
+  "subtopics": [
+    {
+      "id": "1.1.template",
+      "heading": "Template subtopic",
+      "notes": "Schema example. Real notes get distilled from Professor Messer transcripts. Markdown is supported here.",
+      "whyOnExam": "Why this concept appears on the 220-1202.",
+      "commonTrap": "The seductive wrong answer test-takers pick.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub file. No transcript ingested yet."
+}
