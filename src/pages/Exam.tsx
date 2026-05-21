@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { OBJECTIVES_BY_ID } from '../content/objectives';
 import { loadContent } from '../content/content-loader';
 import type { Question } from '../content/schemas';
@@ -32,7 +33,13 @@ function formatTime(secs: number) {
 type Phase = 'idle' | 'active' | 'review';
 
 export default function Exam() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const pool = useMemo(() => buildExamPool(), []);
+  const sessionSeed = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('session');
+  }, [location.search]);
   const [phase, setPhase] = useState<Phase>('idle');
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [index, setIndex] = useState(0);
@@ -44,8 +51,19 @@ export default function Exam() {
   const answersRef = useRef<Record<string, Answer | null>>({});
   const { recordResult } = useQuiz();
 
-  function startExam() {
-    const seed = Date.now().toString();
+  const resetExam = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    startRef.current = '';
+    questionsRef.current = [];
+    answersRef.current = {};
+    setQuestions([]);
+    setIndex(0);
+    setAnswers({});
+    setSecondsLeft(EXAM_SECONDS);
+    setPhase('idle');
+  }, []);
+
+  const initializeExam = useCallback((seed: string) => {
     startRef.current = seed;
     const shuffled = seededShuffle(pool, seed).slice(0, EXAM_QUESTIONS);
     questionsRef.current = shuffled;
@@ -55,6 +73,11 @@ export default function Exam() {
     setAnswers({});
     setSecondsLeft(EXAM_SECONDS);
     setPhase('active');
+  }, [pool]);
+
+  function startExam() {
+    const seed = Date.now().toString();
+    navigate(`/exam?session=${seed}`);
   }
 
   const submitExam = useCallback(() => {
@@ -65,6 +88,16 @@ export default function Exam() {
     }
     setPhase('review');
   }, [recordResult]);
+
+  useEffect(() => {
+    if (!sessionSeed) {
+      resetExam();
+      return;
+    }
+    if (startRef.current !== sessionSeed) {
+      initializeExam(sessionSeed);
+    }
+  }, [initializeExam, resetExam, sessionSeed]);
 
   useEffect(() => {
     if (phase !== 'active') return;
@@ -91,12 +124,15 @@ export default function Exam() {
       <ExamReview
         questions={questions}
         answers={answers}
-        onRestart={() => setPhase('idle')}
+        onRestart={() => navigate('/exam')}
       />
     );
   }
 
   const q = questions[index];
+  if (!q) {
+    return <ExamLanding pool={pool} onStart={startExam} />;
+  }
   const answered = Object.values(answers).filter(Boolean).length;
   const urgent = secondsLeft < 300;
 
