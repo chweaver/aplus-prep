@@ -11,7 +11,12 @@ export default function Layout() {
           >
             A+ Core 2 (220-1202) Prep
           </Link>
-          <span className="text-xs text-[var(--color-muted)]">Placeholder build</span>
+          <Link
+            to="/exam"
+            className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
+          >
+            Exam mode
+          </Link>
         </div>
       </header>
       <main className="mx-auto max-w-3xl px-6 py-8">

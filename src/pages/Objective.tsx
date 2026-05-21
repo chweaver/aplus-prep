@@ -50,17 +50,30 @@ export default function Objective() {
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <StatusPicker objectiveId={meta.id} />
-        {cards.length > 0 && (
-          <Link
-            to={`/objective/${meta.id}/flashcards`}
-            className="rounded border border-emerald-500/60 bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200 hover:bg-emerald-500/20"
-          >
-            Study flashcards
-            <span className="ml-2 text-xs text-emerald-300/80">
-              {dueCount} due · {cards.length} total
-            </span>
-          </Link>
-        )}
+        <div className="flex flex-wrap gap-2">
+          {cards.length > 0 && (
+            <Link
+              to={`/objective/${meta.id}/flashcards`}
+              className="rounded border border-emerald-500/60 bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200 hover:bg-emerald-500/20"
+            >
+              Flashcards
+              <span className="ml-1.5 text-xs text-emerald-300/70">
+                {dueCount} due · {cards.length}
+              </span>
+            </Link>
+          )}
+          {content.questions.get(meta.id) && (
+            <Link
+              to={`/objective/${meta.id}/questions`}
+              className="rounded border border-sky-500/60 bg-sky-500/10 px-3 py-1.5 text-sm text-sky-200 hover:bg-sky-500/20"
+            >
+              Practice questions
+              <span className="ml-1.5 text-xs text-sky-300/70">
+                {content.questions.get(meta.id)!.questions.length}
+              </span>
+            </Link>
+          )}
+        </div>
       </div>
 
       {!topic && (
