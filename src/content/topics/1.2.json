@@ -1,0 +1,58 @@
+{
+  "objective": "1.2",
+  "title": "Given a scenario, perform OS installations and upgrades in a diverse environment",
+  "domain": 1,
+  "estimatedMinutes": 16,
+  "subtopics": [
+    {
+      "id": "1.2.boot-methods",
+      "heading": "Boot methods",
+      "notes": "How the installer reaches the machine:\n\n- USB / flash drive: most common; motherboard must support USB boot\n- Network (PXE - Preboot eXecution Environment): BIOS pulls the installer from a PXE server on the LAN. Useful when you cannot visit every machine\n- Solid-state / flash drive: same as USB but using NVMe / SSD form factor\n- Internet-based: minimal local boot, downloads the rest. macOS Recovery and Windows Update both work this way. Some Linux distros do this too\n- External / hot-swappable drive: ISO mounted from an external drive that appears as a physical disk\n- Internal hard drive (partition): installer files copied to a local partition, then boot from there\n- Multi-boot: more than one OS installed on the same physical device, chosen at startup\n\nISO image: an exact copy of an optical disc as a single file. Common for virtualization and external mountable drives.",
+      "whyOnExam": "Match the scenario to the right boot method. PXE = no physical visits / remote install. Internet-based = recovery / minimal media.",
+      "commonTrap": "Picking 'recovery partition' as a boot method when the scenario describes a network-only install. Recovery partition is local.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.2.install-types",
+      "heading": "Types of installations",
+      "notes": "- Clean install: wipe the partition, install fresh. Nothing previous remains\n- In-place upgrade: keeps apps, data, and user settings. Newer OS layered over the old one\n- Image deployment: build one reference image (OS + apps + config), then push it to many machines\n- Remote network installation: install files served from a network share, no local media required\n- Zero-touch deployment: fully automated install + configuration. User opens a laptop, turns it on, walks away\n- Recovery partition: hidden local partition with installer files. Useful for repair / re-install in the field\n- Repair installation: Windows-specific. Overwrites OS files but keeps user data and configuration\n- Third-party drivers: load during install (usually a prompt) when stock drivers don't recognize the storage controller or NIC",
+      "whyOnExam": "Know the difference between clean install (wipes everything) and in-place upgrade (keeps everything). Zero-touch deployment is the answer for 'ship a new laptop to a remote user'.",
+      "commonTrap": "Confusing 'repair installation' (keeps user data) with 'clean install' (does not). Repair fixes a broken OS without forcing a backup-restore cycle.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.2.partitioning",
+      "heading": "Partitioning: GPT vs MBR",
+      "notes": "GPT (GUID Partition Table)\n- Modern, requires UEFI BIOS\n- Up to 128 partitions per drive, all equal type\n- Theoretical drive size over 9 billion TB; Windows caps GPT volumes at 256 TB\n- Simpler model (no primary/extended distinction)\n\nMBR (Master Boot Record)\n- Legacy, used before UEFI\n- Maximum partition size 2 TB\n- Maximum 4 primary partitions per drive\n- Only one primary partition is active (bootable)\n- For more than 4 partitions: use 1 extended partition holding multiple logical partitions. Logical partitions are NOT bootable\n\nVolume vs partition (Microsoft term): a volume is just a formatted partition.\n\nBIOS compatibility mode lets older BIOS boot GPT-style, but disables Secure Boot. Many newer OSes will not run without Secure Boot.",
+      "whyOnExam": "GPT requires UEFI. MBR caps at 2 TB and 4 primary partitions. Memorize the numbers.",
+      "commonTrap": "Saying 'extended partitions are bootable' on MBR. Only primary partitions boot; the extended one holds logical partitions which do not.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.2.drive-format",
+      "heading": "Drive format: quick vs full",
+      "notes": "Quick format\n- Builds a new file system table only\n- Does NOT verify the physical disk\n- Old data is technically recoverable with the right tool\n- Default in Windows 10 and 11 installation\n\nFull format\n- Writes zeros across the entire disk\n- Verifies disk sectors\n- Old data is unrecoverable (more secure)\n- Slow on large drives\n- Triggered through the diskpart utility on Windows\n\nUse quick when you trust the drive and need speed. Use full when the disk leaves your custody or contained sensitive data.",
+      "whyOnExam": "If a question mentions 'secure' or 'sanitization', pick full format. If it mentions 'fastest' or default install, pick quick.",
+      "commonTrap": "Assuming quick format actually erases the data. It only removes the table. Forensic tools can still recover much of the previous content.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.2.upgrade-considerations",
+      "heading": "Upgrade considerations",
+      "notes": "Before upgrading:\n- Back up user files and preferences (even on an in-place upgrade)\n- Check application and driver compatibility against the new OS\n- Check hardware requirements: CPU, RAM, free disk space\n- Use vendor compatibility tools where available (Windows 11: PC Health Check)\n- Have license keys ready\n\nFeature updates vs quality updates:\n- Quality updates: monthly security and bug fixes\n- Feature updates: new capabilities, every 6-12 months\n- Most Windows versions are supported 18-36 months under Microsoft's Modern Lifecycle Policy",
+      "whyOnExam": "PC Health Check is the specific tool name Microsoft uses for Windows 11 compatibility checks. Know it.",
+      "commonTrap": "Skipping the backup step before an in-place upgrade. Even though in-place 'keeps everything', upgrades can fail, and the backup is your only recovery path.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.2.win11-requirements",
+      "heading": "Windows 11 hardware requirements",
+      "notes": "Windows 11 cannot install without:\n- TPM 2.0 or later (Trusted Platform Module, cryptographic hardware on the motherboard). Check with tpm.msc\n- UEFI BIOS (not legacy BIOS)\n- Secure Boot enabled. Check the System Information utility under System Summary - look for 'Secure Boot State'\n- A supported 64-bit CPU (Windows 11 dropped 32-bit support entirely)\n- Sufficient RAM and storage\n\nTPM 2.0 is also required for BitLocker and Windows Hello.\n\nIf the motherboard does not support UEFI or TPM 2.0, the machine usually cannot be upgraded - it must be replaced.",
+      "whyOnExam": "TPM 2.0 + UEFI + Secure Boot are the three big Windows 11 gates. Expect a scenario where one is missing and you must identify which.",
+      "commonTrap": "Picking 'more RAM' as the fix when the actual block is TPM or Secure Boot. Hardware-platform requirements come first.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": ["pm-1202-installing-os", "pm-1202-upgrading-windows"],
+  "needsReview": false
+}

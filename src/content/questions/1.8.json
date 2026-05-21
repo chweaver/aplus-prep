@@ -1,0 +1,162 @@
+{
+  "objective": "1.8",
+  "questions": [
+    {
+      "id": "1.8.q.001",
+      "type": "multiple-choice",
+      "stem": "A user downloads software for macOS and receives a file with a .dmg extension. What should the user do to install the software?",
+      "choices": [
+        { "id": "a", "text": "Run it directly like an .exe file" },
+        { "id": "b", "text": "Double-click to mount it as a virtual drive, then run the installer inside" },
+        { "id": "c", "text": "Extract it with Archive Utility, then run setup" },
+        { "id": "d", "text": "Rename it to .pkg before opening" }
+      ],
+      "correct": "b",
+      "explanation": "A .dmg is an Apple disk image. Double-clicking mounts it in Finder as a virtual drive. The user then typically drags the .app to Applications or runs a .pkg inside the image.",
+      "trap": "DMGs are not executables and cannot be renamed to .pkg - they serve different purposes.",
+      "tags": ["macos", "file-types"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.002",
+      "type": "multiple-choice",
+      "stem": "A macOS user wants to remove an application. There is no Uninstall option in the app. What is the correct procedure?",
+      "choices": [
+        { "id": "a", "text": "Use Control Panel > Programs and Features to uninstall" },
+        { "id": "b", "text": "Open Terminal and run rm -rf /Applications/AppName" },
+        { "id": "c", "text": "Drag the .app file from the Applications folder to the Trash" },
+        { "id": "d", "text": "Disable the app in System Preferences > Users and Groups" }
+      ],
+      "correct": "c",
+      "explanation": "Most macOS apps are self-contained bundles. Dragging the .app to Trash removes the application and all its bundled files. There is no Programs and Features equivalent.",
+      "trap": "Control Panel does not exist on macOS. Terminal rm -rf works but is not the standard user-facing procedure.",
+      "tags": ["macos", "uninstall"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.003",
+      "type": "multiple-choice",
+      "stem": "A macOS administrator notices the OS version on a device shows '14.1.1a'. What does the letter suffix indicate?",
+      "choices": [
+        { "id": "a", "text": "A beta pre-release version is installed" },
+        { "id": "b", "text": "A Rapid Security Response update has been applied" },
+        { "id": "c", "text": "The system is in developer mode" },
+        { "id": "d", "text": "A hardware-specific firmware patch was applied" }
+      ],
+      "correct": "b",
+      "explanation": "A letter appended to the macOS version number (e.g., 14.1.1a) indicates a Rapid Security Response (RSR) update has been applied - an emergency critical security patch pushed immediately by Apple.",
+      "trap": "Beta versions have a different designation in the software update system, not a letter suffix on the release version.",
+      "tags": ["macos", "updates", "rsr"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.004",
+      "type": "multiple-choice",
+      "stem": "Which macOS feature is equivalent to Windows BitLocker?",
+      "choices": [
+        { "id": "a", "text": "Keychain" },
+        { "id": "b", "text": "FileVault" },
+        { "id": "c", "text": "Time Machine" },
+        { "id": "d", "text": "Disk Utility" }
+      ],
+      "correct": "b",
+      "explanation": "FileVault provides full disk encryption on macOS, encrypting the entire drive using the login password or iCloud credentials - directly analogous to Windows BitLocker.",
+      "trap": "Keychain encrypts stored credentials, not the disk. Disk Utility manages partitions but does not provide encryption.",
+      "tags": ["macos", "filevault", "encryption"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.005",
+      "type": "multiple-choice",
+      "stem": "A macOS application has stopped responding. Which keystroke opens the Force Quit window?",
+      "choices": [
+        { "id": "a", "text": "Command+Option+Delete" },
+        { "id": "b", "text": "Command+Option+Escape" },
+        { "id": "c", "text": "Control+Alt+Delete" },
+        { "id": "d", "text": "Command+Shift+Escape" }
+      ],
+      "correct": "b",
+      "explanation": "Command+Option+Escape opens the Force Quit Applications window, showing all running apps. The user can select the unresponsive app and click Force Quit.",
+      "trap": "Control+Alt+Delete is the Windows equivalent. Command+Option+Delete is not a system shortcut.",
+      "tags": ["macos", "force-quit"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.006",
+      "type": "multiple-choice",
+      "stem": "A user asks how to search for a file across their entire macOS system. What is the fastest built-in method?",
+      "choices": [
+        { "id": "a", "text": "Open Finder and select File > Find" },
+        { "id": "b", "text": "Press Command+Space to open Spotlight" },
+        { "id": "c", "text": "Open Terminal and run find /" },
+        { "id": "d", "text": "Open Disk Utility and search the volume" }
+      ],
+      "correct": "b",
+      "explanation": "Spotlight (Command+Space) is macOS's system-wide search that instantly searches apps, documents, images, contacts, and more.",
+      "trap": "Finder search works but is scoped to what is visible. Spotlight is the system-wide equivalent of Windows Search.",
+      "tags": ["macos", "spotlight"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.007",
+      "type": "matching",
+      "stem": "Match each macOS feature to its Windows equivalent.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "Finder", "rightId": "r1", "rightText": "File Explorer" },
+        { "leftId": "l2", "leftText": "System Preferences", "rightId": "r2", "rightText": "Control Panel" },
+        { "leftId": "l3", "leftText": "FileVault", "rightId": "r3", "rightText": "BitLocker" },
+        { "leftId": "l4", "leftText": "Spotlight", "rightId": "r4", "rightText": "Windows Search" },
+        { "leftId": "l5", "leftText": ".pkg file", "rightId": "r5", "rightText": "setup.exe" }
+      ],
+      "explanation": "Cross-platform equivalents are a favorite exam pattern. Know the macOS side and its Windows counterpart for each.",
+      "tags": ["macos"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.008",
+      "type": "multiple-choice",
+      "stem": "An IT department deploys Apple devices for corporate users and wants single sign-on using existing Active Directory credentials. Which Apple feature enables this?",
+      "choices": [
+        { "id": "a", "text": "iCloud with a personal Apple ID" },
+        { "id": "b", "text": "Managed Apple ID via Apple Business Manager" },
+        { "id": "c", "text": "Keychain integration with LDAP" },
+        { "id": "d", "text": "FileVault with institutional recovery key" }
+      ],
+      "correct": "b",
+      "explanation": "Managed Apple IDs are created and managed through Apple Business Manager, which integrates with Active Directory to allow users to authenticate with their existing corporate credentials.",
+      "trap": "Personal Apple IDs cannot integrate with AD. Keychain stores credentials but does not federate with AD.",
+      "tags": ["macos", "apple-id", "mdm"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.q.009",
+      "type": "multi-select",
+      "stem": "Which of the following are TRUE about macOS Time Machine? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "Creates hourly backups for the past 24 hours" },
+        { "id": "b", "text": "Creates daily backups for the past month" },
+        { "id": "c", "text": "Stores backups exclusively in iCloud" },
+        { "id": "d", "text": "Deletes oldest backups automatically when the volume fills" }
+      ],
+      "correct": ["a", "b", "d"],
+      "explanation": "Time Machine backs up hourly/daily/weekly to a local or network volume - not exclusively to iCloud. iCloud is a separate service.",
+      "trap": "(c) Time Machine uses a local drive or network volume, NOT iCloud. iCloud backup is a separate Apple feature.",
+      "tags": ["macos", "backup", "time-machine"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    }
+  ]
+}

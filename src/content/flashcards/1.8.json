@@ -1,0 +1,209 @@
+{
+  "objective": "1.8",
+  "cards": [
+    {
+      "id": "1.8.fc.001",
+      "front": "What is a .dmg file in macOS?",
+      "back": "An Apple Disk Image - similar to an ISO file. When mounted, it appears as a virtual drive in Finder.",
+      "tags": ["macos", "file-types"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.002",
+      "front": "What is a .pkg file in macOS?",
+      "back": "An installer package - runs a script-based installation process. macOS equivalent of Windows setup.exe.",
+      "tags": ["macos", "file-types"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.003",
+      "front": "What is a .app file in macOS?",
+      "back": "An application bundle - not a single executable but a folder containing all the app's files. Right-click > View Package Contents to see inside.",
+      "tags": ["macos", "file-types"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.004",
+      "front": "How do you uninstall most apps on macOS?",
+      "back": "Drag the .app file from the Applications folder to the Trash. Deleting the bundle removes all app files. Some apps include a separate Uninstaller.app - run that instead.",
+      "tags": ["macos", "uninstall"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.005",
+      "front": "macOS equivalent of Windows Program Files?",
+      "back": "/Applications folder.",
+      "tags": ["macos", "folders"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.006",
+      "front": "What does ~ (tilde) represent in macOS paths?",
+      "back": "The current user's home directory. For example, ~/Library = /Users/username/Library.",
+      "tags": ["macos", "folders"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.007",
+      "front": "What is /Library vs ~/Library in macOS?",
+      "back": "/Library - system-wide support files (scripts, fonts) shared by all users and apps. ~/Library - per-user library, hidden by default in Finder.",
+      "tags": ["macos", "folders"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.008",
+      "front": "Where are macOS operating system files stored?",
+      "back": "/System - equivalent to the Windows System32 area.",
+      "tags": ["macos", "folders"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.009",
+      "front": "What is a Managed Apple ID?",
+      "back": "A corporate/education Apple ID managed through Apple Business Manager. Can integrate with Active Directory and MDM for central device management.",
+      "tags": ["macos", "apple-id", "mdm"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.010",
+      "front": "Time Machine backup schedule?",
+      "back": "Hourly backups for the past 24 hours. Daily backups for the past month. Weekly backups for all previous months. Deletes oldest when volume fills.",
+      "tags": ["macos", "backup", "time-machine"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.011",
+      "front": "What is Rapid Security Response (RSR) in macOS?",
+      "back": "Emergency security patches pushed immediately for critical vulnerabilities. On by default. A letter suffix on the OS version (e.g., 14.1.1a) means an RSR was applied.",
+      "tags": ["macos", "updates", "rsr"],
+      "sourceTranscript": "pm-1202-macos-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.012",
+      "front": "macOS equivalent of the Windows Control Panel?",
+      "back": "System Preferences (called System Settings in newer macOS versions).",
+      "tags": ["macos", "system-preferences"],
+      "sourceTranscript": "pm-1202-macos-system-preferences",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.013",
+      "front": "Where is FileVault enabled in macOS?",
+      "back": "System Preferences > Privacy and Security > FileVault.",
+      "tags": ["macos", "filevault", "encryption"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-system-preferences",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.014",
+      "front": "macOS equivalent of Windows BitLocker?",
+      "back": "FileVault - full disk encryption using the login password or iCloud credentials.",
+      "tags": ["macos", "filevault", "encryption"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.015",
+      "front": "macOS equivalent of Windows File Explorer?",
+      "back": "Finder - file management front end for launching apps, managing files, and accessing network shares.",
+      "tags": ["macos", "finder"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.016",
+      "front": "How do you launch Spotlight search in macOS?",
+      "back": "Command+Space. Or click the magnifying glass in the upper-right corner of the desktop.",
+      "tags": ["macos", "spotlight"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.017",
+      "front": "What is Mission Control in macOS?",
+      "back": "Shows all running apps spread across the desktop for quick navigation. Activate with 3-finger swipe up or Control+Up arrow.",
+      "tags": ["macos", "mission-control"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.018",
+      "front": "What are Spaces in macOS?",
+      "back": "Multiple virtual desktops managed from within Mission Control. Each Space can have its own set of running apps.",
+      "tags": ["macos", "spaces", "mission-control"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.019",
+      "front": "What is Keychain in macOS?",
+      "back": "Built-in encrypted credential store. Stores passwords, certificates, and secure notes. Decrypted with the user's login password. Not an add-on - it is integrated into macOS.",
+      "tags": ["macos", "keychain", "security"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.020",
+      "front": "What is Continuity in macOS?",
+      "back": "Feature that lets you hand off tasks between macOS, iPadOS, and iOS devices. Includes: pick up where you left off, iPhone as Mac webcam, AirDrop, text message forwarding. Requires iCloud login on all devices.",
+      "tags": ["macos", "continuity"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.021",
+      "front": "What is Disk Utility in macOS?",
+      "back": "Graphical tool for managing file systems. Format drives, create/modify partitions, mount/unmount volumes, create disk images.",
+      "tags": ["macos", "disk-utility"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.022",
+      "front": "How do you Force Quit a hung app in macOS?",
+      "back": "Command+Option+Escape (opens Force Quit window). Or: hold Option, right-click the app in the dock > Force Quit.",
+      "tags": ["macos", "force-quit"],
+      "weakSpotTags": ["macos-features"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.023",
+      "front": "What is iCloud Drive?",
+      "back": "Apple's cloud file storage service - similar to Google Drive or Dropbox. Files stored in iCloud Drive are accessible from all Apple devices signed into the same Apple ID.",
+      "tags": ["macos", "icloud"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.8.fc.024",
+      "front": "Where is the macOS command line accessed?",
+      "back": "Terminal app. Provides a shell (bash/zsh) for running scripts and managing the OS.",
+      "tags": ["macos", "terminal"],
+      "sourceTranscript": "pm-1202-macos-features",
+      "needsReview": false
+    }
+  ]
+}

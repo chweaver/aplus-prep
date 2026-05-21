@@ -1,0 +1,181 @@
+{
+  "objective": "1.3",
+  "cards": [
+    {
+      "id": "1.3.fc.001",
+      "front": "Which four editions exist in Windows 10?",
+      "back": "Home, Pro, Pro for Workstations, Enterprise.",
+      "tags": ["editions", "win10"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.002",
+      "front": "Which three editions exist in Windows 11?",
+      "back": "Home, Pro, Enterprise.",
+      "tags": ["editions", "win11"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.003",
+      "front": "Does Windows 10/11 Home support joining an Active Directory domain?",
+      "back": "No. Domain join requires Pro, Pro for Workstations, or Enterprise.",
+      "tags": ["features", "domain"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.004",
+      "front": "Does Windows Home support BitLocker?",
+      "back": "No. BitLocker requires Pro or higher. Windows 11 Home has 'Device Encryption' which is similar but consumer-grade.",
+      "tags": ["features", "bitlocker"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.005",
+      "front": "Where is the BitLocker recovery key stored in Windows 11 Home (Device Encryption) vs an enterprise BitLocker deployment?",
+      "back": "Home / Device Encryption: in the user's Microsoft account. Enterprise BitLocker: in Active Directory.",
+      "tags": ["features", "bitlocker", "device-encryption"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.006",
+      "front": "Can Windows Home act as a Remote Desktop server (host)?",
+      "back": "No. Home can only be a client. RDP server requires Pro or higher.",
+      "tags": ["features", "rdp"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.007",
+      "front": "What does gpedit.msc do, and which editions include it?",
+      "back": "Opens the Local Group Policy Editor. Available in Pro and higher; NOT in Home.",
+      "tags": ["features", "gpedit"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.008",
+      "front": "Maximum RAM in 64-bit Windows 10/11 Pro?",
+      "back": "2 TB.",
+      "tags": ["features", "ram"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.009",
+      "front": "Maximum RAM in 64-bit Windows 11 Enterprise?",
+      "back": "6 TB.",
+      "tags": ["features", "ram"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.010",
+      "front": "Maximum RAM in Windows 10/11 Home (64-bit)?",
+      "back": "128 GB.",
+      "tags": ["features", "ram"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.011",
+      "front": "Is there a 32-bit version of Windows 11?",
+      "back": "No. Windows 11 requires a 64-bit CPU.",
+      "tags": ["win11", "architecture"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.012",
+      "front": "What does the 'N' in a Windows N edition mean?",
+      "back": "No bundled media player or multimedia utilities. Sold in Europe for regulatory compliance.",
+      "tags": ["editions", "n-version"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.013",
+      "front": "How do you add media playback features back to a Windows N edition?",
+      "back": "Install the Media Feature Pack via Settings > Apps > Optional Features.",
+      "tags": ["editions", "n-version"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.014",
+      "front": "Which Windows edition supports ReFS on the desktop?",
+      "back": "Windows 11 Enterprise (and Windows 10 Pro for Workstations). The same file system used in Windows Server.",
+      "tags": ["editions", "refs"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.015",
+      "front": "What's the difference between a Windows domain and a Windows workgroup?",
+      "back": "Domain: central management via Active Directory, used at work. Workgroup: each device managed independently, typical for home networks.",
+      "tags": ["domain", "workgroup", "active-directory"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.016",
+      "front": "Which Windows 11 edition adds MDM and MAM management?",
+      "back": "Windows 11 Enterprise.",
+      "tags": ["editions", "win11", "enterprise"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.017",
+      "front": "Which Windows 11 edition includes Hyper-V virtualization?",
+      "back": "Windows 11 Pro (and Enterprise).",
+      "tags": ["editions", "win11", "pro", "hyper-v"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.018",
+      "front": "What is AppLocker and which edition includes it?",
+      "back": "Allow / block list for applications. Available in Windows 10 Enterprise.",
+      "tags": ["editions", "applocker", "enterprise"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.019",
+      "front": "What is BranchCache?",
+      "back": "Caches data at a remote site so it doesn't have to be re-fetched over the WAN. Included in Windows 10 Enterprise.",
+      "tags": ["editions", "branchcache", "enterprise"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.020",
+      "front": "When did Microsoft announce Windows 10 Home and Pro would reach end of support?",
+      "back": "October 14, 2025.",
+      "tags": ["lifecycle", "win10", "eol"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.021",
+      "front": "Difference between an in-place upgrade and a clean install for Windows?",
+      "back": "In-place: keeps applications, user data, settings. Run from inside the current OS. Clean install: wipes everything and reinstalls from boot media.",
+      "tags": ["upgrade", "clean-install"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.fc.022",
+      "front": "What AI assistant did Microsoft build into Windows 11?",
+      "back": "Windows Copilot.",
+      "tags": ["win11", "copilot", "ai"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "objective": "1.11",
+  "questions": [
+    {
+      "id": "1.11.q.001",
+      "type": "multiple-choice",
+      "stem": "An organization is moving its email server off-premises to a cloud provider. Which of the following is an accurate statement about this migration?",
+      "choices": [
+        { "id": "a", "text": "Cloud email reduces redundancy compared to on-premises" },
+        { "id": "b", "text": "Cloud email provides scalable storage, built-in redundancy, and anywhere access" },
+        { "id": "c", "text": "Cloud email requires a dedicated VPN for all users to connect" },
+        { "id": "d", "text": "Cloud email security is the sole responsibility of the customer" }
+      ],
+      "correct": "b",
+      "explanation": "Cloud services provide scalability (add capacity on demand), redundancy, backup, and access from any internet-connected location. Physical and logical security is handled by the provider.",
+      "trap": "(a) reverses the benefit - cloud has MORE redundancy. (c) VPN is not required for standard cloud email. (d) Security is a shared responsibility with the provider.",
+      "tags": ["cloud", "email"],
+      "weakSpotTags": ["cloud-models"],
+      "sourceTranscript": "pm-1202-cloud-productivity",
+      "needsReview": false
+    },
+    {
+      "id": "1.11.q.002",
+      "type": "multiple-choice",
+      "stem": "A user saves a file to their local OneDrive folder on their laptop. What happens next?",
+      "choices": [
+        { "id": "a", "text": "The file is available only on that laptop until manually uploaded" },
+        { "id": "b", "text": "The file is automatically synced to the cloud and appears on all other devices with OneDrive" },
+        { "id": "c", "text": "The file is backed up to the corporate file server" },
+        { "id": "d", "text": "The file is encrypted and only accessible with a recovery key" }
+      ],
+      "correct": "b",
+      "explanation": "Cloud sync clients monitor the local folder and automatically upload changes to the cloud, which then replicates to all other devices running the same client.",
+      "trap": "(a) Cloud sync is automatic - no manual upload required. The whole point is automatic replication.",
+      "tags": ["cloud", "storage", "sync"],
+      "sourceTranscript": "pm-1202-cloud-productivity",
+      "needsReview": false
+    },
+    {
+      "id": "1.11.q.003",
+      "type": "multiple-choice",
+      "stem": "An IT administrator adds a new employee to Microsoft Entra ID. The company also uses Okta. What action does the admin need to take in Okta?",
+      "choices": [
+        { "id": "a", "text": "Manually add the user to Okta separately" },
+        { "id": "b", "text": "Nothing - the change propagates automatically via identity synchronization" },
+        { "id": "c", "text": "Export the Entra ID user file and import it into Okta" },
+        { "id": "d", "text": "Disable the user in Entra ID first, then add them in Okta" }
+      ],
+      "correct": "b",
+      "explanation": "Cloud identity synchronization automatically propagates user changes across all connected identity providers. Adding the user in one place updates all others.",
+      "trap": "(a) That defeats the purpose of identity sync. Modern cloud identity platforms push changes automatically.",
+      "tags": ["cloud", "identity"],
+      "sourceTranscript": "pm-1202-cloud-productivity",
+      "needsReview": false
+    },
+    {
+      "id": "1.11.q.004",
+      "type": "multiple-choice",
+      "stem": "An IT manager notices that 30 software licenses are assigned to employees who left the company 6 months ago. What should they do with cloud-based license management?",
+      "choices": [
+        { "id": "a", "text": "Purchase 30 new licenses for the replacement employees" },
+        { "id": "b", "text": "Reassign the unused licenses from the former employees to the new employees" },
+        { "id": "c", "text": "Contact the software vendor to transfer ownership of the licenses" },
+        { "id": "d", "text": "Leave the licenses assigned to avoid a deactivation fee" }
+      ],
+      "correct": "b",
+      "explanation": "Cloud license management provides central visibility into all licenses and their assignment. Unused licenses from former employees can be reassigned to new employees without purchasing additional seats.",
+      "trap": "(a) Purchasing new licenses wastes money if unused ones are available. Cloud licensing's main advantage is easy reassignment.",
+      "tags": ["cloud", "licensing"],
+      "sourceTranscript": "pm-1202-cloud-productivity",
+      "needsReview": false
+    },
+    {
+      "id": "1.11.q.005",
+      "type": "matching",
+      "stem": "Match each cloud productivity concept to its best description.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "Microsoft Entra ID", "rightId": "r1", "rightText": "Cloud-based identity provider (formerly Azure AD)" },
+        { "leftId": "l2", "leftText": "OneDrive / Google Drive", "rightId": "r2", "rightText": "File sync between local storage and cloud" },
+        { "leftId": "l3", "leftText": "Real-time co-editing", "rightId": "r3", "rightText": "Multiple users editing one document simultaneously" },
+        { "leftId": "l4", "leftText": "Cloud license management", "rightId": "r4", "rightText": "Centralized assignment and reassignment of software seats" },
+        { "leftId": "l5", "leftText": "Identity synchronization", "rightId": "r5", "rightText": "Propagates user changes across all connected identity providers" }
+      ],
+      "explanation": "Cloud productivity covers email, file storage, collaboration, identity, and licensing. Know what each service does and name examples.",
+      "tags": ["cloud"],
+      "weakSpotTags": ["cloud-models"],
+      "sourceTranscript": "pm-1202-cloud-productivity",
+      "needsReview": false
+    }
+  ]
+}

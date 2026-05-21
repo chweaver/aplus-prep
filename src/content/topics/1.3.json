@@ -1,0 +1,50 @@
+{
+  "objective": "1.3",
+  "title": "Compare and contrast basic features of Microsoft Windows editions",
+  "domain": 1,
+  "estimatedMinutes": 12,
+  "subtopics": [
+    {
+      "id": "1.3.win10-editions",
+      "heading": "Windows 10 editions",
+      "notes": "Four editions:\n\n- Home: consumer build. Integrates with Microsoft account + OneDrive backup. Includes Windows Defender antivirus and Cortana voice assistant. No domain join, no BitLocker, no RDP server, no gpedit, RDP client only\n- Pro: enterprise build. Adds RDP server, BitLocker full disk encryption, domain join, gpedit\n- Pro for Workstations: high-end. Up to four physical CPUs, 6 TB RAM, ReFS support\n- Enterprise: volume-licensed at scale. Adds AppLocker (application allow/block), BranchCache (remote-site caching), and granular UX control\n\nMicrosoft has announced Windows 10 Home and Pro reach end of support on October 14, 2025.",
+      "whyOnExam": "Know which edition supports which feature - especially RDP server, BitLocker, and domain join. These are the differentiators most likely to appear.",
+      "commonTrap": "Assuming Home supports BitLocker. It does not. Windows 11 Home gets 'Device Encryption' (similar but consumer-grade); Windows 10 Home has neither.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.3.win11-editions",
+      "heading": "Windows 11 editions",
+      "notes": "Three editions: Home, Pro, Enterprise.\n\nWindows 11 changes vs Windows 10:\n- No 32-bit support at all (CPU must be 64-bit)\n- New UI (start menu centered, new taskbar, snap layouts)\n- Microsoft Teams integration\n- Windows Copilot (AI assistant) built in\n- Improved touch / tablet support\n\nPer edition:\n- Home: consumer build. Microsoft account or local account. Device Encryption (consumer BitLocker, recovery key stored in Microsoft account, not Active Directory)\n- Pro: domain join, BitLocker, Hyper-V virtualization, RDP server\n- Enterprise: MDM (Mobile Device Management), MAM (Mobile Application Management), ReFS support (same FS used in Windows Server)",
+      "whyOnExam": "Windows 11 Home has Device Encryption, NOT BitLocker. Pro is where BitLocker proper appears. ReFS is Enterprise-only on the desktop side.",
+      "commonTrap": "Mixing up Device Encryption and BitLocker. Both encrypt the disk, but only BitLocker (Pro+) integrates with Active Directory and is the 'business answer'.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.3.n-versions",
+      "heading": "N versions",
+      "notes": "Windows N editions ship in Europe to comply with regulatory rulings. The 'N' means NO bundled media player or other multimedia utilities.\n\nMedia features can be added afterward via the Media Feature Pack:\nSettings > Apps > Optional Features > Add an Optional Feature > Media Feature Pack",
+      "whyOnExam": "Just know what the 'N' means and that the Media Feature Pack restores playback. Low-yield trivia.",
+      "commonTrap": "Assuming N editions are crippled or different. They are functionally identical except for the bundled media components.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.3.feature-differences",
+      "heading": "Feature differences across editions",
+      "notes": "Cross-edition matrix (memorize the gates):\n\n| Feature | Home | Pro | Pro Workstations | Enterprise |\n|---|---|---|---|---|\n| Domain join | NO | YES | YES | YES |\n| BitLocker (full BL) | NO | YES | YES | YES |\n| RDP as server (host) | NO | YES | YES | YES |\n| RDP as client | YES | YES | YES | YES |\n| gpedit.msc (group policy) | NO | YES | YES | YES |\n| Max RAM (64-bit) | 128 GB | 2 TB | 6 TB | 6 TB |\n\nWindows 10 Home (32-bit) tops out at 4 GB RAM. Windows 11 has no 32-bit version at all.\n\nDomain vs workgroup:\n- Domain: central management via Active Directory, used at work\n- Workgroup: each device managed independently, used at home",
+      "whyOnExam": "This matrix shows up directly in exam questions. The 'four big gates' between Home and Pro are domain join, BitLocker, RDP server, and gpedit.",
+      "commonTrap": "Picking Pro when the scenario clearly needs 6 TB of RAM (which only Pro Workstations / Enterprise supports). Pro caps at 2 TB.",
+      "weakSpotTags": ["active-directory"]
+    },
+    {
+      "id": "1.3.upgrade-paths",
+      "heading": "Upgrade paths and hardware requirements",
+      "notes": "Upgrade paths:\n- In-place upgrade: keep apps, data, settings. Run from inside the existing OS\n- Clean install: wipe and install fresh. Boot from media\n\nWindows 11 hardware requirements:\n- TPM 2.0\n- UEFI BIOS\n- Secure Boot enabled\n- 64-bit CPU only (no 32-bit support)\n\nUse PC Health Check to confirm compatibility before attempting the upgrade.",
+      "whyOnExam": "TPM 2.0 + UEFI + Secure Boot is the Windows 11 trifecta. Memorize all three.",
+      "commonTrap": "Believing a CPU upgrade alone makes a system Windows 11-eligible. The motherboard must also provide TPM 2.0 and UEFI/Secure Boot.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": ["pm-1202-overview-of-windows", "pm-1202-windows-features"],
+  "needsReview": false
+}

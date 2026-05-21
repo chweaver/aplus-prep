@@ -2,18 +2,49 @@
   "objective": "1.1",
   "title": "Explain common operating system (OS) types and their purposes",
   "domain": 1,
-  "estimatedMinutes": 12,
+  "estimatedMinutes": 14,
   "subtopics": [
     {
-      "id": "1.1.template",
-      "heading": "Template subtopic",
-      "notes": "Schema example. Real notes get distilled from Professor Messer transcripts. Markdown is supported here.",
-      "whyOnExam": "Why this concept appears on the 220-1202.",
-      "commonTrap": "The seductive wrong answer test-takers pick.",
+      "id": "1.1.what-os-does",
+      "heading": "What the OS does",
+      "notes": "The OS is the link between hardware and applications.\n\nCore responsibilities:\n- File management (create / read / write / delete on storage)\n- Application support: memory allocation, swap, process scheduling\n- Input/output handling for keyboard, mouse, display, printer, etc.\n- System management utilities to keep the OS healthy\n\nApplications are written for a specific OS. An executable built for Windows will not run on Linux. Documents and media files are portable across OSes; executables are not.\n\nMany modern applications are web-based, which makes them OS-independent at the user level (anything that runs Chrome can use them).",
+      "whyOnExam": "1.1 is a frame-setting objective. The exam expects you to know that the OS sits between hardware and apps, why apps are OS-specific, and why web apps sidestep that.",
+      "commonTrap": "Confusing 'application portable across OS' (almost never) with 'document portable across OS' (almost always).",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.1.workstation-os",
+      "heading": "Workstation operating systems",
+      "notes": "Four workstation OSes on the exam:\n\nWindows\n- Largest market share, broad industry support, many editions (10, 11, Server)\n- Largest attack surface because of popularity\n- Hardware compatibility depends on vendor-supplied drivers (quality varies)\n\nLinux\n- Free and open source, no licensing cost\n- Distributed in many flavors (distributions); pick one that fits the use case\n- Huge community support, no single 'Linux company' to call\n- Newest hardware may lack drivers\n\nmacOS\n- Runs exclusively on Apple hardware\n- Tight hardware + software integration, designed with security in mind\n- Smaller user base than Windows means less third-party industry support\n- Higher initial hardware cost (Apple-only)\n\nChrome OS\n- Built by Google, based on the Linux kernel\n- Built around the Chrome browser; most apps run in the browser\n- Minimal overhead, hardware from many manufacturers (mostly laptops)\n- Heavy network dependency: lose connectivity, lose most apps",
+      "whyOnExam": "Expect questions framed as 'which OS fits scenario X' (cost, hardware lock-in, browser-only, etc.).",
+      "commonTrap": "Picking Linux because 'no cost' when the scenario also requires guaranteed vendor support. Linux has no central support vendor.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.1.mobile-os",
+      "heading": "Mobile operating systems",
+      "notes": "Three mobile OSes on the exam:\n\niPadOS\n- Apple's iPad OS, separate from iOS\n- Desktop-class Safari, second-monitor support via Sidecar, keyboard support, multitasking\n\niOS\n- Apple's iPhone OS, closed source, Apple hardware only\n- Apps must be built with Apple's Software Developer's Kit on macOS\n- App Store requires Apple approval before publication\n\nAndroid\n- Open source, based on Linux\n- Maintained by the Open Handset Alliance (consortium of companies)\n- Runs on hardware from many manufacturers\n- Apps developed on Windows, macOS, or Linux\n- Distributed via Google Play and many third-party stores",
+      "whyOnExam": "Know which mobile OS is open vs closed source, and what hardware each runs on. Also know the developer pipeline (iOS requires macOS to develop; Android can be developed anywhere).",
+      "commonTrap": "Assuming iOS and iPadOS are the same OS. They share design but are separate products. Sidecar is iPadOS-only.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.1.filesystems",
+      "heading": "Filesystem types",
+      "notes": "Cross-platform readable (Windows / Linux / macOS):\n- FAT32: legacy, 2 TB volume max, 4 GB file max\n- NTFS: Windows default; modern Linux and macOS can read AND write\n- exFAT: Microsoft's extended FAT; designed for flash drives; files larger than 4 GB; cross-platform\n\nWindows-specific:\n- NTFS: compression, file encryption, quotas, ACLs\n- ReFS (Resilient File System): NTFS successor; self-healing, RAID-like features, large arrays; Server 2012+, limited desktop support; NOT widely deployed\n\nLinux:\n- ext4: standard Linux filesystem; also used in Android\n- XFS: high-performance, large filesystem support, journaling, minimal fragmentation; used in data centers\n\nApple:\n- APFS (Apple File System): macOS 10.12.4+, iOS, iPadOS; optimized for SSDs; encryption, snapshots, integrity checks",
+      "whyOnExam": "Memorize which filesystem goes with which OS by default. Pay attention to FAT32's 4 GB file limit and exFAT being the flash-drive answer.",
+      "commonTrap": "Picking ReFS for a desktop scenario. ReFS is server-focused and not widely deployed on desktops. Default desktop answer is still NTFS.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.1.lifecycle-compatibility",
+      "heading": "Vendor life-cycle and compatibility",
+      "notes": "End-of-life (EOL) varies by vendor. Apple's EOL policy differs from Microsoft's. Always check the vendor-specific support window.\n\nWhy it matters:\n- EOL OS stops getting security patches\n- EOL hardware may stop getting drivers\n\nCompatibility across OSes:\n- Data files (documents, spreadsheets, images, media): usually portable\n- Executables: never portable across OS families\n- Some software ships per-OS builds (e.g. an app with both Windows and macOS installers)\n- Web-based apps sidestep the issue entirely",
+      "whyOnExam": "Expect a scenario asking what happens after EOL or why an .exe won't run on a Mac. The answer is usually 'rebuild as the right architecture' or 'use a web alternative'.",
+      "commonTrap": "Assuming EOL only means 'no new features'. The bigger issue is no more security patches.",
       "weakSpotTags": []
     }
   ],
-  "sources": [],
-  "needsReview": true,
-  "reviewNotes": "Stub file. No transcript ingested yet."
+  "sources": ["pm-1202-os-overview", "pm-1202-file-systems"],
+  "needsReview": false
 }

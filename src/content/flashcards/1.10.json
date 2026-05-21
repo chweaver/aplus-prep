@@ -1,0 +1,117 @@
+{
+  "objective": "1.10",
+  "cards": [
+    {
+      "id": "1.10.fc.001",
+      "front": "Can a 64-bit OS run 32-bit applications?",
+      "back": "Yes. A 64-bit OS runs both 64-bit and 32-bit applications. A 32-bit OS can only run 32-bit applications.",
+      "tags": ["32-64-bit"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.002",
+      "front": "What is the maximum RAM a 32-bit OS can address?",
+      "back": "Approximately 4 GB (2^32 address spaces).",
+      "tags": ["32-64-bit", "memory"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.003",
+      "front": "Does Windows 11 support a 32-bit version?",
+      "back": "No. Windows 11 is 64-bit only. There is no 32-bit version.",
+      "tags": ["32-64-bit", "windows-11"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.004",
+      "front": "Where does Windows store 32-bit and 64-bit apps on a 64-bit system?",
+      "back": "64-bit apps: C:\\Program Files. 32-bit apps: C:\\Program Files (x86).",
+      "tags": ["32-64-bit", "folders"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.005",
+      "front": "What must match when installing hardware drivers on a 64-bit OS?",
+      "back": "The driver must also be 64-bit. A 32-bit driver will not work on a 64-bit OS.",
+      "tags": ["32-64-bit", "drivers"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.006",
+      "front": "What is integrated graphics?",
+      "back": "GPU built into the same physical chip as the CPU. Saves power and space. Adequate for everyday tasks but insufficient for 3D modeling or video editing.",
+      "tags": ["hardware", "graphics"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.007",
+      "front": "What is discrete (dedicated) graphics?",
+      "back": "A separate add-in graphics card installed in the computer. Required for 3D modeling, video editing, and gaming. Installed in desktops.",
+      "tags": ["hardware", "graphics"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.008",
+      "front": "How do you check current free RAM before installing an app?",
+      "back": "Task Manager (Performance tab > Memory). Shows currently available memory, separate from just total installed.",
+      "tags": ["hardware", "memory"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.009",
+      "front": "What is a hardware token (dongle) for software licensing?",
+      "back": "A physical USB device that must be connected for the application to run. The app checks for it at launch. Common for expensive, niche professional software.",
+      "tags": ["licensing"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.010",
+      "front": "Why should you install apps from the manufacturer's website rather than a third-party source?",
+      "back": "Third-party download sites may distribute modified installers containing malware. The manufacturer's site is the trusted source.",
+      "tags": ["security", "installation"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.011",
+      "front": "What is an ISO file?",
+      "back": "A disk image file (ISO 9660 filesystem). Contains an entire folder/filesystem in one file. Mounts as a virtual drive showing all contents. Common for OS installation media.",
+      "tags": ["installation", "iso"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.012",
+      "front": "What are OS images (cloning) used for in enterprise deployments?",
+      "back": "Rapid deployment - create one base image with OS + patches + apps + config, then apply it to many machines. Minutes to deploy vs hours to manually install. Ideal for VMs because virtual hardware is always identical.",
+      "tags": ["installation", "imaging"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.013",
+      "front": "What rights and permissions does an installed application have?",
+      "back": "The same rights as the logged-in user who installed it. The app can access any files, shares, and network resources that user can access.",
+      "tags": ["security", "permissions"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.fc.014",
+      "front": "Why should organizations test applications in a sandbox before production?",
+      "back": "An untested app can overwrite files, break existing software, conflict with other apps, or cause system failures. UI changes in upgrades also require workflow updates and retraining.",
+      "tags": ["business", "testing"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    }
+  ]
+}

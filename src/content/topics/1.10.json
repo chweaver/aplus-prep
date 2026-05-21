@@ -1,0 +1,50 @@
+{
+  "objective": "1.10",
+  "title": "Identify common features and tools of the macOS/desktop OS",
+  "domain": 1,
+  "estimatedMinutes": 10,
+  "subtopics": [
+    {
+      "id": "1.10.32-vs-64-bit",
+      "heading": "32-bit vs 64-bit operating systems",
+      "notes": "32-bit OS\n- Max addressable RAM: ~4 GB (2^32 addresses)\n- Cannot run 64-bit applications\n- Legacy; no modern 32-bit Windows desktop versions\n\n64-bit OS\n- Max addressable RAM: ~17 billion GB (2^64 addresses) - not a practical limit\n- Can run both 64-bit AND 32-bit applications\n- Windows 11: 64-bit only (no 32-bit option)\n\nDrivers must match the OS bitness:\n- 32-bit OS requires 32-bit drivers\n- 64-bit OS requires 64-bit drivers\n\nWhere apps are stored in Windows:\n- 64-bit apps: C:\\Program Files\n- 32-bit apps on a 64-bit OS: C:\\Program Files (x86)\n\nCheck your OS: Settings > System > About. System Type shows '64-bit operating system, x64-based processor'.",
+      "whyOnExam": "64-bit can run 32-bit apps; 32-bit cannot run 64-bit apps. Windows 11 is 64-bit only. Drivers must match OS bitness.",
+      "commonTrap": "Assuming a 64-bit OS can only run 64-bit apps. A 64-bit OS runs both. Only a 32-bit OS is restricted to 32-bit.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.10.hardware-requirements",
+      "heading": "Application hardware requirements",
+      "notes": "Before installing any application, verify:\n\nRAM - application lists its own minimum. Add to OS requirements + other running apps. Check Task Manager for current free memory. Insufficient RAM = poor performance or failure to launch.\n\nCPU speed - measured in GHz (gigahertz). 1 GHz = 1 billion cycles per second. Higher demand for video editing, 3D rendering. Low demand for word processing.\n\nStorage space - check how much disk space the installer requires. Data-intensive apps (databases, video projects) may need much more after installation.\n\nGraphics:\n- Integrated graphics: GPU built into the same chip as the CPU. Saves power and space. Adequate for most business tasks.\n- Discrete (dedicated) graphics: separate add-in card. Required for 3D modeling, video editing, gaming. Installed in desktop computers.\n\nCheck requirements against Settings > System > About (RAM, CPU, OS) and Device Manager (GPU).",
+      "whyOnExam": "Integrated vs discrete graphics. Memory requirements are in addition to OS needs. GHz = CPU speed.",
+      "commonTrap": "Adding only the app's RAM requirement without accounting for the OS and other running apps. Check current free RAM in Task Manager, not just total installed.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.10.licensing",
+      "heading": "Application licensing",
+      "notes": "License key - a string entered during or after install to activate the software. Most common method.\n\nHardware token (dongle) - a physical USB device that must be physically connected. The app checks for the token at launch and will not run without it. Common for high-cost niche professional software (e.g., engineering, CAD). Limits piracy because you need the physical hardware.",
+      "whyOnExam": "Hardware token = USB dongle that must be present for the app to run. Common for expensive specialized applications.",
+      "commonTrap": "Treating the hardware token as just another license key. It is a physical device - if lost or stolen, the software becomes unusable.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.10.installation-sources",
+      "heading": "Application distribution and installation sources",
+      "notes": "App store - centralized, curated repository. Microsoft Store, Apple App Store. Updates managed centrally.\n\nManufacturer website - direct download from the software developer. Preferred over third-party aggregators to avoid tampered installers.\n\nPhysical media - CD/DVD-ROM (legacy), USB drive. Used in air-gapped environments (data centers without internet access) or offline deployments.\n\nISO file - disk image containing an entire filesystem (ISO 9660 standard). Mounts as a virtual drive showing all contents. Common for OS installation media. Can be burned to USB.\n\nOS imaging (cloning) - snapshot of an entire deployed OS including patches, apps, and configuration. Used to rapidly deploy multiple identical systems. Works best when target hardware is identical. Ideal for VMs (identical virtual hardware every time). Standard enterprise process: reimage a failed machine instead of rebuilding from scratch.",
+      "whyOnExam": "ISO = disk image. Imaging = cloning OS to multiple machines. Install from manufacturer website (not third party) to avoid tampered installers.",
+      "commonTrap": "Using imaging on different hardware. Image deployed to different hardware will have driver mismatches. VMs sidestep this because the virtual hardware is always identical.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.10.business-considerations",
+      "heading": "Business considerations for application deployment",
+      "notes": "Applications inherit the rights of the logged-in user - they can access any file, share, or network resource the user can. This is why user permissions matter even for legitimate apps.\n\nTest before production:\n- Use a sandbox / test lab before deploying organization-wide.\n- An untested app can overwrite files, break existing software, or destabilize the system.\n- UI changes in upgrades require retraining; document workflow changes.\n\nRisk of upgrades:\n- Upgrade can break existing functionality.\n- Failed OS updates have caused large-scale outages.\n- Always have a rollback plan (backup, snapshot, or previous version media).\n\nInstall only from trusted sources. Third-party downloads may contain modified installers with malware.",
+      "whyOnExam": "Apps run with the logged-in user's rights. Test in sandbox first. Installs from untrusted sources carry malware risk.",
+      "commonTrap": "Thinking apps are isolated. A newly installed app has the same access to files and network shares as the user who installed it.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": ["pm-1202-installing-applications"],
+  "needsReview": false
+}

@@ -2,89 +2,140 @@
   "objective": "1.1",
   "questions": [
     {
-      "id": "1.1.q.template-mc",
+      "id": "1.1.q.001",
       "type": "multiple-choice",
-      "stem": "Template multiple-choice question stem?",
+      "stem": "A user needs to transfer a 6 GB video file from a Windows laptop to a MacBook using a USB flash drive. Which filesystem should the flash drive be formatted with?",
       "choices": [
-        { "id": "a", "text": "Option A" },
-        { "id": "b", "text": "Option B" },
-        { "id": "c", "text": "Option C" },
-        { "id": "d", "text": "Option D" }
+        { "id": "a", "text": "FAT32" },
+        { "id": "b", "text": "NTFS" },
+        { "id": "c", "text": "exFAT" },
+        { "id": "d", "text": "APFS" }
+      ],
+      "correct": "c",
+      "explanation": "exFAT is cross-platform (Windows, Linux, macOS) and supports files larger than 4 GB. It was designed by Microsoft specifically for flash drives.",
+      "trap": "FAT32 is also cross-platform but caps individual files at 4 GB, so a 6 GB video will not fit.",
+      "tags": ["filesystems", "exfat", "fat32"],
+      "sourceTranscript": "pm-1202-file-systems",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.002",
+      "type": "multiple-choice",
+      "stem": "Which workstation OS is built on the Linux kernel but designed so most applications run inside a browser?",
+      "choices": [
+        { "id": "a", "text": "Chrome OS" },
+        { "id": "b", "text": "Ubuntu" },
+        { "id": "c", "text": "Android" },
+        { "id": "d", "text": "macOS" }
+      ],
+      "correct": "a",
+      "explanation": "Chrome OS was built by Google on the Linux kernel, and most applications run inside the Chrome browser.",
+      "trap": "Android is also Linux-based but is a mobile OS, not a workstation OS.",
+      "tags": ["workstation-os", "chrome-os"],
+      "sourceTranscript": "pm-1202-os-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.003",
+      "type": "multiple-choice",
+      "stem": "A developer wants to build iOS apps. Which operating system must they develop on?",
+      "choices": [
+        { "id": "a", "text": "Windows" },
+        { "id": "b", "text": "Linux" },
+        { "id": "c", "text": "macOS" },
+        { "id": "d", "text": "Any OS that supports the Apple SDK" }
+      ],
+      "correct": "c",
+      "explanation": "Apple's Software Developer's Kit for iOS, iPadOS, and macOS apps runs only on macOS. Apps must also be approved by Apple before publication in the App Store.",
+      "trap": "Android apps CAN be developed on Windows, macOS, or Linux. iOS cannot.",
+      "tags": ["mobile-os", "ios", "development"],
+      "sourceTranscript": "pm-1202-os-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.004",
+      "type": "multiple-choice",
+      "stem": "A company needs the lowest possible licensing cost for desktops but is fine handling support themselves. Which OS best fits?",
+      "choices": [
+        { "id": "a", "text": "Windows Pro" },
+        { "id": "b", "text": "Linux" },
+        { "id": "c", "text": "macOS" },
+        { "id": "d", "text": "Chrome OS Enterprise" }
       ],
       "correct": "b",
-      "explanation": "Why B is the correct answer.",
-      "trap": "Why A looks tempting but is wrong.",
-      "tags": ["template"],
-      "weakSpotTags": [],
-      "sourceTranscript": "",
-      "needsReview": true
+      "explanation": "Linux is free with no licensing fees. The company can rely on the community for support since they have stated they will handle support themselves.",
+      "trap": "macOS has no per-seat OS license fee either, but it requires Apple hardware, which has a higher initial cost. The question is about the lowest total cost when support is self-managed.",
+      "tags": ["workstation-os", "linux"],
+      "sourceTranscript": "pm-1202-os-overview",
+      "needsReview": false
     },
     {
-      "id": "1.1.q.template-ms",
-      "type": "multi-select",
-      "stem": "Template multi-select stem. Select all that apply.",
+      "id": "1.1.q.005",
+      "type": "multiple-choice",
+      "stem": "Which filesystem provides self-healing, large-array support, and RAID-like features and is primarily intended for Windows Server environments?",
       "choices": [
-        { "id": "a", "text": "Option A" },
-        { "id": "b", "text": "Option B" },
-        { "id": "c", "text": "Option C" },
-        { "id": "d", "text": "Option D" }
+        { "id": "a", "text": "NTFS" },
+        { "id": "b", "text": "ReFS" },
+        { "id": "c", "text": "XFS" },
+        { "id": "d", "text": "APFS" }
+      ],
+      "correct": "b",
+      "explanation": "ReFS (Resilient File System) is Microsoft's NTFS successor, designed for large arrays with self-healing and RAID-like features. It first appeared in Server 2012.",
+      "trap": "XFS has similar large-array characteristics but is a Linux filesystem, not Windows. NTFS is the Windows default but does not have the self-healing or RAID-like features described.",
+      "tags": ["filesystems", "refs"],
+      "sourceTranscript": "pm-1202-file-systems",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.006",
+      "type": "multiple-choice",
+      "stem": "A technician receives a phone that runs an OS based on Linux, sold by multiple manufacturers, with apps distributed through Google Play and third-party stores. Which OS is on the phone?",
+      "choices": [
+        { "id": "a", "text": "iOS" },
+        { "id": "b", "text": "iPadOS" },
+        { "id": "c", "text": "Android" },
+        { "id": "d", "text": "Chrome OS" }
+      ],
+      "correct": "c",
+      "explanation": "Android is open source, Linux-based, supported by many hardware manufacturers, and is distributed via Google Play plus third-party stores.",
+      "trap": "iOS and iPadOS only run on Apple hardware and only distribute through Apple's App Store. Chrome OS is for desktops/laptops, not phones.",
+      "tags": ["mobile-os", "android"],
+      "sourceTranscript": "pm-1202-os-overview",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.007",
+      "type": "matching",
+      "stem": "Match each filesystem to the OS or device class it is most strongly associated with.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "NTFS", "rightId": "r1", "rightText": "Windows desktop default" },
+        { "leftId": "l2", "leftText": "APFS", "rightId": "r2", "rightText": "macOS 10.12.4+ / iOS / iPadOS" },
+        { "leftId": "l3", "leftText": "ext4", "rightId": "r3", "rightText": "Linux desktop / Android" },
+        { "leftId": "l4", "leftText": "exFAT", "rightId": "r4", "rightText": "Cross-platform flash drives" },
+        { "leftId": "l5", "leftText": "XFS", "rightId": "r5", "rightText": "Linux data-center / high performance" }
+      ],
+      "explanation": "Each pair reflects the default or primary use case shown in the 1.1 objective.",
+      "trap": "APFS is the default for modern macOS only; older macOS used HFS+ (not on this exam). Don't pick APFS for general Linux storage even though both are modern.",
+      "tags": ["filesystems"],
+      "sourceTranscript": "pm-1202-file-systems",
+      "needsReview": false
+    },
+    {
+      "id": "1.1.q.008",
+      "type": "multi-select",
+      "stem": "Which statements about macOS are TRUE? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "It runs only on Apple-manufactured hardware." },
+        { "id": "b", "text": "It is open source." },
+        { "id": "c", "text": "It tends to have higher initial hardware cost than Windows machines." },
+        { "id": "d", "text": "It has more third-party industry support than Windows." }
       ],
       "correct": ["a", "c"],
-      "explanation": "Why A and C are correct.",
-      "tags": ["template"],
-      "weakSpotTags": [],
-      "sourceTranscript": "",
-      "needsReview": true
-    },
-    {
-      "id": "1.1.q.template-order",
-      "type": "ordering",
-      "stem": "Template ordering PBQ. Place the steps in the correct order.",
-      "items": [
-        { "id": "s1", "text": "First step" },
-        { "id": "s2", "text": "Second step" },
-        { "id": "s3", "text": "Third step" }
-      ],
-      "correctOrder": ["s1", "s2", "s3"],
-      "explanation": "Why this order is correct.",
-      "tags": ["template"],
-      "weakSpotTags": [],
-      "sourceTranscript": "",
-      "needsReview": true
-    },
-    {
-      "id": "1.1.q.template-match",
-      "type": "matching",
-      "stem": "Template matching PBQ. Match each item on the left to the correct item on the right.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "Left A", "rightId": "r1", "rightText": "Right A" },
-        { "leftId": "l2", "leftText": "Left B", "rightId": "r2", "rightText": "Right B" },
-        { "leftId": "l3", "leftText": "Left C", "rightId": "r3", "rightText": "Right C" }
-      ],
-      "explanation": "Why these are the correct pairings.",
-      "tags": ["template"],
-      "weakSpotTags": [],
-      "sourceTranscript": "",
-      "needsReview": true
-    },
-    {
-      "id": "1.1.q.template-sort",
-      "type": "sorting",
-      "stem": "Template sorting PBQ. Drag each item into the correct bucket.",
-      "buckets": [
-        { "id": "b1", "label": "Bucket A" },
-        { "id": "b2", "label": "Bucket B" }
-      ],
-      "items": [
-        { "id": "i1", "text": "Item one", "correctBucket": "b1" },
-        { "id": "i2", "text": "Item two", "correctBucket": "b2" },
-        { "id": "i3", "text": "Item three", "correctBucket": "b1" }
-      ],
-      "explanation": "Why each item belongs in its bucket.",
-      "tags": ["template"],
-      "weakSpotTags": [],
-      "sourceTranscript": "",
-      "needsReview": true
+      "explanation": "macOS runs exclusively on Apple hardware (a) and that hardware tends to cost more upfront (c). macOS is closed source. Windows has more third-party industry support because of its larger user base.",
+      "trap": "Choosing (d) because of macOS's perceived quality. Industry support volume follows market share, and Windows has the larger share.",
+      "tags": ["workstation-os", "macos"],
+      "sourceTranscript": "pm-1202-os-overview",
+      "needsReview": false
     }
   ]
 }

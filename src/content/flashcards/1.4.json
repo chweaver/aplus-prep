@@ -1,0 +1,213 @@
+{
+  "objective": "1.4",
+  "cards": [
+    {
+      "id": "1.4.fc.001",
+      "front": "Fastest keyboard shortcut to open Task Manager?",
+      "back": "Ctrl+Shift+Esc.",
+      "tags": ["task-manager"],
+      "sourceTranscript": "pm-1202-task-manager",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.002",
+      "front": "Which Task Manager tab shows applications that auto-launch on login?",
+      "back": "Startup.",
+      "tags": ["task-manager", "startup"],
+      "sourceTranscript": "pm-1202-task-manager",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.003",
+      "front": "Which Task Manager tab shows live 60-second graphs of CPU, memory, disk, network, GPU?",
+      "back": "Performance.",
+      "tags": ["task-manager", "performance"],
+      "sourceTranscript": "pm-1202-task-manager",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.004",
+      "front": "Which Task Manager tab lets you disconnect remote users connected to your machine?",
+      "back": "Users.",
+      "tags": ["task-manager", "users"],
+      "sourceTranscript": "pm-1202-task-manager",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.005",
+      "front": "What does mmc.exe open?",
+      "back": "An empty Microsoft Management Console where you can add snap-ins.",
+      "tags": ["mmc"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.006",
+      "front": "Command to open Event Viewer standalone?",
+      "back": "eventvwr.msc",
+      "tags": ["mmc", "event-viewer"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.007",
+      "front": "Which four Windows log categories does Event Viewer display by default?",
+      "back": "Application, Security, Setup, System.",
+      "tags": ["event-viewer"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.008",
+      "front": "Command to open Disk Management?",
+      "back": "diskmgmt.msc",
+      "tags": ["mmc", "disk-management"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.009",
+      "front": "Command to open Task Scheduler?",
+      "back": "taskschd.msc",
+      "tags": ["mmc", "task-scheduler"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.010",
+      "front": "Command to open Device Manager?",
+      "back": "devmgmt.msc",
+      "tags": ["mmc", "device-manager"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.011",
+      "front": "Command to open Certificate Manager?",
+      "back": "certmgr.msc",
+      "tags": ["mmc", "certificate-manager"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.012",
+      "front": "Command to open Local Users and Groups?",
+      "back": "lusrmgr.msc",
+      "tags": ["mmc", "lusrmgr"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.013",
+      "front": "Command to open Performance Monitor?",
+      "back": "perfmon.msc",
+      "tags": ["mmc", "performance-monitor"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.014",
+      "front": "Difference between gpedit.msc and gpmc.msc?",
+      "back": "gpedit.msc = Local Group Policy Editor (single machine). gpmc.msc = Group Policy Management Console (Active Directory environments).",
+      "tags": ["mmc", "group-policy"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.015",
+      "front": "Two built-in user accounts in Windows (per lusrmgr)?",
+      "back": "Administrator and Guest.",
+      "tags": ["lusrmgr", "users"],
+      "sourceTranscript": "pm-1202-mmc",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.016",
+      "front": "Command to open System Information?",
+      "back": "msinfo32.exe",
+      "tags": ["additional-tools", "msinfo32"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.017",
+      "front": "Command to open Resource Monitor?",
+      "back": "resmon.exe",
+      "tags": ["additional-tools", "resmon"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.018",
+      "front": "Command to open System Configuration?",
+      "back": "msconfig.exe",
+      "tags": ["additional-tools", "msconfig"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.019",
+      "front": "Command to open Disk Cleanup?",
+      "back": "cleanmgr.exe",
+      "tags": ["additional-tools", "cleanmgr"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.020",
+      "front": "Command to open the graphical Disk Defragmenter?",
+      "back": "dfrgui.exe (CLI version is defrag).",
+      "tags": ["additional-tools", "defrag"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.021",
+      "front": "Should you defragment a Solid State Drive (SSD)?",
+      "back": "No. Defragmentation provides no performance benefit on SSDs and wears the drive.",
+      "tags": ["additional-tools", "defrag", "ssd"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.022",
+      "front": "Command to open the Registry Editor?",
+      "back": "regedit.exe",
+      "tags": ["additional-tools", "regedit"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.023",
+      "front": "Name the five top-level registry hives (HKEYs).",
+      "back": "HKEY_CLASSES_ROOT, HKEY_CURRENT_USER, HKEY_LOCAL_MACHINE, HKEY_USERS, HKEY_CURRENT_CONFIG.",
+      "tags": ["regedit"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.024",
+      "front": "Best practice before editing the Windows Registry?",
+      "back": "Export the affected hive (File > Export) so you can restore it if the change breaks something.",
+      "tags": ["regedit", "best-practice"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.025",
+      "front": "What does the System Summary in msinfo32 show?",
+      "back": "OS name and version, processor details, BIOS configuration, boot device, available memory and disk space.",
+      "tags": ["msinfo32"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.fc.026",
+      "front": "In msconfig, which tab now redirects you to Task Manager?",
+      "back": "The Startup tab.",
+      "tags": ["msconfig", "startup"],
+      "sourceTranscript": "pm-1202-additional-tools",
+      "needsReview": false
+    }
+  ]
+}

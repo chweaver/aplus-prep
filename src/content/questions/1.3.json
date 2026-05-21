@@ -1,0 +1,157 @@
+{
+  "objective": "1.3",
+  "questions": [
+    {
+      "id": "1.3.q.001",
+      "type": "multiple-choice",
+      "stem": "A user with a new home laptop wants to encrypt their drive but the system runs Windows 11 Home. Which feature can they use?",
+      "choices": [
+        { "id": "a", "text": "BitLocker" },
+        { "id": "b", "text": "Device Encryption" },
+        { "id": "c", "text": "EFS via Group Policy" },
+        { "id": "d", "text": "They must upgrade to Windows 11 Pro" }
+      ],
+      "correct": "b",
+      "explanation": "Windows 11 Home includes Device Encryption, a consumer-grade equivalent to BitLocker. Recovery info is stored in the user's Microsoft account.",
+      "trap": "BitLocker is NOT available on Home. The exam wants you to know Device Encryption is the Home-edition answer.",
+      "tags": ["features", "device-encryption", "win11"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.002",
+      "type": "multiple-choice",
+      "stem": "A small business needs a Windows edition that can join an Active Directory domain, use BitLocker, and host Remote Desktop sessions. Which is the LEAST expensive option that meets all three needs?",
+      "choices": [
+        { "id": "a", "text": "Windows 11 Home" },
+        { "id": "b", "text": "Windows 11 Pro" },
+        { "id": "c", "text": "Windows 11 Pro for Workstations" },
+        { "id": "d", "text": "Windows 11 Enterprise" }
+      ],
+      "correct": "b",
+      "explanation": "Pro is the lowest tier that supports domain join, BitLocker, and Remote Desktop server. Home lacks all three.",
+      "trap": "Enterprise also has the features but requires volume licensing - more expensive than Pro.",
+      "tags": ["editions", "win11", "pro"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.003",
+      "type": "multiple-choice",
+      "stem": "A workstation needs 4 TB of RAM for a data-analysis workload. Which Windows edition is the MINIMUM that supports this?",
+      "choices": [
+        { "id": "a", "text": "Windows 11 Pro (2 TB max)" },
+        { "id": "b", "text": "Windows 10 Pro for Workstations (6 TB max)" },
+        { "id": "c", "text": "Windows 11 Home (128 GB max)" },
+        { "id": "d", "text": "Any 64-bit Windows supports unlimited RAM" }
+      ],
+      "correct": "b",
+      "explanation": "Windows 10 Pro for Workstations supports up to 6 TB of RAM. Pro caps at 2 TB; Home caps at 128 GB.",
+      "trap": "(d) is false - every edition has its own RAM cap.",
+      "tags": ["editions", "ram"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.004",
+      "type": "multiple-choice",
+      "stem": "An admin needs to apply group policies to control settings on a single Windows 11 machine without using a domain controller. Which tool do they open?",
+      "choices": [
+        { "id": "a", "text": "gpmc.msc" },
+        { "id": "b", "text": "gpedit.msc" },
+        { "id": "c", "text": "regedit.exe" },
+        { "id": "d", "text": "lusrmgr.msc" }
+      ],
+      "correct": "b",
+      "explanation": "gpedit.msc opens the Local Group Policy Editor for the current machine. Available in Pro and higher.",
+      "trap": "gpmc.msc is the Group Policy Management Console for an Active Directory environment. The question says 'without a domain controller'.",
+      "tags": ["features", "gpedit"],
+      "sourceTranscript": "pm-1202-windows-features",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.005",
+      "type": "multiple-choice",
+      "stem": "A user in Germany received a 'Windows 11 Pro N' license. After installing, video files won't play in any Microsoft app. What is the cause?",
+      "choices": [
+        { "id": "a", "text": "Pro N requires a separate codec license from Microsoft" },
+        { "id": "b", "text": "N editions ship without media playback utilities; install the Media Feature Pack" },
+        { "id": "c", "text": "Windows 11 Pro N is a 32-bit edition and the video files are 64-bit" },
+        { "id": "d", "text": "Pro N is region-locked and the videos are from outside Germany" }
+      ],
+      "correct": "b",
+      "explanation": "Windows N editions ship without Windows Media Player and other multimedia utilities. Install the Media Feature Pack via Settings > Apps > Optional Features.",
+      "trap": "Other answers invent restrictions that don't exist. The N is purely about bundled media components.",
+      "tags": ["editions", "n-version"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.006",
+      "type": "multiple-choice",
+      "stem": "A help desk tech needs to remotely control a colleague's desktop running Windows 11 Home for troubleshooting. The remote machine should host the session. What is the issue?",
+      "choices": [
+        { "id": "a", "text": "Windows 11 Home cannot host an RDP session; it can only be a client" },
+        { "id": "b", "text": "RDP requires BitLocker to be enabled" },
+        { "id": "c", "text": "Both endpoints must be on the same domain" },
+        { "id": "d", "text": "Windows Defender Firewall blocks RDP by default and must be disabled" }
+      ],
+      "correct": "a",
+      "explanation": "RDP server (host) is a Pro+ feature. Home can only initiate RDP sessions as a client, not host them.",
+      "trap": "Disabling the firewall isn't required to use RDP; the firewall has explicit RDP rules.",
+      "tags": ["features", "rdp"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.007",
+      "type": "matching",
+      "stem": "Match each Windows feature to the LOWEST edition that supports it.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "Microsoft Account integration", "rightId": "r1", "rightText": "Home" },
+        { "leftId": "l2", "leftText": "BitLocker (full)", "rightId": "r2", "rightText": "Pro" },
+        { "leftId": "l3", "leftText": "Hyper-V virtualization", "rightId": "r3", "rightText": "Pro (Windows 11)" },
+        { "leftId": "l4", "leftText": "AppLocker (app allow/block)", "rightId": "r4", "rightText": "Enterprise" },
+        { "leftId": "l5", "leftText": "ReFS on a desktop OS", "rightId": "r5", "rightText": "Enterprise / Pro for Workstations" }
+      ],
+      "explanation": "Each row shows the minimum edition with that feature. Memorizing these is the heart of 1.3.",
+      "tags": ["editions", "features"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.008",
+      "type": "multi-select",
+      "stem": "Which statements about Windows 11 are TRUE? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "Drops 32-bit CPU support" },
+        { "id": "b", "text": "Includes Windows Copilot AI integration" },
+        { "id": "c", "text": "Home edition can join an Active Directory domain" },
+        { "id": "d", "text": "Requires TPM 2.0 and Secure Boot" }
+      ],
+      "correct": ["a", "b", "d"],
+      "explanation": "Windows 11 is 64-bit only (a), includes Copilot (b), and requires TPM 2.0 + Secure Boot (d). Home cannot join a domain - that's still a Pro+ feature.",
+      "trap": "(c) is the consistent gate across BOTH Windows 10 and Windows 11 Home. Home never joins domains.",
+      "tags": ["win11", "features"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.009",
+      "type": "multiple-choice",
+      "stem": "Which Windows edition is the LOWEST that supports the Resilient File System (ReFS) for desktop use in Windows 11?",
+      "choices": [
+        { "id": "a", "text": "Home" },
+        { "id": "b", "text": "Pro" },
+        { "id": "c", "text": "Enterprise" },
+        { "id": "d", "text": "Windows Server only" }
+      ],
+      "correct": "c",
+      "explanation": "Windows 11 Enterprise supports ReFS on the desktop side, matching what's in Windows Server.",
+      "trap": "Pro for Workstations is the Windows 10 path to ReFS; on Windows 11 it's Enterprise.",
+      "tags": ["editions", "refs", "win11"],
+      "sourceTranscript": "pm-1202-overview-of-windows",
+      "needsReview": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "objective": "1.11",
+  "title": "Identify common features and tools of the macOS/desktop OS",
+  "domain": 1,
+  "estimatedMinutes": 8,
+  "subtopics": [
+    {
+      "id": "1.11.cloud-productivity-overview",
+      "heading": "Cloud productivity services overview",
+      "notes": "Cloud services move infrastructure off-premises to third-party data centers. Organizations access services over the internet.\n\nBenefits:\n- Scalability: add storage, CPU, bandwidth on demand without hardware purchases\n- Redundancy: cloud providers build in multiple connections and data copies\n- Availability: data accessible from anywhere with internet access\n- Built-in backup: cloud providers maintain recent backups; restore is straightforward\n- Physical + logical security managed by the cloud provider\n\nCloud email examples: Microsoft 365 (Outlook in the cloud), Google Workspace. Replaced on-premises mail servers for most organizations.\n\nCloud storage (file sync): Google Drive, Microsoft OneDrive. Files stored locally are automatically synced to the cloud and mirrored across all devices running the same client. Files can also be stored entirely in the cloud and retrieved on demand.",
+      "whyOnExam": "Cloud = scalable, redundant, anywhere access. Examples: Microsoft 365, Google Workspace. OneDrive/Google Drive = file sync services.",
+      "commonTrap": "Assuming cloud means less security. Cloud providers invest heavily in physical and logical security - often more than a small business can afford on-premises.",
+      "weakSpotTags": ["cloud-models"]
+    },
+    {
+      "id": "1.11.collaboration",
+      "heading": "Cloud collaboration tools",
+      "notes": "Modern cloud platforms enable:\n- Real-time document co-editing: multiple users edit the same Word/Docs/Sheets file simultaneously; all see changes instantly\n- Video conferencing: camera-based remote meetings\n- Presentations and screen sharing over the cloud\n- Instant messaging: synchronized across all devices via the cloud\n\nResult: users can work from anywhere in the world with only a laptop and internet access.",
+      "whyOnExam": "Real-time co-editing is a defining cloud collaboration feature. Instant messaging is cloud-synchronized.",
+      "commonTrap": "Thinking cloud collaboration requires a VPN to a corporate network. Modern tools work over standard internet.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.11.identity-sync",
+      "heading": "Cloud identity and synchronization",
+      "notes": "Cloud identity providers manage user accounts distributed across multiple data centers globally.\n\nExamples: Microsoft Entra ID (formerly Azure AD), Okta, Google Identity.\n\nHow it works:\n- User directory exists in the cloud, not just one on-premises server.\n- Changes to a user account (add, modify, disable) are pushed to all identity providers automatically.\n- Enables single sign-on (SSO): one set of credentials works across cloud apps and services.\n\nBenefit: no need to add/remove a user in multiple systems. One change propagates everywhere.",
+      "whyOnExam": "Microsoft Entra ID, Okta, Google Identity = cloud identity providers. Changes propagate across all providers automatically.",
+      "commonTrap": "Confusing Entra ID with traditional on-premises Active Directory. Entra ID is the cloud version and does not require a domain controller.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.11.cloud-licensing",
+      "heading": "Cloud-based license management",
+      "notes": "Traditional licensing: physical license keys or activation codes managed per-machine.\n\nCloud licensing:\n- All license keys managed from a centralized cloud portal.\n- Assign or reassign licenses to specific users.\n- Visibility into all licenses: see which users are active and which are not.\n- Reassign unused licenses rather than buying more.\n- No physical media or paper licenses.\n\nExample: admin notices 20 users haven't logged into the app for 90 days. Reassign their licenses to new employees instead of purchasing new seats.",
+      "whyOnExam": "Cloud licensing = centralized management, easy reassignment, no physical keys.",
+      "commonTrap": "Assuming cloud licensing always costs more. Centralized visibility enables license harvesting (reclaiming unused seats), which can reduce cost.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": ["pm-1202-cloud-productivity"],
+  "needsReview": false
+}

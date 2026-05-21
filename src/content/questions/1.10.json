@@ -1,0 +1,124 @@
+{
+  "objective": "1.10",
+  "questions": [
+    {
+      "id": "1.10.q.001",
+      "type": "multiple-choice",
+      "stem": "A 32-bit application must run on a new 64-bit Windows workstation. Is this possible?",
+      "choices": [
+        { "id": "a", "text": "No - 64-bit OS cannot run 32-bit apps" },
+        { "id": "b", "text": "Yes - 64-bit OS runs both 32-bit and 64-bit apps" },
+        { "id": "c", "text": "Only if the app is reinstalled with a 64-bit installer" },
+        { "id": "d", "text": "Only on Windows 10, not Windows 11" }
+      ],
+      "correct": "b",
+      "explanation": "A 64-bit OS can run both 32-bit and 64-bit applications. 32-bit apps on a 64-bit Windows are stored in Program Files (x86).",
+      "trap": "(a) reverses the rule. Only a 32-bit OS is restricted - it cannot run 64-bit apps.",
+      "tags": ["32-64-bit"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.002",
+      "type": "multiple-choice",
+      "stem": "A technician installs a 64-bit OS on a workstation. Which type of hardware driver must be installed for the NIC?",
+      "choices": [
+        { "id": "a", "text": "32-bit driver, as it is backward compatible" },
+        { "id": "b", "text": "64-bit driver, to match the OS architecture" },
+        { "id": "c", "text": "Either 32-bit or 64-bit - drivers are universal" },
+        { "id": "d", "text": "The OS installs the correct driver automatically" }
+      ],
+      "correct": "b",
+      "explanation": "Drivers must match the OS architecture. A 64-bit OS requires 64-bit drivers. 32-bit drivers are not compatible.",
+      "trap": "(a) Drivers are not backward compatible across architectures. (d) Auto driver detection doesn't guarantee the right bitness.",
+      "tags": ["32-64-bit", "drivers"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.003",
+      "type": "multiple-choice",
+      "stem": "A user needs to run 3D CAD modeling software. The integrated graphics in their laptop are not supported by the application. What is the solution?",
+      "choices": [
+        { "id": "a", "text": "Upgrade to a 64-bit OS" },
+        { "id": "b", "text": "Add more RAM" },
+        { "id": "c", "text": "Install a discrete (dedicated) graphics card" },
+        { "id": "d", "text": "Increase the paging file size" }
+      ],
+      "correct": "c",
+      "explanation": "Integrated graphics are built into the CPU and insufficient for demanding 3D applications. A discrete graphics card provides the separate GPU power required.",
+      "trap": "Adding RAM or paging file won't fix a graphics shortfall. 64-bit OS has no bearing on GPU capability.",
+      "tags": ["hardware", "graphics"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.004",
+      "type": "multiple-choice",
+      "stem": "A high-end engineering application will not launch unless a specific USB device is connected to the computer. What type of licensing is this?",
+      "choices": [
+        { "id": "a", "text": "Subscription license" },
+        { "id": "b", "text": "Volume license" },
+        { "id": "c", "text": "Hardware token (dongle)" },
+        { "id": "d", "text": "OEM license" }
+      ],
+      "correct": "c",
+      "explanation": "A hardware token (dongle) is a physical USB device the application checks for at launch. Without it, the software will not run. Common for expensive professional applications.",
+      "trap": "Subscription and volume licenses are software-only and managed online or with keys, not physical devices.",
+      "tags": ["licensing"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.005",
+      "type": "multiple-choice",
+      "stem": "An IT team needs to deploy the same OS configuration to 200 new identical workstations. What is the most efficient method?",
+      "choices": [
+        { "id": "a", "text": "Install from the Windows ISO on a USB drive at each workstation" },
+        { "id": "b", "text": "Use an OS image (clone) to deploy the fully configured system" },
+        { "id": "c", "text": "Remote Desktop into each machine and install manually" },
+        { "id": "d", "text": "Use the Windows upgrade assistant" }
+      ],
+      "correct": "b",
+      "explanation": "OS imaging creates one fully configured base image (OS + patches + apps + settings) and deploys it to multiple machines in minutes. Hardware must be identical or use virtual machines.",
+      "trap": "Manual USB install at each workstation would take hours per machine. Imaging reduces this to minutes with consistent results.",
+      "tags": ["installation", "imaging"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.006",
+      "type": "multiple-choice",
+      "stem": "A user installs a new application. The next day, several shared network folders that the user had mapped are showing unexpected changes. What is the most likely explanation?",
+      "choices": [
+        { "id": "a", "text": "The network administrator changed the share permissions" },
+        { "id": "b", "text": "The application ran with the user's rights and accessed the shared folders" },
+        { "id": "c", "text": "Windows Update modified the network configuration" },
+        { "id": "d", "text": "The application requires administrator rights to use network shares" }
+      ],
+      "correct": "b",
+      "explanation": "An installed application inherits the logged-in user's rights and permissions, including access to mapped network drives. An untested or malicious app can modify, delete, or read anything the user can.",
+      "trap": "Many users assume apps are sandboxed. They are not - they run with full user-level access to all resources the user has.",
+      "tags": ["security", "permissions"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.007",
+      "type": "multi-select",
+      "stem": "Which of the following are valid sources for installing an application? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "Download directly from the software manufacturer's website" },
+        { "id": "b", "text": "Install from the OS's official app store" },
+        { "id": "c", "text": "Install from a USB drive in an air-gapped environment" },
+        { "id": "d", "text": "Download from any third-party site for faster access" }
+      ],
+      "correct": ["a", "b", "c"],
+      "explanation": "Trusted sources include the manufacturer's website, official app stores, and local media. Third-party download sites risk tampered installers containing malware.",
+      "trap": "(d) Third-party sites are a security risk even if the download looks legitimate. Stick to official sources.",
+      "tags": ["security", "installation"],
+      "sourceTranscript": "pm-1202-installing-applications",
+      "needsReview": false
+    }
+  ]
+}

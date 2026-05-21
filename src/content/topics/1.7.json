@@ -1,0 +1,58 @@
+{
+  "objective": "1.7",
+  "title": "Given a scenario, configure Microsoft Windows networking features on a client/desktop",
+  "domain": 1,
+  "estimatedMinutes": 16,
+  "subtopics": [
+    {
+      "id": "1.7.workgroup-vs-domain",
+      "heading": "Workgroup vs domain",
+      "notes": "Workgroup\n- Each device is standalone\n- Each device keeps its own usernames and passwords\n- Sharing across devices means duplicating credentials\n- Typical for home networks\n\nWindows domain (Active Directory)\n- One central database of users, devices, printers, permissions\n- One set of credentials per user, used across every domain-joined device\n- IT admins manage everything from one place\n- Requires a domain controller (separate server). Not used at home\n- Windows Home cannot join a domain; needs Pro or higher\n\nJoining a domain:\n- Settings > System > About > Domain or Workgroup > Change\n- Or Control Panel > System > Change settings\n- Need domain admin credentials with rights to add a computer to the domain",
+      "whyOnExam": "If the scenario mentions central IT, single sign-on, or thousands of devices, the answer involves a domain (Active Directory). Home environments stay on workgroups.",
+      "commonTrap": "Trying to domain-join a Windows Home machine. The option is grayed out / unavailable - Home cannot join AD.",
+      "weakSpotTags": ["active-directory"]
+    },
+    {
+      "id": "1.7.shares-and-mapped-drives",
+      "heading": "Shared resources and mapped drives",
+      "notes": "A Windows share = a file, folder, or printer made available on the network.\n\nHidden / administrative shares\n- Append a $ to the share name to hide it from the browse list\n- ADMIN$, C$, IPC$ are built-in administrative shares\n- 'Hidden' only means it won't show in pull-down lists. Anyone who knows the path can still connect\n\nView local shares: Computer Management > Shared Folders\n\nMap a network drive:\n- File Explorer > Three dots > Map network drive\n- Pick a drive letter, enter \\\\server\\share, optionally reconnect at sign-in, optionally use different credentials\n- Or run net use H: \\\\server\\share at the command line\n- For share names with spaces, quote the path: net use H: \"\\\\server\\Gate Room\"\n\nDisconnect: three dots or right-click in File Explorer.",
+      "whyOnExam": "$ at the end means hidden share. UNC path format is \\\\server\\share. net use H: \\\\server\\share is the CLI map command.",
+      "commonTrap": "Assuming hidden shares are secured by hiding. They're not - users who know the path can still connect. Use permissions for actual security.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.7.firewall",
+      "heading": "Windows Defender Firewall",
+      "notes": "Built-in stateful firewall, on by default.\n\nSeparate rule sets per profile:\n- Private network\n- Public network (most restrictive)\n- Domain network (when joined to AD)\n\nBasic config (Control Panel > Windows Defender Firewall): turn on/off per profile, block all incoming (even allowed rules), notify on blocked apps.\n\nAdvanced rules (Windows Defender Firewall with Advanced Security):\n- Inbound rules - what is allowed IN\n- Outbound rules - what is allowed OUT\n- Connection security rules - IPsec\n- Monitoring - live status\n\nNew rule wizard (right-click > New Rule):\n1. Rule type: Program, Port, Predefined, Custom\n2. Protocol + port (e.g. TCP 80)\n3. Local + remote IP scope\n4. Action: Allow / Allow if secure / Block\n5. Profiles to apply to (Domain / Private / Public)\n6. Name + description\n\nExample: 'Block unencrypted web traffic' = inbound rule, TCP, local port 80, action Block.",
+      "whyOnExam": "Know the rule-creation steps and that the profile is automatic based on the network you're connected to. Block-by-port is the right answer when no specific app needs to be blocked.",
+      "commonTrap": "Disabling the firewall to fix a connectivity issue. Add an inbound rule for the specific port or app instead.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.7.ip-config",
+      "heading": "Client IP configuration",
+      "notes": "DHCP (Dynamic Host Configuration Protocol)\n- Default for almost all client OSes. Server hands out IP, mask, gateway, DNS\n- Lease has a duration; client renews periodically\n\nAPIPA (Automatic Private IP Addressing)\n- Fallback when DHCP is unavailable AND no static address is set\n- Range: 169.254.1.0 through 169.254.254.255\n- Also called 'link-local' - LAN-only, no internet\n- 169.254.x.x in ipconfig = DHCP failed\n\nStatic IP\n- Manually configured on the client OR\n- DHCP reservation tied to the device's MAC (manages from the server side, recommended)\n\nRequired settings for any IP config:\n- IP address (unique on the subnet)\n- Subnet mask (defines the subnet)\n- Default gateway (router for off-subnet traffic)\n- DNS server (resolves names to IPs)\n\nLoopback address: 127.0.0.1 (any 127.x.x.x). Tests the local TCP/IP stack without leaving the device.\n\nAlternate Configuration tab\n- Lets a client try DHCP first, fall back to a specific manual config if DHCP fails (instead of APIPA)\n- Useful for laptops that move between DHCP networks and a fixed lab",
+      "whyOnExam": "169.254.x.x = DHCP failed. 127.0.0.1 = loopback. Memorize both ranges and what they mean diagnostically.",
+      "commonTrap": "Confusing APIPA (169.254.x.x) with link-local IPv6 (fe80::/10). Both are 'link-local' but the IPv4 range is the one tested by 220-1202.",
+      "weakSpotTags": []
+    },
+    {
+      "id": "1.7.connections-types",
+      "heading": "Network connection types",
+      "notes": "Wired Ethernet - cable into NIC. Fastest, always the default if multiple connections are active.\n\nWireless (Wi-Fi)\n- SSID = wireless network name\n- Security type: WPA2 / WPA3 (personal uses pre-shared key PSK, enterprise uses 802.1X with central auth)\n- Encryption: TKIP (legacy WPA1) or AES (WPA2 / WPA3). WPA2 / WPA3 always use AES\n\nVPN (Virtual Private Network)\n- Client software on laptop encrypts traffic, sends through a public network\n- VPN concentrator on the corporate side decrypts and forwards\n- Set up via Network and Sharing Center > Set up a new connection > Connect to a workplace\n- Often paired with MFA (smart card = something you have)\n\nWWAN (Wireless Wide Area Network)\n- Cellular: hardware adapter, USB modem, or smartphone tether / hotspot\n- May require third-party software for the hardware",
+      "whyOnExam": "WPA2 / WPA3 = always AES. TKIP is the legacy WPA1 cipher and is the trap answer. Wired is the default route when multiple connections coexist.",
+      "commonTrap": "Picking TKIP for a modern WPA2 / WPA3 deployment. The exam consistently tests AES as the only correct cipher for WPA2 / WPA3.",
+      "weakSpotTags": ["tkip-vs-aes"]
+    },
+    {
+      "id": "1.7.proxy-profiles-metering",
+      "heading": "Proxy, network profile, metered connection",
+      "notes": "Proxy settings\n- Sits between you and the internet, makes requests on your behalf\n- Configure: Control Panel > Internet Options > Connections > LAN Settings, OR Settings > Network and Internet > Proxy\n- Auto-discover, script URL, or manual server / port\n- Exceptions list lets specific apps bypass the proxy\n\nNetwork profile (per connection)\n- Private: home / work, file sharing typically allowed\n- Public: coffee shop / hotel, NO inbound, NO file sharing - safest default\n- Domain: appears when joined to AD\n\nWhen you connect to a new network, Windows asks if it is private or public; this choice maps to firewall + sharing behavior.\n\nMetered connection\n- Tell Windows the link costs money or has data caps\n- Reduces background data: throttles Windows Update, OneDrive sync, app updates\n- Set per connection: Settings > Network and Internet > [adapter] > Metered connection toggle\n- Can set a data limit and reset cycle",
+      "whyOnExam": "If a scenario mentions cellular hotspot or a capped link, metered connection is the answer. Public profile is the safest answer for an untrusted Wi-Fi.",
+      "commonTrap": "Marking a coffee shop network as Private out of habit. Public is correct - Public disables file sharing and tightens inbound rules.",
+      "weakSpotTags": []
+    }
+  ],
+  "sources": ["pm-1202-windows-network-tech", "pm-1202-windows-firewall", "pm-1202-windows-ip-config", "pm-1202-windows-network-connections"],
+  "needsReview": false
+}

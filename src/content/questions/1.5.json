@@ -1,0 +1,176 @@
+{
+  "objective": "1.5",
+  "questions": [
+    {
+      "id": "1.5.q.001",
+      "type": "multiple-choice",
+      "stem": "A technician needs to check for bad sectors on a hard drive and recover any readable data from them. Which command should they run?",
+      "choices": [
+        { "id": "a", "text": "chkdsk" },
+        { "id": "b", "text": "chkdsk /f" },
+        { "id": "c", "text": "chkdsk /r" },
+        { "id": "d", "text": "format /q" }
+      ],
+      "correct": "c",
+      "explanation": "chkdsk /r locates bad sectors and recovers readable data, and implies /f.",
+      "trap": "chkdsk /f only fixes file system errors; it does not scan sectors.",
+      "tags": ["disk", "chkdsk"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.002",
+      "type": "multiple-choice",
+      "stem": "A user reports a corporate web app times out intermittently. Other internal sites work fine. Which command BEST identifies where in the network path the slowdown happens?",
+      "choices": [
+        { "id": "a", "text": "ping app.corp.local" },
+        { "id": "b", "text": "ipconfig /all" },
+        { "id": "c", "text": "pathping app.corp.local" },
+        { "id": "d", "text": "nslookup app.corp.local" }
+      ],
+      "correct": "c",
+      "explanation": "pathping maps the path AND runs per-hop statistics, so you can see which hop is dropping packets or adding latency.",
+      "trap": "ping confirms reachability but does not tell you WHERE the problem is on the path.",
+      "tags": ["network", "pathping"],
+      "sourceTranscript": "pm-1202-windows-network-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.003",
+      "type": "multiple-choice",
+      "stem": "Suspecting malware, a tech wants to see which Windows executables are responsible for each open network connection. Which command?",
+      "choices": [
+        { "id": "a", "text": "netstat -a" },
+        { "id": "b", "text": "netstat -n" },
+        { "id": "c", "text": "netstat -b" },
+        { "id": "d", "text": "ipconfig /displaydns" }
+      ],
+      "correct": "c",
+      "explanation": "netstat -b shows the executable that owns each connection. Requires elevation.",
+      "trap": "netstat -a shows all connections including listening, but does not map them to executables.",
+      "tags": ["network", "netstat"],
+      "sourceTranscript": "pm-1202-windows-network-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.004",
+      "type": "multiple-choice",
+      "stem": "After a tech edits a Group Policy at the domain controller, the change is not visible on a workstation. The user is logged in. What is the fastest way to apply the new policy without forcing a logout?",
+      "choices": [
+        { "id": "a", "text": "Run sfc /scannow on the workstation" },
+        { "id": "b", "text": "Run gpupdate /force on the workstation" },
+        { "id": "c", "text": "Run gpresult /r on the workstation" },
+        { "id": "d", "text": "Reboot the domain controller" }
+      ],
+      "correct": "b",
+      "explanation": "gpupdate /force reapplies all group policies immediately. gpresult /r only reports what is currently applied; it doesn't refresh anything.",
+      "trap": "gpresult shows applied policies; it does NOT refresh them.",
+      "tags": ["os-management", "gpupdate", "group-policy"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.005",
+      "type": "multiple-choice",
+      "stem": "Critical Windows OS files appear to have been replaced by an installer. Which command can verify and repair the OS files?",
+      "choices": [
+        { "id": "a", "text": "sfc /scannow" },
+        { "id": "b", "text": "chkdsk /r" },
+        { "id": "c", "text": "diskpart" },
+        { "id": "d", "text": "gpresult /r" }
+      ],
+      "correct": "a",
+      "explanation": "sfc /scannow (System File Checker) verifies and replaces corrupted or modified protected Windows files. Log written to cbs.log.",
+      "trap": "chkdsk /r examines the disk for bad sectors; it does not verify OS file integrity.",
+      "tags": ["os-management", "sfc"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.006",
+      "type": "multiple-choice",
+      "stem": "A scheduled overnight script must copy a 50 GB archive to a remote site over an unreliable link. Which utility is the BEST choice?",
+      "choices": [
+        { "id": "a", "text": "copy /v" },
+        { "id": "b", "text": "robocopy" },
+        { "id": "c", "text": "xcopy" },
+        { "id": "d", "text": "diskpart" }
+      ],
+      "correct": "b",
+      "explanation": "robocopy ('robust copy') automatically retries failed segments and supports bandwidth throttling - exactly what an unreliable WAN link needs.",
+      "trap": "copy /v verifies, but a single dropped packet still fails the transfer with no retry.",
+      "tags": ["file-management", "robocopy"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.007",
+      "type": "multiple-choice",
+      "stem": "Before issuing a remote shutdown command, a technician wants to make absolutely sure they are connected to the correct machine. Which command confirms the machine identity?",
+      "choices": [
+        { "id": "a", "text": "winver" },
+        { "id": "b", "text": "whoami" },
+        { "id": "c", "text": "hostname" },
+        { "id": "d", "text": "ipconfig" }
+      ],
+      "correct": "c",
+      "explanation": "hostname prints the local computer name. The classic sanity check before destructive commands on a remote session.",
+      "trap": "whoami prints the user, not the machine. winver shows the OS version.",
+      "tags": ["informational", "hostname"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.008",
+      "type": "matching",
+      "stem": "Match each Windows network command to its primary purpose.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "ipconfig", "rightId": "r1", "rightText": "Show IP / subnet / gateway / DNS for each adapter" },
+        { "leftId": "l2", "leftText": "ping", "rightId": "r2", "rightText": "Test reachability via ICMP echo" },
+        { "leftId": "l3", "leftText": "tracert", "rightId": "r3", "rightText": "Map the routers between you and a destination" },
+        { "leftId": "l4", "leftText": "nslookup", "rightId": "r4", "rightText": "Query DNS for a name or address" },
+        { "leftId": "l5", "leftText": "net use", "rightId": "r5", "rightText": "Map a network share to a drive letter" }
+      ],
+      "explanation": "These five are the Windows networking CLI staples. Memorize what symptom each one diagnoses.",
+      "tags": ["network"],
+      "sourceTranscript": "pm-1202-windows-network-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.009",
+      "type": "ordering",
+      "stem": "A user on a workstation reports they cannot reach an internal web app. Order these troubleshooting commands in the sequence that builds from local config out to the path.",
+      "items": [
+        { "id": "s1", "text": "ipconfig /all (confirm IP, gateway, DNS)" },
+        { "id": "s2", "text": "ping the default gateway" },
+        { "id": "s3", "text": "nslookup the app's hostname" },
+        { "id": "s4", "text": "ping the app's IP address" },
+        { "id": "s5", "text": "tracert or pathping to the app to see where the path breaks" }
+      ],
+      "correctOrder": ["s1", "s2", "s3", "s4", "s5"],
+      "explanation": "Start local (own config), then prove the gateway works, then prove DNS works, then prove the destination is reachable, then map the path.",
+      "trap": "Jumping straight to tracert. If DNS is broken, tracert by name will fail in a misleading way.",
+      "tags": ["network", "troubleshooting"],
+      "weakSpotTags": ["what-first"],
+      "sourceTranscript": "pm-1202-windows-network-cli",
+      "needsReview": false
+    },
+    {
+      "id": "1.5.q.010",
+      "type": "multi-select",
+      "stem": "Which of the following commands REQUIRE administrator privileges? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "chkdsk /f" },
+        { "id": "b", "text": "ipconfig" },
+        { "id": "c", "text": "format C:" },
+        { "id": "d", "text": "netstat -b" }
+      ],
+      "correct": ["a", "c", "d"],
+      "explanation": "chkdsk /f, format, and netstat -b all need elevation. ipconfig (read-only) does not.",
+      "trap": "ipconfig alone is read-only and works as a standard user. Anything that modifies state or reads protected info typically needs admin.",
+      "tags": ["elevation"],
+      "sourceTranscript": "pm-1202-windows-cli",
+      "needsReview": false
+    }
+  ]
+}

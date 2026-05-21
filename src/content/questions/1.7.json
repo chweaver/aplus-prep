@@ -1,0 +1,211 @@
+{
+  "objective": "1.7",
+  "questions": [
+    {
+      "id": "1.7.q.001",
+      "type": "multiple-choice",
+      "stem": "A user with Windows Home tries to join the company Active Directory domain but the option is unavailable. What is the cause?",
+      "choices": [
+        { "id": "a", "text": "The domain controller is unreachable" },
+        { "id": "b", "text": "Windows Home cannot join an Active Directory domain" },
+        { "id": "c", "text": "The user lacks local admin rights" },
+        { "id": "d", "text": "The workgroup name conflicts with the domain name" }
+      ],
+      "correct": "b",
+      "explanation": "Windows Home does not support Active Directory domain join. The option is grayed out. The machine must be upgraded to Pro or higher.",
+      "trap": "The other options are possible in theory but the scenario says the option is unavailable - that is the Home edition limitation.",
+      "tags": ["domain", "editions"],
+      "weakSpotTags": ["active-directory"],
+      "sourceTranscript": "pm-1202-windows-network-tech",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.002",
+      "type": "multiple-choice",
+      "stem": "A share named 'Payroll$' is created on a file server. A contractor knows the server name. What is TRUE about this share?",
+      "choices": [
+        { "id": "a", "text": "The contractor cannot connect because $ shares require domain credentials" },
+        { "id": "b", "text": "The share is invisible in Network browse lists but accessible via direct UNC path if permissions allow" },
+        { "id": "c", "text": "The $ suffix encrypts the share contents in transit" },
+        { "id": "d", "text": "The share is completely hidden from all users including administrators" }
+      ],
+      "correct": "b",
+      "explanation": "A $ share is only hidden from the browse list. Anyone who knows the UNC path (\\\\server\\Payroll$) can attempt to connect - permissions control whether they succeed.",
+      "trap": "Hiding does not equal securing. Use NTFS/share permissions for actual access control.",
+      "tags": ["shares", "hidden"],
+      "sourceTranscript": "pm-1202-windows-network-tech",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.003",
+      "type": "multiple-choice",
+      "stem": "A technician needs to map a network drive to the share \\\\filesvr\\Reports using the command line. Which command is correct?",
+      "choices": [
+        { "id": "a", "text": "net share R: \\\\filesvr\\Reports" },
+        { "id": "b", "text": "net use R: \\\\filesvr\\Reports" },
+        { "id": "c", "text": "map R: \\\\filesvr\\Reports" },
+        { "id": "d", "text": "netsh add drive R: \\\\filesvr\\Reports" }
+      ],
+      "correct": "b",
+      "explanation": "net use maps a drive letter to a UNC share path. net share is for creating shares on the local machine, not mapping remote ones.",
+      "trap": "net share vs net use: 'share' exposes local resources, 'use' connects to remote ones.",
+      "tags": ["shares", "net-use"],
+      "sourceTranscript": "pm-1202-windows-network-tech",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.004",
+      "type": "multiple-choice",
+      "stem": "A Windows 11 firewall rule must block all unencrypted HTTP traffic arriving on TCP port 80. Which firewall component and action should the technician use?",
+      "choices": [
+        { "id": "a", "text": "Outbound rule, action: Block, protocol: TCP, port: 80" },
+        { "id": "b", "text": "Inbound rule, action: Block, protocol: TCP, port: 80" },
+        { "id": "c", "text": "Connection security rule, action: Block, protocol: TCP, port: 80" },
+        { "id": "d", "text": "Inbound rule, action: Allow if secure, protocol: UDP, port: 80" }
+      ],
+      "correct": "b",
+      "explanation": "Blocking unsolicited inbound HTTP requires an inbound rule, TCP protocol, port 80, action Block. Outbound rules control traffic leaving the machine.",
+      "trap": "Connection security rules configure IPsec, not simple port blocking.",
+      "tags": ["firewall", "inbound"],
+      "sourceTranscript": "pm-1202-windows-firewall",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.005",
+      "type": "multiple-choice",
+      "stem": "A workstation running ipconfig shows an IP of 169.254.43.22. What is the MOST likely cause?",
+      "choices": [
+        { "id": "a", "text": "A static IP was manually configured in this range" },
+        { "id": "b", "text": "The DHCP server is unreachable and the device self-assigned an APIPA address" },
+        { "id": "c", "text": "The device is using IPv6 link-local addressing" },
+        { "id": "d", "text": "The DNS server failed to respond" }
+      ],
+      "correct": "b",
+      "explanation": "169.254.x.x is the APIPA (Automatic Private IP Addressing) range, assigned automatically when DHCP is unavailable. The technician should investigate the DHCP server and network connectivity.",
+      "trap": "(c) IPv6 link-local is fe80::/10, not 169.254.x.x. DNS failure does not affect the IP address assignment.",
+      "tags": ["ip-config", "apipa"],
+      "sourceTranscript": "pm-1202-windows-ip-config",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.006",
+      "type": "multiple-choice",
+      "stem": "A technician pings 127.0.0.1 successfully but cannot reach the default gateway. What does the successful loopback ping confirm?",
+      "choices": [
+        { "id": "a", "text": "The local network cable is functional" },
+        { "id": "b", "text": "The local TCP/IP stack is initialised and working" },
+        { "id": "c", "text": "DNS resolution is working correctly" },
+        { "id": "d", "text": "The default gateway is reachable via IPv6" }
+      ],
+      "correct": "b",
+      "explanation": "Loopback (127.0.0.1) tests the local TCP/IP stack only - no traffic leaves the NIC. A successful result rules out a broken IP stack.",
+      "trap": "Loopback says nothing about the physical link, DNS, or the gateway - those require additional tests.",
+      "tags": ["ip-config", "loopback", "troubleshooting"],
+      "sourceTranscript": "pm-1202-windows-ip-config",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.007",
+      "type": "multiple-choice",
+      "stem": "A company deploys new WPA2 wireless access points. The security team asks which encryption cipher to configure. What is correct?",
+      "choices": [
+        { "id": "a", "text": "TKIP, because it is the default for WPA2" },
+        { "id": "b", "text": "AES, because WPA2 requires AES" },
+        { "id": "c", "text": "WEP, because it is backward compatible with WPA2 hardware" },
+        { "id": "d", "text": "TKIP/AES mixed mode to support both old and new clients" }
+      ],
+      "correct": "b",
+      "explanation": "WPA2 uses AES (CCMP) as its encryption cipher. TKIP is the legacy cipher from WPA1 and should not be used on WPA2 deployments.",
+      "trap": "TKIP is the classic wrong answer for WPA2. Mixed mode appears on some APs but the exam answer is AES for WPA2/WPA3.",
+      "tags": ["wireless", "encryption"],
+      "weakSpotTags": ["tkip-vs-aes"],
+      "sourceTranscript": "pm-1202-windows-network-connections",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.008",
+      "type": "multiple-choice",
+      "stem": "A laptop user connects to a hotel Wi-Fi. Windows asks whether the network is public or private. What should the user select and why?",
+      "choices": [
+        { "id": "a", "text": "Private - so file sharing works with other hotel guests" },
+        { "id": "b", "text": "Public - to disable inbound connections and file sharing on an untrusted network" },
+        { "id": "c", "text": "Domain - because the hotel may have a central authentication server" },
+        { "id": "d", "text": "Private - because public profile blocks Windows Update" }
+      ],
+      "correct": "b",
+      "explanation": "Public profile disables file sharing and blocks unsolicited inbound connections - the correct choice for any untrusted network. Private is for known, trusted networks only.",
+      "trap": "Domain profile only appears when the device is joined to an AD domain. Public does not block Windows Update.",
+      "tags": ["network-profile"],
+      "sourceTranscript": "pm-1202-windows-network-connections",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.009",
+      "type": "multiple-choice",
+      "stem": "A remote worker tethers their phone as a hotspot to connect a laptop. Background app updates are consuming mobile data. What Windows setting limits this?",
+      "choices": [
+        { "id": "a", "text": "Set the network profile to Public" },
+        { "id": "b", "text": "Enable metered connection for the hotspot adapter" },
+        { "id": "c", "text": "Disable Windows Update via Group Policy" },
+        { "id": "d", "text": "Turn off the Windows Defender Firewall for the private profile" }
+      ],
+      "correct": "b",
+      "explanation": "Marking the connection as metered tells Windows to reduce background data: it throttles Windows Update, OneDrive sync, and app updates. The setting is per adapter in Settings > Network and Internet.",
+      "trap": "Disabling Group Policy or the firewall is destructive and does not address background bandwidth consumption.",
+      "tags": ["metered", "wwan"],
+      "sourceTranscript": "pm-1202-windows-network-connections",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.010",
+      "type": "ordering",
+      "stem": "Order the steps of the Windows Defender Firewall New Rule wizard (Advanced Security) from first to last.",
+      "items": [
+        { "id": "s1", "text": "Select rule type: Program, Port, Predefined, or Custom" },
+        { "id": "s2", "text": "Specify protocol and port (e.g. TCP 443)" },
+        { "id": "s3", "text": "Specify local and remote IP scope" },
+        { "id": "s4", "text": "Choose action: Allow, Allow if secure, or Block" },
+        { "id": "s5", "text": "Select which profiles the rule applies to (Domain / Private / Public)" },
+        { "id": "s6", "text": "Enter a name and optional description" }
+      ],
+      "correctOrder": ["s1", "s2", "s3", "s4", "s5", "s6"],
+      "explanation": "The wizard proceeds: type > protocol/port > IP scope > action > profiles > name. Knowing this order helps eliminate wrong answers on scenario questions.",
+      "tags": ["firewall"],
+      "sourceTranscript": "pm-1202-windows-firewall",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.011",
+      "type": "matching",
+      "stem": "Match each networking scenario to the correct Windows feature.",
+      "pairs": [
+        { "leftId": "l1", "leftText": "Device gets 169.254.x.x address", "rightId": "r1", "rightText": "APIPA - DHCP unreachable" },
+        { "leftId": "l2", "leftText": "Share hidden from browse list", "rightId": "r2", "rightText": "Hidden share - $ suffix on share name" },
+        { "leftId": "l3", "leftText": "Laptop roams between DHCP and fixed-IP network", "rightId": "r3", "rightText": "Alternate Configuration tab" },
+        { "leftId": "l4", "leftText": "Throttle Windows Update on cellular hotspot", "rightId": "r4", "rightText": "Metered connection" },
+        { "leftId": "l5", "leftText": "Encrypt VPN tunnel to corporate office", "rightId": "r5", "rightText": "VPN concentrator" }
+      ],
+      "explanation": "These are the five most-tested networking features on the 220-1202 exam.",
+      "tags": ["ip-config", "shares", "vpn", "metered"],
+      "sourceTranscript": "pm-1202-windows-network-tech",
+      "needsReview": false
+    },
+    {
+      "id": "1.7.q.012",
+      "type": "multi-select",
+      "stem": "Which of the following statements about Windows network profiles are TRUE? Select all that apply.",
+      "choices": [
+        { "id": "a", "text": "The Domain profile appears only when the device is joined to an Active Directory domain" },
+        { "id": "b", "text": "Public profile disables file sharing and blocks inbound connections" },
+        { "id": "c", "text": "Private profile is the safest choice for coffee shop networks" },
+        { "id": "d", "text": "Windows prompts you to choose a profile when first connecting to a new network" }
+      ],
+      "correct": ["a", "b", "d"],
+      "explanation": "(c) is false - Public is the correct choice for untrusted networks. Private is for home or work networks where you trust other devices.",
+      "trap": "Choosing Private for an unknown network is the classic mistake. Public = untrusted, Private = trusted.",
+      "tags": ["network-profile", "firewall"],
+      "sourceTranscript": "pm-1202-windows-network-connections",
+      "needsReview": false
+    }
+  ]
+}
