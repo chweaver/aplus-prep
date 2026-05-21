@@ -3,9 +3,11 @@ import { OBJECTIVES_BY_ID, isObjectiveId } from '../content/objectives';
 import { loadContent } from '../content/content-loader';
 import Callout from '../components/Callout';
 import StatusPicker from '../components/StatusPicker';
+import { useSrs } from '../srs/SrsContext';
 
 export default function Objective() {
   const { objectiveId } = useParams();
+  const srs = useSrs();
 
   if (!objectiveId || !isObjectiveId(objectiveId)) {
     return (
@@ -19,8 +21,17 @@ export default function Objective() {
   }
 
   const meta = OBJECTIVES_BY_ID[objectiveId];
-  const topic = loadContent().topics.get(objectiveId);
+  const content = loadContent();
+  const topic = content.topics.get(objectiveId);
+  const cards = content.flashcards.get(objectiveId)?.cards ?? [];
   const estMinutes = topic?.estimatedMinutes ?? meta.estimatedMinutes;
+
+  const now = Date.now();
+  const dueCount = cards.reduce((n, c) => {
+    const s = srs.getCardState(c.id);
+    if (!s || s.dueAt <= now) return n + 1;
+    return n;
+  }, 0);
 
   return (
     <div>
@@ -37,8 +48,19 @@ export default function Objective() {
       </div>
       <h1 className="mt-1 text-2xl font-semibold leading-snug">{meta.title}</h1>
 
-      <div className="mt-4">
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <StatusPicker objectiveId={meta.id} />
+        {cards.length > 0 && (
+          <Link
+            to={`/objective/${meta.id}/flashcards`}
+            className="rounded border border-emerald-500/60 bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200 hover:bg-emerald-500/20"
+          >
+            Study flashcards
+            <span className="ml-2 text-xs text-emerald-300/80">
+              {dueCount} due · {cards.length} total
+            </span>
+          </Link>
+        )}
       </div>
 
       {!topic && (
