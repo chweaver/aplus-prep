@@ -24,6 +24,12 @@ export default function Layout() {
             >
               Exam mode
             </Link>
+            <Link
+              to="/settings"
+              className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
+            >
+              Data
+            </Link>
           </div>
         </div>
       </header>

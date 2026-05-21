@@ -11,6 +11,7 @@ import { ProgressProvider } from './progress/ProgressContext';
 import { SrsProvider } from './srs/SrsContext';
 import { QuizProvider } from './quiz/QuizContext';
 import WeakSpots from './pages/WeakSpots';
+import Settings from './pages/Settings';
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
                 <Route path="objective/:objectiveId/questions" element={<Questions />} />
                 <Route path="exam" element={<Exam />} />
                 <Route path="weak-spots" element={<WeakSpots />} />
+                <Route path="settings" element={<Settings />} />
                 <Route path="*" element={<NotFound />} />
               </Route>
             </Routes>
