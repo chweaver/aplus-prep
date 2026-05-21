@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { OBJECTIVES_BY_ID, isObjectiveId } from '../content/objectives';
 import { loadContent } from '../content/content-loader';
 import Callout from '../components/Callout';
+import StatusPicker from '../components/StatusPicker';
 
 export default function Objective() {
   const { objectiveId } = useParams();
@@ -35,6 +36,10 @@ export default function Objective() {
         <span className="text-xs text-[var(--color-muted)]">This objective: ~{estMinutes} min</span>
       </div>
       <h1 className="mt-1 text-2xl font-semibold leading-snug">{meta.title}</h1>
+
+      <div className="mt-4">
+        <StatusPicker objectiveId={meta.id} />
+      </div>
 
       {!topic && (
         <div className="mt-8 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-6">

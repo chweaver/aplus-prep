@@ -6,6 +6,14 @@ import {
   type Domain as DomainNum,
 } from '../content/objectives';
 import { loadContent } from '../content/content-loader';
+import { useProgress } from '../progress/ProgressContext';
+import { STATUS_LABEL, type ObjectiveStatus } from '../progress/types';
+
+const STATUS_CLASS: Record<Exclude<ObjectiveStatus, 'unreviewed'>, string> = {
+  reviewed: 'bg-sky-500/15 text-sky-300',
+  shaky: 'bg-amber-500/15 text-amber-300',
+  solid: 'bg-emerald-500/15 text-emerald-300',
+};
 
 function parseDomain(value: string | undefined): DomainNum | null {
   if (!value) return null;
@@ -30,6 +38,7 @@ export default function Domain() {
 
   const objectives = OBJECTIVES_BY_DOMAIN[domain];
   const content = loadContent();
+  const { getStatus } = useProgress();
 
   return (
     <div>
@@ -51,6 +60,7 @@ export default function Domain() {
           const topic = content.topics.get(o.id);
           const hasContent = !!topic;
           const isStub = topic?.needsReview ?? false;
+          const status = getStatus(o.id);
           return (
             <li key={o.id}>
               <Link
@@ -68,6 +78,11 @@ export default function Domain() {
                     {hasContent && isStub && (
                       <span className="rounded bg-amber-900/40 px-1.5 py-0.5 text-xs text-amber-300">
                         stub
+                      </span>
+                    )}
+                    {status !== 'unreviewed' && (
+                      <span className={`rounded px-1.5 py-0.5 text-xs ${STATUS_CLASS[status]}`}>
+                        {STATUS_LABEL[status]}
                       </span>
                     )}
                   </div>
