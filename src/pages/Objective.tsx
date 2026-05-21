@@ -48,9 +48,9 @@ export default function Objective() {
       </div>
       <h1 className="mt-1 text-2xl font-semibold leading-snug">{meta.title}</h1>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <StatusPicker objectiveId={meta.id} />
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
           {cards.length > 0 && (
             <Link
               to={`/objective/${meta.id}/flashcards`}

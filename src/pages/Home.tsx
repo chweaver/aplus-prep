@@ -18,7 +18,7 @@ export default function Home() {
         CompTIA A+ Core 2 (220-1202)
       </h1>
       <p className="mt-2 text-sm text-[var(--color-muted)]">
-        Pick a domain to drill into objectives. Content fills in as transcripts are ingested.
+        Pick a domain to drill into objectives, flashcards, and practice questions.
       </p>
 
       <ul className="mt-8 divide-y divide-[var(--color-border)] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]">

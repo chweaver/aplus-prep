@@ -4,14 +4,14 @@ export default function Layout() {
   return (
     <div className="min-h-full">
       <header className="border-b border-[var(--color-border)] bg-[var(--color-surface)]">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-6 py-4">
           <Link
             to="/"
             className="text-sm font-medium text-[var(--color-text)] hover:text-[var(--color-accent)]"
           >
             A+ Core 2 (220-1202) Prep
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="flex shrink-0 items-center gap-3">
             <Link
               to="/weak-spots"
               className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
@@ -22,7 +22,7 @@ export default function Layout() {
               to="/exam"
               className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
             >
-              Exam mode
+              Exam
             </Link>
             <Link
               to="/settings"

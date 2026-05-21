@@ -39,6 +39,10 @@ export default function Domain() {
   const objectives = OBJECTIVES_BY_DOMAIN[domain];
   const content = loadContent();
   const { getStatus } = useProgress();
+  const totalMinutes = objectives.reduce((sum, o) => {
+    const topic = content.topics.get(o.id);
+    return sum + (topic?.estimatedMinutes ?? o.estimatedMinutes);
+  }, 0);
 
   return (
     <div>
@@ -52,7 +56,7 @@ export default function Domain() {
         <span className="text-xs text-[var(--color-muted)]">{DOMAIN_PERCENT[domain]}% of exam</span>
       </div>
       <p className="mt-1 text-sm text-[var(--color-muted)]">
-        {objectives.length} objectives
+        {objectives.length} objectives · ~{totalMinutes} min total
       </p>
 
       <ul className="mt-6 divide-y divide-[var(--color-border)] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]">
