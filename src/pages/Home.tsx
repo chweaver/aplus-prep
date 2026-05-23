@@ -18,15 +18,16 @@ export default function Home() {
         CompTIA A+ Core 2 (220-1202)
       </h1>
       <p className="mt-2 text-sm text-[var(--color-muted)]">
-        Pick a domain to drill into objectives. Content fills in as transcripts are ingested.
+        Pick a domain to drill into objectives, flashcards, and practice questions.
       </p>
 
       <ul className="mt-8 divide-y divide-[var(--color-border)] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]">
         {DOMAINS.map((d) => {
           const summary = summarizeDomain(state, d);
-          const solidPct = (summary.solid / summary.total) * 100;
-          const shakyPct = (summary.shaky / summary.total) * 100;
-          const reviewedPct = (summary.reviewed / summary.total) * 100;
+          const denom = summary.total || 1;
+          const solidPct = (summary.solid / denom) * 100;
+          const shakyPct = (summary.shaky / denom) * 100;
+          const reviewedPct = (summary.reviewed / denom) * 100;
           return (
             <li key={d}>
               <Link
@@ -39,12 +40,21 @@ export default function Home() {
                       {d}.0 {DOMAIN_NAMES[d]}
                     </div>
                     <div className="mt-0.5 text-xs text-[var(--color-muted)]">
-                      {summary.solid} solid · {summary.shaky} shaky · {summary.reviewed} reviewed ·{' '}
-                      {summary.unreviewed} untouched
+                      {summary.total > 0 ? (
+                        <>
+                          {summary.solid} solid · {summary.shaky} shaky · {summary.reviewed} reviewed ·{' '}
+                          {summary.unreviewed} untouched
+                        </>
+                      ) : (
+                        <>No objectives available yet</>
+                      )}
                     </div>
                   </div>
-                  <div className="shrink-0 text-sm tabular-nums text-[var(--color-muted)]">
-                    {DOMAIN_PERCENT[d]}% of exam
+                  <div className="shrink-0 text-right text-xs tabular-nums text-[var(--color-muted)]">
+                    <div className="text-sm">{DOMAIN_PERCENT[d]}% of exam</div>
+                    <div className="mt-0.5">
+                      {summary.total} available / {summary.totalAll} total
+                    </div>
                   </div>
                 </div>
                 <div className="mt-2 flex h-1.5 w-full overflow-hidden rounded-sm bg-black/40">

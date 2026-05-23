@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { OBJECTIVES_BY_ID, isObjectiveId, type ObjectiveId } from '../content/objectives';
-import { loadContent } from '../content/content-loader';
+import { hasFlashcards, isObjectiveAvailable, loadContent } from '../content/content-loader';
 import type { Flashcard } from '../content/schemas';
 import { useSrs } from '../srs/SrsContext';
 import { DAY_MS, GRADE_LABEL, type Grade } from '../srs/types';
@@ -63,25 +63,16 @@ export default function Flashcards() {
   }
 
   const meta = OBJECTIVES_BY_ID[objectiveId];
-  const allCards = loadContent().flashcards.get(objectiveId)?.cards ?? [];
 
-  if (allCards.length === 0) {
-    return (
-      <div>
-        <Link
-          to={`/objective/${objectiveId}`}
-          className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-        >
-          ← {meta.id} {meta.title}
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Flashcards</h1>
-        <p className="mt-4 text-sm text-[var(--color-muted)]">
-          No flashcards yet for this objective.
-        </p>
-      </div>
-    );
+  if (!isObjectiveAvailable(objectiveId)) {
+    return <Navigate to={`/domain/${meta.domain}`} replace />;
   }
 
+  if (!hasFlashcards(objectiveId)) {
+    return <Navigate to={`/objective/${objectiveId}`} replace />;
+  }
+
+  const allCards = loadContent().flashcards.get(objectiveId)!.cards;
   return <FlashcardsSession key={objectiveId} cards={allCards} objectiveId={objectiveId} srs={srs} />;
 }
 

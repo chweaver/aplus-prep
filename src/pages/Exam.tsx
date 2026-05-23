@@ -1,14 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { OBJECTIVES_BY_ID } from '../content/objectives';
-import { loadContent } from '../content/content-loader';
+import { isObjectiveAvailable, loadContent } from '../content/content-loader';
 import type { Question } from '../content/schemas';
 import QuestionRenderer from '../questions/QuestionRenderer';
 import { isCorrect, seededShuffle } from '../questions/grading';
 import type { Answer } from '../questions/types';
 import { useQuiz } from '../quiz/QuizContext';
 
-const EXAM_QUESTIONS = 90;
-const EXAM_SECONDS = 90 * 60;
+const FULL_EXAM_QUESTIONS = 90;
+const SECONDS_PER_QUESTION = 60;
 
 type ExamQuestion = Question & { objectiveId: string };
 
@@ -16,6 +17,7 @@ function buildExamPool(): ExamQuestion[] {
   const pool: ExamQuestion[] = [];
   const content = loadContent();
   for (const [objId, qFile] of content.questions.entries()) {
+    if (!isObjectiveAvailable(objId)) continue;
     for (const q of qFile.questions) {
       pool.push({ ...q, objectiveId: objId });
     }
@@ -32,29 +34,53 @@ function formatTime(secs: number) {
 type Phase = 'idle' | 'active' | 'review';
 
 export default function Exam() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const pool = useMemo(() => buildExamPool(), []);
+  const examSize = Math.min(pool.length, FULL_EXAM_QUESTIONS);
+  const examSeconds = examSize * SECONDS_PER_QUESTION;
+  const sessionSeed = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get('session');
+  }, [location.search]);
   const [phase, setPhase] = useState<Phase>('idle');
   const [questions, setQuestions] = useState<ExamQuestion[]>([]);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, Answer | null>>({});
-  const [secondsLeft, setSecondsLeft] = useState(EXAM_SECONDS);
+  const [secondsLeft, setSecondsLeft] = useState(examSeconds);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startRef = useRef<string>('');
   const questionsRef = useRef<ExamQuestion[]>([]);
   const answersRef = useRef<Record<string, Answer | null>>({});
   const { recordResult } = useQuiz();
 
-  function startExam() {
-    const seed = Date.now().toString();
+  const resetExam = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    startRef.current = '';
+    questionsRef.current = [];
+    answersRef.current = {};
+    setQuestions([]);
+    setIndex(0);
+    setAnswers({});
+    setSecondsLeft(examSeconds);
+    setPhase('idle');
+  }, [examSeconds]);
+
+  const initializeExam = useCallback((seed: string) => {
     startRef.current = seed;
-    const shuffled = seededShuffle(pool, seed).slice(0, EXAM_QUESTIONS);
+    const shuffled = seededShuffle(pool, seed).slice(0, examSize);
     questionsRef.current = shuffled;
     answersRef.current = {};
     setQuestions(shuffled);
     setIndex(0);
     setAnswers({});
-    setSecondsLeft(EXAM_SECONDS);
+    setSecondsLeft(examSeconds);
     setPhase('active');
+  }, [pool, examSize, examSeconds]);
+
+  function startExam() {
+    const seed = Date.now().toString();
+    navigate(`/exam?session=${seed}`);
   }
 
   const submitExam = useCallback(() => {
@@ -65,6 +91,16 @@ export default function Exam() {
     }
     setPhase('review');
   }, [recordResult]);
+
+  useEffect(() => {
+    if (!sessionSeed) {
+      resetExam();
+      return;
+    }
+    if (startRef.current !== sessionSeed) {
+      initializeExam(sessionSeed);
+    }
+  }, [initializeExam, resetExam, sessionSeed]);
 
   useEffect(() => {
     if (phase !== 'active') return;
@@ -83,7 +119,7 @@ export default function Exam() {
   }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (phase === 'idle') {
-    return <ExamLanding pool={pool} onStart={startExam} />;
+    return <ExamLanding pool={pool} examSize={examSize} onStart={startExam} />;
   }
 
   if (phase === 'review') {
@@ -91,12 +127,15 @@ export default function Exam() {
       <ExamReview
         questions={questions}
         answers={answers}
-        onRestart={() => setPhase('idle')}
+        onRestart={() => navigate('/exam')}
       />
     );
   }
 
   const q = questions[index];
+  if (!q) {
+    return <ExamLanding pool={pool} examSize={examSize} onStart={startExam} />;
+  }
   const answered = Object.values(answers).filter(Boolean).length;
   const urgent = secondsLeft < 300;
 
@@ -217,19 +256,35 @@ function QuestionNav({
   );
 }
 
-function ExamLanding({ pool, onStart }: { pool: ExamQuestion[]; onStart: () => void }) {
-  const available = Math.min(pool.length, EXAM_QUESTIONS);
+function ExamLanding({
+  pool,
+  examSize,
+  onStart,
+}: {
+  pool: ExamQuestion[];
+  examSize: number;
+  onStart: () => void;
+}) {
+  const minutes = Math.max(1, Math.round((examSize * SECONDS_PER_QUESTION) / 60));
+  const capped = examSize < FULL_EXAM_QUESTIONS;
   return (
     <div>
       <h1 className="text-2xl font-semibold">Exam Mode</h1>
       <div className="mt-6 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
         <p className="text-sm">
-          Simulates the 220-1202 exam: {available} questions, 90-minute timer, no feedback until
+          {examSize}-question exam, {minutes} minute{minutes === 1 ? '' : 's'}, no feedback until
           submission.
         </p>
         <ul className="mt-4 space-y-1 text-sm text-[var(--color-muted)]">
-          <li>{pool.length} questions available across all objectives</li>
-          <li>{available} questions will be selected at random</li>
+          <li>{pool.length} questions available across loaded objectives</li>
+          {capped ? (
+            <li>
+              All {examSize} available questions will be used (the full exam is {FULL_EXAM_QUESTIONS};
+              more will unlock as content is added)
+            </li>
+          ) : (
+            <li>{examSize} questions will be selected at random</li>
+          )}
           <li>You can navigate freely and change answers before submitting</li>
           <li>Timer auto-submits when it reaches 0:00</li>
         </ul>

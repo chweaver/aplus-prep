@@ -1,6 +1,11 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { OBJECTIVES_BY_ID, isObjectiveId } from '../content/objectives';
-import { loadContent } from '../content/content-loader';
+import {
+  hasFlashcards,
+  hasQuestions,
+  isObjectiveAvailable,
+  loadContent,
+} from '../content/content-loader';
 import Callout from '../components/Callout';
 import StatusPicker from '../components/StatusPicker';
 import { useSrs } from '../srs/SrsContext';
@@ -21,10 +26,18 @@ export default function Objective() {
   }
 
   const meta = OBJECTIVES_BY_ID[objectiveId];
+
+  if (!isObjectiveAvailable(objectiveId)) {
+    return <Navigate to={`/domain/${meta.domain}`} replace />;
+  }
+
   const content = loadContent();
-  const topic = content.topics.get(objectiveId);
+  const topic = content.topics.get(objectiveId)!;
   const cards = content.flashcards.get(objectiveId)?.cards ?? [];
-  const estMinutes = topic?.estimatedMinutes ?? meta.estimatedMinutes;
+  const cardsAvailable = hasFlashcards(objectiveId);
+  const questionsAvailable = hasQuestions(objectiveId);
+  const questionCount = content.questions.get(objectiveId)?.questions.length ?? 0;
+  const estMinutes = topic.estimatedMinutes ?? meta.estimatedMinutes;
 
   const now = Date.now();
   const dueCount = cards.reduce((n, c) => {
@@ -48,10 +61,10 @@ export default function Objective() {
       </div>
       <h1 className="mt-1 text-2xl font-semibold leading-snug">{meta.title}</h1>
 
-      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+      <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <StatusPicker objectiveId={meta.id} />
-        <div className="flex flex-wrap gap-2">
-          {cards.length > 0 && (
+        <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:justify-end">
+          {cardsAvailable ? (
             <Link
               to={`/objective/${meta.id}/flashcards`}
               className="rounded border border-emerald-500/60 bg-emerald-500/10 px-3 py-1.5 text-sm text-emerald-200 hover:bg-emerald-500/20"
@@ -61,31 +74,36 @@ export default function Objective() {
                 {dueCount} due · {cards.length}
               </span>
             </Link>
+          ) : (
+            <span
+              className="cursor-not-allowed rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm text-[var(--color-muted)] opacity-60"
+              aria-disabled="true"
+            >
+              Flashcards
+              <span className="ml-1.5 text-xs">No cards yet</span>
+            </span>
           )}
-          {content.questions.get(meta.id) && (
+          {questionsAvailable ? (
             <Link
               to={`/objective/${meta.id}/questions`}
               className="rounded border border-sky-500/60 bg-sky-500/10 px-3 py-1.5 text-sm text-sky-200 hover:bg-sky-500/20"
             >
               Practice questions
-              <span className="ml-1.5 text-xs text-sky-300/70">
-                {content.questions.get(meta.id)!.questions.length}
-              </span>
+              <span className="ml-1.5 text-xs text-sky-300/70">{questionCount}</span>
             </Link>
+          ) : (
+            <span
+              className="cursor-not-allowed rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm text-[var(--color-muted)] opacity-60"
+              aria-disabled="true"
+            >
+              Practice questions
+              <span className="ml-1.5 text-xs">No questions yet</span>
+            </span>
           )}
         </div>
       </div>
 
-      {!topic && (
-        <div className="mt-8 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
-          <p className="text-sm">No content yet for this objective.</p>
-          <p className="mt-2 text-xs text-[var(--color-muted)]">
-            Paste a Professor Messer transcript covering {meta.id} to populate.
-          </p>
-        </div>
-      )}
-
-      {topic?.needsReview && (
+      {topic.needsReview && (
         <div className="mt-6">
           <Callout kind="review">
             <strong>Stub content. </strong>
@@ -94,7 +112,7 @@ export default function Objective() {
         </div>
       )}
 
-      {topic?.subtopics.map((s) => (
+      {topic.subtopics.map((s) => (
         <section
           key={s.id}
           className="mt-6 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] p-6"

@@ -2,8 +2,14 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useSrs } from '../srs/SrsContext';
 import { useQuiz } from '../quiz/QuizContext';
-import { aggregateWeakSpots, sortByWeakest, type TagSummary, type TagStrength } from '../weakspots/aggregate';
-import { loadContent } from '../content/content-loader';
+import {
+  aggregateWeakSpots,
+  hasAvailableContent,
+  sortByWeakest,
+  type TagSummary,
+  type TagStrength,
+} from '../weakspots/aggregate';
+import { hasFlashcards, hasQuestions, isObjectiveAvailable } from '../content/content-loader';
 import { isObjectiveId } from '../content/objectives';
 
 const STRENGTH_META: Record<TagStrength, { label: string; bar: string; text: string }> = {
@@ -18,7 +24,7 @@ export default function WeakSpots() {
   const { state: quiz } = useQuiz();
 
   const summaries = useMemo(
-    () => sortByWeakest(aggregateWeakSpots(srs, quiz)),
+    () => sortByWeakest(aggregateWeakSpots(srs, quiz).filter(hasAvailableContent)),
     [srs, quiz],
   );
 
@@ -49,21 +55,21 @@ export default function WeakSpots() {
 
 function TagCard({ summary: s }: { summary: TagSummary }) {
   const sm = STRENGTH_META[s.strength];
-  const content = loadContent();
 
   const studyLinks = useMemo(() => {
     const links: Array<{ label: string; to: string }> = [];
     for (const objId of s.relatedObjectives) {
       if (!isObjectiveId(objId)) continue;
-      if (content.flashcards.get(objId)) {
+      if (!isObjectiveAvailable(objId)) continue;
+      if (hasFlashcards(objId)) {
         links.push({ label: `${objId} cards`, to: `/objective/${objId}/flashcards` });
       }
-      if (content.questions.get(objId)) {
+      if (hasQuestions(objId)) {
         links.push({ label: `${objId} questions`, to: `/objective/${objId}/questions` });
       }
     }
     return links;
-  }, [s.relatedObjectives, content]);
+  }, [s.relatedObjectives]);
 
   const barWidth = s.strength === 'no-data' ? 4 : Math.max(4, s.score);
 

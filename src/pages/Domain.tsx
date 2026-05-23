@@ -5,7 +5,7 @@ import {
   OBJECTIVES_BY_DOMAIN,
   type Domain as DomainNum,
 } from '../content/objectives';
-import { loadContent } from '../content/content-loader';
+import { isObjectiveAvailable, loadContent } from '../content/content-loader';
 import { useProgress } from '../progress/ProgressContext';
 import { STATUS_LABEL, type ObjectiveStatus } from '../progress/types';
 
@@ -39,6 +39,15 @@ export default function Domain() {
   const objectives = OBJECTIVES_BY_DOMAIN[domain];
   const content = loadContent();
   const { getStatus } = useProgress();
+  const estimatedMinutesFor = (objective: (typeof objectives)[number]) => {
+    const topic = content.topics.get(objective.id);
+    return topic?.estimatedMinutes ?? objective.estimatedMinutes;
+  };
+  const availableCount = objectives.filter((o) => isObjectiveAvailable(o.id)).length;
+  const totalMinutes = objectives.reduce((sum, o) => {
+    if (!isObjectiveAvailable(o.id)) return sum;
+    return sum + estimatedMinutesFor(o);
+  }, 0);
 
   return (
     <div>
@@ -52,13 +61,39 @@ export default function Domain() {
         <span className="text-xs text-[var(--color-muted)]">{DOMAIN_PERCENT[domain]}% of exam</span>
       </div>
       <p className="mt-1 text-sm text-[var(--color-muted)]">
-        {objectives.length} objectives
+        {availableCount} available / {objectives.length} total · ~{totalMinutes} min
       </p>
 
       <ul className="mt-6 divide-y divide-[var(--color-border)] rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]">
         {objectives.map((o) => {
+          const available = isObjectiveAvailable(o.id);
+          if (!available) {
+            return (
+              <li key={o.id}>
+                <div
+                  className="flex items-start justify-between gap-4 px-4 py-3 opacity-50"
+                  aria-disabled="true"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="font-mono text-xs text-[var(--color-muted)]">{o.id}</span>
+                      <span className="rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-1.5 py-0.5 text-xs text-[var(--color-muted)]">
+                        Not yet available
+                      </span>
+                    </div>
+                    <div className="mt-0.5 text-sm leading-snug text-[var(--color-muted)]">
+                      {o.title}
+                    </div>
+                  </div>
+                  <div className="shrink-0 pt-0.5 text-xs tabular-nums text-[var(--color-muted)]">
+                    ~{o.estimatedMinutes} min
+                  </div>
+                </div>
+              </li>
+            );
+          }
+
           const topic = content.topics.get(o.id);
-          const hasContent = !!topic;
           const isStub = topic?.needsReview ?? false;
           const status = getStatus(o.id);
           return (
@@ -70,12 +105,7 @@ export default function Domain() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
                     <span className="font-mono text-xs text-[var(--color-muted)]">{o.id}</span>
-                    {!hasContent && (
-                      <span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-400">
-                        empty
-                      </span>
-                    )}
-                    {hasContent && isStub && (
+                    {isStub && (
                       <span className="rounded bg-amber-900/40 px-1.5 py-0.5 text-xs text-amber-300">
                         stub
                       </span>
@@ -89,7 +119,7 @@ export default function Domain() {
                   <div className="mt-0.5 text-sm leading-snug">{o.title}</div>
                 </div>
                 <div className="shrink-0 pt-0.5 text-xs tabular-nums text-[var(--color-muted)]">
-                  ~{o.estimatedMinutes} min
+                  ~{estimatedMinutesFor(o)} min
                 </div>
               </Link>
             </li>

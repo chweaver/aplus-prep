@@ -54,3 +54,25 @@ export function loadContent(): LoadedContent {
   };
   return cached;
 }
+
+// Availability is derived from the presence of a topic JSON file. Topic files
+// are the source of truth: an objective is "available" iff src/content/topics/
+// contains its file. Flashcards and questions are independent supplements.
+
+export function isObjectiveAvailable(objectiveId: string): boolean {
+  return loadContent().topics.has(objectiveId as ObjectiveId);
+}
+
+export function hasFlashcards(objectiveId: string): boolean {
+  const file = loadContent().flashcards.get(objectiveId as ObjectiveId);
+  return !!file && file.cards.length > 0;
+}
+
+export function hasQuestions(objectiveId: string): boolean {
+  const file = loadContent().questions.get(objectiveId as ObjectiveId);
+  return !!file && file.questions.length > 0;
+}
+
+export function getAvailableObjectiveIds(): ObjectiveId[] {
+  return Array.from(loadContent().topics.keys());
+}

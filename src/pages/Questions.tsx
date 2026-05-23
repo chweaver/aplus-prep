@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { OBJECTIVES_BY_ID, isObjectiveId, type ObjectiveId } from '../content/objectives';
-import { loadContent } from '../content/content-loader';
+import { hasQuestions, isObjectiveAvailable, loadContent } from '../content/content-loader';
 import type { Question } from '../content/schemas';
 import QuestionRenderer from '../questions/QuestionRenderer';
 import { isCorrect } from '../questions/grading';
@@ -31,26 +31,16 @@ export default function Questions() {
   }
 
   const meta = OBJECTIVES_BY_ID[objectiveId];
-  const qFile = loadContent().questions.get(objectiveId);
-  const questions = qFile?.questions ?? [];
 
-  if (questions.length === 0) {
-    return (
-      <div>
-        <Link
-          to={`/objective/${objectiveId}`}
-          className="text-xs text-[var(--color-muted)] hover:text-[var(--color-accent)]"
-        >
-          ← {meta.id} {meta.title}
-        </Link>
-        <h1 className="mt-2 text-2xl font-semibold">Practice Questions</h1>
-        <p className="mt-4 text-sm text-[var(--color-muted)]">
-          No questions yet for this objective.
-        </p>
-      </div>
-    );
+  if (!isObjectiveAvailable(objectiveId)) {
+    return <Navigate to={`/domain/${meta.domain}`} replace />;
   }
 
+  if (!hasQuestions(objectiveId)) {
+    return <Navigate to={`/objective/${objectiveId}`} replace />;
+  }
+
+  const questions = loadContent().questions.get(objectiveId)!.questions;
   return <LearnSession key={objectiveId} questions={questions} objectiveId={objectiveId} />;
 }
 
