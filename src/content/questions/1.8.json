@@ -4,159 +4,182 @@
     {
       "id": "1.8.q.001",
       "type": "multiple-choice",
-      "stem": "A user downloads software for macOS and receives a file with a .dmg extension. What should the user do to install the software?",
+      "stem": "A Mac user downloads software and sees three file types: .dmg, .pkg, and .app. Which pairing of each to its role is correct?",
       "choices": [
-        { "id": "a", "text": "Run it directly like an .exe file" },
-        { "id": "b", "text": "Double-click to mount it as a virtual drive, then run the installer inside" },
-        { "id": "c", "text": "Extract it with Archive Utility, then run setup" },
-        { "id": "d", "text": "Rename it to .pkg before opening" }
+        { "id": "a", "text": ".dmg is a virtual CD; .pkg runs a setup wizard; .app is a self-contained application bundle" },
+        { "id": "b", "text": ".dmg is the application itself; .pkg is a virtual CD; .app is a setup wizard" },
+        { "id": "c", "text": ".dmg is a setup wizard; .pkg is the application bundle; .app is a disk image" },
+        { "id": "d", "text": "All three are identical formats with different extensions" }
       ],
-      "correct": "b",
-      "explanation": "A .dmg is an Apple disk image. Double-clicking mounts it in Finder as a virtual drive. The user then typically drags the .app to Applications or runs a .pkg inside the image.",
-      "trap": "DMGs are not executables and cannot be renamed to .pkg - they serve different purposes.",
-      "tags": ["macos", "file-types"],
-      "weakSpotTags": ["macos-features"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "a",
+      "explanation": ".dmg = disk image (virtual CD). .pkg = installer package (setup wizard). .app = self-contained application bundle.",
+      "trap": "It is easy to mix .dmg and .app, but the .app is the actual program; the .dmg is just the container you mount.",
+      "tags": ["dmg", "pkg", "app-bundle"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.002",
       "type": "multiple-choice",
-      "stem": "A macOS user wants to remove an application. There is no Uninstall option in the app. What is the correct procedure?",
+      "stem": "What is the standard way to uninstall a .app on macOS?",
       "choices": [
-        { "id": "a", "text": "Use Control Panel > Programs and Features to uninstall" },
-        { "id": "b", "text": "Open Terminal and run rm -rf /Applications/AppName" },
-        { "id": "c", "text": "Drag the .app file from the Applications folder to the Trash" },
-        { "id": "d", "text": "Disable the app in System Preferences > Users and Groups" }
+        { "id": "a", "text": "Run an .exe uninstaller from the Applications folder" },
+        { "id": "b", "text": "Drag the .app from Applications to the Trash" },
+        { "id": "c", "text": "Use Disk Utility to erase the volume" },
+        { "id": "d", "text": "Reinstall macOS to remove it" }
       ],
-      "correct": "c",
-      "explanation": "Most macOS apps are self-contained bundles. Dragging the .app to Trash removes the application and all its bundled files. There is no Programs and Features equivalent.",
-      "trap": "Control Panel does not exist on macOS. Terminal rm -rf works but is not the standard user-facing procedure.",
-      "tags": ["macos", "uninstall"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "b",
+      "explanation": "macOS apps are self-contained bundles, so uninstalling is typically as simple as dragging the .app from Applications to the Trash.",
+      "trap": "macOS does not run .exe files; that's a Windows concept.",
+      "tags": ["app-bundle", "macos"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.003",
       "type": "multiple-choice",
-      "stem": "A macOS administrator notices the OS version on a device shows '14.1.1a'. What does the letter suffix indicate?",
+      "stem": "Time Machine is set up on a Mac. Which backup schedule does it follow by default?",
       "choices": [
-        { "id": "a", "text": "A beta pre-release version is installed" },
-        { "id": "b", "text": "A Rapid Security Response update has been applied" },
-        { "id": "c", "text": "The system is in developer mode" },
-        { "id": "d", "text": "A hardware-specific firmware patch was applied" }
+        { "id": "a", "text": "Only when the user manually starts it" },
+        { "id": "b", "text": "Only on system shutdown" },
+        { "id": "c", "text": "Hourly, daily, and weekly backups" },
+        { "id": "d", "text": "Once a month, fixed" }
       ],
-      "correct": "b",
-      "explanation": "A letter appended to the macOS version number (e.g., 14.1.1a) indicates a Rapid Security Response (RSR) update has been applied - an emergency critical security patch pushed immediately by Apple.",
-      "trap": "Beta versions have a different designation in the software update system, not a letter suffix on the release version.",
-      "tags": ["macos", "updates", "rsr"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "c",
+      "explanation": "Time Machine performs hourly, daily, and weekly backups automatically.",
+      "trap": "Manual-only is wrong; Time Machine's value is its hands-off cadence.",
+      "tags": ["time-machine"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.004",
       "type": "multiple-choice",
-      "stem": "Which macOS feature is equivalent to Windows BitLocker?",
+      "stem": "Which macOS feature is the direct equivalent of Windows BitLocker (full-disk encryption)?",
       "choices": [
         { "id": "a", "text": "Keychain" },
-        { "id": "b", "text": "FileVault" },
+        { "id": "b", "text": "Mission Control" },
         { "id": "c", "text": "Time Machine" },
-        { "id": "d", "text": "Disk Utility" }
+        { "id": "d", "text": "FileVault" }
       ],
-      "correct": "b",
-      "explanation": "FileVault provides full disk encryption on macOS, encrypting the entire drive using the login password or iCloud credentials - directly analogous to Windows BitLocker.",
-      "trap": "Keychain encrypts stored credentials, not the disk. Disk Utility manages partitions but does not provide encryption.",
-      "tags": ["macos", "filevault", "encryption"],
-      "weakSpotTags": ["macos-features"],
-      "sourceTranscript": "pm-1202-macos-features",
-      "needsReview": false
+      "correct": "d",
+      "explanation": "FileVault is the macOS full-disk encryption feature, equivalent in role to Windows BitLocker.",
+      "trap": "Keychain stores passwords and certificates; it is not full-disk encryption.",
+      "tags": ["file-vault", "bitlocker"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.005",
       "type": "multiple-choice",
-      "stem": "A macOS application has stopped responding. Which keystroke opens the Force Quit window?",
+      "stem": "Which macOS feature launches a systemwide search with Cmd + Space?",
       "choices": [
-        { "id": "a", "text": "Command+Option+Delete" },
-        { "id": "b", "text": "Command+Option+Escape" },
-        { "id": "c", "text": "Control+Alt+Delete" },
-        { "id": "d", "text": "Command+Shift+Escape" }
+        { "id": "a", "text": "Mission Control" },
+        { "id": "b", "text": "Spotlight" },
+        { "id": "c", "text": "Keychain" },
+        { "id": "d", "text": "Finder" }
       ],
       "correct": "b",
-      "explanation": "Command+Option+Escape opens the Force Quit Applications window, showing all running apps. The user can select the unresponsive app and click Force Quit.",
-      "trap": "Control+Alt+Delete is the Windows equivalent. Command+Option+Delete is not a system shortcut.",
-      "tags": ["macos", "force-quit"],
-      "weakSpotTags": ["macos-features"],
-      "sourceTranscript": "pm-1202-macos-features",
-      "needsReview": false
+      "explanation": "Spotlight is the systemwide search tool launched with Cmd + Space. It finds files, apps, and even suggests websites.",
+      "trap": "Mission Control spreads open windows; it is not the search tool.",
+      "tags": ["spotlight"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.006",
       "type": "multiple-choice",
-      "stem": "A user asks how to search for a file across their entire macOS system. What is the fastest built-in method?",
+      "stem": "An app freezes on macOS. Which key combination opens the Force Quit menu to shut it down?",
       "choices": [
-        { "id": "a", "text": "Open Finder and select File > Find" },
-        { "id": "b", "text": "Press Command+Space to open Spotlight" },
-        { "id": "c", "text": "Open Terminal and run find /" },
-        { "id": "d", "text": "Open Disk Utility and search the volume" }
+        { "id": "a", "text": "Cmd + Q" },
+        { "id": "b", "text": "Cmd + Tab" },
+        { "id": "c", "text": "Cmd + Option + Esc" },
+        { "id": "d", "text": "Ctrl + Alt + Del" }
       ],
-      "correct": "b",
-      "explanation": "Spotlight (Command+Space) is macOS's system-wide search that instantly searches apps, documents, images, contacts, and more.",
-      "trap": "Finder search works but is scoped to what is visible. Spotlight is the system-wide equivalent of Windows Search.",
-      "tags": ["macos", "spotlight"],
-      "weakSpotTags": ["macos-features"],
-      "sourceTranscript": "pm-1202-macos-features",
-      "needsReview": false
+      "correct": "c",
+      "explanation": "Cmd + Option + Esc opens the Force Quit menu on macOS to terminate a frozen app.",
+      "trap": "Ctrl + Alt + Del is Windows; macOS uses Cmd + Option + Esc.",
+      "tags": ["force-quit"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.007",
-      "type": "matching",
-      "stem": "Match each macOS feature to its Windows equivalent.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "Finder", "rightId": "r1", "rightText": "File Explorer" },
-        { "leftId": "l2", "leftText": "System Preferences", "rightId": "r2", "rightText": "Control Panel" },
-        { "leftId": "l3", "leftText": "FileVault", "rightId": "r3", "rightText": "BitLocker" },
-        { "leftId": "l4", "leftText": "Spotlight", "rightId": "r4", "rightText": "Windows Search" },
-        { "leftId": "l5", "leftText": ".pkg file", "rightId": "r5", "rightText": "setup.exe" }
+      "type": "multiple-choice",
+      "stem": "What does Mission Control on macOS do, and how is it commonly accessed on a trackpad?",
+      "choices": [
+        { "id": "a", "text": "It is the Apple ID password vault, accessed via the Keychain icon" },
+        { "id": "b", "text": "It is the encrypted backup service, accessed by clicking the Time Machine icon" },
+        { "id": "c", "text": "It is the systemwide search bar opened with Cmd + Space" },
+        { "id": "d", "text": "It spreads all open windows for an overview and lets you create multiple desktops (Spaces); accessed by swiping up with three fingers" }
       ],
-      "explanation": "Cross-platform equivalents are a favorite exam pattern. Know the macOS side and its Windows counterpart for each.",
-      "tags": ["macos"],
-      "weakSpotTags": ["macos-features"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "d",
+      "explanation": "Mission Control spreads out all open windows and lets you create multiple desktops (Spaces). Three-finger swipe up on the trackpad opens it.",
+      "trap": "Cmd + Space is Spotlight (search), not Mission Control.",
+      "tags": ["mission-control"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.008",
       "type": "multiple-choice",
-      "stem": "An IT department deploys Apple devices for corporate users and wants single sign-on using existing Active Directory credentials. Which Apple feature enables this?",
+      "stem": "Keychain on macOS is described as a digital safe-deposit box. Which three items does it securely store, all encrypted with the login password?",
       "choices": [
-        { "id": "a", "text": "iCloud with a personal Apple ID" },
-        { "id": "b", "text": "Managed Apple ID via Apple Business Manager" },
-        { "id": "c", "text": "Keychain integration with LDAP" },
-        { "id": "d", "text": "FileVault with institutional recovery key" }
+        { "id": "a", "text": "Passwords, certificates, and private notes" },
+        { "id": "b", "text": "Operating system files, kernel modules, and drivers" },
+        { "id": "c", "text": "Photos, videos, and music" },
+        { "id": "d", "text": "App bundles, .dmg files, and .pkg files" }
       ],
-      "correct": "b",
-      "explanation": "Managed Apple IDs are created and managed through Apple Business Manager, which integrates with Active Directory to allow users to authenticate with their existing corporate credentials.",
-      "trap": "Personal Apple IDs cannot integrate with AD. Keychain stores credentials but does not federate with AD.",
-      "tags": ["macos", "apple-id", "mdm"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "a",
+      "explanation": "Keychain securely stores passwords, certificates, and private notes, encrypted by the user's login password.",
+      "trap": "Media (photos/videos) is iCloud Photos; OS files belong to macOS itself.",
+      "tags": ["keychain"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     },
     {
       "id": "1.8.q.009",
-      "type": "multi-select",
-      "stem": "Which of the following are TRUE about macOS Time Machine? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "Which macOS feature allows starting work on a Mac and seamlessly continuing it on an iPhone or iPad?",
       "choices": [
-        { "id": "a", "text": "Creates hourly backups for the past 24 hours" },
-        { "id": "b", "text": "Creates daily backups for the past month" },
-        { "id": "c", "text": "Stores backups exclusively in iCloud" },
-        { "id": "d", "text": "Deletes oldest backups automatically when the volume fills" }
+        { "id": "a", "text": "Continuity" },
+        { "id": "b", "text": "Spotlight" },
+        { "id": "c", "text": "Finder" },
+        { "id": "d", "text": "Force Quit" }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "Time Machine backs up hourly/daily/weekly to a local or network volume - not exclusively to iCloud. iCloud is a separate service.",
-      "trap": "(c) Time Machine uses a local drive or network volume, NOT iCloud. iCloud backup is a separate Apple feature.",
-      "tags": ["macos", "backup", "time-machine"],
-      "sourceTranscript": "pm-1202-macos-overview",
-      "needsReview": false
+      "correct": "a",
+      "explanation": "Continuity lets you start work on a Mac and pick it up on your iPhone or iPad.",
+      "trap": "Spotlight is the systemwide search; it doesn't move work between devices.",
+      "tags": ["continuity"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
+    },
+    {
+      "id": "1.8.q.010",
+      "type": "multiple-choice",
+      "stem": "After Software Update applies a Rapid Security Response (RSR), how is the installed RSR identified next to the OS version number?",
+      "choices": [
+        { "id": "a", "text": "By a Greek letter, like alpha or beta" },
+        { "id": "b", "text": "By a single letter appended to the version number" },
+        { "id": "c", "text": "It is hidden and never visible to the user" },
+        { "id": "d", "text": "By a four-digit year added to the build number" }
+      ],
+      "correct": "b",
+      "explanation": "An installed RSR is shown as a letter appended next to the OS version number.",
+      "trap": "RSRs are visible; Apple specifically marks them so admins can confirm they are present.",
+      "tags": ["rsr"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["macos-features"]
     }
   ]
 }

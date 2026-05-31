@@ -147,9 +147,9 @@ function ResetButton() {
   const [confirming, setConfirming] = useState(false);
 
   function doReset() {
-    localStorage.removeItem('aplus-prep:progress:v1');
-    localStorage.removeItem('aplus-prep:srs:v1');
-    localStorage.removeItem('aplus-prep:quiz:v1');
+    localStorage.removeItem('aplus-prep:progress:v2');
+    localStorage.removeItem('aplus-prep:srs:v2');
+    localStorage.removeItem('aplus-prep:quiz:v2');
     window.location.reload();
   }
 

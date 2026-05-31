@@ -4,170 +4,171 @@
     {
       "id": "1.9.q.001",
       "type": "multiple-choice",
-      "stem": "A Linux administrator adds a new drive but it does not appear after rebooting. Which file should they check to ensure it mounts at startup?",
+      "stem": "On a Linux system, where are users' encrypted password hashes stored, and who can read that file?",
       "choices": [
-        { "id": "a", "text": "/etc/resolv.conf" },
-        { "id": "b", "text": "/etc/fstab" },
-        { "id": "c", "text": "/etc/hosts" },
-        { "id": "d", "text": "/etc/passwd" }
+        { "id": "a", "text": "/etc/passwd; readable by everyone" },
+        { "id": "b", "text": "/etc/shadow; readable only by root (and processes with elevated rights)" },
+        { "id": "c", "text": "/etc/hosts; readable only by root" },
+        { "id": "d", "text": "/etc/resolv.conf; readable by everyone" }
       ],
       "correct": "b",
-      "explanation": "/etc/fstab (File System Table) lists all drives and partitions to mount at boot. A drive missing after reboot is typically not listed there.",
-      "trap": "/etc/hosts maps names to IPs. /etc/resolv.conf configures DNS. Neither is related to drive mounting.",
-      "tags": ["linux", "config-files", "filesystem"],
-      "sourceTranscript": "pm-1202-linux",
+      "explanation": "Encrypted passwords live in /etc/shadow, which standard users cannot read. /etc/passwd lists accounts but no longer holds the password hash on modern systems.",
+      "trap": "/etc/passwd is publicly readable but does NOT contain the actual hashes anymore; it just lists user metadata.",
+      "tags": ["etc-passwd", "etc-shadow"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.002",
       "type": "multiple-choice",
-      "stem": "A technician needs to override a DNS entry for a test server so the hostname 'staging.corp.local' resolves to a specific IP on their Linux machine only. Which file should they edit?",
+      "stem": "Which is the BEST-practice way to run a single administrative command on Linux without staying logged in as the superuser?",
       "choices": [
-        { "id": "a", "text": "/etc/resolv.conf" },
-        { "id": "b", "text": "/etc/shadow" },
-        { "id": "c", "text": "/etc/hosts" },
-        { "id": "d", "text": "/etc/fstab" }
+        { "id": "a", "text": "su -, then run all commands as root for the rest of the session" },
+        { "id": "b", "text": "Log in directly as root using SSH" },
+        { "id": "c", "text": "sudo <command>, which elevates only that single command" },
+        { "id": "d", "text": "Change ownership of the file with chown so root rights are not needed" }
       ],
       "correct": "c",
-      "explanation": "/etc/hosts entries take precedence over DNS. Adding the IP and hostname there will override the DNS server response on that specific machine.",
-      "trap": "/etc/resolv.conf tells Linux which DNS servers to use - it cannot override specific DNS records.",
-      "tags": ["linux", "config-files", "dns"],
-      "sourceTranscript": "pm-1202-linux",
+      "explanation": "sudo elevates a single command. The transcript flags it as the preferred best practice over switching the whole session with su.",
+      "trap": "su switches your whole session to root, which keeps the elevated state alive longer than necessary.",
+      "tags": ["sudo", "su"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.003",
       "type": "multiple-choice",
-      "stem": "A Linux file shows the following in ls -l output: -rw-r--r-- professor staff backup.txt. What can members of the 'staff' group do with this file?",
+      "stem": "A Linux admin runs 'chmod 764 file.sh'. What permissions does this grant?",
       "choices": [
-        { "id": "a", "text": "Read and write" },
-        { "id": "b", "text": "Read only" },
-        { "id": "c", "text": "Read, write, and execute" },
-        { "id": "d", "text": "No access" }
+        { "id": "a", "text": "Owner: rwx, group: rw-, others: r--" },
+        { "id": "b", "text": "Owner: rw-, group: r--, others: rwx" },
+        { "id": "c", "text": "Owner: r--, group: rwx, others: rw-" },
+        { "id": "d", "text": "Owner: ---, group: ---, others: rwx" }
       ],
-      "correct": "b",
-      "explanation": "The second set of three characters 'r--' is the group permission. r = read, - = no write, - = no execute. Group can read only.",
-      "trap": "The first set rwx is for the file owner (professor). Group gets the middle set.",
-      "tags": ["linux", "permissions", "chmod"],
-      "sourceTranscript": "pm-1202-linux-commands-1",
+      "correct": "a",
+      "explanation": "Octal: 4=r, 2=w, 1=x. 7=rwx, 6=rw, 4=r. So 764 = owner rwx, group rw, others r.",
+      "trap": "The order is always owner-group-others. Do not flip it.",
+      "tags": ["chmod"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.004",
       "type": "multiple-choice",
-      "stem": "A script file needs to be executable by its owner, readable by the group, and have no access for others. Which chmod command achieves this?",
+      "stem": "Which Linux package manager is associated with each distribution family?",
       "choices": [
-        { "id": "a", "text": "chmod 741 script.sh" },
-        { "id": "b", "text": "chmod 740 script.sh" },
-        { "id": "c", "text": "chmod 744 script.sh" },
-        { "id": "d", "text": "chmod 777 script.sh" }
+        { "id": "a", "text": "apt on Red Hat; dnf on Debian/Ubuntu" },
+        { "id": "b", "text": "apt on Debian/Ubuntu; dnf on Red Hat" },
+        { "id": "c", "text": "Both apt and dnf are only on macOS" },
+        { "id": "d", "text": "apt and dnf are only used on Windows Subsystem for Linux" }
       ],
       "correct": "b",
-      "explanation": "740: owner=7(rwx), group=4(r--), others=0(---). Owner can read/write/execute. Group can only read. Others have no access.",
-      "trap": "chmod 744 gives others read access. chmod 777 gives everyone full access. 740 is the only correct combination.",
-      "tags": ["linux", "permissions", "chmod"],
-      "sourceTranscript": "pm-1202-linux-commands-1",
+      "explanation": "apt is Debian/Ubuntu's package manager. dnf is Red Hat's (RHEL/Fedora family).",
+      "trap": "The reversed claim (apt on Red Hat, dnf on Debian) is the trap; apt = Debian/Ubuntu, dnf = Red Hat.",
+      "tags": ["apt", "dnf"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.005",
       "type": "multiple-choice",
-      "stem": "A Linux technician needs to run a single system administration command with elevated privileges without remaining as root. Which is correct?",
+      "stem": "A tech runs 'ping 8.8.8.8' on Linux. What is the default behavior?",
       "choices": [
-        { "id": "a", "text": "su -c 'command' to create a root shell" },
-        { "id": "b", "text": "sudo command" },
-        { "id": "c", "text": "Run the command from /etc directory" },
-        { "id": "d", "text": "chmod 777 the command, then run it" }
+        { "id": "a", "text": "It sends exactly 4 packets then stops, like Windows" },
+        { "id": "b", "text": "It fails because Linux ping does not exist" },
+        { "id": "c", "text": "It requires sudo and refuses to run for normal users" },
+        { "id": "d", "text": "It runs continuously until the user presses Ctrl+C" }
       ],
-      "correct": "b",
-      "explanation": "sudo runs a single command with root privileges without elevating the entire shell session. Best practice over using su.",
-      "trap": "su elevates the entire terminal session to root. sudo is preferred for individual commands.",
-      "tags": ["linux", "elevation"],
-      "sourceTranscript": "pm-1202-linux-commands-1",
+      "correct": "d",
+      "explanation": "Linux ping runs forever until stopped with Ctrl+C, unlike Windows' default 4 packets.",
+      "trap": "It is easy to assume ping behaves the same across OSes, but the default packet count differs.",
+      "tags": ["ping", "linux"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.006",
       "type": "multiple-choice",
-      "stem": "A Linux administrator wants to find all processes currently running on the system and filter them for processes containing the word 'apache'. Which command does this?",
+      "stem": "Which command lists directory contents in a detailed view including hidden files and permissions?",
       "choices": [
-        { "id": "a", "text": "ps | grep apache" },
-        { "id": "b", "text": "ps -e | grep apache" },
-        { "id": "c", "text": "top apache" },
-        { "id": "d", "text": "find -process apache" }
+        { "id": "a", "text": "ls" },
+        { "id": "b", "text": "ls -la" },
+        { "id": "c", "text": "pwd" },
+        { "id": "d", "text": "cd /" }
       ],
       "correct": "b",
-      "explanation": "ps -e lists all processes on the system (not just the current user's). Piping to grep filters for matching names.",
-      "trap": "ps without -e only shows the current user's processes. An apache process running as another user would not appear.",
-      "tags": ["linux", "commands", "processes"],
-      "sourceTranscript": "pm-1202-linux-commands-2",
+      "explanation": "ls -la lists everything (including hidden files starting with a dot) in long format showing permissions, owner, size, and timestamp.",
+      "trap": "Plain ls shows only non-hidden file names without permissions or sizes.",
+      "tags": ["linux"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.007",
       "type": "multiple-choice",
-      "stem": "A Linux partition is nearly full. Which command identifies which directories are consuming the most space?",
+      "stem": "Which Linux command provides a live, real-time dashboard of CPU and memory usage by running processes?",
       "choices": [
-        { "id": "a", "text": "df -h" },
-        { "id": "b", "text": "du -h" },
-        { "id": "c", "text": "mount" },
-        { "id": "d", "text": "fsck" }
+        { "id": "a", "text": "ps -e" },
+        { "id": "b", "text": "df -h" },
+        { "id": "c", "text": "top" },
+        { "id": "d", "text": "cat /proc/cpuinfo" }
       ],
-      "correct": "b",
-      "explanation": "du -h (disk usage, human-readable) scans the current directory and subdirectories, showing how much space each one uses. df shows how much is free on each filesystem, not where it was used.",
-      "trap": "df shows free space per filesystem mount point, not per directory. To find what is consuming space, du is the right tool.",
-      "tags": ["linux", "commands", "disk"],
-      "sourceTranscript": "pm-1202-linux-commands-2",
+      "correct": "c",
+      "explanation": "top shows a real-time dashboard of CPU and memory usage by process.",
+      "trap": "ps -e gives a one-shot snapshot of every running process, not a live dashboard.",
+      "tags": ["top", "ps"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.008",
       "type": "multiple-choice",
-      "stem": "A technician wants to query the DNS record for a hostname from the Linux command line and get detailed output. Which command should they use?",
+      "stem": "An admin wants to manually map a hostname to a specific IP, overriding DNS. Which file should they edit?",
       "choices": [
-        { "id": "a", "text": "nslookup hostname" },
-        { "id": "b", "text": "traceroute hostname" },
-        { "id": "c", "text": "dig hostname" },
-        { "id": "d", "text": "curl hostname" }
+        { "id": "a", "text": "/etc/passwd" },
+        { "id": "b", "text": "/etc/shadow" },
+        { "id": "c", "text": "/etc/resolv.conf" },
+        { "id": "d", "text": "/etc/hosts" }
       ],
-      "correct": "c",
-      "explanation": "dig is the Linux DNS query utility, functionally equivalent to Windows nslookup but with more detailed output including the question section, answer section, and query statistics.",
-      "trap": "nslookup exists on Linux too but dig provides more detailed diagnostic output and is the preferred tool on Linux/Unix.",
-      "tags": ["linux", "commands", "network", "dns"],
-      "sourceTranscript": "pm-1202-linux-commands-2",
+      "correct": "d",
+      "explanation": "/etc/hosts lets you statically map a domain name to an IP address and is consulted before DNS.",
+      "trap": "/etc/resolv.conf is the list of DNS servers; it does not contain individual hostname mappings.",
+      "tags": ["etc-hosts", "etc-resolv"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.009",
-      "type": "matching",
-      "stem": "Match each Linux command to its Windows equivalent.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "ip address", "rightId": "r1", "rightText": "ipconfig" },
-        { "leftId": "l2", "leftText": "traceroute", "rightId": "r2", "rightText": "tracert" },
-        { "leftId": "l3", "leftText": "dig", "rightId": "r3", "rightText": "nslookup" },
-        { "leftId": "l4", "leftText": "top", "rightId": "r4", "rightText": "Task Manager" },
-        { "leftId": "l5", "leftText": "fsck", "rightId": "r5", "rightText": "chkdsk" }
+      "type": "multiple-choice",
+      "stem": "On modern Linux, which component is responsible for managing background services (daemons)?",
+      "choices": [
+        { "id": "a", "text": "systemd" },
+        { "id": "b", "text": "GRUB" },
+        { "id": "c", "text": "BIOS" },
+        { "id": "d", "text": "X11" }
       ],
-      "explanation": "Cross-platform command equivalents are tested frequently. Know both the Linux name and what it replaces from Windows.",
-      "tags": ["linux", "commands"],
-      "sourceTranscript": "pm-1202-linux-commands-2",
+      "correct": "a",
+      "explanation": "After the kernel starts, systemd runs and manages all the background services (daemons) on modern Linux distributions.",
+      "trap": "GRUB is the bootloader that hands control to the kernel; it does not manage running services.",
+      "tags": ["systemd", "kernel"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.9.q.010",
-      "type": "multi-select",
-      "stem": "Which of the following statements about the /etc/passwd and /etc/shadow files are TRUE? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "A Linux admin wants to see how much free disk space each mounted file system has, in a human-readable format. Which command?",
       "choices": [
-        { "id": "a", "text": "/etc/passwd is readable by all users on the system" },
-        { "id": "b", "text": "/etc/passwd stores the actual hashed passwords" },
-        { "id": "c", "text": "/etc/shadow stores the actual hashed passwords and is restricted to root" },
-        { "id": "d", "text": "/etc/passwd shows 'x' in the password field when shadow is in use" }
+        { "id": "a", "text": "du -h /" },
+        { "id": "b", "text": "ls -la" },
+        { "id": "c", "text": "df -h" },
+        { "id": "d", "text": "top" }
       ],
-      "correct": ["a", "c", "d"],
-      "explanation": "/etc/passwd is world-readable but shows 'x' where the password would be - the actual hashes are in /etc/shadow which is root-only.",
-      "trap": "(b) is the classic mistake. /etc/passwd does NOT contain actual password hashes when shadow is in use.",
-      "tags": ["linux", "config-files", "security"],
-      "sourceTranscript": "pm-1202-linux",
+      "correct": "c",
+      "explanation": "df -h shows free disk space per file system in human-readable units (KB/MB/GB).",
+      "trap": "du -h shows how much space a specific directory IS USING, not the free space on the file system.",
+      "tags": ["df", "du"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

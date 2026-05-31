@@ -2,57 +2,8 @@
   "objective": "1.5",
   "title": "Given a scenario, use the appropriate Microsoft command-line tools",
   "domain": 1,
-  "estimatedMinutes": 18,
-  "subtopics": [
-    {
-      "id": "1.5.elevated-shell",
-      "heading": "Running the command prompt elevated",
-      "notes": "Some commands modify protected OS state and need administrator privileges. The user must be a member of the Administrators group.\n\nThree ways to launch elevated:\n- Search 'cmd', right-click > Run as administrator\n- Right-click the command prompt shortcut > Run as administrator\n- Ctrl+Shift+Enter shortcut from the start menu search\n\nGetting help inside the prompt:\n- help (alone): list available commands\n- help <command>: specific help\n- <command> /? : same specific help, alternate syntax",
-      "whyOnExam": "Many fix-it commands (chkdsk /f, sfc, format, diskpart) require elevation. If a command silently fails, check whether the shell is elevated.",
-      "commonTrap": "Running chkdsk /f on the boot volume in a normal session. It can't lock the volume in use and will offer to schedule it for the next reboot instead.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.5.navigation",
-      "heading": "Navigation: cd, dir",
-      "notes": "- dir: list files and directories in the current working directory. Add a path to list a different one\n- cd (or chdir): change the working directory. cd .. moves up one level\n- mkdir / md: create a directory\n- rmdir / rd: remove a directory\n- robocopy: 'robust copy' with many more options than copy (bandwidth throttling, automatic retry on network outage, etc.)\n- copy /v: verifies the copy. /y: suppresses overwrite prompt (useful in batch / scripts)\n\nDrive letters: each partition gets a letter. Windows boot drive is usually C:. Use a backslash separator: C:\\Users\\Professor\\Documents",
-      "whyOnExam": "Know what cd .., the /y flag, and the difference between robocopy and copy do. Robocopy is the right tool for unreliable network copies.",
-      "commonTrap": "Forgetting /y in scripted copy commands. An overwrite prompt will hang an unattended script.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.5.disk-management-cli",
-      "heading": "Disk management commands",
-      "notes": "chkdsk - Check Disk\n- chkdsk: read-only check of the file system index\n- chkdsk /f: fix file system errors (requires elevation)\n- chkdsk /r: locates bad sectors and recovers readable data (implies /f, takes much longer)\n- If the volume is in use, chkdsk offers to run at next reboot\n\nformat\n- Formats a partition with a specified file system. Default if not specified: FAT32\n- Example: format K: /FS:NTFS\n- ERASES the partition. Always verify the target before running\n- Requires administrator\n\ndiskpart\n- Disk partitioning utility. Starts its own command shell\n- list disk / list volume / list partition shows storage layout\n- Can create, delete, format, extend partitions\n- Requires administrator (UAC prompts if not elevated when launched)",
-      "whyOnExam": "chkdsk /f vs /r is a classic exam target. /f fixes file system errors; /r adds bad-sector recovery.",
-      "commonTrap": "Picking format without specifying /FS:NTFS, then being surprised it formatted as FAT32 (the default).",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.5.network-cli",
-      "heading": "Network commands",
-      "notes": "ipconfig - IP / DNS / DHCP configuration for each adapter. ipconfig /all gives MAC, DHCP server, lease, DNS suffixes\n\nping - reachability test using ICMP echo. Reports response time and TTL. Default sends 4 echo requests on Windows\n\nnetstat - active TCP / UDP connections\n- netstat -a: ALL connections including listening ports\n- netstat -b: shows the executable for each connection (requires elevation)\n- netstat -n: numeric output (no DNS lookups)\n\nnslookup - manually query DNS. Returns the IP(s) for a name, or vice versa\n\nnet use - map a network share to a drive letter:\n  net use H: \\\\server\\share\nnet view \\\\server - lists shares on a server\nnet user <name> /domain - account details for a domain user\n\ntracert - traceroute. Uses ICMP TTL Exceeded to discover routers between you and the destination. TTL is a hop count, not seconds\n\npathping - traceroute + per-hop ping statistics. First builds the route, then runs round-trip tests against each hop. Long but useful for identifying which hop is degrading performance",
-      "whyOnExam": "Match the symptom to the right tool: 'is this server reachable?' = ping. 'where in the path is the problem?' = tracert or pathping. 'who is connected to my machine?' = netstat.",
-      "commonTrap": "Assuming TTL is a time value. In IPv4 traceroute, TTL is a HOP COUNT - it decrements at each router.",
-      "weakSpotTags": ["what-first"]
-    },
-    {
-      "id": "1.5.file-management",
-      "heading": "File management commands",
-      "notes": "- md / mkdir: make a new directory\n- rd / rmdir: remove a directory\n- copy: copy a file. /v verifies, /y suppresses overwrite prompt\n- robocopy: 'robust copy'. Throttling, automatic retry on network outage, supports very large copies. /? shows pages of options",
-      "whyOnExam": "robocopy is the right answer for large or unreliable network copies. copy is fine for local single files.",
-      "commonTrap": "Using copy where robocopy belongs. A single dropped packet during copy = corrupt destination. Robocopy retries automatically.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.5.informational-and-os",
-      "heading": "Informational + OS management commands",
-      "notes": "Informational\n- hostname: name of the current device. Use it to confirm you're on the right machine before destructive actions\n- whoami: who you're logged in as. whoami /all adds SID, group membership, privileges\n- winver: opens a dialog with the Windows version, build, and edition\n- net user <name>: account info (locked, last logon, expires, groups, etc.)\n- <command> /?: built-in help for that command\n\nOS management\n- gpupdate /force: re-apply group policy to this device immediately (instead of waiting for the next refresh)\n- gpresult /r: report which group policies are currently applied (RSoP = Resultant Set of Policies)\n- sfc /scannow: System File Checker. Scans protected Windows files and repairs any that were modified or corrupted. Log saved to cbs.log",
-      "whyOnExam": "hostname + whoami are your sanity checks before issuing a destructive command remotely. sfc /scannow is the standard 'something replaced my Windows files' fix.",
-      "commonTrap": "Running gpupdate without /force. Without /force, only changed policies refresh; with /force, every policy reapplies (slower but thorough).",
-      "weakSpotTags": []
-    }
-  ],
-  "sources": ["pm-1202-windows-cli", "pm-1202-windows-network-cli"],
-  "needsReview": false
+  "subtopics": [],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub: legacy notes cleared during core2-cram question rebuild. Awaiting topic content for the new transcript."
 }

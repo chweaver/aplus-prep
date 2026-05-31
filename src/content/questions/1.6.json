@@ -4,136 +4,171 @@
     {
       "id": "1.6.q.001",
       "type": "multiple-choice",
-      "stem": "A user wants to extend the Windows paging file to use more virtual memory. Which Control Panel path leads there?",
+      "stem": "In Control Panel, where do you configure a corporate VPN connection or a proxy server?",
       "choices": [
-        { "id": "a", "text": "System > Advanced System Settings > Performance > Advanced > Virtual Memory" },
-        { "id": "b", "text": "Programs and Features > Turn Windows features on or off" },
-        { "id": "c", "text": "Device Manager > Properties > Resources" },
-        { "id": "d", "text": "Power Options > Advanced power settings" }
+        { "id": "a", "text": "Programs and Features" },
+        { "id": "b", "text": "Internet Options, on the Connections tab" },
+        { "id": "c", "text": "Device Manager" },
+        { "id": "d", "text": "Disk Management" }
       ],
-      "correct": "a",
-      "explanation": "Virtual memory (paging file) settings are deep in System > Advanced System Settings.",
-      "trap": "Power Options is for sleep / hibernate, not paging.",
-      "tags": ["system", "virtual-memory"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "b",
+      "explanation": "Internet Options' Connections tab is where you configure a VPN or a proxy server in classic Control Panel.",
+      "trap": "Programs and Features is for installing/removing software, not for network connection settings.",
+      "tags": ["internet-options", "vpn", "proxy"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.002",
       "type": "multiple-choice",
-      "stem": "A laptop user closes the lid before commuting home but the battery is almost always dead when they arrive. Which power state should they switch to?",
+      "stem": "A user accidentally opened a file that turned out to be malicious because Windows was hiding its real .exe extension. In File Explorer Options, which view-tab change prevents this in the future?",
       "choices": [
-        { "id": "a", "text": "Sleep" },
-        { "id": "b", "text": "Standby" },
-        { "id": "c", "text": "Hibernate" },
-        { "id": "d", "text": "Fast Startup" }
+        { "id": "a", "text": "Uncheck 'Hide extensions for known file types'" },
+        { "id": "b", "text": "Uncheck 'Show hidden files'" },
+        { "id": "c", "text": "Set 'Hide protected operating system files'" },
+        { "id": "d", "text": "Enable 'Always show menus'" }
       ],
-      "correct": "c",
-      "explanation": "Hibernate writes state to disk and uses no power, so the laptop survives long idle periods without battery drain.",
-      "trap": "Sleep and Standby both keep state in RAM and continue to drain battery.",
-      "tags": ["power-options", "hibernate"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "a",
+      "explanation": "Unchecking 'Hide extensions for known file types' makes Windows display the real extension on every file, exposing things like document.pdf.exe.",
+      "trap": "Showing hidden files reveals system items but does NOT expose extensions on visible files.",
+      "tags": ["file-explorer-options"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.003",
       "type": "multiple-choice",
-      "stem": "Where in the Control Panel do you enable / disable IIS, Hyper-V, or Windows Subsystem for Linux?",
+      "stem": "Which Power Options statement is correct?",
       "choices": [
-        { "id": "a", "text": "Administrative Tools" },
-        { "id": "b", "text": "Programs and Features > Turn Windows features on or off" },
-        { "id": "c", "text": "System > Advanced System Settings" },
-        { "id": "d", "text": "Settings > Apps > Optional Features" }
+        { "id": "a", "text": "Sleep saves your work to the storage drive and powers the system off completely" },
+        { "id": "b", "text": "Hibernate keeps work in RAM; Sleep saves to the storage drive" },
+        { "id": "c", "text": "Sleep keeps your work in RAM for a quick resume; Hibernate saves to the storage drive and powers off completely" },
+        { "id": "d", "text": "Both Sleep and Hibernate fully power off the system" }
       ],
-      "correct": "b",
-      "explanation": "Windows components like IIS, Hyper-V, WSL are toggled via 'Turn Windows features on or off' in the Programs and Features applet.",
-      "trap": "(d) Settings > Apps > Optional Features manages downloadable language packs and small features, not the major Windows roles.",
-      "tags": ["programs-and-features"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "c",
+      "explanation": "Sleep keeps work in RAM (low power, quick resume). Hibernate writes state to the storage drive and powers off (essential before removing the battery).",
+      "trap": "The reversed claim (Hibernate in RAM, Sleep to disk) is the trap; if RAM loses power, anything held only in RAM during Sleep is lost.",
+      "tags": ["sleep", "hibernate", "power-options"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.004",
       "type": "multiple-choice",
-      "stem": "Windows Update reboots a user's PC during important client meetings. What setting addresses this without disabling updates?",
+      "stem": "A workstation needs a larger paging file. Where in Control Panel do you configure the virtual-memory paging file?",
       "choices": [
-        { "id": "a", "text": "Disable the Windows Update service" },
-        { "id": "b", "text": "Set Active Hours in Windows Update settings" },
-        { "id": "c", "text": "Turn on Fast Startup" },
-        { "id": "d", "text": "Switch to a metered connection" }
+        { "id": "a", "text": "System -> Advanced system settings" },
+        { "id": "b", "text": "Network and Sharing Center" },
+        { "id": "c", "text": "Internet Options" },
+        { "id": "d", "text": "File Explorer Options" }
       ],
-      "correct": "b",
-      "explanation": "Active Hours tells Windows Update not to reboot during the configured workday window. Updates still download and install around those hours.",
-      "trap": "(d) metered connection delays some downloads but doesn't fully solve the reboot timing problem.",
-      "tags": ["settings", "update", "active-hours"],
-      "sourceTranscript": "pm-1202-windows-settings",
+      "correct": "a",
+      "explanation": "Virtual memory settings (the paging file) live under the System applet's Advanced system settings.",
+      "trap": "Power Options controls hibernation, not the paging file size.",
+      "tags": ["control-panel", "virtual-memory"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.005",
       "type": "multiple-choice",
-      "stem": "A user reports their Mail icon is missing from the Control Panel. What is the MOST likely cause?",
+      "stem": "A developer needs to enable Internet Information Services (IIS) on a Windows workstation. Which Control Panel applet exposes this?",
       "choices": [
-        { "id": "a", "text": "Windows 11 removed the Mail applet from Control Panel" },
-        { "id": "b", "text": "The user is not in the Administrators group" },
-        { "id": "c", "text": "No supported email client (e.g. Outlook) is installed" },
-        { "id": "d", "text": "Mail was disabled via Group Policy" }
+        { "id": "a", "text": "Device Manager" },
+        { "id": "b", "text": "Network and Sharing Center" },
+        { "id": "c", "text": "Internet Options" },
+        { "id": "d", "text": "Programs and Features -> Turn Windows features on or off" }
       ],
-      "correct": "c",
-      "explanation": "The Mail applet only appears in Control Panel once a supported email client is installed (typically Outlook).",
-      "trap": "Group Policy CAN hide it but the most common everyday cause is simply that Outlook isn't installed.",
-      "tags": ["control-panel", "mail"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "d",
+      "explanation": "Programs and Features has 'Turn Windows features on or off', which is where built-in components like IIS are enabled.",
+      "trap": "Internet Options handles browser settings, not Windows components.",
+      "tags": ["control-panel"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.006",
       "type": "multiple-choice",
-      "stem": "A technician needs to see hidden system files in File Explorer. Which Control Panel applet contains this setting?",
+      "stem": "In Windows Settings -> Update & Security, what is the purpose of configuring Active Hours?",
       "choices": [
-        { "id": "a", "text": "File Explorer Options > View tab" },
-        { "id": "b", "text": "Indexing Options" },
-        { "id": "c", "text": "System > Advanced System Settings" },
-        { "id": "d", "text": "User Accounts" }
+        { "id": "a", "text": "Disable Windows Update entirely" },
+        { "id": "b", "text": "Encrypt active drives with BitLocker" },
+        { "id": "c", "text": "Prevent Windows from rebooting during the user's normal workday" },
+        { "id": "d", "text": "Pause Defender real-time scanning" }
       ],
-      "correct": "a",
-      "explanation": "Show / hide hidden files and 'hide file extensions' are both on the View tab of File Explorer Options.",
-      "trap": "Indexing Options changes what is searched, not what is shown.",
-      "tags": ["file-explorer", "view"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "c",
+      "explanation": "Active Hours tells Windows when the user is working, so it avoids automatic restarts during that window.",
+      "trap": "Active Hours does NOT pause updates; it only avoids unexpected reboots during the configured hours.",
+      "tags": ["windows-settings", "patch-management"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.007",
-      "type": "matching",
-      "stem": "Match each task to the correct Control Panel applet.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "Pair a Bluetooth printer", "rightId": "r1", "rightText": "Devices and Printers" },
-        { "leftId": "l2", "leftText": "Set default speaker", "rightId": "r2", "rightText": "Sound" },
-        { "leftId": "l3", "leftText": "Change UAC prompt level", "rightId": "r3", "rightText": "User Accounts" },
-        { "leftId": "l4", "leftText": "Roll back a graphics driver", "rightId": "r4", "rightText": "Device Manager" },
-        { "leftId": "l5", "leftText": "Manage search index folders", "rightId": "r5", "rightText": "Indexing Options" }
+      "type": "multiple-choice",
+      "stem": "Why is the system Time and Language setting flagged as critical in a corporate environment?",
+      "choices": [
+        { "id": "a", "text": "It changes the keyboard layout for international employees only" },
+        { "id": "b", "text": "Correct time is required for encryption and Active Directory to work properly" },
+        { "id": "c", "text": "It controls which Windows Update region is used" },
+        { "id": "d", "text": "It enables Hyper-V virtualization" }
       ],
-      "explanation": "Knowing which applet owns which task is the core of 1.6.",
-      "tags": ["control-panel"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "b",
+      "explanation": "Correct system time is required for encryption and Active Directory authentication to work. Bad time = Kerberos and certificate failures.",
+      "trap": "Keyboard layout is configured in Region/Language but is not why time itself is critical.",
+      "tags": ["windows-settings", "active-directory"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.6.q.008",
-      "type": "multi-select",
-      "stem": "Which statements about Windows power options are TRUE? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "Where in the modern Windows Settings app do you configure sign-in options like a PIN or multi-factor authentication?",
       "choices": [
-        { "id": "a", "text": "Hibernate writes state to disk and requires no power" },
-        { "id": "b", "text": "Sleep keeps state in RAM and requires constant power" },
-        { "id": "c", "text": "Fast Startup performs a complete shutdown then a quick boot" },
-        { "id": "d", "text": "You can configure what happens when the laptop lid closes" }
+        { "id": "a", "text": "Devices" },
+        { "id": "b", "text": "Privacy" },
+        { "id": "c", "text": "Update & Security" },
+        { "id": "d", "text": "Accounts" }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "Hibernate uses disk (a), Sleep uses RAM (b), and lid behavior is configurable (d). Fast Startup does NOT perform a full shutdown; it hibernates the kernel.",
-      "trap": "(c) sounds right but is wrong. Fast Startup avoids the full shutdown - that's what makes it 'fast'.",
-      "tags": ["power-options"],
-      "sourceTranscript": "pm-1202-control-panel",
+      "correct": "d",
+      "explanation": "Settings -> Accounts is where you configure Microsoft / local user accounts and sign-in options like a PIN or MFA.",
+      "trap": "Privacy controls what apps can access (mic, camera) - not the sign-in method.",
+      "tags": ["windows-settings"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.6.q.009",
+      "type": "multiple-choice",
+      "stem": "A laptop user wants closing the lid to write state to the drive and fully power off so the battery can be removed. Which Power Options choice fits?",
+      "choices": [
+        { "id": "a", "text": "Sleep" },
+        { "id": "b", "text": "Hibernate" },
+        { "id": "c", "text": "Do nothing" },
+        { "id": "d", "text": "Turn off display only" }
+      ],
+      "correct": "b",
+      "explanation": "Hibernate writes state to the storage drive and powers off completely, which is exactly the condition needed to safely remove the battery.",
+      "trap": "Sleep keeps state in RAM; removing the battery would lose that work.",
+      "tags": ["hibernate", "power-options"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.6.q.010",
+      "type": "multiple-choice",
+      "stem": "In Network and Sharing Center, going into an adapter's properties lets you do what?",
+      "choices": [
+        { "id": "a", "text": "Configure IPv4 settings - either set IP/DNS manually or use DHCP" },
+        { "id": "b", "text": "Format the system partition" },
+        { "id": "c", "text": "Manage Windows Defender firewall rules" },
+        { "id": "d", "text": "Open Disk Management" }
+      ],
+      "correct": "a",
+      "explanation": "An adapter's properties in Network and Sharing Center is where you set its IPv4 settings (IP, subnet, gateway, DNS) or switch to DHCP.",
+      "trap": "Firewall rules live under Windows Defender Firewall, not in an adapter's properties.",
+      "tags": ["control-panel", "dhcp", "static-ip"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

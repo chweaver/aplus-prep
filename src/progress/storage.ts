@@ -1,6 +1,6 @@
 import { EMPTY_PROGRESS, type ProgressState } from './types';
 
-const STORAGE_KEY = 'aplus-prep:progress:v1';
+const STORAGE_KEY = 'aplus-prep:progress:v2';
 
 export function loadProgress(): ProgressState {
   if (typeof localStorage === 'undefined') return EMPTY_PROGRESS;

@@ -2,33 +2,8 @@
   "objective": "1.4",
   "title": "Given a scenario, use Microsoft Windows operating system features and tools",
   "domain": 1,
-  "estimatedMinutes": 18,
-  "subtopics": [
-    {
-      "id": "1.4.task-manager",
-      "heading": "Task Manager",
-      "notes": "Real-time view of Windows system activity. Launch:\n- Ctrl+Alt+Delete > Task Manager\n- Right-click the taskbar > Task Manager\n- Ctrl+Shift+Esc (fastest)\n\nKey tabs:\n- Processes: every running app and background process with CPU, memory, disk, network, GPU columns. Sort and add columns by right-clicking\n- Performance: live 60-second graphs for CPU, memory, disk, network, GPU\n- Services: list of Windows services. Start / stop / restart. Same data as the Services applet (services.msc)\n- Startup: applications that launch at boot. Enable / disable individually for troubleshooting\n- Users: connected users (local AND remote). Disconnect any user from here",
-      "whyOnExam": "Know which tab answers which troubleshooting question: CPU spike = Performance, slow boot = Startup, what's connected = Users.",
-      "commonTrap": "Confusing the Services tab (Task Manager) with the Services applet. Both manage services but the applet has more options.",
-      "weakSpotTags": ["what-first"]
-    },
-    {
-      "id": "1.4.mmc-snapins",
-      "heading": "Microsoft Management Console + snap-ins",
-      "notes": "mmc.exe opens an empty console. Add snap-ins via File > Add/Remove Snap-in. Save the layout as a .msc file to re-open later.\n\nCommon snap-ins (each also runs standalone):\n- eventvwr.msc - Event Viewer. Windows logs separated into Application, Security, Setup, System. Levels: Information, Warning, Error, Critical, Successful audit, Failure audit. Filter logs to find specific events fast\n- diskmgmt.msc - Disk Management. View drives, partitions, file systems. Change drive letters, shrink / extend volumes, mirror. Destructive - back up first\n- taskschd.msc - Task Scheduler. Run programs on a schedule or trigger. Edit Triggers / Actions / Conditions / Settings tabs\n- devmgmt.msc - Device Manager. Hardware grouped by category (printers, display adapters, etc.). Update / disable / uninstall drivers\n- certmgr.msc - Certificate Manager. View / add / remove certificates including trusted Certification Authorities\n- lusrmgr.msc - Local Users and Groups. Built-in: Administrator, Guest. Predefined groups: Administrators, Users, Backup Operators, Power Users\n- perfmon.msc - Performance Monitor. Long-term metric collection with alerts. Hundreds of counters available\n- gpedit.msc - Local Group Policy Editor (single machine). For Active Directory environments use gpmc.msc (Group Policy Management Console)",
-      "whyOnExam": "Memorize the .msc filenames - the exam tests them directly. eventvwr, diskmgmt, taskschd, devmgmt, certmgr, lusrmgr, perfmon, gpedit, gpmc.",
-      "commonTrap": "Picking gpedit.msc when the scenario describes a domain-wide policy push. gpedit is local; gpmc is the Active Directory tool.",
-      "weakSpotTags": ["active-directory"]
-    },
-    {
-      "id": "1.4.additional-tools",
-      "heading": "Additional Windows tools",
-      "notes": "System Information (msinfo32.exe)\n- Read-only overview. System Summary shows OS, processor, BIOS, boot device, RAM\n- Categories: Hardware Resources, Components, Software Environment\n- Useful for unfamiliar machines - one screen, everything\n\nResource Monitor (resmon.exe)\n- Real-time view combined with detailed statistics\n- Tabs for CPU, Memory, Disk, Network\n- More granular than Task Manager's Performance tab\n\nSystem Configuration (msconfig.exe)\n- Tabs: General, Boot, Services, Startup, Tools\n- Boot: select OS, safe boot options, boot log, GUI on/off\n- Startup: now redirects to Task Manager\n- Tools: launch other utilities (Event Viewer, Resource Monitor, etc.)\n\nDisk Cleanup (cleanmgr.exe)\n- Categorize and delete unneeded files: temp internet, downloaded program files, recycle bin, Windows error reports\n\nDisk Defragment (dfrgui.exe, defrag command)\n- ONLY for spinning hard drives. Do NOT defrag SSDs (no performance benefit, wears the drive)\n- Default schedule runs weekly\n- Shows efficiency percent; nothing to do at 98%+\n\nRegistry Editor (regedit.exe)\n- Hierarchical config database. Top-level hives all start with HKEY:\n  - HKEY_CLASSES_ROOT\n  - HKEY_CURRENT_USER\n  - HKEY_LOCAL_MACHINE\n  - HKEY_USERS\n  - HKEY_CURRENT_CONFIG\n- Always export the hive before editing - File > Export\n- UAC prompts at launch because changes can wreck the OS",
-      "whyOnExam": "regedit hive names and msinfo32 vs resmon vs msconfig are common targets. Know what each one is FOR.",
-      "commonTrap": "Defragging an SSD. The exam will test this directly. SSDs do not need defragmentation and may be harmed by it.",
-      "weakSpotTags": []
-    }
-  ],
-  "sources": ["pm-1202-task-manager", "pm-1202-mmc", "pm-1202-additional-tools"],
-  "needsReview": false
+  "subtopics": [],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub: legacy notes cleared during core2-cram question rebuild. Awaiting topic content for the new transcript."
 }

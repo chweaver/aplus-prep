@@ -1,50 +1,9 @@
 {
   "objective": "1.9",
-  "title": "Given a scenario, perform OS installations and upgrades in a diverse OS environment",
+  "title": "Identify common features and tools of the Linux client/desktop operating system",
   "domain": 1,
-  "estimatedMinutes": 18,
-  "subtopics": [
-    {
-      "id": "1.9.linux-overview",
-      "heading": "Linux overview",
-      "notes": "Linux is a free, open-source OS derived from Unix. Runs on a wide range of hardware from modern servers to older machines. Multiple distributions (distros): Ubuntu, Debian, Red Hat, and many others. Commands are consistent across all distros.\n\nCommunity-supported - no single vendor. This means driver support for very new hardware may lag.\n\nBoot process:\n1. UEFI firmware reads the EFI System Partition (ESP) on the boot drive.\n2. ESP contains .efi bootloader files - one per OS.\n3. Bootloader starts the OS kernel.\n4. Kernel loads device drivers, manages hardware and processes.\n5. Kernel starts systemd.\n6. systemd starts all background daemons (services).\n\nKernel vs user space:\n- Kernel space: protected memory area where the kernel runs.\n- User space: where all other applications run.\n\nsystemd - modern Linux service manager. Starts/stops/manages daemons. Replaced older init systems to provide one consistent toolset.\n\nroot user - the Linux superuser. Equivalent to Windows Administrator. All system changes require root or sudo.\n\nmacOS and Linux share many commands because macOS is derived from BSD Unix.",
-      "whyOnExam": "Boot sequence: UEFI ESP > bootloader > kernel > systemd > daemons. root = Linux admin. systemd manages daemons.",
-      "commonTrap": "Confusing daemons (Linux background services) with Windows services. They are functionally equivalent but the terminology differs.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.9.linux-config-files",
-      "heading": "Key Linux configuration files",
-      "notes": "All in /etc directory:\n\n/etc/passwd - user account database. One line per user. Fields: username:x:UID:GID:comment:home_dir:shell. The x means hashed password is in shadow file.\n\n/etc/shadow - protected file containing hashed passwords. Not readable by regular users. Contains: username, password hash, last-changed date, expiration data. Protects against brute force of hashes.\n\n/etc/hosts - static hostname-to-IP mapping. Checked BEFORE DNS. Overrides DNS for any listed entry. Pre-DNS origin; still useful for local overrides.\n\n/etc/resolv.conf - lists DNS servers the system uses for name resolution. Check this to confirm DNS configuration.\n\n/etc/fstab - File System Table. Lists all drives and partitions that mount at boot, their mount points, and file system types. If a drive is missing after boot, check fstab.",
-      "whyOnExam": "/etc/hosts overrides DNS. /etc/shadow has the actual password hashes and is restricted. /etc/resolv.conf = DNS server config. /etc/fstab = what mounts at boot.",
-      "commonTrap": "Thinking /etc/passwd still contains passwords. It shows 'x' in the password field; the actual hashes are in /etc/shadow.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.9.linux-file-commands",
-      "heading": "Linux file system commands",
-      "notes": "Navigation:\n- ls - list directory contents. ls -la shows permissions, ownership, size for all files.\n- cd - change directory. cd ~ or bare cd returns to home directory.\n- pwd - print working directory (show current path).\n- mv source dest - move or rename a file. No separate rename command.\n- cp source dest - copy a file.\n- rm filename - delete a file. rm -r directory - delete directory and its contents.\n- find . -name \"third*\" - find files by name. Supports wildcards.\n- cat file - display file contents. cat f1 f2 > out - concatenate and redirect.\n- man command - show manual page for any command. Q to quit.\n\nPermissions (chmod):\n- Three groups: user (u), group (g), others (o).\n- Three permissions: read (r=4), write (w=2), execute (x=1).\n- Octal notation: chmod 744 file → user=rwx(7), group=r(4), others=r(4).\n- Letter notation: chmod u+x file (add execute for user), chmod a-w file (remove write for all).\n- View permissions: ls -l. First column shows type + 9 permission bits (e.g. -rwxr--r--).\n\nOwnership (chown):\n- chown user file - change file owner.\n- chown user:group file - change owner and group.\n- Requires elevated privileges (use sudo).\n\nElevation:\n- sudo command - run one command with superuser privileges.\n- su - switch the entire terminal session to superuser. Use exit to return.\n- Best practice: use sudo rather than su for individual commands.\n\nFile system check and mounting:\n- fsck - file system check utility (like Windows chkdsk). Runs at boot; checks for logical errors.\n- mount - view or mount file systems. Bare mount lists all current mount points.\n- mount is similar to Windows net use but more integrated into the OS.",
-      "whyOnExam": "chmod octal values: 7=rwx, 6=rw-, 5=r-x, 4=r--. sudo vs su. mv = rename. ls -la = full listing with permissions.",
-      "commonTrap": "Thinking rm deletes directories. rm alone only deletes files. Use rm -r to delete a directory and its contents.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.9.linux-network-commands",
-      "heading": "Linux network and search commands",
-      "notes": "ip address - show IP configuration for all adapters (equivalent to Windows ipconfig /all). Shows IP, subnet, broadcast, MAC, IPv6.\nip route - show the routing table.\n\nping - test ICMP reachability. Linux ping runs continuously until stopped with Ctrl+C. Windows ping stops after 4 packets by default.\n\ncurl - retrieve content from a URL: curl http://example.com. Returns raw HTML. Used for scripting and testing web servers from the command line.\n\ndig - DNS query tool. Equivalent to Windows nslookup but with more detailed output. Shows query, answer section with resolved IPs.\n\ntraceroute - maps the hop-by-hop path to a destination. Windows equivalent: tracert. Uses TTL-exceeded messages. Some hops may show * if the router filters ICMP.\n\ngrep \"text\" filename - search file contents for a string. Works on single or multiple files. Output: every matching line.\n\nPackage managers (install/remove applications):\n- apt (Ubuntu/Debian): sudo apt install packagename\n- dnf (Red Hat/Fedora): successor to YUM. Use if apt is unavailable.",
-      "whyOnExam": "Linux ping runs until Ctrl+C. dig = Linux DNS query (nslookup equivalent). traceroute = Linux path tracer (tracert equivalent). apt for Debian-based distros, dnf for Red Hat.",
-      "commonTrap": "Running ping on Linux and waiting for it to stop. Unlike Windows (4 packets), Linux ping runs indefinitely.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.9.linux-process-disk",
-      "heading": "Linux process and disk commands",
-      "notes": "top - real-time process monitor. Shows all processes with CPU, memory usage. Updates every second. Windows equivalent: Task Manager. Load average shown as 3 numbers: 1-min, 5-min, 15-min averages.\n\nps - list processes (snapshot, not real-time).\n- ps - current user's processes only.\n- ps -e - all processes on the system.\n- ps -e | grep term - filter to find specific processes.\n\ndf -h - disk free. Shows mounted file systems with used/available space. -h = human-readable (GB/MB). Windows equivalent: looking at drive properties.\n\ndu -h - disk usage. Shows space consumed by each directory and subdirectory. Use to find what is filling a disk.\n\nnano - full-screen text editor. Opens in terminal. Used to edit config files. Ctrl+X to exit (prompts to save).\n\nsystemd and daemons:\n- Linux background services = daemons.\n- systemd manages all daemons: start, stop, enable at boot.\n- Commands: systemctl start/stop/enable/disable <service>",
-      "whyOnExam": "top = Linux Task Manager. df -h = disk free. du -h = disk usage (find what is filling disk). ps -e = all processes. nano = text editor.",
-      "commonTrap": "Confusing df (how much space is FREE on each filesystem) with du (how much space is USED by directories). They answer different questions.",
-      "weakSpotTags": []
-    }
-  ],
-  "sources": ["pm-1202-linux", "pm-1202-linux-commands-1", "pm-1202-linux-commands-2"],
-  "needsReview": false
+  "subtopics": [],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub: legacy notes cleared during core2-cram question rebuild. Awaiting topic content for the new transcript."
 }

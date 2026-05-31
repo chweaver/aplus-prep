@@ -1,6 +1,6 @@
 import { EMPTY_QUIZ, type QuizState } from './types';
 
-const STORAGE_KEY = 'aplus-prep:quiz:v1';
+const STORAGE_KEY = 'aplus-prep:quiz:v2';
 
 export function loadQuiz(): QuizState {
   if (typeof localStorage === 'undefined') return EMPTY_QUIZ;

@@ -4,153 +4,171 @@
     {
       "id": "1.4.q.001",
       "type": "multiple-choice",
-      "stem": "A user reports their Windows PC is slow at boot. After login, several applications open by themselves. Which Task Manager tab is BEST for narrowing down the cause?",
+      "stem": "A help-desk tech needs a quick, read-only snapshot of a PC's hardware resources, components, and software environment for a remote ticket. Which tool fits best?",
       "choices": [
-        { "id": "a", "text": "Processes" },
-        { "id": "b", "text": "Performance" },
-        { "id": "c", "text": "Startup" },
-        { "id": "d", "text": "Services" }
+        { "id": "a", "text": "Resource Monitor (resmon.exe)" },
+        { "id": "b", "text": "System Information (msinfo32.exe)" },
+        { "id": "c", "text": "Performance Monitor (perfmon.msc)" },
+        { "id": "d", "text": "Registry Editor (regedit.exe)" }
       ],
-      "correct": "c",
-      "explanation": "The Startup tab lists applications configured to launch at login. You can disable them individually to isolate the slow one.",
-      "trap": "Processes shows what is currently running but doesn't tell you what is configured to auto-start. Performance shows resource usage, not startup config.",
-      "tags": ["task-manager", "startup"],
-      "sourceTranscript": "pm-1202-task-manager",
+      "correct": "b",
+      "explanation": "msinfo32 gives a read-only snapshot of hardware resources, components, and software environment - exactly the 'systems resume' described.",
+      "trap": "Resource Monitor gives live gauges, not a static snapshot. The keyword is 'read-only snapshot'.",
+      "tags": ["msinfo32"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.002",
       "type": "multiple-choice",
-      "stem": "An administrator needs to view Windows logs filtered for security-related failures. Which utility (and .msc filename) opens directly to those logs?",
+      "stem": "A user complains the machine 'feels slow' and you want a live dashboard of which applications are using how much CPU, memory, disk, and network in real time. Which tool?",
       "choices": [
-        { "id": "a", "text": "perfmon.msc" },
-        { "id": "b", "text": "eventvwr.msc" },
-        { "id": "c", "text": "lusrmgr.msc" },
-        { "id": "d", "text": "msinfo32.exe" }
+        { "id": "a", "text": "System Information (msinfo32.exe)" },
+        { "id": "b", "text": "Event Viewer" },
+        { "id": "c", "text": "Registry Editor" },
+        { "id": "d", "text": "Resource Monitor (resmon.exe)" }
       ],
-      "correct": "b",
-      "explanation": "Event Viewer (eventvwr.msc) shows Windows logs grouped into Application, Security, Setup, and System. You can filter to specific levels and sources.",
-      "trap": "msinfo32 is read-only system info, not logs.",
-      "tags": ["mmc", "event-viewer"],
-      "sourceTranscript": "pm-1202-mmc",
+      "correct": "d",
+      "explanation": "Resource Monitor shows live gauges of CPU, memory, disk, and network usage per application in real time.",
+      "trap": "msinfo32 is a static snapshot, not real-time gauges. Event Viewer logs historical events.",
+      "tags": ["resmon"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.003",
       "type": "multiple-choice",
-      "stem": "A user complains their solid-state drive performance is degraded. A tech opens Disk Defragmenter and clicks Optimize. What is the issue?",
+      "stem": "Which keyboard shortcut opens Task Manager directly without a menu?",
       "choices": [
-        { "id": "a", "text": "Defragmenting an SSD has no performance benefit and may wear the drive" },
-        { "id": "b", "text": "Defragmentation requires Pro or higher Windows" },
-        { "id": "c", "text": "Defragmentation requires the user to be logged off" },
-        { "id": "d", "text": "Defragmentation cannot run on partitions smaller than 100 GB" }
+        { "id": "a", "text": "Ctrl + Alt + Del" },
+        { "id": "b", "text": "Ctrl + Shift + Esc" },
+        { "id": "c", "text": "Windows + R" },
+        { "id": "d", "text": "Windows + L" }
       ],
-      "correct": "a",
-      "explanation": "SSDs do not benefit from defragmentation - access time is uniform across cells. Repeated writes from a defrag actually reduce SSD lifespan.",
-      "trap": "It is technically possible to run defrag on an SSD; the issue is that it is the wrong tool. Use disk cleanup, check for malware, or check storage health instead.",
-      "tags": ["additional-tools", "defrag", "ssd"],
-      "sourceTranscript": "pm-1202-additional-tools",
+      "correct": "b",
+      "explanation": "Ctrl + Shift + Esc opens Task Manager directly. The transcript calls this out specifically.",
+      "trap": "Ctrl + Alt + Del opens a security menu where Task Manager is one option; it's an extra click.",
+      "tags": ["task-manager"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.004",
       "type": "multiple-choice",
-      "stem": "Before changing a registry value to fix an application issue, what should the technician do FIRST?",
+      "stem": "A PC takes 4 minutes to reach the desktop after sign-in because too many third-party apps launch on startup. Which Task Manager tab is the right place to disable them?",
       "choices": [
-        { "id": "a", "text": "Reboot into Safe Mode" },
-        { "id": "b", "text": "Run sfc /scannow" },
-        { "id": "c", "text": "Export the affected registry hive to a .reg file" },
-        { "id": "d", "text": "Disable Windows Defender" }
+        { "id": "a", "text": "Performance" },
+        { "id": "b", "text": "Processes" },
+        { "id": "c", "text": "Startup" },
+        { "id": "d", "text": "Users" }
       ],
       "correct": "c",
-      "explanation": "Exporting the hive (File > Export in regedit) gives you a known-good backup you can re-import if the change breaks something.",
-      "trap": "Disabling Defender or running sfc do not protect against a bad registry edit. The fastest recovery path is a registry export taken before editing.",
-      "tags": ["regedit", "best-practice"],
-      "sourceTranscript": "pm-1202-additional-tools",
+      "explanation": "Task Manager's Startup tab is where you disable apps from launching at login to fix slow boot times.",
+      "trap": "Disabling an app on the Processes tab only ends the current instance; it does not stop it from auto-starting next reboot.",
+      "tags": ["task-manager"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.005",
       "type": "multiple-choice",
-      "stem": "A technician wants to launch the Local Group Policy Editor on a single Windows 11 Pro workstation that is NOT joined to a domain. Which command should they run?",
+      "stem": "A technician needs to configure safe boot options for the next reboot and control which services start with Windows. Which tool?",
       "choices": [
-        { "id": "a", "text": "gpmc.msc" },
-        { "id": "b", "text": "gpedit.msc" },
-        { "id": "c", "text": "secpol.msc" },
-        { "id": "d", "text": "lusrmgr.msc" }
+        { "id": "a", "text": "msconfig.exe (System Configuration)" },
+        { "id": "b", "text": "regedit.exe" },
+        { "id": "c", "text": "perfmon.msc" },
+        { "id": "d", "text": "diskmgmt.msc" }
       ],
-      "correct": "b",
-      "explanation": "gpedit.msc is the Local Group Policy Editor, used for single-machine policy. gpmc.msc is for Active Directory environments and requires RSAT.",
-      "trap": "lusrmgr.msc manages users / groups, not policies.",
-      "tags": ["mmc", "gpedit", "group-policy"],
-      "sourceTranscript": "pm-1202-mmc",
+      "correct": "a",
+      "explanation": "System Configuration (msconfig.exe) controls the boot process, including safe boot options and startup services.",
+      "trap": "Task Manager's Startup tab disables startup APPS, but boot-level options like safe boot live in msconfig.",
+      "tags": ["msconfig"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.006",
       "type": "multiple-choice",
-      "stem": "A tech needs to add a recurring nightly job that runs a backup script at 2 AM. Which Windows utility manages this?",
+      "stem": "Tools such as Event Viewer (eventvwr.msc), Device Manager (devmgmt.msc), and Performance Monitor (perfmon.msc) are most accurately described as:",
       "choices": [
-        { "id": "a", "text": "Performance Monitor" },
-        { "id": "b", "text": "Task Scheduler (taskschd.msc)" },
-        { "id": "c", "text": "Disk Management" },
-        { "id": "d", "text": "Resource Monitor" }
+        { "id": "a", "text": "Standalone EXE utilities unrelated to each other" },
+        { "id": "b", "text": "Pure command-line tools requiring an elevated prompt" },
+        { "id": "c", "text": "Cloud services in Microsoft 365" },
+        { "id": "d", "text": "Snap-ins that can be added to an empty MMC console" }
       ],
-      "correct": "b",
-      "explanation": "Task Scheduler (taskschd.msc) runs apps and scripts on triggers including daily times. Configure Triggers, Actions, Conditions, and Settings.",
-      "trap": "Performance Monitor collects metrics but does not schedule jobs.",
-      "tags": ["mmc", "task-scheduler"],
-      "sourceTranscript": "pm-1202-mmc",
+      "correct": "d",
+      "explanation": "MMC (Microsoft Management Console) starts as an empty shell; admins add snap-ins like Event Viewer, Device Manager, and Performance Monitor to build a custom toolkit.",
+      "trap": "They're often opened directly by name, which makes them feel standalone - but architecturally they're MMC snap-ins.",
+      "tags": ["mmc", "event-viewer", "device-manager", "perfmon"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.007",
       "type": "multiple-choice",
-      "stem": "A help desk tech sits down at an unfamiliar machine and wants ONE screen that summarizes the OS name, processor, BIOS, boot device, and installed RAM. Which utility?",
+      "stem": "A junior tech runs Disk Defragmenter on a laptop with an SSD. Why is this a problem?",
       "choices": [
-        { "id": "a", "text": "msinfo32.exe" },
-        { "id": "b", "text": "resmon.exe" },
-        { "id": "c", "text": "regedit.exe" },
-        { "id": "d", "text": "perfmon.msc" }
+        { "id": "a", "text": "Defrag is only available on Windows Server, so it will fail to launch" },
+        { "id": "b", "text": "Defrag is unnecessary on SSDs and can reduce the drive's lifespan due to extra writes" },
+        { "id": "c", "text": "Defrag requires BitLocker to be disabled first" },
+        { "id": "d", "text": "Defrag will format the drive without warning" }
       ],
-      "correct": "a",
-      "explanation": "System Information (msinfo32.exe) System Summary gives this exact overview in one screen.",
-      "trap": "Resource Monitor is real-time stats, not system inventory.",
-      "tags": ["additional-tools", "msinfo32"],
-      "sourceTranscript": "pm-1202-additional-tools",
+      "correct": "b",
+      "explanation": "Defragmentation is for traditional spinning hard drives. On an SSD it provides no benefit and the extra writes shorten the drive's lifespan.",
+      "trap": "Modern Windows recognizes SSDs and avoids defrag automatically, but a tech manually forcing it is exactly the wrong move.",
+      "tags": ["defrag"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.008",
-      "type": "matching",
-      "stem": "Match each Windows tool to its primary purpose.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "eventvwr.msc", "rightId": "r1", "rightText": "View Windows logs (Application, Security, etc.)" },
-        { "leftId": "l2", "leftText": "diskmgmt.msc", "rightId": "r2", "rightText": "View / change drives and partitions" },
-        { "leftId": "l3", "leftText": "perfmon.msc", "rightId": "r3", "rightText": "Long-term metric collection with alerts" },
-        { "leftId": "l4", "leftText": "regedit.exe", "rightId": "r4", "rightText": "Edit the Windows Registry" },
-        { "leftId": "l5", "leftText": "cleanmgr.exe", "rightId": "r5", "rightText": "Categorize and delete unneeded files" }
+      "type": "multiple-choice",
+      "stem": "A USB Wi-Fi adapter is not working and the tech wants to update or roll back its driver. Which tool is the right starting point?",
+      "choices": [
+        { "id": "a", "text": "Disk Management" },
+        { "id": "b", "text": "Performance Monitor" },
+        { "id": "c", "text": "Device Manager" },
+        { "id": "d", "text": "Registry Editor" }
       ],
-      "explanation": "These five tools are the most commonly tested in 1.4. Memorize the filename + purpose for each.",
-      "tags": ["mmc", "additional-tools"],
-      "sourceTranscript": "pm-1202-additional-tools",
+      "correct": "c",
+      "explanation": "Device Manager is the hardware roster - it lists installed devices and is where you update, disable, or uninstall drivers.",
+      "trap": "Disk Management handles storage volumes, not device drivers.",
+      "tags": ["device-manager"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.4.q.009",
-      "type": "multi-select",
-      "stem": "Which statements about the Windows Registry are TRUE? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "Before editing the Windows Registry, what is the single most important precaution?",
       "choices": [
-        { "id": "a", "text": "The top-level keys all start with HKEY" },
-        { "id": "b", "text": "Changes take effect immediately and may require a reboot to fully apply" },
-        { "id": "c", "text": "The registry can be edited safely by any standard user without UAC prompts" },
-        { "id": "d", "text": "Hives can be exported as .reg files for backup" }
+        { "id": "a", "text": "Back up the affected registry hive before making changes" },
+        { "id": "b", "text": "Defrag the drive first" },
+        { "id": "c", "text": "Disable Windows Update" },
+        { "id": "d", "text": "Switch the user to a Standard account before launching regedit" }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "HKEYs (a), changes apply with possible reboot (b), and hives can be exported (d). regedit always prompts UAC because edits can break the OS.",
-      "trap": "(c) is false - UAC always prompts for regedit because of the destructive potential.",
+      "correct": "a",
+      "explanation": "Always back up the registry hive before editing. The registry is the central brain of Windows; bad edits can cripple the system.",
+      "trap": "Running as a Standard user actually prevents most registry edits; you still need backups even when elevated.",
       "tags": ["regedit"],
-      "sourceTranscript": "pm-1202-additional-tools",
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.4.q.010",
+      "type": "multiple-choice",
+      "stem": "A server is having intermittent slowdowns over the course of a week. Which tool is built to track many system metrics over days or weeks for analysis later?",
+      "choices": [
+        { "id": "a", "text": "Task Manager Performance tab" },
+        { "id": "b", "text": "Resource Monitor (resmon.exe)" },
+        { "id": "c", "text": "System Information (msinfo32.exe)" },
+        { "id": "d", "text": "Performance Monitor (perfmon.msc)" }
+      ],
+      "correct": "d",
+      "explanation": "Performance Monitor is built for long-term metric logging over days or weeks - the right tool for diagnosing intermittent issues.",
+      "trap": "Task Manager's Performance tab is a 60-second view; it can't track trends over a week.",
+      "tags": ["perfmon", "task-manager"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

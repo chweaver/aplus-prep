@@ -1,58 +1,9 @@
 {
   "objective": "1.8",
-  "title": "Explain common OS types and their purposes",
+  "title": "Explain common features and tools of the macOS/desktop operating system",
   "domain": 1,
-  "estimatedMinutes": 14,
-  "subtopics": [
-    {
-      "id": "1.8.macos-file-types",
-      "heading": "macOS file types and application management",
-      "notes": "Key file extensions:\n- .dmg - Apple Disk Image. Mounts as a virtual drive in Finder. macOS equivalent of an ISO.\n- .pkg - Installer package. Runs a script-based installer. macOS equivalent of setup.exe.\n- .app - Application bundle. Not a single executable - it is a folder containing all the app's files. Double-click to launch. Right-click > View Package Contents to see inside.\n\nUninstalling apps:\n- Most apps: drag the .app to Trash. Deleting the bundle removes everything.\n- Some apps include a formal Uninstaller.app - run it instead.\n- No Programs and Features equivalent; use Finder > Applications.\n\nApp Store - centralized repository. Manages updates automatically or manually. Click user name at bottom-left for full install history.",
-      "whyOnExam": ".dmg is disk image, .pkg is installer, .app is the application bundle. Uninstall = delete the .app. No setup.exe on macOS.",
-      "commonTrap": "Assuming macOS has no uninstaller. Most apps just need the .app deleted, but some DO include an uninstaller.",
-      "weakSpotTags": ["macos-features"]
-    },
-    {
-      "id": "1.8.macos-special-folders",
-      "heading": "macOS special folders",
-      "notes": "/Applications - all installed apps. Equivalent to Windows Program Files.\n/Users - one sub-folder per user account. Equivalent to Windows Users.\n/Library - shared support files (scripts, fonts) used by multiple apps and users.\n~/Library - per-user library (~ = home directory). Hidden by default in Finder. Path example: /Users/professor/Library.\n/System - macOS operating system files. Equivalent to Windows\\System32 area.\n\nAll paths use forward slash. The home directory is /Users/<username>, denoted as ~ in the shell.",
-      "whyOnExam": "~ means the current user's home directory. /Library vs ~/Library is a common distinction.",
-      "commonTrap": "Confusing /Library (system-wide) with ~/Library (per-user). The per-user folder is hidden by default.",
-      "weakSpotTags": ["macos-features"]
-    },
-    {
-      "id": "1.8.apple-id-mdm",
-      "heading": "Apple ID, Managed Apple ID, and MDM",
-      "notes": "Apple ID - personal identifier tied to App Store, iCloud, device ownership.\n\nManaged Apple ID\n- Business/education version managed by IT via Apple Business Manager.\n- Can integrate with Active Directory - same credentials as Windows login.\n- Works with MDM (Mobile Device Manager) for central device management.\n- IT can push apps, assign permissions, control data access across all devices.\n\nTime Machine (backup)\n- Built-in backup application. Backs up to an external or network volume.\n- Hourly backups for the past 24 hours.\n- Daily backups for the past month.\n- Weekly backups for all previous months.\n- When volume fills up, oldest backups are deleted automatically.",
-      "whyOnExam": "Time Machine backup schedule: hourly/daily/weekly. Managed Apple ID = corporate context, integrates with AD.",
-      "commonTrap": "Confusing Time Machine (local/network backup) with iCloud (cloud sync). They are separate features.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.8.software-updates",
-      "heading": "macOS software updates and Rapid Security Response",
-      "notes": "OS updates: System Settings > General > Software Updates.\nApp updates: App Store (separate from OS updates).\n\nUpdate options:\n- Download updates automatically\n- Install macOS updates (can be turned off)\n- Install App Store app updates automatically\n- Install security responses and system files\n- Beta updates (off by default - unstable)\n\nRapid Security Response (RSR)\n- Emergency security patches pushed immediately for critical vulnerabilities.\n- Available on macOS, iOS, and iPadOS.\n- Turned on by default under Automatic Updates.\n- If an OS version has a letter suffix (e.g., 14.1.1a), an RSR update has been applied.",
-      "whyOnExam": "RSR = emergency critical patch, pushed immediately. Letter appended to version number after RSR.",
-      "commonTrap": "Treating RSR as optional. It is on by default and addresses critical vulnerabilities, not routine updates.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.8.system-preferences",
-      "heading": "macOS System Preferences (System Settings)",
-      "notes": "macOS equivalent of the Windows Control Panel. Single location for all OS settings.\n\nKey sections:\n- Display - arrange monitors, set resolution, brightness, color profiles, menu bar location.\n- Network - configure wired/wireless adapters, IPv4/IPv6, DHCP or static, DNS, 802.1X auth, proxy, hardware settings.\n- Printers and Scanners - add printers, share them on the network, view queues, check ink/toner.\n- Privacy and Security - per-app permissions (location, microphone, camera, photos, files/folders). FileVault toggle.\n- Accessibility - vision, hearing, and input accommodations. Third-party accessibility apps need explicit permission here.\n- Time Machine - configure backup volumes (direct or network).\n\nIn newer macOS versions, called System Settings rather than System Preferences.",
-      "whyOnExam": "Firewall and FileVault are found under Privacy and Security. Network adapter properties mirror Windows adapter settings.",
-      "commonTrap": "Looking for antivirus in System Preferences. macOS has no built-in single AV app - third-party only.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.8.macos-features",
-      "heading": "macOS key features",
-      "notes": "Finder - file management front end. Equivalent to Windows File Explorer. Provides access to local drives, network shares, and screen sharing targets.\n\nSpotlight - system-wide search. Launch with Command+Space. Searches apps, documents, images, websites, and more. Customize categories in System Preferences > Spotlight.\n\nMission Control - shows all running apps spread across the desktop. Activate: 3-finger swipe up OR Control+Up arrow.\n- Spaces: multiple virtual desktops, managed from within Mission Control.\n\nKeychain - encrypted credential store built into macOS. Stores passwords, certificates, secure notes. Decrypted with the user's login password. Not an add-on - built-in.\n\niCloud - cloud sync across Apple devices. Syncs calendar, email, photos, messages. iCloud Drive = file cloud storage (like Dropbox).\n\nContinuity - seamless handoff between macOS, iPadOS, iOS devices. Pick up a task started on one device on another. Also: iPhone as Mac webcam, AirDrop file transfer, text message forwarding. Requires iCloud login on all devices.\n\nDisk Utility - graphical tool to manage file systems. Format drives, create partitions, mount/unmount volumes, create disk images.\n\nFileVault - full disk encryption. macOS equivalent of BitLocker. Uses login password or iCloud credentials to encrypt the entire drive. Enable/disable: System Preferences > Privacy and Security > FileVault.\n\nTerminal - command-line interface app. Used to run shell scripts and manage the OS.\n\nForce Quit - terminate a hung application.\n- Keyboard: Command+Option+Escape (shows Force Quit window).\n- Dock: hold Option, right-click the app icon > Force Quit.",
-      "whyOnExam": "FileVault = macOS full disk encryption (BitLocker equivalent). Spotlight = Command+Space. Force Quit = Command+Option+Escape. Keychain = encrypted credentials store.",
-      "commonTrap": "Calling Spaces a separate macOS feature. Spaces ARE Mission Control - they are managed from within the Mission Control interface, not separately.",
-      "weakSpotTags": ["macos-features"]
-    }
-  ],
-  "sources": ["pm-1202-macos-overview", "pm-1202-macos-system-preferences", "pm-1202-macos-features"],
-  "needsReview": false
+  "subtopics": [],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub: legacy notes cleared during core2-cram question rebuild. Awaiting topic content for the new transcript."
 }
