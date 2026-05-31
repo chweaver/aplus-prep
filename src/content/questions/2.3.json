@@ -1,0 +1,179 @@
+{
+  "objective": "2.3",
+  "questions": [
+    {
+      "id": "2.3.q.001",
+      "type": "multiple-choice",
+      "stem": "Which sequence correctly represents the evolution of Wi-Fi security and its encryption?",
+      "choices": [
+        { "id": "a", "text": "WPA3 -> WPA2 -> WPA -> WEP" },
+        { "id": "b", "text": "WEP -> WPA (TKIP) -> WPA2 (AES) -> WPA3 (AES)" },
+        { "id": "c", "text": "WEP (AES) -> WPA2 (TKIP) -> WPA3 (TKIP)" },
+        { "id": "d", "text": "WPA (AES) -> WEP (TKIP) -> WPA3 (AES)" }
+      ],
+      "correct": "b",
+      "explanation": "The progression is WEP (obsolete) to WPA with TKIP, then WPA2 and WPA3 which both use the strong AES cipher.",
+      "trap": "TKIP belongs to the early WPA stopgap, not to WEP or WPA3. WPA2/WPA3 use AES.",
+      "tags": ["wep", "wpa", "wpa2", "wpa3", "tkip", "aes"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["tkip-vs-aes"]
+    },
+    {
+      "id": "2.3.q.002",
+      "type": "multiple-choice",
+      "stem": "Which encryption cipher do BOTH WPA2 and WPA3 rely on?",
+      "choices": [
+        { "id": "a", "text": "TKIP" },
+        { "id": "b", "text": "WEP" },
+        { "id": "c", "text": "AES" },
+        { "id": "d", "text": "DES" }
+      ],
+      "correct": "c",
+      "explanation": "WPA2 and WPA3 both use AES (Advanced Encryption Standard), the strong modern cipher.",
+      "trap": "TKIP was the legacy WPA1 stopgap cipher for older hardware; it is not what WPA2/WPA3 use.",
+      "tags": ["aes", "tkip", "wpa2", "wpa3"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["tkip-vs-aes"]
+    },
+    {
+      "id": "2.3.q.003",
+      "type": "multiple-choice",
+      "stem": "Which is a security advantage of WPA3 over WPA2 highlighted in the review?",
+      "choices": [
+        { "id": "a", "text": "It downgrades encryption to TKIP for compatibility" },
+        { "id": "b", "text": "It removes the need for any password ever" },
+        { "id": "c", "text": "It only works on wired connections" },
+        { "id": "d", "text": "It strengthens the initial key exchange and can encrypt even open public networks" }
+      ],
+      "correct": "d",
+      "explanation": "WPA3 still uses AES but strengthens the initial key exchange and can provide encryption even on open public networks.",
+      "trap": "WPA3 does not fall back to TKIP; downgrading to TKIP would weaken, not strengthen, security.",
+      "tags": ["wpa3", "aes"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["wpa3"]
+    },
+    {
+      "id": "2.3.q.004",
+      "type": "multiple-choice",
+      "stem": "A company wants each Wi-Fi user to authenticate with a unique username and password checked against a central server. Which mode should they deploy?",
+      "choices": [
+        { "id": "a", "text": "Enterprise mode (802.1X) with a RADIUS server" },
+        { "id": "b", "text": "Open network with MAC filtering" },
+        { "id": "c", "text": "WEP with a shared key" },
+        { "id": "d", "text": "WPA3 Personal (pre-shared key)" }
+      ],
+      "correct": "a",
+      "explanation": "Enterprise mode (802.1X) requires a unique username/password per user, validated against a central authentication server, usually RADIUS.",
+      "trap": "Personal/PSK mode shares one password among everyone - the opposite of per-user credentials.",
+      "tags": ["802.1x", "radius", "psk"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.005",
+      "type": "multiple-choice",
+      "stem": "A home user sets one Wi-Fi password that everyone in the house shares. What is this authentication method called?",
+      "choices": [
+        { "id": "a", "text": "Enterprise mode (802.1X)" },
+        { "id": "b", "text": "Pre-shared key (WPA2/WPA3 Personal)" },
+        { "id": "c", "text": "Kerberos SSO" },
+        { "id": "d", "text": "RADIUS federation" }
+      ],
+      "correct": "b",
+      "explanation": "A pre-shared key (Personal mode) is the single shared password model - like one key to the front door that everyone uses.",
+      "trap": "Enterprise mode/802.1X requires unique per-user credentials, not a single shared key.",
+      "tags": ["psk", "802.1x"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.006",
+      "type": "multiple-choice",
+      "stem": "Which protocol is the most common centralized AAA server, called on by Wi-Fi, VPN, and switches to verify credentials?",
+      "choices": [
+        { "id": "a", "text": "Kerberos" },
+        { "id": "b", "text": "SAML" },
+        { "id": "c", "text": "RADIUS" },
+        { "id": "d", "text": "TKIP" }
+      ],
+      "correct": "c",
+      "explanation": "RADIUS is the common AAA protocol that Wi-Fi, VPN, and switches call to centrally verify credentials.",
+      "trap": "Kerberos provides SSO inside a Windows domain; it is not the device-facing AAA server in this scenario.",
+      "tags": ["radius"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.007",
+      "type": "multiple-choice",
+      "stem": "Which authentication protocol provides single sign-on in a Windows domain using a ticket-granting system and mutual authentication?",
+      "choices": [
+        { "id": "a", "text": "RADIUS" },
+        { "id": "b", "text": "TACACS+" },
+        { "id": "c", "text": "WPA2" },
+        { "id": "d", "text": "Kerberos" }
+      ],
+      "correct": "d",
+      "explanation": "Kerberos enables SSO in a Windows domain: you log in once, receive a ticket, and present it to other resources. It provides mutual authentication.",
+      "trap": "TACACS+ is an AAA protocol associated with Cisco hardware; it is not the Windows-domain SSO ticket system.",
+      "tags": ["kerberos", "sso"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.008",
+      "type": "multiple-choice",
+      "stem": "Which AAA protocol is described as similar to RADIUS but heavily associated with Cisco hardware?",
+      "choices": [
+        { "id": "a", "text": "TACACS+" },
+        { "id": "b", "text": "AES" },
+        { "id": "c", "text": "SAML" },
+        { "id": "d", "text": "Kerberos" }
+      ],
+      "correct": "a",
+      "explanation": "TACACS+ is a similar but less common AAA protocol, heavily associated with Cisco hardware.",
+      "trap": "RADIUS is the more common AAA option; the Cisco-associated one is TACACS+.",
+      "tags": ["tacacs", "radius"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.009",
+      "type": "multiple-choice",
+      "stem": "In the AAA framework, what does the second 'A' (Authorization) define?",
+      "choices": [
+        { "id": "a", "text": "Proving you are who you say you are" },
+        { "id": "b", "text": "What resources you are allowed to access" },
+        { "id": "c", "text": "Tracking your activity for auditing" },
+        { "id": "d", "text": "Encrypting the wireless signal" }
+      ],
+      "correct": "b",
+      "explanation": "Authorization defines what you can access. Authentication proves identity, and Accounting tracks activity.",
+      "trap": "Proving identity is Authentication (the first A); tracking activity is Accounting (the third A).",
+      "tags": ["radius"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.3.q.010",
+      "type": "multiple-choice",
+      "stem": "Why was TKIP introduced as part of the original WPA?",
+      "choices": [
+        { "id": "a", "text": "It was the strongest cipher ever created" },
+        { "id": "b", "text": "It was designed only for WPA3 open networks" },
+        { "id": "c", "text": "It was a stopgap that could run on older hardware unable to handle stronger encryption" },
+        { "id": "d", "text": "It was required for wired Ethernet" }
+      ],
+      "correct": "c",
+      "explanation": "TKIP was a crucial stopgap because it could run on older hardware that could not handle stronger encryption like AES.",
+      "trap": "TKIP is not the strongest cipher - AES replaced it precisely because TKIP was a temporary measure.",
+      "tags": ["tkip", "wpa"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["tkip-vs-aes"]
+    }
+  ]
+}

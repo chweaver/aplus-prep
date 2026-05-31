@@ -1,0 +1,178 @@
+{
+  "objective": "2.2",
+  "questions": [
+    {
+      "id": "2.2.q.001",
+      "type": "multiple-choice",
+      "stem": "A file has NTFS permissions of Full Control for a user, but the Share permission for that user is Read. What access does the user get when connecting over the network?",
+      "choices": [
+        { "id": "a", "text": "Read, because the most restrictive of NTFS and Share wins" },
+        { "id": "b", "text": "Full Control, because NTFS always wins" },
+        { "id": "c", "text": "Modify, the average of the two" },
+        { "id": "d", "text": "No access at all" }
+      ],
+      "correct": "a",
+      "explanation": "When combining NTFS and Share permissions over the network, the most restrictive permission wins. Read is more restrictive than Full Control, so the user gets Read.",
+      "trap": "NTFS does not 'always win'; over the network the effective permission is the more restrictive of the two sets.",
+      "tags": ["ntfs-permissions", "share-permissions"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.002",
+      "type": "multiple-choice",
+      "stem": "A folder inherits Read from its parent, but an administrator sets an explicit Deny on a specific file inside it for one user. What is the effective result for that user on that file?",
+      "choices": [
+        { "id": "a", "text": "The inherited permission always overrides explicit settings" },
+        { "id": "b", "text": "The explicit permission on the file overrides the inherited one" },
+        { "id": "c", "text": "Permissions cannot be set at the file level, only the folder level" },
+        { "id": "d", "text": "Both are ignored and the user gets Full Control" }
+      ],
+      "correct": "b",
+      "explanation": "An explicit permission set directly on a file overrides an inherited permission from the parent folder.",
+      "trap": "Inheritance flows parent-to-child, but an explicit setting on the object takes precedence over what it inherited.",
+      "tags": ["ntfs-permissions"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.003",
+      "type": "multiple-choice",
+      "stem": "A standard user tries to install software and is prompted for administrator credentials before the system change is allowed. Which Windows feature is doing this?",
+      "choices": [
+        { "id": "a", "text": "BitLocker" },
+        { "id": "b", "text": "Windows Hello" },
+        { "id": "c", "text": "User Account Control (UAC)" },
+        { "id": "d", "text": "EFS" }
+      ],
+      "correct": "c",
+      "explanation": "UAC is the gatekeeper that stops a system-wide change and asks for admin credentials before allowing it.",
+      "trap": "Windows Hello is a sign-in method (PIN/face/fingerprint), not the elevation prompt for system changes.",
+      "tags": ["uac"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.004",
+      "type": "multiple-choice",
+      "stem": "Which built-in Windows tool encrypts an entire OS volume so the data is unreadable if the drive is stolen, and has a 'To Go' variant for removable USB drives?",
+      "choices": [
+        { "id": "a", "text": "EFS" },
+        { "id": "b", "text": "UAC" },
+        { "id": "c", "text": "Windows Defender Firewall" },
+        { "id": "d", "text": "BitLocker" }
+      ],
+      "correct": "d",
+      "explanation": "BitLocker provides full-disk encryption of the OS volume; BitLocker To Go extends that protection to removable USB drives.",
+      "trap": "EFS encrypts individual files and folders tied to a user account, not the whole volume.",
+      "tags": ["bitlocker", "efs"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.005",
+      "type": "multiple-choice",
+      "stem": "A user wants to encrypt just a few sensitive files and folders, tied to their own user-account credentials, without encrypting the whole disk. Which feature fits?",
+      "choices": [
+        { "id": "a", "text": "Encrypting File System (EFS)" },
+        { "id": "b", "text": "BitLocker" },
+        { "id": "c", "text": "BitLocker To Go" },
+        { "id": "d", "text": "Windows Defender" }
+      ],
+      "correct": "a",
+      "explanation": "EFS encrypts individual files and folders, tying them to the user's account credentials - the granular option.",
+      "trap": "BitLocker (and To Go) does whole-volume encryption, which is more than 'just a few files'.",
+      "tags": ["efs", "bitlocker"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.006",
+      "type": "multiple-choice",
+      "stem": "In Active Directory, what is the purpose of an Organizational Unit (OU)?",
+      "choices": [
+        { "id": "a", "text": "It encrypts the domain controller's disk" },
+        { "id": "b", "text": "It groups users and computers (like departments) so Group Policy can be applied to them" },
+        { "id": "c", "text": "It replaces the need for a domain controller" },
+        { "id": "d", "text": "It is the antivirus engine for the domain" }
+      ],
+      "correct": "b",
+      "explanation": "OUs group users and computers - like departments in a building - so Group Policy can be applied to those groupings.",
+      "trap": "OUs organize objects for policy; they don't encrypt anything or replace the domain controller.",
+      "tags": ["active-directory", "ou", "group-policy"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["active-directory"]
+    },
+    {
+      "id": "2.2.q.007",
+      "type": "multiple-choice",
+      "stem": "An admin changes a Group Policy and wants it applied to a machine immediately rather than waiting for the next refresh. Which command is used?",
+      "choices": [
+        { "id": "a", "text": "sfc /scannow" },
+        { "id": "b", "text": "ipconfig /flushdns" },
+        { "id": "c", "text": "gpupdate /force" },
+        { "id": "d", "text": "chkdsk /r" }
+      ],
+      "correct": "c",
+      "explanation": "gpupdate /force forces Group Policy to apply immediately.",
+      "trap": "sfc /scannow repairs system files; it has nothing to do with Group Policy refresh.",
+      "tags": ["group-policy", "gpupdate", "active-directory"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["active-directory"]
+    },
+    {
+      "id": "2.2.q.008",
+      "type": "multiple-choice",
+      "stem": "Which Group Policy capability automatically copies a user's Desktop and Documents to a server so they follow the user and are backed up?",
+      "choices": [
+        { "id": "a", "text": "Port security" },
+        { "id": "b", "text": "BitLocker To Go" },
+        { "id": "c", "text": "UAC elevation" },
+        { "id": "d", "text": "Folder redirection" }
+      ],
+      "correct": "d",
+      "explanation": "Folder redirection (applied via Group Policy) points a user's Desktop/Documents to a server location, which also backs them up centrally.",
+      "trap": "BitLocker To Go encrypts removable drives; it does not redirect user folders to a server.",
+      "tags": ["group-policy", "active-directory"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["active-directory"]
+    },
+    {
+      "id": "2.2.q.009",
+      "type": "multiple-choice",
+      "stem": "Best practice is to do daily work in which account type, elevating only when necessary?",
+      "choices": [
+        { "id": "a", "text": "A standard user account" },
+        { "id": "b", "text": "The built-in Administrator account" },
+        { "id": "c", "text": "The Guest account" },
+        { "id": "d", "text": "A domain controller service account" }
+      ],
+      "correct": "a",
+      "explanation": "You should perform daily work in a standard account and only elevate privileges when an admin task requires it.",
+      "trap": "Running day-to-day in the Administrator account is exactly what the best practice warns against.",
+      "tags": ["least-privilege", "uac"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.2.q.010",
+      "type": "multiple-choice",
+      "stem": "Which statement about keeping Microsoft Defender Antivirus effective is correct?",
+      "choices": [
+        { "id": "a", "text": "It only works if BitLocker is enabled" },
+        { "id": "b", "text": "Its virus definitions/signatures must be kept updated to catch the latest threats" },
+        { "id": "c", "text": "It must be disabled before joining a domain" },
+        { "id": "d", "text": "It replaces the need for a firewall" }
+      ],
+      "correct": "b",
+      "explanation": "Defender's real-time protection relies on up-to-date virus definitions (signatures) to recognize the latest threats.",
+      "trap": "Antivirus and the firewall are complementary; Defender does not remove the need for a firewall.",
+      "tags": ["patch-management", "firewall"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

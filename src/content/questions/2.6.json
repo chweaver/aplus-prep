@@ -1,0 +1,185 @@
+{
+  "objective": "2.6",
+  "questions": [
+    {
+      "id": "2.6.q.001",
+      "type": "multiple-choice",
+      "stem": "According to the review, what is the industry best-practice end state for a malware-infected machine, and what is the purpose of the 10-step procedure?",
+      "choices": [
+        { "id": "a", "text": "Wipe and reimage from a known-good source; the 10-step process exists to rescue unbacked-up data before that wipe" },
+        { "id": "b", "text": "Run one antivirus scan; the 10-step process is an alternative to scanning" },
+        { "id": "c", "text": "Never wipe; the 10-step process permanently cleans without reinstalling" },
+        { "id": "d", "text": "Replace the hardware; the 10-step process is for ordering parts" }
+      ],
+      "correct": "a",
+      "explanation": "Best practice is to nuke and reimage from a known-good source. The 10-step procedure exists to stabilize the system enough to rescue critical unbacked-up data before that wipe.",
+      "trap": "The 10-step process is not a substitute for reimaging; reimaging is still the guaranteed cleanup.",
+      "tags": ["malware-removal-10-step", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.002",
+      "type": "multiple-choice",
+      "stem": "Immediately after verifying a malware infection (step 1), what is the critical next action (step 2)?",
+      "choices": [
+        { "id": "a", "text": "Back up all files to a USB drive" },
+        { "id": "b", "text": "Quarantine the system by disconnecting it from the network" },
+        { "id": "c", "text": "Reinstall the operating system" },
+        { "id": "d", "text": "Educate the end user" }
+      ],
+      "correct": "b",
+      "explanation": "Step 2 is to quarantine the infected system - unplug Ethernet, disable Wi-Fi - so it cannot spread to the network.",
+      "trap": "You must NOT back up yet; backing up an infected machine just copies the malware. Also avoid USB drives at this stage.",
+      "tags": ["malware-removal-10-step", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.003",
+      "type": "multiple-choice",
+      "stem": "Why does the procedure disable System Restore (step 3) during malware removal?",
+      "choices": [
+        { "id": "a", "text": "To free up disk space for the antivirus" },
+        { "id": "b", "text": "Because System Restore is not compatible with safe mode" },
+        { "id": "c", "text": "Because malware often infects restore points, and disabling it deletes those contaminated points" },
+        { "id": "d", "text": "To speed up the network connection" }
+      ],
+      "correct": "c",
+      "explanation": "Malware often hides in restore points. Disabling System Restore deletes the existing (possibly infected) points so you don't reintroduce the malware later.",
+      "trap": "It is not about disk space; it is about destroying contaminated restore points that could bring the malware back.",
+      "tags": ["malware-removal-10-step", "system-restore"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.004",
+      "type": "multiple-choice",
+      "stem": "During remediation (steps 4-5), after attempting removal, what must you do immediately?",
+      "choices": [
+        { "id": "a", "text": "Re-enable System Restore" },
+        { "id": "b", "text": "Reconnect to the network to download games" },
+        { "id": "c", "text": "Educate the end user" },
+        { "id": "d", "text": "Update the anti-malware engine and signature files" }
+      ],
+      "correct": "d",
+      "explanation": "After the first removal attempt, you must update the anti-malware software's engine and, most importantly, its latest signature files so it can recognize current threats.",
+      "trap": "Re-enabling System Restore comes much later (step 9), not during remediation.",
+      "tags": ["malware-removal-10-step", "patch-management"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.005",
+      "type": "multiple-choice",
+      "stem": "Malware is preventing Windows from starting normally and blocking updates. Which advanced-scan technique should you try FIRST (step 6)?",
+      "choices": [
+        { "id": "a", "text": "Boot into Safe Mode to load a minimal Windows that may stop the malware from running" },
+        { "id": "b", "text": "Immediately reimage the drive" },
+        { "id": "c", "text": "Educate the user" },
+        { "id": "d", "text": "Create a new restore point" }
+      ],
+      "correct": "a",
+      "explanation": "Safe Mode loads a minimal version of Windows, which can prevent the malware from running so you can scan and remove it.",
+      "trap": "Reimaging is the later best-practice end state; step 6 first tries Safe Mode (and, if that fails, WinPE).",
+      "tags": ["malware-removal-10-step", "safe-mode"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.006",
+      "type": "multiple-choice",
+      "stem": "If even Safe Mode cannot run, which command-line environment lets you access the file system from outside the corrupted OS to repair boot records or remove files?",
+      "choices": [
+        { "id": "a", "text": "Task Manager" },
+        { "id": "b", "text": "The Windows Preinstallation Environment (WinPE)" },
+        { "id": "c", "text": "Microsoft Store" },
+        { "id": "d", "text": "Disk Cleanup" }
+      ],
+      "correct": "b",
+      "explanation": "WinPE is a command-line environment that accesses the file system from outside the corrupted OS, used to repair boot records or manually remove files.",
+      "trap": "Task Manager only runs after Windows loads, so it cannot help when even Safe Mode fails.",
+      "tags": ["malware-removal-10-step", "winpe"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.007",
+      "type": "multiple-choice",
+      "stem": "Once the user's critical data is safely copied off (step 7), what is the recommended action?",
+      "choices": [
+        { "id": "a", "text": "Leave the existing OS in place since data is saved" },
+        { "id": "b", "text": "Re-enable System Restore and stop" },
+        { "id": "c", "text": "Reimage the drive from a known-clean image or do a fresh OS install" },
+        { "id": "d", "text": "Reconnect to the network before cleaning" }
+      ],
+      "correct": "c",
+      "explanation": "After rescuing data, follow the real best practice: delete everything and reimage from a known-clean image or perform a fresh OS install - the only way to be 100% certain.",
+      "trap": "Leaving the infected OS in place risks residual malware; reimaging is the guaranteed cleanup.",
+      "tags": ["malware-removal-10-step", "image-deployment"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.008",
+      "type": "multiple-choice",
+      "stem": "In the final steps, after the system is clean you re-enable System Restore (step 9). What should you do right after enabling it?",
+      "choices": [
+        { "id": "a", "text": "Turn off Windows Update" },
+        { "id": "b", "text": "Disconnect the machine permanently" },
+        { "id": "c", "text": "Delete the antivirus software" },
+        { "id": "d", "text": "Immediately create a fresh, clean restore point" }
+      ],
+      "correct": "d",
+      "explanation": "After re-enabling System Restore, immediately create a fresh clean restore point as a known-good snapshot of the newly reimaged system.",
+      "trap": "Turning off Windows Update is the opposite of hardening; you want automatic security patches on.",
+      "tags": ["malware-removal-10-step", "system-restore"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.009",
+      "type": "multiple-choice",
+      "stem": "What is the final step (step 10) of the malware removal process, described as most important for preventing a repeat incident?",
+      "choices": [
+        { "id": "a", "text": "Educate the end user" },
+        { "id": "b", "text": "Disable System Restore" },
+        { "id": "c", "text": "Quarantine the system" },
+        { "id": "d", "text": "Reimage the drive" }
+      ],
+      "correct": "a",
+      "explanation": "Step 10 is to educate the end user, since the user is the first line of defense against a repeat infection.",
+      "trap": "Quarantine and disabling System Restore are early steps; user education is the final, prevention-focused step.",
+      "tags": ["malware-removal-10-step"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    },
+    {
+      "id": "2.6.q.010",
+      "type": "multiple-choice",
+      "stem": "During quarantine, which actions are explicitly warned against because they spread or preserve the infection?",
+      "choices": [
+        { "id": "a", "text": "Disabling Wi-Fi and unplugging Ethernet" },
+        { "id": "b", "text": "Using USB drives to move files and performing a backup of the infected system" },
+        { "id": "c", "text": "Booting into Safe Mode" },
+        { "id": "d", "text": "Updating the antivirus signatures" }
+      ],
+      "correct": "b",
+      "explanation": "During quarantine you must not use USB drives to move files and must not back up the infected system - both spread or preserve the malware.",
+      "trap": "Disabling Wi-Fi and unplugging Ethernet is exactly what quarantine requires; that is correct, not warned against.",
+      "tags": ["malware-removal-10-step", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["malware-10-step"]
+    }
+  ]
+}

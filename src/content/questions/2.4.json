@@ -1,0 +1,181 @@
+{
+  "objective": "2.4",
+  "questions": [
+    {
+      "id": "2.4.q.001",
+      "type": "multiple-choice",
+      "stem": "A program looks like a legitimate utility, but once run it secretly opens a back door for an attacker. Which malware type is this?",
+      "choices": [
+        { "id": "a", "text": "Ransomware" },
+        { "id": "b", "text": "Worm" },
+        { "id": "c", "text": "Trojan" },
+        { "id": "d", "text": "Rootkit" }
+      ],
+      "correct": "c",
+      "explanation": "A Trojan is malware disguised as a legitimate program; running it secretly opens a back door for the attacker.",
+      "trap": "Ransomware encrypts files for extortion; it does not masquerade as a useful tool to open a back door.",
+      "tags": ["trojan", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.4.q.002",
+      "type": "multiple-choice",
+      "stem": "Which malware burrows deep into the core of the operating system, hiding its presence from antivirus and even Task Manager?",
+      "choices": [
+        { "id": "a", "text": "Adware" },
+        { "id": "b", "text": "Trojan" },
+        { "id": "c", "text": "Keylogger" },
+        { "id": "d", "text": "Rootkit" }
+      ],
+      "correct": "d",
+      "explanation": "A rootkit embeds itself in the core of the OS and hides from antivirus and Task Manager, making it very hard to find.",
+      "trap": "A keylogger records keystrokes but does not necessarily hide itself in the OS core the way a rootkit does.",
+      "tags": ["rootkit", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["new-malware"]
+    },
+    {
+      "id": "2.4.q.003",
+      "type": "multiple-choice",
+      "stem": "A user's CPU is pinned at 100% and the electricity bill spikes; investigation shows software using the machine to mine cryptocurrency for an attacker. Which malware is this?",
+      "choices": [
+        { "id": "a", "text": "Cryptominer" },
+        { "id": "b", "text": "Boot sector virus" },
+        { "id": "c", "text": "Ransomware" },
+        { "id": "d", "text": "Spyware" }
+      ],
+      "correct": "a",
+      "explanation": "A cryptominer secretly steals CPU cycles to mine cryptocurrency for an attacker.",
+      "trap": "Ransomware encrypts files and demands payment; it does not quietly mine using your CPU.",
+      "tags": ["cryptominer", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["new-malware"]
+    },
+    {
+      "id": "2.4.q.004",
+      "type": "multiple-choice",
+      "stem": "Which malware runs entirely in system memory, never writing a file to disk, making it invisible to traditional file scanners?",
+      "choices": [
+        { "id": "a", "text": "Trojan" },
+        { "id": "b", "text": "Fileless malware" },
+        { "id": "c", "text": "Adware" },
+        { "id": "d", "text": "Boot sector virus" }
+      ],
+      "correct": "b",
+      "explanation": "Fileless malware runs entirely in memory and never writes a file to disk, evading traditional signature-based file scanners.",
+      "trap": "A boot sector virus does write to the disk's boot area; the 'no file on disk' clue points to fileless.",
+      "tags": ["fileless", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["new-malware"]
+    },
+    {
+      "id": "2.4.q.005",
+      "type": "multiple-choice",
+      "stem": "What is the only method described as 100% guaranteed to remove malware from a system?",
+      "choices": [
+        { "id": "a", "text": "Run a single antivirus scan in normal mode" },
+        { "id": "b", "text": "Delete the suspicious file from the Downloads folder" },
+        { "id": "c", "text": "A full OS reinstallation, ideally from a known-good image" },
+        { "id": "d", "text": "Clear the browser cache" }
+      ],
+      "correct": "c",
+      "explanation": "The only way to be 100% sure malware is gone is a full OS reinstallation, ideally from a known-good image.",
+      "trap": "A single AV scan can miss rootkits and fileless threats; it is not a guarantee of complete removal.",
+      "tags": ["malware", "winre"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.4.q.006",
+      "type": "multiple-choice",
+      "stem": "Which detection approach uses behavioral analysis ON A SINGLE DEVICE to detect threats and can automatically isolate that endpoint?",
+      "choices": [
+        { "id": "a", "text": "XDR" },
+        { "id": "b", "text": "MDR" },
+        { "id": "c", "text": "A spam filter" },
+        { "id": "d", "text": "EDR" }
+      ],
+      "correct": "d",
+      "explanation": "EDR (Endpoint Detection and Response) uses behavioral analysis on a single device and can automatically isolate it.",
+      "trap": "XDR correlates across endpoints, network, and cloud - it is the big-picture version, not the single-device one.",
+      "tags": ["edr", "xdr"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["modern-security"]
+    },
+    {
+      "id": "2.4.q.007",
+      "type": "multiple-choice",
+      "stem": "A company hires a third-party firm to run and manage their EDR for them. What is this service called?",
+      "choices": [
+        { "id": "a", "text": "MDR" },
+        { "id": "b", "text": "DLP" },
+        { "id": "c", "text": "XDR" },
+        { "id": "d", "text": "SSO" }
+      ],
+      "correct": "a",
+      "explanation": "MDR (Managed Detection and Response) is when you hire a third-party company to manage your EDR for you.",
+      "trap": "XDR is a broader detection scope (endpoint+network+cloud), not the 'someone else manages it' service model.",
+      "tags": ["mdr", "edr"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["modern-security"]
+    },
+    {
+      "id": "2.4.q.008",
+      "type": "multiple-choice",
+      "stem": "Which detection model correlates data from endpoints, the network, AND the cloud to spot widespread attacks?",
+      "choices": [
+        { "id": "a", "text": "EDR" },
+        { "id": "b", "text": "XDR" },
+        { "id": "c", "text": "A host firewall" },
+        { "id": "d", "text": "Antivirus signatures only" }
+      ],
+      "correct": "b",
+      "explanation": "XDR (Extended Detection and Response) is the big picture - it correlates endpoint, network, and cloud data to catch widespread attacks.",
+      "trap": "EDR watches a single endpoint; XDR is the city-wide surveillance that ties multiple sources together.",
+      "tags": ["xdr", "edr"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["modern-security"]
+    },
+    {
+      "id": "2.4.q.009",
+      "type": "multiple-choice",
+      "stem": "If Windows is too corrupted to boot, which environment gives you a command prompt BEFORE Windows loads to troubleshoot and repair?",
+      "choices": [
+        { "id": "a", "text": "The Microsoft Store" },
+        { "id": "b", "text": "Task Manager" },
+        { "id": "c", "text": "The Windows Recovery Environment (WinRE)" },
+        { "id": "d", "text": "Resource Monitor" }
+      ],
+      "correct": "c",
+      "explanation": "The Windows Recovery Environment lets you access a command prompt before Windows loads, to troubleshoot and repair the system.",
+      "trap": "Task Manager and Resource Monitor only run after Windows has loaded, so they can't help when the OS won't boot.",
+      "tags": ["winre", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.4.q.010",
+      "type": "multiple-choice",
+      "stem": "What is described as the BEST defense against social-engineering threats like phishing?",
+      "choices": [
+        { "id": "a", "text": "A faster CPU" },
+        { "id": "b", "text": "Using FAT32 on all drives" },
+        { "id": "c", "text": "Disabling the firewall" },
+        { "id": "d", "text": "Consistent user education and anti-phishing training" }
+      ],
+      "correct": "d",
+      "explanation": "The weakest link is often the human, so consistent user education and anti-phishing training is the best defense.",
+      "trap": "Hardware and file systems do nothing against social engineering, which targets people, not machines.",
+      "tags": ["phishing", "malware"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}
