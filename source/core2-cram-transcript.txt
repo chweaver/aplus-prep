@@ -1,0 +1,1093 @@
+Chapter 1: Intro & Strategy
+0:00You've mastered the hardware. Now, let's master the software. This is your complete A+ Core 2 last minute study
+0:1010 secondsguide, covering every objective you need to pass with confidence. The review starts now.
+Chapter 2: Obj 1.1: Operating System Types (Windows, Linux, macOS)
+0:1919 secondsLet's break down objective 1.1, operating system types and purposes.
+0:2424 secondsFirst, what is an operating system or OS? Think of it as the traffic cop for your computer. It's the essential
+0:3333 secondssoftware that directs all the communication between your physical hardware and the applications you use.
+0:3939 secondsIt manages your memory, processes input from your keyboard and mouse, handles files, and gives your applications a
+0:4747 secondsplatform to run on. Now, let's look at the main workstation operating systems.
+0:5353 secondsWindows is the market leader. Its biggest advantage is massive industry support for both hardware and software,
+1:001 minutebut its popularity also makes it the number one target for cyber attackers.
+1:061 minute, 6 secondsLinux is the open-source champion. It's free, flexible enough to run on almost any hardware and supported by a huge
+1:141 minute, 14 secondscommunity. The downside is that finding drivers for brand new hardware can be a challenge and there's no central company
+1:221 minute, 22 secondsto call for support. MacOSS is Apple's closed source OS. It runs exclusively on
+1:281 minute, 28 secondsApple hardware. This creates a seamless and stable user experience with strong security. The trade-off is that you're
+1:361 minute, 36 secondslocked in to expensive hardware and it has less industry support compared to Windows. Chrome OS from Google is a
+1:441 minute, 44 secondslightweight browsercentric system based on Linux. It's simple and fast, but relies heavily on a constant internet connection to run its cloud-based apps.
+1:551 minute, 55 secondsNext are the mobile operating systems.
+1:581 minute, 58 secondsiOS and iPad OS are Apple's mobile systems for iPhones and iPads. They are closed source, meaning they only run on
+2:072 minutes, 7 secondsApple devices, and app development is strictly controlled by Apple. On Android, on the other hand, is open-
+2:142 minutes, 14 secondssource and runs on devices from many different manufacturers. It's maintained by the Open Handset Alliance. Now, let's
+2:222 minutes, 22 secondstalk about how an OS organizes data, which is done through a file system.
+2:272 minutes, 27 secondsThink of a file system as the library card catalog for your storage drive. It tells the OS exactly where every piece
+2:352 minutes, 35 secondsof data is located. Here are the key file systems you need to know. NTFS is the modern standard for Windows offering
+2:452 minutes, 45 secondsfeatures like compression, encryption, and user quotas. FAT32 is an older system that's highly compatible across
+2:532 minutes, 53 secondsWindows, Mac OS, and Linux, but it has a 4 GBTE maximum file size, which is a
+2:592 minutes, 59 secondsmajor limitation today. XFAT solves that problem. It was designed for flash drives and allows for much larger files
+3:083 minutes, 8 secondswhile maintaining that cross-platform compatibility.
+3:123 minutes, 12 secondsAPFS is the Apple file system optimized for the solidstate drives found in modern Macs and iPhones. And in the
+3:203 minutes, 20 secondsLinux world, you'll commonly find ext4, while high performance Linux systems often use XFS for its ability to handle very large data functions efficiently.
+3:323 minutes, 32 secondsFinally, a few critical concepts. First, vendor life cycle limitations. When a
+3:393 minutes, 39 secondsvendor declares an OS as end of life or EOL, it stops receiving security updates, making it a major risk to use.
+3:483 minutes, 48 secondsSecond, compatibility. This is a simple rule. Application executables are OSP
+3:553 minutes, 55 secondsspecific. A Windows.exe file will not run on Mac OS or Linux. Data files like
+4:024 minutes, 2 secondsdocuments or images are usually compatible and web-based apps work in any browser making the OS irrelevant.
+4:104 minutes, 10 secondsThat covers the core concepts for this objective. To recap, the OS is the traffic cop managing hardware and
+4:184 minutes, 18 secondssoftware. Workstation OSS each have tradeoffs. Windows has support but is a target. Mac OS has great integration but
+4:264 minutes, 26 secondsis hardware locked. Linux is free but has driver challenges. Chrome OS is simple but needs the internet. Mobile
+4:344 minutes, 34 secondsOSS are a split between Apple's closed source iOS and Google's open-source Android. File systems are the library
+4:434 minutes, 43 secondscard catalog for data. Remember the big three for compatibility. FAT32, XFAT, and NTFS.
+4:514 minutes, 51 secondsAnd finally, remember the key compatibility rule. Executables are not interchangeable between different operating systems.
+Chapter 3: Obj 1.2: OS Installations & Boot Methods
+5:045 minutes, 4 secondsNow that you know what an operating system is, let's cover how to install one. This is your rapid review for objective 1.2, OS installations and
+5:135 minutes, 13 secondsupgrades. First, we have to solve the chicken and the egg problem. How do you run an installation program on a
+5:205 minutes, 20 secondscomputer with no OS? The answer is using a boot method. The most common method today is booting from a USB flash drive
+5:285 minutes, 28 secondsthat contains the installation files. In a corporate environment, you might use a network or PXE boot to install an OS on
+5:365 minutes, 36 secondsmany computers at once. Other methods include using an internal recovery partition or even an internet-based
+5:435 minutes, 43 secondsinstallation. When you install, you have two main choices. A clean install is the nuclear option. It wipes everything on
+5:515 minutes, 51 secondsthe partition and starts fresh. This means backing up your data is mandatory.
+5:575 minutes, 57 secondsAn in place upgrade, on the other hand, is a seamless transition. It installs the new OS while keeping all your
+6:046 minutes, 4 secondsexisting files, apps, and settings. If your OS is corrupted, you might perform a repair installation, which refreshes
+6:126 minutes, 12 secondsthe OS files, but leaves your personal data untouched. In large organizations, technicians use deployment strategies
+6:206 minutes, 20 secondsfor efficiency. Image deployment is like using a standardized blueprint. You set up one computer perfectly, create an
+6:296 minutes, 29 secondsimage of it, and then rapidly copy that image to dozens or hundreds of other machines. Before installing, you must
+6:376 minutes, 37 secondsprepare the drive. This involves partitioning, which is dividing the drive into logical sections. There are
+6:446 minutes, 44 secondstwo main partition styles. The older style is MBR or master boot record which is limited to four primary partitions
+6:526 minutes, 52 secondsand can't handle drives larger than 2 terabytes. The modern standard is GPT or
+6:596 minutes, 59 secondsGID partition table. It's required for UEFI BIOS systems and supports up to 128 partitions and massive drive sizes.
+7:097 minutes, 9 secondsAfter partitioning, the drive is formatted. A quick format is fast but doesn't securely erase data. A full
+7:177 minutes, 17 secondsformat is much slower because it writes zeros across the entire disc, making it far more secure.
+7:257 minutes, 25 secondsFinally, before any upgrade, you have critical homework to do. First, back up your files. Second, check for hardware
+7:337 minutes, 33 secondscompatibility and ensure your applications and drivers will work with the new OS. For Windows 11 specifically,
+7:407 minutes, 40 secondsthis means verifying your system has TPM 2.0 and secure boot enabled in the UEFI BIOS. Also, be aware of the product life
+7:507 minutes, 50 secondscycle. OS vendors release regular quality updates for security and periodic feature updates for new
+7:567 minutes, 56 secondsfeatures. That covers the core concepts for this objective. To recap, boot methods like USB and PXE solve the
+8:058 minutes, 5 secondschicken and the egg problem. A clean install wipes everything while an upgrade keeps your files and settings.
+8:128 minutes, 12 secondsPartitioning divides a drive. The modern standard is GPT for UEFI systems while the legacy standard is MBR. A quick
+8:228 minutes, 22 secondsformat is fast, but a full format is slow but secure. Before upgrading, always back up your data and check
+8:298 minutes, 29 secondshardware compatibility, especially TPM 2.0 and secure boot for Windows 11.
+Chapter 4: Obj 1.3: Windows Editions & Features (Home vs Pro)
+8:398 minutes, 39 secondsOkay, so you know how to install Windows, but which version should you choose? Let's meticulously compare and
+8:478 minutes, 47 secondscontrast the Windows editions in your rapid review of Objective 1.3.
+8:538 minutes, 53 secondsFirst, the exam covers Windows 10 set to end support on October 14th, 2025 and
+9:019 minutes, 1 secondWindows 11. Remember that Windows 11 features a new user interface, integrates Teams and Copilot AI, and
+9:109 minutes, 10 secondsmost importantly, it is 64bit only, dropping all support for 32-bit CPUs.
+9:179 minutes, 17 secondsLet's start with Windows Home. This is the consumer baseline. It includes Windows Defender Antivirus, Cortana
+9:249 minutes, 24 secondsVoice Assistant, and integrates with a Microsoft account. For networking, it uses a decentralized workg groupoup,
+9:329 minutes, 32 secondswhich is like a set of individual apartments, each managing themselves.
+9:379 minutes, 37 secondsHome Edition cannot join a corporate domain. For security, Windows 11 Home includes device encryption. For remote
+9:469 minutes, 46 secondsaccess, it can only be an RDP client, and it completely lacks the group policy editor, GPIdit.msc.
+9:559 minutes, 55 secondsNow, let's upgrade to Windows Pro, the business standard. This version adds the essential corporate toolkit. Most
+10:0310 minutes, 3 secondsimportantly, it can join a domain, which is like a large office building managed from a central security office called
+10:1010 minutes, 10 secondsActive Directory Domain Services. Pro adds Bit Locker for full disk encryption or FDE. It can act as an RDP host for
+10:2010 minutes, 20 secondsremote support and includes HyperV for virtualization.
+10:2510 minutes, 25 secondsIt also enables group policy. For a single PC, you use the local group policy editor, GPedit.msc.
+10:3310 minutes, 33 secondsFor the whole network, you use the group policy management console, GPMC.msc.
+10:4010 minutes, 40 secondsFor truly high-end hardware, there's Windows 10 Pro for workstations. This is for power users supporting up to four
+10:4910 minutes, 49 secondsphysical CPUs and the resilient file system or REFS.
+10:5510 minutes, 55 secondsFor large-scale deployments, Windows Enterprise uses volume licensing. It adds advanced tools like app locker to
+11:0311 minutes, 3 secondscontrol applications, branch cache to save network bandwidth, granular user experience control, and in Windows 11,
+11:1211 minutes, 12 secondsadvanced mobile device management, MDM, and mobile application management, MAM.
+11:1811 minutes, 18 secondsNow, for the critical RAM limitations, all 32-bit Windows 10 editions are capped at just 4 GB. For 64-bit systems, the numbers scale up dramatically.
+11:3111 minutes, 31 secondsWindows Home supports up to 128 GB.
+11:3511 minutes, 35 secondsWindows Pro jumps to 2 terab. And Pro for Workstations and Enterprise support
+11:4111 minutes, 41 secondsa massive 6 tab of RAM. For encryption, remember the critical difference. EFS,
+11:4811 minutes, 48 secondsthe encrypting file system, can encrypt individual files and folders and is available in all editions. Bit Locker
+11:5611 minutes, 56 secondsprovides full disk encryption and is only in pro and enterprise. Use the pneummonic bits. Bit Locker is for
+12:0512 minutes, 5 secondsbusiness. Lastly, remember N versions are for Europe and have no media player, but this can be added back with the
+12:1312 minutes, 13 secondsmedia feature pack. Also, for Windows 11, hardware requirements like TPM 2.0 and a UEFI BIOS are mandatory.
+12:2312 minutes, 23 secondsThat covers the critical details for this objective. To recap, Windows 11 is 64-bit only and requires TPM and UEFI.
+12:3412 minutes, 34 secondsHome Edition uses a workg groupoup. Pro Edition joins a domain managed by Active Directory. Pro adds the business
+12:4212 minutes, 42 secondstoolkit, Bit Locker for full disk encryption, RDP host, HyperV, and group
+12:4812 minutes, 48 secondspolicy management. Remember the 64-bit RAM limits. Home is 128 GB, Pro is 2 TB
+12:5712 minutes, 57 secondsand Enterprise is 6 TB. Enterprise adds advanced controls like App Locker,
+13:0413 minutes, 4 secondsbranch cache, and MDM. And finally, Bit Locker encrypts the full disc for business while EFS encrypts individual files for everyone.
+Chapter 5: Obj 1.4: Windows Tools (Task Manager, MMC, Disk Mgmt)
+13:2013 minutes, 20 secondsNow that you know the different additions of Windows, let's dive into the essential features and tools you'll use every day. This is your rapid review of objective 1.4.
+13:3213 minutes, 32 secondsFirst, let's look at the detectives toolkit, the tools for gathering information. The system information tool
+13:3913 minutes, 39 secondsor MSinfo32.exe is like the systems resume. It gives you a readonly snapshot of your hardware
+13:4713 minutes, 47 secondsresources, components, and software environment. Perfect for a quick overview. For a more dynamic view, use the resource monitor or Resmon.exe.
+13:5813 minutes, 58 secondsThis is your systems dashboard with live gauges showing you exactly how much CPU, memory, disk, and network resources your applications are using in real time.
+14:1014 minutes, 10 secondsNext, the control tower for managing what's happening right now. The task manager, which you can open with control
+14:1714 minutes, 17 secondsshift escape, is your primary realtime tool. The processes tab shows you every running application and lets you find
+14:2514 minutes, 25 secondsresource hogs. The performance tab gives you a 60-second graph of your systems resource utilization. The startup tab is
+14:3314 minutes, 33 secondswhere you can disable applications from launching at login to fix slow boot times. The services tab lets you start, stop, and restart background services.
+14:4414 minutes, 44 secondsAnd the users tab lets you see and disconnect users who are connected to the machine. For controlling the boot
+14:5114 minutes, 51 secondsprocess itself, use system configuration or misconfig.exe.
+14:5714 minutes, 57 secondsThis is the systems launch sequence controller. Here you can configure safe boot options and manage which services
+15:0415 minutes, 4 secondsstart with Windows. Now for the customizable toolbox, the Microsoft Management Console or MMC.exe.
+15:1415 minutes, 14 secondsIt starts as an empty shell and you add snap-ins to build your own toolkit. One of the most important snap-ins is the
+15:2215 minutes, 22 secondsevent viewer or event VWR. MSC, the systems flight recorder. It logs everything happening in Windows,
+15:3115 minutes, 31 secondscategorizing events asformational, warning, error, or critical. It's essential for investigating past problems.
+15:4015 minutes, 40 secondsDevice manager or dev manage.msc is the hardware roster. It shows all your hardware and lets you manage their
+15:4815 minutes, 48 secondsdrivers. Disk management or disk mgmt.msc is the storage architect's blueprint.
+15:5615 minutes, 56 secondsHere you can view partitions, change drive letters, and extend or shrink volumes.
+16:0316 minutes, 3 secondsPerformance Monitor or Perfmon.msc is the long-term data logger. Unlike Task Manager, it can track hundreds of
+16:1116 minutes, 11 secondssystem metrics over days or weeks to help you diagnose intermittent issues.
+16:1716 minutes, 17 secondsLocal users and groups or lossermugger.msc is the security gatekeeper for non-domain computers where you manage
+16:2516 minutes, 25 secondsuser rights and permissions. Finally, the maintenance crew. Disk cleanup or clean mgr.exe
+16:3316 minutes, 33 secondsis the systems junk remover. Safely deleting temporary files to free up space. Disk defragment or dfrgui.exe
+16:4316 minutes, 43 secondsEXE is like reorganizing a scattered book. It optimizes file locations on traditional spinning hard drives for
+16:5116 minutes, 51 secondsfaster performance. But remember the critical rule, do not defragment a solidstate drive or SSD as it's
+16:5916 minutes, 59 secondsunnecessary and reduces the drive's lifespan. And the most critical tool of all, the registry editor or regedit.exe.
+17:0917 minutes, 9 secondsThis is the central brain of Windows, a massive database for all hardware and software configuration. It's organized into hives that start with HKY.
+17:2117 minutes, 21 secondsBe extremely careful here. Always back up a registry hive before you edit it.
+17:2817 minutes, 28 secondsThat covers the critical details for this objective. To recap, for quick readonly info, use msinfo32.exe.
+17:3817 minutes, 38 secondsFor real-time resource usage, use Resmon.exe.
+17:4317 minutes, 43 secondsTask manager, control shift escape, is for managing active processes and startup apps. Right now, MS Config.exe
+17:5217 minutes, 52 secondsis for controlling the Windows boot sequence. The MMC is a customizable frame for snap-ins like event viewer for
+18:0018 minuteslogs, device manager for drivers, and performance monitor for long-term tracking. Disc cleanup removes junk
+18:0818 minutes, 8 secondsfiles, and you should only defragment spinning hard drives, never SSDs.
+Chapter 6: Obj 1.5: Command Line Tools (CLI)
+18:1718 minutes, 17 secondsNow that you've mastered the graphical tools, it's time to unlock the power of the command line. This is your rapid review of Objective 1.5, Microsoft
+18:2718 minutes, 27 secondsCommand line tools. First, if you ever need help, just type help to see a list of commands or type a command followed
+18:3518 minutes, 35 secondsby slashquest mark for specific instructions. And remember, many of these tools require an elevated prompt,
+18:4318 minutes, 43 secondsmeaning you must run the command prompt as an administrator.
+18:4718 minutes, 47 secondsLet's start with navigation. To see a list of files and folders, use dur.
+18:5218 minutes, 52 secondsThink of it as opening a file cabinet drawer. To move between folders, use CD, which is like walking from one room to
+19:0019 minutesanother. To create a new folder, use MD or MKDIR. And to remove one, use RMDIR.
+19:1019 minutes, 10 secondsFor copying files, RoboCopy is the robust copy tool. It's like a high-tech mover that can handle huge files and
+19:1819 minutes, 18 secondsautomatically retry if the network drops. Next, disk management. Chick disk checks your disc's file system for
+19:2719 minutes, 27 secondserrors. Use the slashf switch to fix any errors it finds and slash r to also scan for and recover data from bad sectors.
+19:3719 minutes, 37 secondsTo prepare a new partition, you can use format. And for advanced tasks like creating or deleting partitions from the
+19:4419 minutes, 44 secondscommand line, use the powerful disk part utility.
+19:4919 minutes, 49 secondsNow for the crucial network troubleshooting tools. IP config shows your IP address, subnet mask, and
+19:5719 minutes, 57 secondsgateway. Use IP config/all to see even more details like your MAC address and DNS servers. Ping is your
+20:0620 minutes, 6 secondsgo-to tool to test basic connectivity to another device. Net stat or network statistics shows all active connections.
+20:1620 minutes, 16 secondsUse netstat minus a to see all connections and netstat minusb to see which program or binary created the
+20:2520 minutes, 25 secondsconnection. This one requires an elevated prompt.
+20:2920 minutes, 29 secondsNS lookup lets you query a DNS server to find the IP address for a name. Tracert traces the route showing you every
+20:3820 minutes, 38 secondssingle router hop a packet takes to reach its destination. And path ping is even better. It combines ping and tracer
+20:4720 minutes, 47 secondsto test the connection quality at every single hop along the path. For OS management and information, host name
+20:5520 minutes, 55 secondstells you the computer's name, and Windenver shows you the exact Windows version. Who am I tells you the user
+21:0321 minutes, 3 secondsyou're currently logged in as, very useful for checking permissions.
+21:0721 minutes, 7 secondsGP update forces a group policy update to apply new settings immediately. and GP result shows you which policies are
+21:1621 minutes, 16 secondscurrently applied to your user and computer. Finally, the system file scanner or sfc. If you suspect a core
+21:2421 minutes, 24 secondsWindows file has been corrupted by malware or a bad update, run sfc/scan now. It will scan all protected system
+21:3421 minutes, 34 secondsfiles and repair any it finds that are damaged. That covers the critical details for this objective. To recap,
+21:4121 minutes, 41 secondsfor navigation, use dur to look and cd to move. For disk health, use chick
+21:4921 minutes, 49 secondsdisk/f to fix file system errors. For network diagnostics, start with ping for
+21:5521 minutes, 55 secondsconnectivity, IP config for your own settings, and tracer or path ping to analyze the route. To see which program
+22:0322 minutes, 3 secondsis making a network connection, use netstat minusb from an elevated prompt.
+22:1022 minutes, 10 secondsTo manage group policy, use GP update to force changes and GP result to see what's applied. And to repair corrupted
+22:1822 minutes, 18 secondsWindows system files, your go-to command is sfc/scan now.
+Chapter 7: Obj 1.6: Windows Control Panel & Settings
+22:3622 minutes, 36 secondsWith the command line covered, let's master the graphical interface by configuring Windows settings. This is your rapid review of Objective 1.6.
+22:4522 minutes, 45 secondsWe'll be looking at two key areas, the classic control panel and the modern Windows settings app. First, the control
+22:5322 minutes, 53 secondspanel. Pro tip: Switch the view to large icons to see everything. Let's start with Internet Options, the browser
+23:0123 minutes, 1 secondsecurity guard. The security tab lets you set permissions for different zones like the internet or your local internet. The connections tab is where you configure a VPN or a proxy server.
+23:1423 minutes, 14 secondsPrograms and features is your application inventory. Here you can uninstall programs and crucially turn
+23:2123 minutes, 21 secondsWindows features on or off like adding internet information services or IIS.
+23:2823 minutes, 28 secondsThe network and sharing center is the network operations room. go into an adapter's properties and you can
+23:3423 minutes, 34 secondsconfigure its IPv4 settings like the IP address and DNS servers or set it to use DHCP.
+23:4223 minutes, 42 secondsThe system outlet is the computer's ID badge. It shows your Windows edition and RAM and under advanced system settings,
+23:5023 minutes, 50 secondsyou can configure the virtual memory paging file. The Windows Defender firewall is your digital gatekeeper with
+23:5723 minutes, 57 secondsdifferent security policies for private and public networks.
+24:0124 minutes, 1 secondFile Explorer options is critical for technicians. The view tab is where you choose to view hidden files and most
+24:0924 minutes, 9 secondsimportantly uncheck hide extensions for known file types. Power options is the
+24:1624 minutes, 16 secondssystems energy expert. Sweep mode keeps your work in RAM for a quick resume, requiring a little power. Hibernate
+24:2424 minutes, 24 secondssaves your work to the storage drive and powers off completely, which is essential if you need to remove the battery. Hibernate is also the
+24:3224 minutes, 32 secondstechnology behind fast startup. In these settings, you can also choose what closing the laptop lid does and
+24:3924 minutes, 39 secondsconfigure USB selective suspend to manage power to peripherals. Finally, device manager is the hardware
+24:4724 minutes, 47 secondsinterpreter. It lists all device drivers and it's where you go to update, disable, or uninstall a driver to
+24:5524 minutes, 55 secondstroubleshoot hardware problems. Now for the modern Windows settings app. Time and language is critical in a corporate
+25:0325 minutes, 3 secondsenvironment as correct system time is required for encryption and active directory to work. Update and security
+25:1025 minutes, 10 secondsis where you manage Windows update. You can configure active hours here to prevent the system from rebooting in the
+25:1725 minutes, 17 secondsmiddle of your workday. Privacy settings let you control how much data you share, including enabling or disabling speech
+25:2525 minutes, 25 secondsrecognition services. Devices is the hub for physical connections, including Bluetooth pairing and configuring mouse
+25:3325 minutes, 33 secondssettings. Network and internet is the modern equivalent of the network and sharing center, where you can configure
+25:4025 minutes, 40 secondsyour IP and DNS settings. And finally, the accounts section is where you manage your Microsoft and local user accounts
+25:4825 minutes, 48 secondsand configure sign-in options like a PIN or MFA. That covers the critical details for this objective. To recap, the
+25:5725 minutes, 57 secondscontrol panel is the classic interface for deep administrative tasks. The Windows settings app is the modern UI
+26:0426 minutes, 4 secondswhere settings are migrating. In control panel, use Internet options for proxy settings, programs and features to add
+26:1226 minutes, 12 secondsor remove Windows components and file explorer options to view hidden files and extensions. Power options
+26:1926 minutes, 19 secondsdistinguishes between sleep, which uses RAM, and hibernate, which saves to the disk. Device manager is your go-to for
+26:2726 minutes, 27 secondsall hardware driver issues. In the modern settings app, use update and security to set active hours and
+26:3526 minutes, 35 secondsaccounts to configure sign-in options like a PIN or MFA.
+Chapter 8: Obj 1.7: Windows Networking Features
+26:4726 minutes, 47 secondsWith the basics of Windows settings down, let's focus those skills on one of the most important areas, networking.
+26:5526 minutes, 55 secondsThis is your rapid review of objective 1.7.
+26:5926 minutes, 59 secondsFirst, let's talk about the Windows Defender Firewall, your computer's digital bouncer. It uses different security policies based on your
+27:0727 minutes, 7 secondsnetwork's profile. Private for your trusted home or work network, and public for unsecured locations like a coffee
+27:1527 minutes, 15 secondsshop, which has the highest level of security by default. For granular control, you go into the advanced
+27:2227 minutes, 22 secondssecurity settings to create inbound and outbound rules. These rules can be for a specific program, a port number, or a
+27:3027 minutes, 30 secondscustom configuration. And the key action is to allow or block the connection. Next is client network configuration.
+27:3927 minutes, 39 secondsYour computer can get its IP address in two ways. Dynamic is the default where a DHCP server automatically assigns an IP.
+27:4927 minutes, 49 secondsStatic is when you manually configure it. If your computer is set to dynamic but can't find a DHCP server, it will
+27:5727 minutes, 57 secondsselfassign an AIPA address. Remember, the pneumonic always provides internal private addressing. These addresses are
+28:0528 minutes, 5 secondsin the 169.254 range and can only talk to other devices on the local network. They cannot reach
+28:1328 minutes, 13 secondsthe internet. To avoid this, you can set an alternate configuration as a manual fallback. When you set a static IP, you
+28:2228 minutes, 22 secondsneed four key pieces of information. The IP address, the subnet mask, the default gateway, your router, and the DNS
+28:3028 minutes, 30 secondsserver, which translates names to IP addresses.
+28:3428 minutes, 34 secondsNow, let's establish some connections. A virtual private network or VPN creates a secure encrypted tunnel for your data to
+28:4428 minutes, 44 secondstravel through an unsecure public network connecting you safely to a corporate VPN concentrator. For
+28:5128 minutes, 51 secondswireless, you need the network name or SSID and the security type like WPA2 or WPA3 with AES encryption.
+29:0229 minutes, 2 secondsWW or wireless wide area network is just your cellular connection. If you're on a
+29:0929 minutes, 9 secondscorporate network, you might use a proxy server. Think of it as a digital assistant that fetches web pages for you, inspecting them for safety before
+29:1829 minutes, 18 secondsdelivering them. You can configure proxy settings in Internet Options or the Windows settings app. Resource sharing
+29:2629 minutes, 26 secondsis a huge part of networking. A workg groupoup is a decentralized group of computers like a local neighborhood. A
+29:3329 minutes, 33 secondsdomain which requires a server running active directory domain services is like a corporate headquarters with
+29:4029 minutes, 40 secondscentralized management and a single login for all resources. To access a shared folder on a server, you use a UNC
+29:4929 minutes, 49 secondspath which follows the format slashserver name back slashsharen name.
+29:5529 minutes, 55 secondsYou can make this even easier by creating a mapped drive which assigns a drive letter like S colon to that UNC
+30:0330 minutes, 3 secondspath. Finally, if you're on a connection where you pay for data, like a cellular hotspot, you should enable metered
+30:1130 minutes, 11 secondsconnection settings. This tells Windows to reduce its data usage to help you avoid extra charges. That covers the
+30:1930 minutes, 19 secondscritical details for this objective. To recap, the firewall uses different rules for private and public networks. If DHCP
+30:2830 minutes, 28 secondsfails, your PC will get a limited AIPA address in the 169.254
+30:3430 minutes, 34 secondsrange. The four key IP settings are IP address, subnet, mask, gateway, and DNS.
+30:4330 minutes, 43 secondsA VPN creates a secure encrypted tunnel over a public network. A domain provides
+30:4930 minutes, 49 secondscentralized control via active directory while a workg groupoup is decentralized.
+30:5530 minutes, 55 secondsTo access shared resources, you can map a network drive to a UNC path which looks like double slashserver name back
+31:0431 minutes, 4 secondsslashshare name. And finally, enable metered connections to save data on cellular or other pay-per-use networks.
+Chapter 9: Obj 1.8: macOS Features & Tools
+31:1731 minutes, 17 secondsAfter mastering the Windows environment, it's time to switch gears and explore the common features and tools of Mac OS.
+31:2531 minutes, 25 secondsThis is your rapid review of Objective 1.8. First, let's talk about installing applications. Software for Mac OS often
+31:3431 minutes, 34 secondscomes in a few key file types. ADMG or disk image is the most common. Think of it as a virtual CD that you open and
+31:4331 minutes, 43 secondsinside you'll often find the applications icon. APKG or installer package runs a setup wizard similar to a
+31:5131 minutes, 51 secondsWindows executable. The application itself is aapp file which isn't a single file but a self-contained bundle like a
+32:0032 minutessuitcase holding everything the app needs. This is why uninstallation is so simple. You typically just drag the app
+32:0732 minutes, 7 secondsfile from the applications folder to the trash. For verified software, you can also use the Mac App Store, which centralizes installation and updates.
+32:1832 minutes, 18 secondsMac OS organizes its files into a few key system folders. Applications is where your apps live. Users contains the
+32:2632 minutes, 26 secondshome directory for each user. There are two important library folders. Library at the root contains support files for
+32:3432 minutes, 34 secondsall users while the one inside your user folder users/ library is for your specific settings and is hidden by
+32:4232 minutes, 42 secondsdefault. For security and best practices always use time machine the built-in backup utility. It automatically
+32:5132 minutes, 51 secondsperforms hourly, daily, and weekly backups. And when your backup drive is full, it intelligently deletes the
+32:5732 minutes, 57 secondsoldest files to make space. While Mac OS is secure, it's a best practice to install third-party antivirus software.
+33:0633 minutes, 6 secondsAnd for updates, you use the software update tool in system settings. Keep an eye out for rapid security responses or
+33:1333 minutes, 13 secondsRSRs, which are urgent patches for critical vulnerabilities. An installed RSR is noted by a letter next to the OS
+33:2233 minutes, 22 secondsversion number. Now, let's dive into system settings, the Mac OS equivalent of the control panel. Here you can
+33:2933 minutes, 29 secondsconfigure displays, networks, including IP, DNS, and DHCP, and printers. The
+33:3633 minutes, 36 secondsprivacy section is critical. It's the OS's bouncer, forcing applications to ask for your permission before they can
+33:4433 minutes, 44 secondsaccess your location, microphone, or camera. Mac OS is packed with powerful features. Mission control, which you can
+33:5233 minutes, 52 secondsaccess by swiping up with three fingers, spreads out all your open windows so you can easily find anything. Inside Mission
+34:0034 minutesControl, you can create multiple desktops or spaces to organize your work. Keychain is your digital safe
+34:0734 minutes, 7 secondsdeposit box, securely storing your passwords, certificates, and private notes, all encrypted with your login
+34:1434 minutes, 14 secondspassword. Spotlight, which you launch with command space, is the systemwide search tool that finds files, apps, and
+34:2234 minutes, 22 secondseven suggest websites. iCloud is the glue that connects all your Apple devices, synchronizing your mail,
+34:3034 minutes, 30 secondscalendars, and photos. iCloud Drive is its file storage component, similar to Dropbox. and features like Finder, the
+34:3834 minutes, 38 secondsfile manager, the dock for quick app access, and gestures for the trackpad are core to the user experience. Don't
+34:4634 minutes, 46 secondsforget continuity, the magic feature that lets you start work on your Mac and seamlessly pick it up on your iPhone or
+34:5334 minutes, 53 secondsiPad. Finally, let's cover four essential tools. Use the mimmonic DFTF.
+35:0035 minutesDealing with failure takes focus. D is for disk utility where you manage storage, format drives, and create
+35:0835 minutes, 8 secondspartitions. F is for file vault, the Mac OS equivalent of Bit Locker, providing full disk encryption to protect your
+35:1635 minutes, 16 secondsdata if your Mac is stolen. T is for Terminal, the Mac OS command line interface. And the second F is for force
+35:2435 minutes, 24 secondsquit. If an app freezes, press command, option, escape to open the force quit menu and shut it down. That covers the
+35:3235 minutes, 32 secondscritical details for this objective. To recap, Mac OS apps are usually app bundles installed from DMG files, and
+35:4135 minutes, 41 secondsyou uninstall them by dragging them to the trash. Time Machine is the automatic backup tool that performs hourly, daily,
+35:4935 minutes, 49 secondsand weekly backups. Mission Control gives you a bird's eyee view of all your apps and lets you manage multiple
+35:5635 minutes, 56 secondsdesktops. Spotlight launched with command space is your universal search bar. Keychain securely stores your
+36:0436 minutes, 4 secondspasswords and file vault provides full disc encryption. And if an application hangs, use command option escape to
+36:1236 minutes, 12 secondsforce quit. That covers the critical details for this objective.
+Chapter 10: Obj 1.9: Linux Commands & Tools
+36:2136 minutes, 21 secondsAfter mastering Mac OS, we're diving deep into the powerful world of the Linux command line. This is your rapid review of Objective 1.9.
+36:3136 minutes, 31 secondsFirst, the fundamentals. Linux is a free powerful operating system that comes in many variations called distributions
+36:3936 minutes, 39 secondslike Ubuntu or Red Hat. It's supported not by a single company, but by a passionate global community. Think of it
+36:4736 minutes, 47 secondslike a barn raising where everyone pitches in. The Linux boot process starts with the BIOS or UEFI which hands
+36:5636 minutes, 56 secondsoff to a bootloadader. The bootloader then starts the kernel which is the absolute core of the operating system,
+37:0337 minutes, 3 secondsthe CEO managing everything. The kernel then starts a process called systemd which is responsible for managing all
+37:1137 minutes, 11 secondsthe background services known as dammons. All major administrative tasks in Linux require you to be the root account, the user with full control.
+37:2237 minutes, 22 secondsUnlike other OSS, Linux configuration is managed through simple text files,
+37:2837 minutes, 28 secondsmostly in the etc directory. ETC/pass lists user accounts, but the actual
+37:3537 minutes, 35 secondsencrypted passwords are in etc/ shadow, a file that standard users cannot read.
+37:4337 minutes, 43 secondsetc/hosts lets you manually map a domain name to an IP address and it overrides DNS and
+37:5137 minutes, 51 secondsetc/resolve.com is where you'll find the list of DNS servers your system uses. Now for the
+37:5837 minutes, 58 secondsessential commands to get help with any command just use the man command for manual. For file management ls lists
+38:0838 minutes, 8 secondsdirectory contents. Use ls minus la for a detailed view with permissions. pwd prints your current working directory.
+38:1838 minutes, 18 secondsCP copies a file and mv moves or renames a file. To delete a file, use rm. To
+38:2638 minutes, 26 secondssearch for text within files, use gp. To find files by name, use find.
+38:3238 minutes, 32 secondsPermissions are critical in Linux. The chod command changes file permissions for the user, the owner, the group, and
+38:4138 minutes, 41 secondsothers. You can use octal numbers, four for read, two for write, and one for
+38:4738 minutes, 47 secondsexecute. So, chod 764 gives the user read, write, and execute, the group
+38:5438 minutes, 54 secondsread, and write, and others just read access. To change the file owner or group, you use the chone command, but you'll need elevated rights to do it.
+39:0439 minutes, 4 secondsFor administrative tasks, you need root permissions. It's best practice to use pseudo to run a single command with
+39:1239 minutes, 12 secondselevated rights. The su command, on the other hand, switches your entire terminal session to the super user. For
+39:2039 minutes, 20 secondsinstalling software, you'll use a package manager. On Debian or Ubuntu systems, you'll use apt. On Red Hat systems, you'll use DNF for networking.
+39:3139 minutes, 31 secondsThe IP command is your main tool. IP address will show your IP configuration.
+39:3839 minutes, 38 secondsPing tests connectivity, but remember in Linux it will run forever until you press control C. Use dig for DNS lookups
+39:4739 minutes, 47 secondsand trace route to map the hops to a destination. for checking your system status. PS minus E will show you every
+39:5639 minutes, 56 secondssingle process running. Top gives you a live realtime dashboard of your systems performance, including CPU and memory
+40:0440 minutes, 4 secondsusage. To see how much disk space is free, use DF minus H for a human readable view. And to see how much space
+40:1340 minutes, 13 secondsa folder is actually using, use DU minus H. To view the contents of a file, use CAT. And if you need to edit a
+40:2140 minutes, 21 secondsconfiguration file, Nano is a simple fullcreen text editor. That covers the critical details for this objective. To
+40:3040 minutes, 30 secondsrecap, Linux is a free community supported OS. The kernel is the core and
+40:3640 minutes, 36 secondssystemd manages services. Key config files are in the etc directory with user
+40:4340 minutes, 43 secondspasswords hashed in the protected etc/ shadow file. Use ls to list files, cd to move, cp to copy, and rm to remove.
+40:5540 minutes, 55 secondsManage permissions with chmod using octal numbers and change ownership with chone. Use pseudo for single elevated
+41:0441 minutes, 4 secondscommands, which is the preferred best practice over using su. For networking, use IP for configuration, ping for
+41:1341 minutes, 13 secondsconnectivity, and dig for DNS. For system status, use PS to see processes,
+41:1941 minutes, 19 secondstop for realtime performance, DF for free disk space, and DU for disk usage.
+Chapter 11: Obj 1.10: Application Installation & Requirements
+41:3041 minutes, 30 secondsWith the command line under our belts, we now shift to a core technician task, installing applications correctly. This is your rapid review of Objective 1.10.
+41:4341 minutes, 43 secondsBefore you ever click install, you must act like a detective, checking the application system requirements. First
+41:5141 minutes, 51 secondsup is the architecture. 32bit versus 64-bit. Think of it like a highway. A
+41:5841 minutes, 58 seconds32bit OS is a country road that can only handle about 4 GB of RAM. A 64-bit OS is
+42:0542 minutes, 5 secondsa superighway that can manage massive amounts of memory. A 64-bit system can run both 64-bit and 32-bit apps, but a
+42:1542 minutes, 15 seconds32-bit system cannot run 64-bit software. A quick pneummonic in Windows, older 32-bit apps go into the folder
+42:2442 minutes, 24 secondswith the extra characters, program files x86.
+42:2942 minutes, 29 secondsNext, graphics. For basic tasks, the integrated graphics built into the CPU is fine. But for demanding software like
+42:3742 minutes, 37 seconds3D modeling or video editing, you'll need a powerful separate dedicated graphics card with its own VRAMm or
+42:4442 minutes, 44 secondsvideo RAM. Always check the RAM requirement. And remember, the number listed is just for the app itself. It
+42:5242 minutes, 52 secondsdoesn't include the RAM your operating system is already using. The same goes for the CPU. The required speed measured
+43:0043 minutesin gigahertz must be met or the application will lag or fail. For some very expensive specialized software, a
+43:0843 minutes, 8 secondssimple license key isn't enough. The developer might require a physical hardware token, usually a USB device, to
+43:1743 minutes, 17 secondsbe plugged in for the application to run. This is a powerful form of license control. Finally, ensure you have enough
+43:2443 minutes, 24 secondsstorage as some applications can be massive.
+43:2843 minutes, 28 secondsNow, how do we get the software? The most common distribution method is a downloadable package directly from the developer website. Always download from the source to ensure it's legitimate.
+43:4043 minutes, 40 secondsFor offline systems or complex installations like an entire OS, you might use physical media like a USB
+43:4743 minutes, 47 secondsdrive or a mountable ISO file. An ISO is a perfect digital copy of a disc.
+43:5443 minutes, 54 secondsLetting it mount lets the OS read it like a real drive. For large businesses, image deployment is key. This involves
+44:0244 minutes, 2 secondscreating a perfect clone of a fully configured system, OS, apps, and all, and deploying that image to dozens or
+44:1044 minutes, 10 secondshundreds of machines. This is incredibly efficient, especially for virtual machines. But installing an application
+44:1844 minutes, 18 secondsin a business has a ripple effect. These are the impact considerations.
+44:2344 minutes, 23 secondsFirst, an application inherits the exact same permissions as the user who installs it. This gives it access to
+44:3144 minutes, 31 secondslocal files, network drives, and services. A poorly coded or malicious app could cause chaos. Second, a new
+44:3944 minutes, 39 secondsapplication can disrupt business operations. A new user interface could slow down workflow for thousands of
+44:4644 minutes, 46 secondsemployees. Because of this, new software is almost always tested in a sandbox environment first to identify and fix
+44:5444 minutes, 54 secondsproblems before they can impact the entire company. To recap, a 64-bit OS can run 32-bit apps, but not the other
+45:0345 minutes, 3 secondsway around. 32-bit apps are limited to about 4 GB of RAM. Demanding apps need a
+45:1045 minutes, 10 secondsdedicated graphics card, more RAM, and a faster CPU. Some niche software requires a physical hardware token for licensing.
+45:2045 minutes, 20 secondsDistribution can be a download, a physical USB drive, a mountable ISO file, or a full system image deployment.
+45:2945 minutes, 29 secondsCritically, an application inherits all the user's permissions, and new software must be tested in a sandbox environment to avoid disrupting business operations.
+Chapter 12: Obj 1.11: Cloud-Based Productivity Tools
+45:4345 minutes, 43 secondsWe've mastered the local machine, but now we move to the cloud where modern productivity lives. This is your rapidfire review of objective 1.11.
+45:5445 minutes, 54 secondsFirst, the fundamentals. The cloud replaces on premises infrastructure with services that are scalable, meaning you
+46:0246 minutes, 2 secondscan add resources on demand, and highly available thanks to built-in redundancy and backups. This model delivers a full
+46:1046 minutes, 10 secondssuite of productivity tools. Email systems are the most common. Moving from local Exchange servers to platforms like
+46:1846 minutes, 18 secondsMicrosoft 365 or Google Workspace. Cloud storage like One Drive or Google Drive
+46:2546 minutes, 25 secondsoffers near limitless space. Critically, you must configure the client's sync and folder settings. You can mirror
+46:3346 minutes, 33 secondseverything locally, use selective sync to only download specific folders, or keep files cloud only to preserve local
+46:4146 minutes, 41 secondsdisk space. These services power the core collaboration tools. This includes shared spreadsheets, live co-authoring
+46:4946 minutes, 49 secondsand word processing tools, group presentation editing, and team communication through video conferencing
+46:5646 minutes, 56 secondsand instant messaging, all updating in real time. Managing this requires centralized control. First, identity synchronization.
+47:0747 minutes, 7 secondsInstead of separate login for every app, services like Microsoft Entra ID, Octa, or Google Identity create a single source of truth for a user's identity.
+47:1947 minutes, 19 secondsIf you disable a user in one central directory, they lose access to all connected cloud services. It's a single
+47:2747 minutes, 27 secondsglobal access badge. Second, licensing assignment. Licenses are no longer physical keys. They're digital tokens
+47:3547 minutes, 35 secondsmanaged from a central cloud console. An administrator can view the entire license pool and instantly assign,
+47:4347 minutes, 43 secondsrevoke, and reassign a license from one user to another. This is incredibly efficient and costeffective, ensuring
+47:5047 minutes, 50 secondsyou never pay for a license that isn't being used. To recap, cloud services are defined by scalability and high
+47:5947 minutes, 59 secondsavailability, replacing on premises hardware.
+48:0348 minutes, 3 secondsCloud storage configuration relies on key sync settings, mirroring, selective sync, and cloud only. Collaboration
+48:1248 minutes, 12 secondstools include realtime editing of spreadsheets, docs, and presentations, plus video conferencing and IM. Identity
+48:2148 minutes, 21 secondssynchronization services like Entra ID or Octa create one central user profile for all cloud apps. Cloud licensing
+48:3048 minutes, 30 secondsassignment allows admins to centrally manage and reassign licenses to save costs.
+Chapter 13: Obj 2.1: Logical & Physical Security Measures
+48:4048 minutes, 40 secondsWe've spent an entire domain learning how to install, configure, and manage operating systems. We've mastered the
+48:4848 minutes, 48 secondsmachine, but now we have to learn how to protect it. Welcome to domain 2, security. This is your rapidfire review of objective 2.1.
+49:0049 minutesSecurity is divided into two worlds, logical and physical. Let's start with logical security, the rules governing
+49:0849 minutes, 8 secondsthe digital realm. The foundation is identity and access management or AM.
+49:1549 minutes, 15 secondsThink of it as the HR department for digital identities. It manages the entire life cycle of who gets access to
+49:2349 minutes, 23 secondswhat. It all starts with directory services like active directory which is the central phone book and master key
+49:3149 minutes, 31 secondsregistry for the entire network. To make life easier, we use single sign on or SSO which is like a master key card that
+49:4049 minutes, 40 secondslets you authenticate once to access multiple applications. For web apps, this is often handled by SAML, an open
+49:4849 minutes, 48 secondsstandard that acts like a digital valet, confirming your identity with a trusted source before granting you access. Now,
+49:5749 minutes, 57 secondswho gets what power? The principle of least privilege is king. A user or app should only have the minimum permissions
+50:0550 minutes, 5 secondsnecessary to do their job. For high-level accounts, we use privileged access management or PAM, which locks
+50:1350 minutes, 13 secondssuper user accounts in a secure vault. A key PAM strategy is just in time access,
+50:2050 minutes, 20 secondswhich grants temporary expiring admin rights, preventing an attacker from gaining permanent control. This all fits
+50:2750 minutes, 27 secondsinto the zero trust model, a security architecture where nothing is trusted by default. It's like having a security
+50:3550 minutes, 35 secondscheckpoint at every single door inside the building, not just the front entrance. We enforce these rules with
+50:4250 minutes, 42 secondsaccess control lists on routers and within the OS itself.
+50:4750 minutes, 47 secondsTo protect our data and devices, we use data loss prevention or DLP, a system that stops sensitive data like credit card numbers from leaving the network.
+50:5850 minutes, 58 secondsFor phones and tablets, we use mobile device management or MDM, a central console that can enforce security
+51:0551 minutes, 5 secondspolicies and critically remotely wipe company data from a personal device if an employee leaves. To prove we are who
+51:1451 minutes, 14 secondswe say we are, we use multiffactor authentication or MFA, which requires more than just a password. The factors
+51:2251 minutes, 22 secondsare something you know, a password, something you have, your phone, something you are, a biometric, or
+51:3051 minutes, 30 secondssomewhere you are, your location. Common methods include an authenticator app that generates a timebased one-time
+51:3851 minutes, 38 secondspassword or TOTP, a physical hardware token, or a code sent via SMS or voice call. Though be
+51:4751 minutes, 47 secondswarned, SMS and voice are vulnerable to SIM swapping attacks.
+51:5251 minutes, 52 secondsNext, physical security, protecting the actual hardware and facilities. This starts at the perimeter with fences and
+52:0052 minutesballards to stop vehicles. To enter, you might pass through an access control vestibule or a man trap, which ensures
+52:0852 minutes, 8 secondsonly one person enters after being verified by a security guard. Lighting is a critical simple deterrent.
+52:1652 minutes, 16 secondsMagnetometers detect metal and alarm systems use motion sensors to detect intruders. For access, we've moved
+52:2452 minutes, 24 secondsbeyond simple keys. Now we use key fobs, smart cards, or even a mobile digital key on our phones.
+52:3352 minutes, 33 secondsTo protect servers, we use equipment locks on the server racks themselves.
+52:3852 minutes, 38 secondsThe strongest proof of identity is biometrics. This isn't a photo. It's a digital map of a unique physical trait.
+52:4652 minutes, 46 secondsA retina scanner, which reads the capillaries in your eye, is one of the most accurate. Fingerprint scanners and facial recognition technology, which
+52:5652 minutes, 56 secondscreates a 3D map of your face, are also extremely secure. Pam print and voice recognition exist, but are generally
+53:0453 minutes, 4 secondsconsidered less secure. To recap, logical security is about access rights.
+53:1153 minutes, 11 secondsKey concepts are AM, SSO, SAML and the principle of least privilege. The modern
+53:1853 minutes, 18 secondsapproach is the zero trust model. MFA strengthens login by requiring multiple factors like something you have an app
+53:2753 minutes, 27 secondsgenerating a tootp and something you are a biometric. Physical security protects facilities. It starts with perimeter
+53:3653 minutes, 36 secondscontrols like fences and ballards and uses layered access like vestibules and security guards. Modern physical access
+53:4453 minutes, 44 secondsrelies on tokens like smart cards and key fobs with biometrics like retina scans and FRT providing the highest level of authentication.
+Chapter 14: Obj 2.2: Windows OS Security Settings (BitLocker, NTFS)
+53:5853 minutes, 58 secondsAfter covering the high-level theories of security, it's time to get our hands dirty inside the operating system. We're
+54:0554 minutes, 5 secondsnow configuring the basic security settings in Microsoft Windows. This is your rapidfire review of Objective 2.2.
+54:1354 minutes, 13 secondsFirst, the built-in defenses. Microsoft Defender Antiirus is your front line enabled by default. You manage it in the
+54:2154 minutes, 21 secondsWindows Security app where you can activate or deactivate real-time protection. and most importantly
+54:2854 minutes, 28 secondsmanually update the virus definitions or signatures to protect against the latest threats. Paired with this is the Windows
+54:3654 minutes, 36 secondsfirewall which you can activate or deactivate to control network traffic.
+54:4154 minutes, 41 secondsYou can configure port security to open or close specific ports and set application security rules to allow or
+54:4854 minutes, 48 secondsdeny internet access for specific programs. Next, user access. Windows has local accounts and clouds synced
+54:5754 minutes, 57 secondsMicrosoft accounts. Within these, you have account types. Administrator with full control and the standard account
+55:0555 minutes, 5 secondsfor daily work. You should always use a standard account and only elevate your privileges when necessary. Windows
+55:1255 minutes, 12 secondsoffers many modern login options beyond a password, including a PIN, fingerprint, or facial recognition via Windows Hello.
+55:2255 minutes, 22 secondsWhen you do need to perform an admin task from a standard account, you'll encounter the user account control or
+55:2855 minutes, 28 secondsUAC. Think of UAC as a security guard that stops you and asks for admin credentials before allowing a systemwide
+55:3655 minutes, 36 secondschange. To trigger this intentionally, you rightclick an app and choose run as administrator.
+55:4355 minutes, 43 secondsFile access is governed by two sets of rules, NTFS and share permissions. NTFS permissions are applied locally to the
+55:5255 minutes, 52 secondsfile or folder. Share permissions are only applied when accessing that file over the network. The golden rule is the
+56:0056 minutesmost restrictive permission wins. If NTFS gives you full control, but the share permission only allows read, you only get read access over the network.
+56:1156 minutes, 11 secondsPermissions also have inheritance flowing from a parent folder to its children. But an explicit permission set on a file will always override an
+56:2056 minutes, 20 secondsinherited one. For data protection, we use encryption. Bit Locker is a full disk encryption tool that scramles the
+56:2956 minutes, 29 secondsentire operating system volume. If the drive is stolen, the data is unreadable.
+56:3456 minutes, 34 secondsBit Locker to go extends this protection to removable USB drives. For more granular control, you can use encrypting
+56:4356 minutes, 43 secondsfile system or EFS, which encrypts individual files and folders, tying them directly to your user account
+56:5056 minutes, 50 secondscredentials. Finally, in a corporate environment, all of this is managed by Active Directory, the master key
+56:5756 minutes, 57 secondsregistry for the entire network. A computer must first join the domain to be managed. Inside AD, we use
+57:0557 minutes, 5 secondsorganizational units or OUS to group users and computers like different departments in a building. This is
+57:1257 minutes, 12 secondscrucial because we apply group policy to these OUS. Group policy is how we enforce settings across the network like
+57:2057 minutes, 20 secondsassigning login scripts, creating private home folders for users, or using folder redirection to automatically back
+57:2757 minutes, 27 secondsup a user's desktop and documents to a server. When you make a group policy change, you can force it to apply immediately with the command gpupdate.force.
+57:3957 minutes, 39 secondsTo recap, Windows security relies on the built-in Defender anti virus and firewall. Keep Defender's definitions
+57:4757 minutes, 47 secondsupdated. User account control or UAC is the gatekeeper that requires admin rights for system changes. For file
+57:5657 minutes, 56 secondsaccess, the most restrictive setting between NTFS and share always wins. Bit Locker provides full disk encryption for
+58:0558 minutes, 5 secondsmain drives and USBs, Bit Locker to go, while EFS encrypts individual files and folders. Finally, Active Directory is
+58:1458 minutes, 14 secondsthe central management database. We use group policy applied to OUS to enforce settings and can push immediate updates with gpupdate.force. force.
+Chapter 15: Obj 2.3: Wireless Security Protocols (WPA3, AES)
+58:2958 minutes, 29 secondsWe've locked down the operating system, but how do we protect our data when it's flying through the air? We're now diving
+58:3658 minutes, 36 secondsinto wireless security. This is your rapidfire review of objective 2.3.
+58:4258 minutes, 42 secondsFirst, let's talk about authentication in a corporate environment. Instead of each Wi-Fi access point having its own
+58:4958 minutes, 49 secondspassword list, companies use centralized authentication servers. This is called the AAA framework. Authentication, proving you are who you say you are.
+59:0059 minutesAuthorization, defining what you can access, and accounting, tracking your activity. The most common AAA protocol
+59:0959 minutes, 9 secondsyou'll see is Radius, the remote authentication dial-in user service. Think of Radius as the main gatekeeper.
+59:1759 minutes, 17 secondsYour Wi-Fi, VPN, and switches all call the central Radius server to verify your credentials. A similar but less common
+59:2559 minutes, 25 secondsprotocol heavily associated with Cisco hardware is TACax plus inside a Microsoft Windows domain. The king of
+59:3459 minutes, 34 secondsauthentication is Keraros. Keraros enables single sign on or SSO. It works like a fast pass at an amusement park.
+59:4359 minutes, 43 secondsYou log in once and the Keraros ticket granting service gives you a special service ticket. You then show this ticket to all other network resources
+59:5159 minutes, 51 secondslike file servers to gain access without ever typing your password again. It provides mutual authentication meaning
+59:5959 minutes, 59 secondsboth you and the server prove your identities to each other. Of course, a password alone isn't enough. We need
+1:00:061 hour, 6 secondsmultiffactor authentication or MFA which combines different types of factors.
+1:00:121 hour, 12 secondsThese are something you know, a password, something you have, your phone, something you are, a fingerprint,
+1:00:201 hour, 20 secondswhere you are, your location, and something you do, your signature.
+1:00:251 hour, 25 secondsNow, for the wireless connection itself, we need protocols and encryption. Wi-Fi has evolved significantly. The original
+1:00:331 hour, 33 secondswas we, which was deeply flawed and is now obsolete. The emergency replacement was WPA, which introduced an encryption
+1:00:421 hour, 42 secondsprotocol called TKIP. TKIP was a crucial stop gap because it could run on older hardware that couldn't handle stronger encryption.
+1:00:511 hour, 51 secondsThe long-term standard became WPA2, which upgraded our encryption to the powerful advanced encryption standard or
+1:00:581 hour, 58 secondsAES. AES is the strong modern encryption we rely on, but it often required new hardware. The latest and most secure
+1:01:071 hour, 1 minute, 7 secondsstandard is WPA3, which still uses AES, but strengthens the initial key exchange and can even provide encryption on open
+1:01:161 hour, 1 minute, 16 secondspublic networks. Finally, how you connect depends on the environment. For home use, you use a pre-shared key, also
+1:01:241 hour, 1 minute, 24 secondscalled WPA2 or WPA3 personal. This is like the key to your front door.
+1:01:301 hour, 1 minute, 30 secondsEveryone shares the same password. In a corporate environment, you use enterprise mode, also known as 802.1.
+1:01:381 hour, 1 minute, 38 secondsThis requires a unique username and password for every single user, which is then checked against a central authentication server, usually Radius.
+1:01:471 hour, 1 minute, 47 secondsThis is like using a personal key card tracked by a central security system, giving the company granular control over
+1:01:541 hour, 1 minute, 54 secondswho can access the wireless network. To recap, centralized authentication is handled by AAA servers using protocols
+1:02:031 hour, 2 minutes, 3 secondslike Radius. In Windows domains, Keraros provides single sign on using a ticket-based system. MFA strengthens
+1:02:131 hour, 2 minutes, 13 secondssecurity by combining different factor types, something you know, have, are, where you are, or do. The evolution of
+1:02:221 hour, 2 minutes, 22 secondswireless encryption is WEP to WPA with TKIP to the modern standards of WPA2 and
+1:02:301 hour, 2 minutes, 30 secondsWPA3 which both use the strong AES encryption. For authentication, home
+1:02:371 hour, 2 minutes, 37 secondsnetworks use a single pre-shared key PSK. Corporate networks use enterprise mode 802.1
+1:02:451 hour, 2 minutes, 45 secondswhich requires a unique username and password for each user authenticated by a radius server.
+Chapter 16: Obj 2.4: Malware Types & Detection
+1:02:571 hour, 2 minutes, 57 secondsWe've built our digital fortress and now the enemy is at the gates. We're diving deep into the world of malicious
+1:03:041 hour, 3 minutes, 4 secondssoftware. This is your rapidfire review of objective 2.4. Malware. Malware is
+1:03:111 hour, 3 minutes, 11 secondsany software you don't want on your system. Let's meet the most wanted. A Trojan is malware disguised as a
+1:03:191 hour, 3 minutes, 19 secondslegitimate program. You run it and it secretly opens a back door for an attacker. A virus is code that needs you
+1:03:271 hour, 3 minutes, 27 secondsto run an infected program to execute and spread. A rootkit is the most insidious. It burrows deep into the core
+1:03:351 hour, 3 minutes, 35 secondsof the operating system, hiding its presence from antivirus and even the task manager, making it almost
+1:03:411 hour, 3 minutes, 41 secondsimpossible to find. Spyware is a digital private eye that watches your activity.
+1:03:471 hour, 3 minutes, 47 secondsA specialized form of this is a key logger, which records every single keystroke you make, passwords, messages,
+1:03:551 hour, 3 minutes, 55 secondseverything. Ransomware is digital extortion. It encrypts all your personal files and demands a ransom payment for
+1:04:031 hour, 4 minutes, 3 secondsthe key. A boot sector virus is malware that loads before your operating system even starts. A crypto miner secretly
+1:04:111 hour, 4 minutes, 11 secondssteals your CPU cycles to mine cryptocurrency for an attacker.
+1:04:161 hour, 4 minutes, 16 secondsStalkerware is invasive spywear that can track your location, listen through your microphone, and watch through your camera. And fileless malware is a ghost.
+1:04:271 hour, 4 minutes, 27 secondsIt runs entirely in your systems memory, never writing a file to your disk, making it invisible to traditional
+1:04:341 hour, 4 minutes, 34 secondsscanners. Finally, you have adwear and potentially unwanted programs, pups, which clutter your system with ads and
+1:04:421 hour, 4 minutes, 42 secondsunwanted toolbars. So, how do we fight back? First, our tools and methods. If
+1:04:491 hour, 4 minutes, 49 secondsyour OS is corrupted, you'll need the Windows recovery environment, which lets you access a command prompt before
+1:04:561 hour, 4 minutes, 56 secondsWindows loads to troubleshoot and repair the system. But the only way to be 100% sure malware is gone is a full OS
+1:05:051 hour, 5 minutes, 5 secondsreinstallation, ideally from a known good image. For detection, we have modern systems that go beyond simple
+1:05:131 hour, 5 minutes, 13 secondssignatures. Endpoint detection and response, EDR, uses behavioral analysis on a single device to detect and
+1:05:211 hour, 5 minutes, 21 secondsautomatically isolate threats. Managed detection and response, MDR, is when you hire a third-party company to manage
+1:05:301 hour, 5 minutes, 30 secondsyour EDR for you. And extended detection and response, XDR, is the big picture.
+1:05:361 hour, 5 minutes, 36 secondsIf EDR is a camera on your front door, XDR is a city-wide surveillance system correlating data from endpoints, the
+1:05:451 hour, 5 minutes, 45 secondsnetwork, and the cloud to spot widespread attacks. Our standard security toolkit includes antivirus and
+1:05:521 hour, 5 minutes, 52 secondsanti-malware, which must have their definitions updated constantly. An email security gateway scans all incoming mail
+1:06:011 hour, 6 minutes, 1 secondfor threats before it ever reaches your inbox. And a software firewall like the one built into Windows is crile. It acts
+1:06:101 hour, 6 minutes, 10 secondsas a personal guard preventing malware that might be on your system from communicating back to its command and control server. Finally, the weakest
+1:06:191 hour, 6 minutes, 19 secondslink is often the human. User education is the best defense against social engineering. This means regular
+1:06:261 hour, 6 minutes, 26 secondsanti-ishing training to teach users how to spot malicious emails and internal testing to see if the training is
+1:06:331 hour, 6 minutes, 33 secondsworking. To recap, malware includes Trojans, disguised apps, viruses need
+1:06:401 hour, 6 minutes, 40 secondshuman action. Root kits hide in the OS, ransomware encrypts files, and key
+1:06:471 hour, 6 minutes, 47 secondsloggers steal passwords. The only 100% guaranteed removal method is a full OS reinstallation. The Windows recovery
+1:06:561 hour, 6 minutes, 56 secondsenvironment is your preboot command line for repairs. EDR, MDR, and XDR are
+1:07:031 hour, 7 minutes, 3 secondsmodern detection systems that use behavioral analysis. EDR is for endpoints. XDR is for the whole
+1:07:101 hour, 7 minutes, 10 secondsinfrastructure. Your standard security toolkit includes antivirus with updated definitions, an email security gateway
+1:07:191 hour, 7 minutes, 19 secondsto scan mail, and a software firewall to block outbound malicious traffic. The best prevention for fishing is consistent user education and training.
+Chapter 17: Obj 2.5: Social Engineering & Threats
+1:07:341 hour, 7 minutes, 34 secondsWe've configured our technical defenses, but the greatest vulnerability is often not in the software, but in the user.
+1:07:421 hour, 7 minutes, 42 secondsWe're now exploring the world of social engineering, threats and vulnerabilities. This is your rapidfire review of objective 2.5.
+1:07:521 hour, 7 minutes, 52 secondsLet's start with social engineering, the art of manipulating people. The most common form is fishing, which uses
+1:07:591 hour, 7 minutes, 59 secondsspoofed fake emails to trick you into giving up credentials. This branches out. Vishing is voice fishing over the
+1:08:071 hour, 8 minutes, 7 secondsphone. Smishing is fishing via SMS text message, and QR code fishing uses
+1:08:141 hour, 8 minutes, 14 secondsmalicious QR codes to send you to fake sites. A general fishing email is like casting a wide net. But spear fishing is
+1:08:231 hour, 8 minutes, 23 secondsa sniper rifle targeting specific high value individuals. When that target is a seale executive, it's called whailing.
+1:08:321 hour, 8 minutes, 32 secondsIn the physical world, shoulder surfing is simply looking over someone's shoulder to steal a password. Use a privacy filter to stop this. Tailgating
+1:08:411 hour, 8 minutes, 41 secondsis following an authorized person through a secure door. Impersonation is pretending to be someone else, like a
+1:08:481 hour, 8 minutes, 48 secondsrepair tech or a VP. Often using details found while dumpster diving through company trash to sound legitimate. A
+1:08:561 hour, 8 minutes, 56 secondscommon tactic is business email compromise or BEC, where an attacker impersonates the CEO and emails
+1:09:041 hour, 9 minutes, 4 secondsaccounting demanding an urgent fake wire transfer. Next up, the technical threats. An onpath attack or
+1:09:131 hour, 9 minutes, 13 secondsman-in-the-middle is where an attacker secretly sits between you and a server intercepting your traffic. A common way
+1:09:211 hour, 9 minutes, 21 secondsthis is done on a local network is ARP spoofing. On a wireless network, an attacker can set up an evil twin, a
+1:09:291 hour, 9 minutes, 29 secondsrogue access point with the same name as the legitimate Wi-Fi, tricking your device into connecting to them. Always
+1:09:361 hour, 9 minutes, 36 secondsuse a VPN on public Wi-Fi to protect against this. Then there are attacks on services. A denial of service attack or
+1:09:451 hour, 9 minutes, 45 secondsDOSs makes a service unavailable either by overwhelming it or exploiting a flaw.
+1:09:511 hour, 9 minutes, 51 secondsWhen this is done using a massive botn net of millions of infected computers, it's a distributed denial of service
+1:09:581 hour, 9 minutes, 58 secondsattack or DDoS. To get your password, attackers might use a brute force attack, trying every possible
+1:10:061 hour, 10 minutes, 6 secondscombination, or a dictionary attack, which uses common words and phrases.
+1:10:111 hour, 10 minutes, 11 secondsSome of the most dangerous threats are application attacks. A SQL injection exploits a website's database by typing
+1:10:191 hour, 10 minutes, 19 secondsmalicious SQL code into an input field, like a login box, potentially bypassing authentication entirely. Cross-sight
+1:10:281 hour, 10 minutes, 28 secondsscripting or XSS involves an attacker injecting malicious JavaScript into a legitimate website which then runs in
+1:10:371 hour, 10 minutes, 37 secondsthe victim's browser, often to steal their session cookie. A zeroday attack is an exploit for a vulnerability that
+1:10:441 hour, 10 minutes, 44 secondsthe software vendor has just discovered and has had zero days to patch. A supply chain attack is when attackers
+1:10:521 hour, 10 minutes, 52 secondscompromise a trusted third-party vendor to get to their real target, like hacking an HVAC company to get their VPN
+1:11:001 hour, 11 minutescredentials for a major retailer. And never forget the insider threat, a malicious employee who already has
+1:11:071 hour, 11 minutes, 7 secondstrusted access. Finally, let's talk about vulnerabilities, the weaknesses that allow these attacks to succeed.
+1:11:161 hour, 11 minutes, 16 secondsUnpatched systems are a massive vulnerability. If you miss Microsoft's patch Tuesday, attackers will create exploits for those known flaws.
+1:11:251 hour, 11 minutes, 25 secondsSimilarly, unprotected systems missing an antivirus or firewall are easy targets. A non-compliance system is any
+1:11:341 hour, 11 minutes, 34 secondsdevice that doesn't meet the company's security baseline. Systems that are end of life or EOL are the most dangerous as
+1:11:421 hour, 11 minutes, 42 secondsthe vendor no longer provides security updates for them. And the BYOD or bring your own device policy creates a
+1:11:501 hour, 11 minutes, 50 secondsvulnerability by mixing personal and corporate data which must be managed with an MDM.
+1:11:571 hour, 11 minutes, 57 secondsTo recap, social engineering attacks manipulate people. This includes fishing
+1:12:041 hour, 12 minutes, 4 secondsand its varants, fishing and smishing along with physical tactics like tailgating and shoulder surfing. Common
+1:12:131 hour, 12 minutes, 13 secondsthreats include onpath attacks like evil twins, service attacks like DDoS and password attacks like brute force.
+1:12:251 hour, 12 minutes, 25 secondsWeb application attacks like SQL injection and cross-sight scripting exploit a failure to validate user input.
+1:12:351 hour, 12 minutes, 35 secondsA zero day is an attack on a brand new unpatched vulnerability.
+1:12:411 hour, 12 minutes, 41 secondsA supply chain attack compromises a trusted third-party vendor.
+1:12:471 hour, 12 minutes, 47 secondsVulnerabilities are weaknesses. The most critical are unpatched systems and systems that are end of life. EOL.
+Chapter 18: Obj 2.6: Malware Removal Process (10 Steps)
+1:13:011 hour, 13 minutes, 1 secondA user reports their computer is acting strangely. It's slow, sluggish, and popping up with bizarre errors. Your job
+1:13:091 hour, 13 minutes, 9 secondsisn't just to fix it. It's to perform a digital exorcism. Welcome to the malware removal process. This is your rapidfire
+1:13:181 hour, 13 minutes, 18 secondsreview of objective 2.6. Now, the industry best practice is simple. Nuke it from orbit, wipe the drive, and
+1:13:271 hour, 13 minutes, 27 secondsreimage from a known good source. But what if the user has critical unbacked up files? That's where this 10-step
+1:13:341 hour, 13 minutes, 34 secondsprocedure comes in. Its goal, get the system stable enough to rescue the data before you wipe it clean. Step one,
+1:13:421 hour, 13 minutes, 42 secondsinvestigate and verify. Think of yourself as a computer doctor. Are the symptoms obvious like a Windows security
+1:13:501 hour, 13 minutes, 50 secondsalert screaming threats found? Or are they subtle, like a slow bootup or unusual sluggishness? Just like a doctor
+1:13:581 hour, 13 minutes, 58 secondschecking a patient's temperature, you need to recognize both the clear and the hidden signs of sickness. Step two,
+1:14:051 hour, 14 minutes, 5 secondsquarantine the infected system. This is critical. The moment you suspect malware, cut it off from the network.
+1:14:131 hour, 14 minutes, 13 secondsUnplug the Ethernet cable. Disable the Wi-Fi. A connected machine can spread the infection to the entire network in
+1:14:201 hour, 14 minutes, 20 secondsminutes. Also, do not use USB drives to move files. And absolutely do not perform a backup. You'll just be backing
+1:14:291 hour, 14 minutes, 29 secondsup the virus. Step three, disable system restore. This might feel counterintuitive, but it's vital.
+1:14:371 hour, 14 minutes, 37 secondsMalware is smart. It often infects your restore points. If you try to go back in time to a clean state, you'll just bring
+1:14:451 hour, 14 minutes, 45 secondsthe malware back with you. By disabling system restore, you delete all existing restore points, including any malware
+1:14:531 hour, 14 minutes, 53 secondshiding within them. We'll reenable it later, but for now, we have to burn the contaminated safety nets. Steps four and
+1:15:001 hour, 15 minutesfive, remediate and update. This is the first attempt at a cure. Your anti-malware software might have already
+1:15:081 hour, 15 minutes, 8 secondsquarantined some files. go ahead and try to remove them, but immediately after you must update your anti-malware
+1:15:151 hour, 15 minutes, 15 secondssoftware. You need the very latest engine and more importantly the latest signature files. Think of signatures as
+1:15:231 hour, 15 minutes, 23 secondsan intelligence agency's list of known threats. If your list is outdated, new malware will walk right past your
+1:15:301 hour, 15 minutes, 30 secondsdefenses. Step six, use advanced scan techniques. What if the malware is blocking your updates or even preventing
+1:15:381 hour, 15 minutes, 38 secondsWindows from starting normally? Time to bring out the heavy tools. First, try booting into safe mode. This loads a
+1:15:461 hour, 15 minutes, 46 secondsminimal version of Windows, which can prevent the malware from running, giving you a chance to scan and remove it. If even safe mode fails, you'll need the
+1:15:551 hour, 15 minutes, 55 secondsWindows pre-installation environment or winp. This is a command line environment that lets you access the file system
+1:16:021 hour, 16 minutes, 2 secondsfrom outside the corrupted OS to repair boot records or manually remove files.
+1:16:081 hour, 16 minutes, 8 secondsStep seven, reimage or reinstall. You've used WinP to copy the user's critical documents to a safe location. The rescue
+1:16:171 hour, 16 minutes, 17 secondsmission is over. Now it's time to follow the real best practice. Delete everything. Reimage the drive from a
+1:16:251 hour, 16 minutes, 25 secondsknown clean corporate image or perform a fresh OS installation. This is the only way to be 100% certain the malware is
+1:16:341 hour, 16 minutes, 34 secondsgone for good. Step eight, schedule scans and updates. Now that the system is clean, let's keep it that way. Ensure
+1:16:421 hour, 16 minutes, 42 secondsyour antivirus is set to real time scanning, which constantly monitors activity. Then schedule regular deep
+1:16:501 hour, 16 minutes, 50 secondsscans to catch anything that might have been missed. Just as importantly, configure Windows Update to download and install security patches automatically.
+1:16:591 hour, 16 minutes, 59 secondsAn unpatched OS is an open door for attackers. Step nine, enable system restore and create a new restore point.
+1:17:081 hour, 17 minutes, 8 secondsRemember how we disabled system restore?
+1:17:111 hour, 17 minutes, 11 secondsIt's time to turn it back on. Once it's enabled, immediately create a fresh, clean restore point. This gives you a
+1:17:181 hour, 17 minutes, 18 secondsknown good snapshot of your newly reimaged system to fall back on if you ever have issues in the future. Step 10,
+1:17:261 hour, 17 minutes, 26 secondseducate the enduser. This is the most important step for preventing a repeat incident. The user is the first line of
+1:17:341 hour, 17 minutes, 34 secondsdefense. Gently explain what happened and provide simple, actionable security advice. Use posters, login messages, or
+1:17:431 hour, 17 minutes, 43 secondsinternet pages to reinforce best practices. An educated user is the best anti-malware tool you have. To summarize
+1:17:511 hour, 17 minutes, 51 secondsthe key ideas, the only 100% guaranteed removal method is to reimage the OS.
+1:17:581 hour, 17 minutes, 58 secondsThis 10-step process is for data recovery. Before you do that, always remember the critical first action is to
+1:18:051 hour, 18 minutes, 5 secondsquarantine the system. If Windows won't boot, use safe mode or the Windows recovery environment. And finally, after
+1:18:131 hour, 18 minutes, 13 secondscleaning the system, harden it with updates and most importantly, educate the user.
+Chapter 19: Obj 2.7: Workstation Security & Hardening
+1:18:231 hour, 18 minutes, 23 secondsWe've just walked through the emergency procedure for cleaning up a malware infection, but the best medicine is always prevention. So now we're going to
+1:18:321 hour, 18 minutes, 32 secondsshift from being reactive to being proactive by building a digital fortress around our workstations. This is your
+1:18:401 hour, 18 minutes, 40 secondsrapidfire review of the security options and hardening techniques in Objective 2.7.
+1:18:471 hour, 18 minutes, 47 secondsFirst, we protect the data itself. We use data at rest encryption to make our information unreadable to unauthorized
+1:18:551 hour, 18 minutes, 55 secondsusers. The most common method is full disc encryption or FDE. On Windows, this is called Bit Locker. It's like putting
+1:19:041 hour, 19 minutes, 4 secondsthe entire hard drive inside a digital vault. This is especially critical for removable media like USB drives. Because
+1:19:131 hour, 19 minutes, 13 secondswhen an encrypted drive is lost, you only lose the hardware, not your sensitive data. Next, we strengthen the
+1:19:211 hour, 19 minutes, 21 secondsfirst line of defense, passwords. A strong password has high entropy, meaning it's unpredictable. To achieve
+1:19:291 hour, 19 minutes, 29 secondsthis, focus on four things. Length, make it eight characters or more. Complexity.
+1:19:361 hour, 19 minutes, 36 secondsUse a mix of uppercase letters, lowercase letters, numbers, and symbols.
+1:19:411 hour, 19 minutes, 41 secondsUniqueness. Never reuse passwords across different services. And finally, expiration. Passwords should be changed
+1:19:501 hour, 19 minutes, 50 secondsregularly, typically every 30 to 90 days. We can also lock down the computer before the operating system even loads.
+1:19:581 hour, 19 minutes, 58 secondsThis is done with BIOS or UEFI passwords. A supervisor password prevents changes to the firmware
+1:20:051 hour, 20 minutes, 5 secondssettings, while a user or boot password stops the computer from starting up until the correct password is entered.
+1:20:131 hour, 20 minutes, 13 secondsNow, let's talk about the user who is often the weakest link. End user best practices are critical. Always use
+1:20:211 hour, 20 minutes, 21 secondsscreen saver locks that require a password after a period of inactivity.
+1:20:261 hour, 20 minutes, 26 secondsManually lock your machine whenever you step away. For hardware, use physical cable locks to secure laptops and
+1:20:341 hour, 20 minutes, 34 secondsprevent theft. When it comes to sensitive data like personally identifiable information or PII, be
+1:20:411 hour, 20 minutes, 41 secondsaware of your surroundings. Use privacy filters on your screen to block shoulder surfers. And always shield the screen
+1:20:491 hour, 20 minutes, 49 secondswhen entering passwords. To manage all these unique complex passwords, use a password manager. It's an encrypted
+1:20:571 hour, 20 minutes, 57 secondsvault for all your credentials secured by a single master password.
+1:21:021 hour, 21 minutes, 2 secondsBeyond the user, we need robust account management. This starts with the principle of least privilege. Only give
+1:21:101 hour, 21 minutes, 10 secondsusers the absolute minimum permissions they need to do their job. Don't give everyone the master key to the vault. We
+1:21:181 hour, 21 minutes, 18 secondscan also restrict login times to specific business hours and set up failed attempts lockout, which freezes an account after too many incorrect
+1:21:261 hour, 21 minutes, 26 secondspassword tries. For temporary staff, always set account expiration dates so their access is automatically revoked
+1:21:341 hour, 21 minutes, 34 secondswhen their contract ends. And of course, always disable the default guest account. Finally, we apply system
+1:21:421 hour, 21 minutes, 42 secondshardening techniques to reduce the attack surface. The moment you set up a new device, change the default administrator account and password.
+1:21:511 hour, 21 minutes, 51 secondsAttackers have lists of these defaults.
+1:21:541 hour, 21 minutes, 54 secondsNext, disable auto run. This dangerous legacy feature automatically ran programs from USB drives and has been disabled in modern Windows for a reason.
+1:22:051 hour, 22 minutes, 5 secondsLastly, every program running in the background is a potential vulnerability.
+1:22:101 hour, 22 minutes, 10 secondsGo through your Windows services and disable any that are not being used. To summarize, workstation hardening is
+1:22:181 hour, 22 minutes, 18 secondsabout protecting the data with encryption, controlling access with strong password policies and smart account management, and locking down the
+1:22:261 hour, 22 minutes, 26 secondssystem by changing the defaults and disabling unused services.
+Chapter 20: Obj 2.8: Mobile Device Security
+1:22:361 hour, 22 minutes, 36 secondsWe've locked down our desktops and laptops, but in today's world, the most critical data often lives on the powerful computers we carry in our
+1:22:441 hour, 22 minutes, 44 secondspockets. Securing mobile devices requires a unique set of tools and policies. This is your rapidfire review of Objective 2.8.
+1:22:551 hour, 22 minutes, 55 secondsFirst, let's harden the device itself.
+1:22:581 hour, 22 minutes, 58 secondsJust like with workstations, we start with device encryption. This scrambles your data, making it unreadable if the
+1:23:051 hour, 23 minutes, 5 secondsphone is lost or stolen. On modern phones, this is usually on by default, and your passcode or pen acts as the
+1:23:131 hour, 23 minutes, 13 secondskey. Think of it as a locked safe for your data. Even if someone steals the safe, they can't get what's inside. Next
+1:23:211 hour, 23 minutes, 21 secondsare screen locks. You have several options. Biometrics like facial recognition or a fingerprint, a numeric
+1:23:281 hour, 23 minutes, 28 secondspin code, a swipeable pattern, or a simple swipe, which is the least secure.
+1:23:341 hour, 23 minutes, 34 secondsTo stop attackers from guessing your code, mobile devices have failed login attempt restrictions. For example, after
+1:23:421 hour, 23 minutes, 42 seconds10 failed attempts, an iPhone can be set to erase all data completely, which is why a good backup strategy is critical.
+1:23:501 hour, 23 minutes, 50 secondsJust like workstations, mobile devices need constant maintenance through patch management. This includes both operating system updates and application updates.
+1:24:001 hour, 24 minutesThese patches often fix critical security vulnerabilities, so keeping everything up to date is one of the easiest and most important things you
+1:24:081 hour, 24 minutes, 8 secondscan do. Endpoint security software also plays a key role. While Apple's iOS is a
+1:24:151 hour, 24 minutes, 15 secondsclosed environment where apps only come from the App Store, Android is more open, making it more susceptible to
+1:24:221 hour, 24 minutes, 22 secondsmalware. Antivirus and anti-malware apps are available for both platforms to add a layer of protection. You can also use
+1:24:301 hour, 24 minutes, 30 secondscontent filtering to block access to specific websites or applications.
+1:24:351 hour, 24 minutes, 35 secondsWhat happens if a device is lost or stolen? That's where remote capabilities come in. Locator applications use GPS to
+1:24:441 hour, 24 minutes, 44 secondspinpoint your devices location on a map in real time. If it's nearby, you can remotely play a sound to find it. If you
+1:24:521 hour, 24 minutes, 52 secondscan't get it back, you have the option to perform a remote wipe, which erases all personal data from the device. To
+1:25:001 hour, 25 minutesprepare for this, always use remote backup applications. Mobile devices are perfect for cloud-based backups, which
+1:25:071 hour, 25 minutes, 7 secondsconstantly save your data without you having to do anything. If your phone is wiped or you get a new one, you just log into your cloud account and your digital
+1:25:161 hour, 25 minutes, 16 secondsclone is restored. Finally, in a corporate environment, all of this is managed through policies and procedures.
+1:25:241 hour, 25 minutes, 24 secondsThe most important tool is mobile device management or MDM. An MDM is a central server that allows administrators to set
+1:25:331 hour, 25 minutes, 33 secondsand enforce security rules for all phones, whether they are corporateowned or personal devices under a bring your
+1:25:391 hour, 25 minutes, 39 secondsown device or BYOD policy. Using the MDM, an admin can push out configuration
+1:25:461 hour, 25 minutes, 46 secondsprofiles that force users to have complex passcodes, enable encryption, or even disable the camera when they enter
+1:25:541 hour, 25 minutes, 54 secondsa secure facility. To summarize the key ideas, secure mobile devices by hardening them with encryption and
+1:26:011 hour, 26 minutes, 1 secondstrong screen locks, keeping them updated with patch management, protecting them with endpoint security,
+1:26:081 hour, 26 minutes, 8 secondspreparing for loss with remote tools, and managing them centrally with an MDM.
+Chapter 21: Obj 2.9: Data Destruction & Disposal
+1:26:181 hour, 26 minutes, 18 secondsNow that we've hardened our active workstations and mobile devices, what happens when it's time to get rid of them? Simply throwing a hard drive in
+1:26:261 hour, 26 minutes, 26 secondsthe trash is a massive security risk. We have to make sure the data is gone for good. This is your rapidfire review of
+1:26:341 hour, 26 minutes, 34 secondsobjective 2.9, data destruction and disposal.
+1:26:391 hour, 26 minutes, 39 secondsFirst, let's look at physical destruction, which offers the highest guarantee that data is unreoverable. For
+1:26:461 hour, 26 minutes, 46 secondsa small number of drives, you can simply drill holes directly through the magnetic platters or even use a hammer.
+1:26:531 hour, 26 minutes, 53 secondsFor large-scale operations, industrial shredders grind the drives into small, useless metal fragments. You can also
+1:27:011 hour, 27 minutes, 1 seconduse incineration to completely destroy the drive with fire. A more technical method is deassing, which uses an
+1:27:091 hour, 27 minutes, 9 secondsextremely powerful magnet to completely erase the magnetic field on a drive's platters, destroying the data and the drive itself. But be very careful.
+1:27:181 hour, 27 minutes, 18 secondsDegassing only works on magnetic hard disk drives or HDDs. It is completely useless on solidstate drives and flash
+1:27:271 hour, 27 minutes, 27 secondsmemory. But what if you want to reuse the drive? In that case, we turn to softwarebased methods. You can use a
+1:27:351 hour, 27 minutes, 35 secondsdedicated disc wiping utility like the famous DBAN which overwrites every single sector on the drive multiple
+1:27:421 hour, 27 minutes, 42 secondstimes, making the original data unreoverable. This is often confused with formatting, but they aren't the
+1:27:491 hour, 27 minutes, 49 secondssame. Let's break down formatting. Think of your drive as a huge library. A quick format is like ripping the card catalog
+1:27:581 hour, 27 minutes, 58 secondsout of the library and replacing it. All the books, your data, are still sitting on the shelves just waiting for someone
+1:28:051 hour, 28 minutes, 5 secondswith the right tools to find them. This is why a quick format is insecure. A standard format, on the other hand, is
+1:28:141 hour, 28 minutes, 14 secondslike going to every single shelf and shredding every page of every book before installing a new card catalog. It
+1:28:221 hour, 28 minutes, 22 secondsoverwrites every sector, securely erasing the data so the drive can be safely reused. Low-level formatting is
+1:28:291 hour, 28 minutes, 29 secondseven more thorough, but that's a process usually only done at the factory. For large organizations, destroying
+1:28:361 hour, 28 minutes, 36 secondsthousands of drives is a massive job, so they often outsource it to a specialized third-party vendor. When doing this,
+1:28:441 hour, 28 minutes, 44 secondsit's absolutely critical to get a certificate of destruction. This is a legal document that serves as an audit
+1:28:511 hour, 28 minutes, 51 secondstrail proving that your specific drives were received and properly destroyed.
+1:28:561 hour, 28 minutes, 56 secondsThis certificate is essential for complying with legal and regulatory requirements, especially when dealing with sensitive personally identifiable
+1:29:051 hour, 29 minutes, 5 secondsinformation or PII. To summarize the key ideas, for maximum security, physically
+1:29:121 hour, 29 minutes, 12 secondsdestroy the drive using methods like shredding or drilling. If you need to reuse the drive, perform a standard
+1:29:191 hour, 29 minutes, 19 secondsformat or use a disc wiping utility, never a quick format. And when outsourcing, always get a certificate of destruction to verify compliance.
+Chapter 22: Obj 2.10: Securing SOHO Networks
+1:29:331 hour, 29 minutes, 33 secondsWe've secured our data at rest and even figured out how to destroy it safely, but that data is constantly moving
+1:29:401 hour, 29 minutes, 40 secondsacross our networks. To be truly secure, we have to lock down the pathways it travels. This is your rapidfire review
+1:29:481 hour, 29 minutes, 48 secondsof objective 2.10, 10. Securing SOHO wireless and wired networks. We start with the router, the heart of the SOHO
+1:29:571 hour, 29 minutes, 57 secondsnetwork. The very first thing you must do with any new router is change the default administrator password. Default
+1:30:041 hour, 30 minutes, 4 secondslogin are public knowledge, and leaving them unchanged is like leaving the key to your house under the doormat. Just as important is keeping the router's
+1:30:131 hour, 30 minutes, 13 secondsfirmware updated. Firmware is the router's operating system, and updates contain critical security patches. Next,
+1:30:211 hour, 30 minutes, 21 secondswe control the traffic. Routers can perform IP and content filtering, allowing you to create deny lists that
+1:30:281 hour, 30 minutes, 28 secondsblock specific malicious websites or even entire categories of content. A major security risk on SOHO routers is a
+1:30:371 hour, 30 minutes, 37 secondsfeature called universal plug-and-play or UPN. It was designed for convenience, allowing internal applications to
+1:30:451 hour, 30 minutes, 45 secondsautomatically open ports on your firewall. From a security perspective, this is a nightmare. Always disable UPN.
+1:30:541 hour, 30 minutes, 54 secondsTo properly secure a network, we need to separate it into zones. For any services that need to be accessible from the
+1:31:011 hour, 31 minutes, 1 secondinternet, like a web server, you should place them in a screen subnet, also known as a demilitarized zone or DMZ.
+1:31:091 hour, 31 minutes, 9 secondsThe DMZ is like a secure reception area.
+1:31:121 hour, 31 minutes, 12 secondsVisitors can access it, but they can't get into your private internal network.
+1:31:171 hour, 31 minutes, 17 secondsFor wireless security, start by changing the default SSID, which is the name of your network. While you can disable the
+1:31:241 hour, 31 minutes, 24 secondsSSID broadcast, this is just security through obscurity and doesn't actually stop a determined attacker. What really
+1:31:321 hour, 31 minutes, 32 secondsmatters is encryption. You must be using at a minimum WPA2 and ideally WPA3.
+1:31:401 hour, 31 minutes, 40 secondsFor visitors or less secure devices like IoT gadgets, always configure a guest network. This gives them internet access
+1:31:481 hour, 31 minutes, 48 secondsbut keeps them completely isolated from your main trusted devices. Finally, we have the firewall settings for your
+1:31:551 hour, 31 minutes, 55 secondswired network. A critical best practice is to disable any unused physical network ports on your switches. An
+1:32:031 hour, 32 minutes, 3 secondsactive open port in a conference room is an open invitation for an intruder to plug in. For services you need to make available, you'll use port forwarding.
+1:32:121 hour, 32 minutes, 12 secondsThis maps a public port on your firewall to a specific internal IP address in port. Be careful. A port forward creates
+1:32:211 hour, 32 minutes, 21 secondsa permanent 247 hole in your firewall, so only use it when absolutely necessary. To summarize the key ideas,
+1:32:301 hour, 32 minutes, 30 secondssecure your SOHO network by changing default passwords and updating firmware.
+1:32:351 hour, 32 minutes, 35 secondsControl traffic by disabling UPN and using a DMZ. And lock down access by
+1:32:421 hour, 32 minutes, 42 secondsusing WPA2 or WPA3 encryption, disabling unused ports, and configuring a separate guest network.
+Chapter 23: Obj 2.11: Browser Security Settings
+1:32:541 hour, 32 minutes, 54 secondsWe've hardened our workstations, secured our mobile devices, and locked down our s networks. But all that protection can
+1:33:021 hour, 33 minutes, 2 secondsbe bypassed by the single mostused application on any computer, the web browser. To complete our security
+1:33:091 hour, 33 minutes, 9 secondsposture, we must fortify this critical entry point. This is your rapidfire review of objective 2.11, configuring
+1:33:171 hour, 33 minutes, 17 secondsbrowser security. The foundation of browser security starts before you even install it. Always download the browser
+1:33:251 hour, 33 minutes, 25 secondsdirectly from the developer's official website. Malicious versions are often distributed on third-party sites. To be
+1:33:331 hour, 33 minutes, 33 secondsabsolutely sure your installer is legitimate, you can verify it with hashing. The developer provides a hash like a Shaw 256 string on their site.
+1:33:431 hour, 33 minutes, 43 secondsYou run the same algorithm on your downloaded file and if the hashes match, the file is authentic. Once installed,
+1:33:511 hour, 33 minutes, 51 secondskeep it patched. Modern browsers update automatically and these updates contain vital security fixes. Next, we have to
+1:33:591 hour, 33 minutes, 59 secondstalk about extensions and plugins. While they add great features, they have the same level of access to your system as
+1:34:061 hour, 34 minutes, 6 secondsthe browser itself. This is a massive attack vector. Only install extensions from trusted sources like the official
+1:34:141 hour, 34 minutes, 14 secondsChrome or Microsoft stores. A malicious extension can log your keystrokes, steal your passwords, and screenshot your
+1:34:211 hour, 34 minutes, 21 secondsdata. To manage those passwords securely, use a dedicated password manager. It's an encrypted vault that
+1:34:291 hour, 34 minutes, 29 secondsstores a unique complex password for every single website you use. This completely neutralizes the risk of
+1:34:361 hour, 34 minutes, 36 secondspassword reuse. If one site is breached, the attackers can't use those credentials anywhere else. When you're
+1:34:431 hour, 34 minutes, 43 secondsbrowsing, your browser is constantly checking for secure connections using digital certificates. If you see an error like this connection is not
+1:34:521 hour, 34 minutes, 52 secondsprivate, it's a major red flag. It could mean the site certificate has expired, doesn't match the domain name, or was
+1:34:591 hour, 34 minutes, 59 secondssigned by an authority your browser doesn't trust. A common simple cause for this is your computer's clock being set
+1:35:061 hour, 35 minutes, 6 secondsto the wrong date and time. Inside the browser settings, you have several tools to control privacy. Keep the pop-up
+1:35:141 hour, 35 minutes, 14 secondsblocker enabled and only grant exceptions to specific trusted sites.
+1:35:191 hour, 35 minutes, 19 secondsYou should periodically clear your browsing data, especially the cache. The cache stores website data locally to speed things up, but it can become corrupted or outdated, causing issues.
+1:35:301 hour, 35 minutes, 30 secondsFor true privacy on a public or shared computer, use private browsing mode.
+1:35:351 hour, 35 minutes, 35 secondsThis ensures no history, cookies, or cache are saved to the local machine once you close the window. Finally, in a
+1:35:431 hour, 35 minutes, 43 secondscorporate environment, you'll often use a proc key server. This acts as a middleman, filtering all your web traffic. It can block malicious sites,
+1:35:521 hour, 35 minutes, 52 secondsscan for malware, and enforce access control.
+1:35:561 hour, 35 minutes, 56 secondsYou might need to explicitly configure the proxy's address and port number in your browser. For another layer of privacy, you can enable secure DNS, also known as DNS over HTTPS.
+1:36:091 hour, 36 minutes, 9 secondsThis encrypts your DNS queries, preventing anyone on the network from snooping on the websites you are visiting. To summarize, secure your
+1:36:171 hour, 36 minutes, 17 secondsbrowser by downloading from trusted sources, keeping it patched, and vetting all extensions. Use a password manager
+1:36:251 hour, 36 minutes, 25 secondsand pay attention to certificate warnings. Manage your privacy by clearing the cache and using private mode when needed. And in a corporate
+1:36:331 hour, 36 minutes, 33 secondsenvironment, you'll leverage tools like proxies and secure DNS. Hey, really quick pause here. I know we're covering
+Chapter 24: Free A+ Toolkit & Mastery Bundle
+1:36:411 hour, 36 minutes, 41 secondsa ton of material right now. If you want a clear path to organizing all this, head over to techvaultacademy.com and grab our free A+ success toolkit.
+1:36:521 hour, 36 minutes, 52 secondsIt's got a six- week study road map and a readiness quiz to help you find your weak spots fast. And once you know your
+1:36:591 hour, 36 minutes, 59 secondsgaps, you can fill them with our Core 2 mastery bundle. It's packed with high yield notes, practice exams, and yes,
+1:37:071 hour, 37 minutes, 7 secondsthe active recall flashcards are ready to help you lock it all in. And you don't have to do this alone. You also
+1:37:141 hour, 37 minutes, 14 secondsget access to our free community where thousands of students are sharing tips, asking questions, and keeping each other motivated. link is down below. All
+Chapter 25: Obj 3.1: Troubleshooting Windows OS (BSOD, Boot)
+1:37:231 hour, 37 minutes, 23 secondsright, let's get back to it. We've spent the entirety of domain 2 building a fortress, focusing on proactive security to prevent bad things from happening.
+1:37:341 hour, 37 minutes, 34 secondsBut in the real world of IT support, things still break. So now we pivot from prevention to reaction. Welcome to domain 3, software troubleshooting.
+1:37:451 hour, 37 minutes, 45 secondsWe're starting with the heart of it all, the most common problems you'll face in the Windows operating system. This is your rapidfire review of objective 3.1.
+1:37:551 hour, 37 minutes, 55 secondsFirst up, the most infamous error of all, the blue screen of death or BSOD.
+1:38:011 hour, 38 minutes, 1 secondThis is a critical stop error where the OS shuts down completely to prevent damage, usually due to bad hardware or a
+1:38:081 hour, 38 minutes, 8 secondsfaulty driver. The screen will give you a stop code, which is your primary clue.
+1:38:131 hour, 38 minutes, 13 secondsIf the system won't reboot, try booting to the last known good configuration or using system restore. Next is degraded
+1:38:221 hour, 38 minutes, 22 secondsperformance. If a system is running slow, your first stop is the task manager. Check the performance tab for spikes and sort the processes tab to
+1:38:311 hour, 38 minutes, 31 secondsfind any applications that are hogging the CPU, memory, or disk. Also, make sure Windows is updated, the disc isn't
+1:38:391 hour, 38 minutes, 39 secondsfull, and if it's a laptop, check if it's plugged in. performance is often throttled on battery power. Then we have
+1:38:461 hour, 38 minutes, 46 secondsboot issues where the computer says operating system not found. The first thing to check is if a bootable USB
+1:38:531 hour, 38 minutes, 53 secondsdrive was left plugged in. If not, the Windows startup repair tool can fix most common issues automatically. For more
+1:39:001 hour, 39 minutesadvanced problems, you may need to use the recovery console and run the command bootrec/rebuild
+1:39:071 hour, 39 minutes, 7 secondsBCD to manually rebuild the boot configuration database. Sometimes a system is just unstable with frequent shutdowns or random application crashes.
+1:39:181 hour, 39 minutes, 18 secondsThis often points to a hardware problem.
+1:39:211 hour, 39 minutes, 21 secondsRun a full hardware diagnostic, especially on the memory. You can also use the built-in system file checker or
+1:39:281 hour, 39 minutes, 28 secondssfc to scan for and repair corrupt Windows OS files. If you get a message that services not starting, open the
+1:39:371 hour, 39 minutes, 37 secondsservices app. Check if the service has any dependencies, other services that must be running first. Also verify the
+1:39:451 hour, 39 minutes, 45 secondsaccount permissions for that service. If it's a Windows service, run sfc. If it's part of an application, your best bet is
+1:39:521 hour, 39 minutes, 52 secondsto reinstall that application. For application crashes, your primary tool is the event viewer, which logs every
+1:39:591 hour, 39 minutes, 59 secondsaction and error in Windows. For a more user-friendly view, check the reliability monitor, which tracks an
+1:40:061 hour, 40 minutes, 6 secondsapplication's stability over time. Low memory warnings mean your RAM is full.
+1:40:121 hour, 40 minutes, 12 secondsOpen Task Manager to see what's using all the memory. Windows manages this by using virtual memory, which is a paging
+1:40:191 hour, 40 minutes, 19 secondsfile on your hard drive that acts as slow overflow RAM. You can check its configuration in your advanced system
+1:40:261 hour, 40 minutes, 26 secondssettings. If you get a USB controller resources are exceeded warning, it means you've plugged in too many complex devices for the controller to handle.
+1:40:351 hour, 40 minutes, 35 secondsThe quickest solution is to simply unplug the device and try it in a different USB port, which may connect it to a separate controller on the
+1:40:431 hour, 40 minutes, 43 secondsmotherboard. In a corporate environment, a slow profile load is almost always a network issue caused by latency when
+1:40:511 hour, 40 minutes, 51 secondssyncing a roaming user profile. This is a problem for the domain administrator to solve. And finally, time drift. A
+1:40:591 hour, 40 minutes, 59 secondscomputer's clock will naturally become inaccurate over time. To fix this, just make sure set time automatically is
+1:41:061 hour, 41 minutes, 6 secondsenabled in the Windows time and language settings so it can sync with a time server. To summarize the key tools, for
+1:41:131 hour, 41 minutes, 13 secondsperformance, use task manager. For boot issues, use startup repair and boot wreck. For system file corruption, use
+1:41:211 hour, 41 minutes, 21 secondssfc. And for application crashes, start with the event viewer and reliability monitor.
+Chapter 26: Obj 3.2: Troubleshooting Mobile OS Issues
+1:41:321 hour, 41 minutes, 32 secondsWe've just covered the most common issues you'll face on a Windows desktop, but these days, our most used computers are the ones in our pockets.
+1:41:411 hour, 41 minutes, 41 secondsTroubleshooting mobile devices presents a unique set of challenges. This is your rapidfire review of objective 3.2, common mobile OS and application issues.
+1:41:531 hour, 41 minutes, 53 secondsBefore we dive in, remember the universal first step for almost any mobile problem. Turn it off and on
+1:42:001 hour, 42 minutesagain. A simple restart clears out temporary files and can solve a huge number of glitches with a clean slate.
+1:42:091 hour, 42 minutes, 9 secondsLet's start with application issues. If an app fails to launch, crashes, or is just slow and unresponsive, your first
+1:42:171 hour, 42 minutes, 17 secondsstep is to force close it. On an iPhone, you'll swipe it off the screen. On Android, you'll use the force stop
+1:42:241 hour, 42 minutes, 24 secondsbutton in the app settings. If that doesn't work, restart the phone. If the problem persists, check for an update in
+1:42:321 hour, 42 minutes, 32 secondsthe App Store, as it might be a known bug the developer has already fixed. As a last resort, uninstall and reinstall the app completely.
+1:42:421 hour, 42 minutes, 42 secondsWhat if an app fails to install or update in the first place? There's a simple checklist for this. First, check
+1:42:491 hour, 42 minutes, 49 secondsyour storage. OS and app updates can be large, and you need enough free space.
+1:42:551 hour, 42 minutes, 55 secondsNext, check your connectivity. A stable, high-speed Wi-Fi connection is best.
+1:43:001 hour, 43 minutesThen, check your payment method. Even free apps can require a valid payment method on file in the app store.
+1:43:081 hour, 43 minutes, 8 secondsFinally, if it's a work device, check the device management policies as the MDM might be blocking the installation.
+1:43:161 hour, 43 minutes, 16 secondsNow, for the operating system itself, if the OS fails to update, the checklist is similar. You need plenty of storage
+1:43:231 hour, 43 minutes, 23 secondsspace and a very stable, high bandwidth connection. If your device is suffering from random reboots, this is a tougher
+1:43:311 hour, 43 minutes, 31 secondsproblem. Start by making sure both the OS and all your apps are fully updated to rule out software bugs. You can also
+1:43:391 hour, 43 minutes, 39 secondscheck the battery health in the settings, but frequent random reboots often point to a hardware failure which may require you to replace the device.
+1:43:491 hour, 43 minutes, 49 secondsPoor battery life is another common complaint. The number one cause is a weak cellular signal. When your phone is
+1:43:561 hour, 43 minutes, 56 secondsconstantly hunting for bars, it drains the battery incredibly fast. If you're in an area with no service, just switch
+1:44:031 hour, 44 minutes, 3 secondsto airplane mode. The other major drains are an old battery that no longer holds a charge or having radios like GPS and Bluetooth on when you're not using them.
+1:44:141 hour, 44 minutes, 14 secondsYour phone's battery settings will show you exactly which apps are using the most power.
+1:44:201 hour, 44 minutes, 20 secondsFor connectivity issues, whether it's Bluetooth, Wi-Fi, or NFC, the troubleshooting is straightforward.
+1:44:261 hour, 44 minutes, 26 secondsFirst, make sure the specific radio is enabled in your settings. If it is, try toggling it off and on again. If that doesn't work, restart the entire device.
+1:44:371 hour, 44 minutes, 37 secondsFor Wi-Fi, you can also try moving closer to the access point or connecting to a different one to isolate the problem. Finally, what if your screen
+1:44:461 hour, 44 minutes, 46 secondsdoesn't auto rotate between portrait and landscape? This almost always has a simple solution. The phone's
+1:44:531 hour, 44 minutes, 53 secondsaccelerometer detects the orientation, but there's a software lock that can override it. Check your phone's quick settings panel and make sure you haven't accidentally enabled the rotation lock.
+1:45:051 hour, 45 minutes, 5 secondsTo summarize the key ideas, for almost any issue, start by restarting the device. For app problems, use the
+1:45:131 hour, 45 minutes, 13 secondssequence force, stop, restart phone, update app, then reinstall app. For
+1:45:201 hour, 45 minutes, 20 secondsupdate failures, check your storage and connectivity. And for most other glitches, a simple toggle in the settings, like turning a radio off and
+1:45:291 hour, 45 minutes, 29 secondson again or disabling rotation lock is often the solution.
+Chapter 27: Obj 3.3: Mobile Security Troubleshooting
+1:45:381 hour, 45 minutes, 38 secondsWhile a simple restart or checking the rotation lock can fix many common mobile glitches, sometimes the problem is more
+1:45:451 hour, 45 minutes, 45 secondsmalicious. Your phone contains your most sensitive data, making it a prime target for attackers. Now, we're going to cover how to troubleshoot security issues.
+1:45:551 hour, 45 minutes, 55 secondsThis is your rapidfire review of objective 3.3.
+1:45:591 hour, 45 minutes, 59 secondsFirst, let's look at the root causes of security problems. The number one risk is your application source. Installing
+1:46:061 hour, 46 minutes, 6 secondsapps from unofficial stores or websites is called sideloading. It's like buying medicine from a street vendor instead of
+1:46:131 hour, 46 minutes, 13 secondsa pharmacy. You have no idea what's really inside that package. Malicious apps are often disguised as legitimate
+1:46:201 hour, 46 minutes, 20 secondsones, a technique called application spoofing. Another major risk is intentionally disabling your phone's
+1:46:271 hour, 46 minutes, 27 secondsbuilt-in security. On Android, this is called rooting. On iOS, it's known as jailbreaking. Both give you complete
+1:46:341 hour, 46 minutes, 34 secondscontrol over the OS, but they also shatter its defenses and allow malware to run rampant. So, how do you know if
+1:46:421 hour, 46 minutes, 42 secondsyour device has been compromised? You look for the common symptoms. A classic sign is a sudden spike in high network
+1:46:491 hour, 46 minutes, 49 secondstraffic or receiving a data usage limit notification when your habits haven't changed. This could be malware sending your personal files to an attacker.
+1:46:581 hour, 46 minutes, 58 secondsAnother symptom is degraded performance.
+1:47:001 hour, 47 minutesIf the phone is suddenly sluggish and restarting doesn't fix it, malware could be consuming all your CPU and memory in the background. You might also
+1:47:091 hour, 47 minutes, 9 secondsexperience limited or no internet connectivity as some malware blocks access to prevent you from downloading security updates. And of course, a
+1:47:181 hour, 47 minutes, 18 secondssudden high number of ads popping up everywhere is a dead giveaway for adwear. The outcomes of an infection can be severe. You might see fake security
+1:47:271 hour, 47 minutes, 27 secondswarnings, which are pop-ups that trick you into installing even more malware by claiming your device is already infected. apps might start exhibiting
+1:47:361 hour, 47 minutes, 36 secondsunexpected behavior like crashing or changing settings on their own. And the worst case scenario is leaked personal files and data. So what's the solution?
+1:47:461 hour, 47 minutes, 46 secondsFor minor issues like ADWear, an anti-malware scan might be able to find and remove the offending app. But if you have symptoms of a deeper infection or
+1:47:551 hour, 47 minutes, 55 secondssuspect your data has been leaked, the only way to be 100% sure the thread is gone is to perform a factory reset. This
+1:48:021 hour, 48 minutes, 2 secondswipes everything from the device and restores it to its original clean state.
+1:48:071 hour, 48 minutes, 7 secondsAfter a reset and especially after a data leak, you must immediately change the passwords for all your cloud accounts that were synced to the device
+1:48:151 hour, 48 minutes, 15 secondsand enable multiffactor authentication everywhere you can. To summarize the key ideas, protect your phone by only using
+1:48:231 hour, 48 minutes, 23 secondsofficial app stores and never jailbreaking or rooting it. Watch for the symptoms of malware like high data usage and slow performance. And if you
+1:48:321 hour, 48 minutes, 32 secondssuspect a serious infection, back up your essential data, perform a factory reset, and then change all your passwords.
+Chapter 28: Obj 3.4: Troubleshooting PC Security (Malware Removal)
+1:48:451 hour, 48 minutes, 45 secondsWe just finished securing our mobile devices, but now we need to return to the heavy lifters, personal computers.
+1:48:521 hour, 48 minutes, 52 secondsJust like phones, PCs are constant targets for attackers. But the symptoms of an infection can look a bit different
+1:48:591 hour, 48 minutes, 59 secondson a desktop operating system. This is your rapidfire review of Objective 3.4.
+1:49:061 hour, 49 minutes, 6 secondsFirst, let's talk about connectivity.
+1:49:091 hour, 49 minutes, 9 secondsOne of the smartest things modern malware does is cut your lifeline. If your PC suddenly cannot access the
+1:49:161 hour, 49 minutes, 16 secondsnetwork or browse the internet, it might not be a router issue. Malware often acts like a gatekeeper, locking the
+1:49:231 hour, 49 minutes, 23 secondsdriveway so you cannot go to the store to buy the tools you need to remove it.
+1:49:281 hour, 49 minutes, 28 secondsBy blocking your internet access, the malware prevents you from downloading antivirus updates or removal tools. In
+1:49:351 hour, 49 minutes, 35 secondsthis scenario, you may need to boot from external media to clean the system.
+1:49:401 hour, 49 minutes, 40 secondsNext, we have the theatrical side of malware, scareware. You might see a desktop alert screaming that your
+1:49:481 hour, 49 minutes, 48 secondsantivirus has expired or that your computer is infected with a thousand viruses. These are false alerts designed
+1:49:551 hour, 49 minutes, 55 secondsto panic you into calling a scam number or clicking a malicious link. They are a production, a fake emergency. If you see
+1:50:031 hour, 50 minutes, 3 secondsthese, do not click them. Run a legitimate scan with your own trusted software.
+1:50:091 hour, 50 minutes, 9 secondsAnother sign of a deep infection is when your files start acting strange. If system files are renamed, missing, or if
+1:50:171 hour, 50 minutes, 17 secondsyou are suddenly denied access to your own documents, you likely have a serious breach. We also see issues with OS
+1:50:251 hour, 50 minutes, 25 secondsupdates. Malware knows that updates patch security holes, so it will often block the update service to keep those
+1:50:331 hour, 50 minutes, 33 secondsdoors open. If your updates act up, check your connectivity and firewall settings first.
+1:50:401 hour, 50 minutes, 40 secondsNow, let's look at the browser, which is the most common battlefield. If you are seeing frequent random pop-ups, even
+1:50:471 hour, 50 minutes, 47 secondswith a pop-up blocker enabled, you likely have adwear. Then there is redirection. This is when you type in a
+1:50:541 hour, 50 minutes, 54 secondssearch query or a web address, but the browser forcibly sends you to a completely different, often shady website. This is a classic sign of a
+1:51:031 hour, 51 minutes, 3 secondsbrowser hijacker. You might also encounter certificate warnings saying your connection is not private. A web certificate is like a digital ID card.
+1:51:141 hour, 51 minutes, 14 secondsIf the browser warns you, it means the ID card doesn't match the website name or the issuer isn't trusted. However,
+1:51:221 hour, 51 minutes, 22 secondsbefore you panic, check your computer's clock. If your date and time are incorrect, your computer will think the certificate has expired or is not yet valid, triggering a false alarm.
+1:51:331 hour, 51 minutes, 33 secondsFinally, watch for degraded performance.
+1:51:361 hour, 51 minutes, 36 secondsIf your browser is sluggish and your CPU usage is stuck at 100%, a malicious website might be running a crypto miner
+1:51:451 hour, 51 minutes, 45 secondsin the background, using your electricity and hardware to make money for criminals. To summarize the main
+1:51:511 hour, 51 minutes, 51 secondsideas, watch for malware blocking your network access to prevent you from getting help. Ignore fake Scarewware
+1:51:591 hour, 51 minutes, 59 secondsalerts and trust only your installed antivirus. If you see certificate warnings, check your system date and
+1:52:061 hour, 52 minutes, 6 secondstime first. And if you face browser redirection or constant pop-ups, scan for adwear immediately.
+Chapter 29: Obj 4.1: Documentation & Ticketing Systems
+1:52:191 hour, 52 minutes, 19 secondsWe've spent a lot of time deep in the trenches fighting malware and fixing boot errors, but in a professional IT environment, if you fix a computer, but
+1:52:281 hour, 52 minutes, 28 secondsdon't document it, technically it never happened. Welcome to domain 4 operational procedures. We are kicking
+1:52:351 hour, 52 minutes, 35 secondsthings off with objective 4.1 where we cover documentation and support systems.
+1:52:421 hour, 52 minutes, 42 secondsFirst, let's talk about asset management. Think of your organization's hardware as treasure and the CMDB or
+1:52:491 hour, 52 minutes, 49 secondsconfiguration management database as the treasure map. It doesn't hold the physical equipment, but it gives you the
+1:52:561 hour, 52 minutes, 56 secondsexact coordinates, warranty status, and user history for every device. To link the physical world to this digital map,
+1:53:041 hour, 53 minutes, 4 secondswe use asset tags, stickers with barcodes that let you scan a device and instantly bring up its life story. But
+1:53:121 hour, 53 minutes, 12 secondshow do we get that equipment? We use the procurement life cycle. Your nodes compare this to navigating an airport.
+1:53:201 hour, 53 minutes, 20 secondsYou can't just walk on the plane. You have to pass through security gates.
+1:53:241 hour, 53 minutes, 24 secondsFirst is the request, then the purchase order or PO where we negotiate the deal, then the invoice where the vendor asks
+1:53:321 hour, 53 minutes, 32 secondsfor payment, and finally accounting releases the funds. Next is the IT command center, the ticketing system.
+1:53:401 hour, 53 minutes, 40 secondsEvery issue needs a ticket. You need accurate user and device information, a clear description, and a severity level.
+1:53:481 hour, 53 minutes, 48 secondsSeverity dictates priority. A broken mouse is low, but a server down is critical. If a ticket is too complex for
+1:53:571 hour, 53 minutes, 57 secondstier one support, we perform an escalation, handing it off to a specialized team like networking. And
+1:54:041 hour, 54 minutes, 4 secondsremember, your notes in the ticket must be clear. We document the resolution so the next technician doesn't have to
+1:54:111 hour, 54 minutes, 11 secondsreinvent the wheel. Now, let's look at the rule books. For routine tasks, we use SOPs, standard operating procedures.
+1:54:201 hour, 54 minutes, 20 secondsThink of an SOP as a cooking recipe. If every technician follows the recipe, the result is consistent every time. But
+1:54:281 hour, 54 minutes, 28 secondswhen things go wrong, like a security breach or an accident, we file an incident report to create a legal
+1:54:351 hour, 54 minutes, 35 secondshistory of the event. We also use checklists for onboarding new users and offboarding departing ones. Offboarding
+1:54:421 hour, 54 minutes, 42 secondsis an exam favorite. You must follow the checklist to ensure data is decrypted and backed up before you wipe the device or that data will be lost forever.
+1:54:531 hour, 54 minutes, 53 secondsFinally, we have SLAs's or service level agreements. These are contracts that define expectations like a guarantee
+1:55:011 hour, 55 minutes, 1 secondthat a vendor will fix an outage within 4 hours or else they face financial penalties. To summarize, use the CMDB to
+1:55:101 hour, 55 minutes, 10 secondstrack your assets. Follow the procurement gates to buy them. Log every fix in the ticketing system and use SOPs
+1:55:181 hour, 55 minutes, 18 secondsfor routine tasks and incident reports for accidents.
+Chapter 30: Obj 4.2: Change Management (SNE, Rollback)
+1:55:261 hour, 55 minutes, 26 secondsWe just covered how to document your IT environment in objective 4.1. Now we are going to talk about altering it. In technology, the only constant is change.
+1:55:371 hour, 55 minutes, 37 secondsBut every modification carries the risk of disaster. To prevent chaos, we use change management. Think of this process
+1:55:461 hour, 55 minutes, 46 secondsas the air traffic control for your organization. Without it, changes would crash into each other, causing downtime
+1:55:521 hour, 55 minutes, 52 secondsand accidents. This is your rapidfire review of objective 4.2.
+1:55:581 hour, 55 minutes, 58 secondsIt all starts with the request form. You can't just change things on a whim. You must financially justify the purpose.
+1:56:061 hour, 56 minutes, 6 secondsAre you patching a security hole or adding a new feature? Next, you define the scope and impact. Scope is how far
+1:56:141 hour, 56 minutes, 14 secondsthe change reaches. Is it one laptop or the entire data center? Impact is the consequence like taking the internet
+1:56:221 hour, 56 minutes, 22 secondsoffline for the whole company to reboot a firewall. Not all changes are created equal. We use the pneummonic SN to
+1:56:311 hour, 56 minutes, 31 secondsremember the three types. First is a standard change. These are low risk and preapproved like replacing a broken
+1:56:391 hour, 56 minutes, 39 secondsmouse. Next is a normal change. These are medium risk like updating a core switch and require the full approval
+1:56:471 hour, 56 minutes, 47 secondsprocess. Finally, we have the emergency change. This is high risk and happens immediately to stop a critical threat like a zero-day vulnerability.
+1:56:571 hour, 56 minutes, 57 secondsTiming is everything. Changes usually happen during a maintenance window. a pre-approved time when usage is low,
+1:57:051 hour, 57 minutes, 5 secondslike Sunday at 2 a.m. However, during critical business times like the holiday shopping season, we implement a change
+1:57:121 hour, 57 minutes, 12 secondsfreeze where no changes are allowed at all. Before you touch anything, you need safety nets. First, use a sandbox. This
+1:57:221 hour, 57 minutes, 22 secondsis a self-contained flight simulator where you can crash the plane safely without affecting the live network.
+1:57:291 hour, 57 minutes, 29 secondsNext, you need a roll back plan. If the change fails, this is your strict procedure to return the system to its
+1:57:361 hour, 57 minutes, 36 secondsoriginal configuration. And don't confuse that with the backup plan. The backup plan is your plan B for the
+1:57:431 hour, 57 minutes, 43 secondsimplementation itself, like having a flash drive ready in case the internet goes down while you are downloading a patch. Finally, approvals. The change
+1:57:531 hour, 57 minutes, 53 secondscontrol board or CCB acts as mission control, reviewing the risk and granting permission to launch. But the mission
+1:58:011 hour, 58 minutes, 1 secondisn't over until you have enduser acceptance. The people who actually use the system must confirm that everything
+1:58:081 hour, 58 minutes, 8 secondsworks as expected. To summarize the key ideas, treat change management like air traffic control. Use the pneummonic to
+1:58:171 hour, 58 minutes, 17 secondscategorize changes as standard, normal, or emergency. Always test in a sandbox.
+1:58:241 hour, 58 minutes, 24 secondsHave a roll back plan ready and never close a ticket without enduser acceptance.
+Chapter 31: Obj 4.3: Backup & Recovery (3-2-1 Rule)
+1:58:341 hour, 58 minutes, 34 secondsBackups are the ultimate insurance policy. If malware or hardware failure strikes, a good backup strategy can save
+1:58:421 hour, 58 minutes, 42 secondsthe day. Welcome to objective 4.3, workstation backup and recovery. First, let's talk about the four backup types.
+1:58:521 hour, 58 minutes, 52 secondsThink of your data as a library. A full backup copies every single book in the library. It takes the longest time to
+1:59:011 hour, 59 minutes, 1 secondrun, but if disaster strikes, restoration is fast because you only need that one massive set. Next is the
+1:59:101 hour, 59 minutes, 10 secondsdifferential backup. On day one, you do a full backup. On every subsequent day, you back up everything that has changed
+1:59:191 hour, 59 minutes, 19 secondssince that original full backup. To restore, you only need two sets. the full backup and the latest differential.
+1:59:281 hour, 59 minutes, 28 secondsThen we have the incremental backup.
+1:59:311 hour, 59 minutes, 31 secondsAgain, day one is a full backup, but on subsequent days, you only back up the tiny changes made since the last backup
+1:59:401 hour, 59 minutes, 40 secondsrun. This makes daily backups extremely fast, but restoration is slow and complex because you need the full backup
+1:59:491 hour, 59 minutes, 49 secondsplus every single daily increment in order.
+1:59:531 hour, 59 minutes, 53 secondsFinally, there is the synthetic full backup. This is like magic. The system takes your existing full and incremental
+2:00:012 hours, 1 secondbackups and combines them internally to create a brand new full backup file without needing to transfer all that
+2:00:092 hours, 9 secondsdata across the network again. But backups are worthless if they don't work. You must perform backup testing to
+2:00:182 hours, 18 secondsverify your files are readable. When restoring, you have two choices. In place recovery, which overwrites
+2:00:262 hours, 26 secondsexisting files, or alternate location recovery, which saves the files to a separate folder, so you don't
+2:00:342 hours, 34 secondsaccidentally destroy newer data. To organize all this, we use the GFS
+2:00:402 hours, 40 secondsrotation scheme. Grandfather, father, son. The grandfather is the monthly
+2:00:462 hours, 46 secondsbackup, the father is the weekly backup, and the son is the daily backup. And
+2:00:532 hours, 53 secondsfinally, to survive a disaster, follow the 321 rule. Keep three copies of your
+2:01:002 hours, 1 minutedata total. Store them on two different types of media and keep at least one copy offsite far away from your building
+2:01:082 hours, 1 minute, 8 secondsto protect against fire or flood. To summarize, full backups are slow to create but fast to restore. Incrementals are fast to create but slow to restore.
+2:01:212 hours, 1 minute, 21 secondsUse the 321 rule to ensure your data survives any disaster.
+Chapter 32: Obj 4.4: Safety Procedures (ESD, Fire)
+2:01:332 hours, 1 minute, 33 secondsSafety might sound boring until you fry a $1,000 component or worse hurt yourself.
+2:01:412 hours, 1 minute, 41 secondsWelcome to objective 4.4 where we cover the essential safety procedures for IT professionals.
+2:01:492 hours, 1 minute, 49 secondsFirst, we have ESD or electrostatic discharge. Think of static electricity like a coiled spring. It is harmless
+2:01:582 hours, 1 minute, 58 secondswhen sitting there, but deadly to electronics when it snaps. Here is a scary fact. You don't feel a static shock until it hits about 3500 volts.
+2:02:092 hours, 2 minutes, 9 secondsBut a computer chip can be destroyed by as little as 100 volts. That means you can fry a motherboard without ever
+2:02:162 hours, 2 minutes, 16 secondsfeeling a thing. To stop this, we use equalization tools. The ESD strap connects your wrist to the metal
+2:02:252 hours, 2 minutes, 25 secondschassis, keeping you at the same electrical potential as the device. We also use ESD mats to stand on or place
+2:02:332 hours, 2 minutes, 33 secondsequipment on. When storing parts, use anti-static bags. specifically the silver ones that shield against
+2:02:412 hours, 2 minutes, 41 secondsdischarge. And always, always handle components by the edges. Never touch the chips directly.
+2:02:492 hours, 2 minutes, 49 secondsNext is electrical safety. The number one rule, disconnect the power source before opening anything. But be careful,
+2:02:582 hours, 2 minutes, 58 secondseven when unplugged, some components store residual power. Think of a capacitor inside a power supply or laser
+2:03:062 hours, 3 minutes, 6 secondsprinter, like a sponge. Even after you turn off the faucet, the sponge still holds water. These components hold
+2:03:132 hours, 3 minutes, 13 secondselectricity and can shock you. If you see a high voltage component, like a power supply, do not open it. Replace
+2:03:212 hours, 3 minutes, 21 secondsthe whole unit. And a critical warning, never connect yourself to the building's electrical ground. If the building has a
+2:03:292 hours, 3 minutes, 29 secondsfault, you become the path of least resistance. Then we have personal safety. When lifting heavy servers,
+2:03:372 hours, 3 minutes, 37 secondsprotect your back by lifting with your legs. Use safety goggles when working with batteries or chemicals. And use an
+2:03:442 hours, 3 minutes, 44 secondsair filter mask when dealing with toner dust and printers. Also, watch your feet. Messy cables are a major trip
+2:03:522 hours, 3 minutes, 52 secondshazard. Use Velcro or zip ties to bundle them up. Finally, let's talk fire safety. Electronics and water do not
+2:04:012 hours, 4 minutes, 1 secondmix. Data centers use dry chemicals like FM200 or carbon dioxide to suppress
+2:04:082 hours, 4 minutes, 8 secondsfires, never water. If a device catches fire, your first move is to cut the
+2:04:142 hours, 4 minutes, 14 secondspower. To summarize, use an ESD strap to protect the chips. Unplug the power to
+2:04:212 hours, 4 minutes, 21 secondsprotect yourself. Watch out for residual power in capacitors and use dry chemicals, not water, for electrical fires.
+Chapter 33: Obj 4.5: Environmental Controls (MSDS, UPS)
+2:04:342 hours, 4 minutes, 34 secondsWe've covered safety procedures for people and equipment. Now we turn to the environment itself. Objective 4.5 is all
+2:04:432 hours, 4 minutes, 43 secondsabout managing the space your IT equipment lives in. Handling hazardous materials, controlling the climate, and
+2:04:512 hours, 4 minutes, 51 secondsmanaging power. First, let's talk about the MSDS or material safety data sheet.
+2:04:582 hours, 4 minutes, 58 secondsYou might also see it called the SDS or safety data sheet. They are exactly the same thing mandated by OSHA. This
+2:05:072 hours, 5 minutes, 7 secondsdocument is your cookbook and first aid manual for hazardous items like toner and batteries. It tells you exactly what
+2:05:152 hours, 5 minutes, 15 secondsis in the product and how to safely handle a spill or fire. When you are done with these items, you can't just
+2:05:222 hours, 5 minutes, 22 secondsthrow them in the trash. Batteries and toner cartridges must be recycled or disposed of at designated hazardous
+2:05:302 hours, 5 minutes, 30 secondswaste facilities. Many manufacturers include return labels right in the box to make this easy. Next, we have
+2:05:382 hours, 5 minutes, 38 secondsenvironmental controls. Computers generate heat, so temperature control is obvious, but humidity is a balancing act. Too low and you risk static shock.
+2:05:502 hours, 5 minutes, 50 secondstoo high and you risk condensation or corrosion. The target Goldilocks zone is
+2:05:572 hours, 5 minutes, 57 secondsaround 50% humidity. For dust, keep the area ventilated. If a PC is clogged with
+2:06:042 hours, 6 minutes, 4 secondsdust, take it outside and use compressed air. Never use a standard vacuum inside a case as it generates static.
+2:06:142 hours, 6 minutes, 14 secondsFinally, let's talk about power. We face surges, sags, and outages. A UPS or
+2:06:212 hours, 6 minutes, 21 secondsuninterruptible power supply uses a battery to keep systems running during an outage. There are three types.
+2:06:292 hours, 6 minutes, 29 secondsStandby, which switches over when power fails. Line interactive, which fixes voltage drops, and online, where the
+2:06:392 hours, 6 minutes, 39 secondsdevice runs off the battery 100% of the time for zero delay. If you don't need
+2:06:452 hours, 6 minutes, 45 secondsbattery backup, you still need a surge suppressor. This absorbs voltage spikes. When buying one, look for three numbers.
+2:06:552 hours, 6 minutes, 55 secondsA high jewel rating over 600 is best. A high amp rating and a low voltage let
+2:07:022 hours, 7 minutes, 2 secondsthrough rating. Remember, lower let through leads to longer life. Ideally, you want 330 volts or less.
+2:07:122 hours, 7 minutes, 12 secondsTo summarize, read the MSDS for hazards.
+2:07:162 hours, 7 minutes, 16 secondsKeep humidity around 50%. Use a UPS for backup power and choose a surge suppressor with a high jewel rating and low let through voltage.
+Chapter 34: Obj 4.6: Incident Response, Privacy & Licensing
+2:07:382 hours, 7 minutes, 38 secondsWe've secured the environment and managed power. Now we move to the legal and procedural side of it. Welcome to
+2:07:462 hours, 7 minutes, 46 secondsobjective 4.6 6 covering incident response, licensing, and privacy. This is where technology meets the law.
+2:07:562 hours, 7 minutes, 56 secondsFirst, let's talk about incident response. When a security breach happens, your goal is to identify, report, and preserve evidence. The
+2:08:052 hours, 8 minutes, 5 secondsgolden rule here is the chain of custody. Think of this like a tracking number for a package. You must document
+2:08:122 hours, 8 minutes, 12 secondsexactly who touched the evidence and when or it becomes useless in court. For digital evidence, we use hashes to prove
+2:08:212 hours, 8 minutes, 21 secondsthe data hasn't changed. When collecting data, you must follow the order of volatility or OOV. Volatile data
+2:08:302 hours, 8 minutes, 30 secondsdisappears quickly, like sand blowing off a castle. You must capture the most volatile data first like CPU registers
+2:08:382 hours, 8 minutes, 38 secondsand cache before moving to less volatile data like the hard drive or backup tapes. And never just copy files. Make a
+2:08:472 hours, 8 minutes, 47 secondsbitby-bit image of the entire drive using a right blocker to ensure you don't accidentally alter the evidence.
+2:08:552 hours, 8 minutes, 55 secondsNext, let's cover licensing. The EULA or enduser license agreement is that long
+2:09:022 hours, 9 minutes, 2 secondscontract you click I agree to. It dictates how you can use the software.
+2:09:082 hours, 9 minutes, 8 secondsIn business, we use different license types. A per seat license is for one specific person. A concurrent license
+2:09:162 hours, 9 minutes, 16 secondsallows a set number of people to use the software at the same time. and open-source software or FS gives you the
+2:09:242 hours, 9 minutes, 24 secondssource code to modify unlike closed source software. Then we have confidentiality.
+2:09:312 hours, 9 minutes, 31 secondsAn NDA or non-disclosure agreement is a contract that protects trade secrets. If both sides share secrets, it's called a
+2:09:402 hours, 9 minutes, 40 secondsmutual NDA. Finally, we have regulated data. You must protect PII, personally
+2:09:472 hours, 9 minutes, 47 secondsidentifiable information like social security numbers. In healthcare, we protect PHI or protected health
+2:09:552 hours, 9 minutes, 55 secondsinformation mandated by HIPPA. And for credit cards, we follow PCIDSS standards. To manage all this, companies use an AUP or acceptable use policy.
+2:10:092 hours, 10 minutes, 9 secondsThis document limits legal liability by defining exactly what employees can and cannot do with company technology. To
+2:10:182 hours, 10 minutes, 18 secondssummarize, maintain the chain of custody for evidence. Collect volatile data first. Understand your licenses like
+2:10:252 hours, 10 minutes, 25 secondsEULA and FS and strictly protect regulated data like PII, PHI, and credit card info.
+Chapter 35: Obj 4.7: Communication & Professionalism
+2:10:422 hours, 10 minutes, 42 secondsFixing the computer is only half the job. If you fix the issue but alienate the user, you have failed. Welcome to
+2:10:502 hours, 10 minutes, 50 secondsobjective 4.7, covering communication techniques and professionalism. This is where you build your reputation and
+2:10:572 hours, 10 minutes, 57 secondscareer. First, let's talk about your presence. Your attire is your uniform.
+2:11:032 hours, 11 minutes, 3 secondsWhether it's formal or business casual, it sets the tone. When you speak, avoid jargon. You are the translator, the
+2:11:122 hours, 11 minutes, 12 secondsbridge between the technical world and the client's world. Don't say the DHCP scope is exhausted. Say, "We're freeing
+2:11:202 hours, 11 minutes, 20 secondsup space for more devices to connect." And always project confidence. A positive attitude is infectious, especially during a crisis.
+2:11:302 hours, 11 minutes, 30 secondsNext is listening. We have a bad habit of interrupting because we think we know the answer. Stop. Use the pneummonic L.
+2:11:402 hours, 11 minutes, 40 secondsListen to the entire story. Ask probing questions. Stop interrupting and take notes. This allows the customer to vent
+2:11:502 hours, 11 minutes, 50 secondsand feel heard. Also clarify their statements by repeating the issue back to them like a mirror to ensure you both
+2:11:582 hours, 11 minutes, 58 secondsunderstand the problem. Then we have managing the interaction. Be on time. If
+2:12:042 hours, 12 minutes, 4 secondsyou are late, call. Avoid distractions like texting or personal calls. If you face a difficult customer, do not be
+2:12:122 hours, 12 minutes, 12 secondsdefensive or argumentative. Instead, be a teacher. Educate them without being judgmental.
+2:12:202 hours, 12 minutes, 20 secondsFinally, managing expectations.
+2:12:232 hours, 12 minutes, 23 secondsExpectation is reality. If a repair takes 2 weeks, tell them upfront.
+2:12:292 hours, 12 minutes, 29 secondsCommunicate the status proactively so they don't feel forgotten. Offer clear repair or replacement options, explaining the pros and cons of each.
+2:12:392 hours, 12 minutes, 39 secondsAnd when the job is done, follow up to verify satisfaction. This catches any small issues that might have slipped
+2:12:462 hours, 12 minutes, 46 secondsthrough the cracks. To summarize, dress professionally and avoid jargon. Listen actively without interrupting. Manage
+2:12:552 hours, 12 minutes, 55 secondsdifficult situations with empathy, not defensiveness. And always follow up to ensure the customer is 100% satisfied.
+Chapter 36: Obj 4.8: Scripting Basics (.bat, .ps1, .py)
+2:13:112 hours, 13 minutes, 11 secondsWe have learned how to talk to people.
+2:13:132 hours, 13 minutes, 13 secondsNow we need to learn how to talk to computers. Welcome to objective 4.8, the basics of scripting. A script is simply
+2:13:212 hours, 13 minutes, 21 secondsa digital recipe, a set of instructions that automates boring, repetitive tasks so you don't have to do them manually.
+2:13:292 hours, 13 minutes, 29 secondsFirst, let's learn the languages. In Windows, the classic command line uses batch files which end in.bat.
+2:13:382 hours, 13 minutes, 38 secondsBut for modern system administration, we use PowerShell ending inp.
+2:13:442 hours, 13 minutes, 44 secondsPowerShell is powerful using command lits to manage the entire OS. For general Windows tasks like Office
+2:13:522 hours, 13 minutes, 52 secondsAutomation, we have Visual Basic Script or VBS. If you are in Linux or Unix, you'll use shell scripts ending insh.
+2:14:042 hours, 14 minutes, 4 secondsA key identifier for these is the shebang or hashbang symbol at the very start of the file. For web browsers, we
+2:14:122 hours, 14 minutes, 12 secondsuse JavaScript orjs which handles interactivity.
+2:14:172 hours, 14 minutes, 17 secondsAnd for cross-platform automation that works on Windows, Mac and Linux, the king is Python ending inp.
+2:14:262 hours, 14 minutes, 26 secondsSo why do we script? The biggest use case is automation. We use scripts to restart machines remotely, update
+2:14:352 hours, 14 minutes, 35 secondssoftware, or remap network drives when a user logs in. Scripts are also critical for automated backups, ensuring data is
+2:14:432 hours, 14 minutes, 43 secondssaved every night without a human needing to click a button. However, scripts are dangerous because they
+2:14:502 hours, 14 minutes, 50 secondsexecute commands quickly across many systems. A mistake spreads fast. A bad script can unintentionally introduce
+2:14:582 hours, 14 minutes, 58 secondsmalware to the entire network or crash systems by mishandling resources like RAM. Always test your scripts in a
+2:15:072 hours, 15 minutes, 7 secondssandbox before deploying them and have a roll back plan ready. To summarize,
+2:15:132 hours, 15 minutes, 13 secondsusebat and PS1 for Windows.sh for Linux and py for crossplatform
+2:15:212 hours, 15 minutes, 21 secondstasks. Scripts automate updates and backups, but must be tested carefully to prevent widespread crashes.
+Chapter 37: Obj 4.9: Remote Access (RDP, SSH, VPN)
+2:15:342 hours, 15 minutes, 34 secondsWe have automated our scripts. Now, let's control the machines themselves.
+2:15:392 hours, 15 minutes, 39 secondsWelcome to objective 4.9, remote access technologies. This is how you fix a server in London while sitting at a desk
+2:15:482 hours, 15 minutes, 48 secondsin New York. First, let's look at the guey tools, which let you see and control a desktop. The big player here
+2:15:562 hours, 15 minutes, 56 secondsis RDP or remote desktop protocol. It's built into Windows and listens on TCP port 3389.
+2:16:062 hours, 16 minutes, 6 secondsMemorize that port 3389.
+2:16:092 hours, 16 minutes, 9 secondsAnother option is VNC which is open- source and crossplatform. And for virtual machines, we use Spice. Think of Spice as a fiber optic cable for VMs.
+2:16:212 hours, 16 minutes, 21 secondsIt's optimized for fast graphics and smooth video playback. Next, we have the command line tools. If you need to
+2:16:292 hours, 16 minutes, 29 secondsconfigure a router securely, you use SSH or secure shell. It runs on TCP port 22.
+2:16:372 hours, 16 minutes, 37 secondsSSH is critical because it encrypts everything. This is the opposite of the older Tnet, which shouts your password
+2:16:452 hours, 16 minutes, 45 secondsin plain text across the network. Never use Telnet. Always use SSH.
+2:16:522 hours, 16 minutes, 52 secondsTo connect securely over the public internet, we use a VPN or virtual private network. A VPN creates an
+2:17:002 hours, 17 minutesencrypted tunnel between your laptop and the corporate office. It uses a VPN concentrator to encrypt and decrypt the
+2:17:082 hours, 17 minutes, 8 secondsdata, keeping it safe from prying eyes on the public web. For managed service providers who handle hundreds of
+2:17:162 hours, 17 minutes, 16 secondsclients, we use RMM or remote monitoring and management. This is a centralized dashboard that controls everything.
+2:17:242 hours, 17 minutes, 24 secondsBecause it's so powerful, RMM tools are prime targets for hackers. You must secure them with MFA or multiffactor authentication.
+2:17:352 hours, 17 minutes, 35 secondsFinally, for Windows admins running scripts remotely, we use WinRM or Windows remote management. Security is
+2:17:432 hours, 17 minutes, 43 secondsparamount here. Remote access tools are open doors. Hackers scan for open ports like 3389 constantly. Always use
+2:17:532 hours, 17 minutes, 53 secondsencryption like VPNs and SSH and enforce MFA to prevent brute force attacks. To
+2:18:002 hours, 18 minutessummarize, RDP uses port 3389 for desktops. SSH uses port 22 for secure
+2:18:082 hours, 18 minutes, 8 secondscommand lines. VPNs encrypt data over the internet. and tools like RMM and WinRM allow for centralized automated management.
+Chapter 38: Obj 4.10: Artificial Intelligence Concepts
+2:18:222 hours, 18 minutes, 22 secondsWe have covered securing the network and managing procedures. Now we explore the most rapidly evolving frontier in IT,
+2:18:312 hours, 18 minutes, 31 secondsartificial intelligence. Welcome to objective 4.10 where we break down the
+2:18:372 hours, 18 minutes, 37 secondsbasic concepts of AI. The goal of AI is to create technology that can meet or
+2:18:452 hours, 18 minutes, 45 secondsexceed human intelligence. Think of AI as a digital brain apprentice. It learns, infers, and reasons based on the
+2:18:542 hours, 18 minutes, 54 secondsdata you feed it. We integrate AI into everything. It creates generative content like images and video,
+2:19:032 hours, 19 minutes, 3 secondssummarizes thousands of emails in seconds, and sifts through terabytes of security logs to find threats hidden from human eyes. But AI has a dark side.
+2:19:152 hours, 19 minutes, 15 secondsYou must understand the policies around inappropriate use. The most dangerous is fraud, specifically deep fakes, where AI
+2:19:252 hours, 19 minutes, 25 secondsimpersonates a real person. There is also plagiarism where students use AI to write papers without citation and
+2:19:342 hours, 19 minutes, 34 secondsignorant code where developers generate application code they don't understand potentially introducing bugs or vulnerabilities.
+2:19:442 hours, 19 minutes, 44 secondsEven when used correctly, AI has limitations. The first is bias. If you feed the AI flawed data, like a resume
+2:19:532 hours, 19 minutes, 53 secondsdata set dominated by men, it will learn that bias and unfairly reject female applicants. It acts like a funhouse
+2:20:022 hours, 20 minutes, 2 secondsmirror reflecting back a distorted reality. The second limitation is hallucinations.
+2:20:092 hours, 20 minutes, 9 secondsThis is when the AI is confidently incorrect. It might look at a cloud and swear it's a dog or invent historical
+2:20:182 hours, 20 minutes, 18 secondsfacts that never happened. Finally, we must choose between public and private
+2:20:242 hours, 20 minutes, 24 secondsAI. Think of public AI like chat GPT as a public library. It has massive amounts
+2:20:312 hours, 20 minutes, 31 secondsof knowledge from everyone making it very accurate, but it is open to the world. using it carries a high security
+2:20:392 hours, 20 minutes, 39 secondsrisk because sensitive data you type in like passwords or company secrets might be exposed to others. Private AI on the
+2:20:482 hours, 20 minutes, 48 secondsother hand is like a company vault. It is secure and controlled but it only knows what you put inside limiting its
+2:20:562 hours, 20 minutes, 56 secondsscope. To summarize, AI is a powerful tool for automation and analysis but watch out for bias and hallucinations.
+2:21:052 hours, 21 minutes, 5 secondsAvoid unethical uses like deep fakes.
+2:21:092 hours, 21 minutes, 9 secondsAnd remember, public AI offers knowledge but risks privacy, while private AI offers security but limits scope.
+

@@ -1,0 +1,175 @@
+{
+  "objective": "4.9",
+  "questions": [
+    {
+      "id": "4.9.q.001",
+      "type": "multiple-choice",
+      "stem": "Which remote-access protocol is built into Windows and listens on TCP port 3389?",
+      "choices": [
+        { "id": "a", "text": "RDP (Remote Desktop Protocol)" },
+        { "id": "b", "text": "SSH" },
+        { "id": "c", "text": "VNC" },
+        { "id": "d", "text": "Telnet" }
+      ],
+      "correct": "a",
+      "explanation": "RDP (Remote Desktop Protocol) is built into Windows and listens on TCP port 3389.",
+      "trap": "SSH uses port 22; RDP is the Windows GUI remote-desktop protocol on 3389.",
+      "tags": ["rdp-3389", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.002",
+      "type": "multiple-choice",
+      "stem": "Which secure remote command-line protocol runs on TCP port 22 and encrypts everything?",
+      "choices": [
+        { "id": "a", "text": "RDP" },
+        { "id": "b", "text": "SSH (Secure Shell)" },
+        { "id": "c", "text": "Telnet" },
+        { "id": "d", "text": "VNC" }
+      ],
+      "correct": "b",
+      "explanation": "SSH (Secure Shell) runs on TCP port 22 and encrypts everything, making it the secure way to configure routers and servers.",
+      "trap": "RDP (3389) is a GUI protocol; the encrypted command-line protocol on port 22 is SSH.",
+      "tags": ["ssh-22", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.003",
+      "type": "multiple-choice",
+      "stem": "Why does the review say to never use Telnet and always use SSH instead?",
+      "choices": [
+        { "id": "a", "text": "Telnet is slower than SSH" },
+        { "id": "b", "text": "Telnet only works on Linux" },
+        { "id": "c", "text": "Telnet sends your password in plain text across the network" },
+        { "id": "d", "text": "Telnet requires a hardware token" }
+      ],
+      "correct": "c",
+      "explanation": "Telnet shouts your password in plain text across the network, while SSH encrypts everything - so always use SSH.",
+      "trap": "The problem with Telnet is lack of encryption (plain-text credentials), not speed or OS support.",
+      "tags": ["telnet", "ssh-22", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.004",
+      "type": "multiple-choice",
+      "stem": "Which remote-access tool is open-source, cross-platform, and lets you see and control a desktop GUI?",
+      "choices": [
+        { "id": "a", "text": "SSH" },
+        { "id": "b", "text": "Telnet" },
+        { "id": "c", "text": "WinRM" },
+        { "id": "d", "text": "VNC" }
+      ],
+      "correct": "d",
+      "explanation": "VNC is an open-source, cross-platform tool for viewing and controlling a remote desktop GUI.",
+      "trap": "SSH and WinRM are command-line/management tools; the open-source cross-platform GUI option is VNC.",
+      "tags": ["vnc", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.005",
+      "type": "multiple-choice",
+      "stem": "Which remote protocol is optimized for virtual machines with fast graphics and smooth video playback?",
+      "choices": [
+        { "id": "a", "text": "Telnet" },
+        { "id": "b", "text": "SSH" },
+        { "id": "c", "text": "RDP" },
+        { "id": "d", "text": "Spice" }
+      ],
+      "correct": "d",
+      "explanation": "Spice is described as a fiber-optic cable for VMs - optimized for fast graphics and smooth video playback on virtual machines.",
+      "trap": "RDP and VNC do remote desktops generally, but the VM-optimized graphics protocol called out here is Spice.",
+      "tags": ["spice", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.006",
+      "type": "multiple-choice",
+      "stem": "What does a VPN provide for remote access over the public internet?",
+      "choices": [
+        { "id": "a", "text": "An unencrypted shortcut to speed up browsing" },
+        { "id": "b", "text": "An encrypted tunnel between your laptop and the corporate office" },
+        { "id": "c", "text": "A way to disable the corporate firewall" },
+        { "id": "d", "text": "A replacement for the DNS server" }
+      ],
+      "correct": "b",
+      "explanation": "A VPN creates an encrypted tunnel between your laptop and the corporate office, using a VPN concentrator to encrypt and decrypt the data.",
+      "trap": "A VPN adds encryption (and some overhead); it does not speed up browsing or disable security controls.",
+      "tags": ["vpn", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.007",
+      "type": "multiple-choice",
+      "stem": "A managed service provider handling hundreds of clients uses a centralized dashboard to control everything. What is this tool called?",
+      "choices": [
+        { "id": "a", "text": "RDP" },
+        { "id": "b", "text": "RMM (remote monitoring and management)" },
+        { "id": "c", "text": "VNC" },
+        { "id": "d", "text": "Telnet" }
+      ],
+      "correct": "b",
+      "explanation": "RMM (remote monitoring and management) is the centralized dashboard MSPs use to control many clients' systems.",
+      "trap": "RDP and VNC connect to a single desktop; RMM is the fleet-wide management platform.",
+      "tags": ["rmm", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.008",
+      "type": "multiple-choice",
+      "stem": "Because RMM tools are so powerful, they are prime targets for hackers. How should they be secured?",
+      "choices": [
+        { "id": "a", "text": "By disabling all logging" },
+        { "id": "b", "text": "By using Telnet for access" },
+        { "id": "c", "text": "By enforcing MFA (multi-factor authentication)" },
+        { "id": "d", "text": "By sharing one admin password among technicians" }
+      ],
+      "correct": "c",
+      "explanation": "RMM tools are prime hacker targets, so you must secure them with MFA (multi-factor authentication).",
+      "trap": "Disabling logging, using plain-text Telnet, or sharing passwords all weaken security - the fix is MFA.",
+      "tags": ["rmm", "mfa", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.009",
+      "type": "multiple-choice",
+      "stem": "Which tool do Windows admins use to run scripts remotely on Windows machines?",
+      "choices": [
+        { "id": "a", "text": "WinRM (Windows Remote Management)" },
+        { "id": "b", "text": "VNC" },
+        { "id": "c", "text": "Spice" },
+        { "id": "d", "text": "Telnet" }
+      ],
+      "correct": "a",
+      "explanation": "WinRM (Windows Remote Management) lets Windows admins run scripts remotely on Windows machines.",
+      "trap": "VNC and Spice are graphical remote tools; the Windows remote scripting/management service is WinRM.",
+      "tags": ["winrm", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.9.q.010",
+      "type": "multiple-choice",
+      "stem": "An administrator must remotely configure a router as securely as possible from the command line. Which protocol should they use?",
+      "choices": [
+        { "id": "a", "text": "Telnet" },
+        { "id": "b", "text": "RDP" },
+        { "id": "c", "text": "SSH" },
+        { "id": "d", "text": "VNC" }
+      ],
+      "correct": "c",
+      "explanation": "Use SSH (port 22) to securely configure a router from the command line - it encrypts everything.",
+      "trap": "Telnet is the insecure plain-text option to avoid; RDP and VNC are GUI tools, not router CLI access.",
+      "tags": ["ssh-22", "telnet", "remote-access"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

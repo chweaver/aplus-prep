@@ -1,0 +1,175 @@
+{
+  "objective": "2.10",
+  "questions": [
+    {
+      "id": "2.10.q.001",
+      "type": "multiple-choice",
+      "stem": "What is the very first thing you should do with any new SOHO router?",
+      "choices": [
+        { "id": "a", "text": "Change the default administrator password" },
+        { "id": "b", "text": "Enable UPnP for convenience" },
+        { "id": "c", "text": "Disable the firewall" },
+        { "id": "d", "text": "Hide the SSID" }
+      ],
+      "correct": "a",
+      "explanation": "Default logins are public knowledge, so the first step on any new router is to change the default administrator password.",
+      "trap": "Enabling UPnP and disabling the firewall both weaken security; the priority is changing the default credentials.",
+      "tags": ["soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.002",
+      "type": "multiple-choice",
+      "stem": "Why is keeping a router's firmware updated important?",
+      "choices": [
+        { "id": "a", "text": "Firmware updates add new wallpaper themes" },
+        { "id": "b", "text": "Firmware is the router's OS, and updates contain critical security patches" },
+        { "id": "c", "text": "Firmware updates increase the Wi-Fi password length automatically" },
+        { "id": "d", "text": "Firmware updates are only cosmetic" }
+      ],
+      "correct": "b",
+      "explanation": "Firmware is the router's operating system; updates contain critical security patches that fix known vulnerabilities.",
+      "trap": "Firmware updates are security-critical, not cosmetic.",
+      "tags": ["soho-security", "patch-management"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.003",
+      "type": "multiple-choice",
+      "stem": "Which SOHO router feature is a major security risk because it lets internal applications automatically open firewall ports, and should be disabled?",
+      "choices": [
+        { "id": "a", "text": "Guest network" },
+        { "id": "b", "text": "WPA3 encryption" },
+        { "id": "c", "text": "Universal Plug and Play (UPnP)" },
+        { "id": "d", "text": "Content filtering" }
+      ],
+      "correct": "c",
+      "explanation": "UPnP lets internal applications automatically open ports on the firewall, which is a security nightmare. The review says to always disable it.",
+      "trap": "WPA3 and a guest network are good security practices; UPnP is the one to turn off.",
+      "tags": ["upnp", "soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.004",
+      "type": "multiple-choice",
+      "stem": "A public-facing web server needs to be reachable from the internet while staying isolated from the private internal network. Where should it be placed?",
+      "choices": [
+        { "id": "a", "text": "On the main LAN with the workstations" },
+        { "id": "b", "text": "Directly on the admin VLAN" },
+        { "id": "c", "text": "On the guest Wi-Fi network" },
+        { "id": "d", "text": "In a screened subnet (DMZ)" }
+      ],
+      "correct": "d",
+      "explanation": "A screened subnet (DMZ) is a secure reception area: internet visitors can reach the web server there, but they cannot get into the private internal network.",
+      "trap": "Putting the public server on the main LAN exposes the internal network if the server is compromised.",
+      "tags": ["dmz", "soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.005",
+      "type": "multiple-choice",
+      "stem": "A technician disables SSID broadcast and considers the wireless network secured. What is the correct assessment?",
+      "choices": [
+        { "id": "a", "text": "It is only security through obscurity and does not stop a determined attacker; strong encryption is what matters" },
+        { "id": "b", "text": "It fully secures the network on its own" },
+        { "id": "c", "text": "It encrypts all traffic automatically" },
+        { "id": "d", "text": "It is required before enabling WPA3" }
+      ],
+      "correct": "a",
+      "explanation": "Hiding the SSID is just security through obscurity; a determined attacker can still find the network. What really matters is strong encryption (WPA2/WPA3).",
+      "trap": "Disabling SSID broadcast does not encrypt anything and is not a substitute for WPA2/WPA3.",
+      "tags": ["soho-security", "wpa2", "wpa3"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.006",
+      "type": "multiple-choice",
+      "stem": "What is the minimum recommended wireless encryption for a SOHO network, with the ideal being one step higher?",
+      "choices": [
+        { "id": "a", "text": "Minimum WEP, ideally WPA" },
+        { "id": "b", "text": "Minimum WPA2, ideally WPA3" },
+        { "id": "c", "text": "Minimum TKIP, ideally WEP" },
+        { "id": "d", "text": "No encryption is needed on a guest network" }
+      ],
+      "correct": "b",
+      "explanation": "Use at a minimum WPA2 and ideally WPA3 for wireless encryption.",
+      "trap": "WEP is obsolete and insecure; it is never an acceptable minimum.",
+      "tags": ["soho-security", "wpa2", "wpa3"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.007",
+      "type": "multiple-choice",
+      "stem": "A home has many IoT gadgets and frequent visitors. Which configuration keeps them off the main trusted network while still giving internet access?",
+      "choices": [
+        { "id": "a", "text": "Disabling the firewall" },
+        { "id": "b", "text": "Port forwarding" },
+        { "id": "c", "text": "A guest network" },
+        { "id": "d", "text": "UPnP" }
+      ],
+      "correct": "c",
+      "explanation": "A guest network gives visitors and less-secure IoT devices internet access while isolating them from the main trusted devices.",
+      "trap": "Port forwarding opens inbound holes; it does not isolate untrusted devices.",
+      "tags": ["guest-network", "soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.008",
+      "type": "multiple-choice",
+      "stem": "On a wired network, what is a critical best practice for physical switch ports in places like conference rooms?",
+      "choices": [
+        { "id": "a", "text": "Leave all ports active for convenience" },
+        { "id": "b", "text": "Forward all ports to the DMZ" },
+        { "id": "c", "text": "Enable UPnP on each port" },
+        { "id": "d", "text": "Disable any unused physical network ports" }
+      ],
+      "correct": "d",
+      "explanation": "Disable unused physical network ports. An active open port in a conference room is an open invitation for an intruder to plug in.",
+      "trap": "Leaving every port live maximizes attack surface - the opposite of the best practice.",
+      "tags": ["soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.009",
+      "type": "multiple-choice",
+      "stem": "An admin must make an internal service reachable from the internet by mapping a public port to a specific internal IP and port. What is this, and what is the caution?",
+      "choices": [
+        { "id": "a", "text": "Port forwarding; it creates a permanent 24/7 hole in the firewall, so use it only when necessary" },
+        { "id": "b", "text": "UPnP; it is always safe to leave on" },
+        { "id": "c", "text": "A DMZ; it requires no firewall rules" },
+        { "id": "d", "text": "SSID hiding; it encrypts the service" }
+      ],
+      "correct": "a",
+      "explanation": "Port forwarding maps a public firewall port to an internal IP/port. The caution: it creates a permanent 24/7 hole in the firewall, so only use it when absolutely necessary.",
+      "trap": "UPnP automating port openings is exactly the risky behavior to avoid, not a safe alternative.",
+      "tags": ["port-forwarding", "soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.10.q.010",
+      "type": "multiple-choice",
+      "stem": "Routers can create deny lists to block specific malicious websites or entire categories of content. What is this capability called?",
+      "choices": [
+        { "id": "a", "text": "Port forwarding" },
+        { "id": "b", "text": "IP and content filtering" },
+        { "id": "c", "text": "Degaussing" },
+        { "id": "d", "text": "SSID broadcast" }
+      ],
+      "correct": "b",
+      "explanation": "Routers can perform IP and content filtering, letting you build deny lists that block malicious sites or whole content categories.",
+      "trap": "Port forwarding opens access inbound; it is not the mechanism for blocking outbound site categories.",
+      "tags": ["soho-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

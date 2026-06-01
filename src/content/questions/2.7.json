@@ -1,0 +1,175 @@
+{
+  "objective": "2.7",
+  "questions": [
+    {
+      "id": "2.7.q.001",
+      "type": "multiple-choice",
+      "stem": "Which is the most common method of data-at-rest encryption on Windows workstations, especially valuable for lost or stolen removable media?",
+      "choices": [
+        { "id": "a", "text": "A strong screensaver password" },
+        { "id": "b", "text": "Full disk encryption (BitLocker)" },
+        { "id": "c", "text": "Disabling AutoRun" },
+        { "id": "d", "text": "A BIOS supervisor password" }
+      ],
+      "correct": "b",
+      "explanation": "Full disk encryption (BitLocker on Windows) protects data at rest; if an encrypted drive is lost you only lose hardware, not data.",
+      "trap": "A screensaver password locks an unattended session but does nothing if the drive itself is removed and read elsewhere.",
+      "tags": ["bitlocker", "hardening"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.002",
+      "type": "multiple-choice",
+      "stem": "A strong password is described as having high entropy. Which set of attributes achieves that?",
+      "choices": [
+        { "id": "a", "text": "Short, memorable, reused across sites, never changed" },
+        { "id": "b", "text": "Only lowercase letters, exactly 6 characters" },
+        { "id": "c", "text": "Length, complexity, uniqueness, and regular expiration" },
+        { "id": "d", "text": "The same word with a number appended each month" }
+      ],
+      "correct": "c",
+      "explanation": "High entropy comes from length (8+ characters), complexity (mixed character types), uniqueness (no reuse), and regular expiration (e.g. every 30-90 days).",
+      "trap": "Reusing a short memorable password across sites is exactly what produces low entropy and high risk.",
+      "tags": ["password-policy", "hardening"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.003",
+      "type": "multiple-choice",
+      "stem": "Which BIOS/UEFI password prevents changes to the firmware settings themselves?",
+      "choices": [
+        { "id": "a", "text": "User (boot) password" },
+        { "id": "b", "text": "Domain password" },
+        { "id": "c", "text": "Screensaver password" },
+        { "id": "d", "text": "Supervisor password" }
+      ],
+      "correct": "d",
+      "explanation": "A supervisor password prevents changes to the firmware settings. A user/boot password stops the computer from starting until entered.",
+      "trap": "The user/boot password gates startup, not the firmware settings menu; that is the supervisor password's job.",
+      "tags": ["bios-password", "hardening"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.004",
+      "type": "multiple-choice",
+      "stem": "A user in an open office handles PII on screen. Which two end-user practices best reduce shoulder-surfing risk?",
+      "choices": [
+        { "id": "a", "text": "Use a privacy filter and shield the screen when entering passwords" },
+        { "id": "b", "text": "Disable the firewall and AutoRun" },
+        { "id": "c", "text": "Share one login among the team" },
+        { "id": "d", "text": "Increase the paging file size" }
+      ],
+      "correct": "a",
+      "explanation": "Privacy filters block side viewing and shielding the screen when typing passwords defends against shoulder surfers near sensitive data.",
+      "trap": "Disabling the firewall weakens security and is unrelated to shoulder surfing.",
+      "tags": ["shoulder-surfing", "hardening", "pii"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.005",
+      "type": "multiple-choice",
+      "stem": "What is the recommended tool for managing many unique, complex passwords?",
+      "choices": [
+        { "id": "a", "text": "A sticky note under the keyboard" },
+        { "id": "b", "text": "A password manager (an encrypted vault secured by a master password)" },
+        { "id": "c", "text": "Reusing one strong password everywhere" },
+        { "id": "d", "text": "Storing them in a plain-text file on the desktop" }
+      ],
+      "correct": "b",
+      "explanation": "A password manager is an encrypted vault for all credentials, secured by a single master password, so each site can have a unique complex password.",
+      "trap": "Reusing one password everywhere defeats uniqueness; a breach of one site then exposes all of them.",
+      "tags": ["password-manager", "password-policy"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.006",
+      "type": "multiple-choice",
+      "stem": "For temporary contract staff, which account-management control ensures their access is automatically revoked when their contract ends?",
+      "choices": [
+        { "id": "a", "text": "Failed-attempts lockout" },
+        { "id": "b", "text": "Login-time restrictions" },
+        { "id": "c", "text": "Account expiration dates" },
+        { "id": "d", "text": "Disabling the guest account" }
+      ],
+      "correct": "c",
+      "explanation": "Setting an account expiration date automatically revokes access when a temporary worker's contract ends.",
+      "trap": "Login-time restrictions limit WHEN someone can log in, not WHETHER the account expires.",
+      "tags": ["hardening", "offboarding"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.007",
+      "type": "multiple-choice",
+      "stem": "An account freezes after too many incorrect password attempts. Which control is this, and what does it defend against?",
+      "choices": [
+        { "id": "a", "text": "Account expiration; defends against stale accounts" },
+        { "id": "b", "text": "Least privilege; defends against privilege creep" },
+        { "id": "c", "text": "AutoRun; defends against USB malware" },
+        { "id": "d", "text": "Failed-attempts lockout; defends against brute-force/guessing" }
+      ],
+      "correct": "d",
+      "explanation": "A failed-attempts lockout freezes an account after too many wrong tries, frustrating brute-force and guessing attacks.",
+      "trap": "Account expiration deals with end-of-term access, not repeated wrong-password attempts.",
+      "tags": ["hardening", "brute-force"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.008",
+      "type": "multiple-choice",
+      "stem": "When setting up a brand-new device, which hardening step does the review say to do immediately?",
+      "choices": [
+        { "id": "a", "text": "Change the default administrator account and password" },
+        { "id": "b", "text": "Start all background services" },
+        { "id": "c", "text": "Leave the guest account enabled" },
+        { "id": "d", "text": "Enable AutoRun for convenience" }
+      ],
+      "correct": "a",
+      "explanation": "Attackers have lists of default credentials, so change the default administrator account and password the moment you set up a new device.",
+      "trap": "Enabling AutoRun and the guest account both increase attack surface - the opposite of hardening.",
+      "tags": ["hardening", "password-policy"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.009",
+      "type": "multiple-choice",
+      "stem": "Why does the review recommend disabling AutoRun on modern Windows?",
+      "choices": [
+        { "id": "a", "text": "It speeds up the boot process" },
+        { "id": "b", "text": "It is a dangerous legacy feature that automatically ran programs from USB drives" },
+        { "id": "c", "text": "It conflicts with BitLocker" },
+        { "id": "d", "text": "It prevents Windows Update from running" }
+      ],
+      "correct": "b",
+      "explanation": "AutoRun automatically executed programs from inserted USB drives - a dangerous legacy behavior, which is why it is disabled in modern Windows.",
+      "trap": "AutoRun is a security risk, not a boot-speed feature; disabling it reduces attack surface.",
+      "tags": ["hardening"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.7.q.010",
+      "type": "multiple-choice",
+      "stem": "To reduce the attack surface of a workstation, what should you do with Windows services that aren't being used?",
+      "choices": [
+        { "id": "a", "text": "Leave them running in case they're needed later" },
+        { "id": "b", "text": "Set them all to automatic start" },
+        { "id": "c", "text": "Disable the unused ones" },
+        { "id": "d", "text": "Move them to a different drive" }
+      ],
+      "correct": "c",
+      "explanation": "Every background service is a potential vulnerability, so disable any services that are not being used to reduce attack surface.",
+      "trap": "Leaving unused services running keeps unnecessary entry points open - the opposite of hardening.",
+      "tags": ["hardening"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

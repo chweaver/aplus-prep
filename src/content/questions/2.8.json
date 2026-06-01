@@ -1,0 +1,175 @@
+{
+  "objective": "2.8",
+  "questions": [
+    {
+      "id": "2.8.q.001",
+      "type": "multiple-choice",
+      "stem": "On a modern smartphone, device encryption is usually on by default. What acts as the key to that encrypted data?",
+      "choices": [
+        { "id": "a", "text": "The Wi-Fi password" },
+        { "id": "b", "text": "The cellular carrier's SIM PUK" },
+        { "id": "c", "text": "The user's passcode or PIN" },
+        { "id": "d", "text": "The device's IMEI number" }
+      ],
+      "correct": "c",
+      "explanation": "On modern phones, encryption is usually enabled by default and the passcode/PIN acts as the key to unlock the data.",
+      "trap": "The IMEI is a public hardware identifier, not a secret key; it does not protect encrypted data.",
+      "tags": ["mobile-security", "screen-lock"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.002",
+      "type": "multiple-choice",
+      "stem": "Among the mobile screen-lock options, which is described as the LEAST secure?",
+      "choices": [
+        { "id": "a", "text": "Facial recognition" },
+        { "id": "b", "text": "A numeric PIN" },
+        { "id": "c", "text": "Fingerprint" },
+        { "id": "d", "text": "A simple swipe" }
+      ],
+      "correct": "d",
+      "explanation": "A simple swipe provides essentially no authentication, making it the least secure screen lock.",
+      "trap": "A numeric PIN is weak compared to biometrics but still far better than a swipe that requires no secret at all.",
+      "tags": ["screen-lock", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.003",
+      "type": "multiple-choice",
+      "stem": "To stop attackers from guessing the passcode, an iPhone can be configured to do what after 10 failed attempts, and what does this make essential?",
+      "choices": [
+        { "id": "a", "text": "Erase all data; making a good backup strategy essential" },
+        { "id": "b", "text": "Email the owner; making a strong Wi-Fi password essential" },
+        { "id": "c", "text": "Disable the camera; making MDM essential" },
+        { "id": "d", "text": "Switch to airplane mode; making a SIM PIN essential" }
+      ],
+      "correct": "a",
+      "explanation": "Failed-login-attempt restrictions can erase all data after (for example) 10 failed attempts, which is why a good backup strategy is critical.",
+      "trap": "The phone wipes itself, not just disables a feature; without backups that data is gone permanently.",
+      "tags": ["mobile-security", "screen-lock", "remote-wipe"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.004",
+      "type": "multiple-choice",
+      "stem": "Which platform is described as more susceptible to malware because it is more open, versus the closed App-Store-only model of the other?",
+      "choices": [
+        { "id": "a", "text": "iOS is more open; Android is closed" },
+        { "id": "b", "text": "Android is more open; iOS is a closed App-Store-only environment" },
+        { "id": "c", "text": "Both are equally open" },
+        { "id": "d", "text": "Both are equally closed" }
+      ],
+      "correct": "b",
+      "explanation": "Android is more open, making it more susceptible to malware, whereas iOS is a closed environment where apps come only from the App Store.",
+      "trap": "The roles are not reversed: iOS is the locked-down one, Android is the more open one.",
+      "tags": ["mobile-security", "android", "ios"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.005",
+      "type": "multiple-choice",
+      "stem": "A phone is lost. Which remote capability uses GPS to pinpoint its location on a map and can play a sound if it's nearby?",
+      "choices": [
+        { "id": "a", "text": "Content filtering" },
+        { "id": "b", "text": "Remote wipe" },
+        { "id": "c", "text": "A locator application" },
+        { "id": "d", "text": "Patch management" }
+      ],
+      "correct": "c",
+      "explanation": "Locator applications use GPS to show the device's location in real time and can remotely play a sound to help find it nearby.",
+      "trap": "Remote wipe erases data; it does not locate the device on a map.",
+      "tags": ["mobile-security", "remote-wipe"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.006",
+      "type": "multiple-choice",
+      "stem": "A stolen phone cannot be recovered and contains sensitive data. Which remote action erases all personal data from the device?",
+      "choices": [
+        { "id": "a", "text": "Toggling airplane mode" },
+        { "id": "b", "text": "Content filtering" },
+        { "id": "c", "text": "A locator sound" },
+        { "id": "d", "text": "Remote wipe" }
+      ],
+      "correct": "d",
+      "explanation": "A remote wipe erases all personal data from a device that cannot be recovered.",
+      "trap": "Playing a locator sound only helps find a nearby device; it does nothing to protect data on a stolen one.",
+      "tags": ["remote-wipe", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.007",
+      "type": "multiple-choice",
+      "stem": "Why are remote backup applications emphasized for mobile devices?",
+      "choices": [
+        { "id": "a", "text": "If the device is wiped or replaced, you log into your cloud account and restore your data" },
+        { "id": "b", "text": "They replace the need for a screen lock" },
+        { "id": "c", "text": "They make the phone run faster" },
+        { "id": "d", "text": "They disable OS updates" }
+      ],
+      "correct": "a",
+      "explanation": "Cloud-based mobile backups constantly save data, so after a wipe or device replacement you just log into your cloud account and your data is restored.",
+      "trap": "Backups complement, not replace, a screen lock; both are part of mobile security.",
+      "tags": ["mobile-security", "remote-wipe"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.008",
+      "type": "multiple-choice",
+      "stem": "Which tool lets corporate admins centrally enforce security policy on both company-owned and BYOD phones, and can push configuration profiles?",
+      "choices": [
+        { "id": "a", "text": "BitLocker To Go" },
+        { "id": "b", "text": "Mobile device management (MDM)" },
+        { "id": "c", "text": "A password manager" },
+        { "id": "d", "text": "A locator application" }
+      ],
+      "correct": "b",
+      "explanation": "MDM is the central server that enforces security rules across corporate and BYOD devices and pushes configuration profiles (complex passcodes, encryption, disabling the camera, etc.).",
+      "trap": "A locator app finds a single lost phone; it does not centrally enforce policy across a fleet.",
+      "tags": ["mdm", "byod", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.009",
+      "type": "multiple-choice",
+      "stem": "Using an MDM, an admin wants to block the camera whenever employees enter a secure facility. How is this accomplished?",
+      "choices": [
+        { "id": "a", "text": "By toggling airplane mode remotely" },
+        { "id": "b", "text": "By performing a remote wipe" },
+        { "id": "c", "text": "By pushing a configuration profile that disables the camera" },
+        { "id": "d", "text": "By lowering the screen brightness" }
+      ],
+      "correct": "c",
+      "explanation": "Admins use the MDM to push configuration profiles that, for example, force complex passcodes, enable encryption, or disable the camera in secure areas.",
+      "trap": "A remote wipe erases the whole device; it is far too drastic for simply disabling a camera.",
+      "tags": ["mdm", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.8.q.010",
+      "type": "multiple-choice",
+      "stem": "Which maintenance practice for mobile devices is called out as one of the easiest and most important security actions?",
+      "choices": [
+        { "id": "a", "text": "Disabling all biometrics" },
+        { "id": "b", "text": "Rooting the device" },
+        { "id": "c", "text": "Turning off cloud backups" },
+        { "id": "d", "text": "Keeping both the OS and apps updated through patch management" }
+      ],
+      "correct": "d",
+      "explanation": "Patch management - keeping both OS and app updates current - fixes critical vulnerabilities and is one of the easiest, most important things you can do.",
+      "trap": "Rooting a device removes built-in protections; it weakens security rather than strengthening it.",
+      "tags": ["patch-management", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

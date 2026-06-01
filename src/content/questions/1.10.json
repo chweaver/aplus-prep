@@ -4,120 +4,137 @@
     {
       "id": "1.10.q.001",
       "type": "multiple-choice",
-      "stem": "A 32-bit application must run on a new 64-bit Windows workstation. Is this possible?",
+      "stem": "An app is shipped only as a 64-bit installer. The user's PC is running 32-bit Windows. What happens?",
       "choices": [
-        { "id": "a", "text": "No - 64-bit OS cannot run 32-bit apps" },
-        { "id": "b", "text": "Yes - 64-bit OS runs both 32-bit and 64-bit apps" },
-        { "id": "c", "text": "Only if the app is reinstalled with a 64-bit installer" },
-        { "id": "d", "text": "Only on Windows 10, not Windows 11" }
+        { "id": "a", "text": "It installs and runs fine, since 32-bit is backwards compatible" },
+        { "id": "b", "text": "It will not run; a 32-bit OS cannot run 64-bit software" },
+        { "id": "c", "text": "It installs but is limited to 4 GB of RAM" },
+        { "id": "d", "text": "It runs only after enabling Hyper-V" }
       ],
       "correct": "b",
-      "explanation": "A 64-bit OS can run both 32-bit and 64-bit applications. 32-bit apps on a 64-bit Windows are stored in Program Files (x86).",
-      "trap": "(a) reverses the rule. Only a 32-bit OS is restricted - it cannot run 64-bit apps.",
-      "tags": ["32-64-bit"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "explanation": "A 32-bit OS cannot execute 64-bit binaries. The compatibility goes the other way: 64-bit Windows runs both 32 and 64-bit apps.",
+      "trap": "It's tempting to think 'backwards compatible' both ways, but the bridge only runs in the 64-bit-running-32-bit direction.",
+      "tags": ["arch-32-64", "app-requirements"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.002",
       "type": "multiple-choice",
-      "stem": "A technician installs a 64-bit OS on a workstation. Which type of hardware driver must be installed for the NIC?",
+      "stem": "Older 32-bit applications installed on 64-bit Windows are placed into which folder by default?",
       "choices": [
-        { "id": "a", "text": "32-bit driver, as it is backward compatible" },
-        { "id": "b", "text": "64-bit driver, to match the OS architecture" },
-        { "id": "c", "text": "Either 32-bit or 64-bit - drivers are universal" },
-        { "id": "d", "text": "The OS installs the correct driver automatically" }
+        { "id": "a", "text": "C:\\Program Files (x86)" },
+        { "id": "b", "text": "C:\\Program Files" },
+        { "id": "c", "text": "C:\\Windows\\System32" },
+        { "id": "d", "text": "C:\\Users\\Public" }
       ],
-      "correct": "b",
-      "explanation": "Drivers must match the OS architecture. A 64-bit OS requires 64-bit drivers. 32-bit drivers are not compatible.",
-      "trap": "(a) Drivers are not backward compatible across architectures. (d) Auto driver detection doesn't guarantee the right bitness.",
-      "tags": ["32-64-bit", "drivers"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "correct": "a",
+      "explanation": "32-bit applications on 64-bit Windows install to 'C:\\Program Files (x86)'. The 'x86' suffix is the giveaway.",
+      "trap": "Confusingly, System32 actually holds 64-bit system files on 64-bit Windows. The 32-bit versions live in SysWOW64.",
+      "tags": ["arch-32-64", "windows"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.003",
       "type": "multiple-choice",
-      "stem": "A user needs to run 3D CAD modeling software. The integrated graphics in their laptop are not supported by the application. What is the solution?",
+      "stem": "A graphic designer plans to install 3D modeling software with heavy rendering. Which graphics setup is appropriate?",
       "choices": [
-        { "id": "a", "text": "Upgrade to a 64-bit OS" },
-        { "id": "b", "text": "Add more RAM" },
-        { "id": "c", "text": "Install a discrete (dedicated) graphics card" },
-        { "id": "d", "text": "Increase the paging file size" }
+        { "id": "a", "text": "Integrated graphics built into the CPU" },
+        { "id": "b", "text": "No graphics card at all; CPU rendering only" },
+        { "id": "c", "text": "A dedicated graphics card with its own VRAM" },
+        { "id": "d", "text": "A removable USB graphics adapter" }
       ],
       "correct": "c",
-      "explanation": "Integrated graphics are built into the CPU and insufficient for demanding 3D applications. A discrete graphics card provides the separate GPU power required.",
-      "trap": "Adding RAM or paging file won't fix a graphics shortfall. 64-bit OS has no bearing on GPU capability.",
-      "tags": ["hardware", "graphics"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "explanation": "Demanding software like 3D modeling or video editing needs a dedicated GPU with its own VRAM (video RAM). Integrated graphics share CPU memory and are too slow.",
+      "trap": "Integrated graphics handle basic tasks fine but choke on 3D workloads.",
+      "tags": ["dedicated-graphics", "integrated-graphics"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.004",
       "type": "multiple-choice",
-      "stem": "A high-end engineering application will not launch unless a specific USB device is connected to the computer. What type of licensing is this?",
+      "stem": "An expensive specialized application refuses to launch unless a specific physical USB device is plugged in. What is this licensing mechanism called?",
       "choices": [
-        { "id": "a", "text": "Subscription license" },
-        { "id": "b", "text": "Volume license" },
-        { "id": "c", "text": "Hardware token (dongle)" },
-        { "id": "d", "text": "OEM license" }
+        { "id": "a", "text": "A network license server" },
+        { "id": "b", "text": "An ISO image" },
+        { "id": "c", "text": "An EULA prompt" },
+        { "id": "d", "text": "A hardware token (dongle)" }
       ],
-      "correct": "c",
-      "explanation": "A hardware token (dongle) is a physical USB device the application checks for at launch. Without it, the software will not run. Common for expensive professional applications.",
-      "trap": "Subscription and volume licenses are software-only and managed online or with keys, not physical devices.",
-      "tags": ["licensing"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "correct": "d",
+      "explanation": "A hardware token (often a USB dongle) is a physical key required for the application to run. It is a strong form of license control on niche professional software.",
+      "trap": "A license server is software-based; the question specifies a physical USB device.",
+      "tags": ["hardware-token", "app-requirements"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.005",
       "type": "multiple-choice",
-      "stem": "An IT team needs to deploy the same OS configuration to 200 new identical workstations. What is the most efficient method?",
+      "stem": "An application's documented RAM requirement is '8 GB minimum'. What does this number include?",
       "choices": [
-        { "id": "a", "text": "Install from the Windows ISO on a USB drive at each workstation" },
-        { "id": "b", "text": "Use an OS image (clone) to deploy the fully configured system" },
-        { "id": "c", "text": "Remote Desktop into each machine and install manually" },
-        { "id": "d", "text": "Use the Windows upgrade assistant" }
+        { "id": "a", "text": "RAM for the OS, this app, and all other running apps" },
+        { "id": "b", "text": "RAM for the app itself only - it does NOT include what the OS is already using" },
+        { "id": "c", "text": "Only the VRAM on the GPU" },
+        { "id": "d", "text": "The recommended swap file size" }
       ],
       "correct": "b",
-      "explanation": "OS imaging creates one fully configured base image (OS + patches + apps + settings) and deploys it to multiple machines in minutes. Hardware must be identical or use virtual machines.",
-      "trap": "Manual USB install at each workstation would take hours per machine. Imaging reduces this to minutes with consistent results.",
-      "tags": ["installation", "imaging"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "explanation": "Published RAM requirements list what the app needs above and beyond the OS. The user must have enough RAM left after the OS overhead.",
+      "trap": "Treating the number as 'total RAM in the system' guarantees an under-provisioned machine.",
+      "tags": ["app-requirements"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.006",
       "type": "multiple-choice",
-      "stem": "A user installs a new application. The next day, several shared network folders that the user had mapped are showing unexpected changes. What is the most likely explanation?",
+      "stem": "An admin downloads a large ISO file for OS installation. What is an ISO, and how is it typically used?",
       "choices": [
-        { "id": "a", "text": "The network administrator changed the share permissions" },
-        { "id": "b", "text": "The application ran with the user's rights and accessed the shared folders" },
-        { "id": "c", "text": "Windows Update modified the network configuration" },
-        { "id": "d", "text": "The application requires administrator rights to use network shares" }
+        { "id": "a", "text": "An archive of audio files; played back with a media player" },
+        { "id": "b", "text": "A document format; opens in any word processor" },
+        { "id": "c", "text": "A perfect digital copy of a disc; can be mounted so the OS treats it like a real drive" },
+        { "id": "d", "text": "A driver bundle; installs via Device Manager" }
       ],
-      "correct": "b",
-      "explanation": "An installed application inherits the logged-in user's rights and permissions, including access to mapped network drives. An untested or malicious app can modify, delete, or read anything the user can.",
-      "trap": "Many users assume apps are sandboxed. They are not - they run with full user-level access to all resources the user has.",
-      "tags": ["security", "permissions"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "correct": "c",
+      "explanation": "An ISO is a perfect digital copy of a disc. You mount it and the OS reads it as if it were a real CD/DVD drive.",
+      "trap": "ISO is not an audio or document container; the name comes from the ISO 9660 disc filesystem.",
+      "tags": ["iso"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.10.q.007",
-      "type": "multi-select",
-      "stem": "Which of the following are valid sources for installing an application? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "When a user installs an application, what permission level does that application inherit?",
       "choices": [
-        { "id": "a", "text": "Download directly from the software manufacturer's website" },
-        { "id": "b", "text": "Install from the OS's official app store" },
-        { "id": "c", "text": "Install from a USB drive in an air-gapped environment" },
-        { "id": "d", "text": "Download from any third-party site for faster access" }
+        { "id": "a", "text": "Always SYSTEM-level, regardless of who runs it" },
+        { "id": "b", "text": "Only read permissions, never write or execute" },
+        { "id": "c", "text": "Permissions defined by the EULA, separate from any user account" },
+        { "id": "d", "text": "The exact same permissions as the user who installed it" }
       ],
-      "correct": ["a", "b", "c"],
-      "explanation": "Trusted sources include the manufacturer's website, official app stores, and local media. Third-party download sites risk tampered installers containing malware.",
-      "trap": "(d) Third-party sites are a security risk even if the download looks legitimate. Stick to official sources.",
-      "tags": ["security", "installation"],
-      "sourceTranscript": "pm-1202-installing-applications",
+      "correct": "d",
+      "explanation": "Apps inherit the installing user's permissions, including access to local files, network drives, and services.",
+      "trap": "Apps do not magically receive SYSTEM rights; if the installer ran as a standard user, the app is bounded to those rights.",
+      "tags": ["app-requirements", "least-privilege"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.10.q.008",
+      "type": "multiple-choice",
+      "stem": "A company is about to roll out a new line-of-business app to 500 employees. Before mass deployment, where is the safest place to test it?",
+      "choices": [
+        { "id": "a", "text": "A sandbox environment" },
+        { "id": "b", "text": "The CFO's laptop" },
+        { "id": "c", "text": "Random workstations across the production network" },
+        { "id": "d", "text": "Skip testing; ship straight to production" }
+      ],
+      "correct": "a",
+      "explanation": "A sandbox is an isolated environment where the app can be tested for compatibility and impact without risking the production network or live users.",
+      "trap": "Picking a real user's laptop creates business risk; the whole point of a sandbox is no impact to production.",
+      "tags": ["sandbox", "app-requirements"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

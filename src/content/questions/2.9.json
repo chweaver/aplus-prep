@@ -1,0 +1,141 @@
+{
+  "objective": "2.9",
+  "questions": [
+    {
+      "id": "2.9.q.001",
+      "type": "multiple-choice",
+      "stem": "Which data-destruction method offers the highest guarantee that data is unrecoverable?",
+      "choices": [
+        { "id": "a", "text": "Renaming the partition" },
+        { "id": "b", "text": "Quick format" },
+        { "id": "c", "text": "Moving files to the Recycle Bin and emptying it" },
+        { "id": "d", "text": "Physical destruction (shredding, drilling, incineration)" }
+      ],
+      "correct": "d",
+      "explanation": "Physical destruction - shredding, drilling through the platters, or incineration - offers the highest guarantee that data cannot be recovered.",
+      "trap": "A quick format leaves the underlying data intact and recoverable; it is not secure destruction.",
+      "tags": ["data-destruction"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.002",
+      "type": "multiple-choice",
+      "stem": "Degaussing uses a powerful magnet to erase data. On which media does it work, and on which is it useless?",
+      "choices": [
+        { "id": "a", "text": "Works on magnetic HDDs; useless on SSDs and flash memory" },
+        { "id": "b", "text": "Works on SSDs; useless on HDDs" },
+        { "id": "c", "text": "Works on optical discs only" },
+        { "id": "d", "text": "Works on all storage equally" }
+      ],
+      "correct": "a",
+      "explanation": "Degaussing erases the magnetic field on a magnetic hard disk drive's platters. It is completely useless on SSDs and flash memory, which store data electrically, not magnetically.",
+      "trap": "SSDs and flash are NOT magnetic, so a degausser does nothing to them.",
+      "tags": ["degaussing", "data-destruction"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.003",
+      "type": "multiple-choice",
+      "stem": "An organization wants to securely erase a drive but REUSE it afterward. Which approach fits?",
+      "choices": [
+        { "id": "a", "text": "Shred it" },
+        { "id": "b", "text": "Use a disk-wiping utility (e.g. DBAN) that overwrites every sector" },
+        { "id": "c", "text": "Incinerate it" },
+        { "id": "d", "text": "Degauss it" }
+      ],
+      "correct": "b",
+      "explanation": "To reuse a drive, use a software disk-wiping utility like DBAN that overwrites every sector multiple times, making the original data unrecoverable while keeping the drive functional.",
+      "trap": "Shredding, incineration, and degaussing destroy the drive, so it can't be reused.",
+      "tags": ["dban", "data-destruction"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.004",
+      "type": "multiple-choice",
+      "stem": "Why is a quick format considered INSECURE for data disposal?",
+      "choices": [
+        { "id": "a", "text": "It physically warps the platters" },
+        { "id": "b", "text": "It works only on SSDs" },
+        { "id": "c", "text": "It only replaces the file catalog; the actual data remains on the drive until overwritten" },
+        { "id": "d", "text": "It encrypts the data with an unknown key" }
+      ],
+      "correct": "c",
+      "explanation": "A quick format is like ripping out the library's card catalog - the books (data) are still on the shelves, recoverable with the right tools.",
+      "trap": "Quick format does not overwrite the data; that is why it is insecure compared to a standard format.",
+      "tags": ["data-destruction", "quick-format"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.005",
+      "type": "multiple-choice",
+      "stem": "How does a standard (full) format differ from a quick format in terms of security?",
+      "choices": [
+        { "id": "a", "text": "There is no difference" },
+        { "id": "b", "text": "A standard format is faster but less secure" },
+        { "id": "c", "text": "A standard format only updates the partition name" },
+        { "id": "d", "text": "A standard format overwrites every sector, securely erasing the data so the drive can be reused" }
+      ],
+      "correct": "d",
+      "explanation": "A standard format overwrites every sector - like shredding every page of every book - securely erasing data so the drive can be safely reused.",
+      "trap": "The standard format is slower precisely because it overwrites everything; that is what makes it more secure than a quick format.",
+      "tags": ["data-destruction", "full-format"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.006",
+      "type": "multiple-choice",
+      "stem": "An organization outsources destruction of thousands of drives to a third-party vendor. Which document must they obtain as proof of proper destruction?",
+      "choices": [
+        { "id": "a", "text": "A certificate of destruction" },
+        { "id": "b", "text": "An end-user license agreement" },
+        { "id": "c", "text": "A purchase order" },
+        { "id": "d", "text": "A service level agreement" }
+      ],
+      "correct": "a",
+      "explanation": "A certificate of destruction is the legal document and audit trail proving the specific drives were received and properly destroyed.",
+      "trap": "A purchase order is for buying goods; the proof-of-destruction document is the certificate of destruction.",
+      "tags": ["certificate-of-destruction", "data-destruction"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.007",
+      "type": "multiple-choice",
+      "stem": "Why is a certificate of destruction especially important when disposing of drives that held PII?",
+      "choices": [
+        { "id": "a", "text": "It is required only for warranty claims" },
+        { "id": "b", "text": "It is essential for complying with legal and regulatory requirements" },
+        { "id": "c", "text": "It speeds up the shredding process" },
+        { "id": "d", "text": "It allows the drive to be reused" }
+      ],
+      "correct": "b",
+      "explanation": "The certificate is essential for complying with legal and regulatory requirements, especially when dealing with sensitive personally identifiable information (PII).",
+      "trap": "It is a compliance/audit document, not a performance optimization or a warranty form.",
+      "tags": ["certificate-of-destruction", "pii"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.9.q.008",
+      "type": "multiple-choice",
+      "stem": "Which physical method uses an industrial machine to grind drives into small metal fragments, suited to large-scale operations?",
+      "choices": [
+        { "id": "a", "text": "DBAN wipe" },
+        { "id": "b", "text": "Degaussing" },
+        { "id": "c", "text": "Shredding" },
+        { "id": "d", "text": "Standard format" }
+      ],
+      "correct": "c",
+      "explanation": "Industrial shredders grind drives into small, useless metal fragments - ideal for large-scale destruction.",
+      "trap": "Degaussing erases magnetically but leaves the drive physically intact; it does not grind it into fragments.",
+      "tags": ["data-destruction"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

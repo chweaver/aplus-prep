@@ -1,0 +1,175 @@
+{
+  "objective": "3.3",
+  "questions": [
+    {
+      "id": "3.3.q.001",
+      "type": "multiple-choice",
+      "stem": "Installing apps from unofficial stores or websites instead of the official app store is called what, and why is it risky?",
+      "choices": [
+        { "id": "a", "text": "Sideloading; you have no assurance of what's really inside the package" },
+        { "id": "b", "text": "Tethering; it drains the battery" },
+        { "id": "c", "text": "Syncing; it overwrites your data" },
+        { "id": "d", "text": "Rooting; it speeds up the phone" }
+      ],
+      "correct": "a",
+      "explanation": "Sideloading is installing apps from unofficial sources - like buying medicine from a street vendor, you have no idea what's really inside.",
+      "trap": "Rooting is disabling the device's built-in security; sideloading is specifically installing from unofficial sources.",
+      "tags": ["sideloading", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.002",
+      "type": "multiple-choice",
+      "stem": "Intentionally disabling a phone's built-in security is called 'rooting' on Android. What is the equivalent term on iOS?",
+      "choices": [
+        { "id": "a", "text": "Sideloading" },
+        { "id": "b", "text": "Tethering" },
+        { "id": "c", "text": "Jailbreaking" },
+        { "id": "d", "text": "Spoofing" }
+      ],
+      "correct": "c",
+      "explanation": "On Android it's called rooting; on iOS it's jailbreaking. Both give full control over the OS but shatter its built-in defenses.",
+      "trap": "Sideloading is installing unofficial apps; the act of removing the OS's security restrictions on iOS is jailbreaking.",
+      "tags": ["jailbreaking", "rooting", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.003",
+      "type": "multiple-choice",
+      "stem": "A malicious app is disguised to look like a legitimate one. What is this technique called?",
+      "choices": [
+        { "id": "a", "text": "Jailbreaking" },
+        { "id": "b", "text": "Tethering" },
+        { "id": "c", "text": "Hashing" },
+        { "id": "d", "text": "Application spoofing" }
+      ],
+      "correct": "d",
+      "explanation": "Application spoofing is when malicious apps are disguised as legitimate ones to trick users into installing them.",
+      "trap": "Jailbreaking disables OS security; disguising a malicious app as a legit one is application spoofing.",
+      "tags": ["app-spoofing", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.004",
+      "type": "multiple-choice",
+      "stem": "A user gets a data-usage-limit notification and notices high network traffic even though their habits haven't changed. What might this indicate?",
+      "choices": [
+        { "id": "a", "text": "The phone is saving battery" },
+        { "id": "b", "text": "Malware may be sending personal files to an attacker" },
+        { "id": "c", "text": "The screen needs calibration" },
+        { "id": "d", "text": "The clock is wrong" }
+      ],
+      "correct": "b",
+      "explanation": "A sudden spike in network traffic or an unexpected data-limit notification is a classic compromise symptom - malware could be exfiltrating personal files.",
+      "trap": "Unexpected high data usage is a red flag for malware, not a battery-saving behavior.",
+      "tags": ["mobile-security", "mobile-troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.005",
+      "type": "multiple-choice",
+      "stem": "A phone is sluggish and a restart doesn't help. Combined with other symptoms, what could this indicate?",
+      "choices": [
+        { "id": "a", "text": "Too many contacts saved" },
+        { "id": "b", "text": "A weak Wi-Fi password" },
+        { "id": "c", "text": "Malware consuming CPU and memory in the background" },
+        { "id": "d", "text": "An outdated wallpaper" }
+      ],
+      "correct": "c",
+      "explanation": "Degraded performance that a restart doesn't fix can mean malware is consuming CPU and memory in the background.",
+      "trap": "The number of saved contacts and the wallpaper have no bearing on background CPU/memory consumption.",
+      "tags": ["mobile-security", "mobile-troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.006",
+      "type": "multiple-choice",
+      "stem": "Why might a malware-infected phone show limited or no internet connectivity?",
+      "choices": [
+        { "id": "a", "text": "The malware is conserving the battery" },
+        { "id": "b", "text": "The malware blocks access to prevent you from downloading security updates" },
+        { "id": "c", "text": "The phone automatically enabled airplane mode for safety" },
+        { "id": "d", "text": "The screen protector is interfering with the antenna" }
+      ],
+      "correct": "b",
+      "explanation": "Some malware blocks internet access specifically to prevent you from downloading security updates or removal tools.",
+      "trap": "It's a deliberate defensive move by the malware, not a battery-saving or hardware issue.",
+      "tags": ["mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.007",
+      "type": "multiple-choice",
+      "stem": "A sudden flood of pop-up ads everywhere on the phone is a dead giveaway for what?",
+      "choices": [
+        { "id": "a", "text": "A failing battery" },
+        { "id": "b", "text": "A cracked screen" },
+        { "id": "c", "text": "A weak signal" },
+        { "id": "d", "text": "Adware" }
+      ],
+      "correct": "d",
+      "explanation": "A sudden high number of ads popping up everywhere is a dead giveaway for adware.",
+      "trap": "A failing battery or cracked screen are hardware issues; a flood of ads points to adware.",
+      "tags": ["adware", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.008",
+      "type": "multiple-choice",
+      "stem": "A user suspects a deep infection or that their data has been leaked. What is the only way to be 100% sure the threat is gone?",
+      "choices": [
+        { "id": "a", "text": "Clear the browser cache" },
+        { "id": "b", "text": "Toggle airplane mode" },
+        { "id": "c", "text": "Perform a factory reset" },
+        { "id": "d", "text": "Delete one suspicious app" }
+      ],
+      "correct": "c",
+      "explanation": "For symptoms of a deeper infection or a suspected data leak, the only way to be 100% sure is a factory reset, which wipes everything and restores the original clean state.",
+      "trap": "For minor adware, removing the offending app may suffice, but a deep infection requires a full factory reset.",
+      "tags": ["factory-reset", "mobile-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.009",
+      "type": "multiple-choice",
+      "stem": "After a factory reset following a data leak, what two actions must the user take immediately?",
+      "choices": [
+        { "id": "a", "text": "Reinstall the same sideloaded apps and disable updates" },
+        { "id": "b", "text": "Change passwords for all synced cloud accounts and enable MFA everywhere possible" },
+        { "id": "c", "text": "Jailbreak the device and remove antivirus" },
+        { "id": "d", "text": "Turn off the screen lock to save time" }
+      ],
+      "correct": "b",
+      "explanation": "After a reset and especially after a data leak, immediately change the passwords for all synced cloud accounts and enable MFA everywhere you can.",
+      "trap": "Reinstalling sideloaded apps or jailbreaking would reintroduce the very risks that caused the problem.",
+      "tags": ["mobile-security", "mfa"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.3.q.010",
+      "type": "multiple-choice",
+      "stem": "What is the best prevention practice to avoid mobile malware in the first place?",
+      "choices": [
+        { "id": "a", "text": "Only use official app stores and never jailbreak or root the device" },
+        { "id": "b", "text": "Sideload apps from many sources for variety" },
+        { "id": "c", "text": "Disable all OS updates" },
+        { "id": "d", "text": "Share one password across all accounts" }
+      ],
+      "correct": "a",
+      "explanation": "Protect the phone by only using official app stores and never jailbreaking or rooting it.",
+      "trap": "Sideloading widely and disabling updates are exactly the behaviors that invite malware.",
+      "tags": ["mobile-security", "sideloading"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

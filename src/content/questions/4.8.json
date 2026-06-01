@@ -1,0 +1,175 @@
+{
+  "objective": "4.8",
+  "questions": [
+    {
+      "id": "4.8.q.001",
+      "type": "multiple-choice",
+      "stem": "Which file extension identifies a classic Windows command-line batch script?",
+      "choices": [
+        { "id": "a", "text": ".bat" },
+        { "id": "b", "text": ".ps1" },
+        { "id": "c", "text": ".sh" },
+        { "id": "d", "text": ".py" }
+      ],
+      "correct": "a",
+      "explanation": "Windows batch files use the .bat extension for the classic command line.",
+      "trap": ".ps1 is PowerShell, .sh is a Linux shell script, and .py is Python - only .bat is the classic Windows batch file.",
+      "tags": ["bat", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.002",
+      "type": "multiple-choice",
+      "stem": "Which scripting language is used for modern Windows system administration and works with cmdlets to manage the whole OS?",
+      "choices": [
+        { "id": "a", "text": "VBScript (.vbs)" },
+        { "id": "b", "text": "PowerShell (.ps1)" },
+        { "id": "c", "text": "Bash (.sh)" },
+        { "id": "d", "text": "JavaScript (.js)" }
+      ],
+      "correct": "b",
+      "explanation": "PowerShell scripts (.ps1) are used for modern Windows administration and use cmdlets to manage the entire OS.",
+      "trap": "VBScript is for older general Windows/Office automation; the modern admin tool is PowerShell.",
+      "tags": ["ps1", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.003",
+      "type": "multiple-choice",
+      "stem": "Which language, ending in .sh, is used for Linux/Unix shell scripts and is identified by a shebang (#!) at the start of the file?",
+      "choices": [
+        { "id": "a", "text": "Batch" },
+        { "id": "b", "text": "PowerShell" },
+        { "id": "c", "text": "Shell script" },
+        { "id": "d", "text": "VBScript" }
+      ],
+      "correct": "c",
+      "explanation": "Linux/Unix shell scripts end in .sh and start with a shebang (#!) line that identifies the interpreter.",
+      "trap": "Batch (.bat) and PowerShell (.ps1) are Windows; the .sh shell script with a shebang is the Linux/Unix one.",
+      "tags": ["sh", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.004",
+      "type": "multiple-choice",
+      "stem": "Which language is described as the king of cross-platform automation that works on Windows, Mac, and Linux, ending in .py?",
+      "choices": [
+        { "id": "a", "text": "JavaScript" },
+        { "id": "b", "text": "VBScript" },
+        { "id": "c", "text": "Batch" },
+        { "id": "d", "text": "Python" }
+      ],
+      "correct": "d",
+      "explanation": "Python (.py) is the cross-platform automation choice that runs on Windows, Mac, and Linux.",
+      "trap": "JavaScript handles web-browser interactivity; for cross-platform automation scripts the answer is Python.",
+      "tags": ["py", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.005",
+      "type": "multiple-choice",
+      "stem": "Which language is used inside web browsers to handle interactivity and ends in .js?",
+      "choices": [
+        { "id": "a", "text": "JavaScript" },
+        { "id": "b", "text": "Python" },
+        { "id": "c", "text": "Shell script" },
+        { "id": "d", "text": "PowerShell" }
+      ],
+      "correct": "a",
+      "explanation": "JavaScript (.js) runs in web browsers to handle interactivity.",
+      "trap": "Python is cross-platform automation; the browser interactivity language is JavaScript.",
+      "tags": ["js", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.006",
+      "type": "multiple-choice",
+      "stem": "Which language is named for general Windows tasks like Office automation and abbreviated VBS?",
+      "choices": [
+        { "id": "a", "text": "Python" },
+        { "id": "b", "text": "Visual Basic Script (VBScript)" },
+        { "id": "c", "text": "Bash" },
+        { "id": "d", "text": "JavaScript" }
+      ],
+      "correct": "b",
+      "explanation": "Visual Basic Script (VBScript / VBS) is used for general Windows tasks like Office automation.",
+      "trap": "Bash is Linux/Unix and Python is cross-platform; the Windows/Office automation legacy language is VBScript.",
+      "tags": ["vbs", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.007",
+      "type": "multiple-choice",
+      "stem": "What is the single biggest use case for scripting, per the review?",
+      "choices": [
+        { "id": "a", "text": "Encrypting hard drives" },
+        { "id": "b", "text": "Designing user interfaces" },
+        { "id": "c", "text": "Automation of repetitive tasks" },
+        { "id": "d", "text": "Manually editing the registry" }
+      ],
+      "correct": "c",
+      "explanation": "The biggest use case is automation - scripts restart machines remotely, update software, remap network drives at login, and run automated backups.",
+      "trap": "Scripts can touch many areas, but their defining purpose is automating repetitive work, not UI design or encryption.",
+      "tags": ["scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.008",
+      "type": "multiple-choice",
+      "stem": "Why are scripts considered dangerous if mishandled?",
+      "choices": [
+        { "id": "a", "text": "They cannot be undone once written" },
+        { "id": "b", "text": "They execute commands quickly across many systems, so a mistake spreads fast" },
+        { "id": "c", "text": "They always require a hardware token to run" },
+        { "id": "d", "text": "They only run on a single machine at a time" }
+      ],
+      "correct": "b",
+      "explanation": "Scripts execute commands quickly across many systems, so a mistake spreads fast - a bad script can introduce malware network-wide or crash systems by mishandling resources.",
+      "trap": "The danger is exactly that scripts scale across many machines at once, not that they're limited to one.",
+      "tags": ["scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.009",
+      "type": "multiple-choice",
+      "stem": "Before deploying a new script across the network, what two precautions does the review recommend?",
+      "choices": [
+        { "id": "a", "text": "Test it in a sandbox first and have a rollback plan ready" },
+        { "id": "b", "text": "Run it on every machine simultaneously to save time" },
+        { "id": "c", "text": "Disable antivirus so it runs faster" },
+        { "id": "d", "text": "Delete the backups to free space" }
+      ],
+      "correct": "a",
+      "explanation": "Always test scripts in a sandbox before deploying them and have a rollback plan ready in case something goes wrong.",
+      "trap": "Running untested on every machine at once is precisely the risk; you sandbox-test and keep a rollback path.",
+      "tags": ["scripting", "sandbox", "rollback"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.8.q.010",
+      "type": "multiple-choice",
+      "stem": "A team needs one automation script to run identically on Windows, macOS, and Linux machines. Which language is the best fit?",
+      "choices": [
+        { "id": "a", "text": "Batch (.bat)" },
+        { "id": "b", "text": "PowerShell (.ps1)" },
+        { "id": "c", "text": "VBScript (.vbs)" },
+        { "id": "d", "text": "Python (.py)" }
+      ],
+      "correct": "d",
+      "explanation": "Python is the cross-platform choice that runs on Windows, Mac, and Linux from one script.",
+      "trap": "Batch and VBScript are Windows-only; even PowerShell is rooted in Windows administration. Python is the cross-platform answer.",
+      "tags": ["py", "scripting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

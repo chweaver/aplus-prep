@@ -1,0 +1,175 @@
+{
+  "objective": "4.4",
+  "questions": [
+    {
+      "id": "4.4.q.001",
+      "type": "multiple-choice",
+      "stem": "Roughly how many volts of static can destroy a computer chip, versus how many you must reach before you even feel a shock?",
+      "choices": [
+        { "id": "a", "text": "A chip can be destroyed by as little as 100 volts, but you don't feel a shock until about 3,500 volts" },
+        { "id": "b", "text": "A chip needs 3,500 volts to fail, and you feel shocks at 100 volts" },
+        { "id": "c", "text": "Both thresholds are exactly 1,000 volts" },
+        { "id": "d", "text": "Chips are immune to static below 10,000 volts" }
+      ],
+      "correct": "a",
+      "explanation": "A chip can be destroyed by as little as 100 volts, but humans don't feel a static shock until around 3,500 volts - so you can fry a board without feeling a thing.",
+      "trap": "The numbers are not reversed: the damage threshold (100 V) is far below the human-perception threshold (3,500 V).",
+      "tags": ["esd", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.002",
+      "type": "multiple-choice",
+      "stem": "What does an ESD strap do to protect components?",
+      "choices": [
+        { "id": "a", "text": "It grounds the building's electrical system" },
+        { "id": "b", "text": "It connects your wrist to the metal chassis, keeping you at the same electrical potential as the device" },
+        { "id": "c", "text": "It adds extra voltage to the motherboard" },
+        { "id": "d", "text": "It replaces the need to unplug the power" }
+      ],
+      "correct": "b",
+      "explanation": "An ESD strap connects your wrist to the metal chassis so you and the device stay at the same electrical potential, preventing a discharge.",
+      "trap": "You connect to the chassis, NOT to the building's ground - tying yourself to building ground is explicitly dangerous.",
+      "tags": ["esd-strap", "esd", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.003",
+      "type": "multiple-choice",
+      "stem": "When storing loose components, which item shields them against static discharge?",
+      "choices": [
+        { "id": "a", "text": "A clear plastic zipper bag" },
+        { "id": "b", "text": "A paper envelope" },
+        { "id": "c", "text": "Silver anti-static bags" },
+        { "id": "d", "text": "A cardboard box" }
+      ],
+      "correct": "c",
+      "explanation": "Use anti-static bags - specifically the silver ones - to shield stored parts against discharge.",
+      "trap": "Ordinary clear plastic bags can actually generate static; the shielding silver anti-static bag is what's required.",
+      "tags": ["esd", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.004",
+      "type": "multiple-choice",
+      "stem": "What is the number-one rule of electrical safety before opening any device?",
+      "choices": [
+        { "id": "a", "text": "Put on safety goggles" },
+        { "id": "b", "text": "Bundle the cables with zip ties" },
+        { "id": "c", "text": "Lift with your legs" },
+        { "id": "d", "text": "Disconnect the power source first" }
+      ],
+      "correct": "d",
+      "explanation": "The number-one electrical-safety rule is to disconnect the power source before opening anything.",
+      "trap": "Goggles, cable management, and proper lifting are all good practices, but cutting power comes first.",
+      "tags": ["safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.005",
+      "type": "multiple-choice",
+      "stem": "Why is a power supply or laser-printer power unit dangerous even after being unplugged?",
+      "choices": [
+        { "id": "a", "text": "Capacitors inside can store residual electricity and shock you" },
+        { "id": "b", "text": "It will automatically reboot the computer" },
+        { "id": "c", "text": "It releases toxic gas when opened" },
+        { "id": "d", "text": "It magnetizes nearby drives" }
+      ],
+      "correct": "a",
+      "explanation": "Capacitors act like a sponge that still holds water after the faucet is off - they store residual power and can shock you. Don't open high-voltage units; replace the whole unit.",
+      "trap": "The danger is stored charge in capacitors, not a reboot or toxic gas.",
+      "tags": ["capacitor", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.006",
+      "type": "multiple-choice",
+      "stem": "A technician finds a high-voltage component like a power supply is faulty. What is the correct action?",
+      "choices": [
+        { "id": "a", "text": "Open it and replace the internal capacitor" },
+        { "id": "b", "text": "Do not open it; replace the whole unit" },
+        { "id": "c", "text": "Discharge it by touching it with a screwdriver" },
+        { "id": "d", "text": "Connect yourself to building ground, then open it" }
+      ],
+      "correct": "b",
+      "explanation": "Never open high-voltage components like a power supply. Replace the entire unit instead.",
+      "trap": "Connecting yourself to building ground is dangerous, and opening a power supply exposes you to stored charge - replace, don't repair.",
+      "tags": ["safety", "capacitor"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.007",
+      "type": "multiple-choice",
+      "stem": "When lifting a heavy server, what is the recommended technique?",
+      "choices": [
+        { "id": "a", "text": "Bend at the waist and lift with your back" },
+        { "id": "b", "text": "Lift quickly to get it over with" },
+        { "id": "c", "text": "Lift with your legs to protect your back" },
+        { "id": "d", "text": "Always lift alone to avoid coordination issues" }
+      ],
+      "correct": "c",
+      "explanation": "Protect your back by lifting with your legs, not your back.",
+      "trap": "Bending at the waist and lifting with the back is exactly the unsafe technique that causes injuries.",
+      "tags": ["safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.008",
+      "type": "multiple-choice",
+      "stem": "Messy cables on the floor present which hazard, and how should you address it?",
+      "choices": [
+        { "id": "a", "text": "A fire hazard; soak them in water" },
+        { "id": "b", "text": "An ESD hazard; ground each cable" },
+        { "id": "c", "text": "A magnetic hazard; shield them with foil" },
+        { "id": "d", "text": "A trip hazard; bundle them with Velcro or zip ties" }
+      ],
+      "correct": "d",
+      "explanation": "Loose cables are a major trip hazard; use Velcro straps or zip ties to bundle and manage them.",
+      "trap": "The risk here is tripping, not static or magnetism - and you never soak cables in water.",
+      "tags": ["cable-management", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.009",
+      "type": "multiple-choice",
+      "stem": "What fire-suppression agents do data centers use for electrical fires, and what must they avoid?",
+      "choices": [
+        { "id": "a", "text": "Dry chemicals like FM-200 or CO2; never water" },
+        { "id": "b", "text": "Water sprinklers; never chemicals" },
+        { "id": "c", "text": "Sand buckets; never CO2" },
+        { "id": "d", "text": "Foam only; never dry chemicals" }
+      ],
+      "correct": "a",
+      "explanation": "Data centers suppress fires with dry chemicals like FM-200 or carbon dioxide - never water, because electronics and water don't mix.",
+      "trap": "Water sprinklers would destroy the equipment and worsen an electrical fire; dry agents are required.",
+      "tags": ["fire-suppression", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.4.q.010",
+      "type": "multiple-choice",
+      "stem": "A device catches fire at a workstation. What is your first move?",
+      "choices": [
+        { "id": "a", "text": "Throw water on it" },
+        { "id": "b", "text": "Open the case to inspect the damage" },
+        { "id": "c", "text": "Cut the power" },
+        { "id": "d", "text": "Unplug nearby monitors first" }
+      ],
+      "correct": "c",
+      "explanation": "If a device catches fire, your first move is to cut the power.",
+      "trap": "Water on an electrical fire is dangerous; the priority is removing the power source, not inspecting or rearranging gear.",
+      "tags": ["fire-suppression", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

@@ -2,41 +2,8 @@
   "objective": "1.6",
   "title": "Given a scenario, configure Microsoft Windows settings",
   "domain": 1,
-  "estimatedMinutes": 14,
-  "subtopics": [
-    {
-      "id": "1.6.control-panel-overview",
-      "heading": "Control Panel orientation",
-      "notes": "Launch: search 'control', open Control Panel. Default view is Category. Switch to 'Small icons' or 'Large icons' to see every applet alphabetically.\n\nThe Control Panel and the modern Settings app overlap. Microsoft is slowly migrating items from Control Panel to Settings. Some configuration is still ONLY in Control Panel (notably the Mail applet, file encryption certs).\n\nIcons that only appear conditionally:\n- Mail: only if a supported email client (e.g. Outlook) is installed",
-      "whyOnExam": "Expect questions asking 'which applet'. Switching to Large icons view makes every applet visible.",
-      "commonTrap": "Looking for the Mail applet on a fresh Windows install. It appears only after a supported email client is installed.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.6.key-applets",
-      "heading": "Key Control Panel applets",
-      "notes": "Internet Options - browser settings. Tabs: General (history, look), Security (zones), Privacy (cookies, pop-up blocker), Content (certificates, autocomplete), Connections (VPN, proxy via LAN Settings), Programs (add-ons, default browser), Advanced (deep settings)\n\nDevices and Printers - any directly connected or networked device (printers, cameras, microphones). Right-click for properties\n\nPrograms and Features - installed application list. Uninstall here. 'Turn Windows features on or off' lives in the left sidebar\n\nNetwork and Sharing Center - wired + wireless adapter settings. Click an adapter for status > Properties > IPv4 to set IP / subnet / gateway / DNS or DHCP\n\nSystem - device overview (Windows edition, version, CPU, RAM, hostname). 'Advanced System Settings' opens the older System Properties dialog including virtual memory (paging file) configuration\n\nWindows Defender Firewall - on by default, separate profiles for private and public networks\n\nMail - email client config (only if email client installed)\n\nSound - playback + recording, default device per category\n\nUser Accounts - local accounts only (not domain). UAC level, file encryption certificate management\n\nDevice Manager - hardware grouped by category. Right-click a device for Update / Disable / Uninstall driver. Properties tabs: General, Driver, Details, Events, Resources\n\nIndexing Options - controls Windows Search. Modify which folders are indexed and which file types\n\nAdministrative Tools / Windows Tools - shortcut hub for Computer Management, Regedit, Task Manager, Task Scheduler, etc.\n\nFile Explorer Options - General (click behavior, privacy), View (hidden files, file extensions), Search (compressed files, contents vs filenames)\n\nEase of Access Center - magnifier, narrator, on-screen keyboard, high contrast",
-      "whyOnExam": "Memorize which applet owns which task. Common targets: paging file (System > Advanced), turn Windows features on/off (Programs and Features), default sound device (Sound), driver rollback (Device Manager).",
-      "commonTrap": "Confusing Network and Sharing Center with the Settings > Network and Internet page. Both work; advanced adapter properties live in the classic Network and Sharing Center.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.6.power-options",
-      "heading": "Power Options",
-      "notes": "Hibernate\n- Saves all open work and apps TO DISK\n- Requires no power\n- Slower to resume because state must be read back from disk\n- Good when battery may die\n\nSleep / Standby\n- Keeps state IN MEMORY\n- Requires constant low power to maintain RAM\n- Very fast resume\n- Bad choice when battery is critically low\n\nPower Plans: typically Balanced and one or two vendor / manufacturer plans. Configure when display turns off and when system sleeps. 'Never' disables the auto-off entirely.\n\nAdvanced power settings let you tune: hard disk, background, sleep, PCI Express, display, lid-close behavior, USB selective suspend, power button action.\n\nFast Startup\n- Windows does not perform a full shutdown. Instead it hibernates the kernel session\n- Power button then resumes very quickly\n- Can cause weird state issues (e.g. driver updates not loading). Disable in Power Options if you need a real shutdown each time",
-      "whyOnExam": "Hibernate vs Sleep is a common direct question: where is state stored, and what happens when power is lost.",
-      "commonTrap": "Choosing Sleep for a laptop you might not touch for days. Sleep drains the battery; Hibernate is the right answer for long idle periods.",
-      "weakSpotTags": []
-    },
-    {
-      "id": "1.6.settings-app",
-      "heading": "Settings app (Windows 10/11)",
-      "notes": "Modern config UI grouped by category. Categories you should recognize:\n\n- System - device info, display, sound, notifications, storage, About\n- Bluetooth and Devices - paired devices, audio, printers, mouse, typing, pen / ink\n- Network and Internet - Ethernet, Wi-Fi, VPN, proxy, dial-up\n- Personalization - background, colors, lock screen, themes\n- Apps - installed apps, default apps, optional features, startup\n- Accounts - sign-in options, Microsoft account vs local, email accounts\n- Time and Language - date/time auto, time zone, regional language\n- Gaming - Xbox Game Bar, capture settings\n- Accessibility - same role as Ease of Access\n- Privacy and Security - app permissions, Windows Security (antivirus, firewall), location, microphone, camera\n- Windows Update - manage updates, active hours so updates don't interrupt work\n\nMany items appear in both Control Panel and Settings. For network adapter properties and other low-level config, the older Control Panel often still has more depth.",
-      "whyOnExam": "Active Hours under Windows Update is the right answer for 'do not interrupt me during my work day'.",
-      "commonTrap": "Disabling Windows Update entirely to stop interruptions. Use Active Hours instead - keeps security updates flowing without rebooting mid-presentation.",
-      "weakSpotTags": []
-    }
-  ],
-  "sources": ["pm-1202-control-panel", "pm-1202-windows-settings"],
-  "needsReview": false
+  "subtopics": [],
+  "sources": [],
+  "needsReview": true,
+  "reviewNotes": "Stub: legacy notes cleared during core2-cram question rebuild. Awaiting topic content for the new transcript."
 }

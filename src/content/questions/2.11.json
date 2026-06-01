@@ -1,0 +1,175 @@
+{
+  "objective": "2.11",
+  "questions": [
+    {
+      "id": "2.11.q.001",
+      "type": "multiple-choice",
+      "stem": "Where should you download a web browser from to minimize the risk of a malicious version?",
+      "choices": [
+        { "id": "a", "text": "Any third-party download aggregator" },
+        { "id": "b", "text": "The developer's official website" },
+        { "id": "c", "text": "A link in an email" },
+        { "id": "d", "text": "A torrent site" }
+      ],
+      "correct": "b",
+      "explanation": "Always download the browser directly from the developer's official website; malicious versions are often distributed on third-party sites.",
+      "trap": "Third-party aggregators and email links are exactly where trojaned installers spread.",
+      "tags": ["browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.002",
+      "type": "multiple-choice",
+      "stem": "To confirm a downloaded installer is authentic, the developer publishes a SHA-256 string. How do you verify the file?",
+      "choices": [
+        { "id": "a", "text": "Compare the file sizes only" },
+        { "id": "b", "text": "Check that the file name matches" },
+        { "id": "c", "text": "Run the same hashing algorithm on your download and confirm the hashes match" },
+        { "id": "d", "text": "Open the file in Notepad and read the header" }
+      ],
+      "correct": "c",
+      "explanation": "Hash verification: run the same algorithm (e.g. SHA-256) on your downloaded file; if the resulting hash matches the developer's published hash, the file is authentic and unmodified.",
+      "trap": "Matching file size or name proves nothing; an attacker can match both while altering content. The hash is what verifies integrity.",
+      "tags": ["hashing", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.003",
+      "type": "multiple-choice",
+      "stem": "Why are browser extensions a major attack vector?",
+      "choices": [
+        { "id": "a", "text": "They run in a fully isolated sandbox with no access to your data" },
+        { "id": "b", "text": "They can only change the browser's theme" },
+        { "id": "c", "text": "They are unable to read web pages" },
+        { "id": "d", "text": "They have the same level of access to your system as the browser itself" }
+      ],
+      "correct": "d",
+      "explanation": "Extensions have the same level of access as the browser itself, so a malicious one can log keystrokes, steal passwords, and screenshot your data. Only install from trusted sources.",
+      "trap": "Extensions are not fully sandboxed away from your data - that's exactly why a bad one is so dangerous.",
+      "tags": ["browser-extensions", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.004",
+      "type": "multiple-choice",
+      "stem": "A browser shows 'Your connection is not private.' Besides an expired or mismatched certificate, what simple LOCAL cause should you check first?",
+      "choices": [
+        { "id": "a", "text": "The computer's clock is set to the wrong date and time" },
+        { "id": "b", "text": "The monitor brightness is too low" },
+        { "id": "c", "text": "The keyboard layout is wrong" },
+        { "id": "d", "text": "The browser zoom is above 100%" }
+      ],
+      "correct": "a",
+      "explanation": "A wrong system date/time is a common, simple cause of certificate warnings - the browser thinks the certificate is expired or not yet valid.",
+      "trap": "Brightness, keyboard layout, and zoom have nothing to do with certificate validation.",
+      "tags": ["certificate-warning", "browser-security", "time-drift"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.005",
+      "type": "multiple-choice",
+      "stem": "On a shared/public computer, which browser mode ensures no history, cookies, or cache are saved locally after the window closes?",
+      "choices": [
+        { "id": "a", "text": "Full-screen mode" },
+        { "id": "b", "text": "Private (incognito) browsing mode" },
+        { "id": "c", "text": "Reader mode" },
+        { "id": "d", "text": "Developer mode" }
+      ],
+      "correct": "b",
+      "explanation": "Private browsing mode ensures no history, cookies, or cache are saved to the local machine once you close the window - ideal for public/shared computers.",
+      "trap": "Full-screen and reader modes change display, not what is stored locally.",
+      "tags": ["private-browsing", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.006",
+      "type": "multiple-choice",
+      "stem": "A website is rendering oddly and behaving inconsistently. Which routine browser-maintenance step is recommended because this stored data can become corrupted or outdated?",
+      "choices": [
+        { "id": "a", "text": "Disable the pop-up blocker" },
+        { "id": "b", "text": "Install more extensions" },
+        { "id": "c", "text": "Clear the browsing data, especially the cache" },
+        { "id": "d", "text": "Turn off secure DNS" }
+      ],
+      "correct": "c",
+      "explanation": "The cache stores site data locally to speed things up, but it can become corrupted or outdated and cause issues, so periodically clear the browsing data/cache.",
+      "trap": "Disabling the pop-up blocker or adding extensions increases risk and doesn't fix corrupted cached data.",
+      "tags": ["browser-security", "private-browsing"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.007",
+      "type": "multiple-choice",
+      "stem": "What is the recommended setting for a browser's pop-up blocker?",
+      "choices": [
+        { "id": "a", "text": "Disable it entirely" },
+        { "id": "b", "text": "Allow pop-ups from all sites" },
+        { "id": "c", "text": "Only block pop-ups on the home page" },
+        { "id": "d", "text": "Keep it enabled and grant exceptions only to specific trusted sites" }
+      ],
+      "correct": "d",
+      "explanation": "Keep the pop-up blocker enabled and only grant exceptions to specific trusted sites that need them.",
+      "trap": "Allowing pop-ups everywhere reopens a common malware and scam vector.",
+      "tags": ["popup-blocker", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.008",
+      "type": "multiple-choice",
+      "stem": "In a corporate environment, which tool acts as a middleman that filters web traffic, can block malicious sites and scan for malware, and may require configuring an address and port in the browser?",
+      "choices": [
+        { "id": "a", "text": "A proxy server" },
+        { "id": "b", "text": "A password manager" },
+        { "id": "c", "text": "A pop-up blocker" },
+        { "id": "d", "text": "A certificate authority" }
+      ],
+      "correct": "a",
+      "explanation": "A proxy server is the middleman that filters all web traffic, can block malicious sites, scan for malware, and enforce access control; you may need to set its address and port in the browser.",
+      "trap": "A certificate authority issues/validates certificates; it does not proxy and filter your browsing traffic.",
+      "tags": ["proxy", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.009",
+      "type": "multiple-choice",
+      "stem": "Which browser privacy feature encrypts DNS queries so others on the network cannot snoop on which sites you visit?",
+      "choices": [
+        { "id": "a", "text": "Pop-up blocker" },
+        { "id": "b", "text": "Secure DNS (DNS over HTTPS)" },
+        { "id": "c", "text": "Private browsing mode" },
+        { "id": "d", "text": "Cache clearing" }
+      ],
+      "correct": "b",
+      "explanation": "Secure DNS, also known as DNS over HTTPS, encrypts your DNS queries so no one on the network can snoop on the sites you are visiting.",
+      "trap": "Private browsing only prevents LOCAL storage of history; it does not encrypt DNS queries on the network.",
+      "tags": ["secure-dns", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "2.11.q.010",
+      "type": "multiple-choice",
+      "stem": "Why does the review recommend using a dedicated password manager alongside the browser?",
+      "choices": [
+        { "id": "a", "text": "It makes pages load faster" },
+        { "id": "b", "text": "It replaces the need for HTTPS" },
+        { "id": "c", "text": "It stores a unique complex password per site, neutralizing the risk of password reuse" },
+        { "id": "d", "text": "It disables all browser extensions" }
+      ],
+      "correct": "c",
+      "explanation": "A password manager is an encrypted vault that stores a unique complex password for every site, so a breach of one site can't be reused against the others.",
+      "trap": "A password manager doesn't replace HTTPS; encryption in transit and credential management are separate protections.",
+      "tags": ["password-manager", "browser-security"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

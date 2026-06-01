@@ -4,154 +4,171 @@
     {
       "id": "1.2.q.001",
       "type": "multiple-choice",
-      "stem": "An IT team needs to install Windows 11 on 200 laptops shipped to remote employees worldwide. The employees should turn the laptop on and have everything configured automatically, including domain join and email. Which install method fits BEST?",
+      "stem": "A technician is installing Windows on a brand-new computer that has no operating system yet. Which boot method is the most common today for getting the installer to run?",
       "choices": [
-        { "id": "a", "text": "Clean install with a bootable USB drive at each site" },
-        { "id": "b", "text": "PXE boot from the local network" },
-        { "id": "c", "text": "Zero-touch deployment" },
-        { "id": "d", "text": "Repair installation" }
+        { "id": "a", "text": "A USB flash drive containing the installation files" },
+        { "id": "b", "text": "A floppy boot disk" },
+        { "id": "c", "text": "An internal recovery partition that already exists on the new drive" },
+        { "id": "d", "text": "Mapping a network share from another running Windows PC" }
       ],
-      "correct": "c",
-      "explanation": "Zero-touch deployment automates the entire install + configuration so a remote user can open the laptop and be productive without intervention.",
-      "trap": "PXE boot also automates the install but requires the device to be on the local corporate LAN with a PXE server. Won't help a remote user.",
-      "tags": ["install-types", "zero-touch"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "a",
+      "explanation": "The transcript calls a bootable USB flash drive the most common boot method today for installing an OS on a system with no OS.",
+      "trap": "An internal recovery partition needs an OS already on the machine that created it; a brand-new computer with nothing installed will not have one populated.",
+      "tags": ["boot-methods", "usb-boot"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.002",
       "type": "multiple-choice",
-      "stem": "A technician wants to install Windows 11 on a system that currently uses an MBR-partitioned drive with legacy BIOS. The installer reports a partitioning incompatibility. What is the MOST likely cause?",
+      "stem": "A corporate IT team needs to install the same Windows image on 200 new desktops on the network as quickly as possible. Which boot method is designed for this scenario?",
       "choices": [
-        { "id": "a", "text": "MBR is limited to 2 TB partitions and the drive is larger" },
-        { "id": "b", "text": "Windows 11 requires UEFI and GPT, which the system does not have" },
-        { "id": "c", "text": "MBR does not support 64-bit operating systems" },
-        { "id": "d", "text": "Secure Boot is enabled but the disk uses legacy partitions" }
+        { "id": "a", "text": "USB boot, one machine at a time" },
+        { "id": "b", "text": "Internet-based installation per desktop" },
+        { "id": "c", "text": "PXE (network) boot" },
+        { "id": "d", "text": "Internal recovery partition" }
       ],
-      "correct": "b",
-      "explanation": "Windows 11 requires UEFI BIOS (and therefore a GPT-partitioned drive) along with Secure Boot. Legacy BIOS + MBR will fail.",
-      "trap": "(a) sounds plausible but the issue is the BIOS/partition style, not necessarily the drive size.",
-      "tags": ["partitioning", "win11", "uefi"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "c",
+      "explanation": "PXE / network boot is the corporate boot method specifically for installing an OS on many machines at once.",
+      "trap": "USB boot works, but doing 200 USBs one at a time is exactly the problem PXE was created to solve.",
+      "tags": ["boot-methods", "pxe", "image-deployment"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.003",
       "type": "multiple-choice",
-      "stem": "A user has a critical Windows 10 system that boots but applications crash and some OS files appear corrupt. They want to fix the OS without losing their installed programs and data. What should the technician perform?",
+      "stem": "A user is moving from Windows 10 to Windows 11 and wants to keep their installed apps, settings, and personal files intact. Which installation type fits?",
       "choices": [
         { "id": "a", "text": "Clean install" },
-        { "id": "b", "text": "Repair installation" },
-        { "id": "c", "text": "Quick format and reinstall" },
-        { "id": "d", "text": "Full format and reinstall" }
+        { "id": "b", "text": "In-place upgrade" },
+        { "id": "c", "text": "Repair installation" },
+        { "id": "d", "text": "Image deployment" }
       ],
       "correct": "b",
-      "explanation": "A repair installation overwrites OS files but leaves user data and applications in place.",
-      "trap": "Clean install would wipe the user's apps and files. The scenario explicitly says they need to preserve them.",
-      "tags": ["install-types", "repair"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "explanation": "An in-place upgrade installs the new OS while preserving existing files, applications, and settings.",
+      "trap": "A clean install wipes the partition. It is the safest install but loses everything not backed up.",
+      "tags": ["in-place-upgrade", "clean-install"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.004",
       "type": "multiple-choice",
-      "stem": "A retiring laptop will be donated to charity. The technician needs to make sure the previous owner's data cannot be recovered. Which format method is BEST?",
+      "stem": "A Windows installation has become corrupted, but the user's documents and profile are still intact. Which install type refreshes the OS files while leaving personal data untouched?",
       "choices": [
-        { "id": "a", "text": "Quick format" },
-        { "id": "b", "text": "Full format" },
-        { "id": "c", "text": "Delete the partitions, then quick format" },
-        { "id": "d", "text": "Re-image the system with the corporate Windows image" }
+        { "id": "a", "text": "Clean install" },
+        { "id": "b", "text": "Image deployment" },
+        { "id": "c", "text": "In-place upgrade to the same version" },
+        { "id": "d", "text": "Repair installation" }
       ],
-      "correct": "b",
-      "explanation": "A full format writes zeros across the entire disk, making old data unrecoverable. Quick format only rewrites the file table and leaves the data physically intact.",
-      "trap": "(c) sounds thorough but quick format still leaves the underlying data on disk. The partition table is gone but forensic tools could still recover content.",
-      "tags": ["drive-format", "security"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "d",
+      "explanation": "A repair installation refreshes the OS system files but leaves the user's personal data alone, which is exactly the corrupted-OS scenario described.",
+      "trap": "An in-place upgrade is meant for moving to a new version. The intent here is to repair the current one without changing version.",
+      "tags": ["repair-install"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.005",
       "type": "multiple-choice",
-      "stem": "Windows 11 install fails on a 5-year-old desktop. PC Health Check reports the CPU is supported and memory is sufficient. What is the most likely blocker?",
+      "stem": "Which partition style is REQUIRED when installing Windows on a UEFI-based system?",
       "choices": [
-        { "id": "a", "text": "32-bit Windows version selected" },
-        { "id": "b", "text": "TPM 2.0 missing or Secure Boot not enabled" },
-        { "id": "c", "text": "MBR partition larger than 2 TB" },
-        { "id": "d", "text": "Windows 11 N edition cannot detect media files" }
+        { "id": "a", "text": "GPT (GUID Partition Table)" },
+        { "id": "b", "text": "MBR (Master Boot Record)" },
+        { "id": "c", "text": "exFAT" },
+        { "id": "d", "text": "ext4" }
       ],
-      "correct": "b",
-      "explanation": "Windows 11 requires TPM 2.0 and Secure Boot. Older hardware often lacks one or both. Since the CPU and RAM passed, that points at the platform security requirements.",
-      "trap": "(a) is a distractor - there is no 32-bit Windows 11.",
-      "tags": ["win11", "tpm", "secure-boot"],
-      "sourceTranscript": "pm-1202-upgrading-windows",
+      "correct": "a",
+      "explanation": "GPT is the modern partition style required for UEFI BIOS systems. It also supports up to 128 partitions and very large drive sizes.",
+      "trap": "MBR is the legacy style and cannot be used to boot a UEFI system. exFAT and ext4 are file systems, not partition styles.",
+      "tags": ["partitioning", "gpt", "uefi"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.006",
       "type": "multiple-choice",
-      "stem": "A technician needs to install an OS on a workstation with no media drive and no internet access. The workstation is plugged into the corporate LAN. What is the easiest install path?",
+      "stem": "Which two limits define the older MBR partition style?",
       "choices": [
-        { "id": "a", "text": "Internet-based installation" },
-        { "id": "b", "text": "External hot-swappable drive with an ISO" },
-        { "id": "c", "text": "PXE network boot to a local install server" },
-        { "id": "d", "text": "Recovery partition" }
+        { "id": "a", "text": "Maximum 128 partitions and roughly 16 TB drive size" },
+        { "id": "b", "text": "Maximum 1 partition and 4 GB file size" },
+        { "id": "c", "text": "Maximum 4 primary partitions and roughly 2 TB drive size" },
+        { "id": "d", "text": "Maximum 4 partitions and 4 GB file size" }
       ],
       "correct": "c",
-      "explanation": "PXE boots the OS installer from a server on the local network. No local media, no internet required - just the LAN and a PXE server.",
-      "trap": "(a) requires internet. (d) requires the OS to already be installed and the recovery partition to exist.",
-      "tags": ["boot-methods", "pxe"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "explanation": "MBR is limited to 4 primary partitions and cannot address drives larger than about 2 TB.",
+      "trap": "The 4 GB number belongs to FAT32's file size limit, not to MBR's partition limits.",
+      "tags": ["partitioning", "mbr"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.007",
-      "type": "ordering",
-      "stem": "Order the following steps for a clean install of Windows from boot media. Place them in the correct order.",
-      "items": [
-        { "id": "s1", "text": "Boot the system from installation media (USB, PXE, ISO, etc.)" },
-        { "id": "s2", "text": "Select and partition the target drive (GPT or MBR)" },
-        { "id": "s3", "text": "Format the partition (quick or full)" },
-        { "id": "s4", "text": "Load any third-party storage / network drivers if prompted" },
-        { "id": "s5", "text": "Let the installer copy OS files and reboot" },
-        { "id": "s6", "text": "Complete first-boot configuration (account, network, settings)" }
+      "type": "multiple-choice",
+      "stem": "A drive that previously held confidential data is being repurposed and must have any residual data made unrecoverable as part of formatting. Which format type writes zeros across the entire disc?",
+      "choices": [
+        { "id": "a", "text": "Quick format" },
+        { "id": "b", "text": "GPT initialization" },
+        { "id": "c", "text": "Convert to dynamic disk" },
+        { "id": "d", "text": "Full format" }
       ],
-      "correctOrder": ["s1", "s4", "s2", "s3", "s5", "s6"],
-      "explanation": "Third-party drivers must be loaded before partitioning if they are required to see the storage controller. Then partition, format, copy files, and first-boot configuration.",
-      "trap": "Putting driver loading at the end. If the storage controller is not recognized, the installer can't even see the disk to partition it.",
-      "tags": ["install-types"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "d",
+      "explanation": "A full format is slow because it writes zeros across the entire disc, making the previous data far harder to recover. Quick format only rewrites the file system metadata.",
+      "trap": "Quick format is fine for a freshly bought drive but does not securely erase prior data.",
+      "tags": ["full-format", "quick-format"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.008",
-      "type": "matching",
-      "stem": "Match each scenario to the correct install type.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "Push a fully-configured corporate desktop to 500 machines", "rightId": "r1", "rightText": "Image deployment" },
-        { "leftId": "l2", "leftText": "Move from Windows 10 to Windows 11 keeping apps and files", "rightId": "r2", "rightText": "In-place upgrade" },
-        { "leftId": "l3", "leftText": "Donated laptop receives a fresh OS with no previous data", "rightId": "r3", "rightText": "Clean install" },
-        { "leftId": "l4", "leftText": "Field tech repairs a corrupted Windows install without touching user data", "rightId": "r4", "rightText": "Repair installation" }
+      "type": "multiple-choice",
+      "stem": "Before upgrading a PC to Windows 11, the technician must verify two firmware-level features specifically required by Windows 11. Which two?",
+      "choices": [
+        { "id": "a", "text": "MBR partitioning and BIOS legacy mode" },
+        { "id": "b", "text": "TPM 2.0 and Secure Boot enabled in UEFI" },
+        { "id": "c", "text": "DHCP and a static IP address" },
+        { "id": "d", "text": "FAT32 system partition and APIPA enabled" }
       ],
-      "explanation": "Image deployment scales one config to many machines. In-place upgrade preserves user state. Clean install wipes everything. Repair installation fixes OS files without touching user data.",
-      "tags": ["install-types"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "b",
+      "explanation": "Windows 11 requires TPM 2.0 and Secure Boot, both enabled in the UEFI firmware, to install.",
+      "trap": "MBR plus legacy BIOS is actively the wrong direction; Windows 11 wants GPT plus UEFI plus TPM and Secure Boot.",
+      "tags": ["tpm", "secure-boot", "uefi"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.2.q.009",
-      "type": "multi-select",
-      "stem": "Which statements about GPT are TRUE? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "A help-desk team needs to roll out one standardized, fully configured Windows build to hundreds of new PCs. Which deployment strategy fits?",
       "choices": [
-        { "id": "a", "text": "Supports up to 128 partitions per drive" },
-        { "id": "b", "text": "Requires UEFI BIOS to boot from" },
-        { "id": "c", "text": "Limited to a maximum partition size of 2 TB" },
-        { "id": "d", "text": "Does not distinguish between primary and extended partitions" }
+        { "id": "a", "text": "Repair installation on each device" },
+        { "id": "b", "text": "In-place upgrade from a USB stick" },
+        { "id": "c", "text": "Image deployment" },
+        { "id": "d", "text": "Internet-based installation per device" }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "GPT supports 128 partitions (a), requires UEFI (b), and treats all partitions equally (d). The 2 TB limit is MBR's, not GPT's.",
-      "trap": "(c) is the MBR limit. Confusing the two limits is a classic trap.",
-      "tags": ["partitioning", "gpt"],
-      "sourceTranscript": "pm-1202-installing-os",
+      "correct": "c",
+      "explanation": "Image deployment is the strategy of setting up one PC perfectly, capturing an image, and rapidly copying that image to many machines.",
+      "trap": "A per-device installation defeats the purpose; image deployment is specifically the efficient bulk option.",
+      "tags": ["image-deployment"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.2.q.010",
+      "type": "multiple-choice",
+      "stem": "Windows releases two kinds of OS updates as part of the product life cycle. Which pairing matches each update type to its purpose?",
+      "choices": [
+        { "id": "a", "text": "Both update types only add new features" },
+        { "id": "b", "text": "Both update types only patch security holes" },
+        { "id": "c", "text": "Quality updates add new features; feature updates patch security holes" },
+        { "id": "d", "text": "Quality updates patch security and bug issues; feature updates add new functionality" }
+      ],
+      "correct": "d",
+      "explanation": "Quality updates are the regular small patches for security and reliability; feature updates are the larger periodic releases that add new functionality.",
+      "trap": "The reversed pairing - quality adds features, feature updates patch security - is the classic distractor; do not swap which one does which.",
+      "tags": ["windows", "patch-management"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

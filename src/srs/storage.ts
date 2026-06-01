@@ -1,6 +1,6 @@
 import { EMPTY_SRS, type SrsState } from './types';
 
-const STORAGE_KEY = 'aplus-prep:srs:v1';
+const STORAGE_KEY = 'aplus-prep:srs:v2';
 
 export function loadSrs(): SrsState {
   if (typeof localStorage === 'undefined') return EMPTY_SRS;

@@ -4,153 +4,171 @@
     {
       "id": "1.3.q.001",
       "type": "multiple-choice",
-      "stem": "A user with a new home laptop wants to encrypt their drive but the system runs Windows 11 Home. Which feature can they use?",
+      "stem": "When did Microsoft set Windows 10 to reach end of support?",
       "choices": [
-        { "id": "a", "text": "BitLocker" },
-        { "id": "b", "text": "Device Encryption" },
-        { "id": "c", "text": "EFS via Group Policy" },
-        { "id": "d", "text": "They must upgrade to Windows 11 Pro" }
+        { "id": "a", "text": "October 14, 2025" },
+        { "id": "b", "text": "January 1, 2024" },
+        { "id": "c", "text": "December 31, 2026" },
+        { "id": "d", "text": "Windows 10 has no EOL date set" }
       ],
-      "correct": "b",
-      "explanation": "Windows 11 Home includes Device Encryption, a consumer-grade equivalent to BitLocker. Recovery info is stored in the user's Microsoft account.",
-      "trap": "BitLocker is NOT available on Home. The exam wants you to know Device Encryption is the Home-edition answer.",
-      "tags": ["features", "device-encryption", "win11"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "correct": "a",
+      "explanation": "Windows 10 is set to end support on October 14, 2025, per the transcript.",
+      "trap": "Claiming there is no EOL date is wrong; every Microsoft client OS has a published end-of-support date.",
+      "tags": ["windows-editions", "eol"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.002",
       "type": "multiple-choice",
-      "stem": "A small business needs a Windows edition that can join an Active Directory domain, use BitLocker, and host Remote Desktop sessions. Which is the LEAST expensive option that meets all three needs?",
+      "stem": "Which statement about Windows 11 is correct?",
       "choices": [
-        { "id": "a", "text": "Windows 11 Home" },
-        { "id": "b", "text": "Windows 11 Pro" },
-        { "id": "c", "text": "Windows 11 Pro for Workstations" },
-        { "id": "d", "text": "Windows 11 Enterprise" }
+        { "id": "a", "text": "It supports both 32-bit and 64-bit CPUs" },
+        { "id": "b", "text": "It is 64-bit only and drops support for 32-bit CPUs" },
+        { "id": "c", "text": "It runs only on ARM-based hardware" },
+        { "id": "d", "text": "It is the first Windows version to require an Apple-signed kernel" }
       ],
       "correct": "b",
-      "explanation": "Pro is the lowest tier that supports domain join, BitLocker, and Remote Desktop server. Home lacks all three.",
-      "trap": "Enterprise also has the features but requires volume licensing - more expensive than Pro.",
-      "tags": ["editions", "win11", "pro"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "explanation": "Windows 11 is 64-bit only and dropped all support for 32-bit CPUs.",
+      "trap": "Older Windows versions still supported 32-bit CPUs; the change is specific to Windows 11.",
+      "tags": ["windows-editions", "arch-32-64"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.003",
       "type": "multiple-choice",
-      "stem": "A workstation needs 4 TB of RAM for a data-analysis workload. Which Windows edition is the MINIMUM that supports this?",
+      "stem": "A small business buys two new PCs with Windows 11 Home and wants to join them to the company's Active Directory domain. What is the result?",
       "choices": [
-        { "id": "a", "text": "Windows 11 Pro (2 TB max)" },
-        { "id": "b", "text": "Windows 10 Pro for Workstations (6 TB max)" },
-        { "id": "c", "text": "Windows 11 Home (128 GB max)" },
-        { "id": "d", "text": "Any 64-bit Windows supports unlimited RAM" }
+        { "id": "a", "text": "Both PCs join the domain normally" },
+        { "id": "b", "text": "Only one PC at a time can be on the domain" },
+        { "id": "c", "text": "Windows 11 Home cannot join a domain; the business needs Pro or Enterprise" },
+        { "id": "d", "text": "Domain join is allowed but BitLocker becomes mandatory" }
       ],
-      "correct": "b",
-      "explanation": "Windows 10 Pro for Workstations supports up to 6 TB of RAM. Pro caps at 2 TB; Home caps at 128 GB.",
-      "trap": "(d) is false - every edition has its own RAM cap.",
-      "tags": ["editions", "ram"],
-      "sourceTranscript": "pm-1202-windows-features",
+      "correct": "c",
+      "explanation": "Windows Home editions cannot join an Active Directory domain; they use a workgroup model. To join a domain, the PCs need Pro or Enterprise.",
+      "trap": "Home edition is fine on a home or small workgroup network, but domain join is a Pro/Enterprise capability.",
+      "tags": ["home", "pro", "domain", "workgroup", "active-directory"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.004",
       "type": "multiple-choice",
-      "stem": "An admin needs to apply group policies to control settings on a single Windows 11 machine without using a domain controller. Which tool do they open?",
+      "stem": "Which Windows feature provides full-disk encryption and is available only in Pro and Enterprise editions (not Home)?",
       "choices": [
-        { "id": "a", "text": "gpmc.msc" },
-        { "id": "b", "text": "gpedit.msc" },
-        { "id": "c", "text": "regedit.exe" },
-        { "id": "d", "text": "lusrmgr.msc" }
+        { "id": "a", "text": "EFS (Encrypting File System)" },
+        { "id": "b", "text": "Device encryption" },
+        { "id": "c", "text": "Defender SmartScreen" },
+        { "id": "d", "text": "BitLocker" }
       ],
-      "correct": "b",
-      "explanation": "gpedit.msc opens the Local Group Policy Editor for the current machine. Available in Pro and higher.",
-      "trap": "gpmc.msc is the Group Policy Management Console for an Active Directory environment. The question says 'without a domain controller'.",
-      "tags": ["features", "gpedit"],
-      "sourceTranscript": "pm-1202-windows-features",
+      "correct": "d",
+      "explanation": "BitLocker is the full-disk encryption feature limited to Pro and Enterprise editions ('BitLocker is for business').",
+      "trap": "EFS encrypts individual files and folders and is available in all editions, including Home.",
+      "tags": ["bitlocker", "efs", "pro", "enterprise"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.005",
       "type": "multiple-choice",
-      "stem": "A user in Germany received a 'Windows 11 Pro N' license. After installing, video files won't play in any Microsoft app. What is the cause?",
+      "stem": "What is the correct contrast between EFS and BitLocker on Windows?",
       "choices": [
-        { "id": "a", "text": "Pro N requires a separate codec license from Microsoft" },
-        { "id": "b", "text": "N editions ship without media playback utilities; install the Media Feature Pack" },
-        { "id": "c", "text": "Windows 11 Pro N is a 32-bit edition and the video files are 64-bit" },
-        { "id": "d", "text": "Pro N is region-locked and the videos are from outside Germany" }
+        { "id": "a", "text": "EFS encrypts the entire disk; BitLocker encrypts individual files" },
+        { "id": "b", "text": "EFS encrypts individual files/folders and is in all editions; BitLocker encrypts the full disk and is Pro/Enterprise only" },
+        { "id": "c", "text": "Both encrypt the whole disk, but EFS requires TPM and BitLocker does not" },
+        { "id": "d", "text": "BitLocker is the macOS encryption tool; EFS is Windows-only" }
       ],
       "correct": "b",
-      "explanation": "Windows N editions ship without Windows Media Player and other multimedia utilities. Install the Media Feature Pack via Settings > Apps > Optional Features.",
-      "trap": "Other answers invent restrictions that don't exist. The N is purely about bundled media components.",
-      "tags": ["editions", "n-version"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "explanation": "EFS = individual files/folders, every edition. BitLocker = full-disk encryption, Pro and Enterprise only.",
+      "trap": "Watch for the swapped version (EFS = whole disk, BitLocker = single files); the mnemonic is 'BitLocker is for Business' and covers the full disk.",
+      "tags": ["efs", "bitlocker"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.006",
       "type": "multiple-choice",
-      "stem": "A help desk tech needs to remotely control a colleague's desktop running Windows 11 Home for troubleshooting. The remote machine should host the session. What is the issue?",
+      "stem": "What is the maximum supported RAM on 64-bit Windows 10/11 Home?",
       "choices": [
-        { "id": "a", "text": "Windows 11 Home cannot host an RDP session; it can only be a client" },
-        { "id": "b", "text": "RDP requires BitLocker to be enabled" },
-        { "id": "c", "text": "Both endpoints must be on the same domain" },
-        { "id": "d", "text": "Windows Defender Firewall blocks RDP by default and must be disabled" }
+        { "id": "a", "text": "4 GB" },
+        { "id": "b", "text": "16 GB" },
+        { "id": "c", "text": "128 GB" },
+        { "id": "d", "text": "6 TB" }
       ],
-      "correct": "a",
-      "explanation": "RDP server (host) is a Pro+ feature. Home can only initiate RDP sessions as a client, not host them.",
-      "trap": "Disabling the firewall isn't required to use RDP; the firewall has explicit RDP rules.",
-      "tags": ["features", "rdp"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "correct": "c",
+      "explanation": "64-bit Windows Home is capped at 128 GB of RAM.",
+      "trap": "The 4 GB number is the 32-bit Windows ceiling, not the 64-bit Home ceiling. 6 TB is the Enterprise / Pro for Workstations ceiling.",
+      "tags": ["home", "windows-editions"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.007",
-      "type": "matching",
-      "stem": "Match each Windows feature to the LOWEST edition that supports it.",
-      "pairs": [
-        { "leftId": "l1", "leftText": "Microsoft Account integration", "rightId": "r1", "rightText": "Home" },
-        { "leftId": "l2", "leftText": "BitLocker (full)", "rightId": "r2", "rightText": "Pro" },
-        { "leftId": "l3", "leftText": "Hyper-V virtualization", "rightId": "r3", "rightText": "Pro (Windows 11)" },
-        { "leftId": "l4", "leftText": "AppLocker (app allow/block)", "rightId": "r4", "rightText": "Enterprise" },
-        { "leftId": "l5", "leftText": "ReFS on a desktop OS", "rightId": "r5", "rightText": "Enterprise / Pro for Workstations" }
+      "type": "multiple-choice",
+      "stem": "Which Windows edition adds AppLocker, BranchCache, and (in Windows 11) advanced MDM/MAM features and is licensed via volume licensing for large organizations?",
+      "choices": [
+        { "id": "a", "text": "Home" },
+        { "id": "b", "text": "Pro" },
+        { "id": "c", "text": "Pro for Workstations" },
+        { "id": "d", "text": "Enterprise" }
       ],
-      "explanation": "Each row shows the minimum edition with that feature. Memorizing these is the heart of 1.3.",
-      "tags": ["editions", "features"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "correct": "d",
+      "explanation": "Enterprise is the volume-licensed edition that adds AppLocker, BranchCache, granular UX control, and advanced MDM/MAM in Windows 11.",
+      "trap": "Pro adds the business toolkit (BitLocker, Hyper-V, domain join) but not AppLocker / BranchCache / advanced MDM.",
+      "tags": ["enterprise", "windows-editions"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.008",
-      "type": "multi-select",
-      "stem": "Which statements about Windows 11 are TRUE? Select all that apply.",
+      "type": "multiple-choice",
+      "stem": "A developer wants to run Hyper-V on a Windows 11 laptop. Which is the lowest edition that supports it?",
       "choices": [
-        { "id": "a", "text": "Drops 32-bit CPU support" },
-        { "id": "b", "text": "Includes Windows Copilot AI integration" },
-        { "id": "c", "text": "Home edition can join an Active Directory domain" },
-        { "id": "d", "text": "Requires TPM 2.0 and Secure Boot" }
+        { "id": "a", "text": "Home" },
+        { "id": "b", "text": "Pro" },
+        { "id": "c", "text": "Enterprise only" },
+        { "id": "d", "text": "Only Pro for Workstations" }
       ],
-      "correct": ["a", "b", "d"],
-      "explanation": "Windows 11 is 64-bit only (a), includes Copilot (b), and requires TPM 2.0 + Secure Boot (d). Home cannot join a domain - that's still a Pro+ feature.",
-      "trap": "(c) is the consistent gate across BOTH Windows 10 and Windows 11 Home. Home never joins domains.",
-      "tags": ["win11", "features"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "correct": "b",
+      "explanation": "Hyper-V is part of the Pro business toolkit (alongside BitLocker, domain join, RDP host, and group policy).",
+      "trap": "Hyper-V is NOT in Home. You don't need to jump all the way to Enterprise; Pro is enough.",
+      "tags": ["hyper-v", "pro"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     },
     {
       "id": "1.3.q.009",
       "type": "multiple-choice",
-      "stem": "Which Windows edition is the LOWEST that supports the Resilient File System (ReFS) for desktop use in Windows 11?",
+      "stem": "Which statement about Remote Desktop Protocol (RDP) and Windows editions is correct?",
       "choices": [
-        { "id": "a", "text": "Home" },
-        { "id": "b", "text": "Pro" },
-        { "id": "c", "text": "Enterprise" },
-        { "id": "d", "text": "Windows Server only" }
+        { "id": "a", "text": "Home can only be an RDP client; Pro and Enterprise can be an RDP host" },
+        { "id": "b", "text": "All editions can act as both RDP client and RDP host" },
+        { "id": "c", "text": "Home can be an RDP host; Pro can only be the client" },
+        { "id": "d", "text": "RDP is not supported on Windows 11 at all" }
+      ],
+      "correct": "a",
+      "explanation": "Windows Home can only act as an RDP client (connect out). Pro and Enterprise can act as an RDP host (accept incoming sessions).",
+      "trap": "The reversed claim (Home as host, Pro as client only) is the trap; remember Home connects outward, business editions also accept inbound.",
+      "tags": ["rdp", "home", "pro"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "1.3.q.010",
+      "type": "multiple-choice",
+      "stem": "Two Windows 11 hardware requirements that are mandatory regardless of edition are:",
+      "choices": [
+        { "id": "a", "text": "Floppy drive and PS/2 keyboard" },
+        { "id": "b", "text": "ReFS file system and BitLocker enabled" },
+        { "id": "c", "text": "TPM 2.0 and UEFI BIOS" },
+        { "id": "d", "text": "32-bit CPU and 4 GB RAM ceiling" }
       ],
       "correct": "c",
-      "explanation": "Windows 11 Enterprise supports ReFS on the desktop side, matching what's in Windows Server.",
-      "trap": "Pro for Workstations is the Windows 10 path to ReFS; on Windows 11 it's Enterprise.",
-      "tags": ["editions", "refs", "win11"],
-      "sourceTranscript": "pm-1202-overview-of-windows",
+      "explanation": "Windows 11 mandates TPM 2.0 and a UEFI BIOS on every edition.",
+      "trap": "ReFS is a Pro for Workstations feature, not a Windows 11 mandate. BitLocker is not required to install.",
+      "tags": ["tpm", "uefi", "windows-editions"],
+      "sourceTranscript": "core2-cram",
       "needsReview": false
     }
   ]

@@ -1,0 +1,177 @@
+{
+  "objective": "3.1",
+  "questions": [
+    {
+      "id": "3.1.q.001",
+      "type": "multiple-choice",
+      "stem": "A Windows PC shows a Blue Screen of Death (BSOD) with a stop code. What does a BSOD indicate, and what is the primary clue to investigate?",
+      "choices": [
+        { "id": "a", "text": "A minor application glitch; ignore the on-screen text" },
+        { "id": "b", "text": "A critical stop error, usually bad hardware or a faulty driver; the stop code is the primary clue" },
+        { "id": "c", "text": "A successful Windows update; no action needed" },
+        { "id": "d", "text": "A network outage; check the router" }
+      ],
+      "correct": "b",
+      "explanation": "A BSOD is a critical stop error where the OS shuts down to prevent damage, usually due to bad hardware or a faulty driver. The stop code is your primary clue.",
+      "trap": "It is not a minor app glitch; the OS halts entirely, and the stop code should be researched, not ignored.",
+      "tags": ["bsod", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.002",
+      "type": "multiple-choice",
+      "stem": "A user reports the computer is running slowly. What is the recommended FIRST tool to investigate resource usage?",
+      "choices": [
+        { "id": "a", "text": "Registry Editor" },
+        { "id": "b", "text": "Disk Defragmenter" },
+        { "id": "c", "text": "Task Manager" },
+        { "id": "d", "text": "Device Manager" }
+      ],
+      "correct": "c",
+      "explanation": "For degraded performance, your first stop is Task Manager - check the Performance tab for spikes and sort the Processes tab to find resource hogs.",
+      "trap": "Defragmenting blindly does not diagnose what's consuming CPU/memory/disk; Task Manager shows the actual cause first.",
+      "tags": ["task-manager", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["what-first"]
+    },
+    {
+      "id": "3.1.q.003",
+      "type": "multiple-choice",
+      "stem": "A computer displays 'Operating system not found' at boot. What should you check FIRST?",
+      "choices": [
+        { "id": "a", "text": "Whether a bootable USB drive was left plugged in" },
+        { "id": "b", "text": "Replace the motherboard" },
+        { "id": "c", "text": "Reinstall all applications" },
+        { "id": "d", "text": "Increase the paging file size" }
+      ],
+      "correct": "a",
+      "explanation": "The first thing to check for an 'operating system not found' error is whether a non-bootable USB drive was left plugged in, causing the system to try booting from it.",
+      "trap": "Replacing the motherboard is a drastic last resort; always check the simple cause (wrong boot device) first.",
+      "tags": ["troubleshooting", "usb-boot"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false,
+      "weakSpotTags": ["what-first"]
+    },
+    {
+      "id": "3.1.q.004",
+      "type": "multiple-choice",
+      "stem": "Windows Startup Repair failed to fix a boot problem. Which recovery-console command manually rebuilds the boot configuration database?",
+      "choices": [
+        { "id": "a", "text": "sfc /scannow" },
+        { "id": "b", "text": "chkdsk /r" },
+        { "id": "c", "text": "bootrec /rebuildbcd" },
+        { "id": "d", "text": "gpupdate /force" }
+      ],
+      "correct": "c",
+      "explanation": "bootrec /rebuildbcd manually rebuilds the Boot Configuration Database when automatic Startup Repair can't fix the issue.",
+      "trap": "sfc /scannow repairs system files but does not rebuild the boot configuration database.",
+      "tags": ["bootrec", "startup-repair", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.005",
+      "type": "multiple-choice",
+      "stem": "An application keeps crashing. Which tool logs every action and error in Windows and is your primary place to investigate?",
+      "choices": [
+        { "id": "a", "text": "Disk Cleanup" },
+        { "id": "b", "text": "Resource Monitor" },
+        { "id": "c", "text": "System Configuration" },
+        { "id": "d", "text": "Event Viewer" }
+      ],
+      "correct": "d",
+      "explanation": "Event Viewer logs every action and error in Windows, making it the primary tool for investigating application crashes.",
+      "trap": "Resource Monitor shows live resource usage but does not keep the historical error log you need to diagnose a crash.",
+      "tags": ["event-viewer", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.006",
+      "type": "multiple-choice",
+      "stem": "For a more user-friendly view of an application's stability over time, which tool should you check?",
+      "choices": [
+        { "id": "a", "text": "Reliability Monitor" },
+        { "id": "b", "text": "Disk Management" },
+        { "id": "c", "text": "Registry Editor" },
+        { "id": "d", "text": "Task Scheduler" }
+      ],
+      "correct": "a",
+      "explanation": "Reliability Monitor tracks an application's stability over time in a user-friendly timeline view.",
+      "trap": "Disk Management handles partitions and volumes, not application stability history.",
+      "tags": ["reliability-monitor", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.007",
+      "type": "multiple-choice",
+      "stem": "A system shows low-memory warnings. Windows uses a paging file on the drive as slow overflow RAM. What is this called, and where do you configure it?",
+      "choices": [
+        { "id": "a", "text": "ReadyBoost; configured in Device Manager" },
+        { "id": "b", "text": "Virtual memory; configured in Advanced system settings" },
+        { "id": "c", "text": "BitLocker; configured in Control Panel" },
+        { "id": "d", "text": "Superfetch; configured in Disk Cleanup" }
+      ],
+      "correct": "b",
+      "explanation": "Virtual memory is the paging file on the hard drive that acts as slow overflow RAM; you configure it in Advanced system settings.",
+      "trap": "ReadyBoost uses a USB drive as cache and is a different feature from the virtual-memory paging file.",
+      "tags": ["virtual-memory", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.008",
+      "type": "multiple-choice",
+      "stem": "A 'USB controller resources exceeded' warning appears. What is the quickest recommended solution?",
+      "choices": [
+        { "id": "a", "text": "Reinstall Windows" },
+        { "id": "b", "text": "Update the BIOS" },
+        { "id": "c", "text": "Disable the firewall" },
+        { "id": "d", "text": "Unplug the device and try a different USB port, which may use a separate controller" }
+      ],
+      "correct": "d",
+      "explanation": "The quickest fix is to unplug the device and try a different USB port, which may connect to a separate controller on the motherboard.",
+      "trap": "Reinstalling Windows is overkill; the issue is too many complex devices on one controller, solved by moving ports.",
+      "tags": ["usb-controller", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.009",
+      "type": "multiple-choice",
+      "stem": "A Windows service won't start. According to the review, what should you check first about that service?",
+      "choices": [
+        { "id": "a", "text": "Whether it has dependencies (other services that must run first) and the correct account permissions" },
+        { "id": "b", "text": "Whether the monitor is plugged in" },
+        { "id": "c", "text": "Whether the keyboard layout is correct" },
+        { "id": "d", "text": "Whether the browser cache is full" }
+      ],
+      "correct": "a",
+      "explanation": "Open the Services app and check whether the service has dependencies (other services that must run first) and verify its account permissions. If it's a Windows service, run sfc; if it's part of an app, reinstall the app.",
+      "trap": "Monitor, keyboard, and browser cache are unrelated to whether a background service can start.",
+      "tags": ["troubleshooting", "sfc"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "3.1.q.010",
+      "type": "multiple-choice",
+      "stem": "A computer's clock keeps drifting and becoming inaccurate. What is the simplest fix?",
+      "choices": [
+        { "id": "a", "text": "Replace the hard drive" },
+        { "id": "b", "text": "Reinstall the OS" },
+        { "id": "c", "text": "Ensure 'set time automatically' is enabled so it syncs with a time server" },
+        { "id": "d", "text": "Disable Windows Update" }
+      ],
+      "correct": "c",
+      "explanation": "Enable 'set time automatically' in the Windows Time & Language settings so the clock syncs with a time server.",
+      "trap": "Time drift is normal and corrected by syncing with a time server, not by replacing hardware or reinstalling Windows.",
+      "tags": ["time-drift", "troubleshooting"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

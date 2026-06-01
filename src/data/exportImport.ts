@@ -73,7 +73,7 @@ export function parseBundle(raw: string): ImportResult {
 }
 
 export function applyBundle(bundle: ExportBundle): void {
-  localStorage.setItem('aplus-prep:progress:v1', JSON.stringify(bundle.progress));
-  localStorage.setItem('aplus-prep:srs:v1', JSON.stringify(bundle.srs));
-  localStorage.setItem('aplus-prep:quiz:v1', JSON.stringify(bundle.quiz));
+  localStorage.setItem('aplus-prep:progress:v2', JSON.stringify(bundle.progress));
+  localStorage.setItem('aplus-prep:srs:v2', JSON.stringify(bundle.srs));
+  localStorage.setItem('aplus-prep:quiz:v2', JSON.stringify(bundle.quiz));
 }
