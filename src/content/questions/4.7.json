@@ -1,0 +1,175 @@
+{
+  "objective": "4.7",
+  "questions": [
+    {
+      "id": "4.7.q.001",
+      "type": "multiple-choice",
+      "stem": "A technician explains an issue to a non-technical user. Instead of 'the DHCP scope is exhausted,' what should they say?",
+      "choices": [
+        { "id": "a", "text": "'The TCP handshake failed on port 67'" },
+        { "id": "b", "text": "'We're freeing up space for more devices to connect'" },
+        { "id": "c", "text": "'Your APIPA lease has expired'" },
+        { "id": "d", "text": "'The subnet mask is misconfigured'" }
+      ],
+      "correct": "b",
+      "explanation": "Avoid jargon - you are the translator between the technical world and the client. Plain language like 'freeing up space for more devices' communicates the idea without confusing the user.",
+      "trap": "The other options just swap one piece of jargon for another, which is exactly what you should avoid with a non-technical user.",
+      "tags": ["communication", "professionalism"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.002",
+      "type": "multiple-choice",
+      "stem": "Using the LAST-style active-listening guidance, what is the core habit a technician must STOP doing?",
+      "choices": [
+        { "id": "a", "text": "Taking notes" },
+        { "id": "b", "text": "Asking probing questions" },
+        { "id": "c", "text": "Interrupting the customer" },
+        { "id": "d", "text": "Clarifying the issue" }
+      ],
+      "correct": "c",
+      "explanation": "We have a bad habit of interrupting because we think we know the answer. Stop interrupting - listen to the entire story, ask probing questions, and take notes.",
+      "trap": "Note-taking, probing questions, and clarifying are all GOOD listening behaviors; interrupting is the one to stop.",
+      "tags": ["communication", "professionalism"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.003",
+      "type": "multiple-choice",
+      "stem": "Why should a technician repeat the issue back to the customer 'like a mirror'?",
+      "choices": [
+        { "id": "a", "text": "To fill time while thinking of a fix" },
+        { "id": "b", "text": "To confirm both parties understand the problem the same way" },
+        { "id": "c", "text": "To show off technical vocabulary" },
+        { "id": "d", "text": "To avoid having to take notes" }
+      ],
+      "correct": "b",
+      "explanation": "Clarifying by repeating the issue back ensures you and the customer share the same understanding of the problem.",
+      "trap": "Mirroring is about mutual understanding, not stalling or showing off jargon.",
+      "tags": ["communication", "professionalism"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.004",
+      "type": "multiple-choice",
+      "stem": "A technician is running late to an appointment. What is the professional thing to do?",
+      "choices": [
+        { "id": "a", "text": "Say nothing and hope the customer doesn't notice" },
+        { "id": "b", "text": "Cancel the appointment entirely" },
+        { "id": "c", "text": "Arrive late and blame traffic" },
+        { "id": "d", "text": "Call ahead to let the customer know" }
+      ],
+      "correct": "d",
+      "explanation": "Be on time; if you are going to be late, call. Proactive communication respects the customer's time.",
+      "trap": "Staying silent or making excuses on arrival damages trust; calling ahead is the professional move.",
+      "tags": ["professionalism", "communication"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.005",
+      "type": "multiple-choice",
+      "stem": "How should a technician handle a difficult or upset customer?",
+      "choices": [
+        { "id": "a", "text": "Educate them without being judgmental, rather than being defensive or argumentative" },
+        { "id": "b", "text": "Argue back to establish authority" },
+        { "id": "c", "text": "Ignore them until they calm down" },
+        { "id": "d", "text": "Escalate immediately to avoid dealing with them" }
+      ],
+      "correct": "a",
+      "explanation": "With a difficult customer, don't be defensive or argumentative - be a teacher and educate them without judgment.",
+      "trap": "Arguing or ignoring the customer escalates conflict; the goal is calm, non-judgmental education.",
+      "tags": ["professionalism", "communication"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.006",
+      "type": "multiple-choice",
+      "stem": "A repair will take two weeks. According to 'expectation is reality,' what should the technician do?",
+      "choices": [
+        { "id": "a", "text": "Tell the customer it'll be done tomorrow to keep them happy" },
+        { "id": "b", "text": "Say nothing until it's finished" },
+        { "id": "c", "text": "Tell the customer the two-week timeline upfront" },
+        { "id": "d", "text": "Quietly extend the deadline as needed" }
+      ],
+      "correct": "c",
+      "explanation": "Manage expectations: if a repair takes two weeks, tell them upfront and communicate status proactively so they don't feel forgotten.",
+      "trap": "Underpromising a fake short timeline guarantees disappointment; honesty upfront sets the right expectation.",
+      "tags": ["professionalism", "communication"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.007",
+      "type": "multiple-choice",
+      "stem": "What does the review recommend regarding a technician's attire on the job?",
+      "choices": [
+        { "id": "a", "text": "Attire doesn't matter as long as the work is good" },
+        { "id": "b", "text": "Dress professionally (formal or business casual) to set the tone" },
+        { "id": "c", "text": "Always wear a full tuxedo" },
+        { "id": "d", "text": "Wear whatever the customer is wearing" }
+      ],
+      "correct": "b",
+      "explanation": "Your attire is your uniform - whether formal or business casual, dress professionally because it sets the tone.",
+      "trap": "Dismissing attire as irrelevant ignores the professional impression it creates; the standard is professional dress.",
+      "tags": ["professionalism"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.008",
+      "type": "multiple-choice",
+      "stem": "Which behavior counts as avoiding distractions during a customer interaction?",
+      "choices": [
+        { "id": "a", "text": "Taking personal calls and texting while working" },
+        { "id": "b", "text": "Checking social media between steps" },
+        { "id": "c", "text": "Refraining from texting and personal calls while with the customer" },
+        { "id": "d", "text": "Watching videos on your phone during the repair" }
+      ],
+      "correct": "c",
+      "explanation": "Avoid distractions like texting or personal calls while you're with the customer; give them your full attention.",
+      "trap": "Texting, social media, and videos are exactly the distractions to avoid - not examples of avoiding them.",
+      "tags": ["professionalism"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.009",
+      "type": "multiple-choice",
+      "stem": "When offering a customer repair-or-replace options, what should the technician do?",
+      "choices": [
+        { "id": "a", "text": "Decide for them without explanation" },
+        { "id": "b", "text": "Only ever recommend the most expensive option" },
+        { "id": "c", "text": "Refuse to give options to avoid liability" },
+        { "id": "d", "text": "Explain the pros and cons of each option clearly" }
+      ],
+      "correct": "d",
+      "explanation": "Offer clear repair or replacement options and explain the pros and cons of each so the customer can make an informed choice.",
+      "trap": "Deciding for the customer or pushing the priciest option undermines trust; lay out the trade-offs and let them choose.",
+      "tags": ["professionalism", "communication"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.7.q.010",
+      "type": "multiple-choice",
+      "stem": "After completing a job, why should a technician follow up with the customer?",
+      "choices": [
+        { "id": "a", "text": "To verify satisfaction and catch any small issues that slipped through" },
+        { "id": "b", "text": "To upsell additional unrelated products" },
+        { "id": "c", "text": "To close the ticket without the customer's input" },
+        { "id": "d", "text": "Following up is unnecessary once the fix is done" }
+      ],
+      "correct": "a",
+      "explanation": "Follow up after the job to verify satisfaction; this catches any small issues that may have slipped through the cracks.",
+      "trap": "Follow-up is about confirming the fix worked, not upselling or skipping the customer's confirmation.",
+      "tags": ["professionalism", "communication"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}

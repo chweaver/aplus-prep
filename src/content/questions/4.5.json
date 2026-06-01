@@ -1,0 +1,175 @@
+{
+  "objective": "4.5",
+  "questions": [
+    {
+      "id": "4.5.q.001",
+      "type": "multiple-choice",
+      "stem": "What does an MSDS (also called an SDS) provide, and who mandates it?",
+      "choices": [
+        { "id": "a", "text": "Handling and spill/fire information for hazardous materials, mandated by OSHA" },
+        { "id": "b", "text": "Warranty terms for a device, mandated by the manufacturer" },
+        { "id": "c", "text": "Network configuration details, mandated by the ISP" },
+        { "id": "d", "text": "Software license terms, mandated by the vendor" }
+      ],
+      "correct": "a",
+      "explanation": "The Material Safety Data Sheet (SDS) is your handling and first-aid manual for hazardous items like toner and batteries - mandated by OSHA. It tells you what's in the product and how to handle a spill or fire.",
+      "trap": "MSDS is about hazardous-material safety, not warranties, networking, or software licensing.",
+      "tags": ["msds", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.002",
+      "type": "multiple-choice",
+      "stem": "How should used batteries and toner cartridges be disposed of?",
+      "choices": [
+        { "id": "a", "text": "In the regular office trash" },
+        { "id": "b", "text": "Recycled or taken to designated hazardous-waste facilities" },
+        { "id": "c", "text": "Buried on company property" },
+        { "id": "d", "text": "Incinerated on site" }
+      ],
+      "correct": "b",
+      "explanation": "Batteries and toner cartridges must be recycled or disposed of at designated hazardous-waste facilities; many manufacturers include return labels.",
+      "trap": "These items cannot go in the regular trash - they are hazardous waste.",
+      "tags": ["msds", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.003",
+      "type": "multiple-choice",
+      "stem": "What is the target 'Goldilocks zone' for humidity in a server room, and why does it matter?",
+      "choices": [
+        { "id": "a", "text": "Around 10%, to keep things very dry" },
+        { "id": "b", "text": "Around 90%, to prevent any static" },
+        { "id": "c", "text": "Around 50%, balancing static risk (too low) against condensation/corrosion (too high)" },
+        { "id": "d", "text": "Humidity has no effect on equipment" }
+      ],
+      "correct": "c",
+      "explanation": "Aim for about 50% humidity: too low risks static shock, too high risks condensation or corrosion.",
+      "trap": "Both extremes are harmful; 10% invites static and 90% invites corrosion. The balance point is ~50%.",
+      "tags": ["humidity", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.004",
+      "type": "multiple-choice",
+      "stem": "A PC is clogged with dust. What is the recommended way to clean it?",
+      "choices": [
+        { "id": "a", "text": "Use a standard vacuum inside the case" },
+        { "id": "b", "text": "Blow it out with your breath" },
+        { "id": "c", "text": "Rinse it under water" },
+        { "id": "d", "text": "Take it outside and use compressed air" }
+      ],
+      "correct": "d",
+      "explanation": "Take a dusty PC outside and use compressed air. Keep the area ventilated.",
+      "trap": "Never use a standard vacuum inside a case - it generates static that can damage components.",
+      "tags": ["humidity", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.005",
+      "type": "multiple-choice",
+      "stem": "Which power problems is a UPS specifically designed to keep systems running through?",
+      "choices": [
+        { "id": "a", "text": "An outage, using a battery to keep systems running" },
+        { "id": "b", "text": "Slow internet connections" },
+        { "id": "c", "text": "Overheating CPUs" },
+        { "id": "d", "text": "Failed hard drives" }
+      ],
+      "correct": "a",
+      "explanation": "A UPS (uninterruptible power supply) uses a battery to keep systems running during an outage.",
+      "trap": "A UPS handles power issues (surges, sags, outages), not connectivity, cooling, or storage failures.",
+      "tags": ["ups", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.006",
+      "type": "multiple-choice",
+      "stem": "Which UPS type runs the device off the battery 100% of the time for zero switchover delay?",
+      "choices": [
+        { "id": "a", "text": "Standby" },
+        { "id": "b", "text": "Line-interactive" },
+        { "id": "c", "text": "Online" },
+        { "id": "d", "text": "Surge-only" }
+      ],
+      "correct": "c",
+      "explanation": "An online UPS runs the load off the battery 100% of the time, giving zero transfer delay when utility power fails.",
+      "trap": "Standby switches over only when power fails (a brief delay); online has no delay because it's always on battery.",
+      "tags": ["ups", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.007",
+      "type": "multiple-choice",
+      "stem": "Which UPS type is described as fixing voltage drops (sags) without fully switching to battery?",
+      "choices": [
+        { "id": "a", "text": "Online" },
+        { "id": "b", "text": "Line-interactive" },
+        { "id": "c", "text": "Standby" },
+        { "id": "d", "text": "Offline" }
+      ],
+      "correct": "b",
+      "explanation": "A line-interactive UPS corrects voltage drops (sags) on its own, between standby and online in capability.",
+      "trap": "Standby only kicks in on full power loss; the type that actively fixes voltage sags is line-interactive.",
+      "tags": ["ups", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.008",
+      "type": "multiple-choice",
+      "stem": "A site doesn't need battery backup but wants protection from voltage spikes. Which device fits?",
+      "choices": [
+        { "id": "a", "text": "An online UPS" },
+        { "id": "b", "text": "A standby UPS" },
+        { "id": "c", "text": "A line-interactive UPS" },
+        { "id": "d", "text": "A surge suppressor" }
+      ],
+      "correct": "d",
+      "explanation": "If you don't need battery backup, a surge suppressor still absorbs voltage spikes.",
+      "trap": "Any UPS includes a battery you don't need here; a surge suppressor handles spikes without that cost.",
+      "tags": ["surge-suppressor", "ups", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.009",
+      "type": "multiple-choice",
+      "stem": "When buying a surge suppressor, what do you want from the joule rating and the let-through voltage?",
+      "choices": [
+        { "id": "a", "text": "A high joule rating (over 600) and a low let-through voltage (ideally 330 V or less)" },
+        { "id": "b", "text": "A low joule rating and a high let-through voltage" },
+        { "id": "c", "text": "A joule rating of exactly zero and any let-through voltage" },
+        { "id": "d", "text": "Joule and let-through ratings don't matter" }
+      ],
+      "correct": "a",
+      "explanation": "Look for a high joule rating (over 600 is best) and a low let-through voltage (ideally 330 V or less). Lower let-through means longer equipment life.",
+      "trap": "You want let-through LOW, not high - the lower the voltage that gets through, the better the protection.",
+      "tags": ["surge-suppressor", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    },
+    {
+      "id": "4.5.q.010",
+      "type": "multiple-choice",
+      "stem": "On a surge suppressor, what does a lower let-through voltage rating mean for your equipment?",
+      "choices": [
+        { "id": "a", "text": "Shorter equipment life" },
+        { "id": "b", "text": "More heat output" },
+        { "id": "c", "text": "Longer equipment life" },
+        { "id": "d", "text": "Faster internet speeds" }
+      ],
+      "correct": "c",
+      "explanation": "Lower let-through leads to longer life - less excess voltage reaches the equipment.",
+      "trap": "Lower let-through is better, so it lengthens (not shortens) equipment life; it has nothing to do with internet speed.",
+      "tags": ["surge-suppressor", "safety"],
+      "sourceTranscript": "core2-cram",
+      "needsReview": false
+    }
+  ]
+}
