@@ -1,4 +1,4 @@
-import { loadContent } from '../content/content-loader';
+import { isObjectiveAvailable, loadContent } from '../content/content-loader';
 import { WEAK_SPOT_TAGS, WEAK_SPOTS, type WeakSpotTag } from '../content/weak-spots';
 import type { SrsState } from '../srs/types';
 import type { QuizState } from '../quiz/types';
@@ -39,7 +39,8 @@ export function aggregateWeakSpots(srs: SrsState, quiz: QuizState): TagSummary[]
     let cardStrong = 0;
     let cardWeak = 0;
 
-    for (const flashcardFile of content.flashcards.values()) {
+    for (const [objId, flashcardFile] of content.flashcards.entries()) {
+      if (!isObjectiveAvailable(objId)) continue;
       for (const card of flashcardFile.cards) {
         if (!card.weakSpotTags?.includes(tag)) continue;
         cardTotal++;
@@ -60,7 +61,8 @@ export function aggregateWeakSpots(srs: SrsState, quiz: QuizState): TagSummary[]
     let questionAttempted = 0;
     let questionCorrect = 0;
 
-    for (const qFile of content.questions.values()) {
+    for (const [objId, qFile] of content.questions.entries()) {
+      if (!isObjectiveAvailable(objId)) continue;
       for (const q of qFile.questions) {
         if (!q.weakSpotTags?.includes(tag)) continue;
         questionTotal++;
@@ -75,9 +77,7 @@ export function aggregateWeakSpots(srs: SrsState, quiz: QuizState): TagSummary[]
     const hasCardData = cardTotal > 0 && cardSeen > 0;
     const hasQuestionData = questionTotal > 0 && questionAttempted > 0;
 
-    let score = 0;
     if (!hasCardData && !hasQuestionData) {
-      // No data at all
       return {
         tag, label: meta.label, blurb: meta.blurb,
         relatedObjectives: meta.relatedObjectives,
@@ -88,6 +88,7 @@ export function aggregateWeakSpots(srs: SrsState, quiz: QuizState): TagSummary[]
       };
     }
 
+    let score = 0;
     let totalWeight = 0;
     if (hasCardData) {
       const cardScore = cardTotal > 0
@@ -130,4 +131,11 @@ export function sortByWeakest(summaries: TagSummary[]): TagSummary[] {
     if (od !== 0) return od;
     return a.score - b.score; // lower score first within same strength
   });
+}
+
+// A tag is visible only if there's at least one card OR question for it in
+// currently-available content. Tags with zero matching available content are
+// hidden from the dashboard.
+export function hasAvailableContent(s: TagSummary): boolean {
+  return s.cardTotal > 0 || s.questionTotal > 0;
 }
