@@ -1,0 +1,226 @@
+[
+  {
+    "domain": "D4",
+    "family": "federation-protocols",
+    "question": "A user clicks 'Log in with corporate SSO' on a cloud HR web app, and the browser is redirected to the company identity provider, which returns a signed XML assertion granting access. Which protocol is in use?",
+    "options": ["LDAP", "OAuth", "OpenID Connect", "SAML"],
+    "correctIndex": 3,
+    "explanation": "SAML. XML assertions exchanged between an identity provider and a service provider for browser SSO are SAML. The tell: SAML = enterprise web SSO via XML assertions; OAuth = delegated authorization via tokens; OpenID Connect = authentication layer built on OAuth; LDAP = directory lookup of users and groups."
+  },
+  {
+    "domain": "D4",
+    "family": "federation-protocols",
+    "question": "A photo-printing app asks to access a user's cloud storage. The user approves, and the storage provider issues the app a token to retrieve files on the user's behalf without ever sharing the user's password. Which protocol enables this delegated access?",
+    "options": ["OAuth", "SAML", "LDAP", "OpenID Connect"],
+    "correctIndex": 0,
+    "explanation": "OAuth. Delegated, token-based access that lets one app act on your behalf without your password is OAuth. The tell: OAuth = delegated API/app authorization via tokens; OpenID Connect = adds an identity/authentication layer on OAuth; SAML = XML browser SSO for enterprise apps; LDAP = directory query protocol."
+  },
+  {
+    "domain": "D4",
+    "family": "federation-protocols",
+    "question": "Which protocol is used to query a directory service to look up user accounts, group memberships, and attributes in an on-premises Active Directory?",
+    "options": ["OAuth", "SAML", "LDAP", "OpenID Connect"],
+    "correctIndex": 2,
+    "explanation": "LDAP. Querying a directory for users and groups is LDAP. The tell: LDAP = directory lookup protocol; SAML = XML web SSO assertions; OAuth = delegated token authorization; OpenID Connect = authentication built on OAuth."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "In a military network, every file and user carries a classification label, and the operating system - not the file owner - decides access based on clearance levels that users cannot alter. Which model is this?",
+    "options": ["discretionary access control", "role-based access control", "rule-based access control", "mandatory access control"],
+    "correctIndex": 3,
+    "explanation": "Mandatory access control. System-enforced labels and clearances that users cannot change is mandatory access control. The tell: mandatory access control = system-set labels/clearances; discretionary access control = owner grants access; role-based access control = access by job role; rule-based access control = system-wide if/then rules."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "On a shared file server, the employee who created a folder can grant or revoke other users' access to it at their own discretion. Which access control model does this describe?",
+    "options": ["discretionary access control", "mandatory access control", "attribute-based access control", "role-based access control"],
+    "correctIndex": 0,
+    "explanation": "Discretionary access control. The data owner deciding who gets access is discretionary access control. The tell: discretionary access control = owner grants access; mandatory access control = system labels users cannot change; role-based access control = access by role; attribute-based access control = access by evaluated attributes."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "Access to a document is granted only when the requester is in the finance department, connecting from a corporate-managed device, during business hours, and the system evaluates all three conditions together. Which model is this?",
+    "options": ["role-based access control", "rule-based access control", "attribute-based access control", "mandatory access control"],
+    "correctIndex": 2,
+    "explanation": "Attribute-based access control. Combining multiple evaluated attributes such as department, device, and time is attribute-based access control. The tell: attribute-based access control = decision from multiple attributes; rule-based access control = a single system-wide if/then condition; role-based access control = based on job role; mandatory access control = system labels/clearances."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "A hospital assigns permissions to the 'nurse' group and the 'billing' group, and users receive access purely by which job group they are placed in. Which model is this?",
+    "options": ["attribute-based access control", "role-based access control", "discretionary access control", "rule-based access control"],
+    "correctIndex": 1,
+    "explanation": "Role-based access control. Granting access by job role or group membership is role-based access control. The tell: role-based access control = access by job role/group; rule-based access control = system-wide if/then rules; discretionary access control = owner-granted; attribute-based access control = multiple evaluated attributes."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "A login requires a password plus a fingerprint scan. The fingerprint satisfies which authentication factor?",
+    "options": ["something you know", "something you have", "somewhere you are", "something you are"],
+    "correctIndex": 3,
+    "explanation": "Something you are. A biometric such as a fingerprint is 'something you are.' The tell: something you know = password/PIN; something you have = token/phone/key; something you are = biometric; somewhere you are = geolocation."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "An app on the user's phone generates a rotating six-digit code that must be entered after the password. Which factor does the code represent?",
+    "options": ["something you have", "something you are", "something you know", "somewhere you are"],
+    "correctIndex": 0,
+    "explanation": "Something you have. A soft-token code from a device you possess is 'something you have.' The tell: something you have = token/phone/security key; something you know = password/PIN; something you are = biometric; somewhere you are = location."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "A small physical USB device that authenticates via a cryptographic challenge when tapped or inserted, with no code to type, is best described as which?",
+    "options": ["soft token", "hard token", "security key", "biometric"],
+    "correctIndex": 2,
+    "explanation": "Security key. A USB or NFC device using a cryptographic challenge with no code to type is a security key. The tell: security key = cryptographic hardware authenticator (FIDO), no code typed; hard token = physical device that displays a rotating code; soft token = app-generated code; biometric = a physical trait."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A policy prevents users from changing their password again until it has been in place for at least three days, stopping them from cycling back to a favorite password. Which setting is this?",
+    "options": ["expiration", "age", "complexity", "length"],
+    "correctIndex": 1,
+    "explanation": "Age. A minimum time before a password may be changed again is password age. The tell: age = minimum time before you can change again; expiration = forced change interval (maximum age); length = character count; complexity = character variety."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A breach investigation finds that one leaked password unlocked the employee's accounts on five different systems because the same password was used everywhere. Which weakness does this illustrate?",
+    "options": ["expiration", "length", "complexity", "reuse"],
+    "correctIndex": 3,
+    "explanation": "Reuse. Using one password across many accounts is reuse. The tell: reuse = same password across accounts; expiration = forced change interval; length = number of characters; complexity = character variety."
+  },
+  {
+    "domain": "D4",
+    "family": "pam",
+    "question": "An administrator normally has standard rights, but when a task requires it the system elevates the account to admin for exactly 30 minutes and then automatically removes the elevation. Which PAM technique is this?",
+    "options": ["just-in-time permissions", "password vaulting", "ephemeral credentials", "privileged session management"],
+    "correctIndex": 0,
+    "explanation": "Just-in-time permissions. Elevating rights only for the moment needed and then revoking is just-in-time. The tell: just-in-time permissions = temporary elevation then revoke; password vaulting = check out stored privileged passwords; ephemeral credentials = short-lived credentials that self-expire; privileged session management = monitor/record admin sessions."
+  },
+  {
+    "domain": "D4",
+    "family": "pam",
+    "question": "Administrators never know the actual root password; they check it out from a secured central store that logs the access and rotates the password after use. Which PAM capability is described?",
+    "options": ["just-in-time permissions", "ephemeral credentials", "privileged session management", "password vaulting"],
+    "correctIndex": 3,
+    "explanation": "Password vaulting. Storing and checking out privileged passwords from a secured vault is password vaulting. The tell: password vaulting = check out stored privileged passwords; just-in-time permissions = temporary elevation then revoke; ephemeral credentials = short-lived self-expiring credentials; privileged session management = record/monitor sessions."
+  },
+  {
+    "domain": "D4",
+    "family": "pam",
+    "question": "Which PAM approach issues credentials that exist only briefly and automatically expire after a single use, leaving nothing standing for an attacker to steal later?",
+    "options": ["password vaulting", "just-in-time permissions", "ephemeral credentials", "privileged session management"],
+    "correctIndex": 2,
+    "explanation": "Ephemeral credentials. Short-lived credentials that self-expire after use are ephemeral credentials. The tell: ephemeral credentials = short-lived, self-expiring; password vaulting = check out stored passwords; just-in-time permissions = temporary elevation then revoke; privileged session management = monitor/record sessions."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "An automated provisioning pipeline is configured so it can never open a storage bucket to the public internet or exceed a set spending limit, keeping every automated action within policy. What is this control called?",
+    "options": ["ticket creation", "guard rails", "escalation", "single point of failure"],
+    "correctIndex": 1,
+    "explanation": "Guard rails. Automated limits that keep actions within policy are guard rails. The tell: guard rails = automated policy limits; ticket creation = auto-open a tracked work item; escalation = auto-route to a higher tier; single point of failure = the automation becoming a critical dependency."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "A team automates nearly all onboarding through one orchestration script. When that script's server goes down, no new accounts can be created anywhere. Which risk of automation does this highlight?",
+    "options": ["guard rails", "single point of failure", "escalation", "ticket creation"],
+    "correctIndex": 1,
+    "explanation": "Single point of failure. The automation itself becoming a critical dependency that halts everything when it fails is a single point of failure. The tell: single point of failure = automation as critical dependency; guard rails = automated policy limits; escalation = auto-route to higher tier; ticket creation = auto-open a work item."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "An incident response team has just isolated the infected hosts from the network to stop the malware from spreading further. According to the standard incident response process, which phase comes next?",
+    "options": ["eradication", "recovery", "detection", "lessons learned"],
+    "correctIndex": 0,
+    "explanation": "Eradication. After containment stops the spread, eradication removes the threat and artifacts before recovery. The tell: containment = stop the spread; eradication = remove the threat/artifacts; recovery = restore to normal operations; lessons learned = post-incident review."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "After an alert fires, the team confirms the event is a genuine incident and determines how many systems and accounts are affected, but has not yet taken any action to stop it. Which phase is this?",
+    "options": ["detection", "analysis", "containment", "preparation"],
+    "correctIndex": 1,
+    "explanation": "Analysis. Confirming the incident is real and scoping its impact is analysis. The tell: detection = notice the event; analysis = confirm and scope it; containment = stop the spread; preparation = plans and tools before anything happens."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "The team has removed the malware and closed the vulnerability that allowed it in, and systems are now clean. According to the incident response lifecycle, which phase follows?",
+    "options": ["containment", "lessons learned", "recovery", "eradication"],
+    "correctIndex": 2,
+    "explanation": "Recovery. After eradication removes the threat, recovery restores systems to normal operation. The tell: eradication = remove the threat/artifacts; recovery = restore to normal operations; containment = stop the spread; lessons learned = post-incident improvement review."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "Two weeks after operations returned to normal, the team meets to document what went well, what failed, and how to improve their playbooks and tooling for next time. Which phase is this?",
+    "options": ["preparation", "recovery", "analysis", "lessons learned"],
+    "correctIndex": 3,
+    "explanation": "Lessons learned. The post-incident review to improve future response is lessons learned. The tell: lessons learned = post-incident review to improve; preparation = plans/tools before an incident; recovery = restore to normal operations; analysis = confirm and scope the incident."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-testing",
+    "question": "Even though no alerts have fired, analysts proactively search the environment for signs of an attacker who may have evaded existing detection tools. What activity is this?",
+    "options": ["threat hunting", "root cause analysis", "tabletop", "simulation"],
+    "correctIndex": 0,
+    "explanation": "Threat hunting. Proactively searching for threats that evaded detection is threat hunting. The tell: threat hunting = proactive search for undetected threats; root cause analysis = find the underlying cause after an incident; tabletop = talk through the plan; simulation = act out the scenario."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-testing",
+    "question": "After resolving an outage caused by a breach, the team works backward through the evidence to determine the single underlying failure that allowed it to happen. Which activity is this?",
+    "options": ["threat hunting", "simulation", "root cause analysis", "tabletop"],
+    "correctIndex": 2,
+    "explanation": "Root cause analysis. Determining the underlying cause after an incident is root cause analysis. The tell: root cause analysis = find the underlying cause post-incident; threat hunting = proactively search for hidden threats; simulation = act out a scenario; tabletop = discussion-based walkthrough."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "Each time a seized hard drive changes hands, an investigator signs a form recording who took it, when, and why, creating an unbroken documented trail for court. What is this record?",
+    "options": ["legal hold", "chain of custody", "acquisition", "e-discovery"],
+    "correctIndex": 1,
+    "explanation": "Chain of custody. The documented record of who handled evidence and when is chain of custody. The tell: chain of custody = documented handling trail; legal hold = preserve data for anticipated litigation; acquisition = collect/image the evidence; e-discovery = locate and produce electronic evidence for legal process."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "Anticipating a lawsuit, the legal team orders that all emails and files belonging to certain employees must not be deleted or altered, even if normal retention would purge them. What is this directive?",
+    "options": ["legal hold", "preservation", "chain of custody", "acquisition"],
+    "correctIndex": 0,
+    "explanation": "Legal hold. Preserving data because litigation is anticipated is a legal hold. The tell: legal hold = preserve data for anticipated litigation; preservation = protect collected evidence from alteration; chain of custody = documented handling trail; acquisition = collect/image the evidence."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "Which forensic step is the actual collection of evidence, such as making a bit-for-bit forensic image of a suspect drive?",
+    "options": ["e-discovery", "reporting", "legal hold", "acquisition"],
+    "correctIndex": 3,
+    "explanation": "Acquisition. Collecting or imaging the evidence is acquisition. The tell: acquisition = collect/image the evidence; e-discovery = locate and produce electronic evidence for legal process; reporting = document findings; legal hold = preserve data for anticipated litigation."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "An analyst needs to see the full raw contents of network traffic - every byte of the packets - to reconstruct exactly what data left the network. Which source provides this?",
+    "options": ["metadata", "packet capture", "firewall log", "network log"],
+    "correctIndex": 1,
+    "explanation": "Packet capture. Full raw packet content is a packet capture. The tell: packet capture = full raw traffic content; metadata = data about the data (headers, timestamps); firewall log = allow/deny by connection; network log = flow/traffic records."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "Which log source consists of data about the data - such as an email's headers, timestamps, and sender/recipient fields - rather than the message body itself?",
+    "options": ["packet capture", "endpoint log", "metadata", "firewall log"],
+    "correctIndex": 2,
+    "explanation": "Metadata. Data about the data, like headers and timestamps, is metadata. The tell: metadata = data about the data (headers, timestamps); packet capture = full raw traffic content; endpoint log = activity on a host; firewall log = allow/deny by connection."
+  }
+]
