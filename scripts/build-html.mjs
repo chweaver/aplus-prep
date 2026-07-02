@@ -595,7 +595,7 @@ const html = `<!doctype html>
     window.scrollTo(0,0);
   }
   // instant-feedback exam: same set, same timer, same scoring - but each
-  // answer is graded on the spot and locked (no revisiting, no flags/grid)
+  // answer grades right after you lock it in (select, confirm, feedback)
   function renderInstantExamQ(){
     examTick();
     var it=exam.items[exam.idx], q=it.q;
@@ -604,29 +604,43 @@ const html = `<!doctype html>
     h+='<div class="meta"><span>'+q.domain+' \\u00b7 '+familyLabel(q.family)+'</span><span>Q'+(exam.idx+1)+' of '+exam.items.length+'</span></div>';
     h+='<p class="q"></p><div class="opts">';
     for(var i=0;i<4;i++) h+='<button class="opt" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
-    h+='</div><div id="feedback"></div></div>';
+    h+='</div>';
+    h+='<div class="actions"><button class="primary" id="lockbtn" disabled style="opacity:.5">Lock in answer</button></div>';
+    h+='<div id="feedback"></div></div>';
     app.innerHTML=h;
     app.querySelector(".q").textContent=q.question;
     var btns=app.querySelectorAll(".opt");
     for(var j=0;j<4;j++){
       btns[j].querySelector(".t").textContent=it.opts[j];
-      btns[j].addEventListener("click", onInstantExamAnswer);
+      btns[j].addEventListener("click", function(e){
+        if(it.answered) return;
+        var pick=parseInt(e.currentTarget.getAttribute("data-i"),10);
+        it.chosen = (it.chosen===pick) ? -1 : pick;
+        var bs=document.querySelectorAll(".opt");
+        for(var k=0;k<bs.length;k++) bs[k].classList.toggle("selected", parseInt(bs[k].getAttribute("data-i"),10)===it.chosen);
+        var lb=document.getElementById("lockbtn");
+        if(it.chosen>=0){ lb.removeAttribute("disabled"); lb.style.opacity=""; }
+        else { lb.setAttribute("disabled",""); lb.style.opacity=".5"; }
+      });
     }
+    document.getElementById("lockbtn").addEventListener("click", lockInstantExamAnswer);
     window.scrollTo(0,0);
   }
-  function onInstantExamAnswer(e){
+  function lockInstantExamAnswer(){
     var it=exam.items[exam.idx];
-    if(it.chosen>=0) return;
-    it.chosen=parseInt(e.currentTarget.getAttribute("data-i"),10);
+    if(it.answered || it.chosen<0) return;
+    it.answered=true;
     var ok = it.chosen===it.correctDisplay;
     var btns=document.querySelectorAll(".opt");
     for(var i=0;i<btns.length;i++){
       var bi=parseInt(btns[i].getAttribute("data-i"),10);
       btns[i].setAttribute("disabled","");
+      btns[i].classList.remove("selected");
       if(bi===it.correctDisplay) btns[i].classList.add("correct");
       else if(bi===it.chosen) btns[i].classList.add("wrong");
       else btns[i].classList.add("dim");
     }
+    document.getElementById("lockbtn").parentNode.remove();
     var fb=document.getElementById("feedback");
     fb.appendChild(explBlock(it.q, ok));
     var act=document.createElement("div"); act.className="actions";
