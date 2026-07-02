@@ -82,7 +82,7 @@
   {
     "domain": "D4",
     "family": "web-filter",
-    "question": "To stop users from reaching malware domains, the resolver simply refuses to return an IP address for domains on a known-bad list. Which web filtering technique is this?",
+    "question": "To stop users from reaching malware domains, the resolver simply refuses to return an IP address for domains on a known-bad list. Which filtering technique is this?",
     "options": ["Centralized proxy", "Content categorization", "DNS filtering", "Reputation"],
     "correctIndex": 2,
     "explanation": "DNS filtering. The resolver blocks access by refusing to resolve known-bad domains. The tell: DNS filtering = block by refusing to resolve; centralized proxy = route all traffic through one filter point; content categorization = block by category; reputation = block by known-bad score."
@@ -122,7 +122,7 @@
   {
     "domain": "D4",
     "family": "email-security",
-    "question": "A domain owner publishes a DNS record listing the specific mail servers authorized to send messages for the domain; receivers flag or reject mail from any other sending IP. Which mechanism is this?",
+    "question": "A domain owner publishes a DNS record listing the specific mail servers authorized to send messages for the domain; receiving servers compare each message's sending IP against that list. Which mechanism is this?",
     "options": ["SPF", "DKIM", "DMARC", "Secure email gateway"],
     "correctIndex": 0,
     "explanation": "SPF. Publishing the authorized sending servers in DNS and checking the sender IP is SPF. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
@@ -138,10 +138,10 @@
   {
     "domain": "D4",
     "family": "email-security",
-    "question": "A company wants receiving mail servers to reject messages that fail authentication and to send back aggregate reports identifying who is spoofing their domain. Which mechanism sets this policy?",
+    "question": "Legitimate messages relayed through a third-party forwarding service keep failing the recipient's IP-based sender check, yet a second email authentication check still passes because its verification data travels inside the message headers. Which mechanism provides that second check?",
     "options": ["Secure email gateway", "DMARC", "SPF", "DKIM"],
-    "correctIndex": 1,
-    "explanation": "DMARC. It sets the reject or quarantine policy on failure and requests aggregate reports. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
+    "correctIndex": 3,
+    "explanation": "DKIM. Its signature rides in the message header, so it survives forwarding, unlike a check tied to the connecting server's IP. The tell: SPF = which servers may send (checks sending IP, breaks on forwarding); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
   },
   {
     "domain": "D4",
@@ -189,7 +189,7 @@
     "question": "A domain already publishes SPF and DKIM, but spoofed mail that fails those checks is still delivered because receivers do not know what to do with failures. Which mechanism must be added to instruct receivers to reject it?",
     "options": ["SPF", "DMARC", "DKIM", "Secure email gateway"],
     "correctIndex": 1,
-    "explanation": "DMARC. SPF and DKIM only detect failure; DMARC tells receivers to reject or quarantine it. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
+    "explanation": "DMARC. SPF and DKIM only produce pass or fail results; DMARC publishes the policy telling receivers to reject or quarantine failures. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
   },
   {
     "domain": "D4",
