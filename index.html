@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="dark" />
 <meta name="theme-color" content="#111318" />
-<title>Security+ SY0-701 Twin-Term Drill</title>
+<title>Security+ SY0-701 Prep</title>
 <style>
   :root{
     --page:#111318; --card:#1b1e27; --option:#242836; --border:#2f3445;
     --text:#e8eaf1; --muted:#8a8fa3; --primary:#424cf7;
     --correct:#4ade80; --correct-bg:#173423; --wrong:#f87171; --wrong-bg:#3a1d1d;
+    --amber:#f5c451;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -22,21 +23,22 @@
   #tally{
     position:sticky; top:0; z-index:10; background:rgba(17,19,24,.96);
     backdrop-filter:blur(6px); border-bottom:1px solid var(--border);
-    padding:12px 16px calc(12px + env(safe-area-inset-top)); padding-top:max(12px,env(safe-area-inset-top));
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    padding:12px 16px; padding-top:max(12px,env(safe-area-inset-top));
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
   }
-  #tally .score{font-weight:700; font-size:15px; letter-spacing:.2px}
-  #tally .pct{color:var(--muted); font-weight:600}
-  #bar{height:4px; background:var(--option); border-radius:3px; overflow:hidden; flex:1; max-width:140px}
+  #hleft{font-weight:700; font-size:15px; letter-spacing:.2px; white-space:nowrap}
+  #hleft.warn{color:var(--wrong)}
+  #hright{color:var(--muted); font-weight:600; white-space:nowrap}
+  #bar{height:4px; background:var(--option); border-radius:3px; overflow:hidden; flex:1}
   #bar>div{height:100%; width:0; background:var(--primary); transition:width .25s ease}
-  #refbtn{
+  .hbtn{
     background:transparent; color:var(--muted); border:1px solid var(--border);
     border-radius:8px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer;
     -webkit-tap-highlight-color:transparent; flex:none;
   }
   main{max-width:520px; margin:0 auto; padding:16px}
   .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; margin-top:8px}
-  .meta{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px}
+  .meta{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; display:flex; justify-content:space-between; gap:8px}
   .q{font-size:18px; font-weight:600; margin:0 0 16px}
   .opts{display:flex; flex-direction:column; gap:10px}
   .opt{
@@ -47,6 +49,8 @@
   }
   .opt .k{font-weight:700; color:var(--muted); flex:none; width:18px}
   .opt:active{border-color:var(--primary)}
+  .opt.selected{border-color:var(--primary); background:#20264a}
+  .opt.selected .k{color:#9aa1ff}
   .opt.correct{background:var(--correct-bg); border-color:var(--correct)}
   .opt.correct .k{color:var(--correct)}
   .opt.wrong{background:var(--wrong-bg); border-color:var(--wrong)}
@@ -70,10 +74,12 @@
   button.ghost{
     background:transparent; color:var(--text); border:1px solid var(--border);
     border-radius:12px; padding:15px 18px; font-size:16px; font-weight:600; cursor:pointer; flex:1; min-height:52px;
+    -webkit-tap-highlight-color:transparent;
   }
-  .end h1{font-size:22px; margin:4px 0 2px}
-  .end .big{font-size:40px; font-weight:800; margin:6px 0}
-  .end .sub{color:var(--muted); margin-bottom:16px}
+  button.ghost.flagged{border-color:var(--amber); color:var(--amber)}
+  h1.big{font-size:22px; margin:4px 0 2px}
+  .bignum{font-size:40px; font-weight:800; margin:6px 0}
+  .sub{color:var(--muted); margin-bottom:16px}
   table{width:100%; border-collapse:collapse; font-size:14px}
   th,td{text-align:left; padding:8px 6px; border-bottom:1px solid var(--border)}
   th{color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.06em}
@@ -83,49 +89,85 @@
   .link{color:var(--muted); text-decoration:underline; cursor:pointer; font-size:13px; background:none; border:none; padding:0}
   .foot{margin-top:22px; display:flex; justify-content:space-between; align-items:center}
   .hint{color:var(--muted); font-size:12px; margin-top:10px; text-align:center}
+  /* home */
+  .modebtn{display:flex; flex-direction:column; align-items:flex-start; gap:2px; width:100%;
+    background:var(--option); color:var(--text); border:1px solid var(--border); border-radius:14px;
+    padding:16px; font-size:17px; font-weight:700; cursor:pointer; margin-top:10px; text-align:left;
+    -webkit-tap-highlight-color:transparent;}
+  .modebtn small{color:var(--muted); font-weight:500; font-size:13px}
+  .modebtn.exam{border-color:var(--primary)}
+  .statline{color:var(--muted); font-size:13px; margin-top:14px}
+  .exhist{margin-top:6px; font-size:13px; color:var(--muted)}
+  .exhist b.pass{color:var(--correct)} .exhist b.fail{color:var(--wrong)}
+  .badge{display:inline-block; padding:3px 10px; border-radius:999px; font-size:13px; font-weight:800; letter-spacing:.04em}
+  .badge.pass{background:var(--correct-bg); color:var(--correct); border:1px solid var(--correct)}
+  .badge.fail{background:var(--wrong-bg); color:var(--wrong); border:1px solid var(--wrong)}
+  /* exam bottom nav + grid */
+  #examnav{position:fixed; left:0; right:0; bottom:0; z-index:12;
+    background:rgba(17,19,24,.97); border-top:1px solid var(--border);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    display:none; gap:10px; justify-content:space-between;}
+  #examnav.show{display:flex}
+  #examnav button{min-height:46px; padding:10px 14px; flex:1}
+  #grid{position:fixed; inset:0; z-index:22; background:var(--page); display:none; overflow-y:auto}
+  #grid.open{display:block}
+  .gridbody{max-width:520px; margin:0 auto; padding:16px; padding-bottom:40px}
+  .gridwrap{display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-top:14px}
+  .gcell{aspect-ratio:1; border-radius:10px; border:1px solid var(--border); background:var(--option);
+    color:var(--text); font-size:14px; font-weight:700; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+  .gcell.answered{background:#20264a; border-color:var(--primary)}
+  .gcell.flagged{border-color:var(--amber); color:var(--amber)}
+  .gcell.cur{outline:2px solid #fff}
   /* reference overlay */
-  #ref{
-    position:fixed; inset:0; z-index:20; background:var(--page); display:none;
-    overflow-y:auto; -webkit-overflow-scrolling:touch;
-  }
+  #ref{position:fixed; inset:0; z-index:20; background:var(--page); display:none; overflow-y:auto; -webkit-overflow-scrolling:touch;}
   #ref.open{display:block}
-  #ref .refhead{
-    position:sticky; top:0; background:rgba(17,19,24,.96); backdrop-filter:blur(6px);
+  .ovhead{position:sticky; top:0; background:rgba(17,19,24,.96); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--border); padding:12px 16px; padding-top:max(12px,env(safe-area-inset-top));
-    display:flex; justify-content:space-between; align-items:center; z-index:21; gap:12px;
-  }
-  #ref .refhead h1{font-size:16px; margin:0}
-  #refclose{
-    background:var(--primary); color:#fff; border:none; border-radius:8px;
+    display:flex; justify-content:space-between; align-items:center; z-index:21; gap:12px;}
+  .ovhead h1{font-size:16px; margin:0}
+  .ovclose{background:var(--primary); color:#fff; border:none; border-radius:8px;
     padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer; flex:none;
-    -webkit-tap-highlight-color:transparent;
-  }
+    -webkit-tap-highlight-color:transparent;}
   #ref .refbody{max-width:520px; margin:0 auto; padding:8px 16px 40px}
-  #refsearch{
-    width:100%; margin:10px 0 4px; padding:12px 14px; font-size:16px;
-    background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:10px;
-  }
+  #refsearch{width:100%; margin:10px 0 4px; padding:12px 14px; font-size:16px;
+    background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:10px;}
   .refdom{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin:20px 0 6px; font-weight:700}
   .reffam{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-bottom:10px}
   .reffam h2{font-size:15px; margin:0 0 4px; display:flex; align-items:center; gap:6px; flex-wrap:wrap}
-  .reffam .star{color:#f5c451; font-size:12px; font-weight:600}
+  .reffam .star{color:var(--amber); font-size:12px; font-weight:600}
   .reffam .sib{font-size:13px; color:var(--text); opacity:.92; margin-bottom:6px}
   .reffam .tell{font-size:13px; color:var(--muted)}
+  .pad-bottom{padding-bottom:90px}
 </style>
 </head>
 <body>
   <div id="tally">
-    <span class="score" id="score">0/0</span>
+    <button id="homebtn" class="hbtn" type="button" style="display:none">Home</button>
+    <span id="hleft">SY0-701</span>
     <div id="bar"><div></div></div>
-    <span class="pct" id="pct">0%</span>
-    <button id="refbtn" type="button">Reference</button>
+    <span id="hright"></span>
+    <button id="refbtn" class="hbtn" type="button">Reference</button>
   </div>
   <main id="app"></main>
-  <div id="ref">
-    <div class="refhead">
-      <h1>Twin-term reference</h1>
-      <button id="refclose" type="button">Back to drill</button>
+
+  <div id="examnav">
+    <button class="ghost" id="exprev">Prev</button>
+    <button class="ghost" id="exflag">Flag</button>
+    <button class="ghost" id="exgrid">1/90</button>
+    <button class="primary" id="exnext">Next</button>
+  </div>
+
+  <div id="grid">
+    <div class="ovhead"><h1>Questions</h1><button class="ovclose" id="gridclose">Close</button></div>
+    <div class="gridbody">
+      <div class="hint" style="text-align:left">Blue = answered, amber = flagged. Tap to jump.</div>
+      <div class="gridwrap" id="gridwrap"></div>
+      <div class="actions"><button class="primary" id="gridsubmit">Submit exam</button></div>
     </div>
+  </div>
+
+  <div id="ref">
+    <div class="ovhead"><h1>Twin-term reference</h1><button class="ovclose" id="refclose">Close</button></div>
     <div class="refbody">
       <input id="refsearch" type="search" placeholder="Filter families and terms" autocomplete="off" />
       <div id="reflist"></div>
@@ -141,215 +183,451 @@
   var REF = DATA.reference || [];
   var LETTERS = ["A","B","C","D"];
   var STORE_KEY = "secplus-drill-stats-v1";
+  var DRILL_LEN = 25;
+  var EXAM_QUOTA = {D1:11, D2:20, D3:16, D4:25, D5:18}; // official weights of 90
+  var EXAM_MS = 90*60*1000;
+  var PASS_SCALED = 750;
 
+  // ---------- stats (v2 with v1 migration) ----------
   function loadStats(){
-    try{ return JSON.parse(localStorage.getItem(STORE_KEY)) || {perQuestion:{},perFamily:{}}; }
-    catch(e){ return {perQuestion:{},perFamily:{}}; }
+    var s;
+    try{ s = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ s=null; }
+    if(!s) s = {v:2, seq:0, perQuestion:{}, perFamily:{}, exams:[]};
+    if(!s.v){ // migrate v1 {perQuestion:{id:{attempts,correct}}, perFamily}
+      var pq={}, k;
+      for(k in s.perQuestion||{}){ var o=s.perQuestion[k]; pq[k]={a:o.attempts||0,c:o.correct||0,s:0,last:0}; }
+      var pf={};
+      for(k in s.perFamily||{}){ var f=s.perFamily[k]; pf[k]={a:f.attempts||0,c:f.correct||0}; }
+      s = {v:2, seq:0, perQuestion:pq, perFamily:pf, exams:[]};
+    }
+    s.exams = s.exams||[];
+    return s;
   }
   function saveStats(s){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(s)); }catch(e){} }
   function recordStat(q, correct){
     var s = loadStats();
-    var pq = s.perQuestion[q.id] || {attempts:0,correct:0};
-    pq.attempts++; if(correct) pq.correct++; s.perQuestion[q.id]=pq;
-    var pf = s.perFamily[q.family] || {attempts:0,correct:0};
-    pf.attempts++; if(correct) pf.correct++; s.perFamily[q.family]=pf;
+    s.seq = (s.seq||0)+1;
+    var pq = s.perQuestion[q.id] || {a:0,c:0,s:0,last:0};
+    pq.a++; if(correct){ pq.c++; pq.s=(pq.s||0)+1; } else { pq.s=0; }
+    pq.last=s.seq; s.perQuestion[q.id]=pq;
+    var pf = s.perFamily[q.family] || {a:0,c:0};
+    pf.a++; if(correct) pf.c++; s.perFamily[q.family]=pf;
     saveStats(s);
   }
 
+  // ---------- adaptive selection ----------
+  // Weight = how much this question deserves to be served next.
+  // missed last time > never seen > shaky > solid > mastered; boosted for weak families,
+  // damped if seen very recently.
+  function weightFor(q, stats){
+    var pq = stats.perQuestion[q.id];
+    var w;
+    if(!pq || pq.a===0) w=3;        // unseen
+    else if(pq.s===0)   w=4;        // missed most recently
+    else if(pq.s===1)   w=2;        // answered right once since last miss
+    else if(pq.s===2)   w=1;        // getting solid
+    else                w=0.4;      // mastered: keep a small maintenance chance
+    var pf = stats.perFamily[q.family];
+    if(pf && pf.a>=2){
+      var acc = pf.c/pf.a;
+      if(acc<0.5) w*=2; else if(acc<0.8) w*=1.4;
+    }
+    if(pq && (stats.seq - pq.last) < 40) w*=0.5;  // just saw it; back off
+    return w;
+  }
+  // Weighted sample without replacement. familyDamp<1 spreads picks across families
+  // so one family cannot hog the quota (thoroughness).
+  function adaptivePick(pool, n, familyDamp){
+    var stats = loadStats();
+    var items = pool.slice(), picked=[], mult={};
+    while(picked.length<n && items.length){
+      var total=0, ws=new Array(items.length), i;
+      for(i=0;i<items.length;i++){
+        var w = weightFor(items[i], stats) * (mult[items[i].family]||1);
+        ws[i]=w; total+=w;
+      }
+      var r=Math.random()*total, idx=items.length-1;
+      for(i=0;i<items.length;i++){ r-=ws[i]; if(r<=0){ idx=i; break; } }
+      var q=items.splice(idx,1)[0];
+      picked.push(q);
+      if(familyDamp) mult[q.family]=(mult[q.family]||1)*familyDamp;
+    }
+    return picked;
+  }
+  function buildExamSet(){
+    var byDom={D1:[],D2:[],D3:[],D4:[],D5:[]};
+    ALL.forEach(function(q){ if(byDom[q.domain]) byDom[q.domain].push(q); });
+    var set=[];
+    for(var d in EXAM_QUOTA) set=set.concat(adaptivePick(byDom[d], EXAM_QUOTA[d], 0.6));
+    return shuffle(set);
+  }
+
   function shuffle(a){
-    a = a.slice();
+    a=a.slice();
     for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i]; a[i]=a[j]; a[j]=t; }
     return a;
   }
-
-  var session=null;
-
-  function buildSession(pool){
-    var order = shuffle(pool);
-    var items = order.map(function(q){
-      var idxs = shuffle([0,1,2,3]);
-      var opts = idxs.map(function(i){ return q.options[i]; });
-      var correctDisplay = idxs.indexOf(q.correctIndex);
-      return {q:q, opts:opts, correctDisplay:correctDisplay, answered:false, correct:null};
-    });
-    session = {items:items, pos:0, correctCount:0, answeredCount:0, missed:[]};
-    render();
+  function mkItem(q){
+    var idxs=shuffle([0,1,2,3]);
+    return {q:q, opts:idxs.map(function(i){return q.options[i];}), correctDisplay:idxs.indexOf(q.correctIndex),
+            answered:false, correct:null, chosen:-1, flagged:false};
   }
-
-  function updateTally(){
-    var total = session.items.length;
-    var answered = session.answeredCount;
-    var pct = answered ? Math.round(session.correctCount/answered*100) : 0;
-    document.getElementById("score").textContent = session.correctCount + "/" + answered + "  \u00b7  " + total + " total";
-    document.getElementById("pct").textContent = pct + "%";
-    document.querySelector("#bar>div").style.width = (session.pos/total*100) + "%";
-  }
-
   function familyLabel(key){ return key.replace(/-/g," "); }
 
-  function render(){
-    updateTally();
-    if(session.pos >= session.items.length){ return renderEnd(); }
-    var it = session.items[session.pos];
-    var q = it.q;
-    var app = document.getElementById("app");
-    var html = '<div class="card">';
-    html += '<div class="meta">'+q.domain+'  \u00b7  '+familyLabel(q.family)+'  \u00b7  Q'+(session.pos+1)+' of '+session.items.length+'</div>';
-    html += '<p class="q"></p>';
-    html += '<div class="opts">';
-    for(var i=0;i<4;i++){
-      html += '<button class="opt" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
+  // ---------- header ----------
+  var elL=document.getElementById("hleft"), elR=document.getElementById("hright"),
+      elBar=document.querySelector("#bar>div"), elHome=document.getElementById("homebtn"),
+      examNav=document.getElementById("examnav");
+  function header(left, right, frac, warn){
+    elL.textContent=left; elL.className=warn?"warn":"";
+    elR.textContent=right; elBar.style.width=(100*(frac||0))+"%";
+  }
+
+  // ---------- state ----------
+  var mode="home", session=null, exam=null, timerId=null;
+
+  function go(m){
+    mode=m;
+    elHome.style.display = m==="home" ? "none":"";
+    examNav.classList.toggle("show", m==="exam");
+    document.body.classList.toggle("pad-bottom", m==="exam");
+    if(m!=="exam" && timerId){ clearInterval(timerId); timerId=null; }
+  }
+  elHome.addEventListener("click", function(){
+    if(mode==="exam" && !exam.submitted){
+      if(!confirm("Abandon this exam? Nothing will be scored.")) return;
     }
-    html += '</div><div id="feedback"></div></div>';
-    app.innerHTML = html;
-    app.querySelector(".q").textContent = q.question;
-    var btns = app.querySelectorAll(".opt");
-    for(var j=0;j<4;j++){
-      btns[j].querySelector(".t").textContent = it.opts[j];
-      btns[j].addEventListener("click", onAnswer);
+    showHome();
+  });
+
+  // ---------- home ----------
+  function showHome(){
+    go("home");
+    var s=loadStats();
+    var seen=0, mastered=0;
+    ALL.forEach(function(q){ var pq=s.perQuestion[q.id]; if(pq&&pq.a>0){ seen++; if(pq.s>=3) mastered++; } });
+    header("SY0-701","",0);
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<h1 class="big">Security+ SY0-701 Prep</h1>';
+    h+='<div class="sub">Adaptive twin-term training. The engine serves what you miss.</div>';
+    h+='<button class="modebtn exam" id="m-exam">Practice exam<small>90 questions \u00b7 90 minutes \u00b7 real domain weights \u00b7 adaptive selection \u00b7 scored vs 750</small></button>';
+    h+='<button class="modebtn" id="m-drill">Smart drill<small>'+DRILL_LEN+' questions the algorithm thinks you need most, instant feedback</small></button>';
+    h+='<button class="modebtn" id="m-stream">Full stream<small>All '+ALL.length+' questions, shuffled, instant feedback</small></button>';
+    h+='<div class="statline">Progress: '+seen+'/'+ALL.length+' seen \u00b7 '+mastered+' mastered (3+ streak)</div>';
+    if(s.exams.length){
+      h+='<div class="exhist">Exams: ';
+      h+=s.exams.slice(-5).map(function(e){
+        return '<b class="'+(e.scaled>=PASS_SCALED?"pass":"fail")+'">'+e.scaled+'</b>';
+      }).join(" \u00b7 ");
+      h+=' <span style="opacity:.7">(pass '+PASS_SCALED+')</span></div>';
     }
+    h+='<div class="foot"><span class="hint" style="margin:0;text-align:left">Stats saved on this device</span><button class="link" id="reset">reset stats</button></div>';
+    h+='</div>';
+    app.innerHTML=h;
+    document.getElementById("m-exam").addEventListener("click", startExam);
+    document.getElementById("m-drill").addEventListener("click", function(){ startDrill(adaptivePick(ALL, DRILL_LEN, 0.75), "Smart drill"); });
+    document.getElementById("m-stream").addEventListener("click", function(){ startDrill(shuffle(ALL), "Full stream"); });
+    document.getElementById("reset").addEventListener("click", function(){
+      if(confirm("Erase all saved stats on this device?")){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} showHome(); }
+    });
     window.scrollTo(0,0);
   }
 
-  function onAnswer(e){
-    var it = session.items[session.pos];
+  // ---------- drill (instant feedback) ----------
+  function startDrill(pool, label){
+    go("drill");
+    session={label:label, items:pool.map(mkItem), pos:0, correctCount:0, answeredCount:0, missed:[]};
+    renderDrill();
+  }
+  function drillHeader(){
+    var t=session.items.length, a=session.answeredCount;
+    var pct=a?Math.round(session.correctCount/a*100):0;
+    header(session.correctCount+"/"+a+" \u00b7 "+t+" total", pct+"%", session.pos/t);
+  }
+  function renderDrill(){
+    drillHeader();
+    if(session.pos>=session.items.length) return renderDrillEnd();
+    var it=session.items[session.pos], q=it.q;
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<div class="meta"><span>'+q.domain+' \u00b7 '+familyLabel(q.family)+'</span><span>Q'+(session.pos+1)+' of '+session.items.length+'</span></div>';
+    h+='<p class="q"></p><div class="opts">';
+    for(var i=0;i<4;i++) h+='<button class="opt" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
+    h+='</div><div id="feedback"></div></div>';
+    app.innerHTML=h;
+    app.querySelector(".q").textContent=q.question;
+    var btns=app.querySelectorAll(".opt");
+    for(var j=0;j<4;j++){ btns[j].querySelector(".t").textContent=it.opts[j]; btns[j].addEventListener("click", onDrillAnswer); }
+    window.scrollTo(0,0);
+  }
+  function onDrillAnswer(e){
+    var it=session.items[session.pos];
     if(it.answered) return;
-    var chosen = parseInt(e.currentTarget.getAttribute("data-i"),10);
-    it.answered = true;
-    it.correct = (chosen === it.correctDisplay);
+    var chosen=parseInt(e.currentTarget.getAttribute("data-i"),10);
+    it.answered=true; it.correct=(chosen===it.correctDisplay);
     session.answeredCount++;
     if(it.correct) session.correctCount++; else session.missed.push(it.q.id);
     recordStat(it.q, it.correct);
-
-    var btns = document.querySelectorAll(".opt");
+    var btns=document.querySelectorAll(".opt");
     for(var i=0;i<btns.length;i++){
-      var bi = parseInt(btns[i].getAttribute("data-i"),10);
+      var bi=parseInt(btns[i].getAttribute("data-i"),10);
       btns[i].setAttribute("disabled","");
-      if(bi === it.correctDisplay) btns[i].classList.add("correct");
-      else if(bi === chosen) btns[i].classList.add("wrong");
+      if(bi===it.correctDisplay) btns[i].classList.add("correct");
+      else if(bi===chosen) btns[i].classList.add("wrong");
       else btns[i].classList.add("dim");
     }
-    var fb = document.getElementById("feedback");
-    var q = it.q;
-    var expl = q.explanation;
-    var tellIdx = expl.indexOf("The tell:");
-    var main = tellIdx>=0 ? expl.slice(0,tellIdx).trim() : expl;
-    var tell = tellIdx>=0 ? expl.slice(tellIdx) : "";
-    var cls = it.correct ? "correct" : "wrong";
-    var verdict = it.correct ? "Correct" : "Wrong";
-    var wrap = document.createElement("div");
-    wrap.className = "expl "+cls;
-    var v = document.createElement("div"); v.className="verdict"; v.textContent=verdict;
-    var m = document.createElement("div"); m.textContent=main;
-    wrap.appendChild(v); wrap.appendChild(m);
-    if(tell){ var t=document.createElement("span"); t.className="tell"; t.textContent=tell; wrap.appendChild(t); }
-    fb.appendChild(wrap);
-    var act = document.createElement("div"); act.className="actions";
-    var next = document.createElement("button"); next.className="primary";
-    next.textContent = (session.pos+1 >= session.items.length) ? "See results" : "Next";
-    next.addEventListener("click", function(){ session.pos++; render(); });
-    act.appendChild(next);
-    fb.appendChild(act);
-    updateTally();
-    next.focus();
+    var fb=document.getElementById("feedback");
+    fb.appendChild(explBlock(it.q, it.correct));
+    var act=document.createElement("div"); act.className="actions";
+    var next=document.createElement("button"); next.className="primary";
+    next.textContent=(session.pos+1>=session.items.length)?"See results":"Next";
+    next.addEventListener("click", function(){ session.pos++; renderDrill(); });
+    act.appendChild(next); fb.appendChild(act);
+    drillHeader(); next.focus();
   }
-
-  function renderEnd(){
-    var app = document.getElementById("app");
-    var total = session.items.length;
-    var correct = session.correctCount;
-    var pct = total ? Math.round(correct/total*100) : 0;
-    var byFam = {};
+  function explBlock(q, wasCorrect){
+    var expl=q.explanation, ti=expl.indexOf("The tell:");
+    var main=ti>=0?expl.slice(0,ti).trim():expl, tell=ti>=0?expl.slice(ti):"";
+    var wrap=document.createElement("div");
+    wrap.className="expl "+(wasCorrect===null?"":(wasCorrect?"correct":"wrong"));
+    if(wasCorrect!==null){ var v=document.createElement("div"); v.className="verdict"; v.textContent=wasCorrect?"Correct":"Wrong"; wrap.appendChild(v); }
+    var m=document.createElement("div"); m.textContent=main; wrap.appendChild(m);
+    if(tell){ var t=document.createElement("span"); t.className="tell"; t.textContent=tell; wrap.appendChild(t); }
+    return wrap;
+  }
+  function renderDrillEnd(){
+    var app=document.getElementById("app");
+    var total=session.items.length, correct=session.correctCount;
+    var pct=total?Math.round(correct/total*100):0;
+    var byFam={};
     session.items.forEach(function(it){
-      var k = it.q.family;
-      byFam[k] = byFam[k] || {n:0,c:0};
-      byFam[k].n++; if(it.correct) byFam[k].c++;
+      var k=it.q.family; byFam[k]=byFam[k]||{n:0,c:0}; byFam[k].n++; if(it.correct) byFam[k].c++;
     });
-    var rows = Object.keys(byFam).map(function(k){
-      var o=byFam[k]; return {key:k, n:o.n, c:o.c, acc:o.c/o.n};
-    }).sort(function(a,b){ return a.acc-b.acc || b.n-a.n; });
-
-    var html = '<div class="card end">';
-    html += '<h1>Session complete</h1>';
-    html += '<div class="big">'+correct+' / '+total+'</div>';
-    html += '<div class="sub">'+pct+'% correct  \u00b7  '+session.missed.length+' to review</div>';
-    html += '<div class="actions">';
-    html += '<button class="primary" id="retry"'+(session.missed.length?'':' disabled style="opacity:.5"')+'>Retry missed ('+session.missed.length+')</button>';
-    html += '<button class="ghost" id="restart">Restart all</button>';
-    html += '</div>';
-    html += '<h1 style="font-size:16px;margin-top:22px">Weakest families first</h1>';
-    html += '<table><thead><tr><th>Family</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
+    var rows=Object.keys(byFam).map(function(k){ var o=byFam[k]; return {key:k,n:o.n,c:o.c,acc:o.c/o.n}; })
+      .sort(function(a,b){ return a.acc-b.acc||b.n-a.n; });
+    var h='<div class="card">';
+    h+='<h1 class="big">'+session.label+' complete</h1>';
+    h+='<div class="bignum">'+correct+' / '+total+'</div>';
+    h+='<div class="sub">'+pct+'% correct \u00b7 '+session.missed.length+' to review</div>';
+    h+='<div class="actions">';
+    h+='<button class="primary" id="again">New smart drill</button>';
+    h+='<button class="ghost" id="retry"'+(session.missed.length?'':' disabled style="opacity:.5"')+'>Retry missed ('+session.missed.length+')</button>';
+    h+='</div>';
+    h+='<h1 style="font-size:16px;margin-top:22px">Weakest families first</h1>';
+    h+='<table><thead><tr><th>Family</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
     rows.forEach(function(r){
-      var color = r.acc>=0.8?'var(--correct)':(r.acc>=0.5?'#f5c451':'var(--wrong)');
-      html += '<tr><td>'+familyLabel(r.key)+'<div class="accbar"><div style="width:'+Math.round(r.acc*100)+'%;background:'+color+'"></div></div></td>';
-      html += '<td class="num">'+r.c+'/'+r.n+'</td><td class="num" style="color:'+color+'">'+Math.round(r.acc*100)+'%</td></tr>';
+      var color=r.acc>=0.8?'var(--correct)':(r.acc>=0.5?'var(--amber)':'var(--wrong)');
+      h+='<tr><td>'+familyLabel(r.key)+'<div class="accbar"><div style="width:'+Math.round(r.acc*100)+'%;background:'+color+'"></div></div></td>';
+      h+='<td class="num">'+r.c+'/'+r.n+'</td><td class="num" style="color:'+color+'">'+Math.round(r.acc*100)+'%</td></tr>';
     });
-    html += '</tbody></table>';
-    html += '<div class="foot"><span class="hint" style="margin:0;text-align:left">Lifetime stats saved on this device</span><button class="link" id="reset">reset stats</button></div>';
-    html += '</div>';
-    app.innerHTML = html;
-    document.querySelector("#bar>div").style.width = "100%";
-
-    var retry = document.getElementById("retry");
+    h+='</tbody></table></div>';
+    app.innerHTML=h;
+    elBar.style.width="100%";
+    document.getElementById("again").addEventListener("click", function(){ startDrill(adaptivePick(ALL, DRILL_LEN, 0.75), "Smart drill"); });
     if(session.missed.length){
-      retry.addEventListener("click", function(){
-        var ids = {}; session.missed.forEach(function(id){ ids[id]=1; });
-        buildSession(ALL.filter(function(q){ return ids[q.id]; }));
+      var ids={}; session.missed.forEach(function(id){ ids[id]=1; });
+      document.getElementById("retry").addEventListener("click", function(){
+        startDrill(shuffle(ALL.filter(function(q){ return ids[q.id]; })), "Missed review");
       });
     }
-    document.getElementById("restart").addEventListener("click", function(){ buildSession(ALL); });
-    document.getElementById("reset").addEventListener("click", function(){
-      if(confirm("Erase all saved stats on this device?")){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} alert("Stats cleared."); }
-    });
     window.scrollTo(0,0);
   }
 
-  // ---- reference overlay ----
-  function renderRef(filter){
-    var list = document.getElementById("reflist");
-    var f = (filter||"").toLowerCase();
-    var shown = REF.filter(function(r){
-      var hay = (r.key.replace(/-/g," ")+" "+r.siblings+" "+r.tell).toLowerCase();
-      return !f || hay.indexOf(f)>=0;
-    });
-    list.textContent = "";
-    if(!shown.length){
-      var none = document.createElement("div"); none.className="hint"; none.textContent="No matches.";
-      list.appendChild(none);
-      return;
+  // ---------- practice exam ----------
+  function startExam(){
+    go("exam");
+    exam={items:buildExamSet().map(mkItem), idx:0, endsAt:Date.now()+EXAM_MS, submitted:false};
+    timerId=setInterval(examTick, 1000);
+    renderExamQ();
+  }
+  function fmtLeft(ms){
+    if(ms<0) ms=0;
+    var s=Math.floor(ms/1000), m=Math.floor(s/60); s=s%60;
+    return m+":"+(s<10?"0":"")+s;
+  }
+  function examTick(){
+    if(!exam||exam.submitted) return;
+    var left=exam.endsAt-Date.now();
+    var answered=exam.items.filter(function(i){return i.chosen>=0;}).length;
+    header(fmtLeft(left), answered+"/"+exam.items.length+" answered", answered/exam.items.length, left<5*60*1000);
+    if(left<=0) submitExam(true);
+  }
+  function renderExamQ(){
+    examTick();
+    var it=exam.items[exam.idx], q=it.q;
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<div class="meta"><span>'+q.domain+'</span><span>Q'+(exam.idx+1)+' of '+exam.items.length+'</span></div>';
+    h+='<p class="q"></p><div class="opts">';
+    for(var i=0;i<4;i++) h+='<button class="opt'+(it.chosen===i?" selected":"")+'" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
+    h+='</div></div>';
+    app.innerHTML=h;
+    app.querySelector(".q").textContent=q.question;
+    var btns=app.querySelectorAll(".opt");
+    for(var j=0;j<4;j++){
+      btns[j].querySelector(".t").textContent=it.opts[j];
+      btns[j].addEventListener("click", function(e){
+        var pick=parseInt(e.currentTarget.getAttribute("data-i"),10);
+        it.chosen = (it.chosen===pick) ? -1 : pick;
+        var bs=document.querySelectorAll(".opt");
+        for(var k=0;k<bs.length;k++) bs[k].classList.toggle("selected", parseInt(bs[k].getAttribute("data-i"),10)===it.chosen);
+        examTick();
+      });
     }
-    var curDom = "";
+    document.getElementById("exflag").classList.toggle("flagged", it.flagged);
+    document.getElementById("exflag").textContent = it.flagged?"Flagged":"Flag";
+    document.getElementById("exgrid").textContent=(exam.idx+1)+"/"+exam.items.length;
+    document.getElementById("exnext").textContent = exam.idx===exam.items.length-1 ? "Finish" : "Next";
+    window.scrollTo(0,0);
+  }
+  document.getElementById("exprev").addEventListener("click", function(){
+    if(mode!=="exam") return;
+    exam.idx=(exam.idx-1+exam.items.length)%exam.items.length; renderExamQ();
+  });
+  document.getElementById("exnext").addEventListener("click", function(){
+    if(mode!=="exam") return;
+    if(exam.idx===exam.items.length-1) return maybeSubmit();
+    exam.idx++; renderExamQ();
+  });
+  document.getElementById("exflag").addEventListener("click", function(){
+    if(mode!=="exam") return;
+    var it=exam.items[exam.idx]; it.flagged=!it.flagged; renderExamQ();
+  });
+  var gridEl=document.getElementById("grid");
+  document.getElementById("exgrid").addEventListener("click", function(){
+    if(mode!=="exam") return;
+    var wrap=document.getElementById("gridwrap"); wrap.textContent="";
+    exam.items.forEach(function(it,i){
+      var b=document.createElement("button");
+      b.className="gcell"+(it.chosen>=0?" answered":"")+(it.flagged?" flagged":"")+(i===exam.idx?" cur":"");
+      b.textContent=i+1;
+      b.addEventListener("click", function(){ exam.idx=i; gridEl.classList.remove("open"); renderExamQ(); });
+      wrap.appendChild(b);
+    });
+    gridEl.classList.add("open");
+  });
+  document.getElementById("gridclose").addEventListener("click", function(){ gridEl.classList.remove("open"); });
+  document.getElementById("gridsubmit").addEventListener("click", function(){ gridEl.classList.remove("open"); maybeSubmit(); });
+  function maybeSubmit(){
+    var un=exam.items.filter(function(i){return i.chosen<0;}).length;
+    if(un>0 && !confirm(un+" question"+(un===1?"":"s")+" unanswered. Submit anyway?")) return;
+    submitExam(false);
+  }
+  function submitExam(timedOut){
+    if(exam.submitted) return;
+    exam.submitted=true;
+    if(timerId){ clearInterval(timerId); timerId=null; }
+    var correct=0, perDom={};
+    exam.items.forEach(function(it){
+      var ok = it.chosen===it.correctDisplay;
+      it.correct=ok; if(ok) correct++;
+      var d=it.q.domain; perDom[d]=perDom[d]||{c:0,n:0}; perDom[d].n++; if(ok) perDom[d].c++;
+      recordStat(it.q, ok);   // exams feed the adaptive engine too
+    });
+    var scaled=Math.round(100+(correct/exam.items.length)*800);
+    var s=loadStats();
+    s.exams.push({t:Date.now(), correct:correct, total:exam.items.length, scaled:scaled});
+    if(s.exams.length>20) s.exams=s.exams.slice(-20);
+    saveStats(s);
+    exam.report={correct:correct, scaled:scaled, perDom:perDom, timedOut:timedOut};
+    renderReport();
+  }
+  function renderReport(){
+    go("report");
+    var r=exam.report, total=exam.items.length;
+    var pct=Math.round(r.correct/total*100);
+    var pass=r.scaled>=PASS_SCALED;
+    header("Exam result","",1);
+    var missed=exam.items.filter(function(it){ return !it.correct; });
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<h1 class="big">Practice exam '+(r.timedOut?"(time expired)":"complete")+'</h1>';
+    h+='<div class="bignum">'+r.scaled+' <span class="badge '+(pass?"pass":"fail")+'">'+(pass?"PASS":"FAIL")+'</span></div>';
+    h+='<div class="sub">'+r.correct+'/'+total+' correct ('+pct+'%) \u00b7 passing score '+PASS_SCALED+' \u00b7 scale 100-900</div>';
+    h+='<table><thead><tr><th>Domain</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
+    ["D1","D2","D3","D4","D5"].forEach(function(d){
+      var o=exam.report.perDom[d]||{c:0,n:0};
+      var acc=o.n?o.c/o.n:0;
+      var color=acc>=0.8?'var(--correct)':(acc>=0.6?'var(--amber)':'var(--wrong)');
+      h+='<tr><td>'+d+'<div class="accbar"><div style="width:'+Math.round(acc*100)+'%;background:'+color+'"></div></div></td>';
+      h+='<td class="num">'+o.c+'/'+o.n+'</td><td class="num" style="color:'+color+'">'+Math.round(acc*100)+'%</td></tr>';
+    });
+    h+='</tbody></table>';
+    h+='<div class="actions">';
+    h+='<button class="primary" id="rvw"'+(missed.length?'':' disabled style="opacity:.5"')+'>Review missed ('+missed.length+')</button>';
+    h+='<button class="ghost" id="drillmiss"'+(missed.length?'':' disabled style="opacity:.5"')+'>Drill my misses</button>';
+    h+='</div>';
+    h+='<div class="actions"><button class="ghost" id="homego">Back to home</button></div>';
+    h+='</div>';
+    app.innerHTML=h;
+    if(missed.length){
+      document.getElementById("rvw").addEventListener("click", function(){ renderReview(0); });
+      document.getElementById("drillmiss").addEventListener("click", function(){
+        startDrill(shuffle(missed.map(function(it){return it.q;})), "Exam-miss drill");
+      });
+    }
+    document.getElementById("homego").addEventListener("click", showHome);
+    window.scrollTo(0,0);
+  }
+  function renderReview(i){
+    go("review");
+    var missed=exam.items.filter(function(it){ return !it.correct; });
+    if(i>=missed.length) return renderReport();
+    var it=missed[i], q=it.q;
+    header("Review "+(i+1)+"/"+missed.length,"",(i+1)/missed.length);
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<div class="meta"><span>'+q.domain+' \u00b7 '+familyLabel(q.family)+'</span><span>missed</span></div>';
+    h+='<p class="q"></p><div class="opts">';
+    for(var k=0;k<4;k++){
+      var cls="opt dim";
+      if(k===it.correctDisplay) cls="opt correct";
+      else if(k===it.chosen) cls="opt wrong";
+      h+='<button class="'+cls+'" disabled><span class="k">'+LETTERS[k]+'</span><span class="t"></span></button>';
+    }
+    h+='</div><div id="feedback"></div>';
+    h+='<div class="actions"><button class="primary" id="nx">'+(i+1>=missed.length?"Back to report":"Next miss")+'</button></div>';
+    h+='</div>';
+    app.innerHTML=h;
+    app.querySelector(".q").textContent=q.question;
+    var ts=app.querySelectorAll(".opt .t");
+    for(var m=0;m<4;m++) ts[m].textContent=it.opts[m];
+    document.getElementById("feedback").appendChild(explBlock(q, null));
+    document.getElementById("nx").addEventListener("click", function(){ renderReview(i+1); });
+    window.scrollTo(0,0);
+  }
+
+  // ---------- reference overlay ----------
+  function renderRef(filter){
+    var list=document.getElementById("reflist");
+    var f=(filter||"").toLowerCase();
+    var shown=REF.filter(function(r){
+      var hay=(r.key.replace(/-/g," ")+" "+r.siblings+" "+r.tell).toLowerCase();
+      return !f||hay.indexOf(f)>=0;
+    });
+    list.textContent="";
+    if(!shown.length){ var none=document.createElement("div"); none.className="hint"; none.textContent="No matches."; list.appendChild(none); return; }
+    var curDom="";
     shown.forEach(function(r){
-      if(r.domain !== curDom){
-        curDom = r.domain;
-        var d = document.createElement("div"); d.className="refdom"; d.textContent=curDom;
-        list.appendChild(d);
-      }
-      var card = document.createElement("div"); card.className="reffam";
-      var h = document.createElement("h2"); h.textContent = familyLabel(r.key);
-      if(r.tier==="priority"){
-        var s = document.createElement("span"); s.className="star"; s.textContent="\u2605 priority";
-        h.appendChild(document.createTextNode(" ")); h.appendChild(s);
-      }
-      var sib = document.createElement("div"); sib.className="sib"; sib.textContent = r.siblings;
-      var tell = document.createElement("div"); tell.className="tell"; tell.textContent = r.tell;
-      card.appendChild(h); card.appendChild(sib); card.appendChild(tell);
+      if(r.domain!==curDom){ curDom=r.domain; var d=document.createElement("div"); d.className="refdom"; d.textContent=curDom; list.appendChild(d); }
+      var card=document.createElement("div"); card.className="reffam";
+      var h2=document.createElement("h2"); h2.textContent=familyLabel(r.key);
+      if(r.tier==="priority"){ var st=document.createElement("span"); st.className="star"; st.textContent="\u2605 priority"; h2.appendChild(document.createTextNode(" ")); h2.appendChild(st); }
+      var sib=document.createElement("div"); sib.className="sib"; sib.textContent=r.siblings;
+      var tl=document.createElement("div"); tl.className="tell"; tl.textContent=r.tell;
+      card.appendChild(h2); card.appendChild(sib); card.appendChild(tl);
       list.appendChild(card);
     });
   }
-  var refEl = document.getElementById("ref");
+  var refEl=document.getElementById("ref");
   document.getElementById("refbtn").addEventListener("click", function(){
-    renderRef(document.getElementById("refsearch").value);
-    refEl.classList.add("open");
+    renderRef(document.getElementById("refsearch").value); refEl.classList.add("open");
   });
-  document.getElementById("refclose").addEventListener("click", function(){
-    refEl.classList.remove("open");
-  });
-  document.getElementById("refsearch").addEventListener("input", function(e){
-    renderRef(e.target.value);
-  });
+  document.getElementById("refclose").addEventListener("click", function(){ refEl.classList.remove("open"); });
+  document.getElementById("refsearch").addEventListener("input", function(e){ renderRef(e.target.value); });
 
-  buildSession(ALL);
+  showHome();
 })();
 </script>
 </body>
