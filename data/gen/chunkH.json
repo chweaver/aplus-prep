@@ -1,0 +1,392 @@
+[
+ {
+  "domain": "D5",
+  "family": "governance-hierarchy",
+  "question": "A security document reads: 'Step 1 - open the admin console. Step 2 - navigate to Users. Step 3 - disable the account and log the ticket number.' Which governance document type is this?",
+  "options": [
+   "Policy",
+   "Standard",
+   "Procedure",
+   "Guideline"
+  ],
+  "correctIndex": 2,
+  "explanation": "Procedure. Numbered step-by-step instructions telling someone exactly how to perform a task are a procedure. The tell: policy = high-level mandatory what/why, standard = specific mandatory requirement (the how much, such as AES-256), procedure = the ordered how-to steps, guideline = recommended non-mandatory best practice."
+ },
+ {
+  "domain": "D5",
+  "family": "governance-hierarchy",
+  "question": "Which governance document type is a recommended best practice that staff are encouraged to follow but are not required to obey?",
+  "options": [
+   "Guideline",
+   "Policy",
+   "Standard",
+   "Procedure"
+  ],
+  "correctIndex": 0,
+  "explanation": "Guideline. A guideline offers advisory, non-mandatory recommendations. The tell: guideline = optional recommendation, policy = mandatory high-level statement of intent, standard = mandatory specific requirement (how much), procedure = mandatory step-by-step how-to."
+ },
+ {
+  "domain": "D5",
+  "family": "governance-hierarchy",
+  "question": "Executives publish a one-page statement declaring that all company data must be protected and that security is every employee's responsibility, giving no technical specifics. Which document type is this?",
+  "options": [
+   "Standard",
+   "Policy",
+   "Guideline",
+   "Procedure"
+  ],
+  "correctIndex": 1,
+  "explanation": "Policy. A broad mandatory statement of intent with no implementation detail is a policy. The tell: policy = high-level mandatory what/why, standard = the specific mandatory spec that supports it, guideline = optional advice, procedure = step-by-step how."
+ },
+ {
+  "domain": "D5",
+  "family": "governance-hierarchy",
+  "question": "A mandatory rule requires that stored passwords use a defined hashing work factor and that disk encryption use AES-256. This specific, required document that supports the broader security policy is a:",
+  "options": [
+   "Guideline",
+   "Procedure",
+   "Policy",
+   "Standard"
+  ],
+  "correctIndex": 3,
+  "explanation": "Standard. A standard is the mandatory specific requirement (the exact how much) that backs a policy. The tell: standard = specific mandatory spec (AES-256), policy = high-level mandatory intent, guideline = optional recommendation, procedure = ordered how-to steps."
+ },
+ {
+  "domain": "D5",
+  "family": "policies",
+  "question": "A hurricane floods the corporate headquarters. The plan that keeps order fulfillment, payroll, and customer support functioning from alternate locations while the building is unusable is the:",
+  "options": [
+   "Disaster recovery policy",
+   "Business continuity policy",
+   "Incident response policy",
+   "Acceptable use policy"
+  ],
+  "correctIndex": 1,
+  "explanation": "Business continuity policy. Business continuity keeps the whole business operating during a disruption, spanning people and processes, not just IT. The tell: business continuity = keep the business running (broad, proactive), disaster recovery = restore IT systems after a disaster (technical subset, reactive), incident response = handle security incidents, acceptable use = rules for using company systems."
+ },
+ {
+  "domain": "D5",
+  "family": "policies",
+  "question": "After a fire destroys the server room, the team follows a documented plan to rebuild servers, restore databases from backup, and bring the IT systems back online. This plan is the:",
+  "options": [
+   "Business continuity policy",
+   "Change management policy",
+   "Disaster recovery policy",
+   "Incident response policy"
+  ],
+  "correctIndex": 2,
+  "explanation": "Disaster recovery policy. Disaster recovery focuses specifically on restoring IT systems and data after a disaster. The tell: disaster recovery = restore IT systems (technical, reactive), business continuity = keep the whole business running (broad, proactive), change management = control modifications, incident response = handle security incidents."
+ },
+ {
+  "domain": "D5",
+  "family": "policies",
+  "question": "Which policy defines what employees may and may not do with company laptops, email, and internet access?",
+  "options": [
+   "Acceptable use policy",
+   "Incident response policy",
+   "Business continuity policy",
+   "SDLC policy"
+  ],
+  "correctIndex": 0,
+  "explanation": "Acceptable use policy. The AUP sets the rules for permitted use of company systems and resources. The tell: acceptable use = rules for using systems, incident response = handling security incidents, business continuity = keeping the business running, SDLC = secure software development process."
+ },
+ {
+  "domain": "D5",
+  "family": "policies",
+  "question": "A policy defines the phases the security team follows once a breach is confirmed: preparation, detection, containment, eradication, and recovery. Which policy is this?",
+  "options": [
+   "Business continuity policy",
+   "Disaster recovery policy",
+   "Acceptable use policy",
+   "Incident response policy"
+  ],
+  "correctIndex": 3,
+  "explanation": "Incident response policy. It governs how security incidents are detected, contained, and remediated through defined phases. The tell: incident response = handle security incidents, business continuity = keep the business running, disaster recovery = restore IT systems after a disaster, acceptable use = rules for using systems."
+ },
+ {
+  "domain": "D5",
+  "family": "standards-procedures",
+  "question": "The SOC keeps a document titled 'Phishing Report Response' that lays out exactly what to do, in order, when a phishing report arrives. This scenario-specific procedure is a:",
+  "options": [
+   "Playbook",
+   "Onboarding procedure",
+   "Change management procedure",
+   "Password standard"
+  ],
+  "correctIndex": 0,
+  "explanation": "Playbook. A playbook is the procedure written for one specific scenario. The tell: playbook = procedure for a specific situation, onboarding = grant access to a new hire, change management procedure = control system modifications, password standard = the required password spec."
+ },
+ {
+  "domain": "D5",
+  "family": "standards-procedures",
+  "question": "When an employee resigns, HR triggers the procedure that revokes all system access and disables the person's accounts. This procedure is:",
+  "options": [
+   "Onboarding",
+   "Offboarding",
+   "Change management procedure",
+   "Access control standard"
+  ],
+  "correctIndex": 1,
+  "explanation": "Offboarding. Offboarding is the exit procedure that removes access when someone leaves. The tell: offboarding = revoke access at exit, onboarding = grant access for a new hire, change management procedure = control system modifications, access control standard = the required access spec."
+ },
+ {
+  "domain": "D5",
+  "family": "external-governance",
+  "question": "A retailer must comply with PCI DSS because it processes card payments. PCI DSS is enforced by the payment card brands rather than any government. This is an example of which governance source?",
+  "options": [
+   "Regulatory",
+   "Industry",
+   "Legal",
+   "National"
+  ],
+  "correctIndex": 1,
+  "explanation": "Industry. PCI DSS is a sector framework imposed by an industry body, not a government. The tell: industry = sector frameworks like PCI DSS, regulatory = government rules with enforcement, legal = laws and contracts, national = country-scope jurisdiction."
+ },
+ {
+  "domain": "D5",
+  "family": "external-governance",
+  "question": "A government agency issues enforceable rules and can levy penalties on organizations that fail to comply. This category of external governance is:",
+  "options": [
+   "Industry",
+   "Legal",
+   "Regulatory",
+   "Local"
+  ],
+  "correctIndex": 2,
+  "explanation": "Regulatory. Regulatory governance is government-created rules carrying enforcement and penalties. The tell: regulatory = government rules with enforcement, industry = sector frameworks (PCI DSS), legal = laws and contracts, local = a jurisdiction scope rather than a source type."
+ },
+ {
+  "domain": "D5",
+  "family": "data-roles",
+  "question": "A marketing company decides which customer data to collect and for what purposes, then hires an outside email vendor to run the campaigns. Under GDPR, the marketing company is the:",
+  "options": [
+   "Data processor",
+   "Data controller",
+   "Data custodian",
+   "Data owner"
+  ],
+  "correctIndex": 1,
+  "explanation": "Data controller. The controller decides why and how personal data is processed. The tell: controller = decides the why and how (GDPR), processor = acts on the data for the controller, custodian = hands-on technical care, owner = accountable senior person who sets classification."
+ },
+ {
+  "domain": "D5",
+  "family": "data-roles",
+  "question": "An email vendor sends marketing messages using only the customer data and instructions supplied by its client company and makes no decisions about why or how the personal data is used. Under GDPR, the vendor is the:",
+  "options": [
+   "Data processor",
+   "Data controller",
+   "Data owner",
+   "Data custodian"
+  ],
+  "correctIndex": 0,
+  "explanation": "Data processor. The processor acts on personal data solely on behalf of and under instruction from the controller. The tell: processor = acts for the controller, controller = decides the why and how, owner = accountable senior person setting classification, custodian = day-to-day technical protection."
+ },
+ {
+  "domain": "D5",
+  "family": "data-roles",
+  "question": "Which role provides the hands-on technical protection of data day to day - running backups, applying access controls, and maintaining systems - without deciding classification or purpose?",
+  "options": [
+   "Data owner",
+   "Data controller",
+   "Data custodian/steward",
+   "Data processor"
+  ],
+  "correctIndex": 2,
+  "explanation": "Data custodian/steward. The custodian handles the operational, technical safeguarding of data. The tell: custodian/steward = hands-on technical care, owner = accountable senior person who sets classification, controller = decides why and how, processor = acts for the controller."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-assessment-types",
+  "question": "Automated tooling constantly watches the environment and updates risk scores in real time as configurations change. This risk assessment cadence is:",
+  "options": [
+   "Ad hoc",
+   "Recurring",
+   "Continuous",
+   "One-time"
+  ],
+  "correctIndex": 2,
+  "explanation": "Continuous. Continuous assessment is ongoing automated monitoring with no defined stop. The tell: continuous = ongoing automated monitoring, ad hoc = as-needed triggered by an event, recurring = on a fixed schedule, one-time = a single point assessment."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-assessment-types",
+  "question": "After a competitor suffers a major breach, the CISO orders an unplanned risk assessment prompted specifically by that event. This assessment type is:",
+  "options": [
+   "Ad hoc",
+   "Recurring",
+   "Continuous",
+   "One-time"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ad hoc. An ad hoc assessment is performed as needed in response to a specific trigger. The tell: ad hoc = as-needed, triggered by an event, recurring = on a fixed schedule, continuous = ongoing automated monitoring, one-time = a single planned point assessment."
+ },
+ {
+  "domain": "D5",
+  "family": "qual-quant",
+  "question": "An analyst calculates that a server failure costs $40,000 per event and occurs about twice a year, producing an $80,000 estimated annual loss. This dollars-and-math approach to risk is:",
+  "options": [
+   "Qualitative",
+   "Quantitative",
+   "Semi-quantitative",
+   "Hybrid"
+  ],
+  "correctIndex": 1,
+  "explanation": "Quantitative. Quantitative analysis uses objective dollar figures and math such as SLE, ARO, and ALE. The tell: quantitative = numbers and money, qualitative = subjective high/medium/low ratings, semi-quantitative = scored ranges rather than pure dollars, hybrid = blends both approaches."
+ },
+ {
+  "domain": "D5",
+  "family": "qual-quant",
+  "question": "A team rates each risk as High, Medium, or Low on a likelihood-versus-impact matrix based on expert judgment, using no monetary figures at all. This approach is:",
+  "options": [
+   "Qualitative",
+   "Quantitative",
+   "Hybrid",
+   "Semi-quantitative"
+  ],
+  "correctIndex": 0,
+  "explanation": "Qualitative. Qualitative analysis relies on subjective ratings and judgment rather than money. The tell: qualitative = subjective labels (high/medium/low), quantitative = objective dollars and math, hybrid = blends both, semi-quantitative = numeric scoring of ranges rather than dollars."
+ },
+ {
+  "domain": "D5",
+  "family": "qual-quant",
+  "question": "Which risk analysis method relies on subjective ratings and expert opinion rather than objective monetary calculation?",
+  "options": [
+   "Quantitative",
+   "Semi-quantitative",
+   "Qualitative",
+   "Hybrid"
+  ],
+  "correctIndex": 2,
+  "explanation": "Qualitative. By definition qualitative analysis uses judgment-based ratings, not calculated dollar values. The tell: qualitative = subjective labels and judgment, quantitative = objective dollars and math, semi-quantitative = scored numeric ranges, hybrid = blends both."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "An asset is valued at $200,000. A fire is expected to destroy 25% of its value in a single event. What is the single loss expectancy (SLE)?",
+  "options": [
+   "$100,000",
+   "$25,000",
+   "$200,000",
+   "$50,000"
+  ],
+  "correctIndex": 3,
+  "explanation": "$50,000. SLE = Asset Value x Exposure Factor = $200,000 x 0.25 = $50,000. The tell: SLE = loss from ONE event (AV x EF), exposure factor = the 25% of value lost per event, ARO = how many times per year, ALE = SLE x ARO for the yearly expected loss."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "A warehouse is valued at $500,000. A flood would destroy 40% of it and is expected once every 2 years. What is the annualized loss expectancy (ALE)?",
+  "options": [
+   "$200,000",
+   "$250,000",
+   "$1,000,000",
+   "$100,000"
+  ],
+  "correctIndex": 3,
+  "explanation": "$100,000. SLE = $500,000 x 0.40 = $200,000; once every 2 years means ARO = 1/2 = 0.5; ALE = SLE x ARO = $200,000 x 0.5 = $100,000. The tell: ARO = occurrences per year (once every 2 years = 0.5, not 2), SLE = the $200,000 single-event loss, exposure factor = the 40%, ALE = SLE x ARO annualized."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "A risk assessment lists a server's single loss expectancy as $40,000 and its annualized loss expectancy as $10,000. How often is the loss event expected to occur?",
+  "options": [
+   "Once every 4 years",
+   "Four times per year",
+   "Once every 10 years",
+   "Twice per year"
+  ],
+  "correctIndex": 0,
+  "explanation": "Once every 4 years. ARO = ALE / SLE = $10,000 / $40,000 = 0.25, and an ARO of 0.25 means the event is expected once every 4 years. The tell: ARO = expected occurrences per year (ALE divided by SLE); SLE = the loss from one event; ALE = the expected yearly loss; an ARO below 1 means less often than once a year."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "A data center flood is expected to occur once every 5 years. What is the annualized rate of occurrence (ARO)?",
+  "options": [
+   "0.2",
+   "5",
+   "1",
+   "0.5"
+  ],
+  "correctIndex": 0,
+  "explanation": "0.2. ARO for a once-every-N-years event is 1/N, so 1/5 = 0.2 occurrences per year. The tell: ARO = occurrences per year (once every 5 years = 0.2, not 5), SLE = loss from one event, exposure factor = percent of asset lost per event, ALE = SLE x ARO."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "A facility is valued at $1,200,000. An event destroys 15% of its value each time it occurs, and it happens about 3 times per year. What is the annualized loss expectancy (ALE)?",
+  "options": [
+   "$180,000",
+   "$540,000",
+   "$360,000",
+   "$60,000"
+  ],
+  "correctIndex": 1,
+  "explanation": "$540,000. SLE = $1,200,000 x 0.15 = $180,000; ARO = 3; ALE = $180,000 x 3 = $540,000. The tell: SLE = the $180,000 single-event loss, exposure factor = the 15%, ARO = 3 events per year, ALE = SLE x ARO. Stopping at $180,000 forgets to multiply by ARO."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-math",
+  "question": "A laptop fleet component is valued at $60,000. Theft destroys 30% of that value per incident and occurs about twice a year. What is the annualized loss expectancy (ALE)?",
+  "options": [
+   "$18,000",
+   "$72,000",
+   "$36,000",
+   "$9,000"
+  ],
+  "correctIndex": 2,
+  "explanation": "$36,000. SLE = $60,000 x 0.30 = $18,000; ARO = 2; ALE = $18,000 x 2 = $36,000. The tell: SLE = the $18,000 single-event loss (AV x EF), exposure factor = the 30%, ARO = 2 events per year, ALE = SLE x ARO for the annual figure."
+ },
+ {
+  "domain": "D5",
+  "family": "probability-impact",
+  "question": "A risk analysis estimates that if a data breach occurs, the resulting harm - lawsuits, regulatory fines, and lost customers - would be severe. The dimension of risk being described here is the:",
+  "options": [
+   "Probability",
+   "Likelihood",
+   "Exposure factor",
+   "Impact"
+  ],
+  "correctIndex": 3,
+  "explanation": "Impact. Impact is the magnitude of harm that results if the risk materializes. The tell: impact = size of the harm if it happens, probability = statistical chance it happens, likelihood = a qualitative chance rating, exposure factor = percent of an asset lost per event."
+ },
+ {
+  "domain": "D5",
+  "family": "probability-impact",
+  "question": "In a quantitative risk model, the percentage of an asset's value that would be lost in a single event is called the:",
+  "options": [
+   "Probability",
+   "Likelihood",
+   "Exposure factor",
+   "Impact"
+  ],
+  "correctIndex": 2,
+  "explanation": "Exposure factor. The exposure factor is the fraction of asset value lost in one event. The tell: exposure factor = percent of the asset lost per event, probability = statistical chance of occurrence, likelihood = qualitative chance rating, impact = magnitude of harm if it occurs."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-register",
+  "question": "The security team tracks 'number of overdue critical patches' as a metric that, when it climbs, warns that a particular risk is rising. In the risk register, this metric is a:",
+  "options": [
+   "Key risk indicator (KRI)",
+   "Risk owner",
+   "Risk threshold",
+   "Risk appetite"
+  ],
+  "correctIndex": 0,
+  "explanation": "Key risk indicator (KRI). A KRI is a measurable early-warning metric that signals increasing risk. The tell: KRI = a metric that warns risk is rising, risk owner = the person accountable for the risk, risk threshold = the level at which action is required, risk appetite = the overall risk the org is willing to accept."
+ },
+ {
+  "domain": "D5",
+  "family": "risk-register",
+  "question": "Each entry in the risk register names one accountable manager who is responsible for monitoring and treating that specific risk. That named individual is the:",
+  "options": [
+   "Key risk indicator (KRI)",
+   "Risk threshold",
+   "Risk appetite",
+   "Risk owner"
+  ],
+  "correctIndex": 3,
+  "explanation": "Risk owner. The risk owner is the person accountable for managing a specific register entry. The tell: risk owner = the accountable person for that risk, KRI = a warning metric, risk threshold = the level at which action is triggered, risk appetite = the org's overall willingness to take risk."
+ }
+]

@@ -1,0 +1,346 @@
+[
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "A fintech startup pursues aggressive expansion and is willing to take on significant risk to capture market share quickly. Which risk appetite posture is this?",
+    "options": ["Expansionary", "Conservative", "Neutral", "Risk tolerance"],
+    "correctIndex": 0,
+    "explanation": "Expansionary. A high willingness to take on risk for reward is an expansionary appetite. The tell: expansionary = high appetite for reward, conservative = low appetite and risk-averse, neutral = a balanced middle stance, risk tolerance = the acceptable variance around a specific risk before acting."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "Which term describes the broad, overall amount of risk an organization is willing to pursue in exchange for reward?",
+    "options": ["Risk tolerance", "Risk appetite", "Conservative", "Neutral"],
+    "correctIndex": 1,
+    "explanation": "Risk appetite. It is the organization's overall willingness to take on risk for reward. The tell: risk appetite = overall willingness, risk tolerance = acceptable variance around one specific risk, conservative = a low-appetite stance, neutral = a balanced stance."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "A bank sets its appetite but specifies that any single trading desk may deviate no more than 2 percent from its risk limit before action is required. That 2 percent boundary is an example of what?",
+    "options": ["Risk tolerance", "Expansionary posture", "Risk appetite", "Conservative posture"],
+    "correctIndex": 0,
+    "explanation": "Risk tolerance. The acceptable variance around a specific risk before you must act is tolerance. The tell: risk tolerance = allowable deviation on a specific risk, expansionary posture = a high-appetite label, risk appetite = broad overall willingness, conservative posture = a low-appetite label."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "A company buys a cyber-insurance policy so that a data-breach payout is covered by the insurer rather than the business. Which risk strategy is this?",
+    "options": ["Accept", "Mitigate", "Transfer", "Avoid"],
+    "correctIndex": 2,
+    "explanation": "Transfer. Shifting the financial impact to an insurer is risk transfer. The tell: transfer = shift risk to another party via insurance or outsourcing, accept = live with it and do nothing, mitigate = reduce it with controls, avoid = stop the activity entirely."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "After a review, management cancels a planned overseas payment feature altogether because the fraud exposure is too high to justify. Which strategy did they choose?",
+    "options": ["Avoid", "Mitigate", "Transfer", "Accept"],
+    "correctIndex": 0,
+    "explanation": "Avoid. Eliminating the activity so the risk cannot occur is avoidance. The tell: avoid = stop doing the activity entirely, mitigate = keep doing it but add controls, transfer = hand the risk to a third party, accept = proceed and absorb the risk."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "To lower the chance of ransomware, a firm deploys endpoint protection, network segmentation, and offline backups while continuing normal operations. Which strategy is this?",
+    "options": ["Accept", "Avoid", "Mitigate", "Transfer"],
+    "correctIndex": 2,
+    "explanation": "Mitigate. Reducing likelihood or impact with controls while continuing the activity is mitigation. The tell: mitigate = reduce risk with controls, avoid = discontinue the activity, transfer = offload to another party, accept = take no action at all."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "A low-impact reporting bug would cost more to fix than it could ever cause in damage, so leadership signs off to leave it as-is and move on. Which strategy is this?",
+    "options": ["Mitigate", "Accept", "Transfer", "Avoid"],
+    "correctIndex": 1,
+    "explanation": "Accept. Knowingly taking no action and living with a documented low risk is acceptance. The tell: accept = live with it and add no control, mitigate = add controls to reduce it, transfer = insure or outsource it, avoid = stop the activity."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "A retailer outsources all payment card handling to a payment processor, and the contract makes the processor liable for losses from any card-data breach on its platform. Which risk strategy does this represent?",
+    "options": ["Transfer", "Avoid", "Accept", "Mitigate"],
+    "correctIndex": 0,
+    "explanation": "Transfer. The contract shifts liability for the loss to a third party, which is risk transfer. The tell: transfer = another party assumes the loss (insurance, or outsourcing with a liability shift), avoid = stop the activity entirely, accept = absorb the loss yourself, mitigate = reduce the risk with controls you operate."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "Which strategy reduces the probability or impact of a risk by applying safeguards while the organization continues the activity?",
+    "options": ["Accept", "Transfer", "Avoid", "Mitigate"],
+    "correctIndex": 3,
+    "explanation": "Mitigate. Applying safeguards to cut probability or impact is mitigation. The tell: mitigate = reduce with controls, accept = do nothing and absorb it, transfer = offload to a third party, avoid = stop the activity."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "A research lab receives permanent, documented approval excusing its entire class of legacy scanners from the encryption-at-rest requirement for as long as those devices remain in service. What is this arrangement best called?",
+    "options": ["Exception", "Accept", "Avoid", "Exemption"],
+    "correctIndex": 3,
+    "explanation": "Exemption. A standing, pre-approved pass from a requirement is an exemption. The tell: exemption = ongoing pre-approved pass from a rule, exception = a one-off approved deviation, accept = broadly live with the risk, avoid = discontinue the activity."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "For a single migration weekend, a manager requests and receives one-time approval to run a service without the usual logging agent installed. What is this documented one-off deviation called?",
+    "options": ["Exemption", "Exception", "Transfer", "Mitigate"],
+    "correctIndex": 1,
+    "explanation": "Exception. A single approved deviation for one instance is an exception. The tell: exception = one-off approved deviation, exemption = standing pre-approved pass, transfer = move risk to a third party, mitigate = reduce risk with controls."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "Transferring a risk keeps the activity going but shifts the loss to someone else. Which strategy instead removes the risk by discontinuing the activity completely?",
+    "options": ["Accept", "Mitigate", "Avoid", "Transfer"],
+    "correctIndex": 2,
+    "explanation": "Avoid. Discontinuing the activity so the risk disappears is avoidance. The tell: avoid = stop the activity entirely, transfer = shift the loss but keep going, accept = keep going and absorb it, mitigate = keep going but reduce it with controls."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-strategies",
+    "question": "Unlike mitigation, which lowers a risk with controls, which strategy involves consciously choosing to take no action and simply absorb the potential loss?",
+    "options": ["Accept", "Avoid", "Transfer", "Mitigate"],
+    "correctIndex": 0,
+    "explanation": "Accept. Choosing to absorb the loss with no control is acceptance. The tell: accept = take no action and absorb it, avoid = stop the activity, transfer = offload the loss to another party, mitigate = add controls to reduce it."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "After an outage, a payment system must be back online within 2 hours to avoid unacceptable business harm. Which metric does this 2-hour target represent?",
+    "options": ["RPO", "RTO", "MTTR", "MTBF"],
+    "correctIndex": 1,
+    "explanation": "RTO. The target time to restore service after an outage is the recovery time objective. The tell: RTO = how fast you must restore service, RPO = how much data loss is acceptable, MTTR = average time to repair, MTBF = average uptime between failures."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "A database is backed up every 4 hours, and the business states it can tolerate losing at most 4 hours of transactions. Which metric defines that acceptable data-loss window?",
+    "options": ["RTO", "MTBF", "RPO", "MTTR"],
+    "correctIndex": 2,
+    "explanation": "RPO. The maximum tolerable data loss measured back to the last good backup is the recovery point objective. The tell: RPO = acceptable data-loss point, RTO = time to restore service, MTBF = average time between failures, MTTR = average repair time."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "Which reliability metric expresses the average time it takes to repair a failed component and return it to service?",
+    "options": ["MTTR", "MTBF", "RTO", "RPO"],
+    "correctIndex": 0,
+    "explanation": "MTTR. Mean time to repair is the average duration to fix a failure. The tell: MTTR = average repair time after a failure, MTBF = average uptime between failures, RTO = restore-time target, RPO = acceptable data loss."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "For a repairable server, which metric captures the average operating time between one failure and the next, indicating overall reliability?",
+    "options": ["MTTR", "RPO", "RTO", "MTBF"],
+    "correctIndex": 3,
+    "explanation": "MTBF. Mean time between failures is the average uptime between breakdowns. The tell: MTBF = average time between failures, MTTR = average time to repair one failure, RTO = restore-time target, RPO = tolerable data loss."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "Before signing, a bank insists the contract include a provision letting it inspect the vendor's security controls on demand. Which element is this?",
+    "options": ["Independent assessment", "Right-to-audit clause", "Supply chain analysis", "Due diligence"],
+    "correctIndex": 1,
+    "explanation": "Right-to-audit clause. A contractual right to inspect the vendor directly is a right-to-audit clause. The tell: right-to-audit clause = contractual right to inspect the vendor yourself, independent assessment = an outside third party reviews them, supply chain analysis = evaluating the vendor's own suppliers, due diligence = investigating the vendor before signing."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "A manufacturer evaluates not just its direct vendor but also the smaller upstream firms that supply that vendor's components for hidden risk. Which vendor-assessment activity is this?",
+    "options": ["Supply chain analysis", "Right-to-audit clause", "Conflict of interest", "Penetration testing"],
+    "correctIndex": 0,
+    "explanation": "Supply chain analysis. Assessing the vendor's own upstream suppliers is supply chain analysis. The tell: supply chain analysis = evaluate the vendor's suppliers, right-to-audit clause = a contractual inspection right, conflict of interest = competing loyalties that bias judgment, penetration testing = an authorized simulated attack."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "A managed hosting contract guarantees 99.95 percent uptime and a 30-minute response time, with service credits owed when targets are missed. Which agreement is this?",
+    "options": ["MOU", "MSA", "BPA", "SLA"],
+    "correctIndex": 3,
+    "explanation": "SLA. Measurable targets plus penalties equal a service level agreement. The tell: SLA = metrics with penalties, MOU = non-binding statement of intent, MSA = master framework contract, BPA = business partnership terms."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Two universities sign a non-binding document expressing their shared intent to collaborate on research, with no enforceable obligations. Which agreement is this?",
+    "options": ["SLA", "MOU", "SOW", "NDA"],
+    "correctIndex": 1,
+    "explanation": "MOU. A non-binding statement of mutual intent is a memorandum of understanding. The tell: MOU = non-binding intent, SLA = enforceable metrics with penalties, SOW = the scope of one specific job, NDA = confidentiality only."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "A company and a consulting firm sign an overarching contract that sets the general legal and commercial terms once, so future individual projects can be added quickly. Which agreement is this?",
+    "options": ["SOW", "MOA", "MSA", "SLA"],
+    "correctIndex": 2,
+    "explanation": "MSA. A master framework contract that future work orders hang off of is a master service agreement. The tell: MSA = master framework for many future jobs, SOW = the specifics of one job, MOA = a formal agreement of roles and responsibilities, SLA = service targets with penalties."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Under an existing master contract, a document spells out the exact deliverables, timeline, and milestones for one specific website build. Which agreement is this?",
+    "options": ["MSA", "MOU", "SOW", "BPA"],
+    "correctIndex": 2,
+    "explanation": "SOW. The scope, deliverables, and timeline for a single job is a statement of work. The tell: SOW = the specifics of one job, MSA = the master framework it hangs off of, MOU = non-binding intent, BPA = partnership terms."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Before sharing source code with a contractor, a firm requires them to sign a document that legally bars them from disclosing any confidential information. Which agreement is this?",
+    "options": ["NDA", "MOU", "SLA", "MOA"],
+    "correctIndex": 0,
+    "explanation": "NDA. A pure confidentiality agreement is a non-disclosure agreement. The tell: NDA = confidentiality only, MOU = non-binding intent, SLA = service metrics with penalties, MOA = formal agreement of roles and responsibilities."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Two firms forming a joint venture sign a document defining each partner's capital contribution, profit split, and decision-making authority. Which agreement is this?",
+    "options": ["MSA", "SLA", "SOW", "BPA"],
+    "correctIndex": 3,
+    "explanation": "BPA. Terms governing a business partnership are a business partners agreement. The tell: BPA = partnership terms such as contributions and profit split, MSA = master framework for service work, SLA = service targets with penalties, SOW = one specific job's scope."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Two agencies move past a loose understanding and sign a more formal, binding document that assigns specific roles and responsibilities to each party, though no money changes hands. Which agreement is this?",
+    "options": ["MOU", "MOA", "NDA", "SLA"],
+    "correctIndex": 1,
+    "explanation": "MOA. A more formal, binding agreement defining roles and responsibilities, a step past an MOU, is a memorandum of agreement. The tell: MOA = binding roles and responsibilities agreement, MOU = looser non-binding intent, NDA = confidentiality only, SLA = measurable service targets with penalties."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "An IT director is asked to review the SLA in a new cloud contract. What does this document primarily establish?",
+    "options": ["A non-binding statement of mutual intent to cooperate", "Overarching master terms that future projects reference", "Measurable service targets and penalties for missing them", "The contribution and profit terms of a business partnership"],
+    "correctIndex": 2,
+    "explanation": "SLA. A service level agreement sets measurable performance targets and the penalties for failing them. The tell: SLA = numbers plus penalties, MOU = non-binding intent, MSA = master framework contract, BPA = partnership terms."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Unlike an MOA, which formally binds each party to defined roles and responsibilities, which document records only a general, non-binding statement of mutual intent to cooperate?",
+    "options": ["MOU", "SOW", "MOA", "MSA"],
+    "correctIndex": 0,
+    "explanation": "MOU. A non-binding record of mutual intent is a memorandum of understanding. The tell: MOU = non-binding intent, MOA = more formal binding roles and responsibilities, SOW = one job's scope, MSA = master framework contract."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "A facilities vendor receives a document from a client authorizing one discrete task: replace the badge readers at a single office by June 30 for a fixed price. Which document is this?",
+    "options": ["MOU", "BPA", "SOW", "NDA"],
+    "correctIndex": 2,
+    "explanation": "SOW. A statement of work (or work order) defines the scope, deliverables, and timeline for one specific job. The tell: SOW/WO = one job's scope and schedule, MOU = non-binding intent, BPA = partnership terms, NDA = confidentiality only."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "A hospital that repeatedly violates health-data regulations is barred by the regulator from operating its lab entirely. Which compliance consequence is this?",
+    "options": ["Loss of license", "Fines", "Reputational damage", "Sanctions"],
+    "correctIndex": 0,
+    "explanation": "Loss of license. Being barred from operating is loss of license. The tell: loss of license = you can no longer legally operate, fines = a monetary penalty, reputational damage = brand harm, sanctions = imposed restrictions or penalties."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "After a breach, a company is legally required to notify the data-protection regulator and affected public. This obligation is an example of what?",
+    "options": ["Contractual impacts", "Sanctions", "External reporting", "Internal reporting"],
+    "correctIndex": 2,
+    "explanation": "External reporting. Reporting to regulators and the public outside the organization is external reporting. The tell: external reporting = to regulators and public, contractual impacts = penalties triggered under a contract, sanctions = imposed restrictions, internal reporting = to management or the board."
+  },
+  {
+    "domain": "D5",
+    "family": "due-diligence-care",
+    "question": "Before onboarding a cloud vendor, a firm researches the vendor's certifications, financial stability, and past breaches. This upfront investigation is best described as what?",
+    "options": ["Due care", "Due diligence", "Attestation", "Acknowledgement"],
+    "correctIndex": 1,
+    "explanation": "Due diligence. Investigating and doing the homework before acting is due diligence. The tell: due diligence = investigate before engaging, due care = ongoing reasonable protection once engaged, attestation = formally affirming something is true, acknowledgement = confirming you received or understood something."
+  },
+  {
+    "domain": "D5",
+    "family": "due-diligence-care",
+    "question": "After engaging the vendor, the firm continuously maintains its own access controls, monitoring, and patching to protect the shared data. These ongoing reasonable actions are called what?",
+    "options": ["Due care", "Due diligence", "Attestation", "Acknowledgement"],
+    "correctIndex": 0,
+    "explanation": "Due care. The ongoing reasonable steps to protect assets after engagement is due care. The tell: due care = act responsibly on an ongoing basis, due diligence = the upfront investigation before acting, attestation = a formal affirmation of truth, acknowledgement = confirming receipt or understanding."
+  },
+  {
+    "domain": "D5",
+    "family": "due-diligence-care",
+    "question": "Which term refers to formally affirming, often in a signed statement, that a control or condition is true and in place?",
+    "options": ["Due diligence", "Due care", "Acknowledgement", "Attestation"],
+    "correctIndex": 3,
+    "explanation": "Attestation. A formal signed affirmation that something is true is attestation. The tell: attestation = formally affirm a fact is true, due diligence = pre-engagement investigation, due care = ongoing responsible protection, acknowledgement = confirming you received or understood something."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A customer submits a request demanding that a company erase all personal data it holds about her. Which privacy right is she exercising?",
+    "options": ["Data inventory", "Right to be forgotten", "Data retention", "Data subject"],
+    "correctIndex": 1,
+    "explanation": "Right to be forgotten. The subject's right to have their personal data erased is the right to be forgotten. The tell: right to be forgotten = right to have your data deleted, data inventory = knowing what personal data you hold, data retention = how long you keep it, data subject = the person the data is about."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "In privacy law, which term refers to the individual person that a set of personal data is actually about?",
+    "options": ["Data subject", "Data controller", "Data processor", "Data custodian"],
+    "correctIndex": 0,
+    "explanation": "Data subject. The individual a set of personal data describes is the data subject. The tell: data subject = the person the data is about, data controller = decides why and how data is processed, data processor = handles data on the controller's behalf, data custodian = provides hands-on technical care of the data."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "A department rates its own controls against a checklist and reports the results to its manager, with no outside reviewer involved. Which audit type is this?",
+    "options": ["Independent third-party audit", "External audit", "Regulatory examination", "Self-assessment"],
+    "correctIndex": 3,
+    "explanation": "Self-assessment. A team rating its own controls is a self-assessment. The tell: self-assessment = the team rates itself, independent third-party audit = an unaffiliated outsider reviews for objectivity, external audit = an outside party reviews, regulatory examination = a government regulator inspects."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "To satisfy investors who distrust internal reviews, a company hires an unaffiliated auditing firm with no stake in the outcome to review its controls objectively. Which audit type is this?",
+    "options": ["Self-assessment", "Internal audit", "Attestation", "Independent third-party audit"],
+    "correctIndex": 3,
+    "explanation": "Independent third-party audit. An unaffiliated outside auditor engaged for objectivity is an independent third-party audit. The tell: independent third-party audit = unaffiliated outsider for objectivity, self-assessment = the team rates itself, internal audit = your own staff or committee reviews, attestation = a formal signed statement of compliance."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "A tester is hired and given no internal documentation, credentials, or network diagrams, and must discover everything as an outside attacker would. Which engagement type is this?",
+    "options": ["Known environment", "Partially known environment", "Unknown environment", "Integrated"],
+    "correctIndex": 2,
+    "explanation": "Unknown environment. Zero inside information provided is an unknown environment test. The tell: unknown environment = tester gets no inside info, partially known environment = tester gets some info, known environment = tester gets full information, integrated = offensive and defensive teams working together."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "During early reconnaissance, an analyst gathers information only from public records, search engines, and social media without ever sending a packet to the target. Which activity is this?",
+    "options": ["Passive reconnaissance", "Active reconnaissance", "Known environment", "Defensive testing"],
+    "correctIndex": 0,
+    "explanation": "Passive reconnaissance. Gathering intel without touching the target is passive recon. The tell: passive reconnaissance = collect info without contacting the target, active reconnaissance = directly probe or scan the target, known environment = a test with full information given, defensive testing = the protective blue-team side."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "Which penetration testing approach gives the tester some, but not all, internal information about the target before the engagement?",
+    "options": ["Known environment", "Unknown environment", "Active reconnaissance", "Partially known environment"],
+    "correctIndex": 3,
+    "explanation": "Partially known environment. Providing limited internal information defines a partially known environment test. The tell: partially known environment = some info shared, known environment = full info shared, unknown environment = no info shared, active reconnaissance = directly probing the target."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "A security team periodically sends fake but realistic phishing emails to employees to measure and improve how they respond. This training tool is called what?",
+    "options": ["Recurring reporting", "Risky behavior", "Initial reporting", "Phishing campaign"],
+    "correctIndex": 3,
+    "explanation": "Phishing campaign. Sending simulated phishing to train and measure users is a phishing campaign. The tell: phishing campaign = simulated phishing for training, recurring reporting = ongoing reporting cadence, risky behavior = knowingly dangerous user action, initial reporting = the first baseline report."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "An employee accidentally emails a spreadsheet of customer records to the wrong address with no ill intent. This is best classified as which category of anomalous behavior?",
+    "options": ["Risky behavior", "Unexpected behavior", "Unintentional behavior", "Recurring reporting"],
+    "correctIndex": 2,
+    "explanation": "Unintentional behavior. An accidental, no-intent mistake is unintentional behavior. The tell: unintentional behavior = accidental with no intent, risky behavior = knowingly dangerous, unexpected behavior = out of the norm, recurring reporting = ongoing reporting cadence."
+  }
+]

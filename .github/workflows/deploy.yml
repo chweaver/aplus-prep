@@ -21,16 +21,15 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
-          cache: 'npm'
 
-      - run: npm ci
+      - name: Validate question bank
+        run: node scripts/validate.mjs
 
-      - run: npm run build
-        env:
-          VITE_BASE_PATH: /aplus-prep/
+      - name: Stage site
+        run: mkdir -p public && cp index.html public/
 
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./public
           publish_branch: gh-pages
