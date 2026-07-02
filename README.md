@@ -25,10 +25,13 @@ Three modes, all driven by the same adaptive engine:
   sibling term. The tell line is the studying.
 - **Full stream**: all questions shuffled.
 
-Drills and the stream honor a **feedback setting** on the home screen:
-"Instant" grades each answer as you tap it; "At the end" holds all feedback
-until the round is scored, then walks you through your misses (the practice
-exam always works this way).
+A **feedback setting** on the home screen applies to every mode: "Instant"
+grades each answer as you tap it and shows the explanation before you move
+on; "At the end" holds all feedback until the round or exam is submitted,
+then walks you through your misses. With instant feedback the practice exam
+keeps its timer, adaptive selection, and scaled scoring, but answers lock as
+you go (no flags or revisiting); with end-of-round feedback it is a full
+simulation with flagging, a question grid, and changeable answers.
 
 The adaptive engine weights each question by history: missed-last-time (4x) >
 never-seen (3x) > shaky (2x) > solid (1x) > mastered (0.4x), multiplied up for
