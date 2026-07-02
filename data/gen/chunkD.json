@@ -67,7 +67,7 @@
  {
   "domain": "D3",
   "family": "data-protection",
-  "question": "To keep credit card numbers out of its systems, a retailer replaces each number with a substitute value that maps back to the original only through a secure vault. Which technique is this?",
+  "question": "A hospital's billing system replaces each patient's national ID with a substitute value; the real ID can be recovered only by querying a separate secure vault. Which data protection method is this?",
   "options": [
    "encryption",
    "tokenization",
@@ -75,7 +75,7 @@
    "hashing"
   ],
   "correctIndex": 1,
-  "explanation": "Tokenization. Swapping a card number for a token that maps back only through a secure vault is tokenization. The tell: tokenization = swap for a vaulted token, encryption = reversible with a key, masking = show only part of the value, hashing = one-way fingerprint."
+  "explanation": "Tokenization. Swapping the real identifier for a substitute that maps back only through a secure vault is tokenization. The tell: tokenization = swap for a vaulted token, encryption = reversible with a key, masking = show only part of the value, hashing = one-way fingerprint that never maps back."
  },
  {
   "domain": "D3",
@@ -153,7 +153,7 @@
    "cold site"
   ],
   "correctIndex": 3,
-  "explanation": "Cold site. An empty facility with only power, cooling, and space, where everything must be brought in, is cheapest with recovery in days to weeks. The tell: cold site = bare space and power, days to weeks, warm site = hardware ready but data loaded, hot site = fully running, minutes, geographic dispersion = facilities spread apart."
+  "explanation": "Cold site. An empty facility with only power, cooling, and space, where everything must be brought in, is cheapest with recovery in days to weeks. The tell: cold site = bare space and power, days to weeks, warm site = hardware ready but data must be loaded, hot site = fully running, minutes, geographic dispersion = facilities spread apart."
  },
  {
   "domain": "D3",
