@@ -145,7 +145,7 @@
  {
   "domain": "D3",
   "family": "fail-modes",
-  "question": "During a fire alarm the building's electronic maglocks release so occupants can evacuate. Because the design prioritizes protecting human life over securing the room, which failure mode term best describes it?",
+  "question": "When a data center loses power, the electronic maglocks on its doors release so occupants can evacuate. Because the design prioritizes protecting human life over securing the room, which failure mode term best describes it?",
   "options": [
    "fail-open",
    "fail-closed",
@@ -171,7 +171,7 @@
  {
   "domain": "D3",
   "family": "active-passive",
-  "question": "A monitoring sensor is cabled to a switch SPAN port where it receives a mirrored copy of traffic; it can analyze but never delay or drop packets. Which connection method is this?",
+  "question": "A monitoring sensor is cabled to a switch SPAN port, where it receives a mirrored copy of network traffic rather than sitting in the traffic path. Which connection method is this?",
   "options": [
    "active",
    "inline",
@@ -223,15 +223,15 @@
  {
   "domain": "D3",
   "family": "jump-proxy",
-  "question": "An appliance is placed in front of a farm of web servers; it terminates inbound client connections, offloads TLS, and forwards requests to the appropriate backend. Which system is this?",
+  "question": "An appliance placed in front of an organization's web servers accepts all inbound client requests, filters them, caches frequently requested content, and shields the servers' internal addresses. Which system is this?",
   "options": [
    "reverse proxy",
    "jump server",
    "forward proxy",
-   "proxy server"
+   "load balancer"
   ],
   "correctIndex": 0,
-  "explanation": "reverse proxy. Fronting servers for inbound client traffic with TLS offload and backend forwarding is a reverse proxy. The tell: reverse proxy = broker in front of servers for inbound client traffic; forward proxy = broker in front of internal clients for outbound requests; proxy server = the generic request intermediary category; jump server = hardened admin gateway pivot host."
+  "explanation": "reverse proxy. Brokering inbound client traffic in front of servers, with filtering, caching, and server shielding, is a reverse proxy. The tell: reverse proxy = broker in front of servers for inbound client traffic; forward proxy = broker in front of internal clients for outbound requests; load balancer = distributes requests across multiple servers for throughput, not a request filter; jump server = hardened admin gateway pivot host."
  },
  {
   "domain": "D3",
@@ -244,7 +244,7 @@
    "load balancer"
   ],
   "correctIndex": 2,
-  "explanation": "forward proxy. Brokering internal clients' outbound requests with filtering and caching is a forward proxy. The tell: forward proxy = broker for internal clients' outbound requests; reverse proxy = broker in front of servers for inbound traffic; proxy server = the general request-intermediary category; jump server = hardened admin gateway pivot host."
+  "explanation": "forward proxy. Brokering internal clients' outbound requests with filtering and caching is a forward proxy. The tell: forward proxy = broker for internal clients' outbound requests; reverse proxy = broker in front of servers for inbound traffic; load balancer = distributes inbound requests across multiple servers for throughput; jump server = hardened admin gateway pivot host."
  },
  {
   "domain": "D3",
@@ -275,7 +275,7 @@
  {
   "domain": "D3",
   "family": "ips-ids",
-  "question": "A HIPS can block threats locally on a host. Which sibling also runs on a single host but only monitors and alerts, taking no blocking action?",
+  "question": "A HIPS can block threats locally on a host. Which control also runs on a single host but only monitors and alerts, taking no blocking action?",
   "options": [
    "IPS",
    "IDS",
@@ -314,7 +314,7 @@
  {
   "domain": "D3",
   "family": "firewalls",
-  "question": "A Layer 4 firewall filters only by port and IP address. Which sibling extends this with application awareness, deep packet inspection, and user identity integration?",
+  "question": "A Layer 4 firewall filters only by port and IP address. Which firewall type extends this with application awareness, deep packet inspection, and user identity integration?",
   "options": [
    "WAF",
    "UTM",
@@ -353,7 +353,7 @@
  {
   "domain": "D3",
   "family": "secure-tunnels",
-  "question": "Remote employees connect to internal apps through the browser over port 443 with no full client software required, using a tunnel at the transport layer. Which technology is this?",
+  "question": "Remote employees connect to internal applications through a browser over TCP port 443, with no full VPN client installed on their machines. Which tunneling technology is this?",
   "options": [
    "IPSec",
    "TLS VPN",

@@ -42,7 +42,7 @@
   {
     "domain": "D5",
     "family": "policies",
-    "question": "After a ransomware outbreak, the team follows a documented plan to rebuild servers, restore databases from backup, and bring the IT systems back online. This plan is the:",
+    "question": "After a fire destroys the server room, the team follows a documented plan to rebuild servers, restore databases from backup, and bring the IT systems back online. This plan is the:",
     "options": ["Business continuity policy", "Change management policy", "Disaster recovery policy", "Incident response policy"],
     "correctIndex": 2,
     "explanation": "Disaster recovery policy. Disaster recovery focuses specifically on restoring IT systems and data after a disaster. The tell: disaster recovery = restore IT systems (technical, reactive), business continuity = keep the whole business running (broad, proactive), change management = control modifications, incident response = handle security incidents."
@@ -106,7 +106,7 @@
   {
     "domain": "D5",
     "family": "data-roles",
-    "question": "The outside email vendor in that arrangement only sends messages using the data and instructions given by the marketing company and makes no decisions about why the data is used. The vendor is the:",
+    "question": "An email vendor sends marketing messages using only the customer data and instructions supplied by its client company and makes no decisions about why or how the personal data is used. Under GDPR, the vendor is the:",
     "options": ["Data processor", "Data controller", "Data owner", "Data custodian"],
     "correctIndex": 0,
     "explanation": "Data processor. The processor acts on personal data solely on behalf of and under instruction from the controller. The tell: processor = acts for the controller, controller = decides the why and how, owner = accountable senior person setting classification, custodian = day-to-day technical protection."
@@ -187,7 +187,7 @@
     "domain": "D5",
     "family": "risk-math",
     "question": "A data center flood is expected to occur once every 5 years. What is the annualized rate of occurrence (ARO)?",
-    "options": ["0.2", "5", "1.5", "0.5"],
+    "options": ["0.2", "5", "1", "0.5"],
     "correctIndex": 0,
     "explanation": "0.2. ARO for a once-every-N-years event is 1/N, so 1/5 = 0.2 occurrences per year. The tell: ARO = occurrences per year (once every 5 years = 0.2, not 5), SLE = loss from one event, exposure factor = percent of asset lost per event, ALE = SLE x ARO."
   },

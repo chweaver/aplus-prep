@@ -1,362 +1,587 @@
 [
-  {
-    "domain": "D1",
-    "family": "control-categories",
-    "question": "A company schedules quarterly risk assessments and publishes a written data classification policy for staff to follow. Which control category do these represent?",
-    "options": ["technical", "managerial", "operational", "physical"],
-    "correctIndex": 1,
-    "explanation": "Managerial. Risk assessments and written policies are administrative decisions, not technology. The tell: technical = enforced in hardware/software, managerial = policy and risk decisions, operational = day-to-day human processes, physical = tangible barriers."
-  },
-  {
-    "domain": "D1",
-    "family": "control-categories",
-    "question": "An organization runs monthly security awareness training and has analysts follow documented incident-handling steps each shift. Which control category is this?",
-    "options": ["managerial", "physical", "operational", "technical"],
-    "correctIndex": 2,
-    "explanation": "Operational. Recurring training and human incident-handling procedures are day-to-day people processes. The tell: operational = human day-to-day processes, managerial = policy/risk decisions, physical = tangible barriers, technical = implemented in tech."
-  },
-  {
-    "domain": "D1",
-    "family": "control-types",
-    "question": "A parking garage installs bright lighting and posts signs warning that the area is patrolled and recorded. Which control type is primarily at work?",
-    "options": ["preventive", "deterrent", "detective", "corrective"],
-    "correctIndex": 1,
-    "explanation": "Deterrent. Signs and lighting discourage an attacker before an act without physically stopping them. The tell: deterrent = discourages, preventive = actually stops it, detective = finds it after, corrective = restores after."
-  },
-  {
-    "domain": "D1",
-    "family": "control-types",
-    "question": "A legacy server cannot be patched, so the team wraps it in extra network monitoring and tighter access rules until it is retired. Which control type is the extra monitoring?",
-    "options": ["deterrent", "corrective", "directive", "compensating"],
-    "correctIndex": 3,
-    "explanation": "Compensating. Extra monitoring substitutes because the primary fix, patching, is not feasible. The tell: compensating = alternate when the primary control is not possible, corrective = restores after an event, directive = mandates behavior, deterrent = discourages."
-  },
-  {
-    "domain": "D1",
-    "family": "control-types",
-    "question": "Which control type identifies and records an incident after it has occurred, such as an IDS alert or reviewed camera footage?",
-    "options": ["corrective", "preventive", "detective", "directive"],
-    "correctIndex": 2,
-    "explanation": "Detective. It finds and records an incident after it happens. The tell: detective = finds it after, corrective = fixes/restores after, preventive = stops it before, directive = mandates behavior."
-  },
-  {
-    "domain": "D1",
-    "family": "control-types",
-    "question": "An acceptable use policy that mandates how employees must behave on company systems is an example of which control type?",
-    "options": ["directive", "preventive", "deterrent", "compensating"],
-    "correctIndex": 0,
-    "explanation": "Directive. An acceptable use policy mandates required behavior. The tell: directive = mandates behavior, preventive = physically stops it, deterrent = discourages, compensating = alternate control."
-  },
-  {
-    "domain": "D1",
-    "family": "cia-nonrepudiation",
-    "question": "Every outbound contract is digitally signed so a sender cannot later deny having approved it. Which principle does this serve?",
-    "options": ["integrity", "availability", "non-repudiation", "confidentiality"],
-    "correctIndex": 2,
-    "explanation": "Non-repudiation. A digital signature means the sender cannot later deny approving the message. The tell: non-repudiation = cannot deny you did it, integrity = unaltered, availability = uptime, confidentiality = secrecy."
-  },
-  {
-    "domain": "D1",
-    "family": "cia-nonrepudiation",
-    "question": "A backup system stores a SHA-256 hash of each file so any later alteration is detected. Which principle is this protecting?",
-    "options": ["integrity", "confidentiality", "availability", "non-repudiation"],
-    "correctIndex": 0,
-    "explanation": "Integrity. A stored hash detects any later alteration of the file. The tell: integrity = unaltered/hashing, confidentiality = secrecy/encryption, availability = uptime, non-repudiation = cannot deny."
-  },
-  {
-    "domain": "D1",
-    "family": "cia-nonrepudiation",
-    "question": "Which principle is served by redundant servers and reliable backups that keep a service reachable when a component fails?",
-    "options": ["confidentiality", "availability", "integrity", "non-repudiation"],
-    "correctIndex": 1,
-    "explanation": "Availability. Redundant servers and reliable backups keep the service reachable. The tell: availability = uptime, confidentiality = secrecy, integrity = unaltered, non-repudiation = cannot deny."
-  },
-  {
-    "domain": "D1",
-    "family": "aaa",
-    "question": "A RADIUS server records each user's login time, commands run, and session duration for later audit and billing. Which AAA component is this?",
-    "options": ["identification", "authentication", "accounting", "authorization"],
-    "correctIndex": 2,
-    "explanation": "Accounting. Recording login times, commands, and session duration is the accounting function. The tell: accounting = records what you did, authentication = prove who you are, authorization = what you may do, identification = who you claim to be."
-  },
-  {
-    "domain": "D1",
-    "family": "aaa",
-    "question": "Which AAA component determines what resources a user is permitted to access after their identity has been proven?",
-    "options": ["authentication", "authorization", "accounting", "identification"],
-    "correctIndex": 1,
-    "explanation": "Authorization. It determines what resources a proven user may access. The tell: authorization = what you are allowed to do, authentication = prove who you are, accounting = records what you did, identification = the claimed identity."
-  },
-  {
-    "domain": "D1",
-    "family": "zero-trust",
-    "question": "In a zero trust architecture, which component evaluates policy and renders the actual decision to grant or deny access?",
-    "options": ["Policy Engine", "Policy Administrator", "Policy Enforcement Point", "control plane"],
-    "correctIndex": 0,
-    "explanation": "Policy Engine. It evaluates policy and renders the grant or deny decision. The tell: Policy Engine = makes the decision, Policy Administrator = relays the access token, Policy Enforcement Point = the gate that allows/blocks, control plane = where decisions live."
-  },
-  {
-    "domain": "D1",
-    "family": "zero-trust",
-    "question": "A device sits in the connection path and either opens or drops a user's session based on the token it receives. Which zero trust component is this?",
-    "options": ["Policy Administrator", "Policy Engine", "Policy Enforcement Point", "data plane"],
-    "correctIndex": 2,
-    "explanation": "Policy Enforcement Point. It sits in the path and opens or drops the session based on the token. The tell: Policy Enforcement Point = the gate, Policy Administrator = relays the token, Policy Engine = makes the decision, data plane = where traffic flows."
-  },
-  {
-    "domain": "D1",
-    "family": "zero-trust",
-    "question": "Which zero trust component generates and relays the access token that tells the enforcement point to allow a session?",
-    "options": ["Policy Enforcement Point", "Policy Administrator", "Policy Engine", "threat scope reduction"],
-    "correctIndex": 1,
-    "explanation": "Policy Administrator. It generates and relays the access token that instructs the enforcement point. The tell: Policy Administrator = relays the token, Policy Enforcement Point = the gate, Policy Engine = makes the decision, threat scope reduction = shrinking the attack surface."
-  },
-  {
-    "domain": "D1",
-    "family": "zero-trust",
-    "question": "The logical area where zero trust policy decisions are made and managed, separate from where subject traffic actually flows, is called the?",
-    "options": ["data plane", "adaptive identity", "implicit trust zones", "control plane"],
-    "correctIndex": 3,
-    "explanation": "Control plane. Zero trust policy decisions are made and managed in the control plane. The tell: control plane = where decisions live, data plane = where subject traffic flows, adaptive identity = risk-based identity checks, implicit trust zones = areas assumed trusted, which zero trust removes."
-  },
-  {
-    "domain": "D1",
-    "family": "physical-security",
-    "question": "A data center wants to prevent a vehicle from being driven through its glass lobby entrance. Which control best addresses this?",
-    "options": ["bollards", "fencing", "access control vestibule", "lighting"],
-    "correctIndex": 0,
-    "explanation": "Bollards. Short sturdy posts stop a vehicle from being driven into the entrance. The tell: bollards = stop vehicles, fencing = perimeter boundary, access control vestibule = one person at a time, lighting = deters and illuminates."
-  },
-  {
-    "domain": "D1",
-    "family": "physical-security",
-    "question": "To stop a second person from slipping in behind an authorized employee, a facility installs a double-door enclosure that admits only one person at a time. Which control is this?",
-    "options": ["security guard", "access badge", "access control vestibule", "bollards"],
-    "correctIndex": 2,
-    "explanation": "Access control vestibule. A double-door enclosure passing one person at a time stops a second person from slipping in. The tell: access control vestibule = one-at-a-time double door, security guard = human control, access badge = a credential, bollards = stop vehicles."
-  },
-  {
-    "domain": "D1",
-    "family": "deception",
-    "question": "A team plants a fake set of admin credentials inside a config file; any use of them triggers an immediate alert. Which deception technique is this?",
-    "options": ["honeypot", "honeyfile", "honeytoken", "honeynet"],
-    "correctIndex": 2,
-    "explanation": "Honeytoken. Fake credentials that fire an alert when used are a bait record. The tell: honeytoken = bait credential/record, honeypot = one decoy system, honeyfile = a bait file, honeynet = a whole decoy network."
-  },
-  {
-    "domain": "D1",
-    "family": "deception",
-    "question": "Which deception technology is an entire network of decoy systems built to lure and study attackers?",
-    "options": ["honeynet", "honeypot", "honeyfile", "honeytoken"],
-    "correctIndex": 0,
-    "explanation": "Honeynet. It is an entire network of decoy systems. The tell: honeynet = a whole decoy network, honeypot = one decoy system, honeyfile = a bait file, honeytoken = a bait credential."
-  },
-  {
-    "domain": "D1",
-    "family": "change-management",
-    "question": "Before deploying a firmware upgrade, the change ticket documents the exact steps to revert to the previous version if the upgrade fails. Which element is this?",
-    "options": ["impact analysis", "backout plan", "maintenance window", "test results"],
-    "correctIndex": 1,
-    "explanation": "Backout plan. It documents the exact steps to revert if the change fails. The tell: backout plan = how to undo, impact analysis = what could break, maintenance window = approved time to change, test results = proof it was validated."
-  },
-  {
-    "domain": "D1",
-    "family": "change-management",
-    "question": "Which change-management element is the approved, scheduled period during which a change may be implemented with the least disruption?",
-    "options": ["impact analysis", "approval process", "backout plan", "maintenance window"],
-    "correctIndex": 3,
-    "explanation": "Maintenance window. It is the approved scheduled period to implement a change with least disruption. The tell: maintenance window = approved time to change, impact analysis = what could break, approval process = who signs off, backout plan = how to undo."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A corporate laptop stores its full-disk-encryption key and verifies boot integrity using a dedicated crypto chip soldered onto its motherboard. Which component is this?",
-    "options": ["TPM", "HSM", "secure enclave", "key management system"],
-    "correctIndex": 0,
-    "explanation": "TPM. A crypto chip soldered to one device's motherboard handles that device's boot integrity and disk key. The tell: TPM = chip built into one endpoint, HSM = appliance serving many systems, secure enclave = isolated region on the CPU, key management system = software key lifecycle."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A bank needs a tamper-resistant hardware appliance to generate and store thousands of cryptographic keys for its payment servers. Which solution fits?",
-    "options": ["TPM", "key escrow", "HSM", "secure enclave"],
-    "correctIndex": 2,
-    "explanation": "HSM. A dedicated tamper-resistant appliance generates and stores keys at scale for many servers. The tell: HSM = appliance for many systems, TPM = chip in one endpoint, key escrow = a third party holds key copies, secure enclave = isolated CPU region."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A company deposits a copy of its encryption keys with a trusted third party so data can be recovered if the keys are lost or a court orders access. Which arrangement is this?",
-    "options": ["key escrow", "key management system", "HSM", "TPM"],
-    "correctIndex": 0,
-    "explanation": "Key escrow. A trusted third party holds a copy of keys for recovery or legal access. The tell: key escrow = a third party holds key copies, key management system = software lifecycle, HSM = a hardware appliance, TPM = a chip in one endpoint."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A smartphone stores fingerprint templates and cryptographic keys inside an isolated coprocessor region kept separate from the main CPU and OS. Which component is this?",
-    "options": ["TPM", "secure enclave", "HSM", "key escrow"],
-    "correctIndex": 1,
-    "explanation": "Secure enclave. An isolated coprocessor region on the CPU keeps keys and biometrics apart from the OS. The tell: secure enclave = isolated region on the processor, TPM = a discrete chip on the motherboard, HSM = a standalone appliance, key escrow = a third party holds copies."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A cloud team needs a software service to automate creating, rotating, and revoking encryption keys across dozens of applications. Which fits best?",
-    "options": ["HSM", "TPM", "secure enclave", "key management system"],
-    "correctIndex": 3,
-    "explanation": "Key management system. A software service automates the create, rotate, and revoke lifecycle across many apps. The tell: key management system = software key lifecycle, HSM = a hardware appliance, TPM = a chip in one endpoint, secure enclave = an isolated CPU region."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "An architect must choose between a component built into a single endpoint for that device's disk key and a networked appliance serving keys to many servers. Which fits the single endpoint?",
-    "options": ["HSM", "TPM", "key management system", "key escrow"],
-    "correctIndex": 1,
-    "explanation": "TPM. The component built into a single endpoint for that device's disk key is the TPM, not the networked appliance. The tell: TPM = built into one endpoint, HSM = an appliance serving many servers, key management system = software lifecycle, key escrow = a third party holds copies."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "Auditors ask which arrangement lets the company lawfully retrieve a decryption key after an employee leaves so protected data can be unlocked. Which is designed for that?",
-    "options": ["HSM", "secure enclave", "key escrow", "TPM"],
-    "correctIndex": 2,
-    "explanation": "Key escrow. It is the arrangement designed for recovery and lawful retrieval of a key. The tell: key escrow = held for recovery/legal access, HSM = a hardware appliance, secure enclave = an isolated CPU region, TPM = a chip in one endpoint."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "Which term describes a dedicated, tamper-resistant hardware appliance that offloads and accelerates cryptographic operations for many systems at once?",
-    "options": ["TPM", "secure enclave", "key escrow", "HSM"],
-    "correctIndex": 3,
-    "explanation": "HSM. A dedicated tamper-resistant appliance that offloads and accelerates crypto for many systems is an HSM. The tell: HSM = an appliance for many systems, TPM = a chip in one endpoint, secure enclave = an isolated CPU region, key escrow = a third party holds copies."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "Which component is an isolated region inside the main processor that protects keys and biometric data even if the operating system is compromised?",
-    "options": ["key management system", "secure enclave", "TPM", "HSM"],
-    "correctIndex": 1,
-    "explanation": "Secure enclave. An isolated region inside the main processor protects keys and biometrics even if the OS is compromised. The tell: secure enclave = isolated region on the processor, key management system = software lifecycle, TPM = a discrete motherboard chip, HSM = a standalone appliance."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-key-handling",
-    "question": "A DevOps team wants a centralized software service that tracks the whole lifecycle of keys, from generation and rotation to destruction, across their cloud accounts. Which fits?",
-    "options": ["key escrow", "HSM", "TPM", "key management system"],
-    "correctIndex": 3,
-    "explanation": "Key management system. A centralized software service tracking generation, rotation, and destruction of keys across cloud accounts is a KMS. The tell: key management system = software key lifecycle, key escrow = a third party holds copies, HSM = a hardware appliance, TPM = a chip in one endpoint."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-methods",
-    "question": "To prevent precomputed rainbow-table attacks, each stored password has a unique random value added before it is hashed. What is this technique?",
-    "options": ["hashing", "salting", "key stretching", "symmetric"],
-    "correctIndex": 1,
-    "explanation": "Salting. A unique random value added to each password before hashing defeats precomputed rainbow tables. The tell: salting = random per-password value, key stretching = make brute forcing expensive, hashing = a one-way fingerprint, symmetric = one shared key."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-methods",
-    "question": "A developer runs each password through bcrypt with many iterations so that brute forcing becomes computationally expensive. What is this technique?",
-    "options": ["salting", "hashing", "key exchange", "key stretching"],
-    "correctIndex": 3,
-    "explanation": "Key stretching. Running passwords through bcrypt with many iterations makes brute forcing expensive. The tell: key stretching = make weak secrets costly to crack, salting = random per-password value, hashing = a one-way fingerprint, key exchange = agree on a shared key."
-  },
-  {
-    "domain": "D1",
-    "family": "crypto-methods",
-    "question": "Diffie-Hellman lets two parties agree on a shared secret over an untrusted channel without ever sending the secret. This process is called?",
-    "options": ["key exchange", "asymmetric", "symmetric", "hashing"],
-    "correctIndex": 0,
-    "explanation": "Key exchange. Diffie-Hellman lets two parties agree on a shared secret over an untrusted channel. The tell: key exchange = safely agree on a shared key, asymmetric = a public/private key pair, symmetric = one shared key for bulk data, hashing = a one-way fingerprint."
-  },
-  {
-    "domain": "D1",
-    "family": "pki-signatures",
-    "question": "To send a confidential file that only the intended recipient can open, the sender encrypts it with which key?",
-    "options": ["the recipient's public key", "the recipient's private key", "the sender's public key", "the sender's private key"],
-    "correctIndex": 0,
-    "explanation": "The recipient's public key. Encrypting for confidentiality uses the recipient's public key so only their private key can open it. The tell: encrypt for confidentiality = recipient's public key, recipient's private key = what only they hold to decrypt, sender's private key = used to sign, sender's public key = used to verify a signature."
-  },
-  {
-    "domain": "D1",
-    "family": "pki-signatures",
-    "question": "To prove a message came from her and was not altered, Maria signs it with which key?",
-    "options": ["the sender's public key", "the sender's private key", "the recipient's public key", "the recipient's private key"],
-    "correctIndex": 1,
-    "explanation": "The sender's private key. Signing for integrity and non-repudiation uses the sender's own private key, which anyone verifies with her public key. The tell: sign = sender's private key, sender's public key = verifies the signature, recipient's public key = encrypts for confidentiality, recipient's private key = decrypts."
-  },
-  {
-    "domain": "D1",
-    "family": "pki-signatures",
-    "question": "Which technology links records into hashed, chained blocks so that altering one block breaks the chain?",
-    "options": ["open public ledger", "digital signature", "blockchain", "hashing"],
-    "correctIndex": 2,
-    "explanation": "Blockchain. It links records into hashed chained blocks so altering one breaks the chain. The tell: blockchain = chained hashed blocks, open public ledger = the visible record of those transactions, digital signature = a private-key signed hash, hashing = a one-way fingerprint."
-  },
-  {
-    "domain": "D1",
-    "family": "obfuscation",
-    "question": "An attacker conceals stolen data inside the pixels of an ordinary-looking JPEG image to sneak it past inspection. Which technique is this?",
-    "options": ["tokenization", "data masking", "encryption", "steganography"],
-    "correctIndex": 3,
-    "explanation": "Steganography. Hiding stolen data inside the pixels of an image conceals data within other media. The tell: steganography = hide data inside media, tokenization = swap for a vaulted token, data masking = show a partial value, encryption = reversible with a key."
-  },
-  {
-    "domain": "D1",
-    "family": "obfuscation",
-    "question": "A payment system replaces each stored credit-card number with a random value that maps back to the real number only through a secure vault. Which technique is this?",
-    "options": ["data masking", "steganography", "tokenization", "encryption"],
-    "correctIndex": 2,
-    "explanation": "Tokenization. Replacing a card number with a random token that maps back only through a vault is tokenization. The tell: tokenization = token maps back via a vault, data masking = irreversibly shows a partial value, steganography = hide data inside media, encryption = reversible with a key."
-  },
-  {
-    "domain": "D1",
-    "family": "encryption-levels",
-    "question": "A DBA needs to encrypt only the single column holding Social Security numbers, leaving the rest of the table readable. Which encryption level is this?",
-    "options": ["database", "volume", "file", "record"],
-    "correctIndex": 3,
-    "explanation": "Record. Encrypting a single field or column is record-level encryption. The tell: record = a single row/field, database = the whole database, volume = a logical volume, file = individual files."
-  },
-  {
-    "domain": "D1",
-    "family": "encryption-levels",
-    "question": "Which encryption level protects an entire physical drive, including the operating system and swap space, and unlocks at boot?",
-    "options": ["partition", "volume", "full-disk", "file"],
-    "correctIndex": 2,
-    "explanation": "Full-disk. It protects the entire physical drive including the OS and swap, unlocking at boot. The tell: full-disk = the entire drive, partition = one partition, volume = a logical volume, file = individual files."
-  },
-  {
-    "domain": "D1",
-    "family": "certificates",
-    "question": "A browser needs to verify in real time whether one specific certificate has been revoked, without downloading a large list. Which mechanism does this?",
-    "options": ["CRL", "OCSP", "CSR", "wildcard"],
-    "correctIndex": 1,
-    "explanation": "OCSP. It checks one certificate's revocation status in real time without downloading a list. The tell: OCSP = real-time single-cert check, CRL = a downloaded batch list that can be stale, CSR = the request sent to a CA, wildcard = covers subdomains."
-  },
-  {
-    "domain": "D1",
-    "family": "certificates",
-    "question": "A company wants a single certificate that secures mail.example.com, shop.example.com, and any other subdomain. Which certificate type fits?",
-    "options": ["wildcard", "self-signed", "root of trust", "CRL"],
-    "correctIndex": 0,
-    "explanation": "Wildcard. A single wildcard certificate secures all subdomains of a domain. The tell: wildcard = covers *.domain subdomains, self-signed = no external trust, root of trust = the anchor CA, CRL = a list of revoked certs."
-  },
-  {
-    "domain": "D1",
-    "family": "certificates",
-    "question": "Which item does an administrator generate and submit to a certificate authority to request a signed certificate?",
-    "options": ["CRL", "OCSP", "CSR", "root of trust"],
-    "correctIndex": 2,
-    "explanation": "CSR. The certificate signing request is what an admin generates and submits to a CA. The tell: CSR = the request sent to a CA, CRL = a list of revoked certs, OCSP = a real-time revocation check, root of trust = the anchor CA."
-  },
-  {
-    "domain": "D1",
-    "family": "certificates",
-    "question": "A client periodically downloads a published list of all revoked certificates, which may already be hours out of date. Which mechanism is this?",
-    "options": ["OCSP", "CSR", "wildcard", "CRL"],
-    "correctIndex": 3,
-    "explanation": "CRL. A periodically downloaded list of revoked certificates that may be hours stale is a CRL. The tell: CRL = a downloaded batch list, OCSP = a real-time single-cert check, CSR = the request sent to a CA, wildcard = covers subdomains."
-  }
+ {
+  "domain": "D1",
+  "family": "control-categories",
+  "question": "A company schedules quarterly risk assessments and publishes a written data classification policy for staff to follow. Which control category do these represent?",
+  "options": [
+   "technical",
+   "managerial",
+   "operational",
+   "physical"
+  ],
+  "correctIndex": 1,
+  "explanation": "Managerial. Risk assessments and written policies are administrative decisions, not technology. The tell: technical = enforced in hardware/software, managerial = policy and risk decisions, operational = day-to-day human processes, physical = tangible barriers."
+ },
+ {
+  "domain": "D1",
+  "family": "control-categories",
+  "question": "An organization runs monthly security awareness training and has analysts follow documented incident-handling steps each shift. Which control category is this?",
+  "options": [
+   "managerial",
+   "physical",
+   "operational",
+   "technical"
+  ],
+  "correctIndex": 2,
+  "explanation": "Operational. Recurring training and human incident-handling procedures are day-to-day people processes. The tell: operational = human day-to-day processes, managerial = policy/risk decisions, physical = tangible barriers, technical = implemented in tech."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "A parking garage installs bright lighting and posts signs warning that the area is patrolled and recorded. Which control type is primarily at work?",
+  "options": [
+   "preventive",
+   "deterrent",
+   "detective",
+   "corrective"
+  ],
+  "correctIndex": 1,
+  "explanation": "Deterrent. Signs and lighting discourage an attacker before an act without physically stopping them. The tell: deterrent = discourages, preventive = actually stops it, detective = finds it after, corrective = restores after."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "A legacy server cannot be patched, so the team wraps it in extra network monitoring and tighter access rules until it is retired. Which control type is the extra monitoring?",
+  "options": [
+   "deterrent",
+   "corrective",
+   "directive",
+   "compensating"
+  ],
+  "correctIndex": 3,
+  "explanation": "Compensating. Extra monitoring substitutes because the primary fix, patching, is not feasible. The tell: compensating = alternate when the primary control is not possible, corrective = restores after an event, directive = mandates behavior, deterrent = discourages."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "Which control type identifies and records an incident after it has occurred, such as an IDS alert or reviewed camera footage?",
+  "options": [
+   "corrective",
+   "preventive",
+   "detective",
+   "directive"
+  ],
+  "correctIndex": 2,
+  "explanation": "Detective. It finds and records an incident after it happens. The tell: detective = finds it after, corrective = fixes/restores after, preventive = stops it before, directive = mandates behavior."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "An acceptable use policy that mandates how employees must behave on company systems is an example of which control type?",
+  "options": [
+   "directive",
+   "preventive",
+   "deterrent",
+   "compensating"
+  ],
+  "correctIndex": 0,
+  "explanation": "Directive. An acceptable use policy mandates required behavior. The tell: directive = mandates behavior, preventive = stops it before it happens, deterrent = discourages, compensating = alternate when the primary control is not feasible."
+ },
+ {
+  "domain": "D1",
+  "family": "cia-nonrepudiation",
+  "question": "Every outbound contract is digitally signed so a sender cannot later deny having approved it. Which principle does this serve?",
+  "options": [
+   "integrity",
+   "availability",
+   "non-repudiation",
+   "confidentiality"
+  ],
+  "correctIndex": 2,
+  "explanation": "Non-repudiation. A digital signature means the sender cannot later deny approving the message. The tell: non-repudiation = cannot deny you did it, integrity = unaltered, availability = uptime, confidentiality = secrecy."
+ },
+ {
+  "domain": "D1",
+  "family": "cia-nonrepudiation",
+  "question": "A backup system stores a SHA-256 hash of each file so any later alteration is detected. Which principle is this protecting?",
+  "options": [
+   "integrity",
+   "confidentiality",
+   "availability",
+   "non-repudiation"
+  ],
+  "correctIndex": 0,
+  "explanation": "Integrity. A stored hash detects any later alteration of the file. The tell: integrity = unaltered/hashing, confidentiality = secrecy/encryption, availability = uptime, non-repudiation = cannot deny."
+ },
+ {
+  "domain": "D1",
+  "family": "cia-nonrepudiation",
+  "question": "Which principle is served by redundant servers and reliable backups that keep a service reachable when a component fails?",
+  "options": [
+   "confidentiality",
+   "availability",
+   "integrity",
+   "non-repudiation"
+  ],
+  "correctIndex": 1,
+  "explanation": "Availability. Redundant servers and reliable backups keep the service reachable. The tell: availability = uptime, confidentiality = secrecy, integrity = unaltered, non-repudiation = cannot deny."
+ },
+ {
+  "domain": "D1",
+  "family": "aaa",
+  "question": "A RADIUS server records each user's login time, commands run, and session duration for later audit and billing. Which AAA component is this?",
+  "options": [
+   "identification",
+   "authentication",
+   "accounting",
+   "authorization"
+  ],
+  "correctIndex": 2,
+  "explanation": "Accounting. Recording login times, commands, and session duration is the accounting function. The tell: accounting = records what you did, authentication = prove who you are, authorization = what you may do, identification = who you claim to be."
+ },
+ {
+  "domain": "D1",
+  "family": "aaa",
+  "question": "Which AAA component determines what resources a user is permitted to access after their identity has been proven?",
+  "options": [
+   "authentication",
+   "authorization",
+   "accounting",
+   "identification"
+  ],
+  "correctIndex": 1,
+  "explanation": "Authorization. It determines what resources a proven user may access. The tell: authorization = what you are allowed to do, authentication = prove who you are, accounting = records what you did, identification = the claimed identity."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "In a zero trust architecture, which component evaluates policy and renders the actual decision to grant or deny access?",
+  "options": [
+   "Policy Engine",
+   "Policy Administrator",
+   "Policy Enforcement Point",
+   "control plane"
+  ],
+  "correctIndex": 0,
+  "explanation": "Policy Engine. It evaluates policy and renders the grant or deny decision. The tell: Policy Engine = makes the decision, Policy Administrator = relays the access token, Policy Enforcement Point = the gate that allows/blocks, control plane = where decisions live."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "A device sits in the connection path and either opens or drops a user's session based on the token it receives. Which zero trust component is this?",
+  "options": [
+   "Policy Administrator",
+   "Policy Engine",
+   "Policy Enforcement Point",
+   "data plane"
+  ],
+  "correctIndex": 2,
+  "explanation": "Policy Enforcement Point. It sits in the path and opens or drops the session based on the token. The tell: Policy Enforcement Point = the gate, Policy Administrator = relays the token, Policy Engine = makes the decision, data plane = where traffic flows."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "Which zero trust component generates and relays the access token that tells the enforcement point to allow a session?",
+  "options": [
+   "Policy Enforcement Point",
+   "Policy Administrator",
+   "Policy Engine",
+   "threat scope reduction"
+  ],
+  "correctIndex": 1,
+  "explanation": "Policy Administrator. It generates and relays the access token that instructs the enforcement point. The tell: Policy Administrator = relays the token, Policy Enforcement Point = the gate, Policy Engine = makes the decision, threat scope reduction = shrinking the attack surface."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "In a zero trust architecture, which term names the logical area where policy decisions are made and managed, separate from where subject traffic actually flows?",
+  "options": [
+   "data plane",
+   "adaptive identity",
+   "implicit trust zones",
+   "control plane"
+  ],
+  "correctIndex": 3,
+  "explanation": "Control plane. Zero trust policy decisions are made and managed in the control plane. The tell: control plane = where decisions live, data plane = where subject traffic flows, adaptive identity = risk-based identity checks, implicit trust zones = areas assumed trusted, which zero trust removes."
+ },
+ {
+  "domain": "D1",
+  "family": "physical-security",
+  "question": "A data center wants to prevent a vehicle from being driven through its glass lobby entrance. Which control best addresses this?",
+  "options": [
+   "bollards",
+   "fencing",
+   "access control vestibule",
+   "lighting"
+  ],
+  "correctIndex": 0,
+  "explanation": "Bollards. Short sturdy posts stop a vehicle from being driven into the entrance. The tell: bollards = stop vehicles, fencing = perimeter boundary, access control vestibule = one person at a time, lighting = deters and illuminates."
+ },
+ {
+  "domain": "D1",
+  "family": "physical-security",
+  "question": "To stop a second person from slipping in behind an authorized employee, a facility installs a double-door enclosure that admits only one person at a time. Which control is this?",
+  "options": [
+   "security guard",
+   "access badge",
+   "access control vestibule",
+   "bollards"
+  ],
+  "correctIndex": 2,
+  "explanation": "Access control vestibule. A double-door enclosure passing one person at a time stops a second person from slipping in. The tell: access control vestibule = one-at-a-time double door, security guard = human control, access badge = a credential, bollards = stop vehicles."
+ },
+ {
+  "domain": "D1",
+  "family": "deception",
+  "question": "A team plants a fake set of admin credentials inside a config file; any use of them triggers an immediate alert. Which deception technique is this?",
+  "options": [
+   "honeypot",
+   "honeyfile",
+   "honeytoken",
+   "honeynet"
+  ],
+  "correctIndex": 2,
+  "explanation": "Honeytoken. Fake credentials that fire an alert when used are a bait record. The tell: honeytoken = bait credential/record, honeypot = one decoy system, honeyfile = a bait file, honeynet = a whole decoy network."
+ },
+ {
+  "domain": "D1",
+  "family": "deception",
+  "question": "Which deception technology is an entire network of decoy systems built to lure and study attackers?",
+  "options": [
+   "honeynet",
+   "honeypot",
+   "honeyfile",
+   "honeytoken"
+  ],
+  "correctIndex": 0,
+  "explanation": "Honeynet. It is an entire network of decoy systems. The tell: honeynet = a whole decoy network, honeypot = one decoy system, honeyfile = a bait file, honeytoken = a bait credential."
+ },
+ {
+  "domain": "D1",
+  "family": "change-management",
+  "question": "Before deploying a firmware upgrade, the change ticket documents the exact steps to revert to the previous version if the upgrade fails. Which element is this?",
+  "options": [
+   "impact analysis",
+   "backout plan",
+   "maintenance window",
+   "test results"
+  ],
+  "correctIndex": 1,
+  "explanation": "Backout plan. It documents the exact steps to revert if the change fails. The tell: backout plan = how to undo, impact analysis = what could break, maintenance window = approved time to change, test results = proof it was validated."
+ },
+ {
+  "domain": "D1",
+  "family": "change-management",
+  "question": "Which change-management element is the approved, scheduled period during which a change may be implemented with the least disruption?",
+  "options": [
+   "impact analysis",
+   "approval process",
+   "backout plan",
+   "maintenance window"
+  ],
+  "correctIndex": 3,
+  "explanation": "Maintenance window. It is the approved scheduled period to implement a change with least disruption. The tell: maintenance window = approved time to change, impact analysis = what could break, approval process = who signs off, backout plan = how to undo."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A corporate laptop stores its full-disk-encryption key and verifies boot integrity using a dedicated crypto chip soldered onto its motherboard. Which component is this?",
+  "options": [
+   "TPM",
+   "HSM",
+   "secure enclave",
+   "key management system"
+  ],
+  "correctIndex": 0,
+  "explanation": "TPM. A crypto chip soldered to one device's motherboard handles that device's boot integrity and disk key. The tell: TPM = chip built into one endpoint, HSM = appliance serving many systems, secure enclave = isolated region on the CPU, key management system = software key lifecycle."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A bank needs a tamper-resistant hardware appliance to generate and store thousands of cryptographic keys for its payment servers. Which solution fits?",
+  "options": [
+   "TPM",
+   "key escrow",
+   "HSM",
+   "secure enclave"
+  ],
+  "correctIndex": 2,
+  "explanation": "HSM. A dedicated tamper-resistant appliance generates and stores keys at scale for many servers. The tell: HSM = appliance for many systems, TPM = chip in one endpoint, key escrow = a third party holds key copies, secure enclave = isolated CPU region."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A company deposits a copy of its encryption keys with a trusted third party so data can be recovered if the keys are lost or a court orders access. Which arrangement is this?",
+  "options": [
+   "key escrow",
+   "key management system",
+   "HSM",
+   "TPM"
+  ],
+  "correctIndex": 0,
+  "explanation": "Key escrow. A trusted third party holds a copy of keys for recovery or legal access. The tell: key escrow = a third party holds key copies, key management system = software lifecycle, HSM = a hardware appliance, TPM = a chip in one endpoint."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A smartphone stores fingerprint templates and cryptographic keys inside an isolated coprocessor region kept separate from the main CPU and OS. Which component is this?",
+  "options": [
+   "TPM",
+   "secure enclave",
+   "HSM",
+   "key escrow"
+  ],
+  "correctIndex": 1,
+  "explanation": "Secure enclave. An isolated coprocessor region on the CPU keeps keys and biometrics apart from the OS. The tell: secure enclave = isolated region on the processor, TPM = a discrete chip on the motherboard, HSM = a standalone appliance, key escrow = a third party holds copies."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A cloud team needs a software service to automate creating, rotating, and revoking encryption keys across dozens of applications. Which fits best?",
+  "options": [
+   "HSM",
+   "TPM",
+   "secure enclave",
+   "key management system"
+  ],
+  "correctIndex": 3,
+  "explanation": "Key management system. A software service automates the create, rotate, and revoke lifecycle across many apps. The tell: key management system = software key lifecycle, HSM = a hardware appliance, TPM = a chip in one endpoint, secure enclave = an isolated CPU region."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "An architect must choose between a component built into a single endpoint for that device's disk key and a networked appliance serving keys to many servers. Which fits the single endpoint?",
+  "options": [
+   "HSM",
+   "TPM",
+   "key management system",
+   "key escrow"
+  ],
+  "correctIndex": 1,
+  "explanation": "TPM. The component built into a single endpoint for that device's disk key is the TPM, not the networked appliance. The tell: TPM = built into one endpoint, HSM = an appliance serving many servers, key management system = software lifecycle, key escrow = a third party holds copies."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "An employee leaves the company, and the organization must lawfully retrieve the decryption key protecting that employee's encrypted files. Which arrangement is designed for this?",
+  "options": [
+   "HSM",
+   "secure enclave",
+   "key escrow",
+   "TPM"
+  ],
+  "correctIndex": 2,
+  "explanation": "Key escrow. It is the arrangement designed for recovery and lawful retrieval of a key. The tell: key escrow = held for recovery/legal access, HSM = a hardware appliance, secure enclave = an isolated CPU region, TPM = a chip in one endpoint."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Which term describes a dedicated, tamper-resistant hardware appliance that offloads and accelerates cryptographic operations for many systems at once?",
+  "options": [
+   "TPM",
+   "secure enclave",
+   "key escrow",
+   "HSM"
+  ],
+  "correctIndex": 3,
+  "explanation": "HSM. A dedicated tamper-resistant appliance that offloads and accelerates crypto for many systems is an HSM. The tell: HSM = an appliance for many systems, TPM = a chip in one endpoint, secure enclave = an isolated CPU region, key escrow = a third party holds copies."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Which component is an isolated region inside the main processor that protects keys and biometric data even if the operating system is compromised?",
+  "options": [
+   "key management system",
+   "secure enclave",
+   "TPM",
+   "HSM"
+  ],
+  "correctIndex": 1,
+  "explanation": "Secure enclave. An isolated region inside the main processor protects keys and biometrics even if the OS is compromised. The tell: secure enclave = isolated region on the processor, key management system = software lifecycle, TPM = a discrete motherboard chip, HSM = a standalone appliance."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A security team requires that every application encryption key be rotated automatically every 90 days and revoked immediately if compromised, all handled by one software service. Which solution provides this?",
+  "options": [
+   "key escrow",
+   "HSM",
+   "TPM",
+   "key management system"
+  ],
+  "correctIndex": 3,
+  "explanation": "Key management system. A software service that handles the key lifecycle, including scheduled rotation and revocation, is a KMS. The tell: key management system = software key lifecycle, key escrow = a third party holds copies, HSM = a hardware appliance, TPM = a chip in one endpoint."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-methods",
+  "question": "To prevent precomputed rainbow-table attacks, each stored password has a unique random value added before it is hashed. What is this technique?",
+  "options": [
+   "hashing",
+   "salting",
+   "key stretching",
+   "symmetric"
+  ],
+  "correctIndex": 1,
+  "explanation": "Salting. A unique random value added to each password before hashing defeats precomputed rainbow tables. The tell: salting = random per-password value, key stretching = make brute forcing expensive, hashing = a one-way fingerprint, symmetric = one shared key."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-methods",
+  "question": "A developer runs each password through bcrypt with many iterations so that brute forcing becomes computationally expensive. What is this technique?",
+  "options": [
+   "salting",
+   "hashing",
+   "key exchange",
+   "key stretching"
+  ],
+  "correctIndex": 3,
+  "explanation": "Key stretching. Running passwords through bcrypt with many iterations makes brute forcing expensive. The tell: key stretching = make weak secrets costly to crack, salting = random per-password value, hashing = a one-way fingerprint, key exchange = agree on a shared key."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-methods",
+  "question": "Diffie-Hellman lets two parties agree on a shared secret over an untrusted channel without ever transmitting the secret itself. What is this process called?",
+  "options": [
+   "key exchange",
+   "asymmetric",
+   "symmetric",
+   "hashing"
+  ],
+  "correctIndex": 0,
+  "explanation": "Key exchange. Diffie-Hellman lets two parties agree on a shared secret over an untrusted channel. The tell: key exchange = safely agree on a shared key, asymmetric = a public/private key pair, symmetric = one shared key for bulk data, hashing = a one-way fingerprint."
+ },
+ {
+  "domain": "D1",
+  "family": "pki-signatures",
+  "question": "To send a confidential file that only the intended recipient can open, the sender encrypts it with which key?",
+  "options": [
+   "the recipient's public key",
+   "the recipient's private key",
+   "the sender's public key",
+   "the sender's private key"
+  ],
+  "correctIndex": 0,
+  "explanation": "The recipient's public key. Encrypting for confidentiality uses the recipient's public key so only their private key can open it. The tell: encrypt for confidentiality = recipient's public key, recipient's private key = what only they hold to decrypt, sender's private key = used to sign, sender's public key = used to verify a signature."
+ },
+ {
+  "domain": "D1",
+  "family": "pki-signatures",
+  "question": "To prove a message came from her and was not altered, Maria signs it with which key?",
+  "options": [
+   "the sender's public key",
+   "the sender's private key",
+   "the recipient's public key",
+   "the recipient's private key"
+  ],
+  "correctIndex": 1,
+  "explanation": "The sender's private key. Signing for integrity and non-repudiation uses the sender's own private key, which anyone verifies with her public key. The tell: sign = sender's private key, sender's public key = verifies the signature, recipient's public key = encrypts for confidentiality, recipient's private key = decrypts."
+ },
+ {
+  "domain": "D1",
+  "family": "pki-signatures",
+  "question": "Which technology links records into hashed, chained blocks so that altering one block breaks the chain?",
+  "options": [
+   "open public ledger",
+   "digital signature",
+   "blockchain",
+   "hashing"
+  ],
+  "correctIndex": 2,
+  "explanation": "Blockchain. It links records into hashed chained blocks so altering one breaks the chain. The tell: blockchain = chained hashed blocks, open public ledger = the visible record of those transactions, digital signature = a private-key signed hash, hashing = a one-way fingerprint."
+ },
+ {
+  "domain": "D1",
+  "family": "obfuscation",
+  "question": "An attacker conceals stolen data inside the pixels of an ordinary-looking JPEG image to sneak it past inspection. Which technique is this?",
+  "options": [
+   "tokenization",
+   "data masking",
+   "encryption",
+   "steganography"
+  ],
+  "correctIndex": 3,
+  "explanation": "Steganography. Hiding stolen data inside the pixels of an image conceals data within other media. The tell: steganography = hide data inside media, tokenization = swap for a vaulted token, data masking = show a partial value, encryption = reversible with a key."
+ },
+ {
+  "domain": "D1",
+  "family": "obfuscation",
+  "question": "A payment system replaces each stored credit-card number with a random value that maps back to the real number only through a secure vault. Which technique is this?",
+  "options": [
+   "data masking",
+   "steganography",
+   "tokenization",
+   "encryption"
+  ],
+  "correctIndex": 2,
+  "explanation": "Tokenization. Replacing a card number with a random token that maps back only through a vault is tokenization. The tell: tokenization = token maps back via a vault, data masking = irreversibly shows a partial value, steganography = hide data inside media, encryption = reversible with a key."
+ },
+ {
+  "domain": "D1",
+  "family": "encryption-levels",
+  "question": "A DBA must encrypt the individual table rows holding VIP customers' data so each entry is protected separately, while the rest of the table stays readable. Which encryption level is this?",
+  "options": [
+   "database",
+   "volume",
+   "file",
+   "record"
+  ],
+  "correctIndex": 3,
+  "explanation": "Record. Encrypting individual rows or entries inside a database is record-level encryption. The tell: record = a single row/entry within the database, database = encrypt the whole database, volume = a logical volume, file = individual files."
+ },
+ {
+  "domain": "D1",
+  "family": "encryption-levels",
+  "question": "Which encryption level protects an entire physical drive, including the operating system and swap space, and unlocks at boot?",
+  "options": [
+   "partition",
+   "volume",
+   "full-disk",
+   "file"
+  ],
+  "correctIndex": 2,
+  "explanation": "Full-disk. It protects the entire physical drive including the OS and swap, unlocking at boot. The tell: full-disk = the entire drive, partition = one partition, volume = a logical volume, file = individual files."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "A browser needs to verify in real time whether one specific certificate has been revoked, without downloading a large list. Which mechanism does this?",
+  "options": [
+   "CRL",
+   "OCSP",
+   "CSR",
+   "wildcard"
+  ],
+  "correctIndex": 1,
+  "explanation": "OCSP. It checks one certificate's revocation status in real time without downloading a list. The tell: OCSP = real-time single-cert check, CRL = a downloaded batch list that can be stale, CSR = the request sent to a CA, wildcard = covers subdomains."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "A company wants a single certificate that secures mail.example.com, shop.example.com, and any other subdomain. Which certificate type fits?",
+  "options": [
+   "wildcard",
+   "self-signed",
+   "root of trust",
+   "CRL"
+  ],
+  "correctIndex": 0,
+  "explanation": "Wildcard. A single wildcard certificate secures all subdomains of a domain. The tell: wildcard = covers *.domain subdomains, self-signed = no external trust, root of trust = the anchor CA, CRL = a list of revoked certs."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "Which item does an administrator generate and submit to a certificate authority to request a signed certificate?",
+  "options": [
+   "CRL",
+   "OCSP",
+   "CSR",
+   "root of trust"
+  ],
+  "correctIndex": 2,
+  "explanation": "CSR. The certificate signing request is what an admin generates and submits to a CA. The tell: CSR = the request sent to a CA, CRL = a list of revoked certs, OCSP = a real-time revocation check, root of trust = the anchor CA."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "A client periodically downloads a published list of all revoked certificates, which may already be hours out of date. Which mechanism is this?",
+  "options": [
+   "OCSP",
+   "CSR",
+   "wildcard",
+   "CRL"
+  ],
+  "correctIndex": 3,
+  "explanation": "CRL. A periodically downloaded list of revoked certificates that may be hours stale is a CRL. The tell: CRL = a downloaded batch list, OCSP = a real-time single-cert check, CSR = the request sent to a CA, wildcard = covers subdomains."
+ }
 ]

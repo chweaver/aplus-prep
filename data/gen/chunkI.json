@@ -58,10 +58,10 @@
   {
     "domain": "D5",
     "family": "risk-strategies",
-    "question": "Which risk-management strategy is defined as shifting the potential loss to another party, such as through insurance or outsourcing?",
+    "question": "A retailer outsources all payment card handling to a payment processor, and the contract makes the processor liable for losses from any card-data breach on its platform. Which risk strategy does this represent?",
     "options": ["Transfer", "Avoid", "Accept", "Mitigate"],
     "correctIndex": 0,
-    "explanation": "Transfer. Handing the potential loss to a third party defines transfer. The tell: transfer = shift risk via insurance or outsourcing, avoid = eliminate the activity, accept = absorb the risk yourself, mitigate = reduce it with controls."
+    "explanation": "Transfer. The contract shifts liability for the loss to a third party, which is risk transfer. The tell: transfer = another party assumes the loss (insurance, or outsourcing with a liability shift), avoid = stop the activity entirely, accept = absorb the loss yourself, mitigate = reduce the risk with controls you operate."
   },
   {
     "domain": "D5",
@@ -74,7 +74,7 @@
   {
     "domain": "D5",
     "family": "risk-strategies",
-    "question": "A research lab is granted a standing, pre-approved pass that permanently excuses a class of legacy scanners from the encryption-at-rest requirement. This standing pass is best called what?",
+    "question": "A research lab receives permanent, documented approval excusing its entire class of legacy scanners from the encryption-at-rest requirement for as long as those devices remain in service. What is this arrangement best called?",
     "options": ["Exception", "Accept", "Avoid", "Exemption"],
     "correctIndex": 3,
     "explanation": "Exemption. A standing, pre-approved pass from a requirement is an exemption. The tell: exemption = ongoing pre-approved pass from a rule, exception = a one-off approved deviation, accept = broadly live with the risk, avoid = discontinue the activity."
@@ -202,34 +202,34 @@
   {
     "domain": "D5",
     "family": "agreements",
-    "question": "Two agencies move past a loose understanding and sign a more formal document that assigns specific roles and responsibilities to each party, though no money changes hands. Which agreement is this?",
+    "question": "Two agencies move past a loose understanding and sign a more formal, binding document that assigns specific roles and responsibilities to each party, though no money changes hands. Which agreement is this?",
     "options": ["MOU", "MOA", "NDA", "SLA"],
     "correctIndex": 1,
-    "explanation": "MOA. A more formal agreement defining roles and responsibilities, a step past an MOU, is a memorandum of agreement. The tell: MOA = formal roles and responsibilities agreement, MOU = looser non-binding intent, NDA = confidentiality only, SLA = measurable service targets with penalties."
+    "explanation": "MOA. A more formal, binding agreement defining roles and responsibilities, a step past an MOU, is a memorandum of agreement. The tell: MOA = binding roles and responsibilities agreement, MOU = looser non-binding intent, NDA = confidentiality only, SLA = measurable service targets with penalties."
   },
   {
     "domain": "D5",
     "family": "agreements",
-    "question": "Which agreement specifically defines measurable performance targets, such as uptime and response time, and the penalties for failing to meet them?",
-    "options": ["MOU", "MSA", "SLA", "BPA"],
+    "question": "An IT director is asked to review the SLA in a new cloud contract. What does this document primarily establish?",
+    "options": ["A non-binding statement of mutual intent to cooperate", "Overarching master terms that future projects reference", "Measurable service targets and penalties for missing them", "The contribution and profit terms of a business partnership"],
     "correctIndex": 2,
-    "explanation": "SLA. Measurable targets with penalties define a service level agreement. The tell: SLA = numbers plus penalties, MOU = non-binding intent, MSA = master framework contract, BPA = partnership terms."
+    "explanation": "SLA. A service level agreement sets measurable performance targets and the penalties for failing them. The tell: SLA = numbers plus penalties, MOU = non-binding intent, MSA = master framework contract, BPA = partnership terms."
   },
   {
     "domain": "D5",
     "family": "agreements",
-    "question": "Unlike an SLA, which binds a provider to measurable targets and penalties, which document merely records two parties' non-binding intent to cooperate?",
-    "options": ["MOU", "SOW", "NDA", "MSA"],
+    "question": "Unlike an MOA, which formally binds each party to defined roles and responsibilities, which document records only a general, non-binding statement of mutual intent to cooperate?",
+    "options": ["MOU", "SOW", "MOA", "MSA"],
     "correctIndex": 0,
-    "explanation": "MOU. A non-binding record of intent to cooperate is a memorandum of understanding. The tell: MOU = non-binding intent, SOW = one job's scope, NDA = confidentiality only, MSA = master framework contract."
+    "explanation": "MOU. A non-binding record of mutual intent is a memorandum of understanding. The tell: MOU = non-binding intent, MOA = more formal binding roles and responsibilities, SOW = one job's scope, MSA = master framework contract."
   },
   {
     "domain": "D5",
     "family": "agreements",
-    "question": "A master service agreement sets the overarching terms once. Which companion document is issued for each individual project to define its specific deliverables and schedule?",
+    "question": "A facilities vendor receives a document from a client authorizing one discrete task: replace the badge readers at a single office by June 30 for a fixed price. Which document is this?",
     "options": ["MOU", "BPA", "SOW", "NDA"],
     "correctIndex": 2,
-    "explanation": "SOW. The document scoping one specific project's deliverables and schedule is a statement of work. The tell: SOW = specific job scope under the master, MOU = non-binding intent, BPA = partnership terms, NDA = confidentiality only."
+    "explanation": "SOW. A statement of work (or work order) defines the scope, deliverables, and timeline for one specific job. The tell: SOW/WO = one job's scope and schedule, MOU = non-binding intent, BPA = partnership terms, NDA = confidentiality only."
   },
   {
     "domain": "D5",

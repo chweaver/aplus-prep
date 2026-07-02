@@ -58,10 +58,10 @@
   {
     "domain": "D2",
     "family": "misinformation",
-    "question": "A foreign group deliberately fabricates and seeds false election stories across social media to manipulate public opinion. What is this?",
-    "options": ["misinformation", "malinformation", "propaganda", "disinformation"],
+    "question": "A disgruntled former employee knowingly fabricates false stories about the company's finances and posts them online, intending to deceive investors. What is this?",
+    "options": ["misinformation", "malinformation", "influence campaign", "disinformation"],
     "correctIndex": 3,
-    "explanation": "disinformation. Falsehoods created and spread on purpose to deceive and manipulate. The tell: disinformation = false, spread deliberately to deceive; misinformation = false, spread by honest error; malinformation = real info leaked or twisted to harm; propaganda = biased promotion of a cause."
+    "explanation": "disinformation. The content is false and it is spread deliberately to deceive. The tell: disinformation = false, spread deliberately to deceive; misinformation = false, spread by honest error; malinformation = real info leaked or twisted to harm; influence campaign = a coordinated multi-channel effort to sway opinion."
   },
   {
     "domain": "D2",
@@ -266,7 +266,7 @@
   {
     "domain": "D2",
     "family": "ddos-network",
-    "question": "An attacker sends short requests to open DNS resolvers that each return responses many times larger, overwhelming the victim through the sheer volume multiplier. Which attack is this?",
+    "question": "An attacker sends tiny queries to open DNS resolvers that each generate responses dozens of times larger, and it is this response-to-request size multiplier that overwhelms the victim. Which DDoS characteristic does this describe?",
     "options": ["reflected DDoS", "amplified DDoS", "on-path attack", "credential replay"],
     "correctIndex": 1,
     "explanation": "amplified DDoS. A small request yields a hugely larger response directed at the victim. The tell: amplified = small request produces a giant response; reflected = spoof the victim's source so third parties reply to the victim; on-path = attacker sits between two parties; credential replay = capture and resend valid credentials."

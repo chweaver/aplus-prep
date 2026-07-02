@@ -42,10 +42,10 @@
   {
     "domain": "D4",
     "family": "access-control-models",
-    "question": "Access to a document is granted only when the requester is in the finance department, connecting from a corporate-managed device, during business hours, and the system evaluates all three conditions together. Which model is this?",
+    "question": "Access to a document is granted only when the requester is in the finance department, connecting from a corporate-managed device, and located in an approved country, with the system evaluating all three conditions together. Which model is this?",
     "options": ["role-based access control", "rule-based access control", "attribute-based access control", "mandatory access control"],
     "correctIndex": 2,
-    "explanation": "Attribute-based access control. Combining multiple evaluated attributes such as department, device, and time is attribute-based access control. The tell: attribute-based access control = decision from multiple attributes; rule-based access control = a single system-wide if/then condition; role-based access control = based on job role; mandatory access control = system labels/clearances."
+    "explanation": "Attribute-based access control. Combining multiple evaluated attributes such as department, device, and location is attribute-based access control. The tell: attribute-based access control = decision from multiple evaluated attributes; rule-based access control = system-wide if/then rules such as time-of-day; role-based access control = based on job role; mandatory access control = system labels/clearances."
   },
   {
     "domain": "D4",

@@ -1,4 +1,5 @@
-// Build a single self-contained index.html with all questions inlined.
+// Build a single self-contained index.html with all questions inlined,
+// plus a per-family study reference parsed from data/generation-guide.md.
 // Usage: node scripts/build-html.mjs
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -9,11 +10,40 @@ import { FAMILIES } from "../data/families.js";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outFile = join(__dirname, "..", "index.html");
 
-// Minimal family label map (key -> pretty name) for the end-screen table.
 const familyMeta = {};
 for (const f of FAMILIES) familyMeta[f.key] = { domain: f.domain, tier: f.tier };
 
-const DATA = JSON.stringify({ questions: QUESTIONS, families: familyMeta });
+// ---- parse the generation guide into a study reference ----
+const guide = readFileSync(join(__dirname, "..", "data", "generation-guide.md"), "utf8");
+const DOMAIN_TITLES = {
+  "Domain 1": "D1 General Security Concepts",
+  "Domain 2": "D2 Threats, Vulnerabilities, Mitigations",
+  "Domain 3": "D3 Security Architecture",
+  "Domain 4": "D4 Security Operations",
+  "Domain 5": "D5 Program Management and Oversight",
+};
+const reference = [];
+let curDomain = null;
+for (const line of guide.split("\n")) {
+  const dm = line.match(/^## (Domain \d)/);
+  if (dm) { curDomain = DOMAIN_TITLES[dm[1]]; continue; }
+  const fm = line.match(/^- \*\*([a-z0-9-]+)\*\*(?:\s*\((?:PRIORITY|HIGH)\))?:\s*(.*)$/);
+  if (fm && curDomain) {
+    const key = fm[1];
+    if (!familyMeta[key]) continue; // only families in the registry
+    const rest = fm[2];
+    const ti = rest.search(/Tell(?:\s*\(ORDER matters\))?:/);
+    const siblings = (ti >= 0 ? rest.slice(0, ti) : rest).trim().replace(/[.;]\s*$/, "");
+    const tell = ti >= 0 ? rest.slice(ti).trim() : "";
+    reference.push({ key, domain: curDomain, tier: familyMeta[key].tier, siblings, tell });
+  }
+}
+const missing = FAMILIES.filter((f) => !reference.some((r) => r.key === f.key)).map((f) => f.key);
+if (missing.length) {
+  console.error("WARNING: families missing from reference:", missing.join(", "));
+}
+
+const DATA = JSON.stringify({ questions: QUESTIONS, families: familyMeta, reference });
 
 const html = `<!doctype html>
 <html lang="en">
@@ -44,8 +74,13 @@ const html = `<!doctype html>
   }
   #tally .score{font-weight:700; font-size:15px; letter-spacing:.2px}
   #tally .pct{color:var(--muted); font-weight:600}
-  #bar{height:4px; background:var(--option); border-radius:3px; overflow:hidden; flex:1; max-width:180px}
+  #bar{height:4px; background:var(--option); border-radius:3px; overflow:hidden; flex:1; max-width:140px}
   #bar>div{height:100%; width:0; background:var(--primary); transition:width .25s ease}
+  #refbtn{
+    background:transparent; color:var(--muted); border:1px solid var(--border);
+    border-radius:8px; padding:6px 10px; font-size:13px; font-weight:600; cursor:pointer;
+    -webkit-tap-highlight-color:transparent; flex:none;
+  }
   main{max-width:520px; margin:0 auto; padding:16px}
   .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; margin-top:8px}
   .meta{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px}
@@ -95,6 +130,34 @@ const html = `<!doctype html>
   .link{color:var(--muted); text-decoration:underline; cursor:pointer; font-size:13px; background:none; border:none; padding:0}
   .foot{margin-top:22px; display:flex; justify-content:space-between; align-items:center}
   .hint{color:var(--muted); font-size:12px; margin-top:10px; text-align:center}
+  /* reference overlay */
+  #ref{
+    position:fixed; inset:0; z-index:20; background:var(--page); display:none;
+    overflow-y:auto; -webkit-overflow-scrolling:touch;
+  }
+  #ref.open{display:block}
+  #ref .refhead{
+    position:sticky; top:0; background:rgba(17,19,24,.96); backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border); padding:12px 16px; padding-top:max(12px,env(safe-area-inset-top));
+    display:flex; justify-content:space-between; align-items:center; z-index:21; gap:12px;
+  }
+  #ref .refhead h1{font-size:16px; margin:0}
+  #refclose{
+    background:var(--primary); color:#fff; border:none; border-radius:8px;
+    padding:8px 14px; font-size:14px; font-weight:700; cursor:pointer; flex:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  #ref .refbody{max-width:520px; margin:0 auto; padding:8px 16px 40px}
+  #refsearch{
+    width:100%; margin:10px 0 4px; padding:12px 14px; font-size:16px;
+    background:var(--card); color:var(--text); border:1px solid var(--border); border-radius:10px;
+  }
+  .refdom{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin:20px 0 6px; font-weight:700}
+  .reffam{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px 14px; margin-bottom:10px}
+  .reffam h2{font-size:15px; margin:0 0 4px; display:flex; align-items:center; gap:6px; flex-wrap:wrap}
+  .reffam .star{color:#f5c451; font-size:12px; font-weight:600}
+  .reffam .sib{font-size:13px; color:var(--text); opacity:.92; margin-bottom:6px}
+  .reffam .tell{font-size:13px; color:var(--muted)}
 </style>
 </head>
 <body>
@@ -102,8 +165,19 @@ const html = `<!doctype html>
     <span class="score" id="score">0/0</span>
     <div id="bar"><div></div></div>
     <span class="pct" id="pct">0%</span>
+    <button id="refbtn" type="button">Reference</button>
   </div>
   <main id="app"></main>
+  <div id="ref">
+    <div class="refhead">
+      <h1>Twin-term reference</h1>
+      <button id="refclose" type="button">Back to drill</button>
+    </div>
+    <div class="refbody">
+      <input id="refsearch" type="search" placeholder="Filter families and terms" autocomplete="off" />
+      <div id="reflist"></div>
+    </div>
+  </div>
 
 <script id="data" type="application/json">${DATA}</script>
 <script>
@@ -111,7 +185,7 @@ const html = `<!doctype html>
   "use strict";
   var DATA = JSON.parse(document.getElementById("data").textContent);
   var ALL = DATA.questions;
-  var FAM = DATA.families;
+  var REF = DATA.reference || [];
   var LETTERS = ["A","B","C","D"];
   var STORE_KEY = "secplus-drill-stats-v1";
 
@@ -135,7 +209,6 @@ const html = `<!doctype html>
     return a;
   }
 
-  // session state
   var session=null;
 
   function buildSession(pool){
@@ -176,7 +249,6 @@ const html = `<!doctype html>
     }
     html += '</div><div id="feedback"></div></div>';
     app.innerHTML = html;
-    // set text safely (avoid HTML injection from content)
     app.querySelector(".q").textContent = q.question;
     var btns = app.querySelectorAll(".opt");
     for(var j=0;j<4;j++){
@@ -234,7 +306,6 @@ const html = `<!doctype html>
     var total = session.items.length;
     var correct = session.correctCount;
     var pct = total ? Math.round(correct/total*100) : 0;
-    // per-family accuracy for THIS session
     var byFam = {};
     session.items.forEach(function(it){
       var k = it.q.family;
@@ -280,6 +351,51 @@ const html = `<!doctype html>
     window.scrollTo(0,0);
   }
 
+  // ---- reference overlay ----
+  function renderRef(filter){
+    var list = document.getElementById("reflist");
+    var f = (filter||"").toLowerCase();
+    var shown = REF.filter(function(r){
+      var hay = (r.key.replace(/-/g," ")+" "+r.siblings+" "+r.tell).toLowerCase();
+      return !f || hay.indexOf(f)>=0;
+    });
+    list.textContent = "";
+    if(!shown.length){
+      var none = document.createElement("div"); none.className="hint"; none.textContent="No matches.";
+      list.appendChild(none);
+      return;
+    }
+    var curDom = "";
+    shown.forEach(function(r){
+      if(r.domain !== curDom){
+        curDom = r.domain;
+        var d = document.createElement("div"); d.className="refdom"; d.textContent=curDom;
+        list.appendChild(d);
+      }
+      var card = document.createElement("div"); card.className="reffam";
+      var h = document.createElement("h2"); h.textContent = familyLabel(r.key);
+      if(r.tier==="priority"){
+        var s = document.createElement("span"); s.className="star"; s.textContent="\\u2605 priority";
+        h.appendChild(document.createTextNode(" ")); h.appendChild(s);
+      }
+      var sib = document.createElement("div"); sib.className="sib"; sib.textContent = r.siblings;
+      var tell = document.createElement("div"); tell.className="tell"; tell.textContent = r.tell;
+      card.appendChild(h); card.appendChild(sib); card.appendChild(tell);
+      list.appendChild(card);
+    });
+  }
+  var refEl = document.getElementById("ref");
+  document.getElementById("refbtn").addEventListener("click", function(){
+    renderRef(document.getElementById("refsearch").value);
+    refEl.classList.add("open");
+  });
+  document.getElementById("refclose").addEventListener("click", function(){
+    refEl.classList.remove("open");
+  });
+  document.getElementById("refsearch").addEventListener("input", function(e){
+    renderRef(e.target.value);
+  });
+
   buildSession(ALL);
 })();
 </script>
@@ -288,4 +404,4 @@ const html = `<!doctype html>
 `;
 
 writeFileSync(outFile, html);
-console.log(`Wrote index.html (${QUESTIONS.length} questions inlined, ${(html.length/1024).toFixed(0)} KB)`);
+console.log(`Wrote index.html (${QUESTIONS.length} questions + ${reference.length} reference families inlined, ${(html.length/1024).toFixed(0)} KB)`);

@@ -34,7 +34,7 @@
   {
     "domain": "D4",
     "family": "mobile-deployment",
-    "question": "Employees use their own personal phones for work email, and the company has the least ownership and control over the hardware. Which deployment model is this?",
+    "question": "Employees use their own personal phones for work email; the organization does not own the hardware and has only limited control over it. Which deployment model is this?",
     "options": ["COPE", "CYOD", "BYOD", "MDM"],
     "correctIndex": 2,
     "explanation": "BYOD. Employee-owned devices give the company the least control. The tell: BYOD = employee owns the device; COPE = company owns, personal use allowed; CYOD = pick from a company-approved list, company-owned; MDM = the tool that enforces policy."
@@ -146,7 +146,7 @@
   {
     "domain": "D4",
     "family": "threat-intel",
-    "question": "Hospitals in a regional health ISAC exchange indicators of compromise with each other to warn of active campaigns. Which threat-intel source is this?",
+    "question": "Hospitals across a region exchange indicators of compromise with industry peers through a formal community group to warn each other of active campaigns. Which threat-intel source is this?",
     "options": ["Dark web monitoring", "OSINT", "Information-sharing organization", "Proprietary threat feed"],
     "correctIndex": 2,
     "explanation": "Information-sharing organization. Industry peers exchanging intel through an ISAC is an information-sharing organization. The tell: information-sharing organization = ISAC or community peer sharing; dark web monitoring = criminal marketplace watch; OSINT = free public sources; proprietary or third-party = paid vendor feeds."
@@ -186,7 +186,7 @@
   {
     "domain": "D4",
     "family": "false-pos-neg",
-    "question": "To cut down on noisy alerts, an analyst loosens the detection rules. The main risk of over-tuning this way is an increase in which outcome?",
+    "question": "To cut down on noisy alerts, an analyst reduces the sensitivity of the detection rules so they fire less often. The main risk of over-tuning this way is an increase in which outcome?",
     "options": ["True positives", "False positives", "True negatives", "False negatives"],
     "correctIndex": 3,
     "explanation": "False negatives. Loosening detection to reduce noise risks letting real threats slip by undetected, which is a false negative. The tell: false negative = real threat missed; false positive = benign activity flagged as bad; true positive = real threat correctly caught; true negative = benign activity correctly ignored."
@@ -197,7 +197,7 @@
     "question": "Which element is the unique catalog identifier assigned to one specific, publicly known vulnerability?",
     "options": ["CVSS", "CVE", "Exposure factor", "Vulnerability classification"],
     "correctIndex": 1,
-    "explanation": "CVE. The unique ID or name for a specific known vulnerability is the CVE. The tell: CVE = the unique identifier for a vulnerability; CVSS = the 0-10 numeric severity score; exposure factor = percent of an asset lost in an event; vulnerability classification = grouping vulns by type or severity."
+    "explanation": "CVE. The Common Vulnerability Enumeration entry is the unique ID or name for a specific known vulnerability. The tell: CVE = the unique identifier for a vulnerability; CVSS = the 0-10 numeric severity score; exposure factor = percent of an asset's value lost in an event; vulnerability classification = grouping vulns by type or severity."
   },
   {
     "domain": "D4",
@@ -226,7 +226,7 @@
   {
     "domain": "D4",
     "family": "cve-cvss",
-    "question": "A risk analyst estimates that a successful ransomware hit would render 60% of a server's value unusable. That 60% figure is the what?",
+    "question": "A risk analyst estimates that a successful ransomware hit would cost the company 60% of a server's asset value. That 60% figure is the what?",
     "options": ["Exposure factor", "Environmental variables", "CVSS", "Vulnerability classification"],
     "correctIndex": 0,
     "explanation": "Exposure factor. The percentage of an asset's value lost in a single event is the exposure factor. The tell: exposure factor = percent of asset lost per event; environmental variables = CVSS modifiers for your environment; CVSS = the 0-10 severity score; vulnerability classification = grouping vulns by type or severity."
@@ -234,7 +234,7 @@
   {
     "domain": "D4",
     "family": "cve-cvss",
-    "question": "Two companies score the same vulnerability differently because one adjusts the base metrics for its own network exposure and asset criticality. Which CVSS component are they using?",
+    "question": "Two companies score the same vulnerability differently because one adjusts the base metrics for its own network exposure and asset criticality. Which element allows this adjustment?",
     "options": ["Exposure factor", "CVE", "Risk tolerance", "Environmental variables"],
     "correctIndex": 3,
     "explanation": "Environmental variables. CVSS metrics that adjust the base score for your specific environment are the environmental variables. The tell: environmental variables = CVSS modifiers for your environment; exposure factor = percent of asset lost per event; CVE = the unique identifier; risk tolerance = the acceptable risk level."
@@ -250,23 +250,23 @@
   {
     "domain": "D4",
     "family": "cve-cvss",
-    "question": "An executive asks how bad it is on a comparable scale, and the analyst gives a value distinct from the label that says which vulnerability it is. Which element answers how bad rather than which one?",
+    "question": "A junior analyst asks for the \"CVE score\" of a new finding. The senior analyst explains that a CVE does not carry the severity number; that comes from a different element. Which element actually supplies the severity number?",
     "options": ["CVE", "CVSS", "Exposure factor", "Environmental variables"],
     "correctIndex": 1,
-    "explanation": "CVSS. The how bad on a scale answer is the CVSS severity score, while which vulnerability is the CVE. The tell: CVSS = the 0-10 severity score (how bad); CVE = the unique identifier (which one); exposure factor = percent of asset lost; environmental variables = CVSS modifiers for your environment."
+    "explanation": "CVSS. The severity number comes from the CVSS score; the CVE is only the identifier that names the vulnerability. The tell: CVSS = the 0-10 severity score (how bad); CVE = the unique identifier (which one); exposure factor = percent of asset value lost per event; environmental variables = CVSS modifiers for your environment."
   },
   {
     "domain": "D4",
     "family": "cve-cvss",
-    "question": "A team maintains a spreadsheet mapping each finding to its official identifier so they can look up details in the national vulnerability database. Which element is that identifier?",
+    "question": "Two different scanners report the same flaw under their own product-specific names. Which element gives analysts one standard, vendor-neutral name so every tool and advisory refers to the same vulnerability?",
     "options": ["CVSS", "Exposure factor", "CVE", "Vulnerability classification"],
     "correctIndex": 2,
-    "explanation": "CVE. The official database identifier for a specific vulnerability is the CVE. The tell: CVE = the unique identifier or name; CVSS = the 0-10 severity score; exposure factor = percent of asset lost per event; vulnerability classification = grouping by type or severity."
+    "explanation": "CVE. A CVE entry is the standard identifier that lets every tool, advisory, and database refer to the same vulnerability by one name. The tell: CVE = the unique identifier or name; CVSS = the 0-10 severity score; exposure factor = percent of asset value lost per event; vulnerability classification = grouping by type or severity."
   },
   {
     "domain": "D4",
     "family": "cve-cvss",
-    "question": "Even though a vulnerability scores high, a bank decides it exceeds the level of risk leadership is willing to accept and mandates immediate action. The level willing to accept is the organization's what?",
+    "question": "A vulnerability's severity score alone does not settle the decision: a bank mandates immediate remediation because the risk exceeds the maximum level leadership will accept. That acceptable level of risk is the organization's what?",
     "options": ["CVSS", "Exposure factor", "Environmental variables", "Risk tolerance"],
     "correctIndex": 3,
     "explanation": "Risk tolerance. The level of risk an organization is willing to accept is its risk tolerance. The tell: risk tolerance = the acceptable amount of risk; CVSS = the 0-10 severity score; exposure factor = percent of asset lost per event; environmental variables = CVSS modifiers for your environment."
