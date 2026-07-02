@@ -343,8 +343,9 @@ const html = `<!doctype html>
   function go(m){
     mode=m;
     elHome.style.display = m==="home" ? "none":"";
-    examNav.classList.toggle("show", m==="exam");
-    document.body.classList.toggle("pad-bottom", m==="exam");
+    var deferredExam = m==="exam" && exam && !exam.instant;
+    examNav.classList.toggle("show", deferredExam);
+    document.body.classList.toggle("pad-bottom", deferredExam);
     if(m!=="exam" && timerId){ clearInterval(timerId); timerId=null; }
   }
   elHome.addEventListener("click", function(){
@@ -367,15 +368,15 @@ const html = `<!doctype html>
     h+='<div class="sub">Adaptive twin-term training. The engine serves what you miss.</div>';
     var fb=getPref();
     var fbTxt = fb==="instant" ? "instant feedback" : "feedback at the end";
-    h+='<button class="modebtn exam" id="m-exam">Practice exam<small>90 questions \\u00b7 90 minutes \\u00b7 real domain weights \\u00b7 adaptive selection \\u00b7 scored vs 750</small></button>';
+    h+='<button class="modebtn exam" id="m-exam">Practice exam<small>90 questions \\u00b7 90 minutes \\u00b7 real domain weights \\u00b7 adaptive selection \\u00b7 scored vs 750 \\u00b7 '+fbTxt+'</small></button>';
     h+='<button class="modebtn" id="m-drill">Smart drill<small>'+DRILL_LEN+' questions the algorithm thinks you need most \\u00b7 '+fbTxt+'</small></button>';
     h+='<button class="modebtn" id="m-stream">Full stream<small>All '+ALL.length+' questions, shuffled \\u00b7 '+fbTxt+'</small></button>';
-    h+='<div class="seglabel">Drill feedback</div>';
+    h+='<div class="seglabel">Question feedback</div>';
     h+='<div class="seg">';
     h+='<button id="fb-instant" class="'+(fb==="instant"?"on":"")+'">Instant</button>';
     h+='<button id="fb-end" class="'+(fb==="end"?"on":"")+'">At the end</button>';
     h+='</div>';
-    h+='<div class="hint" style="text-align:left;margin-top:6px">Applies to drills and the stream. The practice exam always waits until submit.</div>';
+    h+='<div class="hint" style="text-align:left;margin-top:6px">Applies everywhere. Instant grades each answer as you tap it; at the end waits until the round or exam is submitted (realistic exam simulation).</div>';
     h+='<div class="statline">Progress: '+seen+'/'+ALL.length+' seen \\u00b7 '+mastered+' mastered (3+ streak)</div>';
     if(s.exams.length){
       h+='<div class="exhist">Exams: ';
@@ -548,10 +549,10 @@ const html = `<!doctype html>
 
   // ---------- practice exam ----------
   function startExam(){
+    exam={items:buildExamSet().map(mkItem), idx:0, endsAt:Date.now()+EXAM_MS, submitted:false, instant:getPref()==="instant"};
     go("exam");
-    exam={items:buildExamSet().map(mkItem), idx:0, endsAt:Date.now()+EXAM_MS, submitted:false};
     timerId=setInterval(examTick, 1000);
-    renderExamQ();
+    if(exam.instant) renderInstantExamQ(); else renderExamQ();
   }
   function fmtLeft(ms){
     if(ms<0) ms=0;
@@ -592,6 +593,51 @@ const html = `<!doctype html>
     document.getElementById("exgrid").textContent=(exam.idx+1)+"/"+exam.items.length;
     document.getElementById("exnext").textContent = exam.idx===exam.items.length-1 ? "Finish" : "Next";
     window.scrollTo(0,0);
+  }
+  // instant-feedback exam: same set, same timer, same scoring - but each
+  // answer is graded on the spot and locked (no revisiting, no flags/grid)
+  function renderInstantExamQ(){
+    examTick();
+    var it=exam.items[exam.idx], q=it.q;
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<div class="meta"><span>'+q.domain+' \\u00b7 '+familyLabel(q.family)+'</span><span>Q'+(exam.idx+1)+' of '+exam.items.length+'</span></div>';
+    h+='<p class="q"></p><div class="opts">';
+    for(var i=0;i<4;i++) h+='<button class="opt" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
+    h+='</div><div id="feedback"></div></div>';
+    app.innerHTML=h;
+    app.querySelector(".q").textContent=q.question;
+    var btns=app.querySelectorAll(".opt");
+    for(var j=0;j<4;j++){
+      btns[j].querySelector(".t").textContent=it.opts[j];
+      btns[j].addEventListener("click", onInstantExamAnswer);
+    }
+    window.scrollTo(0,0);
+  }
+  function onInstantExamAnswer(e){
+    var it=exam.items[exam.idx];
+    if(it.chosen>=0) return;
+    it.chosen=parseInt(e.currentTarget.getAttribute("data-i"),10);
+    var ok = it.chosen===it.correctDisplay;
+    var btns=document.querySelectorAll(".opt");
+    for(var i=0;i<btns.length;i++){
+      var bi=parseInt(btns[i].getAttribute("data-i"),10);
+      btns[i].setAttribute("disabled","");
+      if(bi===it.correctDisplay) btns[i].classList.add("correct");
+      else if(bi===it.chosen) btns[i].classList.add("wrong");
+      else btns[i].classList.add("dim");
+    }
+    var fb=document.getElementById("feedback");
+    fb.appendChild(explBlock(it.q, ok));
+    var act=document.createElement("div"); act.className="actions";
+    var next=document.createElement("button"); next.className="primary";
+    next.textContent=(exam.idx+1>=exam.items.length)?"See results":"Next";
+    next.addEventListener("click", function(){
+      if(exam.idx+1>=exam.items.length) return submitExam(false);
+      exam.idx++; renderInstantExamQ();
+    });
+    act.appendChild(next); fb.appendChild(act);
+    examTick(); next.focus();
   }
   document.getElementById("exprev").addEventListener("click", function(){
     if(mode!=="exam") return;
