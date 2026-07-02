@@ -11,16 +11,27 @@ multiple-choice reps with instant feedback.
 Open `index.html` in any browser - it is fully self-contained (no network, no
 dependencies). On merge to `main` it also deploys to GitHub Pages.
 
-- Tap an answer, get instant right/wrong plus an explanation. Every explanation
-  ends with "The tell:" - a one-phrase discriminator for each sibling term.
-  The tell line is the studying.
-- The running tally stays pinned at the top.
-- The end screen shows per-family accuracy sorted worst-first, plus
-  "Retry missed only" and "Restart all".
-- The "Reference" button opens a searchable per-family cheat sheet of all the
-  sibling terms and their tells.
-- Lifetime per-question and per-family stats persist in localStorage
-  (reset link on the end screen).
+Three modes, all driven by the same adaptive engine:
+
+- **Practice exam**: 90 questions / 90 minutes, sampled to the official domain
+  weights (12/22/18/28/20). Which questions fill each domain's quota is chosen
+  by the algorithm - your misses first, then unseen material, weighted toward
+  weak families, with a spread factor so one family cannot hog a domain. No
+  feedback until submit; flag questions and jump around via the grid. Scored
+  on the 100-900 scale against the 750 pass line with a per-domain breakdown,
+  then review each miss or convert them straight into a drill.
+- **Smart drill**: 25-question rounds picked by the algorithm, instant
+  feedback. Every explanation ends with "The tell:" - a one-phrase
+  discriminator for each sibling term. The tell line is the studying.
+- **Full stream**: all questions shuffled, instant feedback.
+
+The adaptive engine weights each question by history: missed-last-time (4x) >
+never-seen (3x) > shaky (2x) > solid (1x) > mastered (0.4x), multiplied up for
+families under 80% accuracy and damped for questions seen very recently. Exam
+answers feed the same stats, so drills target what exams expose. Lifetime
+stats persist in localStorage; the home screen shows seen/mastered progress
+and your recent exam scores. The "Reference" button opens a searchable
+per-family cheat sheet of all sibling terms and their tells.
 
 ## What is in the bank
 
