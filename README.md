@@ -20,10 +20,18 @@ Three modes, all driven by the same adaptive engine:
   feedback until submit; flag questions and jump around via the grid. Scored
   on the 100-900 scale against the 750 pass line with a per-domain breakdown,
   then review each miss or convert them straight into a drill.
+- **Custom quiz**: pick the number of questions and the time limit (or no
+  limit) with sliders; the algorithm fills it adaptively. Scored on percent
+  (not the scaled 100-900, and kept out of the exam-score history). At the end
+  you can review every question, not just the misses.
 - **Smart drill**: 25-question rounds picked by the algorithm. Every
   explanation ends with "The tell:" - a one-phrase discriminator for each
   sibling term. The tell line is the studying.
 - **Full stream**: all questions shuffled.
+
+Every result screen offers **Review all** (walk through each question with your
+pick, the correct answer, and the tell) alongside **Review missed** and a
+one-tap drill of just your misses.
 
 A **feedback setting** on the home screen applies to every mode: "Instant"
 grades each answer as you tap it and shows the explanation before you move
