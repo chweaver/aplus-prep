@@ -1,0 +1,274 @@
+[
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "During a CISA advisory briefing, an analyst notes that a flaw carries a standardized, vendor-neutral label so every bulletin can point to the same entry. In SY0-701 this Common Vulnerability Enumeration label is which element?",
+    "options": ["CVSS", "Vulnerability classification", "CVE", "Environmental variables"],
+    "correctIndex": 2,
+    "explanation": "CVE. It is the unique catalog identifier that names one specific known vulnerability so all tools and advisories reference the same entry. The tell: CVE = the identifier/name; CVSS = the 0 to 10 severity score; vulnerability classification = grouping flaws by type and severity; environmental variables = the local modifiers that adjust a score for your environment."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "In vulnerability management, a CVE entry for a flaw functions as which of the following?",
+    "options": ["A 0 to 10 score expressing how severe the flaw is", "The unique vendor-neutral identifier naming one specific known vulnerability", "The percentage of an asset's value lost when the flaw is exploited", "The set of local modifiers that adjust a published score for one environment"],
+    "correctIndex": 1,
+    "explanation": "CVE. A CVE is only the standardized identifier for a vulnerability; it carries no severity number itself. The tell: CVE = the name/identifier; the 0 to 10 severity number = CVSS; percentage of asset value lost = exposure factor; local score modifiers = environmental variables."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "Which element combines base, temporal, and environmental metric groups into a single number that reflects how severe a vulnerability is?",
+    "options": ["Exposure factor", "Vulnerability classification", "Risk tolerance", "CVSS"],
+    "correctIndex": 3,
+    "explanation": "CVSS. It produces the 0 to 10 severity score from its metric groups. The tell: CVSS = the severity score; exposure factor = percent of asset value lost per event; vulnerability classification = grouping flaws by type and severity; risk tolerance = the deviation an organization will absorb on a risk before acting."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "A CVSS rating assigned to a vulnerability is best described as which of the following?",
+    "options": ["A 0 to 10 numeric severity score for the vulnerability", "A catalog identifier that uniquely names the vulnerability", "A grouping of findings by weakness type and severity band", "The share of asset value expected to be lost in one event"],
+    "correctIndex": 0,
+    "explanation": "CVSS. The CVSS rating is the numeric 0 to 10 severity value for a flaw. The tell: CVSS = the score; the unique name = CVE; grouping by type and band = vulnerability classification; share of asset value lost = exposure factor."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "Which term names the percentage of an asset's value that is lost when a particular threat is realized?",
+    "options": ["Environmental variables", "Exposure factor", "CVSS", "Risk tolerance"],
+    "correctIndex": 1,
+    "explanation": "Exposure factor. It expresses, as a percent, how much of an asset's value one event destroys. The tell: exposure factor = percent of asset value lost; environmental variables = CVSS modifiers for your specific environment; CVSS = the 0 to 10 severity score; risk tolerance = acceptable deviation on a risk before acting."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "A team raises a flaw's score above the vendor's published base value because the vulnerable database stores regulated health records, increasing the confidentiality requirement in its own deployment. Which CVSS element reflects such local security requirements?",
+    "options": ["CVE", "Vulnerability classification", "Environmental variables", "Exposure factor"],
+    "correctIndex": 2,
+    "explanation": "Environmental variables. These are the CVSS modifiers that let each organization adjust a published score for its own asset criticality and security requirements. The tell: environmental variables = local score modifiers; CVE = the vulnerability's identifier; vulnerability classification = grouping flaws by type and severity; exposure factor = percent of asset value lost per event."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "Assigning each discovered weakness to a category such as improper input handling, broken authentication, or missing patch so similar flaws are managed together is which activity?",
+    "options": ["Vulnerability classification", "CVSS scoring", "CVE assignment", "Setting the exposure factor"],
+    "correctIndex": 0,
+    "explanation": "Vulnerability classification. It groups findings by weakness type and severity so related flaws are handled the same way. The tell: vulnerability classification = grouping by type/severity; CVSS scoring = producing the 0 to 10 severity number; CVE assignment = giving the flaw its unique identifier; exposure factor = percent of asset value lost per event."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "A hospital's board will accept only minimal deviation from its patch-timeline target for systems tied to patient safety and demands immediate action once a finding exceeds that variance. The acceptable amount of variance on that specific risk is the hospital's what?",
+    "options": ["Exposure factor", "Environmental variables", "Risk tolerance", "Vulnerability classification"],
+    "correctIndex": 2,
+    "explanation": "Risk tolerance. It is the amount of deviation an organization will absorb on a specific risk before it must act. The tell: risk tolerance = acceptable deviation before acting; exposure factor = percent of asset value lost per event; environmental variables = CVSS modifiers for your environment; vulnerability classification = grouping flaws by type and severity."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "Before publicly disclosing a newly found flaw, a researcher requests that a unique identifier be reserved for it in the public catalog so future advisories can all reference the same entry. Which element is being reserved?",
+    "options": ["CVE", "CVSS", "Exposure factor", "Environmental variables"],
+    "correctIndex": 0,
+    "explanation": "CVE. The reserved item is the unique catalog identifier that names the specific vulnerability. The tell: CVE = the identifier; CVSS = the 0 to 10 severity score; exposure factor = percent of asset value lost per event; environmental variables = CVSS modifiers for your environment."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "An analyst must decide whether a finding belongs in the high or the critical band and resolves it by reading the single numeric value the flaw was assigned. That numeric value is produced by which element?",
+    "options": ["Vulnerability classification", "CVE", "Risk tolerance", "CVSS"],
+    "correctIndex": 3,
+    "explanation": "CVSS. The numeric value that maps to severity bands like high or critical is the CVSS score. The tell: CVSS = the 0 to 10 score; vulnerability classification = grouping flaws by type and severity; CVE = the vulnerability's unique identifier; risk tolerance = acceptable deviation on a risk before acting."
+  },
+  {
+    "domain": "D4",
+    "family": "baselines",
+    "question": "After the golden image is approved, the team uses their configuration tool to push that exact secure configuration out to all 400 new workstations. Which baseline activity is this?",
+    "options": ["Establish", "Maintain", "Configuration enforcement", "Deploy"],
+    "correctIndex": 3,
+    "explanation": "Deploy. Deployment is pushing the approved baseline out to the systems that must run it. The tell: deploy = push the baseline to systems; establish = define and document the secure baseline first; maintain = keep it enforced and corrected over time; configuration enforcement = the ongoing act of holding a config in place, not the one-time push."
+  },
+  {
+    "domain": "D4",
+    "family": "baselines",
+    "question": "In the baseline process, the maintain phase primarily involves which of the following?",
+    "options": ["Writing the initial secure reference configuration", "Pushing the approved configuration out to new systems", "Continuously enforcing the configuration and correcting drift over time", "Selecting which systems the baseline applies to"],
+    "correctIndex": 2,
+    "explanation": "Maintain. Maintenance keeps systems aligned with the baseline by detecting drift and re-applying settings over time. The tell: maintain = ongoing enforcement and drift correction; establish = writing the initial reference config; deploy = pushing the config to systems; scoping which systems apply is part of establishing, not maintaining."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-install",
+    "question": "After completing the walkthrough, the engineer produces a color-coded visual showing signal strength across every zone of the building, with red marking weak-coverage areas. What is this output?",
+    "options": ["Site survey", "Heat map", "WPA3", "RADIUS"],
+    "correctIndex": 1,
+    "explanation": "Heat map. It is the visual signal-strength map produced from measurements. The tell: heat map = the color-coded coverage output; site survey = the walkthrough process that gathers the measurements; WPA3 = the wireless encryption standard; RADIUS = the central AAA server for enterprise authentication."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-install",
+    "question": "Which element is the current standard that encrypts the confidentiality of traffic on an enterprise wireless network?",
+    "options": ["RADIUS", "Site survey", "WPA3", "Heat map"],
+    "correctIndex": 2,
+    "explanation": "WPA3. It is the encryption standard protecting wireless traffic. The tell: WPA3 = the encryption standard; RADIUS = the central AAA server that authenticates users; site survey = walking the space to plan AP placement; heat map = the signal-strength visual output."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-deployment",
+    "question": "A company gives new hires a short list of approved, company-purchased phone models and lets each employee pick which one they want to carry. Which deployment model is this?",
+    "options": ["BYOD", "CYOD", "COPE", "MDM"],
+    "correctIndex": 1,
+    "explanation": "CYOD. Choose your own device means the company owns the hardware but the employee selects from an approved list. The tell: CYOD = company-owned, pick from an approved list; BYOD = employee owns their personal device; COPE = company-owned with personal use permitted; MDM = the tool that enforces policy on any of them."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-deployment",
+    "question": "Employees use devices they personally bought and own for company work; the company reimburses part of the phone bill but cannot dictate what else is installed on them. Which deployment model is this?",
+    "options": ["CYOD", "COPE", "BYOD", "MDM"],
+    "correctIndex": 2,
+    "explanation": "BYOD. Bring your own device means the employee owns the hardware, giving the company the least control. The tell: BYOD = employee-owned device; CYOD = company-owned, chosen from an approved list; COPE = company-owned with personal use allowed; MDM = the management platform that enforces policy."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-deployment",
+    "question": "Which model is captured by the phrase company-owned, personally enabled, where the organization owns and manages the device while permitting personal use?",
+    "options": ["MDM", "CYOD", "BYOD", "COPE"],
+    "correctIndex": 3,
+    "explanation": "COPE. The acronym itself means company-owned, personally enabled. The tell: COPE = company owns and manages, personal use allowed; CYOD = company-owned but chosen from an approved list; BYOD = employee-owned device; MDM = the tool that enforces policy across devices."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "A security team opens suspicious email attachments only inside a disposable, isolated virtual environment so any malicious behavior cannot reach production systems. Which practice is this?",
+    "options": ["Static code analysis", "Input validation", "Secure cookies", "Sandboxing"],
+    "correctIndex": 3,
+    "explanation": "Sandboxing. It runs untrusted code in isolation so it cannot affect real systems. The tell: sandboxing = execute untrusted code in isolation; static code analysis = review code without running it; secure cookies = flags that protect session tokens; input validation = reject malformed input to stop injection."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "Setting flags such as HttpOnly and Secure on session tokens so they cannot be read by scripts or sent over cleartext connections is which application security practice?",
+    "options": ["Secure cookies", "Code signing", "Sandboxing", "Static code analysis"],
+    "correctIndex": 0,
+    "explanation": "Secure cookies. The flags keep session tokens from being stolen or sent in the clear. The tell: secure cookies = protective flags on session tokens; code signing = signing a binary to prove integrity and origin; sandboxing = running untrusted code in isolation; static code analysis = reviewing code without executing it."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "Which asset-management activity is the maintained master list of every hardware and software asset the organization owns?",
+    "options": ["Enumeration", "Acquisition", "Assignment", "Inventory"],
+    "correctIndex": 3,
+    "explanation": "Inventory. It is the standing record of assets the organization owns. The tell: inventory = the list of owned assets; enumeration = actively discovering assets on the network; acquisition = procuring a new asset; assignment = accounting for who owns or uses an asset."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "The moment the organization procures a new server through purchasing and it formally enters the company's possession is which stage of the asset lifecycle?",
+    "options": ["Assignment", "Ownership", "Acquisition", "Enumeration"],
+    "correctIndex": 2,
+    "explanation": "Acquisition. It is the procurement stage where the asset is obtained. The tell: acquisition = procuring or obtaining the asset; assignment = accounting for who is issued the asset; ownership = who is accountable for it; enumeration = actively discovering assets on the network."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-disposal",
+    "question": "A regulation requires the company to keep financial records for seven years before they may be disposed of. The rule dictating how long data must be kept is which concept?",
+    "options": ["Sanitization", "Data retention", "Destruction", "Certification"],
+    "correctIndex": 1,
+    "explanation": "Data retention. It defines how long data must be kept before disposal is allowed. The tell: data retention = how long to keep data; sanitization = wiping media so it can be reused; destruction = physically shredding or degaussing media; certification = signed proof the data was destroyed."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-disposal",
+    "question": "When a colocation contract ends, the provider degausses and then pulverizes every drive that held the tenant's data so nothing can be recovered. Which disposal method is this?",
+    "options": ["Certification", "Sanitization", "Destruction", "Data retention"],
+    "correctIndex": 2,
+    "explanation": "Destruction. Degaussing and pulverizing physically render the media unrecoverable. The tell: destruction = physically shred, degauss, or pulverize the media; sanitization = wipe data so the media can be reused; certification = the signed proof destruction happened; data retention = how long data must be kept before disposal."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-disposal",
+    "question": "Sanitization, as a media disposal method, is best described as which of the following?",
+    "options": ["Physically shredding or degaussing media so it is gone", "Removing data so the media can be safely reused", "A signed document proving data was destroyed", "The required period data must be kept before disposal"],
+    "correctIndex": 1,
+    "explanation": "Sanitization. It clears data from media so the hardware can be reused safely. The tell: sanitization = wipe data, keep the media usable; destruction = physically shred or degauss the media; certification = the signed proof of destruction; data retention = how long data must be kept."
+  },
+  {
+    "domain": "D4",
+    "family": "analysis-types",
+    "question": "Static analysis differs from dynamic analysis in that static analysis does which of the following?",
+    "options": ["Examines the code or binary without executing it", "Runs the program and observes its runtime behavior", "Watches third-party dependencies for disclosed vulnerabilities", "Feeds malformed inputs to a live running process"],
+    "correctIndex": 0,
+    "explanation": "Static analysis. It inspects code or a binary without ever running it. The tell: static analysis = examine without executing; dynamic analysis = run it and watch behavior; package monitoring = watch third-party dependencies for known vulnerabilities; feeding malformed inputs to a live process is a dynamic (fuzzing) technique."
+  },
+  {
+    "domain": "D4",
+    "family": "analysis-types",
+    "question": "As part of continuous integration, a build server automatically launches each new build, feeds it malformed inputs, and watches for crashes and unexpected system calls. Which analysis type is this?",
+    "options": ["Static analysis", "Dynamic analysis", "Package monitoring", "Reverse engineering"],
+    "correctIndex": 1,
+    "explanation": "Dynamic analysis. Running the program and observing its behavior under crafted inputs is dynamic analysis. The tell: dynamic analysis = execute and watch runtime behavior; static analysis = review code without running it; package monitoring = track third-party dependencies for known vulnerabilities; reverse engineering = deconstruct a binary to understand its design, not a runtime behavior test."
+  },
+  {
+    "domain": "D4",
+    "family": "analysis-types",
+    "question": "A team wants to detect known-vulnerable third-party libraries pulled into their build rather than analyze their own code. Which activity addresses this, as opposed to static or dynamic analysis of their own application?",
+    "options": ["Static analysis", "Dynamic analysis", "Package monitoring", "Fuzzing"],
+    "correctIndex": 2,
+    "explanation": "Package monitoring. It watches imported third-party dependencies for newly disclosed vulnerabilities. The tell: package monitoring = track third-party components for known flaws; static analysis = review your own code without running it; dynamic analysis = run your app and observe behavior; fuzzing = a dynamic technique that sends malformed inputs, still testing your own running code."
+  },
+  {
+    "domain": "D4",
+    "family": "threat-intel",
+    "question": "A bank pays a security vendor for a curated, subscription-based feed of indicators and analysis that is not available to the public. Which threat-intelligence source is this?",
+    "options": ["OSINT", "Information-sharing organization", "Dark web", "Proprietary third-party feed"],
+    "correctIndex": 3,
+    "explanation": "Proprietary third-party feed. It is a paid vendor source of curated intelligence. The tell: proprietary third-party = paid vendor feed; OSINT = free public sources; information-sharing organization = an industry community like an ISAC exchanging indicators; dark web = monitoring criminal marketplaces and forums."
+  },
+  {
+    "domain": "D4",
+    "family": "threat-intel",
+    "question": "Analysts monitor criminal marketplaces and hidden forums to spot the company's stolen credentials being offered for sale. Which threat-intelligence source is this?",
+    "options": ["Dark web", "OSINT", "Information-sharing organization", "Proprietary third-party feed"],
+    "correctIndex": 0,
+    "explanation": "Dark web. Watching hidden criminal markets and forums is dark web intelligence. The tell: dark web = criminal marketplaces and forums; OSINT = free public sources; information-sharing organization = industry peers sharing indicators; proprietary third-party = a paid vendor feed."
+  },
+  {
+    "domain": "D4",
+    "family": "security-assessments",
+    "question": "An assessor reviews the company's access-control procedures and change records against a required framework to confirm the controls are actually being followed. Which assessment is this?",
+    "options": ["Penetration testing", "Bug bounty", "System and process audit", "Responsible disclosure"],
+    "correctIndex": 2,
+    "explanation": "System and process audit. It checks controls and procedures against requirements. The tell: system and process audit = verify controls meet requirements; penetration testing = an authorized simulated attack that exploits weaknesses; bug bounty = paying external researchers per valid finding; responsible disclosure = the reporting process bug bounties rely on, not the assessment itself."
+  },
+  {
+    "domain": "D4",
+    "family": "security-assessments",
+    "question": "How does a penetration test differ from a bug bounty program?",
+    "options": ["A pen test is an authorized engagement by a specific hired team, while a bug bounty pays any external researcher per valid finding", "A pen test pays per finding, while a bug bounty is a single fixed engagement", "Both only review documentation without touching any systems", "A pen test never requires authorization from the target"],
+    "correctIndex": 0,
+    "explanation": "Penetration testing. A pen test is a scoped, authorized engagement by a hired team, whereas a bug bounty rewards any external researcher for each valid finding. The tell: penetration testing = authorized team with defined scope; bug bounty = open, pay-per-finding with responsible disclosure; a system and process audit instead checks controls against requirements."
+  },
+  {
+    "domain": "D4",
+    "family": "false-pos-neg",
+    "question": "A monitoring system flags legitimate activity as malicious, raising an alert when no real threat exists. What is this outcome called?",
+    "options": ["False negative", "False positive", "True positive", "True negative"],
+    "correctIndex": 1,
+    "explanation": "False positive. The system alerted, but nothing was actually wrong. The tell: false positive = it alerted on a benign event (wasted effort); false negative = a real threat that was missed; true positive = a real threat correctly alerted; true negative = benign activity correctly ignored."
+  },
+  {
+    "domain": "D4",
+    "family": "false-pos-neg",
+    "question": "A vulnerability scanner reports a server as clean, but the server actually has an unpatched, exploitable flaw the scan failed to detect. What is this result?",
+    "options": ["True negative", "False negative", "False positive", "True positive"],
+    "correctIndex": 1,
+    "explanation": "False negative. A real problem existed but the tool stayed silent. The tell: false negative = a real threat missed (dangerous); false positive = an alert on something harmless; true negative = correctly reporting genuinely clean; true positive = correctly detecting a real flaw."
+  },
+  {
+    "domain": "D4",
+    "family": "false-pos-neg",
+    "question": "In detection, a false negative is considered more dangerous than a false positive primarily because a false negative means what?",
+    "options": ["A real threat went undetected and unaddressed", "An analyst wasted time investigating a harmless alert", "A benign event was correctly ignored", "A genuine threat was correctly blocked"],
+    "correctIndex": 0,
+    "explanation": "False negative. It is dangerous because a real threat slips through with no alert at all. The tell: false negative = real threat missed; false positive = time wasted on a harmless alert; true negative = benign event correctly ignored; true positive = real threat correctly caught."
+  }
+]

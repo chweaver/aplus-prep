@@ -1,0 +1,314 @@
+[
+ {
+  "domain": "D1",
+  "family": "control-categories",
+  "question": "The team deploys a network firewall and enables full-disk encryption to enforce protection through software and hardware mechanisms. Which control category do these fall under?",
+  "options": ["managerial", "operational", "technical", "physical"],
+  "correctIndex": 2,
+  "explanation": "Technical. Firewalls and encryption enforce protection through technology. The tell: technical = implemented in hardware/software; managerial = policy and risk decisions; operational = day-to-day human processes; physical = tangible barriers like locks and fences."
+ },
+ {
+  "domain": "D1",
+  "family": "control-categories",
+  "question": "A facility protects its server room with cipher door locks, steel perimeter fencing, and a posted guard. Which control category do these controls belong to?",
+  "options": ["physical", "technical", "operational", "managerial"],
+  "correctIndex": 0,
+  "explanation": "Physical. Locks, fencing, and guards are tangible barriers protecting the facility. The tell: physical = tangible barriers; technical = hardware/software controls; operational = human processes like training; managerial = policy and risk decisions."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "A door lock and a firewall access rule both stop an unauthorized person from getting in before any damage is done. Which control type is this?",
+  "options": ["detective", "preventive", "corrective", "deterrent"],
+  "correctIndex": 1,
+  "explanation": "Preventive. A lock and an access rule stop the action before harm occurs. The tell: preventive = stops it before; detective = finds it after; corrective = fixes/restores after; deterrent = discourages the attempt."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "After malware wipes a file server, the team restores the data from backup and applies the missing patch to return operations to normal. Which control type does the restore represent?",
+  "options": ["corrective", "preventive", "compensating", "detective"],
+  "correctIndex": 0,
+  "explanation": "Corrective. Restoring from backup fixes and returns operations to normal after the incident. The tell: corrective = fixes/restores after; preventive = stops it before; compensating = an alternate control when the primary is not feasible; detective = finds the incident."
+ },
+ {
+  "domain": "D1",
+  "family": "control-types",
+  "question": "A SIEM reviews the previous night's collected logs each morning and surfaces a suspicious login that already occurred. Which control type is at work?",
+  "options": ["deterrent", "directive", "detective", "corrective"],
+  "correctIndex": 2,
+  "explanation": "Detective. Reviewing collected logs surfaces an event that already happened. The tell: detective = finds it after; deterrent = discourages beforehand; directive = mandates behavior via policy; corrective = restores after."
+ },
+ {
+  "domain": "D1",
+  "family": "cia-nonrepudiation",
+  "question": "A hospital encrypts patient records so that only authorized clinicians can read them and outsiders cannot. Which principle is this protecting?",
+  "options": ["confidentiality", "integrity", "availability", "non-repudiation"],
+  "correctIndex": 0,
+  "explanation": "Confidentiality. Encrypting records keeps them secret from unauthorized readers. The tell: confidentiality = secrecy via encryption; integrity = unaltered via hashing; availability = uptime via redundancy; non-repudiation = cannot deny an action."
+ },
+ {
+  "domain": "D1",
+  "family": "cia-nonrepudiation",
+  "question": "Detailed audit logs tie every database change to a specific user account so no one can credibly deny making a change. Which principle does this support?",
+  "options": ["integrity", "availability", "non-repudiation", "confidentiality"],
+  "correctIndex": 2,
+  "explanation": "Non-repudiation. Audit logs tie each change to a user so it cannot be credibly denied. The tell: non-repudiation = cannot deny you did it; integrity = data unaltered; availability = service reachable; confidentiality = data kept secret."
+ },
+ {
+  "domain": "D1",
+  "family": "aaa",
+  "question": "Before granting entry, a system verifies a user's claimed identity by checking their password and fingerprint. Which AAA component is this?",
+  "options": ["accounting", "authentication", "authorization", "identification"],
+  "correctIndex": 1,
+  "explanation": "Authentication. Verifying the user's claimed identity with a password and fingerprint proves who they are. The tell: authentication = prove who you are; authorization = what you may access; accounting = recording what you did; identification = merely claiming an identity before it is proven."
+ },
+ {
+  "domain": "D1",
+  "family": "aaa",
+  "question": "After John logs in successfully, the system checks his role and permits him to open only the finance folder. Which AAA component makes that determination?",
+  "options": ["authorization", "authentication", "accounting", "identification"],
+  "correctIndex": 0,
+  "explanation": "Authorization. Checking the role and permitting only the finance folder decides what the user may access. The tell: authorization = what you are allowed to do; authentication = proving identity; accounting = logging actions; identification = asserting an identity."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "Which zero trust term names the layer where the subject's actual traffic and application sessions flow, as opposed to where access decisions are made?",
+  "options": ["control plane", "Policy Engine", "Policy Administrator", "data plane"],
+  "correctIndex": 3,
+  "explanation": "Data plane. This is where the subject's actual traffic and sessions flow, separate from where decisions are made. The tell: data plane = where traffic/subjects flow; control plane = where policy decisions live; Policy Engine = renders the grant/deny decision; Policy Administrator = relays the access token."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "A zero trust system tightens its authentication requirements when a user connects from an unusual location or device, adjusting trust based on context. Which zero trust concept is this?",
+  "options": ["threat scope reduction", "implicit trust zones", "adaptive identity", "policy-driven access control"],
+  "correctIndex": 2,
+  "explanation": "Adaptive identity. Trust requirements change based on context like location and device. The tell: adaptive identity = adjusts trust on context; threat scope reduction = shrink what a compromised account can reach; implicit trust zones = areas assumed trusted; policy-driven access control = access governed by defined policy."
+ },
+ {
+  "domain": "D1",
+  "family": "zero-trust",
+  "question": "Limiting each user's access to only the minimal set of resources needed shrinks what an attacker can reach if that account is compromised. Which zero trust concept does this describe?",
+  "options": ["threat scope reduction", "adaptive identity", "control plane", "Policy Enforcement Point"],
+  "correctIndex": 0,
+  "explanation": "Threat scope reduction. Limiting each user to the minimal resources shrinks the blast radius of a compromise. The tell: threat scope reduction = minimize what an attacker can reach; adaptive identity = context-based trust; control plane = where decisions are managed; Policy Enforcement Point = the gate that allows or blocks the session."
+ },
+ {
+  "domain": "D1",
+  "family": "physical-security",
+  "question": "An alarm system detects an intruder in a dark warehouse by picking up the body heat they emit. Which sensor type is this?",
+  "options": ["pressure sensor", "infrared sensor", "microwave sensor", "ultrasonic sensor"],
+  "correctIndex": 1,
+  "explanation": "Infrared sensor. It detects an intruder by the body heat they emit. The tell: infrared sensor = detects heat/body; pressure sensor = detects weight/step; microwave sensor = detects motion via reflected waves; ultrasonic sensor = detects motion via reflected sound."
+ },
+ {
+  "domain": "D1",
+  "family": "physical-security",
+  "question": "To review who entered the loading dock after a theft, investigators pull recorded camera footage covering the area. Which physical control provided this?",
+  "options": ["lighting", "security guard", "video surveillance", "access badge"],
+  "correctIndex": 2,
+  "explanation": "Video surveillance. Recorded camera footage lets investigators review who entered after the fact. The tell: video surveillance = recorded/monitored cameras; lighting = deters and improves visibility; security guard = a human presence; access badge = a credential to open a door."
+ },
+ {
+  "domain": "D1",
+  "family": "deception",
+  "question": "Security engineers deploy a single decoy server exposed to the internet purely to attract attackers and study their techniques. Which deception technology is this?",
+  "options": ["honeypot", "honeynet", "honeyfile", "honeytoken"],
+  "correctIndex": 0,
+  "explanation": "Honeypot. A single decoy system deployed to attract and study attackers. The tell: honeypot = one decoy system; honeynet = a whole decoy network; honeyfile = a bait file; honeytoken = a bait credential/record that alerts when used."
+ },
+ {
+  "domain": "D1",
+  "family": "deception",
+  "question": "A team plants a document named 'passwords.xlsx' on a share; opening or copying it triggers an alert because no legitimate user should touch it. Which deception technique is this?",
+  "options": ["honeynet", "honeytoken", "honeyfile", "honeypot"],
+  "correctIndex": 2,
+  "explanation": "Honeyfile. A bait document that should never be touched, so access triggers an alert. The tell: honeyfile = a bait file; honeytoken = a bait credential/record; honeynet = a whole decoy network; honeypot = a single decoy system."
+ },
+ {
+  "domain": "D1",
+  "family": "change-management",
+  "question": "Before approving a database schema change, the review board documents every downstream system that could break and the likely effect on each. Which change-management element is this?",
+  "options": ["backout plan", "impact analysis", "test results", "maintenance window"],
+  "correctIndex": 1,
+  "explanation": "Impact analysis. Documenting what could break and the effect on each system before approval is impact analysis. The tell: impact analysis = what could break; backout plan = how to undo; test results = evidence the change works; maintenance window = the approved time to make the change."
+ },
+ {
+  "domain": "D1",
+  "family": "change-management",
+  "question": "The team keeps every revision of its firewall configuration files in a repository so any change can be tracked and rolled back to a prior version. Which change-management practice is this?",
+  "options": ["version control", "standard operating procedure", "approval process", "impact analysis"],
+  "correctIndex": 0,
+  "explanation": "Version control. Keeping every revision of config files so changes can be tracked and rolled back is version control. The tell: version control = track revisions; standard operating procedure = the repeatable documented procedure; approval process = authorization to proceed; impact analysis = what could break."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Windows BitLocker seals the drive's encryption key to a chip on the motherboard so the drive only unlocks if the machine boots in its known-good state. Which component is this?",
+  "options": ["HSM", "secure enclave", "key management system", "TPM"],
+  "correctIndex": 3,
+  "explanation": "TPM. A chip on one device's motherboard that seals the disk key to the machine's known-good boot state. The tell: TPM = crypto chip built into one endpoint's motherboard; HSM = a networked appliance serving keys at scale; secure enclave = an isolated coprocessor region on the CPU; key management system = software handling the key lifecycle."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Which component is a dedicated crypto chip on a single device's motherboard that stores platform measurements to attest the system booted untampered?",
+  "options": ["key escrow", "TPM", "HSM", "key management system"],
+  "correctIndex": 1,
+  "explanation": "TPM. A per-endpoint motherboard chip that stores boot measurements to attest an untampered boot. The tell: TPM = per-endpoint motherboard chip for boot integrity and disk keys; key escrow = a third party holding key copies; HSM = an appliance generating/storing keys for many systems; key management system = software for the key lifecycle."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A certificate authority keeps its root signing key inside a FIPS-validated hardware appliance that signs certificates without the key ever leaving the device. Which component is this?",
+  "options": ["HSM", "TPM", "key escrow", "secure enclave"],
+  "correctIndex": 0,
+  "explanation": "HSM. A dedicated tamper-resistant appliance that signs without the key ever leaving the device. The tell: HSM = hardware appliance generating/storing keys at scale; TPM = a chip inside one endpoint; key escrow = a third party holding key copies; secure enclave = an isolated region on a CPU."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "An enterprise must generate and manage keys centrally for hundreds of servers, not just secure one machine's boot. Which fits, as opposed to a per-machine motherboard chip?",
+  "options": ["TPM", "secure enclave", "HSM", "key management system"],
+  "correctIndex": 2,
+  "explanation": "HSM. Central key generation and management for hundreds of servers calls for a networked appliance, not a per-machine chip. The tell: HSM = appliance serving keys to many systems; TPM = a chip securing just one endpoint's boot/disk key; secure enclave = an isolated coprocessor on a CPU; key management system = the software lifecycle service."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A firm worries encrypted archives will be unrecoverable if a key is destroyed, so it arranges for a trusted third party to hold a recovery copy of the master key. Which arrangement is this?",
+  "options": ["HSM", "key management system", "TPM", "key escrow"],
+  "correctIndex": 3,
+  "explanation": "Key escrow. A trusted third party holds a recovery copy of the keys so encrypted data is not lost if a key is destroyed. The tell: key escrow = a third party holds key copies for recovery/legal access; HSM = an appliance that guards keys in active use; key management system = software that rotates/revokes keys; TPM = a per-endpoint chip."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Which term specifically means a third party holding a copy of keys for later recovery or lawful access, rather than a hardware appliance that generates and guards keys in active use?",
+  "options": ["HSM", "key escrow", "secure enclave", "TPM"],
+  "correctIndex": 1,
+  "explanation": "Key escrow. It is a third party holding key copies for later recovery or lawful access, not a device that guards keys in use. The tell: key escrow = third-party copy for recovery; HSM = hardware appliance generating/storing keys; secure enclave = isolated CPU region; TPM = per-endpoint motherboard chip."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A cloud team wants one central service that controls which applications may use each key, logs every key use, and handles rotation and revocation across services. Which solution is this?",
+  "options": ["key management system", "HSM", "key escrow", "TPM"],
+  "correctIndex": 0,
+  "explanation": "Key management system. One software service controls which apps use each key, logs usage, and handles rotation and revocation. The tell: key management system = software for the full key lifecycle; HSM = the hardware appliance performing crypto; key escrow = a third-party recovery copy; TPM = a per-endpoint chip."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "Which option orchestrates create, rotate, and revoke across many applications in software, whereas a separate hardware device actually performs the cryptographic operations?",
+  "options": ["HSM", "TPM", "key management system", "secure enclave"],
+  "correctIndex": 2,
+  "explanation": "Key management system. It orchestrates the key lifecycle in software, while the appliance performs the crypto. The tell: key management system = software lifecycle orchestration; HSM = hardware that generates/stores and performs operations; TPM = a per-endpoint chip; secure enclave = an isolated CPU region."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "On a modern phone, payment tokens and the keys protecting them sit in a hardware region isolated from the main processor and OS, so on-device malware cannot extract them. Which component is this?",
+  "options": ["TPM", "HSM", "key management system", "secure enclave"],
+  "correctIndex": 3,
+  "explanation": "Secure enclave. An isolated hardware region on the phone's processor holds payment tokens and their keys beyond the reach of on-device malware. The tell: secure enclave = isolated coprocessor region on a CPU/phone; TPM = a discrete motherboard chip on one endpoint; HSM = a networked appliance for many systems; key management system = software for the key lifecycle."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-key-handling",
+  "question": "A payment processor needs a certified, tamper-responsive hardware module that generates keys and performs PIN encryption, zeroizing its keys if the case is opened. Which component is this?",
+  "options": ["TPM", "HSM", "secure enclave", "key escrow"],
+  "correctIndex": 1,
+  "explanation": "HSM. A certified tamper-responsive hardware module generates keys and performs PIN encryption, zeroizing keys if opened. The tell: HSM = a dedicated hardware appliance for keys/crypto at scale; TPM = a chip inside one endpoint; secure enclave = an isolated region on a CPU; key escrow = a third-party key copy."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-methods",
+  "question": "A VPN encrypts a large bulk data transfer quickly using a single shared secret key that both ends already hold. Which cryptographic method is this?",
+  "options": ["asymmetric encryption", "symmetric encryption", "key exchange", "hashing"],
+  "correctIndex": 1,
+  "explanation": "Symmetric encryption. One shared key encrypts bulk data quickly at both ends. The tell: symmetric = one shared key, fast, bulk data; asymmetric = a public/private key pair; key exchange = safely agreeing on a shared key; hashing = a one-way integrity fingerprint."
+ },
+ {
+  "domain": "D1",
+  "family": "crypto-methods",
+  "question": "A system uses a public/private key pair so anyone can encrypt to the holder but only the holder's private key can decrypt. Which method is this?",
+  "options": ["asymmetric encryption", "symmetric encryption", "salting", "key stretching"],
+  "correctIndex": 0,
+  "explanation": "Asymmetric encryption. A public/private key pair lets anyone encrypt but only the private key decrypts. The tell: asymmetric = public/private key pair; symmetric = one shared key; salting = a random per-password value against rainbow tables; key stretching = making a weak password expensive to brute force."
+ },
+ {
+  "domain": "D1",
+  "family": "pki-signatures",
+  "question": "A hash of a message encrypted with the sender's private key, providing both integrity and non-repudiation, is known as what?",
+  "options": ["blockchain", "hashing", "open public ledger", "digital signature"],
+  "correctIndex": 3,
+  "explanation": "Digital signature. A message hash encrypted with the sender's private key gives integrity plus non-repudiation. The tell: digital signature = a signed hash for integrity and non-repudiation; blockchain = chained hashed blocks; hashing = a one-way fingerprint only; open public ledger = the public record of blockchain transactions."
+ },
+ {
+  "domain": "D1",
+  "family": "pki-signatures",
+  "question": "To verify that a digitally signed document truly came from Raj, a recipient checks the signature using which key?",
+  "options": ["Raj's private key", "Raj's public key", "the recipient's private key", "the recipient's public key"],
+  "correctIndex": 1,
+  "explanation": "Raj's public key. A signature is verified with the signer's public key, since only his private key could have created it. The tell: sign with the sender's private key; verify with the sender's public key; encrypting for secrecy uses the recipient's public key; the recipient's private key only decrypts messages sent to them."
+ },
+ {
+  "domain": "D1",
+  "family": "obfuscation",
+  "question": "A support portal displays a customer's card as XXXX-XXXX-XXXX-1234; the hidden digits are permanently obscured and cannot be recovered from what is shown. Which technique is this?",
+  "options": ["tokenization", "data masking", "steganography", "encryption"],
+  "correctIndex": 1,
+  "explanation": "Data masking. The shown value is permanently obscured and cannot be reversed from what is displayed. The tell: data masking = show a partial/scrambled value that cannot be reversed; tokenization = swap for a token that maps back via a vault; steganography = hide data inside other media; encryption = reversible with a key."
+ },
+ {
+  "domain": "D1",
+  "family": "obfuscation",
+  "question": "An insider hides a stolen spreadsheet's contents inside the inaudible portions of an MP3 audio file to move it past data-loss inspection. Which technique is this?",
+  "options": ["data masking", "tokenization", "steganography", "encryption"],
+  "correctIndex": 2,
+  "explanation": "Steganography. The data is concealed inside an audio file's inaudible portions to hide its very existence. The tell: steganography = hide data inside other media; data masking = show a partial value; tokenization = swap for a vaulted token; encryption = scramble reversibly with a key."
+ },
+ {
+  "domain": "D1",
+  "family": "encryption-levels",
+  "question": "A user encrypts only a few specific sensitive documents in a folder, leaving the rest of the disk readable. Which encryption level is this?",
+  "options": ["full-disk encryption", "volume encryption", "database encryption", "file-level encryption"],
+  "correctIndex": 3,
+  "explanation": "File-level encryption. Only specific documents are encrypted while the rest of the disk stays readable. The tell: file = individual files; full-disk = the entire drive; volume = a logical volume; database = the whole database."
+ },
+ {
+  "domain": "D1",
+  "family": "encryption-levels",
+  "question": "A company encrypts its entire customer database so the whole data store is protected as a unit, not just individual rows. Which encryption level is this?",
+  "options": ["record-level encryption", "file-level encryption", "database encryption", "partition encryption"],
+  "correctIndex": 2,
+  "explanation": "Database encryption. The entire data store is protected as a unit rather than single rows. The tell: database = the whole database; record = a single row/field inside it; file = individual files; partition = one partition of the drive."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "A developer generates a certificate and signs it with their own key for an internal test server, so no external authority vouches for it and browsers warn users. Which certificate type is this?",
+  "options": ["self-signed certificate", "wildcard certificate", "third-party certificate", "root of trust"],
+  "correctIndex": 0,
+  "explanation": "Self-signed certificate. The developer signed it with their own key, so no external authority vouches for it and clients warn. The tell: self-signed = you signed it yourself, no external trust; third-party = a trusted CA vouches for it; wildcard = covers all subdomains of a domain; root of trust = the anchor CA a chain terminates at."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "In a certificate chain, which element is the anchor certificate authority that the chain ultimately terminates at and that clients inherently trust?",
+  "options": ["certificate signing request", "root of trust", "OCSP", "wildcard certificate"],
+  "correctIndex": 1,
+  "explanation": "Root of trust. It is the anchor certificate authority a chain ultimately terminates at and that clients inherently trust. The tell: root of trust = the trust anchor at the top of the chain; certificate signing request = the request sent to a CA; OCSP = real-time single-cert revocation check; wildcard = covers all subdomains."
+ },
+ {
+  "domain": "D1",
+  "family": "certificates",
+  "question": "Which entity validates a requester's identity and issues the signed digital certificate that others will trust?",
+  "options": ["certificate signing request", "certificate revocation list", "root of trust", "certificate authority"],
+  "correctIndex": 3,
+  "explanation": "Certificate authority. It validates the requester's identity and issues the signed certificate others trust. The tell: certificate authority = the trusted issuer; certificate signing request = the request you submit to it; certificate revocation list = a downloaded list of revoked certs; root of trust = the anchor CA the chain terminates at."
+ }
+]
