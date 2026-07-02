@@ -142,6 +142,12 @@ const html = `<!doctype html>
     -webkit-tap-highlight-color:transparent;}
   .modebtn small{color:var(--muted); font-weight:500; font-size:13px}
   .modebtn.exam{border-color:var(--primary)}
+  .seglabel{color:var(--muted); font-size:12px; text-transform:uppercase; letter-spacing:.08em; margin-top:16px; font-weight:700}
+  .seg{display:flex; gap:8px; margin-top:8px}
+  .seg button{flex:1; background:var(--option); color:var(--muted); border:1px solid var(--border);
+    border-radius:10px; padding:11px 10px; font-size:14px; font-weight:700; cursor:pointer;
+    -webkit-tap-highlight-color:transparent;}
+  .seg button.on{border-color:var(--primary); color:var(--text); background:#20264a}
   .statline{color:var(--muted); font-size:13px; margin-top:14px}
   .exhist{margin-top:6px; font-size:13px; color:var(--muted)}
   .exhist b.pass{color:var(--correct)} .exhist b.fail{color:var(--wrong)}
@@ -250,6 +256,8 @@ const html = `<!doctype html>
     return s;
   }
   function saveStats(s){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(s)); }catch(e){} }
+  function getPref(){ var s=loadStats(); return (s.pref&&s.pref.feedback)||"instant"; }
+  function setPref(v){ var s=loadStats(); s.pref=s.pref||{}; s.pref.feedback=v; saveStats(s); }
   function recordStat(q, correct){
     var s = loadStats();
     s.seq = (s.seq||0)+1;
@@ -357,9 +365,17 @@ const html = `<!doctype html>
     var h='<div class="card">';
     h+='<h1 class="big">Security+ SY0-701 Prep</h1>';
     h+='<div class="sub">Adaptive twin-term training. The engine serves what you miss.</div>';
+    var fb=getPref();
+    var fbTxt = fb==="instant" ? "instant feedback" : "feedback at the end";
     h+='<button class="modebtn exam" id="m-exam">Practice exam<small>90 questions \\u00b7 90 minutes \\u00b7 real domain weights \\u00b7 adaptive selection \\u00b7 scored vs 750</small></button>';
-    h+='<button class="modebtn" id="m-drill">Smart drill<small>'+DRILL_LEN+' questions the algorithm thinks you need most, instant feedback</small></button>';
-    h+='<button class="modebtn" id="m-stream">Full stream<small>All '+ALL.length+' questions, shuffled, instant feedback</small></button>';
+    h+='<button class="modebtn" id="m-drill">Smart drill<small>'+DRILL_LEN+' questions the algorithm thinks you need most \\u00b7 '+fbTxt+'</small></button>';
+    h+='<button class="modebtn" id="m-stream">Full stream<small>All '+ALL.length+' questions, shuffled \\u00b7 '+fbTxt+'</small></button>';
+    h+='<div class="seglabel">Drill feedback</div>';
+    h+='<div class="seg">';
+    h+='<button id="fb-instant" class="'+(fb==="instant"?"on":"")+'">Instant</button>';
+    h+='<button id="fb-end" class="'+(fb==="end"?"on":"")+'">At the end</button>';
+    h+='</div>';
+    h+='<div class="hint" style="text-align:left;margin-top:6px">Applies to drills and the stream. The practice exam always waits until submit.</div>';
     h+='<div class="statline">Progress: '+seen+'/'+ALL.length+' seen \\u00b7 '+mastered+' mastered (3+ streak)</div>';
     if(s.exams.length){
       h+='<div class="exhist">Exams: ';
@@ -374,17 +390,58 @@ const html = `<!doctype html>
     document.getElementById("m-exam").addEventListener("click", startExam);
     document.getElementById("m-drill").addEventListener("click", function(){ startDrill(adaptivePick(ALL, DRILL_LEN, 0.75), "Smart drill"); });
     document.getElementById("m-stream").addEventListener("click", function(){ startDrill(shuffle(ALL), "Full stream"); });
+    document.getElementById("fb-instant").addEventListener("click", function(){ setPref("instant"); showHome(); });
+    document.getElementById("fb-end").addEventListener("click", function(){ setPref("end"); showHome(); });
     document.getElementById("reset").addEventListener("click", function(){
       if(confirm("Erase all saved stats on this device?")){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} showHome(); }
     });
     window.scrollTo(0,0);
   }
 
-  // ---------- drill (instant feedback) ----------
+  // ---------- drill (instant or end-of-round feedback per preference) ----------
   function startDrill(pool, label){
     go("drill");
-    session={label:label, items:pool.map(mkItem), pos:0, correctCount:0, answeredCount:0, missed:[]};
-    renderDrill();
+    session={label:label, deferred:getPref()==="end", items:pool.map(mkItem), pos:0, correctCount:0, answeredCount:0, missed:[]};
+    if(session.deferred) renderDeferredQ(); else renderDrill();
+  }
+  // deferred variant: select an answer, no verdict until the round is done
+  function renderDeferredQ(){
+    header(session.label, session.pos+"/"+session.items.length+" answered", session.pos/session.items.length);
+    if(session.pos>=session.items.length) return finishDeferred();
+    var it=session.items[session.pos], q=it.q;
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<div class="meta"><span>'+q.domain+' \\u00b7 '+familyLabel(q.family)+'</span><span>Q'+(session.pos+1)+' of '+session.items.length+'</span></div>';
+    h+='<p class="q"></p><div class="opts">';
+    for(var i=0;i<4;i++) h+='<button class="opt'+(it.chosen===i?" selected":"")+'" data-i="'+i+'"><span class="k">'+LETTERS[i]+'</span><span class="t"></span></button>';
+    h+='</div><div class="actions"><button class="primary" id="dnext"'+(it.chosen>=0?'':' disabled style="opacity:.5"')+'>'+(session.pos+1>=session.items.length?"Finish round":"Next")+'</button></div></div>';
+    app.innerHTML=h;
+    app.querySelector(".q").textContent=q.question;
+    var btns=app.querySelectorAll(".opt");
+    for(var j=0;j<4;j++){
+      btns[j].querySelector(".t").textContent=it.opts[j];
+      btns[j].addEventListener("click", function(e){
+        it.chosen=parseInt(e.currentTarget.getAttribute("data-i"),10);
+        var bs=document.querySelectorAll(".opt");
+        for(var k=0;k<bs.length;k++) bs[k].classList.toggle("selected", parseInt(bs[k].getAttribute("data-i"),10)===it.chosen);
+        var nx=document.getElementById("dnext");
+        nx.removeAttribute("disabled"); nx.style.opacity="";
+      });
+    }
+    document.getElementById("dnext").addEventListener("click", function(){
+      if(it.chosen<0) return;
+      session.pos++; renderDeferredQ();
+    });
+    window.scrollTo(0,0);
+  }
+  function finishDeferred(){
+    session.items.forEach(function(it){
+      it.answered=true; it.correct=(it.chosen===it.correctDisplay);
+      session.answeredCount++;
+      if(it.correct) session.correctCount++; else session.missed.push(it.q.id);
+      recordStat(it.q, it.correct);
+    });
+    renderDrillEnd();
   }
   function drillHeader(){
     var t=session.items.length, a=session.answeredCount;
@@ -460,6 +517,9 @@ const html = `<!doctype html>
     h+='<button class="primary" id="again">New smart drill</button>';
     h+='<button class="ghost" id="retry"'+(session.missed.length?'':' disabled style="opacity:.5"')+'>Retry missed ('+session.missed.length+')</button>';
     h+='</div>';
+    if(session.deferred && session.missed.length){
+      h+='<div class="actions"><button class="ghost" id="rvwdrill">Review missed answers ('+session.missed.length+')</button></div>';
+    }
     h+='<h1 style="font-size:16px;margin-top:22px">Weakest families first</h1>';
     h+='<table><thead><tr><th>Family</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
     rows.forEach(function(r){
@@ -476,6 +536,12 @@ const html = `<!doctype html>
       document.getElementById("retry").addEventListener("click", function(){
         startDrill(shuffle(ALL.filter(function(q){ return ids[q.id]; })), "Missed review");
       });
+      if(session.deferred){
+        var missedItems=session.items.filter(function(it){ return !it.correct; });
+        document.getElementById("rvwdrill").addEventListener("click", function(){
+          renderReviewList(missedItems, 0, renderDrillEnd);
+        });
+      }
     }
     window.scrollTo(0,0);
   }
@@ -608,7 +674,7 @@ const html = `<!doctype html>
     h+='</div>';
     app.innerHTML=h;
     if(missed.length){
-      document.getElementById("rvw").addEventListener("click", function(){ renderReview(0); });
+      document.getElementById("rvw").addEventListener("click", function(){ renderReviewList(missed, 0, renderReport); });
       document.getElementById("drillmiss").addEventListener("click", function(){
         startDrill(shuffle(missed.map(function(it){return it.q;})), "Exam-miss drill");
       });
@@ -616,12 +682,13 @@ const html = `<!doctype html>
     document.getElementById("homego").addEventListener("click", showHome);
     window.scrollTo(0,0);
   }
-  function renderReview(i){
+  // Walk through a list of answered items (your pick vs the key + the tell),
+  // then hand control back to backFn. Shared by exam report and deferred drills.
+  function renderReviewList(list, i, backFn){
     go("review");
-    var missed=exam.items.filter(function(it){ return !it.correct; });
-    if(i>=missed.length) return renderReport();
-    var it=missed[i], q=it.q;
-    header("Review "+(i+1)+"/"+missed.length,"",(i+1)/missed.length);
+    if(i>=list.length) return backFn();
+    var it=list[i], q=it.q;
+    header("Review "+(i+1)+"/"+list.length,"",(i+1)/list.length);
     var app=document.getElementById("app");
     var h='<div class="card">';
     h+='<div class="meta"><span>'+q.domain+' \\u00b7 '+familyLabel(q.family)+'</span><span>missed</span></div>';
@@ -633,14 +700,14 @@ const html = `<!doctype html>
       h+='<button class="'+cls+'" disabled><span class="k">'+LETTERS[k]+'</span><span class="t"></span></button>';
     }
     h+='</div><div id="feedback"></div>';
-    h+='<div class="actions"><button class="primary" id="nx">'+(i+1>=missed.length?"Back to report":"Next miss")+'</button></div>';
+    h+='<div class="actions"><button class="primary" id="nx">'+(i+1>=list.length?"Done":"Next miss")+'</button></div>';
     h+='</div>';
     app.innerHTML=h;
     app.querySelector(".q").textContent=q.question;
     var ts=app.querySelectorAll(".opt .t");
     for(var m=0;m<4;m++) ts[m].textContent=it.opts[m];
     document.getElementById("feedback").appendChild(explBlock(q, null));
-    document.getElementById("nx").addEventListener("click", function(){ renderReview(i+1); });
+    document.getElementById("nx").addEventListener("click", function(){ renderReviewList(list, i+1, backFn); });
     window.scrollTo(0,0);
   }
 

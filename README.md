@@ -20,10 +20,15 @@ Three modes, all driven by the same adaptive engine:
   feedback until submit; flag questions and jump around via the grid. Scored
   on the 100-900 scale against the 750 pass line with a per-domain breakdown,
   then review each miss or convert them straight into a drill.
-- **Smart drill**: 25-question rounds picked by the algorithm, instant
-  feedback. Every explanation ends with "The tell:" - a one-phrase
-  discriminator for each sibling term. The tell line is the studying.
-- **Full stream**: all questions shuffled, instant feedback.
+- **Smart drill**: 25-question rounds picked by the algorithm. Every
+  explanation ends with "The tell:" - a one-phrase discriminator for each
+  sibling term. The tell line is the studying.
+- **Full stream**: all questions shuffled.
+
+Drills and the stream honor a **feedback setting** on the home screen:
+"Instant" grades each answer as you tap it; "At the end" holds all feedback
+until the round is scored, then walks you through your misses (the practice
+exam always works this way).
 
 The adaptive engine weights each question by history: missed-last-time (4x) >
 never-seen (3x) > shaky (2x) > solid (1x) > mastered (0.4x), multiplied up for
