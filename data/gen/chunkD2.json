@@ -1,0 +1,315 @@
+[
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "Which recovery site provides only conditioned space, electrical power, and cooling, with no servers, network equipment, or data on hand, so bringing operations online after a disaster takes days to weeks?",
+  "options": ["hot", "warm", "cold", "geographic dispersion"],
+  "correctIndex": 2,
+  "explanation": "Cold site. It is bare powered space with no hardware or data, so recovery runs days to weeks. The tell: cold = space and power only, days to weeks; warm = hardware and links ready but data must be loaded, hours to days; hot = fully running and synchronized, minutes to hours; geographic dispersion = spacing sites far apart, not a facility readiness level."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "A vendor offers your company a cold site for disaster recovery. Which expectation should you set with management about it?",
+  "options": [
+   "It is bare space with power and cooling; you must bring in and configure all hardware and data, so recovery takes days to weeks.",
+   "It has racked hardware and connectivity but data must be restored, giving recovery in hours to days.",
+   "It runs live duplicate systems with current data for failover in minutes to hours.",
+   "It is a principle of placing sites far apart, not an actual recovery facility."
+  ],
+  "correctIndex": 0,
+  "explanation": "Cold site. A cold site is only conditioned space and power, so you procure and load everything after declaring a disaster. The tell: cold = space and power only, days to weeks; warm = equipped but needs data restore, hours to days; hot = live and synchronized, minutes to hours; geographic dispersion = distance between sites, not a readiness tier."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "Two recovery options are compared. Option A has racks, connectivity, and hardware waiting but no current data. Option B is nothing but powered, cooled floor space with everything still to be procured. Option B is which site type?",
+  "options": ["warm", "hot", "geographic dispersion", "cold"],
+  "correctIndex": 3,
+  "explanation": "Cold site. Option B is bare powered space with no equipment, the definition of a cold site, recovering in days to weeks. The tell: cold = empty powered space, days to weeks; warm (Option A) = hardware and links ready, data must load, hours to days; hot = live synchronized systems, minutes to hours; geographic dispersion = how far apart sites sit, not a facility type."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "You are told your organization has contracted a warm site. What should you expect to find when you activate it after an outage?",
+  "options": [
+   "Fully running duplicate systems with continuously current data, ready in minutes to hours.",
+   "Racked servers and network connectivity already in place, but recent data must be restored first, taking hours to days.",
+   "Only conditioned space with power and cooling, requiring days to weeks to equip.",
+   "Two facilities placed far apart so a single disaster cannot strike both."
+  ],
+  "correctIndex": 1,
+  "explanation": "Warm site. A warm site has hardware and connectivity staged, but you must load current data before resuming, so recovery spans hours to days. The tell: warm = equipped but needs data restore, hours to days; hot = live and synchronized, minutes to hours; cold = space and power only, days to weeks; geographic dispersion = spacing of sites, not their readiness."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "A firm's recovery facility keeps servers racked and network links live, but the latest data must be loaded from backups before it can operate, meaning several hours of recent work could be lost on failover. Which site type is this?",
+  "options": ["hot", "cold", "warm", "geographic dispersion"],
+  "correctIndex": 2,
+  "explanation": "Warm site. Equipment is ready but data is not current until restored, so some recent work is lost and recovery takes hours to days. The tell: warm = hardware ready, data must load, hours to days; hot = data continuously synchronized, minimal loss, minutes to hours; cold = no equipment or data, days to weeks; geographic dispersion = distance between sites."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "A manufacturer wants to be back online within about a day after a disaster without paying for a continuously running duplicate. It leases a facility already stocked with servers and connectivity, planning to restore data after declaring the event. Which site type fits?",
+  "options": ["warm", "hot", "cold", "geographic dispersion"],
+  "correctIndex": 0,
+  "explanation": "Warm site. Pre-staged hardware plus a data restore lands recovery in hours to days at a moderate cost, the warm-site middle ground. The tell: warm = equipped, restore data, hours to days; hot = live synchronized failover, minutes to hours, highest cost; cold = bare space, days to weeks, cheapest; geographic dispersion = placing sites far apart."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "A hospital cannot lose access to its electronic records for more than a few minutes. Of the recovery site options, which provides near-immediate failover because it is already powered on and running with current data?",
+  "options": ["warm", "cold", "geographic dispersion", "hot"],
+  "correctIndex": 3,
+  "explanation": "Hot site. Only a hot site runs live with synchronized data for cutover in minutes to hours. The tell: hot = live and current, minutes to hours; warm = equipped but data must load, hours to days; cold = bare space, days to weeks; geographic dispersion = spacing of sites, not a recovery speed."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "A cloud service keeps a standby facility whose systems are always powered on while production continuously copies data to it, so a failover loses only seconds of work and completes within minutes. Which site type is this?",
+  "options": ["cold", "hot", "warm", "geographic dispersion"],
+  "correctIndex": 1,
+  "explanation": "Hot site. Continuously current data plus live systems is the hallmark of a hot site, giving near-zero loss and minutes-to-hours recovery. The tell: hot = live, continuously synchronized, minutes to hours; warm = equipped but data restored after the fact, hours to days; cold = space and power only, days to weeks; geographic dispersion = distance between facilities."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "Which recovery concept is not about how equipped a facility is, but about placing facilities far enough apart that one regional event cannot disable them all at once?",
+  "options": ["hot", "warm", "geographic dispersion", "cold"],
+  "correctIndex": 2,
+  "explanation": "Geographic dispersion. It concerns the distance between sites, not their readiness level, so no single regional disaster hits both. The tell: geographic dispersion = spacing sites far apart; hot = live facility, minutes to hours; warm = equipped, data restore, hours to days; cold = bare space, days to weeks."
+ },
+ {
+  "domain": "D3",
+  "family": "sites",
+  "question": "An auditor notes that a company's primary data center and its recovery site sit in the same city, warning that a single regional flood could destroy both. Which resilience principle did the company fail to apply?",
+  "options": ["hot", "warm", "cold", "geographic dispersion"],
+  "correctIndex": 3,
+  "explanation": "Geographic dispersion. Placing both sites in one region violates geographic dispersion, which requires enough distance that one disaster cannot take out both. The tell: geographic dispersion = adequate distance between sites; hot = live standby facility, minutes to hours; warm = equipped facility, hours to days; cold = bare space, days to weeks."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A database team does not just want a live mirror of the data; they must be able to replay every individual change since the last full backup to recover to a chosen point in time. Which technique provides this?",
+  "options": ["replication", "journaling", "snapshots", "recovery"],
+  "correctIndex": 1,
+  "explanation": "Journaling. Journaling logs each change so transactions can be replayed to a precise point, unlike a mirror that only holds the current state. The tell: journaling = log and replay every change to an exact point; replication = continuous near real-time copy of current data; snapshots = a fixed point-in-time image; recovery = the act of restoring service from backups."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "Which backup technique continuously copies data to a second location in near real time so the copy stays almost identical to the source at all times?",
+  "options": ["replication", "snapshots", "journaling", "frequency"],
+  "correctIndex": 0,
+  "explanation": "Replication. It keeps a second copy nearly identical to the source by copying changes continuously in near real time. The tell: replication = continuous near real-time mirror; snapshots = a single point-in-time image to revert to; journaling = a change log replayed to an exact point; frequency = how often backups are taken."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A backup is described as a snapshot. What does it capture?",
+  "options": [
+   "A continuous near real-time copy kept identical to the source.",
+   "A log of every change that can be replayed to a precise point.",
+   "A copy stored in the same building for the fastest restore.",
+   "A point-in-time image of the volume that you can revert to exactly as it was at that instant."
+  ],
+  "correctIndex": 3,
+  "explanation": "Snapshot. A snapshot freezes the exact state of a volume at one instant so you can roll back to it. The tell: snapshot = point-in-time image to revert to; replication = continuous near real-time copy; journaling = replayable change log to an exact point; onsite = a local copy for fast restore."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A firm ships its backup media each week to a secured vault in a distant state so that a regional disaster at headquarters cannot destroy both production and its backups, accepting that retrieval and restore will take longer. This copy is best described as which?",
+  "options": ["onsite", "offsite", "replication", "snapshots"],
+  "correctIndex": 1,
+  "explanation": "Offsite backup. Storing copies at a distant facility means they survive a total loss of the main site, at the cost of slower retrieval. The tell: offsite = distant copy, survives site loss, slower restore; onsite = local copy, fastest restore but shares the disaster; replication = continuous near real-time mirror; snapshots = a point-in-time image."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "Which backup location choice gives the fastest possible restore because the media sits in the same building, at the risk of being destroyed along with production in a site-wide disaster?",
+  "options": ["onsite", "offsite", "encryption", "frequency"],
+  "correctIndex": 0,
+  "explanation": "Onsite backup. Keeping backups locally makes restores fastest but leaves them exposed to a disaster that hits the whole site. The tell: onsite = local, fastest restore, shares the disaster; offsite = distant, survives site loss, slower restore; encryption = protects backup contents from being read; frequency = how often backups run."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A company worries that backup tapes could be stolen while being transported to the offsite vault and their contents read. Which backup safeguard directly renders the tape data unreadable without a key?",
+  "options": ["offsite", "frequency", "encryption", "replication"],
+  "correctIndex": 2,
+  "explanation": "Encryption. Encrypting the backups makes their contents unreadable to anyone without the key, protecting stolen media. The tell: encryption = makes backup contents unreadable without a key; offsite = where the copy is stored, not how it is protected; frequency = how often backups run; replication = continuous copy to another location."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A team changes its backups from once daily to every four hours specifically to shrink the amount of data that could be lost between backups, tightening the recovery point objective. Which backup attribute are they adjusting?",
+  "options": ["recovery", "replication", "journaling", "frequency"],
+  "correctIndex": 3,
+  "explanation": "Frequency. How often backups run sets the maximum data you can lose between them and drives the recovery point objective. The tell: frequency = how often backups are taken, sets the data-loss window; recovery = restoring service from a backup; replication = continuous near real-time copy; journaling = replayable change log to an exact point."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "After ransomware encrypts production systems, the team restores clean data from backup media to bring services back to a working state. Which backup activity is this?",
+  "options": ["recovery", "replication", "snapshots", "journaling"],
+  "correctIndex": 0,
+  "explanation": "Recovery. Recovery is the act of restoring data from backups to return systems to normal operation. The tell: recovery = restoring service from backups; replication = continuously copying data to another location; snapshots = capturing a point-in-time image; journaling = logging changes for later replay."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "A cloud administrator schedules the storage array to capture a read-only point-in-time image of a volume every hour, so any of the last several hours can be restored exactly as the volume looked then. Which backup method is in use?",
+  "options": ["replication", "snapshots", "journaling", "offsite"],
+  "correctIndex": 1,
+  "explanation": "Snapshots. Each hourly image freezes the volume's exact state, letting you revert to that instant. The tell: snapshots = point-in-time images to revert to; replication = continuous near real-time mirror, not discrete images; journaling = a change log replayed to an exact point; offsite = a copy stored at a distant location."
+ },
+ {
+  "domain": "D3",
+  "family": "backups",
+  "question": "Two data centers must stay within seconds of each other so that if one fails the survivor holds essentially the same data, so every write is copied to the partner continuously as it happens. Which technique keeps them in step?",
+  "options": ["snapshots", "journaling", "replication", "onsite"],
+  "correctIndex": 2,
+  "explanation": "Replication. Copying every write continuously keeps the two locations nearly identical for near-zero data loss on failover. The tell: replication = continuous near real-time copy between locations; snapshots = periodic point-in-time images, not continuous; journaling = replayable change log to an exact point; onsite = a local copy for fast restore."
+ },
+ {
+  "domain": "D3",
+  "family": "power",
+  "question": "When utility power fails, a battery unit instantly carries the server load for the first 20 seconds until a larger fuel-powered unit starts and takes over for the rest of the outage. Which device carries the load during those first seconds?",
+  "options": ["generator", "UPS", "power distribution unit", "dual power supply"],
+  "correctIndex": 1,
+  "explanation": "UPS. An uninterruptible power supply provides instant, gap-free battery power to bridge the seconds until the generator comes online. The tell: UPS = instant short-term battery ride-through; generator = fuel-powered long-term source that needs seconds to start; power distribution unit = routes power to rack equipment; dual power supply = two supplies in one device for redundancy."
+ },
+ {
+  "domain": "D3",
+  "family": "power",
+  "question": "You are told a facility relies on a generator to survive extended outages. Which limitation must be compensated for?",
+  "options": [
+   "It only routes power to rack equipment and provides no backup itself.",
+   "It offers redundancy inside one device but no outage protection.",
+   "It gives instant battery power but only for seconds to minutes.",
+   "It takes several seconds to start, so a battery unit must bridge the gap until it runs."
+  ],
+  "correctIndex": 3,
+  "explanation": "Generator. A generator supplies long-term power during extended outages but needs seconds to start, so a UPS must cover that gap. The tell: generator = long-term fuel-powered supply, delayed start; UPS = instant battery ride-through for seconds to minutes; power distribution unit = distributes power to rack devices; dual power supply = redundant supplies in one chassis."
+ },
+ {
+  "domain": "D3",
+  "family": "data-classification",
+  "question": "A software company holds patents and copyrighted source code that legally protect the creations of its developers. Which data type best describes these assets?",
+  "options": ["regulated", "intellectual property", "trade secret", "financial"],
+  "correctIndex": 1,
+  "explanation": "Intellectual property. Patents and copyrights are legally protected creations of the mind, the definition of intellectual property. The tell: intellectual property = patents and copyrights; trade secret = secret unpatented competitive know-how; regulated = governed by external law or standard; financial = monetary and accounting records."
+ },
+ {
+  "domain": "D3",
+  "family": "data-classification",
+  "question": "Which classification applies to data so essential that its loss would halt the organization's core business functions?",
+  "options": ["confidential", "public", "critical", "restricted"],
+  "correctIndex": 2,
+  "explanation": "Critical. Critical data is essential to operations, and losing it stops core business functions. The tell: critical = essential to operations; confidential = harm if disclosed; restricted = tightly limited, highly sensitive; public = no harm if released."
+ },
+ {
+  "domain": "D3",
+  "family": "data-states",
+  "question": "Customer records travel across the internet from a branch office to headquarters, protected by TLS while on the wire. Which data state is this?",
+  "options": ["at rest", "in transit", "in use", "data sovereignty"],
+  "correctIndex": 1,
+  "explanation": "In transit. Data moving over a network, secured with TLS, is data in transit. The tell: in transit = moving over a network (TLS); at rest = stored on disk; in use = actively processed in memory; data sovereignty = data governed by the laws of the country it sits in."
+ },
+ {
+  "domain": "D3",
+  "family": "data-states",
+  "question": "Files sit encrypted on a server's hard drive, neither being accessed nor transmitted at the moment. Which data state describes them?",
+  "options": ["at rest", "in transit", "in use", "geolocation"],
+  "correctIndex": 0,
+  "explanation": "At rest. Stored data that is not moving or being processed is data at rest, typically protected with disk encryption. The tell: at rest = stored on disk; in transit = moving over a network; in use = actively processed in memory; geolocation = the physical location of the data or device."
+ },
+ {
+  "domain": "D3",
+  "family": "data-protection",
+  "question": "A streaming service refuses to serve certain content to IP addresses outside licensed countries, allowing or denying access based on where the user is located. Which data protection method is this?",
+  "options": ["permission restrictions", "geographic restrictions", "masking", "tokenization"],
+  "correctIndex": 1,
+  "explanation": "Geographic restrictions. Access is allowed or denied by location, which is a geographic restriction. The tell: geographic restrictions = allow or deny by location; permission restrictions = control by access rights and roles; masking = show a partial value; tokenization = swap a value for a vaulted token."
+ },
+ {
+  "domain": "D3",
+  "family": "data-protection",
+  "question": "To let users verify a downloaded file was not altered, a site publishes a one-way fingerprint of the file that cannot be reversed to reveal the original. Which data protection method is this?",
+  "options": ["hashing", "encryption", "masking", "tokenization"],
+  "correctIndex": 0,
+  "explanation": "Hashing. A one-way fingerprint used to confirm data has not changed is a hash. The tell: hashing = one-way, for integrity, not reversible; encryption = reversible with a key, for confidentiality; masking = shows a partial value; tokenization = swaps a value for a vaulted token."
+ },
+ {
+  "domain": "D3",
+  "family": "load-balancing",
+  "question": "Two identical servers both process incoming traffic at the same time, sharing the workload, and if one fails the other absorbs all of it. Which configuration is this?",
+  "options": ["active-passive configuration", "active-active configuration", "clustering", "load balancing"],
+  "correctIndex": 1,
+  "explanation": "Active-active configuration. Both nodes serve traffic simultaneously and share the load. The tell: active-active = all members handle load at once; active-passive = one node serves while a standby waits idle; clustering = grouped nodes acting as one system for failover; load balancing = distributing requests across active servers."
+ },
+ {
+  "domain": "D3",
+  "family": "load-balancing",
+  "question": "A high-availability pair is labeled active-passive. How does the second node behave?",
+  "options": [
+   "It distributes incoming requests across a server pool.",
+   "It groups with the first node to act as one system.",
+   "It shares the live traffic load with the first node.",
+   "It sits idle on standby and takes over only if the first node fails."
+  ],
+  "correctIndex": 3,
+  "explanation": "Active-passive configuration. In active-passive, the standby node stays idle until it must assume the load on failure. The tell: active-passive = standby idle until failover; active-active = both nodes share load at once; load balancing = spreading requests across active servers; clustering = grouped nodes presenting as one system."
+ },
+ {
+  "domain": "D3",
+  "family": "load-balancing",
+  "question": "Which technique groups multiple nodes so they act as a single system whose purpose is failover and high availability, rather than merely spreading requests for throughput?",
+  "options": ["load balancing", "clustering", "active-active configuration", "active-passive configuration"],
+  "correctIndex": 1,
+  "explanation": "Clustering. Clustering makes several nodes behave as one highly available system so another takes over on failure. The tell: clustering = grouped nodes as one system for failover; load balancing = spreading requests across servers for throughput; active-active = both nodes serving at once; active-passive = a standby waiting idle until failover."
+ },
+ {
+  "domain": "D3",
+  "family": "resilience-planning",
+  "question": "To avoid depending on any single provider, a company runs its workloads across Amazon, Microsoft, and Google clouds so an outage at one does not take everything down. Which resilience approach is this?",
+  "options": ["platform diversity", "multi-cloud", "continuity of operations (COOP)", "capacity planning"],
+  "correctIndex": 1,
+  "explanation": "Multi-cloud. Spreading workloads across multiple cloud providers so one provider's outage is survivable is a multi-cloud strategy. The tell: multi-cloud = spread across cloud providers; platform diversity = use different vendors, OSes, or technologies so one flaw does not sink all; continuity of operations = plan to keep essential functions running; capacity planning = size people, tech, and infrastructure for demand."
+ },
+ {
+  "domain": "D3",
+  "family": "resilience-planning",
+  "question": "A government agency documents how it will keep its essential functions operating during and after a major disruption. Which resilience approach is this?",
+  "options": ["capacity planning", "multi-cloud", "continuity of operations (COOP)", "platform diversity"],
+  "correctIndex": 2,
+  "explanation": "Continuity of operations (COOP). COOP is the plan to keep essential functions running through a disruption. The tell: continuity of operations = keep essential functions running; capacity planning = size resources for demand; multi-cloud = spread across cloud providers; platform diversity = varied vendors or technologies to limit a single flaw."
+ },
+ {
+  "domain": "D3",
+  "family": "continuity-testing",
+  "question": "Which continuity test is the lowest-impact and lowest-cost option, gathering stakeholders to walk through their roles in a scenario as a discussion without touching any systems?",
+  "options": ["tabletop", "simulation", "failover", "parallel processing"],
+  "correctIndex": 0,
+  "explanation": "Tabletop. A tabletop is a discussion-based walkthrough that never touches production. The tell: tabletop = discussion only, no systems touched; simulation = act out real response steps in a controlled setting; failover = actually cut production over to the backup; parallel processing = run the recovery site alongside production to compare."
+ },
+ {
+  "domain": "D3",
+  "family": "continuity-testing",
+  "question": "Of the continuity tests, which is the most disruptive because it forces an actual cutover of live operations to the alternate system to prove the switch works?",
+  "options": ["parallel processing", "tabletop", "failover", "simulation"],
+  "correctIndex": 2,
+  "explanation": "Failover test. A failover test actually cuts production over to the backup, the most disruptive and realistic proof. The tell: failover = real cutover to the backup system; parallel processing = run recovery alongside production without taking prod down; tabletop = discussion only; simulation = perform response steps in a controlled scenario without a true cutover."
+ },
+ {
+  "domain": "D3",
+  "family": "continuity-testing",
+  "question": "Unlike a discussion-only walkthrough, this test has the team physically carry out their response actions in a controlled scenario, but unlike a failover test it never cuts production over to the backup. Which test is this?",
+  "options": ["failover", "tabletop", "parallel processing", "simulation"],
+  "correctIndex": 3,
+  "explanation": "Simulation. A simulation has responders perform real actions in a controlled scenario but stops short of an actual production cutover. The tell: simulation = perform real steps in a controlled setting, no cutover; tabletop = discussion only, no actions; failover = real cutover to the backup; parallel processing = run recovery beside production to compare without downtime."
+ }
+]

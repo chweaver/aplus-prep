@@ -1,0 +1,202 @@
+[
+ {
+  "domain": "D4",
+  "family": "federation-protocols",
+  "question": "Which protocol uses XML-based security assertions exchanged between an identity provider and a service provider to deliver browser single sign-on for enterprise web applications?",
+  "options": ["OAuth", "SAML", "LDAP", "OpenID Connect"],
+  "correctIndex": 1,
+  "explanation": "SAML. XML assertions passed between an IdP and an SP for enterprise web SSO define SAML. The tell: SAML = enterprise web SSO via XML assertions; OAuth = delegated API authorization using tokens; LDAP = directory lookup of users and groups; OpenID Connect = an authentication layer built on top of OAuth."
+ },
+ {
+  "domain": "D4",
+  "family": "federation-protocols",
+  "question": "An application is configured to bind to a server on port 389 and retrieve a user's account details and group memberships from the on-premises directory. Which protocol is it using?",
+  "options": ["SAML", "OAuth", "LDAP", "OpenID Connect"],
+  "correctIndex": 2,
+  "explanation": "LDAP. Binding to a directory to read accounts and group memberships is LDAP, which uses port 389. The tell: LDAP = directory lookup; SAML = XML browser SSO to web apps; OAuth = token-based delegated authorization; OpenID Connect = an identity layer added on top of OAuth."
+ },
+ {
+  "domain": "D4",
+  "family": "federation-protocols",
+  "question": "A third-party scheduling app needs to add events to a user's calendar hosted by a different provider. The user consents, and the provider issues the app a scoped token to write calendar events without ever revealing the user's password. Which protocol provides this delegated authorization?",
+  "options": ["OAuth", "SAML", "OpenID Connect", "LDAP"],
+  "correctIndex": 0,
+  "explanation": "OAuth. A scoped token letting an app act on the user's behalf without sharing the password is delegated authorization, which is OAuth. The tell: OAuth = delegated API authorization via tokens; SAML = enterprise web SSO with XML assertions; OpenID Connect = adds an authentication layer on top of OAuth; LDAP = directory lookup."
+ },
+ {
+  "domain": "D4",
+  "family": "access-control-models",
+  "question": "A network switch is configured so that any employee may connect only between 8 a.m. and 6 p.m. on weekdays; outside those hours all connections are denied regardless of who the user is. Which access control model enforces this?",
+  "options": ["role-based access control", "rule-based access control", "attribute-based access control", "mandatory access control"],
+  "correctIndex": 1,
+  "explanation": "Rule-based access control. A uniform time-of-day if-then rule applied to everyone regardless of identity is rule-based access control. The tell: rule-based access control = system-wide if-then rules such as time-of-day; attribute-based access control = decisions from multiple evaluated attributes like department, device, and location together; role-based access control = access by job role or group; mandatory access control = system-enforced clearance labels users cannot change."
+ },
+ {
+  "domain": "D4",
+  "family": "access-control-models",
+  "question": "Which access control model makes each decision by evaluating a combination of characteristics of the request together, such as the user's department, the device's compliance state, and the connection's location?",
+  "options": ["rule-based access control", "discretionary access control", "attribute-based access control", "role-based access control"],
+  "correctIndex": 2,
+  "explanation": "Attribute-based access control. Combining multiple evaluated attributes into a single decision is attribute-based access control. The tell: attribute-based access control = multiple attributes evaluated together; rule-based access control = one system-wide if-then rule such as time-of-day; discretionary access control = the data owner grants access; role-based access control = access granted by job role."
+ },
+ {
+  "domain": "D4",
+  "family": "access-control-models",
+  "question": "On a Linux server, the user who owns a file runs a command to decide which other users and groups may read or write it, entirely at that owner's own judgment. Which access control model does this reflect?",
+  "options": ["discretionary access control", "role-based access control", "mandatory access control", "rule-based access control"],
+  "correctIndex": 0,
+  "explanation": "Discretionary access control. The resource owner decides who gets access at their own discretion, which is discretionary access control. The tell: discretionary access control = the owner grants access; mandatory access control = the system enforces clearance labels the owner cannot change; role-based access control = access by job role; rule-based access control = system-wide if-then rules such as time-of-day."
+ },
+ {
+  "domain": "D4",
+  "family": "mfa",
+  "question": "Which authentication factor is satisfied by verifying a user's physical geographic location, such as GPS coordinates or network region?",
+  "options": ["something you know", "something you have", "something you are", "somewhere you are"],
+  "correctIndex": 3,
+  "explanation": "Somewhere you are. Verifying physical location as an authentication input is the 'somewhere you are' factor. The tell: somewhere you are = geolocation; something you know = password or PIN; something you have = token or phone; something you are = a biometric such as a fingerprint."
+ },
+ {
+  "domain": "D4",
+  "family": "mfa",
+  "question": "A system requires a password and then the answer to a personal security question before granting access. Why does this fail to qualify as multifactor authentication?",
+  "options": ["Both inputs are the 'something you know' factor", "The two inputs are 'something you have' and 'something you are'", "A security question counts as 'something you are'", "Passwords are never accepted as an authentication factor"],
+  "correctIndex": 0,
+  "explanation": "Both inputs are the 'something you know' factor. A password and a security-question answer are both knowledge, so using two of the same factor is not true MFA. The tell: something you know = password, PIN, or security answer; something you have = a token or phone; something you are = a biometric; true MFA requires two DIFFERENT factor types."
+ },
+ {
+  "domain": "D4",
+  "family": "password-security",
+  "question": "A security team raises the required minimum from 8 to 16 characters, noting that the number of characters is the single biggest driver of resistance to brute forcing. Which password setting did they strengthen?",
+  "options": ["complexity", "expiration", "age", "length"],
+  "correctIndex": 3,
+  "explanation": "Length. The number of characters in a password is its length, the strongest single driver of brute-force resistance. The tell: length = character count; complexity = variety of character types; expiration = forced change interval; age = minimum time before a change is allowed."
+ },
+ {
+  "domain": "D4",
+  "family": "password-security",
+  "question": "Which password-security approach authenticates a user with something like a biometric or a hardware security key so that no secret phrase is ever typed?",
+  "options": ["expiration", "complexity", "passwordless", "password manager"],
+  "correctIndex": 2,
+  "explanation": "Passwordless. Authenticating with no typed secret at all, relying on biometrics or keys, is the passwordless approach. The tell: passwordless = no password used at all; password manager = software that stores and fills passwords for you; complexity = required character variety; expiration = forced change interval."
+ },
+ {
+  "domain": "D4",
+  "family": "pam",
+  "question": "Which privileged access management capability keeps administrative passwords in a protected repository from which they are checked out and then rotated, rather than being memorized by administrators?",
+  "options": ["ephemeral credentials", "password vaulting", "just-in-time permissions", "privileged access management"],
+  "correctIndex": 1,
+  "explanation": "Password vaulting. Storing privileged passwords in a protected repository for checkout and rotation is password vaulting. The tell: password vaulting = check out and rotate stored privileged passwords; just-in-time permissions = grant elevated rights only for the moment needed; ephemeral credentials = short-lived credentials that self-expire; privileged access management = the overall program these techniques fall under, not the specific capability described."
+ },
+ {
+  "domain": "D4",
+  "family": "pam",
+  "question": "Just-in-time permissions in a privileged access management program work by doing which of the following?",
+  "options": ["Granting elevated rights only for the brief moment a task needs them, then automatically revoking them", "Storing and rotating shared privileged passwords checked out from a vault", "Issuing credentials that self-expire seconds after a single use", "Managing all privileged accounts as a broad governance program"],
+  "correctIndex": 0,
+  "explanation": "Just-in-time permissions. This technique grants elevated access only for the moment needed and then removes it, so no standing privilege remains. The tell: just-in-time permissions = elevate only for the needed moment; password vaulting = check out and rotate stored privileged passwords; ephemeral credentials = credentials that self-expire after brief single use; privileged access management = the overarching program containing these techniques."
+ },
+ {
+  "domain": "D4",
+  "family": "pam",
+  "question": "A continuous deployment pipeline requests a credential that is valid for only a few minutes to complete one deployment task, after which it is automatically invalidated and cannot be reused even if intercepted. Which privileged access management technique produced it?",
+  "options": ["password vaulting", "ephemeral credentials", "just-in-time permissions", "privileged access management"],
+  "correctIndex": 1,
+  "explanation": "Ephemeral credentials. A short-lived credential that self-invalidates after brief use is an ephemeral credential. The tell: ephemeral credentials = short-lived, self-expiring credentials; password vaulting = check out and rotate stored passwords; just-in-time permissions = temporarily elevate an existing account's rights; privileged access management = the broad program these techniques belong to."
+ },
+ {
+  "domain": "D4",
+  "family": "automation",
+  "question": "When monitoring detects a failed backup job, an automation workflow automatically opens a tracked work item in the service desk so the problem is assigned and followed to closure. Which automation capability is this?",
+  "options": ["escalation", "guard rails", "continuous integration", "ticket creation"],
+  "correctIndex": 3,
+  "explanation": "Ticket creation. Automatically opening a tracked work item is the ticket-creation capability. The tell: ticket creation = auto-open a tracked work item; escalation = auto-route an unresolved item to a higher tier; guard rails = automated limits keeping actions within policy; continuous integration = automated build and test of code changes."
+ },
+ {
+  "domain": "D4",
+  "family": "automation",
+  "question": "Which automation capability automatically routes an unacknowledged or unresolved item up to a higher support tier?",
+  "options": ["ticket creation", "guard rails", "escalation", "continuous integration"],
+  "correctIndex": 2,
+  "explanation": "Escalation. Automatically routing an unresolved item to a higher tier is escalation. The tell: escalation = route up when unresolved; ticket creation = open the tracked item in the first place; guard rails = policy limits on automated actions; continuous integration = automated build and test of code."
+ },
+ {
+  "domain": "D4",
+  "family": "ir-process",
+  "question": "Before any incident occurs, a team develops response playbooks, assembles forensic tools, and trains staff on their roles. Which incident response phase does this readiness work belong to?",
+  "options": ["detection", "preparation", "analysis", "recovery"],
+  "correctIndex": 1,
+  "explanation": "Preparation. Building plans, tools, and training ahead of any event is the preparation phase, which comes first. The tell: order matters here. Preparation = readiness before an event; detection = first noticing the event; analysis = confirming and scoping it; recovery = restoring normal operations. Preparation precedes them all."
+ },
+ {
+  "domain": "D4",
+  "family": "ir-process",
+  "question": "A monitoring alert flags unusual outbound traffic from a server, and this is the first point at which anyone realizes something may be wrong. Which incident response phase is this?",
+  "options": ["preparation", "analysis", "detection", "containment"],
+  "correctIndex": 2,
+  "explanation": "Detection. The first awareness that an event may be occurring is the detection phase. The tell: order matters here. Detection = notice the event; analysis = confirm and scope it, which comes right after detection; containment = stop the spread, which comes later; preparation = readiness before anything happens."
+ },
+ {
+  "domain": "D4",
+  "family": "ir-process",
+  "question": "Following an incident, systems have been fully restored, validated, and returned to normal production. According to the incident response lifecycle, which phase comes next?",
+  "options": ["lessons learned", "containment", "eradication", "detection"],
+  "correctIndex": 0,
+  "explanation": "Lessons learned. Once recovery returns operations to normal, the final phase is the lessons-learned review. The tell: order matters here. The sequence is preparation, detection, analysis, containment, eradication, recovery, then lessons learned; containment and eradication both precede recovery, so only lessons learned can follow it."
+ },
+ {
+  "domain": "D4",
+  "family": "ir-testing",
+  "question": "Which incident response exercise is a discussion-based walkthrough of the response plan in which participants talk through their actions and no live systems are touched?",
+  "options": ["simulation", "threat hunting", "root cause analysis", "tabletop"],
+  "correctIndex": 3,
+  "explanation": "Tabletop. A discussion-only walkthrough that touches no systems is a tabletop exercise. The tell: tabletop = talk through the plan; simulation = act out the scenario with real controlled steps; threat hunting = proactively search for undetected threats; root cause analysis = determine the underlying cause after an incident."
+ },
+ {
+  "domain": "D4",
+  "family": "ir-testing",
+  "question": "To test readiness, the team runs a controlled but realistic mock intrusion, actually executing the response steps against a staging environment rather than only discussing them. Which exercise is this?",
+  "options": ["tabletop", "root cause analysis", "simulation", "threat hunting"],
+  "correctIndex": 2,
+  "explanation": "Simulation. Executing the response steps in a controlled, realistic scenario is a simulation. The tell: simulation = perform the steps in a controlled scenario; tabletop = discussion only, no systems touched; root cause analysis = find the underlying cause after the fact; threat hunting = proactively search for threats that evaded detection."
+ },
+ {
+  "domain": "D4",
+  "family": "forensics",
+  "question": "During active litigation, an organization must locate, collect, and produce relevant electronic records such as emails and documents for the opposing legal team. Which forensic process is this?",
+  "options": ["legal hold", "chain of custody", "preservation", "e-discovery"],
+  "correctIndex": 3,
+  "explanation": "E-discovery. Locating and producing electronic records for a legal proceeding is e-discovery. The tell: e-discovery = find and produce electronic evidence for legal process; legal hold = the order to preserve data because litigation is anticipated; chain of custody = the documented evidence-handling trail; preservation = protecting evidence from alteration."
+ },
+ {
+  "domain": "D4",
+  "family": "forensics",
+  "question": "Which forensic activity ensures that collected evidence is protected from any alteration, tampering, or degradation after it has been obtained?",
+  "options": ["acquisition", "reporting", "preservation", "e-discovery"],
+  "correctIndex": 2,
+  "explanation": "Preservation. Protecting obtained evidence from any alteration is preservation. The tell: preservation = keep evidence unaltered after collection; acquisition = the initial collection or imaging of evidence; reporting = documenting the findings and conclusions; e-discovery = locating and producing records for legal process."
+ },
+ {
+  "domain": "D4",
+  "family": "forensics",
+  "question": "Having finished the investigation, a forensic analyst compiles a formal document detailing the methods used, the evidence examined, and the conclusions reached, suitable for presentation in court. Which forensic step is this?",
+  "options": ["reporting", "acquisition", "chain of custody", "legal hold"],
+  "correctIndex": 0,
+  "explanation": "Reporting. Compiling the documented methods, evidence, and conclusions is the reporting step. The tell: reporting = document findings and conclusions; acquisition = collect or image the evidence; chain of custody = record who handled evidence and when; legal hold = preserve data because litigation is anticipated."
+ },
+ {
+  "domain": "D4",
+  "family": "log-sources",
+  "question": "An analyst wants to see which connections were permitted or denied by source address, destination address, and port. Which log source records this?",
+  "options": ["endpoint log", "firewall log", "application log", "metadata"],
+  "correctIndex": 1,
+  "explanation": "Firewall log. A record of connections allowed or denied by source, destination, and port comes from the firewall log. The tell: firewall log = allow or deny decisions per connection; endpoint log = activity on one host; application log = events emitted by a specific application; metadata = data about data such as headers and timestamps."
+ },
+ {
+  "domain": "D4",
+  "family": "log-sources",
+  "question": "Which log source records authentication and audit events, such as successful and failed sign-ins and account changes, on a specific host's operating system?",
+  "options": ["network log", "firewall log", "OS security log", "packet capture"],
+  "correctIndex": 2,
+  "explanation": "OS security log. Host authentication and audit events are recorded in the operating system security log. The tell: OS security log = auth and audit events on a host; network log = traffic and flow records; firewall log = allow or deny per connection; packet capture = full raw contents of traffic."
+ }
+]
