@@ -102,6 +102,8 @@
     border-radius:10px; padding:11px 10px; font-size:14px; font-weight:700; cursor:pointer;
     -webkit-tap-highlight-color:transparent;}
   .seg button.on{border-color:var(--primary); color:var(--text); background:#20264a}
+  input[type=range]{width:100%; accent-color:var(--primary); margin:14px 0 2px; height:24px}
+  .rangeval{font-size:22px; font-weight:800; color:var(--text)}
   .statline{color:var(--muted); font-size:13px; margin-top:14px}
   .exhist{margin-top:6px; font-size:13px; color:var(--muted)}
   .exhist b.pass{color:var(--correct)} .exhist b.fail{color:var(--wrong)}
@@ -323,6 +325,7 @@
     var fb=getPref();
     var fbTxt = fb==="instant" ? "instant feedback" : "feedback at the end";
     h+='<button class="modebtn exam" id="m-exam">Practice exam<small>90 questions \u00b7 90 minutes \u00b7 real domain weights \u00b7 adaptive selection \u00b7 scored vs 750 \u00b7 '+fbTxt+'</small></button>';
+    h+='<button class="modebtn" id="m-quiz">Custom quiz<small>Pick how many questions and how long \u00b7 adaptive selection \u00b7 review every question after \u00b7 '+fbTxt+'</small></button>';
     h+='<button class="modebtn" id="m-drill">Smart drill<small>'+DRILL_LEN+' questions the algorithm thinks you need most \u00b7 '+fbTxt+'</small></button>';
     h+='<button class="modebtn" id="m-stream">Full stream<small>All '+ALL.length+' questions, shuffled \u00b7 '+fbTxt+'</small></button>';
     h+='<div class="seglabel">Question feedback</div>';
@@ -343,6 +346,7 @@
     h+='</div>';
     app.innerHTML=h;
     document.getElementById("m-exam").addEventListener("click", startExam);
+    document.getElementById("m-quiz").addEventListener("click", showQuizSetup);
     document.getElementById("m-drill").addEventListener("click", function(){ startDrill(adaptivePick(ALL, DRILL_LEN, 0.75), "Smart drill"); });
     document.getElementById("m-stream").addEventListener("click", function(){ startDrill(shuffle(ALL), "Full stream"); });
     document.getElementById("fb-instant").addEventListener("click", function(){ setPref("instant"); showHome(); });
@@ -472,8 +476,9 @@
     h+='<button class="primary" id="again">New smart drill</button>';
     h+='<button class="ghost" id="retry"'+(session.missed.length?'':' disabled style="opacity:.5"')+'>Retry missed ('+session.missed.length+')</button>';
     h+='</div>';
-    if(session.deferred && session.missed.length){
-      h+='<div class="actions"><button class="ghost" id="rvwdrill">Review missed answers ('+session.missed.length+')</button></div>';
+    if(session.deferred){
+      h+='<div class="actions"><button class="ghost" id="rvwalldrill">Review all ('+total+')</button>';
+      h+='<button class="ghost" id="rvwdrill"'+(session.missed.length?'':' disabled style="opacity:.5"')+'>Review missed ('+session.missed.length+')</button></div>';
     }
     h+='<h1 style="font-size:16px;margin-top:22px">Weakest families first</h1>';
     h+='<table><thead><tr><th>Family</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
@@ -498,15 +503,61 @@
         });
       }
     }
+    if(session.deferred){
+      document.getElementById("rvwalldrill").addEventListener("click", function(){
+        renderReviewList(session.items, 0, renderDrillEnd);
+      });
+    }
     window.scrollTo(0,0);
   }
 
-  // ---------- practice exam ----------
-  function startExam(){
-    exam={items:buildExamSet().map(mkItem), idx:0, endsAt:Date.now()+EXAM_MS, submitted:false, instant:getPref()==="instant"};
+  // ---------- custom quiz setup ----------
+  function showQuizSetup(){
+    go("setup");
+    header("Custom quiz","",0);
+    var maxN=Math.min(200, ALL.length);
+    var app=document.getElementById("app");
+    var h='<div class="card">';
+    h+='<h1 class="big">Custom quiz</h1>';
+    h+='<div class="sub">Adaptive selection, your length and clock. Review every question at the end.</div>';
+    h+='<div class="seglabel">Questions</div>';
+    h+='<input type="range" id="qcount" min="5" max="'+maxN+'" step="5" value="20">';
+    h+='<div class="rangeval" id="qcountlbl">20 questions</div>';
+    h+='<div class="seglabel">Time limit</div>';
+    h+='<input type="range" id="qtime" min="0" max="180" step="5" value="0">';
+    h+='<div class="rangeval" id="qtimelbl">No limit</div>';
+    h+='<div class="actions"><button class="primary" id="qstart">Start quiz</button></div>';
+    h+='<div class="actions"><button class="ghost" id="qhome">Back</button></div>';
+    h+='</div>';
+    app.innerHTML=h;
+    var cEl=document.getElementById("qcount"), tEl=document.getElementById("qtime");
+    var cLbl=document.getElementById("qcountlbl"), tLbl=document.getElementById("qtimelbl");
+    cEl.addEventListener("input", function(){ cLbl.textContent=cEl.value+" questions"; });
+    tEl.addEventListener("input", function(){ tLbl.textContent = tEl.value==="0" ? "No limit" : tEl.value+" minutes"; });
+    document.getElementById("qstart").addEventListener("click", function(){
+      startQuiz(parseInt(cEl.value,10), parseInt(tEl.value,10));
+    });
+    document.getElementById("qhome").addEventListener("click", showHome);
+    window.scrollTo(0,0);
+  }
+
+  // ---------- assessment engine (practice exam + custom quiz share this) ----------
+  function startAssessment(cfg){
+    exam={ items:cfg.items.map(mkItem), idx:0, submitted:false,
+           instant:getPref()==="instant", timeLimit:cfg.timeLimitMs||0,
+           endsAt:(cfg.timeLimitMs>0)?Date.now()+cfg.timeLimitMs:0,
+           title:cfg.title, isExam:!!cfg.isExam };
     go("exam");
-    timerId=setInterval(examTick, 1000);
+    if(exam.timeLimit>0) timerId=setInterval(examTick, 1000);
+    examTick();
     if(exam.instant) renderInstantExamQ(); else renderExamQ();
+  }
+  function startExam(){
+    startAssessment({items:buildExamSet(), timeLimitMs:EXAM_MS, title:"Practice exam", isExam:true});
+  }
+  function startQuiz(count, minutes){
+    var n=Math.min(count, ALL.length);
+    startAssessment({items:adaptivePick(ALL, n, 0.7), timeLimitMs:minutes*60*1000, title:"Custom quiz", isExam:false});
   }
   function fmtLeft(ms){
     if(ms<0) ms=0;
@@ -515,10 +566,14 @@
   }
   function examTick(){
     if(!exam||exam.submitted) return;
-    var left=exam.endsAt-Date.now();
     var answered=exam.items.filter(function(i){return i.chosen>=0;}).length;
-    header(fmtLeft(left), answered+"/"+exam.items.length+" answered", answered/exam.items.length, left<5*60*1000);
-    if(left<=0) submitExam(true);
+    if(exam.timeLimit>0){
+      var left=exam.endsAt-Date.now();
+      header(fmtLeft(left), answered+"/"+exam.items.length+" answered", answered/exam.items.length, left<5*60*1000);
+      if(left<=0) submitExam(true);
+    } else {
+      header(exam.title||"Quiz", answered+"/"+exam.items.length+" answered", answered/exam.items.length);
+    }
   }
   function renderExamQ(){
     examTick();
@@ -652,45 +707,56 @@
       recordStat(it.q, ok);   // exams feed the adaptive engine too
     });
     var scaled=Math.round(100+(correct/exam.items.length)*800);
-    var s=loadStats();
-    s.exams.push({t:Date.now(), correct:correct, total:exam.items.length, scaled:scaled});
-    if(s.exams.length>20) s.exams=s.exams.slice(-20);
-    saveStats(s);
+    if(exam.isExam){   // only real 90-question practice exams enter the score history
+      var s=loadStats();
+      s.exams.push({t:Date.now(), correct:correct, total:exam.items.length, scaled:scaled});
+      if(s.exams.length>20) s.exams=s.exams.slice(-20);
+      saveStats(s);
+    }
     exam.report={correct:correct, scaled:scaled, perDom:perDom, timedOut:timedOut};
     renderReport();
   }
   function renderReport(){
     go("report");
-    var r=exam.report, total=exam.items.length;
+    var r=exam.report, total=exam.items.length, isExam=exam.isExam;
     var pct=Math.round(r.correct/total*100);
     var pass=r.scaled>=PASS_SCALED;
-    header("Exam result","",1);
+    header(isExam?"Exam result":"Quiz result","",1);
     var missed=exam.items.filter(function(it){ return !it.correct; });
     var app=document.getElementById("app");
     var h='<div class="card">';
-    h+='<h1 class="big">Practice exam '+(r.timedOut?"(time expired)":"complete")+'</h1>';
-    h+='<div class="bignum">'+r.scaled+' <span class="badge '+(pass?"pass":"fail")+'">'+(pass?"PASS":"FAIL")+'</span></div>';
-    h+='<div class="sub">'+r.correct+'/'+total+' correct ('+pct+'%) \u00b7 passing score '+PASS_SCALED+' \u00b7 scale 100-900</div>';
+    h+='<h1 class="big">'+(isExam?"Practice exam":"Custom quiz")+' '+(r.timedOut?"(time expired)":"complete")+'</h1>';
+    if(isExam){
+      h+='<div class="bignum">'+r.scaled+' <span class="badge '+(pass?"pass":"fail")+'">'+(pass?"PASS":"FAIL")+'</span></div>';
+      h+='<div class="sub">'+r.correct+'/'+total+' correct ('+pct+'%) \u00b7 passing score '+PASS_SCALED+' \u00b7 scale 100-900</div>';
+    } else {
+      var qcolor=pct>=80?'var(--correct)':(pct>=60?'var(--amber)':'var(--wrong)');
+      h+='<div class="bignum">'+r.correct+' / '+total+'</div>';
+      h+='<div class="sub" style="color:'+qcolor+'">'+pct+'% correct</div>';
+    }
     h+='<table><thead><tr><th>Domain</th><th class="num">Score</th><th class="num">Acc</th></tr></thead><tbody>';
     ["D1","D2","D3","D4","D5"].forEach(function(d){
-      var o=exam.report.perDom[d]||{c:0,n:0};
-      var acc=o.n?o.c/o.n:0;
+      var o=exam.report.perDom[d];
+      if(!o||!o.n) return;   // custom quizzes may not touch every domain
+      var acc=o.c/o.n;
       var color=acc>=0.8?'var(--correct)':(acc>=0.6?'var(--amber)':'var(--wrong)');
       h+='<tr><td>'+d+'<div class="accbar"><div style="width:'+Math.round(acc*100)+'%;background:'+color+'"></div></div></td>';
       h+='<td class="num">'+o.c+'/'+o.n+'</td><td class="num" style="color:'+color+'">'+Math.round(acc*100)+'%</td></tr>';
     });
     h+='</tbody></table>';
+    h+='<div class="actions"><button class="primary" id="rvwall">Review all ('+total+')</button></div>';
     h+='<div class="actions">';
-    h+='<button class="primary" id="rvw"'+(missed.length?'':' disabled style="opacity:.5"')+'>Review missed ('+missed.length+')</button>';
+    h+='<button class="ghost" id="rvw"'+(missed.length?'':' disabled style="opacity:.5"')+'>Review missed ('+missed.length+')</button>';
     h+='<button class="ghost" id="drillmiss"'+(missed.length?'':' disabled style="opacity:.5"')+'>Drill my misses</button>';
     h+='</div>';
     h+='<div class="actions"><button class="ghost" id="homego">Back to home</button></div>';
     h+='</div>';
     app.innerHTML=h;
+    document.getElementById("rvwall").addEventListener("click", function(){ renderReviewList(exam.items, 0, renderReport); });
     if(missed.length){
       document.getElementById("rvw").addEventListener("click", function(){ renderReviewList(missed, 0, renderReport); });
       document.getElementById("drillmiss").addEventListener("click", function(){
-        startDrill(shuffle(missed.map(function(it){return it.q;})), "Exam-miss drill");
+        startDrill(shuffle(missed.map(function(it){return it.q;})), "Miss drill");
       });
     }
     document.getElementById("homego").addEventListener("click", showHome);
@@ -703,9 +769,12 @@
     if(i>=list.length) return backFn();
     var it=list[i], q=it.q;
     header("Review "+(i+1)+"/"+list.length,"",(i+1)/list.length);
+    var tag = it.correct ? '<span style="color:var(--correct)">correct</span>'
+                         : (it.chosen<0 ? '<span style="color:var(--wrong)">skipped</span>'
+                                        : '<span style="color:var(--wrong)">missed</span>');
     var app=document.getElementById("app");
     var h='<div class="card">';
-    h+='<div class="meta"><span>'+q.domain+' \u00b7 '+familyLabel(q.family)+'</span><span>missed</span></div>';
+    h+='<div class="meta"><span>'+q.domain+' \u00b7 '+familyLabel(q.family)+'</span>'+tag+'</div>';
     h+='<p class="q"></p><div class="opts">';
     for(var k=0;k<4;k++){
       var cls="opt dim";
@@ -714,14 +783,17 @@
       h+='<button class="'+cls+'" disabled><span class="k">'+LETTERS[k]+'</span><span class="t"></span></button>';
     }
     h+='</div><div id="feedback"></div>';
-    h+='<div class="actions"><button class="primary" id="nx">'+(i+1>=list.length?"Done":"Next miss")+'</button></div>';
-    h+='</div>';
+    h+='<div class="actions">';
+    if(i>0) h+='<button class="ghost" id="pv">Previous</button>';
+    h+='<button class="primary" id="nx">'+(i+1>=list.length?"Done":"Next")+'</button>';
+    h+='</div></div>';
     app.innerHTML=h;
     app.querySelector(".q").textContent=q.question;
     var ts=app.querySelectorAll(".opt .t");
     for(var m=0;m<4;m++) ts[m].textContent=it.opts[m];
-    document.getElementById("feedback").appendChild(explBlock(q, null));
+    document.getElementById("feedback").appendChild(explBlock(q, (typeof it.correct==="boolean") ? it.correct : null));
     document.getElementById("nx").addEventListener("click", function(){ renderReviewList(list, i+1, backFn); });
+    if(i>0) document.getElementById("pv").addEventListener("click", function(){ renderReviewList(list, i-1, backFn); });
     window.scrollTo(0,0);
   }
 
