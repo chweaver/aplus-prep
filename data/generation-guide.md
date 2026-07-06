@@ -26,15 +26,24 @@ Do NOT include an `id` field (ids are assigned later). Use the exact `family` ke
 
 1. **Exactly 4 options. Exactly one defensible correct answer.** If two options could
    both be argued correct, rewrite the stem until only one survives.
-2. **Distractors MUST be sibling terms from the same family** (see inventory below).
-   Never pad with unrelated options. The sibling confusion IS the question.
+2. **Distractors should test discrimination.** Draw primarily from the family's
+   sibling pool (see inventory below), but exam-style cross-category distractors
+   are allowed when they make the scenario more realistic (the real SY0-701 mixes
+   option categories and asks for the BEST answer). Never pad with implausible
+   throwaway options; every distractor must be tempting to someone who half-knows
+   the material.
 3. **Explanation format**: correct term first, then one short line of why, then a
    sentence that begins literally with `The tell:` giving a one-phrase discriminator
    for each relevant sibling. The `The tell:` substring is mandatory in every explanation.
-4. **Stem styles**, mix across your batch roughly 50/30/20:
-   - (a) scenario -> pick the term (~50%)
-   - (b) definition -> pick the term (~30%)
-   - (c) term given -> pick the correct behavior/definition (~20%)
+4. **Stem styles**, mix across your batch roughly 70/20/10 (the real exam is
+   almost entirely scenario-based):
+   - (a) realistic workplace scenario with a role, a situation, and a qualifier
+     like "BEST", "MOST appropriate", or "FIRST" -> pick the term (~70%)
+   - (b) definition/behavior -> pick the term (~20%)
+   - (c) term given -> pick the correct behavior/definition (~10%)
+   Scenario stems should read like the exam: a named role (security analyst,
+   administrator, technician), a concrete situation with specifics (systems,
+   numbers, constraints), then the ask.
 5. **Rotate the correct sibling** within each family so the answer is not always the
    same term. **Vary `correctIndex`** so across the whole batch each of 0,1,2,3 is used
    a healthy share (aim 20-30% each). Do not park the answer at one index.
