@@ -1,250 +1,33 @@
 [
-  {
-    "domain": "D4",
-    "family": "vuln-response",
-    "question": "A legacy application server runs software the vendor no longer patches, and the business cannot replace it yet. The team wraps it in strict network access rules and extra monitoring as an alternate protection. What is this response called?",
-    "options": ["Patching", "Compensating control", "Exception", "Insurance"],
-    "correctIndex": 1,
-    "explanation": "Compensating control. When you cannot patch or replace, an alternate protection reduces the risk in the meantime. The tell: patching = fix the flaw; compensating control = alternate protection when you cannot fix; exception = formally accept and document leaving it unfixed; insurance = transfer the financial risk."
-  },
-  {
-    "domain": "D4",
-    "family": "vuln-response",
-    "question": "After a critical flaw is remediated, the analyst runs the vulnerability scanner against the host again to confirm the finding no longer appears. Which validation step is this?",
-    "options": ["Audit", "Segmentation", "Insurance", "Rescanning"],
-    "correctIndex": 3,
-    "explanation": "Rescanning. Running the scanner again after the fix confirms the finding is gone. The tell: rescanning = scan again to confirm the fix; audit = review controls against requirements; segmentation = split the network into zones; insurance = transfer the financial risk."
-  },
-  {
-    "domain": "D4",
-    "family": "monitoring",
-    "question": "Analysts are overwhelmed by low-value alerts, so they adjust the SIEM rule thresholds to reduce noise without losing true detections. What is this activity?",
-    "options": ["Log aggregation", "Archiving", "Quarantine", "Alert tuning"],
-    "correctIndex": 3,
-    "explanation": "Alert tuning. Adjusting rule thresholds to cut noise without losing real detections is tuning. The tell: alert tuning = adjust rules to reduce false positives; log aggregation = collect logs in one place; archiving = retain logs long-term; quarantine = isolate a suspicious file or host."
-  },
-  {
-    "domain": "D4",
-    "family": "monitoring",
-    "question": "A platform pulls log data from firewalls, servers, and endpoints into a single central repository for analysis. Which function is this?",
-    "options": ["Log aggregation", "Alerting", "Reporting", "Archiving"],
-    "correctIndex": 0,
-    "explanation": "Log aggregation. Pulling logs from many sources into one central store is aggregation. The tell: log aggregation = centralize logs; alerting = notify on conditions; reporting = summarize for stakeholders; archiving = retain logs long-term."
-  },
-  {
-    "domain": "D4",
-    "family": "security-tools",
-    "question": "An engineer wants records of which internal hosts talked to which external hosts and how much data moved, without capturing full packet contents. Which tool provides this?",
-    "options": ["SIEM", "NetFlow", "SNMP traps", "DLP"],
-    "correctIndex": 1,
-    "explanation": "NetFlow. Flow records show who talked to whom and how much data moved, without full packet payloads. The tell: NetFlow = traffic flow records; SIEM = correlate and alert across logs; SNMP traps = device-initiated fault alerts; DLP = stop sensitive data from leaving."
-  },
-  {
-    "domain": "D4",
-    "family": "security-tools",
-    "question": "Security wants to detect and block employees from emailing files that contain credit card numbers outside the company. Which tool enforces this?",
-    "options": ["DLP", "SIEM", "Vulnerability scanner", "NetFlow"],
-    "correctIndex": 0,
-    "explanation": "DLP. Data loss prevention inspects and blocks sensitive data leaving the org. The tell: DLP = stop data exfiltration; SIEM = correlate and alert across logs; vulnerability scanner = find known weaknesses; NetFlow = traffic flow records."
-  },
-  {
-    "domain": "D4",
-    "family": "security-tools",
-    "question": "Which mechanism has a network device itself send an unsolicited alert message to a management station when a threshold or fault condition occurs?",
-    "options": ["NetFlow", "SCAP", "SNMP traps", "SIEM"],
-    "correctIndex": 2,
-    "explanation": "SNMP traps. The device pushes an unsolicited alert to the manager on a fault or threshold. The tell: SNMP traps = device-initiated alerts; NetFlow = traffic flow records; SCAP = standard for automating config checks; SIEM = correlate and alert across logs."
-  },
-  {
-    "domain": "D4",
-    "family": "security-tools",
-    "question": "Which standard lets different security tools automate and compare configuration and vulnerability checks using a common format?",
-    "options": ["SIEM", "DLP", "Antivirus", "SCAP"],
-    "correctIndex": 3,
-    "explanation": "SCAP. The Security Content Automation Protocol lets tools automate and compare config and vulnerability checks in a common format. The tell: SCAP = standardized automated config checks; SIEM = correlate and alert across logs; DLP = stop data exfiltration; antivirus = signature-based malware detection."
-  },
-  {
-    "domain": "D4",
-    "family": "firewall-config",
-    "question": "A company places its public web and mail servers on a separate buffer network between the internet and the internal LAN, so external users never reach the internal network directly. What is this design element?",
-    "options": ["Access list", "Screened subnet", "Firewall rule", "Signature"],
-    "correctIndex": 1,
-    "explanation": "Screened subnet. A buffer network between the internet and the internal LAN hosts public-facing servers. The tell: screened subnet = buffer network for public servers; access list = permit or deny by source, dest, and port; firewall rule = a single permit or deny statement; signature = match a known pattern."
-  },
-  {
-    "domain": "D4",
-    "family": "firewall-config",
-    "question": "An IPS blocks traffic that matches a stored pattern of a specific known exploit. What is this detection method called?",
-    "options": ["Signature", "Trend", "Firewall rule", "Screened subnet"],
-    "correctIndex": 0,
-    "explanation": "Signature. Blocking traffic that matches a stored pattern of a known exploit is signature detection. The tell: signature = match a known pattern; trend = detect deviation over time; firewall rule = a single permit or deny statement; screened subnet = buffer network for public servers."
-  },
-  {
-    "domain": "D4",
-    "family": "web-filter",
-    "question": "To stop users from reaching malware domains, the resolver simply refuses to return an IP address for domains on a known-bad list. Which filtering technique is this?",
-    "options": ["Centralized proxy", "Content categorization", "DNS filtering", "Reputation"],
-    "correctIndex": 2,
-    "explanation": "DNS filtering. The resolver blocks access by refusing to resolve known-bad domains. The tell: DNS filtering = block by refusing to resolve; centralized proxy = route all traffic through one filter point; content categorization = block by category; reputation = block by known-bad score."
-  },
-  {
-    "domain": "D4",
-    "family": "web-filter",
-    "question": "Remote laptops must have their web traffic filtered even when off the corporate network, so filtering software is installed directly on each device. Which approach is this?",
-    "options": ["Agent-based", "Centralized proxy", "Content categorization", "DNS filtering"],
-    "correctIndex": 0,
-    "explanation": "Agent-based. Filtering software on the device enforces policy anywhere, on or off the network. The tell: agent-based = client software filters anywhere; centralized proxy = one on-network filter point; content categorization = block by category; DNS filtering = block by refusing to resolve."
-  },
-  {
-    "domain": "D4",
-    "family": "os-hardening",
-    "question": "A Windows administrator needs to push a standardized security configuration - password policy, disabled services, and audit settings - to thousands of domain-joined workstations from a central point. Which mechanism does this?",
-    "options": ["SELinux", "Group Policy", "AppArmor", "Local Security Policy"],
-    "correctIndex": 1,
-    "explanation": "Group Policy. Windows pushes centralized security config to domain-joined machines through GPOs in Active Directory. The tell: Group Policy = Windows domain-wide config via AD; SELinux = Linux mandatory access control; AppArmor = Linux profile-based confinement; Local Security Policy = single non-domain Windows host."
-  },
-  {
-    "domain": "D4",
-    "family": "os-hardening",
-    "question": "A Linux server admin enforces mandatory access control by confining each process to a security context that limits which files and ports it can touch, even for root. Which mechanism is this?",
-    "options": ["Group Policy", "Local Security Policy", "SELinux", "AppArmor"],
-    "correctIndex": 2,
-    "explanation": "SELinux. It enforces mandatory access control by confining processes to security contexts, even root. The tell: SELinux = Linux mandatory access control via contexts; Group Policy = Windows domain-wide config via AD; AppArmor = Linux profile-based confinement; Local Security Policy = single non-domain Windows host."
-  },
-  {
-    "domain": "D4",
-    "family": "os-hardening",
-    "question": "On a standalone Windows machine that is not joined to a domain, which tool enforces local password and audit policy since no domain-level configuration applies?",
-    "options": ["Group Policy", "SELinux", "Local Security Policy", "AppArmor"],
-    "correctIndex": 2,
-    "explanation": "Local Security Policy. On a non-domain Windows host, local policy enforces password and audit settings because no domain GPO applies. The tell: Local Security Policy = single non-domain Windows host; Group Policy = Windows domain-wide config via AD; SELinux = Linux mandatory access control; AppArmor = Linux profile-based confinement."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "A domain owner publishes a DNS record listing the specific mail servers authorized to send messages for the domain; receiving servers compare each message's sending IP against that list. Which mechanism is this?",
-    "options": ["SPF", "DKIM", "DMARC", "Secure email gateway"],
-    "correctIndex": 0,
-    "explanation": "SPF. Publishing the authorized sending servers in DNS and checking the sender IP is SPF. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Each outbound message carries a header with a cryptographic signature generated from the domain's private key, letting receivers verify the body was not altered and truly came from the domain. Which mechanism provides this?",
-    "options": ["DMARC", "SPF", "DKIM", "Secure email gateway"],
-    "correctIndex": 2,
-    "explanation": "DKIM. A private-key signature over the message lets receivers verify integrity and origin. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Legitimate messages relayed through a third-party forwarding service keep failing the recipient's IP-based sender check, yet a second email authentication check still passes because its verification data travels inside the message headers. Which mechanism provides that second check?",
-    "options": ["Secure email gateway", "DMARC", "SPF", "DKIM"],
-    "correctIndex": 3,
-    "explanation": "DKIM. Its signature rides in the message header, so it survives forwarding, unlike a check tied to the connecting server's IP. The tell: SPF = which servers may send (checks sending IP, breaks on forwarding); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "An appliance sits at the mail perimeter scanning inbound and outbound messages for spam, malware attachments, and data leaks before delivery. Which component is this?",
-    "options": ["Secure email gateway", "DMARC", "DKIM", "SPF"],
-    "correctIndex": 0,
-    "explanation": "Secure email gateway. It is an inline appliance filtering inbound and outbound mail for spam, malware, and leaks. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Which email mechanism validates a message by comparing the sending server's IP address against an authorized list published in DNS, and does nothing to verify message content?",
-    "options": ["DKIM", "DMARC", "SPF", "Secure email gateway"],
-    "correctIndex": 2,
-    "explanation": "SPF. It only compares the sending IP to an authorized DNS list and never inspects content. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Which mechanism ties SPF and DKIM results together with alignment and tells receivers whether to apply none, quarantine, or reject to failing mail?",
-    "options": ["DMARC", "DKIM", "SPF", "Secure email gateway"],
-    "correctIndex": 0,
-    "explanation": "DMARC. It aligns SPF and DKIM results and dictates none, quarantine, or reject on failure. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "A receiver recomputes a hash of the message and checks it against a value that was signed with the sender domain's private key and verified using a public key in DNS. Which mechanism is being used?",
-    "options": ["SPF", "DKIM", "Secure email gateway", "DMARC"],
-    "correctIndex": 1,
-    "explanation": "DKIM. Verifying a body hash signed by the domain's private key using a DNS public key is DKIM. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Security notices attackers spoofing their domain but has no visibility into it. They want recurring aggregate feedback from receivers about mail claiming to be from them. Which mechanism delivers these reports?",
-    "options": ["SPF", "DKIM", "Secure email gateway", "DMARC"],
-    "correctIndex": 3,
-    "explanation": "DMARC. Aggregate spoofing reports back to the domain owner come from DMARC. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "A domain already publishes SPF and DKIM, but spoofed mail that fails those checks is still delivered because receivers do not know what to do with failures. Which mechanism must be added to instruct receivers to reject it?",
-    "options": ["SPF", "DMARC", "DKIM", "Secure email gateway"],
-    "correctIndex": 1,
-    "explanation": "DMARC. SPF and DKIM only produce pass or fail results; DMARC publishes the policy telling receivers to reject or quarantine failures. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "email-security",
-    "question": "Which email control is an inline filtering appliance or service rather than a DNS-published authentication record?",
-    "options": ["SPF", "DKIM", "DMARC", "Secure email gateway"],
-    "correctIndex": 3,
-    "explanation": "Secure email gateway. It is a filtering appliance or service, not a DNS authentication record. The tell: SPF = which servers may send (checks sending IP); DKIM = cryptographic signature proving the message was not altered; DMARC = policy on failure plus alignment and reporting; secure email gateway = the inline filtering appliance."
-  },
-  {
-    "domain": "D4",
-    "family": "endpoint-detection",
-    "question": "Before any laptop is granted access to the corporate network, a system checks that it has current patches, antivirus, and disk encryption, quarantining devices that fail. Which technology is this?",
-    "options": ["EDR", "FIM", "UBA", "NAC"],
-    "correctIndex": 3,
-    "explanation": "NAC. Network access control checks device posture before granting network access and quarantines failures. The tell: NAC = posture check before network access; EDR = detect and respond on endpoints; FIM = alert on critical file changes; UBA = flag abnormal user behavior."
-  },
-  {
-    "domain": "D4",
-    "family": "endpoint-detection",
-    "question": "A tool on each workstation continuously records process, file, and network activity and can automatically isolate a host when it detects malicious behavior. Which technology is this?",
-    "options": ["EDR", "XDR", "NAC", "DLP"],
-    "correctIndex": 0,
-    "explanation": "EDR. Endpoint detection and response records host activity and can isolate a compromised endpoint. The tell: EDR = detect and respond on endpoints; XDR = correlate across endpoints, network, email, and cloud; NAC = posture check before network access; DLP = stop data exfiltration."
-  },
-  {
-    "domain": "D4",
-    "family": "endpoint-detection",
-    "question": "A vendor platform correlates detections across endpoints, network sensors, email, and cloud workloads into a single investigation view. Which technology is this?",
-    "options": ["EDR", "FIM", "XDR", "UBA"],
-    "correctIndex": 2,
-    "explanation": "XDR. Extended detection and response correlates signals across endpoints, network, email, and cloud. The tell: XDR = cross-domain correlated detection; EDR = single-endpoint detect and respond; FIM = alert on critical file changes; UBA = flag abnormal user behavior."
-  },
-  {
-    "domain": "D4",
-    "family": "endpoint-detection",
-    "question": "Which technology alerts the team when critical system files or configuration files are modified from their known-good state?",
-    "options": ["DLP", "UBA", "NAC", "FIM"],
-    "correctIndex": 3,
-    "explanation": "FIM. File integrity monitoring alerts when critical files change from their known-good state. The tell: FIM = alert on critical file changes; DLP = stop data exfiltration; UBA = flag abnormal user behavior; NAC = posture check before network access."
-  },
-  {
-    "domain": "D4",
-    "family": "identity-lifecycle",
-    "question": "Every quarter, managers review a report of their team's system access and confirm each person still needs it, revoking anything no longer justified. Which identity process is this?",
-    "options": ["Provisioning", "Attestation", "Identity proofing", "Federation"],
-    "correctIndex": 1,
-    "explanation": "Attestation. Periodic manager review confirming access is still appropriate is attestation. The tell: attestation = periodic access review; provisioning = create the account and access; identity proofing = verify a person before issuing identity; federation = trust identities across organizations."
-  },
-  {
-    "domain": "D4",
-    "family": "identity-lifecycle",
-    "question": "When an employee is terminated, HR triggers a workflow that immediately disables the account and removes all access rights. Which process is this?",
-    "options": ["Provisioning", "Identity proofing", "De-provisioning", "Attestation"],
-    "correctIndex": 2,
-    "explanation": "De-provisioning. Disabling the account and removing access at offboarding is de-provisioning. The tell: de-provisioning = remove access at offboarding; provisioning = create the account and access; identity proofing = verify a person before issuing identity; attestation = periodic access review."
-  }
+  {"domain":"D4","family":"vuln-response","question":"A legacy application server runs software its vendor stopped patching, and the business cannot retire it this year. Unable to fix the flaws, the team wraps the server in strict network access rules and enhanced monitoring as alternate protection. What is this response called?","options":["Patching","Compensating control","Exception","Insurance"],"correctIndex":1,"explanation":"Compensating control. When the primary fix (patching) is impossible, alternate safeguards that reduce the same risk are compensating controls. An exception would be formally accepting the risk without adding protection. The tell: compensating control = substitute protection, exception = documented acceptance, patching = the unavailable primary fix, insurance = transferring financial impact."},
+  {"domain":"D4","family":"vuln-response","question":"A critical finding is marked remediated after the patch deploys. Before closing the ticket, the analyst runs the vulnerability scanner against the host once more to confirm the finding no longer appears. Which validation step is this?","options":["Audit","Segmentation","Insurance","Rescanning"],"correctIndex":3,"explanation":"Rescanning. Re-running the scan to verify the fix actually removed the finding is the standard remediation validation. The tell: rescanning = re-test to confirm the fix, audit = independent review of the process, segmentation = a mitigation, not a validation, insurance = risk transfer."},
+  {"domain":"D4","family":"monitoring","question":"A SOC drowning in low-value alerts adjusts SIEM rule thresholds and suppresses known-benign patterns, cutting noise while preserving true detections. What is this activity called?","options":["Log aggregation","Archiving","Quarantine","Alert tuning"],"correctIndex":3,"explanation":"Alert tuning. Adjusting rules and thresholds to reduce false positives without losing real detections is tuning, an ongoing SOC discipline. The tell: alert tuning = refine what fires, log aggregation = collect logs centrally, archiving = long-term retention, quarantine = isolating a suspicious item."},
+  {"domain":"D4","family":"monitoring","question":"A platform continuously pulls log data from firewalls, domain controllers, servers, and endpoints into one central searchable repository where analysts run correlation queries. Which function is this?","options":["Log aggregation","Alerting","Reporting","Archiving"],"correctIndex":0,"explanation":"Log aggregation. Centralizing logs from many sources into one repository is aggregation, the foundation a SIEM's correlation and alerting build on. The tell: log aggregation = gather it all in one place, alerting = fire on matches, reporting = summarize for humans, archiving = retain long term."},
+  {"domain":"D4","family":"security-tools","question":"Investigating suspected exfiltration, an engineer needs records showing which internal hosts talked to which external addresses, when, and how much data moved - but does not need full packet contents. Which tool provides exactly this?","options":["SIEM","NetFlow","SNMP traps","DLP"],"correctIndex":1,"explanation":"NetFlow. Flow records capture conversation metadata - endpoints, timing, volume - without payloads, ideal for spotting exfiltration patterns. The tell: NetFlow = who talked to whom and how much, SIEM = central log correlation, SNMP traps = device fault alerts, DLP = blocking sensitive data leaving."},
+  {"domain":"D4","family":"security-tools","question":"Compliance requires that employees be prevented from emailing files containing credit card numbers outside the company, with attempts detected and blocked automatically. Which tool enforces this?","options":["DLP","SIEM","Vulnerability scanner","NetFlow"],"correctIndex":0,"explanation":"DLP. Data loss prevention inspects outbound content for sensitive patterns like card numbers and blocks the transfer. The tell: DLP = stop sensitive data leaving, SIEM = correlate and alert on logs, vulnerability scanner = find unpatched flaws, NetFlow = traffic metadata."},
+  {"domain":"D4","family":"security-tools","question":"When a switch's temperature crosses a threshold, the switch itself immediately sends an unsolicited alert message to the network management station without being polled. Which mechanism is this?","options":["NetFlow","SCAP","SNMP traps","SIEM"],"correctIndex":2,"explanation":"SNMP traps. A trap is the device-initiated, unsolicited notification to the manager, unlike normal SNMP polling where the manager asks. The tell: SNMP trap = device pushes the alert, SNMP polling = manager pulls status, NetFlow = traffic metadata, SIEM = log correlation platform."},
+  {"domain":"D4","family":"security-tools","question":"An organization runs security tools from three vendors and wants their configuration and vulnerability checks automated and comparable through one common machine-readable format. Which standard enables this?","options":["SIEM","DLP","Antivirus","SCAP"],"correctIndex":3,"explanation":"SCAP. The Security Content Automation Protocol standardizes how tools express and exchange configuration and vulnerability checks, making multi-vendor results comparable. The tell: SCAP = the common automation format, SIEM = log platform, DLP = data-leak blocking, antivirus = malware detection."},
+  {"domain":"D4","family":"firewall-config","question":"A network architect places the public web and mail servers on a separate buffer network sandwiched between the internet and the internal LAN, so internet users can reach those services without ever touching the internal network. What is this design element?","options":["Access list","Screened subnet","Firewall rule","Signature"],"correctIndex":1,"explanation":"Screened subnet. The buffer network hosting public-facing services between the internet and the LAN is the screened subnet (the SY0-701 term for the older perimeter-network concept). The tell: screened subnet = the buffer zone itself, access list/firewall rule = the filtering entries protecting it, signature = a detection pattern."},
+  {"domain":"D4","family":"firewall-config","question":"An IPS drops a packet because its contents exactly match a stored pattern for a specific known exploit. What is this detection method called?","options":["Signature","Trend","Firewall rule","Screened subnet"],"correctIndex":0,"explanation":"Signature. Matching traffic against stored patterns of known attacks is signature-based detection: precise on known threats, blind to novel ones. The tell: signature = known-pattern match, trend = deviation from behavioral baselines, firewall rule = port/address policy, screened subnet = the buffer network."},
+  {"domain":"D4","family":"web-filter","question":"To keep users off malware domains, the security team configures the company resolver to simply refuse to return IP addresses for any domain on a known-bad list; the connection dies before it starts. Which filtering technique is this?","options":["Centralized proxy","Content categorization","DNS filtering","Reputation"],"correctIndex":2,"explanation":"DNS filtering. Blocking at name resolution - no answer, no connection - is DNS filtering, cheap and effective at scale. The tell: DNS filtering = block the lookup, centralized proxy = traffic routes through a filtering middlebox, content categorization = classify sites by topic, reputation = score-based blocking."},
+  {"domain":"D4","family":"web-filter","question":"Remote laptops need web filtering that works at airports and home offices, far from the corporate network, so the team installs filtering software directly on every device. Which approach is this?","options":["Agent-based","Centralized proxy","Content categorization","DNS filtering"],"correctIndex":0,"explanation":"Agent-based. Filtering software installed on each endpoint travels with the device, working wherever it connects. The tell: agent-based = filtering lives on the device, centralized proxy = filtering lives on the network path, DNS filtering = blocking lookups, content categorization = the site-classification engine any of them may use."},
+  {"domain":"D4","family":"os-hardening","question":"A Windows administrator must push a standardized security configuration - password policy, disabled services, audit settings - to thousands of domain-joined workstations from one central point, reapplied automatically. Which mechanism does this?","options":["SELinux","Group Policy","AppArmor","Local Security Policy"],"correctIndex":1,"explanation":"Group Policy. Centralized, domain-wide Windows configuration enforcement is Group Policy's job. The tell: Group Policy = central control of domain-joined Windows, Local Security Policy = one standalone machine, SELinux/AppArmor = Linux mandatory access control."},
+  {"domain":"D4","family":"os-hardening","question":"A Linux hardening standard requires mandatory access control: every process is confined to a security context restricting exactly which files and ports it may touch, constraints even root cannot override. Which mechanism, using labeled security contexts, is this?","options":["Group Policy","Local Security Policy","SELinux","AppArmor"],"correctIndex":2,"explanation":"SELinux. Label-based security contexts enforcing mandatory access control on Linux is SELinux; AppArmor achieves similar confinement using path-based profiles instead. The tell: SELinux = labels/contexts, AppArmor = path-based profiles, Group Policy = Windows domains, Local Security Policy = a standalone Windows box."},
+  {"domain":"D4","family":"os-hardening","question":"A kiosk PC runs Windows but is deliberately not joined to any domain. Since no domain-level configuration reaches it, which tool enforces its password and audit policy?","options":["Group Policy","SELinux","Local Security Policy","AppArmor"],"correctIndex":2,"explanation":"Local Security Policy. A standalone Windows machine gets its security settings from Local Security Policy; Group Policy requires domain membership to apply centrally. The tell: Local Security Policy = one non-domain Windows machine, Group Policy = centralized domain enforcement, SELinux/AppArmor = Linux MAC frameworks."},
+  {"domain":"D4","family":"email-security","question":"A domain owner publishes a DNS record listing the only mail servers authorized to send for the domain. Receiving servers check each arriving message's source IP against that list. Which mechanism is this?","options":["SPF","DKIM","DMARC","Secure email gateway"],"correctIndex":0,"explanation":"SPF. The Sender Policy Framework is the DNS-published list of authorized sending IPs, checked by receivers. The tell: SPF = authorized sender IPs in DNS, DKIM = cryptographic signature on the message, DMARC = the policy tying both together, secure email gateway = the filtering appliance."},
+  {"domain":"D4","family":"email-security","question":"Every outbound message from a domain carries a header containing a cryptographic signature generated with the domain's private key. Receivers verify it with a public key from DNS, proving the message body was not altered and genuinely came from the domain. Which mechanism is this?","options":["DMARC","SPF","DKIM","Secure email gateway"],"correctIndex":2,"explanation":"DKIM. DomainKeys Identified Mail signs messages cryptographically, giving integrity and domain authenticity that travel with the message itself. The tell: DKIM = signature in the headers, SPF = source-IP check against DNS, DMARC = policy and reporting over both, gateway = the filtering box."},
+  {"domain":"D4","family":"email-security","question":"Messages relayed through a third-party forwarding service keep failing the recipient's IP-based sender check, because the forwarder's IP is not on the origin domain's list. Yet a second authentication check still passes, since its verification data travels inside the message headers. Which mechanism provides the second check?","options":["Secure email gateway","DMARC","SPF","DKIM"],"correctIndex":3,"explanation":"DKIM. Its signature rides in the headers and survives forwarding, while SPF breaks because the forwarder's IP is not authorized. This survival difference is a classic SPF-vs-DKIM discriminator. The tell: DKIM = travels with the message, SPF = tied to the sending IP, DMARC = the policy layer, gateway = perimeter filtering."},
+  {"domain":"D4","family":"email-security","question":"An appliance at the mail perimeter scans every inbound and outbound message for spam, malicious attachments, and sensitive data leaks before anything reaches a mailbox or leaves the company. Which component is this?","options":["Secure email gateway","DMARC","DKIM","SPF"],"correctIndex":0,"explanation":"Secure email gateway. The inline scanning appliance or service at the mail boundary is the gateway; the DNS-based records authenticate senders but scan nothing. The tell: secure email gateway = the filtering box, SPF/DKIM/DMARC = DNS-published authentication and policy records."},
+  {"domain":"D4","family":"email-security","question":"Which email mechanism validates a message purely by comparing the sending server's IP address against an authorized list published in DNS, while doing nothing to verify the message's content?","options":["DKIM","DMARC","SPF","Secure email gateway"],"correctIndex":2,"explanation":"SPF. It answers exactly one question: did this message arrive from an IP the domain authorized? Content integrity is DKIM's department. The tell: SPF = IP check only, DKIM = content signature, DMARC = what to do with failures, gateway = perimeter scanning."},
+  {"domain":"D4","family":"email-security","question":"One mechanism takes the SPF and DKIM results, applies domain alignment, and tells receiving servers whether to deliver, quarantine, or reject mail that fails - publishing that instruction in DNS. Which mechanism is this?","options":["DMARC","DKIM","SPF","Secure email gateway"],"correctIndex":0,"explanation":"DMARC. It is the policy layer over SPF and DKIM: alignment plus a published none/quarantine/reject instruction for failures. The tell: DMARC = the decision policy and reporting, SPF = IP authorization, DKIM = message signature, gateway = the filtering appliance."},
+  {"domain":"D4","family":"email-security","question":"A receiving server recomputes a hash of an arriving message and compares it against a value that was signed with the sender domain's private key, verifying with the public key fetched from DNS. Which mechanism is in use?","options":["SPF","DKIM","Secure email gateway","DMARC"],"correctIndex":1,"explanation":"DKIM. Hash plus private-key signature verified via a DNS-published public key is the DKIM verification flow, proving integrity and origin. The tell: DKIM = the cryptographic check, SPF = the IP list check, DMARC = policy over both, gateway = content filtering."},
+  {"domain":"D4","family":"email-security","question":"A security team knows attackers spoof its domain but has zero visibility into the scale. It wants recurring aggregate reports from receiving servers worldwide about all mail claiming to come from the domain. Which mechanism delivers those reports?","options":["SPF","DKIM","Secure email gateway","DMARC"],"correctIndex":3,"explanation":"DMARC. Its reporting function (aggregate RUA reports) is the only mechanism here that sends the domain owner feedback about mail claiming its name. The tell: DMARC = policy plus reporting back to the owner, SPF/DKIM = checks with no feedback loop, gateway = local filtering."},
+  {"domain":"D4","family":"email-security","question":"A domain already publishes SPF and DKIM, yet spoofed mail failing both checks still lands in recipients' inboxes because receivers have no instruction for handling failures. Which mechanism must be added so receivers are told to reject it?","options":["SPF","DMARC","DKIM","Secure email gateway"],"correctIndex":1,"explanation":"DMARC. SPF and DKIM only produce pass/fail results; without a DMARC policy, receivers decide for themselves. Publishing p=reject supplies the missing instruction. The tell: DMARC = tells receivers what to DO with failures, SPF/DKIM = merely generate the results."},
+  {"domain":"D4","family":"email-security","question":"Of the major email security controls, which one is an inline filtering appliance or cloud service, rather than an authentication record published in DNS?","options":["SPF","DKIM","DMARC","Secure email gateway"],"correctIndex":3,"explanation":"Secure email gateway. It is a scanning device or service in the mail path; SPF, DKIM, and DMARC are all DNS-published mechanisms. The tell: gateway = hardware/service that filters content, the other three = records that authenticate senders and set policy."},
+  {"domain":"D4","family":"endpoint-detection","question":"Before any laptop gets a network connection, a control checks that it carries current patches, running antivirus, and disk encryption; failures land the device in a quarantine VLAN for remediation. Which technology is this?","options":["EDR","FIM","UBA","NAC"],"correctIndex":3,"explanation":"NAC. Network access control gates admission on device health posture and quarantines the non-compliant. The tell: NAC = health check at the network door, EDR = continuous endpoint activity monitoring and response, FIM = watching critical files for changes, UBA = modeling user behavior for anomalies."},
+  {"domain":"D4","family":"endpoint-detection","question":"An agent on every workstation continuously records process launches, file activity, and network connections, and when it recognizes ransomware behavior it automatically isolates the host from the network. Which technology is this?","options":["EDR","XDR","NAC","DLP"],"correctIndex":0,"explanation":"EDR. Endpoint detection and response continuously monitors endpoint activity and can respond automatically, including host isolation. The tell: EDR = deep endpoint recording and response, XDR = the same correlation extended across endpoint, network, email, and cloud, NAC = admission control, DLP = blocking data leaving."},
+  {"domain":"D4","family":"endpoint-detection","question":"A vendor platform stitches together detections from endpoints, network sensors, email security, and cloud workloads into one correlated investigation view, so an attack crossing all four shows as one incident. Which technology is this?","options":["EDR","FIM","XDR","UBA"],"correctIndex":2,"explanation":"XDR. Extended detection and response correlates telemetry across multiple layers beyond the endpoint, unifying the investigation. The tell: XDR = cross-layer correlation, EDR = endpoint-only depth, FIM = file change alerts, UBA = user behavior anomalies."},
+  {"domain":"D4","family":"endpoint-detection","question":"After a breach involving altered system binaries, a team deploys a control that alerts the moment any critical system or configuration file deviates from its known-good state. Which technology is this?","options":["DLP","UBA","NAC","FIM"],"correctIndex":3,"explanation":"FIM. File integrity monitoring baselines critical files and alerts on any change from known-good. The tell: FIM = watch files for unauthorized change, DLP = stop data exfiltration, NAC = gate network admission, UBA = flag anomalous user behavior."},
+  {"domain":"D4","family":"identity-lifecycle","question":"Every quarter, managers receive a report of their team members' system access and must confirm each entitlement is still needed, revoking anything no longer justified by the person's role. Which identity process is this?","options":["Provisioning","Attestation","Identity proofing","Federation"],"correctIndex":1,"explanation":"Attestation. Periodic managerial review and confirmation that access remains appropriate is access attestation (recertification). The tell: attestation = recurring confirm-or-revoke review, provisioning = granting access at start, identity proofing = verifying a person is who they claim, federation = trusting another organization's authentication."},
+  {"domain":"D4","family":"identity-lifecycle","question":"The moment HR records a termination, an automated workflow disables the employee's account, revokes every access right, and reclaims licenses - all before the person reaches the parking lot. Which process is this?","options":["Provisioning","Identity proofing","De-provisioning","Attestation"],"correctIndex":2,"explanation":"De-provisioning. Removing accounts and access at separation is de-provisioning, and speed matters: lingering access is a classic insider risk. The tell: de-provisioning = access removed at exit, provisioning = access granted at entry, attestation = periodic review in between, identity proofing = verifying identity up front."}
 ]

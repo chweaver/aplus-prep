@@ -1,426 +1,55 @@
 [
-  {
-    "domain": "D2",
-    "family": "threat-actors",
-    "question": "A loosely organized group breaches a city government website and posts manifestos protesting a new policy, seeking publicity rather than money. Which threat actor is this?",
-    "options": ["hacktivist", "nation-state actor", "organized crime", "insider threat"],
-    "correctIndex": 0,
-    "explanation": "hacktivist. A political or philosophical message, not profit, drives the attack. The tell: hacktivist = political/philosophical statement; nation-state = state-resourced espionage or war; organized crime = financial gain; insider threat = trusted internal person abusing access."
-  },
-  {
-    "domain": "D2",
-    "family": "threat-actors",
-    "question": "Which threat actor is best characterized by deep funding, long-term persistence, and an espionage or wartime mission carried out on behalf of a government?",
-    "options": ["organized crime", "nation-state actor", "hacktivist", "unskilled attacker"],
-    "correctIndex": 1,
-    "explanation": "nation-state actor. Heavy resources plus espionage or war intent point to an APT-style government sponsor. The tell: nation-state = state resources, espionage/war; organized crime = money-motivated crews; hacktivist = ideological messaging; unskilled attacker = borrows others' tools with little skill."
-  },
-  {
-    "domain": "D2",
-    "family": "threat-actors",
-    "question": "A marketing team spins up an unapproved cloud database to move faster, bypassing IT entirely but with no malicious intent. Which category fits?",
-    "options": ["insider threat", "unskilled attacker", "shadow IT", "organized crime"],
-    "correctIndex": 2,
-    "explanation": "shadow IT. Unsanctioned internal technology adopted without approval, not out of malice. The tell: shadow IT = unsanctioned internal tech, no malicious intent; insider threat = trusted person acting against the org; unskilled attacker = runs premade scripts; organized crime = external profit-driven group."
-  },
-  {
-    "domain": "D2",
-    "family": "social-eng-phish",
-    "question": "An employee receives a text message claiming to be from their bank with a link to verify the account before it is locked. Which technique is this?",
-    "options": ["phishing", "vishing", "spear phishing", "smishing"],
-    "correctIndex": 3,
-    "explanation": "smishing. The lure arrives over SMS text messaging. The tell: smishing = SMS text; phishing = email; vishing = voice call; spear phishing = a targeted email aimed at a specific individual."
-  },
-  {
-    "domain": "D2",
-    "family": "social-eng-phish",
-    "question": "An attacker phones the help desk pretending to be a traveling executive and talks the agent into resetting a password over the call. Which technique is this?",
-    "options": ["vishing", "smishing", "phishing", "spear phishing"],
-    "correctIndex": 0,
-    "explanation": "vishing. The manipulation happens through a live voice call. The tell: vishing = voice call; smishing = SMS text; phishing = email; spear phishing = a targeted email to one chosen person."
-  },
-  {
-    "domain": "D2",
-    "family": "social-eng-phish",
-    "question": "Which term describes a broad, untargeted fraudulent email blast sent to thousands of recipients hoping some reveal credentials?",
-    "options": ["smishing", "phishing", "vishing", "spear phishing"],
-    "correctIndex": 1,
-    "explanation": "phishing. Generic mass email designed to harvest credentials is classic phishing. The tell: phishing = broad email; smishing = SMS text; vishing = voice call; spear phishing = narrowly targeted email at a specific individual."
-  },
-  {
-    "domain": "D2",
-    "family": "misinformation",
-    "question": "A user shares an outdated safety article believing it is still current, unaware the facts changed, and passes it on with no intent to mislead. What is this?",
-    "options": ["disinformation", "malinformation", "misinformation", "influence campaign"],
-    "correctIndex": 2,
-    "explanation": "misinformation. False content spread by honest mistake, with no intent to deceive. The tell: misinformation = false, spread WITHOUT intent to deceive; disinformation = false, spread deliberately to manipulate; malinformation = true info weaponized out of context; influence campaign = coordinated effort to sway opinion."
-  },
-  {
-    "domain": "D2",
-    "family": "misinformation",
-    "question": "A disgruntled former employee knowingly fabricates false stories about the company's finances and posts them online, intending to deceive investors. What is this?",
-    "options": ["misinformation", "malinformation", "influence campaign", "disinformation"],
-    "correctIndex": 3,
-    "explanation": "disinformation. The content is false and it is spread deliberately to deceive. The tell: disinformation = false, spread deliberately to deceive; misinformation = false, spread by honest error; malinformation = real info leaked or twisted to harm; influence campaign = a coordinated multi-channel effort to sway opinion."
-  },
-  {
-    "domain": "D2",
-    "family": "misinformation",
-    "question": "Which term specifically means false information circulated WITHOUT any intent to deceive, essentially an honest error passed along?",
-    "options": ["misinformation", "disinformation", "malinformation", "influence campaign"],
-    "correctIndex": 0,
-    "explanation": "misinformation. The defining trait is the absence of intent to deceive. The tell: misinformation = no intent to deceive; disinformation = deliberate deception; malinformation = accurate info used maliciously; influence campaign = organized push to shape beliefs."
-  },
-  {
-    "domain": "D2",
-    "family": "impersonation",
-    "question": "An attacker compromises the CEO's mailbox and emails the finance team an urgent request to wire funds to a new vendor account. Which technique is this?",
-    "options": ["impersonation", "business email compromise (BEC)", "pretexting", "brand impersonation"],
-    "correctIndex": 1,
-    "explanation": "business email compromise (BEC). A compromised or spoofed internal executive account is used to request a fraudulent transfer. The tell: BEC = compromised/spoofed internal exec email demanding wires or gift cards; impersonation = simply posing as someone; pretexting = inventing a backstory; brand impersonation = faking a trusted company's look."
-  },
-  {
-    "domain": "D2",
-    "family": "impersonation",
-    "question": "A caller invents a detailed cover story, claiming to be a new external auditor who needs access to meet a looming compliance deadline, to justify the request. Which technique is this?",
-    "options": ["impersonation", "brand impersonation", "pretexting", "business email compromise (BEC)"],
-    "correctIndex": 2,
-    "explanation": "pretexting. A fabricated, believable backstory is built to justify the ask. The tell: pretexting = invented scenario to legitimize the request; impersonation = just claiming to be someone; brand impersonation = mimicking a company's identity; BEC = fraudulent internal executive email."
-  },
-  {
-    "domain": "D2",
-    "family": "impersonation",
-    "question": "Attackers build fake emails and a lookalike site that copy a well-known company's logos, colors, and styling to fool that company's customers. Which technique is this?",
-    "options": ["impersonation", "pretexting", "business email compromise (BEC)", "brand impersonation"],
-    "correctIndex": 3,
-    "explanation": "brand impersonation. Copying a trusted company's visual identity to deceive its customers. The tell: brand impersonation = faking a company's look and feel; impersonation = posing as an individual; pretexting = a fabricated justifying story; BEC = spoofed internal executive email."
-  },
-  {
-    "domain": "D2",
-    "family": "social-eng-other",
-    "question": "Attackers compromise a popular industry news site that their target's engineers visit daily, planting malware to infect those specific visitors. Which attack is this?",
-    "options": ["watering hole", "typosquatting", "phishing", "brand impersonation"],
-    "correctIndex": 0,
-    "explanation": "watering hole. Compromising a site the target group already frequents to reach them indirectly. The tell: watering hole = poison a site the targets already visit; typosquatting = register a misspelled lookalike domain; phishing = fraudulent email lure; brand impersonation = mimic a trusted company."
-  },
-  {
-    "domain": "D2",
-    "family": "social-eng-other",
-    "question": "A user fat-fingers a domain and lands on a malicious lookalike site the attacker registered under a common misspelling of a popular address. Which attack is this?",
-    "options": ["watering hole", "typosquatting", "phishing", "impersonation"],
-    "correctIndex": 1,
-    "explanation": "typosquatting. Registering a misspelled lookalike domain to catch mistyped traffic. The tell: typosquatting = misspelled lookalike domain; watering hole = compromise a site the targets already visit; phishing = fraudulent email; impersonation = posing as a person."
-  },
-  {
-    "domain": "D2",
-    "family": "attack-vectors",
-    "question": "An attacker scatters infected USB drives in the company parking lot, hoping a curious employee plugs one into a workstation. Which vector is being used?",
-    "options": ["open service ports", "default credentials", "removable device", "message-based vector"],
-    "correctIndex": 2,
-    "explanation": "removable device. The USB drive is the delivery vector into the network. The tell: removable device = USB or media plugged in; open service ports = an exposed listening service; default credentials = unchanged out-of-box password; message-based = lure delivered via email, SMS, or IM."
-  },
-  {
-    "domain": "D2",
-    "family": "attack-vectors",
-    "question": "A newly deployed network switch is breached because its out-of-the-box admin password was never changed. Which vector was exploited?",
-    "options": ["open service ports", "unsecure networks", "removable device", "default credentials"],
-    "correctIndex": 3,
-    "explanation": "default credentials. The factory login was left in place and abused. The tell: default credentials = unchanged out-of-box password; open service ports = exposed listening service; unsecure networks = untrusted or open connectivity; removable device = USB or media vector."
-  },
-  {
-    "domain": "D2",
-    "family": "attack-vectors",
-    "question": "A monitoring deployment installs no software on the endpoints it watches, giving a smaller footprint but less direct control. Which model is described?",
-    "options": ["agentless", "client-based", "file-based vector", "open service ports"],
-    "correctIndex": 0,
-    "explanation": "agentless. No installed software means a lighter footprint but reduced control. The tell: agentless = no installed software; client-based = requires an installed agent that can itself be compromised; file-based = malicious file as the vector; open service ports = exposed listening service."
-  },
-  {
-    "domain": "D2",
-    "family": "supply-chain",
-    "question": "A company outsources the running of its entire helpdesk, servers, and patching to a third party that operates all of it remotely. Which supply-chain party is this?",
-    "options": ["vendor", "managed service provider (MSP)", "supplier", "hardware provider"],
-    "correctIndex": 1,
-    "explanation": "managed service provider (MSP). A third party that actually runs your IT operations day to day. The tell: MSP = runs your IT operations; vendor = sells you a product or service; supplier = provides parts or materials upstream; hardware provider = supplies devices."
-  },
-  {
-    "domain": "D2",
-    "family": "supply-chain",
-    "question": "Which supply-chain party provides the raw parts or components upstream that get built into a finished product?",
-    "options": ["managed service provider (MSP)", "software provider", "supplier", "vendor"],
-    "correctIndex": 2,
-    "explanation": "supplier. Supplies upstream parts and materials that feed into a product. The tell: supplier = upstream parts/materials; MSP = operates your IT; software provider = supplies applications; vendor = sells a finished product or service."
-  },
-  {
-    "domain": "D2",
-    "family": "app-vulns",
-    "question": "An attacker submits ' OR '1'='1 into a login form and the backend returns every user row from the database. Which vulnerability was exploited?",
-    "options": ["cross-site scripting (XSS)", "buffer overflow", "memory injection", "SQL injection (SQLi)"],
-    "correctIndex": 3,
-    "explanation": "SQL injection (SQLi). Crafted input alters the SQL query sent to the database. The tell: SQLi = inject SQL to hit the database; XSS = inject script that runs in another user's browser; buffer overflow = write past a buffer boundary; memory injection = insert code into a running process's memory."
-  },
-  {
-    "domain": "D2",
-    "family": "app-vulns",
-    "question": "An attacker posts a comment containing a script tag; when other users view the page, the script runs in their browsers and steals their session cookies. Which vulnerability is this?",
-    "options": ["cross-site scripting (XSS)", "SQL injection (SQLi)", "malicious update", "buffer overflow"],
-    "correctIndex": 0,
-    "explanation": "cross-site scripting (XSS). Injected script executes in other users' browsers. The tell: XSS = script runs in a victim's browser; SQLi = malicious SQL hits the database; malicious update = trojanized software update; buffer overflow = overflowing a fixed memory region."
-  },
-  {
-    "domain": "D2",
-    "family": "app-vulns",
-    "question": "Writing more data into a fixed-length memory region than it can hold, overwriting adjacent memory, describes which vulnerability?",
-    "options": ["memory injection", "buffer overflow", "SQL injection (SQLi)", "malicious update"],
-    "correctIndex": 1,
-    "explanation": "buffer overflow. Data spills past a buffer boundary and corrupts neighboring memory. The tell: buffer overflow = write past a buffer boundary; memory injection = insert code into a live process's memory; SQLi = inject SQL into a query; malicious update = poisoned software update."
-  },
-  {
-    "domain": "D2",
-    "family": "race-conditions",
-    "question": "A program verifies a user's permission to a file, then a split second later opens it, but an attacker swaps the file during that gap. The exploited window between verify and access is called what?",
-    "options": ["time-of-check (TOC)", "time-of-use (TOU)", "time-of-check to time-of-use (TOCTOU)", "race condition"],
-    "correctIndex": 2,
-    "explanation": "time-of-check to time-of-use (TOCTOU). The exploit is the gap spanning from when the check happens to when the resource is used. The tell: TOCTOU = the whole check-to-use exploit window; time-of-check = the instant permission is validated; time-of-use = the instant the resource is actually used; race condition = the general timing-dependent flaw class."
-  },
-  {
-    "domain": "D2",
-    "family": "race-conditions",
-    "question": "In a TOCTOU flaw, the exact moment at which the resource's permission is validated is called the ___.",
-    "options": ["time-of-use (TOU)", "race condition", "TOCTOU window", "time-of-check (TOC)"],
-    "correctIndex": 3,
-    "explanation": "time-of-check (TOC). This is the moment the check or validation is performed. The tell: time-of-check = when permission is verified; time-of-use = when the resource is actually accessed; race condition = the broad timing-dependent bug; TOCTOU window = the exploitable gap between the two."
-  },
-  {
-    "domain": "D2",
-    "family": "race-conditions",
-    "question": "A bug whose outcome depends on the unpredictable ordering or timing of two concurrent events is generally called a ___.",
-    "options": ["race condition", "time-of-check (TOC)", "time-of-use (TOU)", "TOCTOU"],
-    "correctIndex": 0,
-    "explanation": "race condition. The result hinges on which event wins the timing. The tell: race condition = outcome depends on event timing/order; time-of-check = the validation instant; time-of-use = the access instant; TOCTOU = the specific check-to-use exploit gap."
-  },
-  {
-    "domain": "D2",
-    "family": "system-vulns",
-    "question": "An attacker exploits a hypervisor flaw to break out of a guest virtual machine and run code directly on the host. Which vulnerability is this?",
-    "options": ["resource reuse", "VM escape", "side loading", "jailbreaking"],
-    "correctIndex": 1,
-    "explanation": "VM escape. Breaking out of a guest to reach the hypervisor or host. The tell: VM escape = guest breaks out to the host; resource reuse = leftover data in reallocated memory or storage; side loading = installing apps outside the official store; jailbreaking = removing OS restrictions for root."
-  },
-  {
-    "domain": "D2",
-    "family": "system-vulns",
-    "question": "A vulnerability for which no patch yet exists because the vendor is not even aware of it is called a ___.",
-    "options": ["end-of-life", "legacy", "zero-day", "misconfiguration"],
-    "correctIndex": 2,
-    "explanation": "zero-day. No fix exists because the flaw is unknown to the vendor. The tell: zero-day = no patch exists yet; end-of-life = vendor stopped supporting the product; legacy = outdated but still running; misconfiguration = an insecure setting choice."
-  },
-  {
-    "domain": "D2",
-    "family": "system-vulns",
-    "question": "A user removes the manufacturer's operating system restrictions on their phone to gain full root access and install unapproved software. Which term describes this?",
-    "options": ["side loading", "resource reuse", "firmware vulnerability", "jailbreaking"],
-    "correctIndex": 3,
-    "explanation": "jailbreaking. Stripping OS restrictions to obtain root control of the device. The tell: jailbreaking = remove OS restrictions for root; side loading = install an app from outside the official store; resource reuse = leftover data in reused storage; firmware vulnerability = a flaw in low-level device code."
-  },
-  {
-    "domain": "D2",
-    "family": "malware",
-    "question": "A piece of malware spreads across the network entirely on its own by exploiting a service, with no user needing to open or run anything. Which type is it?",
-    "options": ["worm", "virus", "trojan", "logic bomb"],
-    "correctIndex": 0,
-    "explanation": "worm. It self-replicates over the network without any user action. The tell: worm = self-spreads with no user action; virus = needs a host file and user action; trojan = disguised as legitimate software; logic bomb = payload triggered by a condition or date."
-  },
-  {
-    "domain": "D2",
-    "family": "malware",
-    "question": "Malware encrypts a company's files and demands payment for the decryption key. Which type is it?",
-    "options": ["spyware", "ransomware", "rootkit", "keylogger"],
-    "correctIndex": 1,
-    "explanation": "ransomware. It encrypts data and extorts a payment for recovery. The tell: ransomware = encrypts and extorts; spyware = secretly collects activity; rootkit = hides at the OS/kernel level for persistence; keylogger = records keystrokes."
-  },
-  {
-    "domain": "D2",
-    "family": "malware",
-    "question": "Which malware hides itself at the kernel or operating-system level to conceal its presence and maintain persistent privileged access?",
-    "options": ["trojan", "bloatware", "rootkit", "virus"],
-    "correctIndex": 2,
-    "explanation": "rootkit. It burrows into the OS/kernel to stay hidden and keep control. The tell: rootkit = kernel-level hiding for persistence; trojan = disguised as legitimate; bloatware = unwanted preinstalled software; virus = needs a host file and user action to spread."
-  },
-  {
-    "domain": "D2",
-    "family": "malware",
-    "question": "A disgruntled administrator plants code set to wipe the databases automatically if his account is ever removed from the payroll system. Which malware is this?",
-    "options": ["worm", "spyware", "keylogger", "logic bomb"],
-    "correctIndex": 3,
-    "explanation": "logic bomb. A dormant payload that detonates when a specific condition is met. The tell: logic bomb = fires on a condition or date; worm = self-replicates across the network; spyware = secretly collects activity; keylogger = records keystrokes."
-  },
-  {
-    "domain": "D2",
-    "family": "malware",
-    "question": "Software disguised as a legitimate program that the user willingly installs, but which carries a hidden malicious payload, is which type?",
-    "options": ["trojan", "virus", "worm", "bloatware"],
-    "correctIndex": 0,
-    "explanation": "trojan. It masquerades as legitimate so the user installs it themselves. The tell: trojan = disguised as legitimate; virus = needs a host file and user action to propagate; worm = self-spreads with no user action; bloatware = unwanted preinstalled software."
-  },
-  {
-    "domain": "D2",
-    "family": "ddos-network",
-    "question": "An attacker sends tiny queries to open DNS resolvers that each generate responses dozens of times larger, and it is this response-to-request size multiplier that overwhelms the victim. Which DDoS characteristic does this describe?",
-    "options": ["reflected DDoS", "amplified DDoS", "on-path attack", "credential replay"],
-    "correctIndex": 1,
-    "explanation": "amplified DDoS. A small request yields a hugely larger response directed at the victim. The tell: amplified = small request produces a giant response; reflected = spoof the victim's source so third parties reply to the victim; on-path = attacker sits between two parties; credential replay = capture and resend valid credentials."
-  },
-  {
-    "domain": "D2",
-    "family": "ddos-network",
-    "question": "An attacker spoofs the victim's IP as the source so that many innocent third-party servers send all of their replies to the victim instead of the attacker. Which attack is this?",
-    "options": ["amplified DDoS", "on-path attack", "reflected DDoS", "DNS attack"],
-    "correctIndex": 2,
-    "explanation": "reflected DDoS. Spoofing the victim's source address makes third parties bounce traffic to the victim. The tell: reflected = spoofed victim source, third parties reply to victim; amplified = small request yields a huge response; on-path = attacker positioned between the parties; DNS attack = poisoning or hijacking name resolution."
-  },
-  {
-    "domain": "D2",
-    "family": "ddos-network",
-    "question": "An attacker quietly positions between a user and the gateway, relaying and altering the traffic flowing in both directions. Which attack is this?",
-    "options": ["credential replay", "reflected DDoS", "DNS attack", "on-path attack"],
-    "correctIndex": 3,
-    "explanation": "on-path attack. The attacker sits between two parties to read and modify traffic. The tell: on-path = attacker between the two parties reading/altering traffic; credential replay = resend captured valid credentials; reflected DDoS = spoofed source floods the victim; DNS attack = tamper with name resolution."
-  },
-  {
-    "domain": "D2",
-    "family": "ddos-network",
-    "question": "An attacker captures a valid session token off the wire and resends it later to authenticate as the legitimate user. Which attack is this?",
-    "options": ["credential replay", "on-path attack", "amplified DDoS", "DNS attack"],
-    "correctIndex": 0,
-    "explanation": "credential replay. Captured valid credentials or tokens are reused to impersonate the user. The tell: credential replay = capture and resend valid credentials/session; on-path = actively sit between the parties; amplified DDoS = tiny request yields a huge response; DNS attack = poison or hijack name resolution."
-  },
-  {
-    "domain": "D2",
-    "family": "app-attacks",
-    "question": "An attacker uses ../../ sequences in a URL to read the server's /etc/passwd file located outside the web root. Which attack is this?",
-    "options": ["injection", "directory traversal", "request forgery (CSRF)", "replay attack"],
-    "correctIndex": 1,
-    "explanation": "directory traversal. Path sequences climb out of the web root to reach unauthorized files. The tell: directory traversal = ../ path tricks to read files outside the web root; injection = insert malicious input into an interpreter; request forgery = trick a user into sending a state-changing request; replay = resend captured valid traffic."
-  },
-  {
-    "domain": "D2",
-    "family": "app-attacks",
-    "question": "A logged-in user clicks an attacker's link that silently submits a hidden fund-transfer request using the user's active session. Which attack is this?",
-    "options": ["privilege escalation", "replay attack", "request forgery (CSRF)", "directory traversal"],
-    "correctIndex": 2,
-    "explanation": "request forgery (CSRF). The victim's authenticated session is abused to send a state-changing request they did not intend. The tell: request forgery = trick a user's browser into a state-changing action; privilege escalation = gain rights beyond those granted; replay = resend captured traffic; directory traversal = ../ file-path abuse."
-  },
-  {
-    "domain": "D2",
-    "family": "app-attacks",
-    "question": "A standard user exploits a flaw to gain administrator rights far beyond what they were assigned. Which attack is this?",
-    "options": ["injection", "request forgery (CSRF)", "replay attack", "privilege escalation"],
-    "correctIndex": 3,
-    "explanation": "privilege escalation. The attacker elevates to higher rights than were granted. The tell: privilege escalation = gain higher rights than assigned; injection = insert malicious input into an interpreter; request forgery = trick a user into a state-changing request; replay = resend captured valid traffic."
-  },
-  {
-    "domain": "D2",
-    "family": "crypto-attacks",
-    "question": "An attacker interferes with a TLS handshake to force the client and server to fall back to an old, weak SSL cipher. Which attack is this?",
-    "options": ["downgrade attack", "collision attack", "birthday attack", "rainbow table attack"],
-    "correctIndex": 0,
-    "explanation": "downgrade attack. It coerces the parties into a weaker protocol or cipher. The tell: downgrade = force a weaker protocol/cipher such as TLS to SSL; collision = two inputs share one hash; birthday = probability trick that finds collisions faster; rainbow table = precomputed hash lookups to crack passwords."
-  },
-  {
-    "domain": "D2",
-    "family": "crypto-attacks",
-    "question": "Finding two different inputs that produce the exact same hash output is which attack?",
-    "options": ["downgrade attack", "collision attack", "birthday attack", "brute-force attack"],
-    "correctIndex": 1,
-    "explanation": "collision attack. Two distinct inputs map to an identical hash. The tell: collision = two inputs, same hash; downgrade = force a weaker cipher; birthday = probability method that speeds up finding collisions; brute-force = exhaustively try every possibility."
-  },
-  {
-    "domain": "D2",
-    "family": "crypto-attacks",
-    "question": "A probabilistic method that exploits the math of shared coincidences to find hash collisions far faster than expected is the ___ attack.",
-    "options": ["collision attack", "downgrade attack", "birthday attack", "rainbow table attack"],
-    "correctIndex": 2,
-    "explanation": "birthday attack. It uses the birthday paradox to locate collisions with fewer attempts than intuition suggests. The tell: birthday = probability shortcut to collisions; collision = simply two inputs sharing a hash; downgrade = force a weaker protocol; rainbow table = precomputed hash lookups."
-  },
-  {
-    "domain": "D2",
-    "family": "password-attacks",
-    "question": "An attacker tries just three very common passwords against 5,000 different accounts, deliberately staying under each account's lockout threshold. Which attack is this?",
-    "options": ["dictionary attack", "brute force", "credential stuffing", "password spraying"],
-    "correctIndex": 3,
-    "explanation": "password spraying. A few common passwords are tried broadly across many accounts to dodge lockouts. The tell: spraying = few passwords across many accounts; dictionary = a wordlist against an account; brute force = exhaust all combinations on one account; credential stuffing = reuse breached username/password pairs."
-  },
-  {
-    "domain": "D2",
-    "family": "password-attacks",
-    "question": "An attacker targets one specific admin account and exhaustively tries every possible character combination until one works. Which attack is this?",
-    "options": ["brute force", "password spraying", "dictionary attack", "credential stuffing"],
-    "correctIndex": 0,
-    "explanation": "brute force. Exhaustively trying all combinations against a single account. The tell: brute force = try every combination on one account; spraying = a few passwords across many accounts; dictionary = try a curated wordlist; credential stuffing = replay breached credential pairs."
-  },
-  {
-    "domain": "D2",
-    "family": "password-attacks",
-    "question": "Trying passwords drawn from a curated wordlist of likely and commonly used terms against an account is a ___ attack.",
-    "options": ["password spraying", "dictionary attack", "credential stuffing", "brute force"],
-    "correctIndex": 1,
-    "explanation": "dictionary attack. It runs a wordlist of probable passwords rather than every combination. The tell: dictionary = wordlist of likely passwords; spraying = a few passwords across many accounts; credential stuffing = reuse breached pairs; brute force = exhaustively try all combinations."
-  },
-  {
-    "domain": "D2",
-    "family": "indicators",
-    "question": "A user logs in from New York and, eight minutes later, a second successful login for the same account appears from Singapore. Which indicator is this?",
-    "options": ["concurrent session usage", "account lockout", "impossible travel", "out-of-cycle logging"],
-    "correctIndex": 2,
-    "explanation": "impossible travel. Two logins are too far apart geographically to be physically possible in the time elapsed. The tell: impossible travel = distant logins too close in time; concurrent session usage = same account active in multiple sessions at once; account lockout = failed attempts locking the account; out-of-cycle logging = log entries at unusual times."
-  },
-  {
-    "domain": "D2",
-    "family": "indicators",
-    "question": "Analysts find the security log has a two-hour gap right around the time of a suspected breach, hinting at tampering. Which indicator is this?",
-    "options": ["out-of-cycle logging", "blocked content", "resource inaccessibility", "missing logs"],
-    "correctIndex": 3,
-    "explanation": "missing logs. Gaps in the record suggest deletion or tampering. The tell: missing logs = gaps that imply tampering; out-of-cycle logging = entries at unusual times; blocked content = filtering stopping access; resource inaccessibility = services suddenly unavailable."
-  },
-  {
-    "domain": "D2",
-    "family": "indicators",
-    "question": "Overnight, batch job log entries appear timestamped at 3 a.m. when no jobs are ever scheduled to run at that hour. Which indicator is this?",
-    "options": ["out-of-cycle logging", "missing logs", "impossible travel", "concurrent session usage"],
-    "correctIndex": 0,
-    "explanation": "out-of-cycle logging. Activity logged at abnormal times signals something unexpected. The tell: out-of-cycle logging = entries at unusual times; missing logs = gaps suggesting tampering; impossible travel = distant logins too close in time; concurrent session usage = one account active in multiple sessions."
-  },
-  {
-    "domain": "D2",
-    "family": "indicators",
-    "question": "Multiple critical file shares suddenly become unavailable to all staff at once, a possible sign of ransomware or a denial-of-service event. Which indicator is this?",
-    "options": ["resource consumption", "resource inaccessibility", "account lockout", "blocked content"],
-    "correctIndex": 1,
-    "explanation": "resource inaccessibility. Services abruptly become unreachable, a hallmark of ransomware or DoS. The tell: resource inaccessibility = services suddenly unavailable; resource consumption = abnormal spike in CPU, memory, or bandwidth; account lockout = an account locked by failed logins; blocked content = filtering denying access."
-  },
-  {
-    "domain": "D2",
-    "family": "mitigations",
-    "question": "To limit lateral movement, the network team splits a flat LAN into separate VLAN zones for finance, HR, and guests. Which mitigation is this?",
-    "options": ["decommissioning", "isolation", "segmentation", "configuration enforcement"],
-    "correctIndex": 2,
-    "explanation": "segmentation. Dividing the network into separate zones to contain movement. The tell: segmentation = split the network into zones; isolation = fully cut a single host off; decommissioning = securely retire an asset; configuration enforcement = push and hold a secure config."
-  },
-  {
-    "domain": "D2",
-    "family": "mitigations",
-    "question": "Allowing ONLY explicitly approved programs to execute and blocking everything else by default is which mitigation?",
-    "options": ["least privilege", "configuration enforcement", "patching", "application allow list"],
-    "correctIndex": 3,
-    "explanation": "application allow list. Only sanctioned applications are permitted to run. The tell: application allow list = only approved apps may run; least privilege = minimum rights needed for a task; configuration enforcement = push and hold a secure config; patching = fix known flaws in software."
-  },
-  {
-    "domain": "D2",
-    "family": "mitigations",
-    "question": "A compromised host is immediately cut off from all network connectivity so it can communicate with nothing while it is investigated. Which mitigation is this?",
-    "options": ["isolation", "segmentation", "decommissioning", "least privilege"],
-    "correctIndex": 0,
-    "explanation": "isolation. The single host is fully severed from the network. The tell: isolation = fully cut one host off; segmentation = divide the network into zones; decommissioning = securely retire an asset; least privilege = grant only the minimum rights needed."
-  }
+  {"domain":"D2","family":"threat-actors","question":"A loosely organized group defaces a city government's website and posts manifestos protesting a new surveillance ordinance. They demand no money and publicize the breach themselves. Which threat actor BEST fits?","options":["hacktivist","nation-state actor","organized crime","insider threat"],"correctIndex":0,"explanation":"Hacktivist. A political or philosophical message with publicity as the goal, and no profit motive, is the hacktivist profile. The tell: hacktivist = philosophical/political message, nation-state = espionage with deep resources, organized crime = financial gain, insider threat = trusted internal person."},
+  {"domain":"D2","family":"threat-actors","question":"A security briefing describes an adversary with deep funding, custom tooling, multi-year persistence inside targets, and an espionage mission carried out on behalf of a foreign government. Which threat actor is described?","options":["organized crime","nation-state actor","hacktivist","unskilled attacker"],"correctIndex":1,"explanation":"Nation-state actor. Resources, patience, and espionage on a government's behalf define the nation-state or APT profile. The tell: nation-state = highly resourced espionage/war, organized crime = financial gain, hacktivist = political message, unskilled attacker = low skill using others' tools."},
+  {"domain":"D2","family":"threat-actors","question":"An audit discovers the marketing team has been running an unapproved cloud database full of customer data for a year. They set it up to move faster and never told IT, though they meant no harm. Which category fits?","options":["insider threat","unskilled attacker","shadow IT","organized crime"],"correctIndex":2,"explanation":"Shadow IT. Unsanctioned internal technology deployed without IT's knowledge, but without malicious intent, is shadow IT. A malicious trusted employee would be an insider threat. The tell: shadow IT = unsanctioned internal tech, no malice, insider threat = trusted person acting against the org, unskilled attacker = script-using outsider, organized crime = profit-driven group."},
+  {"domain":"D2","family":"social-eng-phish","question":"An employee receives a text message claiming to be from their bank: \"Unusual activity detected. Tap this link within 24 hours or your account will be locked.\" Which technique is this?","options":["phishing","vishing","spear phishing","smishing"],"correctIndex":3,"explanation":"Smishing. The delivery channel decides the name, and this arrived by SMS text. The tell: smishing = SMS text, phishing = email, vishing = voice call, spear phishing = targeted at a specific person regardless of polish."},
+  {"domain":"D2","family":"social-eng-phish","question":"An attacker phones the help desk after hours, claims to be an executive boarding a flight, and pressures the agent into resetting the executive's password on the spot. Which technique is this?","options":["vishing","smishing","phishing","spear phishing"],"correctIndex":0,"explanation":"Vishing. Social engineering delivered over a voice call is vishing, whatever story the caller uses. The tell: vishing = voice call, smishing = SMS, phishing = email, spear phishing = aimed at one specific target."},
+  {"domain":"D2","family":"social-eng-phish","question":"A security team traces a credential theft campaign to a fraudulent email blast sent to roughly 40,000 random recipients, hoping a small percentage click and sign in to a fake portal. Which term describes this?","options":["smishing","phishing","vishing","spear phishing"],"correctIndex":1,"explanation":"Phishing. Broad, untargeted fraudulent email is plain phishing; had it been tailored to specific individuals it would be spear phishing. The tell: phishing = mass email, spear phishing = targeted email, vishing = voice, smishing = SMS."},
+  {"domain":"D2","family":"misinformation","question":"A well-meaning employee shares a two-year-old article about a product recall in the company chat, believing it is current news. The facts have long since changed, but the employee has no intent to mislead anyone. What is this?","options":["disinformation","malinformation","misinformation","influence campaign"],"correctIndex":2,"explanation":"Misinformation. False information passed along in honest error, with no intent to deceive, is misinformation. The tell: misinformation = false, no intent to deceive, disinformation = false and deliberately spread to deceive, influence campaign = coordinated effort to sway opinion at scale."},
+  {"domain":"D2","family":"misinformation","question":"A fired executive knowingly fabricates stories about his former employer's finances and seeds them across investor forums under fake names, hoping to tank the stock before earnings. What is this?","options":["misinformation","malinformation","influence campaign","disinformation"],"correctIndex":3,"explanation":"Disinformation. The content is false AND deliberately created to deceive, which is the defining difference from misinformation. The tell: disinformation = deliberate deception, misinformation = honest error, influence campaign = organized perception-shaping operation, malinformation = true info weaponized out of context."},
+  {"domain":"D2","family":"misinformation","question":"On the exam, which term specifically means false information circulated WITHOUT any intent to deceive - an honest mistake repeated in good faith?","options":["misinformation","disinformation","malinformation","influence campaign"],"correctIndex":0,"explanation":"Misinformation. Intent is the discriminator: none here. The tell: misinformation = false, spread innocently, disinformation = false, spread deliberately to manipulate, malinformation = genuine info used to harm, influence campaign = the coordinated umbrella operation."},
+  {"domain":"D2","family":"impersonation","question":"The finance team receives an email from the CEO's real mailbox, which attackers quietly compromised, urgently requesting a wire transfer to a new vendor account before end of day. Which technique is this?","options":["impersonation","business email compromise (BEC)","pretexting","brand impersonation"],"correctIndex":1,"explanation":"Business email compromise. A compromised or spoofed internal executive mailbox used to request payments is BEC, the costliest form of this family. The tell: BEC = executive email account abused for wire/gift-card requests, impersonation = pretending to be someone in person or by phone, pretexting = the invented backstory, brand impersonation = faking a company's look to its customers."},
+  {"domain":"D2","family":"impersonation","question":"A caller introduces herself as a newly assigned external auditor, cites a plausible compliance deadline, names the CFO, and uses this invented backstory to justify asking for access to financial records. Which technique is this?","options":["impersonation","brand impersonation","pretexting","business email compromise (BEC)"],"correctIndex":2,"explanation":"Pretexting. The engineered, believable scenario constructed to justify the request is the pretext; that fabricated context is what distinguishes it from simple impersonation. The tell: pretexting = invented backstory legitimizing the ask, impersonation = claiming to be someone, BEC = compromised executive mailbox, brand impersonation = faking a company's identity."},
+  {"domain":"D2","family":"impersonation","question":"Customers of a national bank receive emails using the bank's exact logo, colors, and footer, linking to a pixel-perfect copy of its login page that harvests credentials. Which technique is this?","options":["impersonation","pretexting","business email compromise (BEC)","brand impersonation"],"correctIndex":3,"explanation":"Brand impersonation. Copying a trusted company's visual identity to fool that company's customers is brand impersonation. The tell: brand impersonation = fake the company's look to outsiders, BEC = abuse a real internal mailbox, impersonation = pose as an individual, pretexting = the cover story."},
+  {"domain":"D2","family":"social-eng-other","question":"Attackers compromise a niche industry news site that a defense contractor's engineers read every morning, planting an exploit kit that infects only visitors from the contractor's IP range. Which attack is this?","options":["watering hole","typosquatting","phishing","brand impersonation"],"correctIndex":0,"explanation":"Watering hole. Poisoning a legitimate site the target group already frequents, then waiting for them to come drink, is the watering hole attack. The tell: watering hole = compromise a site the targets already visit, typosquatting = register a misspelled lookalike domain, phishing = bait sent by email, brand impersonation = faking a company's identity."},
+  {"domain":"D2","family":"social-eng-other","question":"A user typing quickly lands on a malicious site because an attacker registered a domain matching a common misspelling of a popular address, complete with a cloned login page. Which attack is this?","options":["watering hole","typosquatting","phishing","impersonation"],"correctIndex":1,"explanation":"Typosquatting. Registering the misspelled lookalike domain and waiting for fat-fingered visitors is typosquatting; no email lure or compromised legitimate site is involved. The tell: typosquatting = misspelled lookalike domain, watering hole = compromising a site targets already visit, phishing = fraudulent email, impersonation = posing as a person."},
+  {"domain":"D2","family":"attack-vectors","question":"A penetration tester scatters branded USB drives around the client's parking lot and lobby. Within two days, three had been plugged into corporate workstations. Which attack vector does this exercise test?","options":["open service ports","default credentials","removable device","message-based vector"],"correctIndex":2,"explanation":"Removable device. USB baiting exploits the removable-media vector and human curiosity. The tell: removable device = USB media carrying the payload, message-based = email/SMS/IM delivery, open service ports = exposed listening services, default credentials = unchanged factory passwords."},
+  {"domain":"D2","family":"attack-vectors","question":"Attackers gain admin access to a newly racked network switch on its first weekend in production because nobody changed the factory admin password printed in the vendor manual. Which vector was exploited?","options":["open service ports","unsecure networks","removable device","default credentials"],"correctIndex":3,"explanation":"Default credentials. The out-of-the-box password, documented publicly by the vendor, was the way in. The tell: default credentials = unchanged factory passwords, open service ports = exposed services an attacker probes, unsecure networks = unencrypted or open Wi-Fi/LAN, removable device = USB media."},
+  {"domain":"D2","family":"attack-vectors","question":"Evaluating monitoring products, an architect notes one option needs no software installed on the endpoints it watches: a smaller attack surface and nothing for malware to tamper with, but shallower visibility and control. Which model is described?","options":["agentless","client-based","file-based vector","open service ports"],"correctIndex":0,"explanation":"Agentless. No installed endpoint software is the agentless trade-off: lighter footprint, less depth. The tell: agentless = no installed software, less control, client-based = installed agent that itself can be attacked, file-based = malicious file as the carrier, open service ports = exposed listening services."},
+  {"domain":"D2","family":"supply-chain","question":"A 60-person firm outsources its entire IT operation - helpdesk, server administration, and patching - to a third party that runs everything remotely under contract. Which supply-chain party is this third party?","options":["vendor","managed service provider (MSP)","supplier","hardware provider"],"correctIndex":1,"explanation":"Managed service provider. A third party operating your IT on an ongoing basis is an MSP, and its privileged access makes it a major supply-chain risk. The tell: MSP = runs your IT operations, vendor = sells you a product/service, supplier = provides upstream parts/materials, hardware provider = supplies the devices."},
+  {"domain":"D2","family":"supply-chain","question":"A risk assessment maps the upstream chain for a laptop line: one firm provides the raw chips and components that the manufacturer builds into the finished machines. Which supply-chain party is the component firm?","options":["managed service provider (MSP)","software provider","supplier","vendor"],"correctIndex":2,"explanation":"Supplier. Providing parts and materials upstream that get built into finished goods is the supplier role. The tell: supplier = upstream parts/materials, vendor = sells you the finished product/service, MSP = operates your IT, software provider = supplies the applications."},
+  {"domain":"D2","family":"app-vulns","question":"A tester types ' OR '1'='1 into a login form's username field, and the application responds by returning every row of the user table. Which vulnerability was exploited?","options":["cross-site scripting (XSS)","buffer overflow","memory injection","SQL injection (SQLi)"],"correctIndex":3,"explanation":"SQL injection. Input altered the database query itself, dumping table contents; the target was the database, not other users' browsers. The tell: SQLi = inject SQL into a query to hit the database, XSS = inject script that runs in another user's browser, buffer overflow = write past a memory boundary, memory injection = insert code into a running process."},
+  {"domain":"D2","family":"app-vulns","question":"An attacker posts a product review containing a hidden script tag. Every shopper who later views that page unknowingly runs the script, which ships their session cookies to the attacker. Which vulnerability is this?","options":["cross-site scripting (XSS)","SQL injection (SQLi)","malicious update","buffer overflow"],"correctIndex":0,"explanation":"Cross-site scripting. The injected script executes in other users' browsers, stealing their sessions; the victims are the visitors, not the database. The tell: XSS = script runs in another user's browser, SQLi = query manipulation against the database, malicious update = trojanized software update, buffer overflow = overrun a memory boundary."},
+  {"domain":"D2","family":"app-vulns","question":"A vulnerability report explains that a network service copies attacker-supplied data into a fixed-length memory region without checking size, letting the attacker overwrite adjacent memory and hijack execution. Which vulnerability is described?","options":["memory injection","buffer overflow","SQL injection (SQLi)","malicious update"],"correctIndex":1,"explanation":"Buffer overflow. Writing past a fixed buffer's boundary to clobber adjacent memory is the classic overflow. The tell: buffer overflow = write past a buffer boundary, memory injection = insert code into a running process's memory space, SQLi = database query manipulation, malicious update = poisoned software update."},
+  {"domain":"D2","family":"race-conditions","question":"A program checks that a user may access a file, then opens it a few milliseconds later. An attacker swaps in a symlink to /etc/shadow during that tiny gap. What is the exploited gap between the check and the access called?","options":["time-of-check (TOC)","time-of-use (TOU)","time-of-check to time-of-use (TOCTOU)","race condition"],"correctIndex":2,"explanation":"TOCTOU. The exploit window between checking and using the resource is the time-of-check to time-of-use gap. The tell: TOC = the moment permission is checked, TOU = the moment the resource is used, TOCTOU = the exploitable gap between them, race condition = the general timing-dependent bug class."},
+  {"domain":"D2","family":"race-conditions","question":"In a TOCTOU vulnerability writeup, the report references the exact instant at which the application validated the resource's permissions. Which term names that instant?","options":["time-of-use (TOU)","race condition","TOCTOU window","time-of-check (TOC)"],"correctIndex":3,"explanation":"Time-of-check. The validation moment is the TOC; the later access moment is the TOU. The tell: TOC = when permission is checked, TOU = when the resource is actually used, TOCTOU window = the gap between them, race condition = the broader timing-bug category."},
+  {"domain":"D2","family":"race-conditions","question":"Two threads of a banking app process the same withdrawal simultaneously, and whether the account goes negative depends purely on which thread finishes first. What is this class of bug generally called?","options":["race condition","time-of-check (TOC)","time-of-use (TOU)","TOCTOU"],"correctIndex":0,"explanation":"Race condition. Any flaw whose outcome depends on the unpredictable timing or ordering of concurrent events is a race condition; TOCTOU is one specific flavor. The tell: race condition = outcome depends on timing, TOC = the check moment, TOU = the use moment, TOCTOU = the check-to-use gap exploit."},
+  {"domain":"D2","family":"system-vulns","question":"A cloud tenant exploits a hypervisor flaw to break out of their guest virtual machine and execute code on the underlying host, exposing every other tenant's VM on that box. Which vulnerability is this?","options":["resource reuse","VM escape","side loading","jailbreaking"],"correctIndex":1,"explanation":"VM escape. Breaking out of a guest to reach the hypervisor or host is VM escape, the nightmare scenario for shared infrastructure. The tell: VM escape = guest to host breakout, resource reuse = leftover data in reallocated memory/storage, side loading = installing apps outside the official store, jailbreaking = removing OS restrictions for root."},
+  {"domain":"D2","family":"system-vulns","question":"A security advisory warns of active exploitation of a flaw the software vendor does not yet know exists, meaning no patch or signature is available to anyone. What is this vulnerability called?","options":["end-of-life","legacy","zero-day","misconfiguration"],"correctIndex":2,"explanation":"Zero-day. Unknown to the vendor and unpatched, giving defenders zero days of warning. The tell: zero-day = no patch exists yet, end-of-life = vendor stopped supporting it, legacy = outdated but still running, misconfiguration = insecure settings, not a code flaw."},
+  {"domain":"D2","family":"system-vulns","question":"An employee removes the manufacturer's operating system restrictions on their personal phone to get root access and install apps the platform forbids, then connects the phone to corporate email. Which term describes what they did to the phone?","options":["side loading","resource reuse","firmware vulnerability","jailbreaking"],"correctIndex":3,"explanation":"Jailbreaking. Removing OS restrictions to gain root is jailbreaking; merely installing an app from outside the official store, without rooting, would be side loading. The tell: jailbreaking = strip OS restrictions for root access, side loading = install apps outside the official store, resource reuse = leftover data in reallocated resources, firmware vulnerability = flaw in the low-level device code."},
+  {"domain":"D2","family":"malware","question":"Overnight, malware sweeps through a flat corporate network by exploiting an unpatched SMB service on each machine it finds. No user opened, clicked, or ran anything. Which malware type is this?","options":["worm","virus","trojan","logic bomb"],"correctIndex":0,"explanation":"Worm. Self-replication across the network with zero user action is the worm signature; a virus needs a host file and a user to trigger it. The tell: worm = self-spreads over the network, virus = needs a host file and user action, trojan = disguised as legitimate software, logic bomb = payload waiting on a trigger condition."},
+  {"domain":"D2","family":"malware","question":"Staff arrive to find every shared drive encrypted and a note demanding cryptocurrency within 72 hours for the decryption key. Which malware type hit them?","options":["spyware","ransomware","rootkit","keylogger"],"correctIndex":1,"explanation":"Ransomware. Encrypting data and extorting payment for its return defines ransomware. The tell: ransomware = encrypts and extorts, spyware = secretly collects activity, rootkit = hides at the OS/kernel level, keylogger = records keystrokes."},
+  {"domain":"D2","family":"malware","question":"During incident response, analysts discover malware that patched kernel structures to hide its own processes and files from every tool on the box, maintaining privileged persistence for months. Which malware type is this?","options":["trojan","bloatware","rootkit","virus"],"correctIndex":2,"explanation":"Rootkit. Kernel-level concealment and persistent privileged access are rootkit behavior, which is why detection from inside the infected OS is unreliable. The tell: rootkit = hides at OS/kernel level, trojan = disguised as legitimate, bloatware = unwanted preinstalled software, virus = infects host files, needs user action."},
+  {"domain":"D2","family":"malware","question":"A database administrator facing layoffs plants a script that will wipe the production databases automatically if his account ever disappears from the payroll system. Which malware type is this?","options":["worm","spyware","keylogger","logic bomb"],"correctIndex":3,"explanation":"Logic bomb. A dormant payload triggered by a specific condition, here his own termination, is a logic bomb. The tell: logic bomb = payload fires on a condition/date, worm = self-spreads, spyware = covert data collection, keylogger = records keystrokes."},
+  {"domain":"D2","family":"malware","question":"A user downloads what appears to be a free PDF converter. It converts PDFs as advertised, while quietly installing a remote-access backdoor in the background. Which malware type is this?","options":["trojan","virus","worm","bloatware"],"correctIndex":0,"explanation":"Trojan. Software posing as something legitimate and useful that the user willingly installs, hiding a malicious payload, is a trojan. The tell: trojan = disguised as legitimate, virus = attaches to host files and spreads with user action, worm = spreads itself over the network, bloatware = unwanted but not malicious preinstalls."},
+  {"domain":"D2","family":"ddos-network","question":"An attacker sends 60-byte queries to open DNS resolvers, each of which emits a 3,000-byte response aimed at the victim. It is this response-to-request size multiplication that crushes the victim's link. Which DDoS characteristic does this describe?","options":["reflected DDoS","amplified DDoS","on-path attack","credential replay"],"correctIndex":1,"explanation":"Amplified DDoS. The defining feature named here is the size multiplier: tiny request, huge response. Reflection (spoofing the victim's address) is usually combined with it, but the multiplication is amplification. The tell: amplified = small request yields a huge response, reflected = third parties reply to the spoofed victim, on-path = attacker sits between two parties, credential replay = resending captured credentials."},
+  {"domain":"D2","family":"ddos-network","question":"An attacker spoofs the victim's IP address as the source on thousands of requests to innocent third-party servers, so every server's reply lands on the victim instead of the attacker. Which attack is this?","options":["amplified DDoS","on-path attack","reflected DDoS","DNS attack"],"correctIndex":2,"explanation":"Reflected DDoS. Bouncing traffic off third parties by spoofing the victim's source address is reflection; if the replies were also much larger than the requests, amplification would be stacked on top. The tell: reflected = spoofed source makes third parties reply to the victim, amplified = the size multiplier, on-path = interception between two parties, DNS attack = poisoning or hijacking name resolution."},
+  {"domain":"D2","family":"ddos-network","question":"On a hotel network, an attacker inserts themselves between a guest's laptop and the gateway, silently relaying and modifying the traffic flowing in both directions. Which attack is this?","options":["credential replay","reflected DDoS","DNS attack","on-path attack"],"correctIndex":3,"explanation":"On-path attack. Sitting between two parties to read or alter their traffic is the on-path attack (the SY0-701 term for what was once called man in the middle). The tell: on-path = attacker between two parties reading/altering traffic, credential replay = resending captured credentials, reflected DDoS = third parties reply to a spoofed victim, DNS attack = corrupting name resolution."},
+  {"domain":"D2","family":"ddos-network","question":"An attacker sniffs a valid session token from unencrypted traffic, then resends it an hour later to authenticate to the application as the legitimate user. Which attack is this?","options":["credential replay","on-path attack","amplified DDoS","DNS attack"],"correctIndex":0,"explanation":"Credential replay. Capturing valid credentials or a session token and resending them later is replay; the attacker never cracked anything. The tell: credential replay = resend captured credentials/session, on-path = live interception between parties, amplified DDoS = small request/huge response flooding, DNS attack = poisoned name resolution."},
+  {"domain":"D2","family":"app-attacks","question":"A web server log shows requests like GET /view?file=../../../../etc/passwd, and the response body contains the server's account file from outside the web root. Which attack is this?","options":["injection","directory traversal","request forgery (CSRF)","replay attack"],"correctIndex":1,"explanation":"Directory traversal. Using ../ sequences to walk out of the web root and read arbitrary server files is traversal. The tell: directory traversal = ../ path tricks to escape the web root, injection = malicious input fed to an interpreter, forgery = tricking a user's browser into a state-changing request, replay = resending captured traffic."},
+  {"domain":"D2","family":"app-attacks","question":"While logged in to her bank, a user clicks a link in a forum post. Her browser silently submits a hidden transfer request to the bank, which processes it because her session cookie rides along automatically. Which attack is this?","options":["privilege escalation","replay attack","request forgery (CSRF)","directory traversal"],"correctIndex":2,"explanation":"Request forgery. The attacker tricked the victim's own authenticated browser into sending a state-changing request, the essence of CSRF. The tell: forgery = victim's browser unknowingly sends the request, replay = attacker resends captured traffic, privilege escalation = gaining higher rights, directory traversal = ../ file access."},
+  {"domain":"D2","family":"app-attacks","question":"A help-desk user exploits an unquoted service path flaw on a server and ends up running commands as SYSTEM, far beyond the rights their account was ever granted. Which attack is this?","options":["injection","request forgery (CSRF)","replay attack","privilege escalation"],"correctIndex":3,"explanation":"Privilege escalation. Leveraging a flaw to move from limited rights to administrator/SYSTEM is escalation, the follow-on step after most footholds. The tell: privilege escalation = gain higher rights than granted, injection = malicious input to an interpreter, forgery = tricking a browser into a request, replay = resending captured traffic."},
+  {"domain":"D2","family":"crypto-attacks","question":"During a TLS handshake, an attacker interferes with the negotiation so client and server settle on an obsolete, breakable SSL cipher suite instead of the modern default both support. Which attack is this?","options":["downgrade attack","collision attack","birthday attack","rainbow table attack"],"correctIndex":0,"explanation":"Downgrade attack. Forcing parties onto a weaker protocol or cipher than they would normally use is a downgrade, the setup step for breaking the resulting weak session. The tell: downgrade = force a weaker protocol/cipher, collision = two inputs with the same hash, birthday = probability shortcut to find collisions, rainbow table = precomputed hash lookups."},
+  {"domain":"D2","family":"crypto-attacks","question":"A researcher demonstrates two different PDF files that produce the identical MD5 digest, allowing a malicious contract to swap in for a signed benign one. Which attack does this demonstrate?","options":["downgrade attack","collision attack","birthday attack","brute-force attack"],"correctIndex":1,"explanation":"Collision attack. Two different inputs yielding the same hash is a collision, which breaks the integrity guarantee of the hash. The tell: collision = two inputs, same hash, birthday = the probabilistic method for finding collisions faster, downgrade = force weaker crypto, brute force = exhaustively trying inputs."},
+  {"domain":"D2","family":"crypto-attacks","question":"An attack paper shows that finding a hash collision takes roughly the square root of the expected tries because the chance of ANY two inputs matching grows surprisingly fast, the same math as shared birthdays in a room. Which attack is this?","options":["collision attack","downgrade attack","birthday attack","rainbow table attack"],"correctIndex":2,"explanation":"Birthday attack. Exploiting the birthday-paradox math to find collisions far faster than brute force expects is the birthday attack; the collision is the result, the birthday attack is the method. The tell: birthday = probability shortcut for collisions, collision = the two-inputs-one-hash outcome, downgrade = force weaker crypto, rainbow table = precomputed lookups."},
+  {"domain":"D2","family":"password-attacks","question":"Log analysis shows one source IP tried exactly three passwords - Winter2026!, Password1, and Welcome123 - against 5,000 different accounts, never a fourth attempt on any account. Which attack is this?","options":["dictionary attack","brute force","credential stuffing","password spraying"],"correctIndex":3,"explanation":"Password spraying. A few common passwords across MANY accounts, deliberately staying under lockout thresholds, is spraying. The tell: spraying = few passwords, many accounts, brute force = many passwords, one account, dictionary = wordlist-driven guessing, credential stuffing = replaying username/password pairs leaked from another site."},
+  {"domain":"D2","family":"password-attacks","question":"An attacker fixates on a single domain-admin account and hammers it with every possible character combination, generating tens of millions of failed logins over a weekend. Which attack is this?","options":["brute force","password spraying","dictionary attack","credential stuffing"],"correctIndex":0,"explanation":"Brute force. Exhaustive guessing of every combination against ONE account is brute force, noisy and lockout-prone. The tell: brute force = everything against one account, spraying = a few passwords across many accounts, dictionary = curated wordlist, credential stuffing = reusing leaked credential pairs."},
+  {"domain":"D2","family":"password-attacks","question":"A cracking tool works through a curated wordlist - sports teams, seasons, keyboard walks, and common substitutions like P@ssw0rd - against a stolen hash file. Which attack is this?","options":["password spraying","dictionary attack","credential stuffing","brute force"],"correctIndex":1,"explanation":"Dictionary attack. Guessing from a wordlist of likely passwords rather than every possible string is the dictionary approach. The tell: dictionary = curated wordlist of likely passwords, brute force = every possible combination, spraying = few passwords across many accounts, credential stuffing = replaying leaked pairs."},
+  {"domain":"D2","family":"indicators","question":"A SIEM alert fires: the same account logged in successfully from New York at 9:02 a.m. and from Singapore at 9:10 a.m. No VPN explains it. Which indicator of compromise is this?","options":["concurrent session usage","account lockout","impossible travel","out-of-cycle logging"],"correctIndex":2,"explanation":"Impossible travel. Two logins from locations no human could cover in the elapsed time is the impossible-travel indicator. If both sessions were active simultaneously, concurrent session usage would also fire. The tell: impossible travel = distant logins too close in time, concurrent session usage = same account live in multiple sessions at once, account lockout = repeated failures tripping the lock, out-of-cycle logging = events at abnormal times."},
+  {"domain":"D2","family":"indicators","question":"Reconstructing a breach timeline, analysts find the security event log simply has no entries for the two hours surrounding the suspected intrusion, though logging ran normally before and after. Which indicator is this?","options":["out-of-cycle logging","blocked content","resource inaccessibility","missing logs"],"correctIndex":3,"explanation":"Missing logs. A gap in otherwise continuous logging suggests an attacker cleared or suppressed entries to hide activity. The tell: missing logs = gaps suggesting tampering, out-of-cycle logging = entries at unusual times, resource inaccessibility = services suddenly unreachable, blocked content = filtered access attempts."},
+  {"domain":"D2","family":"indicators","question":"A nightly batch platform never runs jobs outside its 10 p.m. to midnight window, yet fresh job-log entries appear timestamped 3:14 a.m. Which indicator is this?","options":["out-of-cycle logging","missing logs","impossible travel","concurrent session usage"],"correctIndex":0,"explanation":"Out-of-cycle logging. Log entries appearing at times when the activity should never occur point to unauthorized activity, the out-of-cycle indicator. The tell: out-of-cycle logging = entries at abnormal times, missing logs = suspicious gaps, impossible travel = geographically impossible logins, concurrent session usage = simultaneous sessions on one account."},
+  {"domain":"D2","family":"indicators","question":"At 2 p.m., every critical file share in the company becomes unreachable for all staff simultaneously, and the storage system shows the volumes intact but access failing. Which indicator is this?","options":["resource consumption","resource inaccessibility","account lockout","blocked content"],"correctIndex":1,"explanation":"Resource inaccessibility. Services or data suddenly unavailable across the board is the inaccessibility indicator, a classic early sign of ransomware or denial of service. The tell: resource inaccessibility = resources suddenly unreachable, resource consumption = CPU/disk/bandwidth spiking abnormally, account lockout = authentication lockouts, blocked content = filtered requests."},
+  {"domain":"D2","family":"mitigations","question":"After a single phished workstation led to domain-wide compromise, the network team divides the flat LAN into separate zones for finance, HR, servers, and guests, with ACLs controlling traffic between zones. Which mitigation is this?","options":["decommissioning","isolation","segmentation","configuration enforcement"],"correctIndex":2,"explanation":"Segmentation. Splitting the network into controlled zones limits lateral movement while everything keeps functioning. Isolation would mean fully cutting something off. The tell: segmentation = split into zones with controlled paths, isolation = completely cut off, decommissioning = retiring an asset, configuration enforcement = pushing and holding a secure config."},
+  {"domain":"D2","family":"mitigations","question":"To stop unauthorized tools and malware from ever executing, a security team configures endpoints so that ONLY the applications on an approved list will run and everything else is blocked by default. Which mitigation is this?","options":["least privilege","configuration enforcement","patching","application allow list"],"correctIndex":3,"explanation":"Application allow list. Default-deny execution where only approved applications run is allow listing, the inverse of blocking known-bad. The tell: application allow list = only approved apps execute, least privilege = minimum rights for accounts, configuration enforcement = maintain the secure baseline, patching = fixing known vulnerabilities."},
+  {"domain":"D2","family":"mitigations","question":"An EDR alert confirms a workstation is compromised. The responder immediately cuts it off from all network connectivity - it can reach nothing and nothing can reach it - while forensics proceeds. Which mitigation is this?","options":["isolation","segmentation","decommissioning","least privilege"],"correctIndex":0,"explanation":"Isolation. Completely severing a host's connectivity during response is isolation; segmentation would still allow controlled paths. The tell: isolation = fully cut off, segmentation = zones with controlled traffic, decommissioning = permanently retiring the asset, least privilege = minimal rights, not a containment move."}
 ]

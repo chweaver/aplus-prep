@@ -79,9 +79,12 @@ Chunk files carry NO `id` field - `merge.mjs` assigns ids by position.
    "role-based access control" / "rule-based access control". `MAC` only as
    "mandatory access control". `PAM` = privileged access management only. Do
    not use `SAN` as an option (storage vs subject-alternative-name collision).
-3. **Distractors are siblings.** All 4 options come from the same confusion
-   family's sibling pool in the generation guide. Exactly one defensible answer;
-   if two could be argued, rewrite the stem to force one.
+3. **Distractors test discrimination, exam-style.** Prefer siblings from the
+   family's pool, but plausible cross-category distractors (like the real exam
+   uses) are allowed when they make the scenario more realistic - e.g. a
+   physical-control question may offer a technical control the reader must
+   eliminate. Exactly one defensible answer; if two could be argued, rewrite
+   the stem to force one.
 4. **Every explanation** starts with the correct term, gives one tight line of
    why, then a sentence beginning literally `The tell:` that discriminates the
    actual siblings shown. Tells must stay consistent with the guide's canonical

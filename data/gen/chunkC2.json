@@ -1,226 +1,30 @@
 [
- {
-  "domain": "D3",
-  "family": "containerization",
-  "question": "A hosting provider runs several isolated servers on one physical machine, each carrying its own complete guest operating system managed by a hypervisor. Which technology is this?",
-  "options": ["Containerization", "Serverless", "Microservices", "Virtualization"],
-  "correctIndex": 3,
-  "explanation": "Virtualization. Each guest ships a full OS on a hypervisor, unlike containers that share the host kernel. The tell: containerization = share the host kernel, package app plus dependencies only; serverless = provider runs event-triggered functions with no server to manage; microservices = one app split into small independent services."
- },
- {
-  "domain": "D3",
-  "family": "containerization",
-  "question": "An e-commerce platform is broken into small, independently deployable services such as cart, payment, and catalog that communicate over APIs and scale separately. Which design is this?",
-  "options": ["Microservices", "Containerization", "Virtualization", "Serverless"],
-  "correctIndex": 0,
-  "explanation": "Microservices. Splitting one app into small, independently deployed and scaled services is the microservices pattern. The tell: containerization = shared-kernel packaging of app plus dependencies; virtualization = a full guest OS per VM on a hypervisor; serverless = provider-run event functions."
- },
- {
-  "domain": "D3",
-  "family": "containerization",
-  "question": "Compared with running full virtual machines, which approach is lighter because the packaged units share the host operating system kernel instead of each shipping a complete guest OS?",
-  "options": ["Virtualization", "Serverless", "Containerization", "IaC"],
-  "correctIndex": 2,
-  "explanation": "Containerization. Sharing the host kernel avoids a full guest OS per instance, so containers are lighter than VMs. The tell: virtualization = full guest OS per VM on a hypervisor; serverless = provider runs functions with no servers to manage; IaC = provision infrastructure from code or templates."
- },
- {
-  "domain": "D3",
-  "family": "isolation-models",
-  "question": "An organization routes every configuration and management decision through one control point that all devices depend on. Which model does this describe?",
-  "options": ["Decentralized", "Centralized", "Air-gapped", "Logical segmentation"],
-  "correctIndex": 1,
-  "explanation": "Centralized. One control point that everything depends on is centralized management. The tell: decentralized = control distributed across many independent points; air-gapped = physically no network connection at all; logical segmentation = VLANs or subnets separating traffic on shared hardware."
- },
- {
-  "domain": "D3",
-  "family": "isolation-models",
-  "question": "Authority for decisions is spread across many independent nodes so that no single node is in charge. Which model is this?",
-  "options": ["Centralized", "Air-gapped", "Decentralized", "SDN"],
-  "correctIndex": 2,
-  "explanation": "Decentralized. Distributing control across many independent nodes with no single authority is decentralized. The tell: centralized = one control point everything depends on; air-gapped = physically isolated with no network link; SDN = a software controller that splits the control plane from the data plane."
- },
- {
-  "domain": "D3",
-  "family": "embedded-systems",
-  "question": "A household installs internet-connected smart thermostats, cameras, and doorbells that report to a phone app. Which category do these consumer devices fall under?",
-  "options": ["ICS", "IoT", "SCADA", "RTOS"],
-  "correctIndex": 1,
-  "explanation": "IoT. Internet-connected consumer smart devices are the Internet of Things. The tell: ICS = industrial control systems that run physical processes; SCADA = the supervisory layer that monitors and controls ICS over wide areas; RTOS = an operating system with guaranteed real-time timing."
- },
- {
-  "domain": "D3",
-  "family": "embedded-systems",
-  "question": "A manufacturing plant uses networked controllers and sensors to directly operate and regulate assembly-line machinery on the factory floor. Which term best describes these systems?",
-  "options": ["IoT", "RTOS", "ICS", "SCADA"],
-  "correctIndex": 2,
-  "explanation": "ICS. Industrial control systems directly operate physical processes on the plant floor. The tell: IoT = internet-connected consumer smart devices; RTOS = a real-time OS with guaranteed timing; SCADA = the supervisory layer that monitors and controls ICS across wide areas, rather than the floor-level machinery control itself."
- },
- {
-  "domain": "D3",
-  "family": "arch-considerations",
-  "question": "A streaming service designs its platform so it can smoothly add capacity to absorb a tenfold jump in concurrent viewers during a live event. Which architecture consideration is this?",
-  "options": ["Scalability", "Resilience", "Responsiveness", "Availability"],
-  "correctIndex": 0,
-  "explanation": "Scalability. The ability to grow to handle more load is scalability. The tell: resilience = recover and keep serving under failure; responsiveness = the latency of the response; availability = whether the service is up right now."
- },
- {
-  "domain": "D3",
-  "family": "arch-considerations",
-  "question": "Which architecture consideration specifically concerns how quickly a system returns an answer to a user request, measured as latency?",
-  "options": ["Availability", "Scalability", "Responsiveness", "Resilience"],
-  "correctIndex": 2,
-  "explanation": "Responsiveness. It is about latency, how fast a request is answered. The tell: availability = whether the service is up at all; scalability = the ability to grow with load; resilience = recovering and continuing to serve under failure."
- },
- {
-  "domain": "D3",
-  "family": "fail-modes",
-  "question": "A vault door is wired so that if building power is lost, the electronic lock stays locked to keep the contents protected. Which failure mode is this?",
-  "options": ["Fail-safe", "Fail-secure", "Fail-open", "Fail-closed"],
-  "correctIndex": 1,
-  "explanation": "Fail-secure. On failure the door stays locked to protect assets. The tell: fail-safe = the door unlocks on failure to protect people (life safety); fail-open and fail-closed = the network-device pair (permit versus block traffic), not physical door locks."
- },
- {
-  "domain": "D3",
-  "family": "fail-modes",
-  "question": "For a network device, which failure mode favors availability by continuing to permit traffic when the device can no longer enforce its rules?",
-  "options": ["Fail-closed", "Fail-secure", "Fail-safe", "Fail-open"],
-  "correctIndex": 3,
-  "explanation": "Fail-open. On failure the network device keeps permitting traffic, favoring availability. The tell: fail-closed = blocks traffic on failure to favor security; fail-safe and fail-secure = the physical door-lock pair (unlock for life safety versus stay locked for assets), not network devices."
- },
- {
-  "domain": "D3",
-  "family": "fail-modes",
-  "question": "An inline content filter is configured so that if its scanning engine crashes, it stops forwarding packets entirely rather than let unfiltered traffic pass. Which behavior is this?",
-  "options": ["Fail-open", "Fail-secure", "Fail-safe", "Fail-closed"],
-  "correctIndex": 3,
-  "explanation": "Fail-closed. On failure the network device blocks traffic, favoring security over availability. The tell: fail-open = permits traffic on failure to favor availability; fail-safe and fail-secure = physical door locks (unlock for life safety versus stay locked for assets), not network devices."
- },
- {
-  "domain": "D3",
-  "family": "active-passive",
-  "question": "In terms of its role, a device that can drop or modify packets in real time, as opposed to one that can only watch, is described as what?",
-  "options": ["Active", "Passive", "Inline", "Tap"],
-  "correctIndex": 0,
-  "explanation": "Active. On the role axis, a device that can act on traffic (block or modify) is active, versus passive which only watches. The tell: passive = observes only and cannot block; inline = a placement term (traffic flows through it), not the act-versus-observe role; tap = the connection that feeds a mirrored copy to a passive device."
- },
- {
-  "domain": "D3",
-  "family": "active-passive",
-  "question": "A security appliance is cabled so that all production traffic physically flows through it between two network segments. Which placement term describes this?",
-  "options": ["Tap", "Inline", "Passive", "Active"],
-  "correctIndex": 1,
-  "explanation": "Inline. Traffic physically passing through the device is inline placement. The tell: tap = a connection that mirrors a copy off to the side; passive = a role that can only observe; active = the role capable of blocking, which an inline device can be, but the question asks about placement."
- },
- {
-  "domain": "D3",
-  "family": "active-passive",
-  "question": "An analyzer receives only a mirrored copy of traffic and can never drop a packet, so in terms of acting on traffic its role is best described as what?",
-  "options": ["Inline", "Active", "Tap", "Passive"],
-  "correctIndex": 3,
-  "explanation": "Passive. A device that can only observe and never block has a passive role. The tell: active = can block or modify in the path; inline = a placement where traffic flows through the device; tap = the connection method feeding the mirrored copy, but the resulting role is passive."
- },
- {
-  "domain": "D3",
-  "family": "jump-proxy",
-  "question": "Administrators must first log into one hardened gateway host, and only from there can they open management sessions to servers in the protected internal zone. Which system is this?",
-  "options": ["Forward proxy", "Jump server", "Reverse proxy", "Proxy server"],
-  "correctIndex": 1,
-  "explanation": "Jump server. It is a hardened pivot host that admins connect through to reach internal systems. The tell: proxy server = an intermediary that forwards and filters client requests to services; forward proxy = brokers outbound client web requests; reverse proxy = fronts servers for inbound requests. A jump server is an admin access pivot, not a request broker."
- },
- {
-  "domain": "D3",
-  "family": "jump-proxy",
-  "question": "Which system's defining purpose is to serve as a secure administrative pivot, giving operators a single controlled entry point into an isolated management network?",
-  "options": ["Reverse proxy", "Proxy server", "Forward proxy", "Jump server"],
-  "correctIndex": 3,
-  "explanation": "Jump server. Its purpose is a controlled administrative pivot into a protected network. The tell: proxy server = an intermediary that forwards and filters client requests; forward proxy = brokers outbound client requests; reverse proxy = fronts servers for inbound client requests. None of the proxies is an administrative access gateway."
- },
- {
-  "domain": "D3",
-  "family": "jump-proxy",
-  "question": "Which term names the single hardened intermediary host, sometimes called a bastion host, that provides a controlled choke point for administrative access into a segmented network?",
-  "options": ["Jump server", "Proxy server", "Forward proxy", "Reverse proxy"],
-  "correctIndex": 0,
-  "explanation": "Jump server. Also called a bastion host, it is the hardened choke point for admin access into a segmented network. The tell: proxy server = a broker that forwards and filters client requests to services; forward proxy = handles outbound client web requests; reverse proxy = fronts servers for inbound client requests. The proxies broker application requests, not administrative sessions."
- },
- {
-  "domain": "D3",
-  "family": "ips-ids",
-  "question": "A network sensor analyzes copies of packets and raises alerts when it matches attack signatures, but by design it cannot drop or reset any connection. Which control is this?",
-  "options": ["HIDS", "IPS", "IDS", "HIPS"],
-  "correctIndex": 2,
-  "explanation": "IDS. A network sensor that only detects and alerts, out of band, with no blocking, is an IDS. The tell: IPS = a network device that also blocks inline; HIDS = host-based detect and alert on one system; HIPS = host-based blocking. Network plus alert-only equals IDS."
- },
- {
-  "domain": "D3",
-  "family": "ips-ids",
-  "question": "Deployed inline at the network edge, this control inspects every packet and automatically drops or resets connections matching malicious signatures before they reach internal hosts. Which control is it?",
-  "options": ["IPS", "IDS", "HIDS", "HIPS"],
-  "correctIndex": 0,
-  "explanation": "IPS. Inline network placement plus active blocking makes it an IPS. The tell: IDS = network detect and alert only, out of band; HIDS = host-based detect and alert; HIPS = host-based blocking on a single endpoint. Same detection engine, different response and placement."
- },
- {
-  "domain": "D3",
-  "family": "ips-ids",
-  "question": "IDS and IPS use the same detection methods. Which statement correctly captures the core difference between them?",
-  "options": ["The IDS blocks traffic inline while the IPS only alerts", "Both are inline but only the IDS can modify packets", "The IDS runs only on hosts while the IPS runs only on networks", "The IPS is placed inline and can block traffic while the IDS is out of band and only alerts"],
-  "correctIndex": 3,
-  "explanation": "The IPS is inline and blocks, the IDS is out of band and only alerts. That placement-and-response split is the whole distinction. The tell: IDS = detect and alert only, passive, out of band; IPS = detect and block, active, inline; the detection engine is identical in both."
- },
- {
-  "domain": "D3",
-  "family": "firewalls",
-  "question": "A firewall makes allow and deny decisions purely on source and destination IP addresses and TCP or UDP port numbers, with no awareness of the application data inside. At which layer does it operate?",
-  "options": ["Layer 7", "Layer 4", "WAF", "NGFW"],
-  "correctIndex": 1,
-  "explanation": "Layer 4. Filtering only by IP and port with no application awareness is Layer 4 filtering. The tell: Layer 7 = inspects application content; WAF = Layer 7 protection specifically for web apps; NGFW = adds application awareness and deep inspection on top of Layer 4 filtering."
- },
- {
-  "domain": "D3",
-  "family": "firewalls",
-  "question": "A next-generation firewall inspects the actual application payload to tell apart and control specific apps, such as a chat client versus a file-sharing tool. This deep, content-aware filtering happens at which layer?",
-  "options": ["UTM", "Layer 4", "WAF", "Layer 7"],
-  "correctIndex": 3,
-  "explanation": "Layer 7. Content-aware filtering that identifies specific applications happens at the application layer. The tell: Layer 4 = filters only by port and IP; UTM = an all-in-one appliance bundling several security functions; WAF = Layer 7 protection built specifically for web applications, not general app control."
- },
- {
-  "domain": "D3",
-  "family": "port-auth",
-  "question": "A laptop plugged into a conference-room jack cannot pass any traffic until it authenticates; the authentication exchange runs inside this standard, which acts as the gate controlling port access. Which standard is the gate?",
-  "options": ["EAP", "EAP-TLS", "802.1X", "PEAP"],
-  "correctIndex": 2,
-  "explanation": "802.1X. It is the port-based access control gate that stays closed until authentication succeeds. The tell: EAP = the authentication framework carried through the gate; EAP-TLS and PEAP = specific EAP methods, not the port-control standard itself."
- },
- {
-  "domain": "D3",
-  "family": "port-auth",
-  "question": "Methods such as EAP-TLS and PEAP are specific implementations of which broader authentication framework?",
-  "options": ["EAP", "802.1X", "EAP-TLS", "PEAP"],
-  "correctIndex": 0,
-  "explanation": "EAP. Extensible Authentication Protocol is the framework, and EAP-TLS and PEAP are methods within it. The tell: 802.1X = the port-based gate that carries EAP; EAP-TLS and PEAP = the specific methods themselves, not the overarching framework they run inside."
- },
- {
-  "domain": "D3",
-  "family": "secure-tunnels",
-  "question": "Which tunneling technology operates at the network layer, using protocols such as AH and ESP to secure traffic, making it the classic choice for site-to-site connections?",
-  "options": ["TLS VPN", "IPSec", "SD-WAN", "SASE"],
-  "correctIndex": 1,
-  "explanation": "IPSec. Network-layer tunneling with AH and ESP is typical for site-to-site links. The tell: TLS VPN = a transport or application-layer tunnel over port 443, friendly to clientless access; SD-WAN = software-defined WAN link optimization; SASE = SD-WAN plus cloud-delivered security services."
- },
- {
-  "domain": "D3",
-  "family": "secure-tunnels",
-  "question": "What is the general term for any technology that builds an encrypted tunnel across an untrusted network so that remote traffic appears to be on the private network?",
-  "options": ["SD-WAN", "SASE", "IPSec", "VPN"],
-  "correctIndex": 3,
-  "explanation": "VPN. It is the umbrella term for an encrypted tunnel over an untrusted network. The tell: IPSec = one specific network-layer VPN implementation; SD-WAN = software-defined WAN link optimization, not itself an encryption tunnel; SASE = SD-WAN combined with cloud-delivered security services."
- },
- {
-  "domain": "D3",
-  "family": "secure-tunnels",
-  "question": "A retail chain replaces expensive dedicated circuits with a centrally managed, software-defined overlay that applies traffic policies across inexpensive internet links to each store, without adding any cloud-delivered security services. Which technology is this?",
-  "options": ["IPSec", "SASE", "SD-WAN", "VPN"],
-  "correctIndex": 2,
-  "explanation": "SD-WAN. A software-defined WAN overlay that manages traffic policy across transport links, with no bundled cloud security, is SD-WAN. The tell: SASE = SD-WAN plus cloud-delivered security (ZTNA, secure web gateway, CASB) as one service; IPSec and VPN = encrypted tunnels, not policy-driven WAN link management."
- }
+  {"domain":"D3","family":"containerization","question":"A hosting provider runs twelve isolated customer servers on one physical machine. Each carries its own complete guest operating system, and a hypervisor allocates the hardware among them. Which technology is this?","options":["Containerization","Serverless","Microservices","Virtualization"],"correctIndex":3,"explanation":"Virtualization. A full guest OS per instance managed by a hypervisor is classic virtualization; containers would share one kernel instead. The tell: virtualization = full guest OS per VM on a hypervisor, containerization = shared kernel, app + deps only, serverless = provider-run functions, microservices = an application design pattern."},
+  {"domain":"D3","family":"containerization","question":"An e-commerce platform is rebuilt from one monolith into small, independently deployable services - cart, payment, catalog - that communicate over APIs and scale separately when load demands. Which design is this?","options":["Microservices","Containerization","Virtualization","Serverless"],"correctIndex":0,"explanation":"Microservices. Splitting an application into small independent services with API communication is the microservices architecture; how each service is hosted (containers, VMs, serverless) is a separate choice. The tell: microservices = the app split into independent services, containerization = the packaging technology, virtualization = full VMs, serverless = provider-managed functions."},
+  {"domain":"D3","family":"containerization","question":"Choosing between deployment approaches, an engineer notes that one is far lighter because its packaged units share the host operating system's kernel instead of each shipping a complete guest OS. Which approach is the lighter one?","options":["Virtualization","Serverless","Containerization","IaC"],"correctIndex":2,"explanation":"Containerization. Kernel sharing is what makes containers start in seconds and pack densely; each VM's full guest OS is the weight being avoided. The tell: containerization = shares the host kernel, virtualization = full guest OS each, serverless = no units to manage at all, IaC = provisioning from code, not a runtime model."},
+  {"domain":"D3","family":"isolation-models","question":"A global retailer routes every network configuration decision and policy change through one headquarters control point that every site depends on: consistent, but a single point of failure. Which model does this describe?","options":["Decentralized","Centralized","Air-gapped","Logical segmentation"],"correctIndex":1,"explanation":"Centralized. One control point making decisions for everything is centralization, with consistency as the upside and a single point of failure as the risk. The tell: centralized = one control point, decentralized = authority spread across independent nodes, air-gapped = physically disconnected, logical segmentation = VLAN/subnet separation."},
+  {"domain":"D3","family":"isolation-models","question":"A blockchain network spreads decision authority across thousands of independent nodes so that no single node controls the system and no single failure stops it. Which model is this?","options":["Centralized","Air-gapped","Decentralized","SDN"],"correctIndex":2,"explanation":"Decentralized. Authority distributed across independent nodes with no single controller is decentralization, trading consistency guarantees for resilience against single-point failure. The tell: decentralized = distributed control, centralized = one control point, air-gapped = no connectivity at all, SDN = software-driven network control (which is typically centralized)."},
+  {"domain":"D3","family":"embedded-systems","question":"A homeowner installs smart thermostats, cameras, and video doorbells that all connect to home Wi-Fi and report to a phone app through the vendor's cloud. Which category do these devices fall under?","options":["ICS","IoT","SCADA","RTOS"],"correctIndex":1,"explanation":"IoT. Internet-connected consumer smart devices are the Internet of Things, notorious for weak default credentials and rare patches. The tell: IoT = internet-connected consumer/smart devices, ICS = industrial systems running physical processes, SCADA = the wide-area supervisory layer, RTOS = the timing-guaranteed OS inside embedded gear."},
+  {"domain":"D3","family":"embedded-systems","question":"On a factory floor, networked controllers and sensors directly operate the assembly-line machinery - starting motors, regulating temperature, halting lines on faults. Which term BEST describes these systems?","options":["IoT","RTOS","ICS","SCADA"],"correctIndex":2,"explanation":"ICS. Industrial control systems directly run physical processes on-site; SCADA would be the supervisory layer watching many such sites over a wide area. The tell: ICS = runs the physical process, SCADA = supervises ICS across distances, IoT = consumer smart devices, RTOS = the real-time OS inside controllers."},
+  {"domain":"D3","family":"arch-considerations","question":"A streaming platform architect designs for a live sports final: the system must smoothly add capacity to absorb a tenfold jump in concurrent viewers, then shrink back afterward. Which architecture consideration is this?","options":["Scalability","Resilience","Responsiveness","Availability"],"correctIndex":0,"explanation":"Scalability. Growing (and shrinking) to handle changing load is scalability. The tell: scalability = grow to meet load, resilience = withstand failures and recover, responsiveness = how fast each request returns, availability = the uptime itself."},
+  {"domain":"D3","family":"arch-considerations","question":"An SLA workshop distinguishes uptime from speed: which architecture consideration specifically concerns how quickly the system returns an answer to each user request, measured as latency?","options":["Availability","Scalability","Responsiveness","Resilience"],"correctIndex":2,"explanation":"Responsiveness. Latency of responses is responsiveness; a system can be up (available) yet still painfully slow. The tell: responsiveness = latency of the response, availability = whether it responds at all, scalability = capacity growth, resilience = surviving failures."},
+  {"domain":"D3","family":"fail-modes","question":"A bank vault's electronic lock is wired so that if building power is lost, the lock stays engaged and the vault remains sealed, protecting the contents over convenience. Which failure mode is this?","options":["Fail-safe","Fail-secure","Fail-open","Fail-closed"],"correctIndex":1,"explanation":"Fail-secure. A physical lock that stays locked on failure to protect assets fails secure; unlocking to let people out would be fail-safe. The tell: fail-secure = door stays locked, assets first, fail-safe = door unlocks, life safety first, fail-open/fail-closed = the network-device pair, not door locks."},
+  {"domain":"D3","family":"fail-modes","question":"For a network security device, which failure mode favors availability by continuing to permit traffic through when the device can no longer enforce its rules?","options":["Fail-closed","Fail-secure","Fail-safe","Fail-open"],"correctIndex":3,"explanation":"Fail-open. Permitting traffic on failure keeps the business online at the cost of inspection. The tell: fail-open = network device permits on failure (availability), fail-closed = it blocks (security), fail-safe/fail-secure = the door-lock pair for people versus assets."},
+  {"domain":"D3","family":"fail-modes","question":"An inline content filter is configured so that if its scanning engine crashes, the device stops forwarding packets entirely rather than pass a single unfiltered byte. Which behavior is configured?","options":["Fail-open","Fail-secure","Fail-safe","Fail-closed"],"correctIndex":3,"explanation":"Fail-closed. A network device blocking all traffic on failure fails closed, choosing security over availability. The tell: fail-closed = block on failure, fail-open = permit on failure, fail-secure/fail-safe = the physical-lock pair. Network devices pair open/closed; doors pair safe/secure."},
+  {"domain":"D3","family":"active-passive","question":"A design review labels each security device by role: one can drop or rewrite packets in real time, while another can only watch and report. Which term describes the device that can act on traffic?","options":["Active","Passive","Inline","Tap"],"correctIndex":0,"explanation":"Active. The ability to block or modify traffic is the active role; placement (inline) is what usually makes it possible. The tell: active = can block/alter, passive = observe only, inline = the in-path placement, tap = the mirrored-copy placement."},
+  {"domain":"D3","family":"active-passive","question":"A security appliance is cabled between two network segments so that every production packet physically flows through it on the way to the other side. Which placement term describes this?","options":["Tap","Inline","Passive","Active"],"correctIndex":1,"explanation":"Inline. In-path cabling where traffic flows through the device is inline placement, the prerequisite for blocking (and a potential bottleneck). The tell: inline = traffic passes through it, tap = it receives a copy, active/passive = what the device can DO, not where it sits."},
+  {"domain":"D3","family":"active-passive","question":"A traffic analyzer receives only a mirrored copy of packets from a SPAN session and by design can never drop or alter a single packet. In terms of its ability to act on traffic, its role is best described as what?","options":["Inline","Active","Tap","Passive"],"correctIndex":3,"explanation":"Passive. Observation without intervention is the passive role; the SPAN feed is the tap/monitor placement that enforces it. The tell: passive = watch only, active = can block, tap = the copy-of-traffic placement, inline = the in-path placement."},
+  {"domain":"D3","family":"jump-proxy","question":"Firewall rules block all direct management sessions to the server zone. Administrators must first log into one hardened, MFA-protected gateway host, and only from there can they reach the servers. Which system is the gateway?","options":["Forward proxy","Jump server","Reverse proxy","Proxy server"],"correctIndex":1,"explanation":"Jump server. A controlled, hardened host that admin sessions pivot through is a jump server; proxies broker application traffic, not administrative access. The tell: jump server = admin pivot into a protected zone, forward proxy = outbound client requests, reverse proxy = inbound requests to servers, proxy server = the request-broker category."},
+  {"domain":"D3","family":"jump-proxy","question":"Which system's defining purpose is to act as a secure administrative pivot: one controlled, auditable entry point through which operators reach an isolated management network?","options":["Reverse proxy","Proxy server","Forward proxy","Jump server"],"correctIndex":3,"explanation":"Jump server. Admin access consolidation with hardening and logging is the jump server's whole reason to exist. The tell: jump server = the admin choke point, proxy server = brokers/filters application requests, forward proxy = for outbound clients, reverse proxy = for inbound service traffic."},
+  {"domain":"D3","family":"jump-proxy","question":"A hardening guide calls for a single fortified intermediary host, sometimes called a bastion host, to serve as the one controlled choke point for administrative access into a segmented network. Which term names it?","options":["Jump server","Proxy server","Forward proxy","Reverse proxy"],"correctIndex":0,"explanation":"Jump server. Bastion host and jump box are the common aliases; the function is a hardened admin gateway. The tell: jump server = hardened admin entry point, proxy server = application request broker, forward proxy = client-side broker, reverse proxy = server-side broker."},
+  {"domain":"D3","family":"ips-ids","question":"A sensor analyzes copies of network packets against attack signatures and raises alerts on matches, but by design it has no path or ability to drop or reset any connection. Which control is this?","options":["HIDS","IPS","IDS","HIPS"],"correctIndex":2,"explanation":"IDS. Network-level detection from copied traffic with alerting only is the intrusion detection system. The tell: IDS = out of band, alerts only, IPS = inline and blocks, HIDS = the detect-only version on one host, HIPS = the blocking version on one host."},
+  {"domain":"D3","family":"ips-ids","question":"Deployed inline at the network edge, a control inspects every passing packet and automatically drops or resets connections matching malicious signatures before they touch internal hosts. Which control is it?","options":["IPS","IDS","HIDS","HIPS"],"correctIndex":0,"explanation":"IPS. Inline placement plus automatic blocking is intrusion prevention. The tell: IPS = inline, detects AND blocks, IDS = passive detection and alerts, HIDS/HIPS = the host-based equivalents of each."},
+  {"domain":"D3","family":"ips-ids","question":"An interviewer notes that IDS and IPS share the same detection methods, then asks the candidate to state the core difference. Which statement is correct?","options":["The IDS blocks traffic inline while the IPS only alerts","Both are inline but only the IDS can modify packets","The IDS runs only on hosts while the IPS runs only on networks","The IPS is placed inline and can block traffic while the IDS is out of band and only alerts"],"correctIndex":3,"explanation":"IPS = inline and blocking; IDS = out of band and alerting. Same detection engine, different placement and response. The tell: the P is prevention (active, inline), the D is detection (passive, copy of traffic)."},
+  {"domain":"D3","family":"firewalls","question":"A legacy firewall makes allow/deny decisions purely on source and destination IP addresses and TCP/UDP port numbers, completely blind to the application data inside the packets. At which layer does it operate?","options":["Layer 7","Layer 4","WAF","NGFW"],"correctIndex":1,"explanation":"Layer 4. Ports and IP addresses are transport-layer attributes, so port/IP filtering is Layer 4 firewalling. The tell: Layer 4 = ports and IPs only, Layer 7 = sees the application payload, NGFW = the product class that adds Layer 7 awareness, WAF = HTTP-specific protection for web apps."},
+  {"domain":"D3","family":"firewalls","question":"A next-generation firewall identifies and controls specific applications - distinguishing a chat client from a file-sharing tool on the same port - by inspecting the actual payload. At which layer does this content-aware filtering happen?","options":["UTM","Layer 4","WAF","Layer 7"],"correctIndex":3,"explanation":"Layer 7. Recognizing applications by payload content is application-layer inspection, the Layer 7 capability that defines NGFWs. The tell: Layer 7 = application-content awareness, Layer 4 = ports and IPs, UTM = the all-in-one appliance category, WAF = web-app HTTP protection."},
+  {"domain":"D3","family":"port-auth","question":"A visitor's laptop plugged into a conference-room jack gets no network access at all until it authenticates. The credential exchange itself rides inside a gatekeeping standard that holds the switch port closed. Which standard is the gate?","options":["EAP","EAP-TLS","802.1X","PEAP"],"correctIndex":2,"explanation":"802.1X. Port-based access control that keeps the port shut until authentication succeeds is 802.1X; EAP is the framework it carries. The tell: 802.1X = the port gate, EAP = the authentication framework inside it, PEAP/EAP-TLS = specific EAP methods."},
+  {"domain":"D3","family":"port-auth","question":"A wireless engineer describes EAP-TLS and PEAP as specific implementations chosen within a broader, pluggable authentication framework. Which framework are they implementations of?","options":["EAP","802.1X","EAP-TLS","PEAP"],"correctIndex":0,"explanation":"EAP. The Extensible Authentication Protocol is deliberately a framework; PEAP and EAP-TLS are methods plugged into it. The tell: EAP = the extensible framework, 802.1X = the port-control standard that transports EAP, EAP-TLS = mutual certificate authentication, PEAP = EAP tunneled in server-side TLS."},
+  {"domain":"D3","family":"secure-tunnels","question":"Which tunneling technology operates at the network layer, using AH and ESP to authenticate and encrypt traffic, making it the classic choice for permanent site-to-site links between offices?","options":["TLS VPN","IPSec","SD-WAN","SASE"],"correctIndex":1,"explanation":"IPSec. AH and ESP at Layer 3 are IPSec's building blocks, and site-to-site tunnels are its home turf. The tell: IPSec = network-layer AH/ESP tunnels, TLS VPN = browser-based access over 443, SD-WAN = multi-link steering overlay, SASE = cloud-delivered networking plus security."},
+  {"domain":"D3","family":"secure-tunnels","question":"A study guide asks for the general term covering any technology that builds an encrypted tunnel across an untrusted network so remote traffic behaves as if it were on the private LAN. Which term is it?","options":["SD-WAN","SASE","IPSec","VPN"],"correctIndex":3,"explanation":"VPN. Virtual private network is the umbrella term; IPSec and TLS are particular ways to build one. The tell: VPN = the general encrypted-tunnel concept, IPSec = one implementation at Layer 3, SD-WAN = traffic steering across links, SASE = the cloud-delivered service bundle."},
+  {"domain":"D3","family":"secure-tunnels","question":"A retail chain drops its expensive dedicated circuits and adopts a centrally managed, software-defined overlay that applies traffic policies across cheap internet links to every store. No cloud-delivered security services are included. Which technology is this?","options":["IPSec","SASE","SD-WAN","VPN"],"correctIndex":2,"explanation":"SD-WAN. A software-defined overlay steering traffic across commodity links is SD-WAN; adding cloud security services on top would make it SASE, which the stem explicitly excludes. The tell: SD-WAN = the networking overlay alone, SASE = SD-WAN plus cloud security stack, IPSec = the tunnel protocol, VPN = the general tunnel concept."}
 ]

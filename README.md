@@ -51,15 +51,15 @@ per-family cheat sheet of all sibling terms and their tells.
 
 ## What is in the bank
 
-632 questions across 102 confusion families covering every sibling set in the
+707 questions across 102 confusion families covering every sibling set in the
 official SY0-701 V7 objectives (`SY0-701-objectives.pdf`, the source of truth):
 
 | Domain | Questions |
 |---|---|
 | D1 General Security Concepts | 84 |
-| D2 Threats, Vulnerabilities, Mitigations | 94 |
+| D2 Threats, Vulnerabilities, Mitigations | 154 |
 | D3 Security Architecture | 133 |
-| D4 Security Operations | 181 |
+| D4 Security Operations | 196 |
 | D5 Program Management and Oversight | 140 |
 
 Seven priority families get 20 questions each (they were the misses on a cold

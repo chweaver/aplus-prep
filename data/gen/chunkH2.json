@@ -1,202 +1,27 @@
 [
- {
-  "domain": "D5",
-  "family": "governance-hierarchy",
-  "question": "A required specification states that all wireless access points must use WPA3 and that VPN connections must use a named approved cipher suite. This mandatory technical specification that supports the broader security policy is a:",
-  "options": ["policy", "procedure", "guideline", "standard"],
-  "correctIndex": 3,
-  "explanation": "Standard. A mandatory specific technical requirement (WPA3, a named cipher suite) that supports a broader policy is a standard. The tell: policy = high-level mandatory intent (what and why); standard = the specific required spec (how much); procedure = ordered steps (how); guideline = recommended, not mandatory."
- },
- {
-  "domain": "D5",
-  "family": "governance-hierarchy",
-  "question": "A new analyst is handed a numbered document telling exactly how to enroll a user's hardware token, in sequence, so the task is done the same way every time. Which document type is this?",
-  "options": ["procedure", "standard", "guideline", "policy"],
-  "correctIndex": 0,
-  "explanation": "Procedure. A numbered, ordered set of steps done the same way every time is a procedure. The tell: procedure = step-by-step how-to; standard = required spec; guideline = optional recommendation; policy = high-level mandatory statement of intent."
- },
- {
-  "domain": "D5",
-  "family": "governance-hierarchy",
-  "question": "Which governance document is the high-level, mandatory statement of management intent that says what the organization will do and why, without listing specific settings or steps?",
-  "options": ["guideline", "procedure", "policy", "standard"],
-  "correctIndex": 2,
-  "explanation": "Policy. A high-level mandatory statement of management intent (what and why) with no specific settings is a policy. The tell: policy = the what and why; standard = the specific required spec; procedure = the ordered how-to steps; guideline = a non-mandatory recommendation."
- },
- {
-  "domain": "D5",
-  "family": "policies",
-  "question": "An ice storm knocks out the main office for a week. Management activates the plan that shifts staff to remote work, reroutes phone lines, and keeps invoicing and shipping running so the company still operates. Which policy is this?",
-  "options": ["disaster recovery", "business continuity", "incident response", "acceptable use policy"],
-  "correctIndex": 1,
-  "explanation": "Business continuity. Keeping the business operating (invoicing, shipping, staff working) during a disruption is business continuity. The tell: business continuity = keep the whole business running during disruption (broad); disaster recovery = restore IT systems after a disaster (technical subset); incident response = handle a security incident; acceptable use policy = rules for using company systems."
- },
- {
-  "domain": "D5",
-  "family": "policies",
-  "question": "After a lightning strike destroys the storage array, technicians follow a documented plan focused solely on rebuilding the affected servers, restoring the network, and recovering data from backups to bring technology back online. Which policy is this?",
-  "options": ["business continuity", "incident response", "change management", "disaster recovery"],
-  "correctIndex": 3,
-  "explanation": "Disaster recovery. A plan focused solely on restoring servers, network, and data from backup after a disaster is disaster recovery. The tell: disaster recovery = restore IT systems (reactive, technical); business continuity = keep the business running overall; incident response = respond to a breach; change management = control production changes."
- },
- {
-  "domain": "D5",
-  "family": "policies",
-  "question": "A policy requires that every proposed modification to production systems go through approval, impact analysis, a test, and a backout plan before it is applied. Which policy governs this?",
-  "options": ["change management", "SDLC", "incident response", "information security"],
-  "correctIndex": 0,
-  "explanation": "Change management. Requiring approval, impact analysis, testing, and a backout plan before modifying production is the change management policy. The tell: change management = control changes to production; SDLC = secure software development lifecycle; incident response = handle security incidents; information security = the overarching security policy."
- },
- {
-  "domain": "D5",
-  "family": "standards-procedures",
-  "question": "On a new hire's first day, IT follows the defined process to create accounts, assign role group memberships, and grant the access the person needs to start work. This procedure is:",
-  "options": ["offboarding", "onboarding", "playbook", "change management procedure"],
-  "correctIndex": 1,
-  "explanation": "Onboarding. Creating accounts and granting access for a new hire on day one is the onboarding procedure. The tell: onboarding = grant access for a new hire; offboarding = revoke access at exit; playbook = procedure for a specific scenario; change management procedure = steps to control production changes."
- },
- {
-  "domain": "D5",
-  "family": "standards-procedures",
-  "question": "A document specifies the exact minimum password length, the required character types, and the reuse limits that all accounts must meet. This required specification is a:",
-  "options": ["encryption standard", "playbook", "password standard", "offboarding procedure"],
-  "correctIndex": 2,
-  "explanation": "Password standard. A required specification of minimum length, character types, and reuse limits is the password standard. The tell: password standard = required password spec; encryption standard = required crypto spec; playbook = scenario procedure; offboarding procedure = access removal at exit."
- },
- {
-  "domain": "D5",
-  "family": "external-governance",
-  "question": "A company must honor the terms written into a signed contract and comply with laws such that a breach could lead to a lawsuit. This category of external governance, grounded in laws and contracts, is:",
-  "options": ["regulatory", "industry", "global", "legal"],
-  "correctIndex": 3,
-  "explanation": "Legal. Governance based on laws and signed contracts, where a breach can bring a lawsuit, is legal. The tell: legal = laws and contracts; regulatory = government rules with enforcement penalties; industry = sector frameworks like PCI DSS; global = worldwide jurisdiction scope."
- },
- {
-  "domain": "D5",
-  "family": "external-governance",
-  "question": "A multinational must follow the European Union's GDPR for data on EU residents while also meeting the rules of every other country it operates in. Governance at this worldwide, cross-country scope is:",
-  "options": ["global", "national", "local/regional", "industry"],
-  "correctIndex": 0,
-  "explanation": "Global. Governance that spans multiple countries worldwide (GDPR plus every other country's rules) is global scope. The tell: global = worldwide, crosses many countries; national = one country; local/regional = a state or municipality; industry = a sector framework, not a jurisdiction."
- },
- {
-  "domain": "D5",
-  "family": "data-roles",
-  "question": "A senior vice president is formally accountable for a customer dataset and sets its classification level and the rules for who may access it, though technical staff perform the hands-on work. This role is the:",
-  "options": ["data controller", "data owner", "data processor", "data custodian"],
-  "correctIndex": 1,
-  "explanation": "Data owner. The accountable senior person who sets classification and access rules (while others do the hands-on work) is the data owner. The tell: data owner = accountable, sets classification and rules; data controller = decides why and how data is processed; data processor = acts on the controller's instructions; data custodian = hands-on technical protection."
- },
- {
-  "domain": "D5",
-  "family": "data-roles",
-  "question": "A payroll bureau calculates and issues paychecks strictly according to the instructions and data provided by its client and makes no independent decisions about why the personal data is used. Under GDPR this bureau is the:",
-  "options": ["data controller", "data custodian", "data processor", "data owner"],
-  "correctIndex": 2,
-  "explanation": "Data processor. A bureau that processes personal data strictly on its client's instructions, making no decisions about purpose, is the data processor. The tell: data processor = acts on behalf of the controller; data controller = decides why and how; data custodian = hands-on technical care; data owner = accountable senior person over the data."
- },
- {
-  "domain": "D5",
-  "family": "data-roles",
-  "question": "A hospital determines which patient information it collects, the purposes for processing it, and the means used, then engages a cloud analytics vendor to crunch the numbers on its behalf. Under GDPR the hospital is the:",
-  "options": ["data processor", "data custodian", "data owner", "data controller"],
-  "correctIndex": 3,
-  "explanation": "Data controller. The organization that determines the purposes and means of processing (then hires a vendor to execute) is the data controller. The tell: data controller = decides why and how; data processor = acts for the controller; data owner = accountable senior person setting classification; data custodian = day-to-day technical protection."
- },
- {
-  "domain": "D5",
-  "family": "risk-assessment-types",
-  "question": "Company policy requires a full risk assessment every year on the same date regardless of whether anything has happened. This fixed-schedule cadence is:",
-  "options": ["recurring", "ad hoc", "one-time", "continuous"],
-  "correctIndex": 0,
-  "explanation": "Recurring. A risk assessment run on a fixed schedule (yearly, same date) regardless of events is recurring. The tell: recurring = fixed schedule; ad hoc = triggered by a specific event; one-time = a single point assessment with no repeat; continuous = ongoing automated monitoring."
- },
- {
-  "domain": "D5",
-  "family": "risk-assessment-types",
-  "question": "Before launching a brand-new product line, the firm commissions a single risk assessment for that specific launch, with no plan to repeat it. This assessment type is:",
-  "options": ["recurring", "continuous", "ad hoc", "one-time"],
-  "correctIndex": 3,
-  "explanation": "One-time. A single assessment for one specific launch with no plan to repeat is a one-time assessment. The tell: one-time = single, no repeat; recurring = on a fixed schedule; continuous = ongoing automated; ad hoc = event-triggered as needed."
- },
- {
-  "domain": "D5",
-  "family": "qual-quant",
-  "question": "An analyst multiplies an asset's value by an exposure factor and an annual rate of occurrence to produce a specific dollar figure for expected yearly loss. This numeric, money-based approach is:",
-  "options": ["qualitative", "quantitative", "semi-quantitative", "hybrid rating"],
-  "correctIndex": 1,
-  "explanation": "Quantitative. Producing a specific dollar figure from asset value, exposure factor, and ARO is quantitative analysis. The tell: quantitative = objective numbers and money (SLE, ALE, ARO); qualitative = subjective labels and judgment; semi-quantitative = ranking scales without true dollar figures; hybrid rating = a blend, still not pure money math."
- },
- {
-  "domain": "D5",
-  "family": "qual-quant",
-  "question": "A committee assigns each risk a color rating of red, amber, or green based on the members' expert judgment, using no dollar amounts at all. This approach is:",
-  "options": ["semi-quantitative", "quantitative", "qualitative", "hybrid analysis"],
-  "correctIndex": 2,
-  "explanation": "Qualitative. Assigning red, amber, or green by expert judgment with no dollar amounts is qualitative analysis. The tell: qualitative = subjective labels and judgment; quantitative = objective dollars and math; semi-quantitative = scored scales short of real money; hybrid analysis = a mix, still not pure monetary calculation."
- },
- {
-  "domain": "D5",
-  "family": "qual-quant",
-  "question": "Which risk analysis method produces objective results expressed in monetary terms using formulas such as SLE, ARO, and ALE?",
-  "options": ["quantitative", "qualitative", "semi-quantitative", "subjective scoring"],
-  "correctIndex": 0,
-  "explanation": "Quantitative. A method giving objective monetary results via SLE, ARO, and ALE formulas is quantitative. The tell: quantitative = numbers and money; qualitative = subjective ratings; semi-quantitative = numeric scales that are not real dollar figures; subjective scoring = judgment-based, not monetary."
- },
- {
-  "domain": "D5",
-  "family": "risk-math",
-  "question": "A database server is valued at $80,000. A ransomware event is expected to destroy 45% of its value in a single occurrence. What is the single loss expectancy (SLE)?",
-  "options": ["$18,000", "$36,000", "$44,000", "$80,000"],
-  "correctIndex": 1,
-  "explanation": "SLE = $36,000. SLE = asset value x exposure factor = $80,000 x 0.45 = $36,000. The tell: SLE is the loss from ONE event (AV x EF); $80,000 is the full asset value; $44,000 is the value remaining after the loss, not the loss; ALE would multiply this SLE by an ARO."
- },
- {
-  "domain": "D5",
-  "family": "risk-math",
-  "question": "A storage array is valued at $250,000. A power surge destroys 20% of its value each time it occurs and is expected once every 4 years. What is the annualized loss expectancy (ALE)?",
-  "options": ["$50,000", "$62,500", "$200,000", "$12,500"],
-  "correctIndex": 3,
-  "explanation": "ALE = $12,500. SLE = $250,000 x 0.20 = $50,000; ARO for once every 4 years = 1/4 = 0.25; ALE = SLE x ARO = $50,000 x 0.25 = $12,500. The tell: $50,000 is the SLE (one event); ALE is the yearly figure after applying ARO; once every 4 years means ARO = 0.25, not 4."
- },
- {
-  "domain": "D5",
-  "family": "risk-math",
-  "question": "A risk report shows a single loss expectancy of $30,000 and an annualized loss expectancy of $90,000. What is the annualized rate of occurrence (ARO)?",
-  "options": ["0.33", "2", "3", "1.5"],
-  "correctIndex": 2,
-  "explanation": "ARO = 3. Rearranging ALE = SLE x ARO gives ARO = ALE / SLE = $90,000 / $30,000 = 3 times per year. The tell: ARO is how many times per year; SLE ($30,000) is the single-event loss; ALE ($90,000) is the yearly loss; dividing ALE by SLE isolates the ARO."
- },
- {
-  "domain": "D5",
-  "family": "probability-impact",
-  "question": "A team rates the chance of a phishing attack succeeding this year as 'high' based on expert judgment rather than a computed statistic. This qualitative rating of chance is the:",
-  "options": ["probability", "likelihood", "impact", "exposure factor"],
-  "correctIndex": 1,
-  "explanation": "Likelihood. A subjective 'high' rating of an event's chance based on judgment is likelihood. The tell: likelihood = qualitative chance rating; probability = statistical, numerically computed chance; impact = magnitude of harm if it happens; exposure factor = percent of an asset lost per event."
- },
- {
-  "domain": "D5",
-  "family": "probability-impact",
-  "question": "In a quantitative model, the statistical, numerically computed chance that a given event will occur is called the:",
-  "options": ["probability", "likelihood", "exposure factor", "impact"],
-  "correctIndex": 0,
-  "explanation": "Probability. The statistical, numerically computed chance an event occurs is probability. The tell: probability = computed statistical chance; likelihood = subjective chance rating; exposure factor = percent of asset value lost; impact = severity of harm."
- },
- {
-  "domain": "D5",
-  "family": "risk-register",
-  "question": "The register states that once the number of unpatched critical systems exceeds ten, the risk becomes unacceptable and treatment must begin immediately. This preset level that triggers action is the:",
-  "options": ["key risk indicator", "risk owner", "risk threshold", "risk tolerance"],
-  "correctIndex": 2,
-  "explanation": "Risk threshold. The preset level (more than ten unpatched systems) at which action must begin is the risk threshold. The tell: risk threshold = the level that triggers action; key risk indicator = a metric warning that risk is rising; risk owner = the accountable person; risk tolerance = acceptable variance around a risk."
- },
- {
-  "domain": "D5",
-  "family": "risk-register",
-  "question": "Which risk register element is a measurable metric that provides an early warning that the level of a particular risk is increasing?",
-  "options": ["risk threshold", "risk owner", "risk tolerance", "key risk indicator"],
-  "correctIndex": 3,
-  "explanation": "Key risk indicator. A measurable metric giving early warning that a risk is increasing is a key risk indicator. The tell: key risk indicator = early-warning metric; risk threshold = the level that triggers action; risk owner = the accountable person; risk tolerance = acceptable variance before acting."
- }
+  {"domain":"D5","family":"governance-hierarchy","question":"A required specification mandates WPA3 on every wireless access point and a named approved cipher suite for all VPN connections. This binding technical specification supporting the broader security policy is a:","options":["policy","procedure","guideline","standard"],"correctIndex":3,"explanation":"Standard. Exact mandatory technical requirements implementing policy intent are standards. The tell: standard = the required specifics, policy = the high-level mandate, procedure = the step-by-step how, guideline = optional recommendation."},
+  {"domain":"D5","family":"governance-hierarchy","question":"A new analyst is handed a numbered document walking through exactly how to enroll a user's hardware token, step by step, so the task comes out identical every time regardless of who performs it. Which document type is this?","options":["procedure","standard","guideline","policy"],"correctIndex":0,"explanation":"Procedure. Sequenced steps producing a repeatable outcome are a procedure. The tell: procedure = ordered how-to steps, standard = what settings are required, policy = why and what at a high level, guideline = advisory best practice."},
+  {"domain":"D5","family":"governance-hierarchy","question":"In the governance hierarchy, which document is the high-level, mandatory statement of management intent - what the organization will do and why - deliberately free of specific settings or steps?","options":["guideline","procedure","policy","standard"],"correctIndex":2,"explanation":"Policy. Leadership's binding statement of intent sits at the top; standards and procedures translate it into specifics and steps. The tell: policy = mandatory intent, standard = mandatory specifics, procedure = mandatory steps, guideline = optional advice."},
+  {"domain":"D5","family":"policies","question":"An ice storm closes the main office for a week. Management activates the plan that shifts staff to remote work, reroutes the phone system, and keeps invoicing and shipping moving so customers barely notice. Which policy is this?","options":["disaster recovery","business continuity","incident response","acceptable use policy"],"correctIndex":1,"explanation":"Business continuity. The focus is keeping business FUNCTIONS running through the disruption, not rebuilding technology. The tell: business continuity = operations keep flowing, disaster recovery = the IT rebuild, incident response = security event handling, acceptable use = user conduct."},
+  {"domain":"D5","family":"policies","question":"Lightning destroys the storage array. Technicians follow a documented plan concerned solely with rebuilding the affected servers, restoring the network, and recovering data from backups to bring the technology back online. Which policy is this?","options":["business continuity","incident response","change management","disaster recovery"],"correctIndex":3,"explanation":"Disaster recovery. A plan scoped to restoring the technology stack after a catastrophe is DR. The tell: disaster recovery = rebuild the systems, business continuity = keep the business operating meanwhile, incident response = handle security breaches, change management = routine controlled change."},
+  {"domain":"D5","family":"policies","question":"Company policy requires every proposed modification to production systems to pass through approval, impact analysis, testing, and a documented backout plan before it may be applied. Which policy governs this?","options":["change management","SDLC","incident response","information security"],"correctIndex":0,"explanation":"Change management. Approval, impact analysis, testing, and backout are the change management gate for production modifications. The tell: change management = controlled changes to live systems, SDLC = how software is built, incident response = breach handling, information security = the umbrella policy."},
+  {"domain":"D5","family":"standards-procedures","question":"On a new hire's first day, IT runs the defined process: create accounts, add role group memberships, issue equipment, and grant day-one access. This procedure is:","options":["offboarding","onboarding","playbook","change management procedure"],"correctIndex":1,"explanation":"Onboarding. The structured entry process granting a new person accounts and access is onboarding, offboarding's mirror. The tell: onboarding = access granted at entry, offboarding = access removed at exit, playbook = scenario response script, change management procedure = system change steps."},
+  {"domain":"D5","family":"standards-procedures","question":"A binding document specifies the exact minimum password length, required character classes, and reuse limits every account in the company must meet. This required specification is a:","options":["encryption standard","playbook","password standard","offboarding procedure"],"correctIndex":2,"explanation":"Password standard. Mandatory password specifics - length, complexity, reuse - form the password standard. The tell: password standard = required password rules, encryption standard = required crypto algorithms, playbook = incident response script, offboarding procedure = exit steps."},
+  {"domain":"D5","family":"external-governance","question":"Counsel reminds the board that the company must honor terms written into signed contracts and comply with statutes, since breaching either invites lawsuits and liability. Which category of external governance is this?","options":["regulatory","industry","global","legal"],"correctIndex":3,"explanation":"Legal. Obligations grounded in laws and contracts, enforced through courts and liability, are the legal category. The tell: legal = statutes, contracts, lawsuits, regulatory = agency rules and fines, industry = sector-imposed standards like PCI DSS, global = the worldwide jurisdiction scope."},
+  {"domain":"D5","family":"external-governance","question":"A multinational must satisfy the EU's GDPR for European residents' data while simultaneously meeting the differing rules of every other country it operates in, reconciling them all in one program. Governance at this worldwide scope is:","options":["global","national","local/regional","industry"],"correctIndex":0,"explanation":"Global. Cross-country, worldwide obligations define the global governance scope, the hardest tier to reconcile. The tell: global = across countries, national = one country's laws, local/regional = state or municipal rules, industry = sector-imposed requirements."},
+  {"domain":"D5","family":"data-roles","question":"A senior vice president is formally accountable for the customer dataset: she sets its classification and approves who may access it, while technical staff execute the controls she mandates. Her role is the:","options":["data controller","data owner","data processor","data custodian"],"correctIndex":1,"explanation":"Data owner. Internal accountability for a dataset - setting classification and access rules - is the owner role; the custodians do the hands-on enforcement. The tell: owner = accountable decision-maker inside the org, custodian = technical caretaker, controller/processor = the GDPR pairing about purpose and instructions."},
+  {"domain":"D5","family":"data-roles","question":"A payroll bureau calculates and issues paychecks strictly per the data and instructions its client provides, making no independent decisions about why the personal data is used. Under GDPR, the bureau is the:","options":["data controller","data custodian","data processor","data owner"],"correctIndex":2,"explanation":"Data processor. Processing personal data solely on a controller's instructions defines the processor. The tell: processor = executes instructions, controller = decides purpose and means, custodian = internal technical caretaker, owner = internal accountable executive."},
+  {"domain":"D5","family":"data-roles","question":"A hospital determines which patient information it collects, why it is processed, and by what means - then engages a cloud analytics vendor to run the computations on its behalf. Under GDPR, the hospital is the:","options":["data processor","data custodian","data owner","data controller"],"correctIndex":3,"explanation":"Data controller. Deciding the purposes and means of processing makes the hospital the controller; the vendor computing on instructions is the processor. The tell: controller = why and how, processor = does the work as told, owner/custodian = internal accountability and caretaking roles."},
+  {"domain":"D5","family":"risk-assessment-types","question":"Policy requires a full enterprise risk assessment every October, same scope, same date, regardless of whether anything notable happened that year. Which assessment cadence is this?","options":["recurring","ad hoc","one-time","continuous"],"correctIndex":0,"explanation":"Recurring. Fixed-schedule, calendar-driven assessments are recurring. The tell: recurring = on the calendar, ad hoc = triggered by events, continuous = automated and always-on, one-time = a single non-repeating exercise."},
+  {"domain":"D5","family":"risk-assessment-types","question":"Before launching an entirely new product line, the firm commissions a single risk assessment scoped to that launch alone, with no intention of repeating it. Which assessment type is this?","options":["recurring","continuous","ad hoc","one-time"],"correctIndex":3,"explanation":"One-time. A single assessment for a specific occasion - a launch, merger, or migration - with no repeat cycle is one-time. The tell: one-time = single planned occasion, ad hoc = unplanned reaction to an event, recurring = scheduled repetition, continuous = constant automated monitoring."},
+  {"domain":"D5","family":"qual-quant","question":"An analyst multiplies asset value by an exposure factor, then by an annualized rate of occurrence, arriving at a precise expected yearly loss in dollars to justify a control purchase. Which risk analysis approach is this?","options":["qualitative","quantitative","semi-quantitative","hybrid rating"],"correctIndex":1,"explanation":"Quantitative. The SLE/ARO/ALE arithmetic producing currency figures is quantitative analysis, purpose-built for cost-benefit arguments. The tell: quantitative = formulas and dollars, qualitative = expert judgment in categories, semi-quantitative/hybrid = partial blends."},
+  {"domain":"D5","family":"qual-quant","question":"A steering committee assigns each risk a red, amber, or green rating based purely on members' expert judgment - no dollar figure appears in the workbook. Which approach is this?","options":["semi-quantitative","quantitative","qualitative","hybrid analysis"],"correctIndex":2,"explanation":"Qualitative. Judgment-based category ratings without monetary calculation are qualitative. The tell: qualitative = colors and categories from expert opinion, quantitative = computed currency, semi-quantitative = numeric scales standing in for money, hybrid = a deliberate mix."},
+  {"domain":"D5","family":"qual-quant","question":"An exam question asks which risk analysis method produces objective, monetary results using formulas such as SLE, ARO, and ALE. Which is it?","options":["quantitative","qualitative","semi-quantitative","subjective scoring"],"correctIndex":0,"explanation":"Quantitative. SLE, ARO, and ALE are the quantitative toolkit: objective, reproducible, expressed in money. The tell: quantitative = the formula family, qualitative = subjective ratings, semi-quantitative = scales without true currency, subjective scoring = qualitative by another name."},
+  {"domain":"D5","family":"risk-math","question":"A database server is valued at $80,000, and a ransomware event is expected to destroy 45 percent of its value in one occurrence. What is the single loss expectancy (SLE)?","options":["$18,000","$36,000","$44,000","$80,000"],"correctIndex":1,"explanation":"$36,000. SLE = asset value x exposure factor = $80,000 x 0.45. The tell: SLE is one event's damage - value times the loss percentage, nothing about frequency yet."},
+  {"domain":"D5","family":"risk-math","question":"A storage array is valued at $250,000. A power surge destroys 20 percent of its value per occurrence and is expected once every 4 years. What is the annualized loss expectancy (ALE)?","options":["$50,000","$62,500","$200,000","$12,500"],"correctIndex":3,"explanation":"$12,500. SLE = $250,000 x 0.20 = $50,000; ARO = 1/4 = 0.25; ALE = $50,000 x 0.25. The tell: $50,000 is the SLE trap - remember to multiply by the fractional ARO for events rarer than yearly."},
+  {"domain":"D5","family":"risk-math","question":"A risk report lists a single loss expectancy of $30,000 and an annualized loss expectancy of $90,000. What is the annualized rate of occurrence (ARO)?","options":["0.33","2","3","1.5"],"correctIndex":2,"explanation":"3. ARO = ALE / SLE = 90,000 / 30,000 = 3 events per year. The tell: when ALE exceeds SLE, the event strikes more than once a year - divide to recover the frequency."},
+  {"domain":"D5","family":"probability-impact","question":"A workshop rates the chance of a successful phishing attack this year as \"high,\" based on the panel's expert judgment rather than any computed statistic. This qualitative expression of chance is the:","options":["probability","likelihood","impact","exposure factor"],"correctIndex":1,"explanation":"Likelihood. In SY0-701 usage, likelihood is the qualitative judgment of chance; probability is its statistically computed counterpart. The tell: likelihood = judged chance (high/medium/low), probability = calculated chance (a number), impact = how bad, exposure factor = percent of value lost."},
+  {"domain":"D5","family":"probability-impact","question":"In a quantitative model, the numerically computed, statistical chance that a given event will occur is called the:","options":["probability","likelihood","exposure factor","impact"],"correctIndex":0,"explanation":"Probability. The computed numeric chance is probability; the qualitative judged version is likelihood. The tell: probability = the statistic, likelihood = the judgment, impact = severity of consequences, exposure factor = per-event loss percentage."},
+  {"domain":"D5","family":"risk-register","question":"The register specifies that once unpatched critical systems exceed ten, the risk becomes unacceptable and treatment must begin immediately. This preset level that forces action is the:","options":["key risk indicator","risk owner","risk threshold","risk tolerance"],"correctIndex":2,"explanation":"Risk threshold. The defined line that, once crossed, mandates action is the threshold; the metric being watched is the KRI. The tell: risk threshold = the trigger line, key risk indicator = the metric approaching it, risk owner = the accountable person, risk tolerance = acceptable deviation on the risk."},
+  {"domain":"D5","family":"risk-register","question":"An auditor asks which risk register element is a measurable metric providing early warning that a particular risk's level is climbing. Which is it?","options":["risk threshold","risk owner","risk tolerance","key risk indicator"],"correctIndex":3,"explanation":"Key risk indicator. The KRI is the watched metric whose movement warns of rising risk before an incident. The tell: KRI = the early-warning gauge, risk threshold = the line on that gauge that triggers action, risk owner = who must act, risk tolerance = how much drift is acceptable."}
 ]
