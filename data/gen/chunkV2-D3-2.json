@@ -1,0 +1,327 @@
+[
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "A network architect is deciding where to place a new customer-facing web server so that a compromise of the server cannot provide a direct path to the internal LAN. Which of the following placements is BEST?",
+    "options": [
+      "On the internal user VLAN behind the perimeter firewall",
+      "Outside the perimeter firewall at the internet-facing edge",
+      "In a screened subnet between the internet and the LAN",
+      "In the management zone alongside administrative systems"
+    ],
+    "correctIndex": 2,
+    "explanation": "A screened subnet. Placing the internet-facing web server in a buffer network means a compromise still faces a firewall before the internal LAN; the internal VLAN loses because a breached server there would sit directly beside user workstations. The tell: where a system sits determines what its compromise can reach - a screened subnet buffers internet-facing services from the internal LAN, and nothing internet-reachable belongs inside that LAN."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "A security engineer reviews the perimeter firewall rules: 1) permit tcp any -> 172.16.40.20 eq 443; 2) permit tcp any -> 172.16.40.20 eq 80; 3) permit ip 172.16.40.0/24 -> any; 4) deny ip any any. Host 172.16.40.20 is the company web server, and 172.16.40.0/24 is the internal user LAN. Which of the following flaws do the rules reveal?",
+    "options": [
+      "The public web server sits inside the internal user subnet",
+      "Rule 4 blocks all outbound internet access for internal users",
+      "The rules are evaluated in the wrong order for a deny-by-default policy",
+      "Port 80 should never be permitted inbound through the perimeter firewall"
+    ],
+    "correctIndex": 0,
+    "explanation": "A public web server on the internal user LAN. Rules 1 and 2 invite the entire internet to a host inside the user subnet, so compromising it puts an attacker beside every workstation; the outbound-blocking option loses because rule 3 explicitly permits the LAN outbound before the final deny. The tell: anything the internet can reach belongs in a screened subnet that buffers the internal LAN - placement determines what a compromise can reach next."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "An audit flags that a company's web front end, application tier, and database share one flat network with unrestricted traffic between them. Which of the following design changes BEST addresses the finding?",
+    "options": [
+      "A single next-generation firewall at the internet perimeter edge",
+      "Separate security zones with default-deny rules between tiers",
+      "Full-disk encryption on the database server",
+      "An IDS sensor attached to the existing flat segment"
+    ],
+    "correctIndex": 1,
+    "explanation": "Separate security zones. Grouping each tier into its own zone forces traffic through enforcement points that deny by default and allow only the flows each tier requires; the perimeter NGFW loses because it never sees tier-to-tier traffic moving inside the flat segment. The tell: zones create trust boundaries enforced between segments - a control can only protect traffic that actually crosses it."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "A security analyst scans a file server that needs to offer only SMB and finds 14 listening services, including 21/tcp ftp, 23/tcp telnet, 80/tcp http, and 445/tcp microsoft-ds. Which of the following BEST reduces the server's attack surface?",
+    "options": [
+      "Move the server to a screened subnet",
+      "Deploy an IDS sensor on the file server's network segment",
+      "Require TLS on the FTP and web services",
+      "Disable all services and close all ports except SMB"
+    ],
+    "correctIndex": 3,
+    "explanation": "Disable everything except SMB. The attack surface is the sum of exposed entry points, and removing 13 unneeded listeners eliminates those entry points outright; the IDS sensor loses because monitoring detects attacks against the surface without shrinking it. The tell: attack surface = the exposed openings (ports, services, accounts); attack vector = the path an attacker actually uses; hardening reduces the surface, monitoring only watches it."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "During a walkthrough, a technician finds an HVAC vendor's cellular support modem wired directly to a building controller, creating a path into the facility network that bypasses the perimeter firewall and appears on no network diagram. Which of the following infrastructure considerations did the design fail to account for?",
+    "options": [
+      "Connectivity",
+      "Device placement",
+      "Sensor placement",
+      "Responsiveness"
+    ],
+    "correctIndex": 0,
+    "explanation": "Connectivity. Every link into the environment is part of the security design, and an undocumented vendor modem that bypasses the firewall is an unmanaged path straight into the facility network; device placement loses because the controller itself sits where it belongs - the flaw is the untracked link reaching it. The tell: connectivity = accounting for every path in and out; device placement = where an asset or control sits; sensor placement = where monitoring collects; responsiveness = how quickly the system answers."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "A SOC's SIEM shows rich traffic events from headquarters but nothing at all from the branch office segment. Which of the following BEST restores visibility into the branch?",
+    "options": [
+      "Write additional correlation rules on the SIEM at headquarters",
+      "Move the SIEM collector to the perimeter",
+      "Deploy a sensor on the branch segment to feed the SIEM",
+      "Enable an inline IPS at headquarters"
+    ],
+    "correctIndex": 2,
+    "explanation": "A sensor on the branch segment. Monitoring only sees traffic where a collection point exists, so the unmonitored branch needs its own sensor forwarding events to the SIEM; extra correlation rules lose because no rule can analyze events that are never collected. The tell: the SIEM is the analysis engine and sensors are its eyes - each segment that must be visible needs a sensor, and placement determines what gets seen."
+  },
+  {
+    "domain": "D3",
+    "family": "infra-placement",
+    "question": "A security engineer must position an IDS sensor to record every attack attempted against the organization, including attempts the perimeter firewall drops. Which of the following placements meets the requirement?",
+    "options": [
+      "Inside the perimeter firewall",
+      "Outside the perimeter firewall",
+      "On the internal management VLAN",
+      "In front of the database servers"
+    ],
+    "correctIndex": 1,
+    "explanation": "Outside the perimeter firewall. A sensor placed before the enforcement point sees all attempts, including the ones the firewall would drop; the inside placement loses because it records only the traffic that penetrated. The tell: outside the firewall = every attempt; inside = only what got through; a sensor's placement determines what it can see."
+  },
+  {
+    "domain": "D3",
+    "family": "firewalls",
+    "question": "A security analyst reviewing web server logs finds: GET /login.php?user=admin' OR 1=1 -- HTTP/1.1 200. The request traversed the stateful perimeter firewall on port 443 unchallenged. Which of the following devices would BEST have blocked it?",
+    "options": [
+      "Unified threat management appliance",
+      "Intrusion detection system",
+      "Next-generation firewall",
+      "Web application firewall"
+    ],
+    "correctIndex": 3,
+    "explanation": "A web application firewall. The ' OR 1=1 -- payload is SQL injection carried inside a well-formed HTTPS request, and a WAF parses HTTP semantics to block exactly this class of web app attack; the NGFW loses because its strength is identifying applications and users, not inspecting a web form's input for injection. The tell: WAF = Layer 7 defense purpose-built for web apps (SQL injection, XSS); NGFW = general application-aware perimeter; IDS = alerts but cannot block; UTM = bundled functions without the WAF's app-payload focus."
+  },
+  {
+    "domain": "D3",
+    "family": "firewalls",
+    "question": "A consultant recommends replacing a branch office's UTM appliance with a next-generation firewall. Which of the following capabilities BEST distinguishes the NGFW from the UTM it replaces?",
+    "options": [
+      "Identifying and controlling applications regardless of port",
+      "Bundling antivirus and spam filtering into one appliance",
+      "Filtering traffic by source address and destination port",
+      "Caching frequently requested web content for users"
+    ],
+    "correctIndex": 0,
+    "explanation": "Application awareness. An NGFW performs deep packet inspection to identify and control the actual application regardless of port, and can tie rules to user identity; the antivirus-and-spam bundle loses because packaging many functions in one box is precisely what the UTM already is. The tell: UTM = all-in-one appliance for small sites; NGFW = application-aware deep packet inspection; the differentiator is identifying applications, not counting features."
+  },
+  {
+    "domain": "D3",
+    "family": "firewalls",
+    "question": "A firewall administrator must block a messaging application that employees run over TCP port 443. The rule base contains only entries such as: permit tcp 10.0.0.0/8 any eq 443; permit tcp 10.0.0.0/8 any eq 80; deny ip any any. Which of the following capabilities is the firewall missing?",
+    "options": [
+      "Stateful connection tracking",
+      "Network address translation",
+      "Layer 7 application content inspection",
+      "Layer 4 port and protocol filtering"
+    ],
+    "correctIndex": 2,
+    "explanation": "Layer 7 application content inspection. Rules keyed to addresses and ports cannot tell the messaging app apart from ordinary HTTPS on 443, so blocking it requires reading the application content itself; stateful tracking loses because the firewall already tracks connections, and state says nothing about which app is inside them. The tell: Layer 4 = filters on IP and port; Layer 7 = filters on application content; an app riding an allowed port is invisible to Layer 4 rules."
+  },
+  {
+    "domain": "D3",
+    "family": "secure-tunnels",
+    "question": "External contractors working from hotel networks that block most outbound ports must reach an internal web portal using only a browser, with no software installed. Which of the following remote access solutions BEST meets the requirements?",
+    "options": [
+      "A site-to-site IPSec tunnel between gateways",
+      "A TLS VPN portal on TCP port 443",
+      "An IPSec remote-access client on each laptop",
+      "An SD-WAN overlay across the hotel links"
+    ],
+    "correctIndex": 1,
+    "explanation": "A TLS VPN. It tunnels over TCP 443, the port guest networks almost never block, and supports clientless access from a browser; the IPSec client loses on both stated constraints, since it requires installed software and its network-layer protocols are commonly blocked on restrictive networks. The tell: TLS VPN = port 443, clientless-friendly remote access; IPSec = network-layer tunneling best suited to site-to-site links; SD-WAN = link optimization between sites, not user remote access."
+  },
+  {
+    "domain": "D3",
+    "family": "secure-tunnels",
+    "question": "A network engineer compares two packet captures. Between two application servers, ESP protects the payload but the original IP headers remain visible; between two site gateways, each original packet is fully encapsulated inside a new IP header. Which of the following identifies the IPSec modes, in order?",
+    "options": [
+      "Tunnel mode, then transport mode",
+      "AH first, then ESP",
+      "Main mode, then aggressive mode",
+      "Transport mode, then tunnel mode"
+    ],
+    "correctIndex": 3,
+    "explanation": "Transport mode, then tunnel mode. Transport mode encrypts only the payload and leaves the original IP header exposed, matching the host-to-host capture; tunnel mode encapsulates the entire original packet inside a new header for the gateway-to-gateway link. The AH-then-ESP option loses because those are IPSec protections (integrity-only vs encryption), not modes. The tell: transport = payload only, original headers visible, host-to-host; tunnel = whole packet wrapped in a new header, gateway-to-gateway."
+  },
+  {
+    "domain": "D3",
+    "family": "secure-tunnels",
+    "question": "Remote employees' video conferences are saturating the VPN concentrator. An engineer proposes tunneling only corporate-bound traffic and routing internet traffic directly from each laptop. Which of the following names the proposal and its security trade-off?",
+    "options": [
+      "Split tunnel; the internet-bound traffic is no longer inspected",
+      "Full tunnel; all traffic is inspected at the cost of concentrator bandwidth",
+      "Split tunnel; corporate-bound traffic loses its encryption in transit",
+      "Full tunnel; internet-bound traffic bypasses the concentrator entirely"
+    ],
+    "correctIndex": 0,
+    "explanation": "Split tunnel. Only corporate-bound traffic crosses the VPN, relieving the concentrator, but each laptop's direct internet traffic now bypasses corporate inspection and filtering; the full tunnel options lose because sending everything through the concentrator is exactly what is saturating it. The tell: full tunnel = all traffic through the VPN (full inspection, full bandwidth cost); split tunnel = corporate traffic only (efficient, but internet-bound traffic goes uninspected)."
+  },
+  {
+    "domain": "D3",
+    "family": "secure-tunnels",
+    "question": "A network manager who already operates SD-WAN across 40 branches asks what adopting SASE would add. Which of the following is the BEST answer?",
+    "options": [
+      "Centralized path selection across broadband and LTE links",
+      "Encrypted site-to-site tunnels between each pair of branch gateways",
+      "A cloud-delivered security stack (SWG, CASB, zero trust network access)",
+      "Dedicated firewall hardware appliances installed at every branch location"
+    ],
+    "correctIndex": 2,
+    "explanation": "The cloud-delivered security stack. SASE converges the SD-WAN connectivity the manager already has with security delivered from the cloud - secure web gateway, CASB, zero trust network access, firewall as a service; centralized path selection loses because that is the SD-WAN capability already in place. The tell: SD-WAN = optimized, policy-driven connectivity only; SASE = SD-WAN plus the cloud-delivered security stack that follows users anywhere."
+  },
+  {
+    "domain": "D3",
+    "family": "fail-modes",
+    "question": "An architect sets failure modes for two inline devices: an IPS on a hospital's clinical network, where downtime could delay patient care, and a firewall guarding a classified research enclave. Which of the following pairings is MOST appropriate?",
+    "options": [
+      "Fail-closed on the IPS and fail-open on the firewall",
+      "Fail-open on the IPS and fail-closed on the firewall",
+      "Fail-open on both devices",
+      "Fail-closed on both devices"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fail-open for the IPS and fail-closed for the firewall. On the clinical network availability is the overriding requirement, so a failed IPS should pass traffic rather than interrupt patient care; on the classified enclave confidentiality wins, so a failed firewall must block everything. Fail-closed on both loses because it would take clinical systems down for a priority the stem assigns only to the enclave. The tell: fail-open = failure permits traffic (availability first); fail-closed = failure blocks traffic (security first); choose per link based on which loss hurts more."
+  },
+  {
+    "domain": "D3",
+    "family": "ips-ids",
+    "question": "The same detection signature runs on a tap-fed IDS at one office and an inline IPS in front of an e-commerce site. The signature generates a false positive at both locations. Which of the following describes the difference in impact?",
+    "options": [
+      "The IDS blocks the flagged traffic while the inline IPS merely alerts",
+      "Both devices drop the matching connections until the rule is retuned",
+      "Neither deployment is affected because legitimate traffic never matches signatures",
+      "The IDS costs analyst triage time; the IPS blocks real customer orders"
+    ],
+    "correctIndex": 3,
+    "explanation": "The IDS wastes triage time while the IPS blocks real orders. A tap-fed IDS is out of band and can only alert, so its false positive costs analyst effort; the inline IPS acts on the same match and drops legitimate customer traffic, turning a tuning error into a business outage. The tell: IDS = passive, detect and alert only; IPS = inline, detect and block - identical detection, so a false positive is an annoyance on one and an outage on the other."
+  },
+  {
+    "domain": "D3",
+    "family": "jump-proxy",
+    "question": "A new administrator argues the corporate VPN already secures remote management, so routing SSH and RDP through the hardened, logged pivot host is redundant. Which of the following BEST explains why the host is still required?",
+    "options": [
+      "The VPN only provides network access; the jump server gates and logs admin sessions",
+      "The jump server terminates the VPN tunnel and assigns remote administrators their IP addresses",
+      "The VPN encrypts traffic only as far as the jump server, which re-encrypts it",
+      "The jump server filters and caches the administrators' web requests"
+    ],
+    "correctIndex": 0,
+    "explanation": "The jump server provides what the VPN cannot: one hardened, MFA-protected choke point where every management session into the server zone is authenticated and logged, while the VPN merely places the administrator on the network; the tunnel-termination option loses because that describes a VPN concentrator, not a jump server. The tell: VPN = gets you onto the network; jump server = the controlled, audited admin pivot within it; proxy = broker for client application requests, not admin logins."
+  },
+  {
+    "domain": "D3",
+    "family": "port-auth",
+    "question": "A wireless engineer must configure enterprise Wi-Fi so that the connecting client and the authentication server each authenticate with a certificate. Which of the following EAP methods satisfies the requirement?",
+    "options": [
+      "PEAP",
+      "EAP-TTLS",
+      "EAP-TLS",
+      "EAP-FAST"
+    ],
+    "correctIndex": 2,
+    "explanation": "EAP-TLS. It is the certificate-on-both-sides method, giving mutual authentication at the cost of deploying client certificates through a PKI; PEAP loses because only the server presents a certificate while the client authenticates with a password inside the protected tunnel. The tell: EAP-TLS = client and server certificates (mutual, strongest); PEAP = server certificate creating a TLS tunnel that shields a password exchange; EAP-TTLS and EAP-FAST likewise tunnel credentials rather than requiring client certificates."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "An assessment warns that every server and workstation in the company runs the same operating system, so one exploitable kernel flaw could compromise the entire estate at once. Which of the following resilience strategies BEST addresses this risk?",
+    "options": [
+      "Defense in depth",
+      "Platform diversity",
+      "Multi-cloud deployment",
+      "Continuity of operations"
+    ],
+    "correctIndex": 1,
+    "explanation": "Platform diversity. Deliberately mixing operating systems and vendors ensures a single flaw cannot compromise everything at once; defense in depth loses because stacking more control layers on one platform still falls to that platform's zero-day. The tell: platform diversity = vary the platforms themselves; defense in depth = layer different controls; multi-cloud = multiple cloud providers specifically; COOP = keep essential functions running during disruption."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "Despite deploying across three regions of its cloud provider, a company's application went down during the provider's global control-plane outage. Which of the following changes would BEST protect against a repeat?",
+    "options": [
+      "Add a fourth region with the current provider",
+      "Negotiate a stronger uptime SLA with the provider",
+      "Increase instance counts within each existing region",
+      "Distribute the workload across a second cloud provider"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multi-cloud. Regions of one provider share its global control plane and account infrastructure, so only a second provider survives a provider-level failure; adding a fourth region loses because it still sits inside the same failure domain that just collapsed. The tell: multi-region = redundancy within one provider; multi-cloud = redundancy across providers - the only defense when the provider itself is the single point of failure."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "During a ransomware outage, a hospital continues admitting and treating patients using predefined paper downtime procedures while IT rebuilds the encrypted systems. Which of the following does the paper process demonstrate?",
+    "options": [
+      "Continuity of operations",
+      "Disaster recovery",
+      "Incident response",
+      "Capacity planning"
+    ],
+    "correctIndex": 0,
+    "explanation": "Continuity of operations. COOP keeps essential business functions running through a disruption, including non-IT fallbacks such as paper workflows; disaster recovery loses because it is the parallel technical effort to restore the encrypted IT systems, not the ability to keep treating patients. The tell: COOP = the business keeps functioning during the outage; DR = the IT systems get rebuilt; incident response = handling the security incident itself."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "A resilience review finds that only one engineer knows how to restore the payroll mainframe, and that engineer retires in six months. Which of the following BEST addresses the finding?",
+    "options": [
+      "Upgrading the recovery site's network circuit",
+      "Purchasing additional software licenses for the failover systems",
+      "Cross-training more engineers on the restore procedure",
+      "Adding compute headroom at the recovery site"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cross-training - people capacity planning. Resilience depends on staffing depth, and one engineer holding all recovery knowledge is a key-person risk that hardware cannot fix; the licenses and circuit options lose because they address technology and infrastructure capacity while the gap is human. The tell: capacity planning covers people (staffing, cross-training), technology (licenses, compute), and infrastructure (power, cooling, bandwidth) - match the fix to the scarce resource."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "A disaster recovery cutover succeeds, but the recovery environment then fails under load: its database licenses cap concurrent connections and its compute cannot absorb production transaction volume. Which of the following capacity planning areas fell short?",
+    "options": [
+      "Infrastructure",
+      "Technology",
+      "People",
+      "Geographic dispersion"
+    ],
+    "correctIndex": 1,
+    "explanation": "Technology capacity. License caps and undersized compute mean the recovery software stack cannot carry production volume even though the cutover itself worked; infrastructure loses because power, cooling, and bandwidth were not the constraint here. The tell: technology capacity = licenses and compute; infrastructure capacity = power, cooling, bandwidth, and space; people capacity = staffing depth and cross-training."
+  },
+  {
+    "domain": "D3",
+    "family": "resilience-planning",
+    "question": "A failover test to the warm site fails when the site's network circuit saturates well below production bandwidth, even though its servers, licenses, and staffing were sufficient. Which of the following capacity planning areas was undersized?",
+    "options": [
+      "Technology",
+      "People",
+      "Platform diversity",
+      "Infrastructure"
+    ],
+    "correctIndex": 3,
+    "explanation": "Infrastructure capacity. Bandwidth, like power, cooling, and physical space, is physical-plant capacity, and a circuit that cannot carry production load starves an otherwise adequate site; technology loses because the servers and licenses were explicitly sufficient. The tell: infrastructure = power, cooling, bandwidth, space; technology = licenses and compute; people = staffing - the resource that failed names the category."
+  },
+  {
+    "domain": "D3",
+    "family": "continuity-testing",
+    "question": "Leadership wants proof that the standby data center can process the full daily transaction load but forbids any test that could interrupt live production service. Which of the following continuity tests should the team schedule?",
+    "options": [
+      "Parallel processing",
+      "Failover test",
+      "Simulation",
+      "Tabletop exercise"
+    ],
+    "correctIndex": 0,
+    "explanation": "Parallel processing. The standby site runs the same transactions alongside production and the outputs are compared, proving real capacity with zero interruption risk; a failover test loses because it proves the cutover by actually moving live service, which the stem forbids. The tell: parallel processing = run beside production and compare; failover = actually cut over; simulation = act out procedures in a controlled scenario; tabletop = discussion only."
+  }
+]

@@ -120,7 +120,7 @@
     "domain": "D2",
     "family": "system-vulns",
     "question": "A vulnerability bulletin describes a kernel flaw that lets any local user on the affected platform elevate to administrator rights, regardless of which applications are installed. Which of the following BEST categorizes this vulnerability?",
-    "options": ["Operating system-based", "Application", "Cloud-specific", "Web-based"],
+    "options": ["Operating system-based", "Application-based", "Cloud-specific", "Web application-based"],
     "correctIndex": 0,
     "explanation": "Operating system-based. A kernel privilege escalation flaw lives in the platform itself, which is why it applies no matter what software sits on top; application loses because the bulletin explicitly makes installed programs irrelevant. The tell: OS-based = kernel and platform service flaws; application = flaws in individual programs; web-based = exploited through a web application; cloud-specific = weaknesses of the cloud management plane and shared tenancy."
   },
@@ -144,7 +144,7 @@
     "domain": "D2",
     "family": "system-vulns",
     "question": "A penetration test reports that the company VPN still accepts an export-grade legacy cipher suite and 1024-bit RSA keys. No exploitation was attempted or observed. Which of the following BEST describes the finding?",
-    "options": ["Downgrade attack", "Collision attack", "Cryptographic vulnerability", "On-path attack"],
+    "options": ["Cryptographic downgrade attack", "Hash collision attack", "Cryptographic vulnerability", "On-path attack"],
     "correctIndex": 2,
     "explanation": "Cryptographic vulnerability. Weak ciphers and short keys are a weakness present in the configuration, reportable even though nothing was exploited; downgrade attack loses because no one forced the endpoints onto the weaker suite - it is merely accepted. The tell: cryptographic vulnerability = a weak algorithm, key, or implementation exists; downgrade attack = actively forcing negotiation onto the weaker option; collision = two inputs producing the same hash."
   },
@@ -152,7 +152,7 @@
     "domain": "D2",
     "family": "system-vulns",
     "question": "A code review finds a desktop client encrypts stored credentials with a single hardcoded key embedded in the binary and shared by every installation, so extracting it once decrypts them all. Which of the following vulnerability categories is this?",
-    "options": ["Misconfiguration", "Downgrade attack", "Malicious update", "Cryptographic vulnerability"],
+    "options": ["Misconfiguration", "Cryptographic downgrade attack", "Malicious update", "Cryptographic vulnerability"],
     "correctIndex": 3,
     "explanation": "Cryptographic vulnerability. A hardcoded, reused key is a flawed crypto implementation baked into the code; misconfiguration loses because no setting is wrong - the weakness ships inside the software and no configuration change can remove it. The tell: cryptographic vulnerability = weak algorithms, short keys, or flawed implementations (hardcoded or reused keys); misconfiguration = correct software with wrong settings; downgrade attack = forcing a weaker negotiation at runtime."
   },

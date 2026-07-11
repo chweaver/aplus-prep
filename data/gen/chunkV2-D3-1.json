@@ -1,0 +1,366 @@
+[
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A CIO is weighing a move from company-owned servers to a public cloud provider and asks which security duties the company would keep no matter which service model is chosen. Which of the following responsibilities NEVER transfers to the provider?",
+    "options": [
+      "Patching the hypervisor layer",
+      "Physical security of the data center",
+      "Protecting data and managing user access",
+      "Maintaining server hardware and firmware"
+    ],
+    "correctIndex": 2,
+    "explanation": "Protecting data and managing user access. Moving off owned hardware hands physical, hardware, and hypervisor duties to the provider, but who may touch the company's data is a decision only the customer can make; hypervisor patching is tempting because it is a security duty, yet it belongs to the provider the moment the workload leaves owned hardware. The tell: the customer always keeps responsibility for its data and identity/access in every service model; the service model only moves where the rest of the line sits."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A breach investigation finds customer records exposed because an IaaS storage bucket was configured for public read access. Which of the following parties is responsible for the misconfiguration?",
+    "options": [
+      "The cloud service provider",
+      "The cloud customer",
+      "The managed service provider",
+      "The software vendor"
+    ],
+    "correctIndex": 1,
+    "explanation": "The cloud customer. In IaaS the provider secures the facility, hardware, and hypervisor, while everything the customer configures, including storage permissions and the data itself, stays customer-side; the cloud service provider is tempting but it delivered the bucket exactly as the customer configured it. The tell: the customer always keeps responsibility for its data and identity/access in every service model; IaaS additionally leaves OS, application, and configuration duties with the customer."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A company runs Linux virtual machines on an IaaS platform. Which of the following security tasks belongs to the customer rather than the cloud service provider?",
+    "options": [
+      "Patching the guest operating system",
+      "Patching the hypervisor",
+      "Maintaining the physical host hardware",
+      "Securing the data center facility"
+    ],
+    "correctIndex": 0,
+    "explanation": "Patching the guest operating system. In IaaS the customer manages everything from the guest OS upward, including patches, applications, and data, while the provider owns the hypervisor, hardware, and facility; hypervisor patching is tempting because it also involves patching, but it sits below the line the provider controls. The tell: IaaS splits at the hypervisor - provider secures facility, hardware, and hypervisor; customer secures guest OS, applications, configuration, and data."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A team replaces its on-premises help desk software with a SaaS product, and the manager asks what security work is still theirs. Which of the following remains the customer's responsibility?",
+    "options": [
+      "Patching the application code",
+      "Hardening the server operating system",
+      "Maintaining the provider's network infrastructure",
+      "Classifying data and managing user access"
+    ],
+    "correctIndex": 3,
+    "explanation": "Classifying data and managing user access. In SaaS the provider runs the application, OS, and infrastructure, but deciding how sensitive the data is and which users get which access can only be done by the organization that owns the data; patching the application is tempting because customers patch in other models, yet in SaaS the vendor ships and maintains the code. The tell: SaaS moves nearly the whole stack to the provider, but data protection and identity/access stay with the customer in every service model."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A security architect needs the document that defines which security tasks the cloud provider performs and which stay with the customer under each service model. Which of the following should the architect consult?",
+    "options": [
+      "Service level agreement",
+      "Responsibility matrix",
+      "Memorandum of understanding",
+      "Statement of work"
+    ],
+    "correctIndex": 1,
+    "explanation": "Responsibility matrix. It is the table that maps each security duty to provider or customer per service model, which is exactly what the architect is asking for; the service level agreement is tempting because it also governs the provider relationship, but it covers uptime targets and penalties, not who secures what. The tell: responsibility matrix = who secures what per service model; SLA = measurable performance targets with penalties; MOU = non-binding intent; statement of work = deliverables for one specific job."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "An organization keeps regulated records on-premises and bursts its web workloads to a public cloud during peak season. Which of the following is the PRIMARY security challenge of this hybrid design?",
+    "options": [
+      "Enforcing consistent security controls across both environments",
+      "Transferring accountability for the regulated data to the provider",
+      "Losing physical control of the on-premises servers",
+      "Patching the cloud provider's hypervisor on schedule"
+    ],
+    "correctIndex": 0,
+    "explanation": "Enforcing consistent security controls across both environments. Hybrid cloud means two different toolsets, policy engines, and monitoring stacks, so keeping controls uniform across them is the core challenge; losing physical control of on-premises servers is tempting but false - those servers stay in the organization's own facility. The tell: hybrid = private plus public combined, and its signature implications are inconsistent controls, identity spanning both, and split monitoring; accountability for data never transfers in any model."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "During an intrusion investigation, analysts cannot correlate the public cloud's audit logs with events in the on-premises SIEM because formats and timestamps do not align. Which of the following hybrid cloud implications does this illustrate?",
+    "options": [
+      "Inconsistent identity federation between environments",
+      "Unencrypted data in transit between environments",
+      "Fragmented monitoring and logging across environments",
+      "An expanded physical attack surface"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fragmented monitoring and logging across environments. Hybrid architectures produce two log pipelines with different formats and toolsets, so visibility gaps appear exactly when correlation matters most; inconsistent identity federation is tempting because it is another hybrid implication, but nothing in the symptoms involves authentication across environments. The tell: hybrid implications each have a distinct symptom - correlation failure = monitoring gap; login sprawl = federation gap; exposed links = transit protection gap."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A SaaS vendor that processes a retailer's customer data suffers a breach, and regulators open an inquiry into the exposure. Which of the following BEST describes who is accountable for the data?",
+    "options": [
+      "The SaaS vendor, because it operated the breached platform",
+      "The cloud provider hosting the vendor's infrastructure",
+      "Neither party, because the contract divided the liability",
+      "The retailer, because accountability for its data never transfers"
+    ],
+    "correctIndex": 3,
+    "explanation": "The retailer, because accountability for its data never transfers. Outsourcing can transfer the operation of a service and some financial risk, but the data owner still answers to regulators for its customers' data; the SaaS vendor is tempting because it caused the breach, yet it faces contractual consequences, not the owner's regulatory accountability. The tell: with third-party vendors you can transfer operation and share risk, but accountability for the data always stays with the data owner."
+  },
+  {
+    "domain": "D3",
+    "family": "cloud-models",
+    "question": "A defense contractor must guarantee project data never resides on hardware shared with other organizations and must retain full control over physical security. Which of the following architecture models meets both requirements?",
+    "options": [
+      "On-premises infrastructure",
+      "Public cloud with dedicated host instances",
+      "Hybrid cloud with private connectivity",
+      "Community cloud shared with vetted partners"
+    ],
+    "correctIndex": 0,
+    "explanation": "On-premises infrastructure. Owning and operating the facility keeps data off third-party hardware entirely and leaves physical security in the contractor's hands, at the price of carrying every security duty alone; dedicated host instances are tempting because the hardware is not shared, but the provider still controls the building and the racks. The tell: on-premises = full control and full, unshared responsibility; every cloud option places data in a third party's facility under a shared responsibility split."
+  },
+  {
+    "domain": "D3",
+    "family": "containerization",
+    "question": "A deployment template containing a hardcoded database password is used to provision 200 cloud instances, giving every one of them the identical weakness. Which of the following infrastructure as code implications does this demonstrate?",
+    "options": [
+      "Configuration drift accumulating between instances",
+      "A single template flaw replicating into every deployment",
+      "Virtual machine sprawl escaping the asset inventory",
+      "A container escape exposing the shared host kernel"
+    ],
+    "correctIndex": 1,
+    "explanation": "A single template flaw replicating into every deployment. IaC builds every instance from the same definition, so a hardcoded secret or misconfiguration is stamped out identically at scale - the risk side of its consistency benefit; configuration drift is tempting but it is the problem IaC eliminates, not the one it creates. The tell: IaC = infrastructure provisioned from code/templates, so flaws propagate everywhere instantly; sprawl belongs to unmanaged VMs and escape belongs to containers sharing a kernel."
+  },
+  {
+    "domain": "D3",
+    "family": "containerization",
+    "question": "After migrating a batch job to event-driven serverless functions, a developer asks which operating system patching duties the team retains. Which of the following BEST describes the team's remaining security surface?",
+    "options": [
+      "The guest operating system and its runtime patches",
+      "The hypervisor and the underlying host firmware",
+      "The function code, its permissions, and its dependencies",
+      "The physical servers that execute each function"
+    ],
+    "correctIndex": 2,
+    "explanation": "The function code, its permissions, and its dependencies. Serverless removes every OS-level patching task because the provider owns and patches the entire platform beneath the function; the guest operating system option is tempting because that duty exists in IaaS, but in serverless there is no server the customer manages at all. The tell: serverless = the provider runs the functions and everything below them; the customer secures only code, function permissions, and third-party dependencies."
+  },
+  {
+    "domain": "D3",
+    "family": "containerization",
+    "question": "A retailer splits its monolithic application into dozens of independently deployed services that communicate over internal APIs. Which of the following is the security team's MOST significant new concern?",
+    "options": [
+      "Patching one large shared application runtime",
+      "A single code flaw exposing the entire application",
+      "Longer deployment cycles for every release",
+      "Authenticating and securing service-to-service API traffic"
+    ],
+    "correctIndex": 3,
+    "explanation": "Authenticating and securing service-to-service API traffic. Microservices turn internal function calls into network communication, so every API path between services must now be authenticated and encrypted (often with mutual TLS); a single flaw exposing the entire application is tempting but that is the monolith's problem the split just reduced. The tell: microservices = the app decomposed into small independent services, shrinking blast radius but multiplying network paths; the shared runtime and big-bang releases are monolith traits."
+  },
+  {
+    "domain": "D3",
+    "family": "isolation-models",
+    "question": "A security analyst reviews endpoint events from a classified air-gapped workstation: 09:12 new device connected - USB mass storage; 09:14 file written from drive E: report_tool.exe; 09:17 malware detected: report_tool.exe. Which of the following is the MOST likely infection vector?",
+    "options": [
+      "Removable media carried to the workstation",
+      "A phishing email attachment",
+      "A drive-by download from a compromised website",
+      "Lateral movement from an infected network peer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Removable media carried to the workstation. The USB insertion minutes before detection matches the one vector that can cross an air gap, since files reach the machine only by hand-carried media; a phishing attachment is tempting as the most common vector elsewhere, but this host cannot receive email. The tell: air-gapped = no network connection at all, so email, web, and lateral movement are impossible; removable media becomes THE attack vector for physically isolated systems."
+  },
+  {
+    "domain": "D3",
+    "family": "isolation-models",
+    "question": "A penetration test report states that compromising a single management component let testers rewrite forwarding behavior on every switch in the software-defined network. Which of the following components did the testers MOST likely capture?",
+    "options": [
+      "An access-layer switch forwarding packets",
+      "The centralized SDN controller",
+      "A passive network tap",
+      "An edge router at the perimeter"
+    ],
+    "correctIndex": 1,
+    "explanation": "The centralized SDN controller. SDN concentrates all forwarding decisions in the controller's control plane, so capturing it grants command of every device it programs - the architecture's single high-value target; an access-layer switch is tempting because switches move the packets, but one switch yields only its own traffic. The tell: SDN = control plane (the centralized controller deciding) split from the data plane (switches forwarding); own the controller and you own the network."
+  },
+  {
+    "domain": "D3",
+    "family": "isolation-models",
+    "question": "An OT engineer reviews three proposals for the turbine control network: a VLAN reachable only through a firewall, a network with no routed path to any other network, and a network with no physical connection at all. Which of the following correctly names the three designs in order?",
+    "options": [
+      "Isolation, segmentation, air gap",
+      "Air gap, isolation, segmentation",
+      "Segmentation, isolation, air gap",
+      "Segmentation, air gap, isolation"
+    ],
+    "correctIndex": 2,
+    "explanation": "Segmentation, isolation, air gap. A VLAN with a firewalled path keeps controlled connectivity (segmentation), removing every routed path cuts the network off logically (isolation), and removing the physical connection is the strongest form (air gap); the orderings that put air gap on a design that still has cabling lose because an air gap tolerates no connection whatsoever. The tell: segmentation = divided but controlled paths exist; isolation = fully cut off logically; air gap = physically disconnected, data moves only by removable media."
+  },
+  {
+    "domain": "D3",
+    "family": "embedded-systems",
+    "question": "A medical device maker documents the small purpose-built computer permanently installed inside each pacemaker to run its firmware and control pacing functions. Which of the following BEST classifies this component?",
+    "options": [
+      "Embedded system",
+      "IoT device",
+      "SCADA system",
+      "Real-time operating system"
+    ],
+    "correctIndex": 0,
+    "explanation": "Embedded system. A special-purpose computer built into a larger device to perform a fixed function is the definition of embedded, regardless of whether it ever touches a network; real-time operating system is tempting because a pacemaker likely runs one, but the question asks what the computer itself is, not which OS type it runs. The tell: embedded = purpose-built computer inside a device; IoT = internet-connected smart device; SCADA = supervisory layer over industrial control; RTOS = the timing-deterministic OS an embedded device may run."
+  },
+  {
+    "domain": "D3",
+    "family": "embedded-systems",
+    "question": "Dozens of smart cameras on a corporate LAN, still using factory default credentials, are discovered participating in a botnet. Which of the following would BEST secure this class of device going forward?",
+    "options": [
+      "Install endpoint detection and response agents on each camera",
+      "Rely on the vendor's automatic firmware update service",
+      "Block all outbound traffic at the perimeter firewall",
+      "Move the cameras to a dedicated VLAN and change default credentials"
+    ],
+    "correctIndex": 3,
+    "explanation": "Move the cameras to a dedicated VLAN and change default credentials. IoT devices cannot be hardened like servers, so the canonical fix is removing the default passwords that let the botnet in and segmenting the devices away from corporate assets; installing EDR agents is tempting but IoT hardware lacks the compute and vendor support to host them. The tell: IoT = weak by design (default credentials, rare patches, no room for agents), so the mitigation is segmentation plus credential and firmware hygiene, not endpoint software."
+  },
+  {
+    "domain": "D3",
+    "family": "embedded-systems",
+    "question": "A biomedical engineer explains why the hospital's standard endpoint protection agent cannot be installed on its infusion pumps. Which of the following BEST explains the constraint?",
+    "options": [
+      "The pumps' firmware storage is too small to retain security logs",
+      "The pumps' real-time operating system cannot tolerate added processing latency",
+      "The pumps' network segment drops the agent's management traffic",
+      "The pumps' warranty requires vendor approval for configuration changes"
+    ],
+    "correctIndex": 1,
+    "explanation": "The pumps' real-time operating system cannot tolerate added processing latency. An RTOS guarantees deterministic response within strict deadlines, and security software that steals cycles or delays scheduling can jeopardize dosing accuracy, so agents are unacceptable by design; the warranty answer is tempting because vendor restrictions are real, but the stated constraint is architectural, not contractual. The tell: RTOS = deterministic timing guarantees come first, so latency-adding security software is excluded and protection moves to the network (segmentation, monitoring)."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "An online brokerage selects a dual data center design with redundant components at every layer specifically to meet a contractual 99.99% uptime commitment. Which of the following architecture considerations drives this design?",
+    "options": [
+      "Resilience",
+      "Scalability",
+      "Availability",
+      "Responsiveness"
+    ],
+    "correctIndex": 2,
+    "explanation": "Availability. A design chosen to satisfy an uptime percentage targets the fraction of time the service is reachable, which is availability by definition; resilience is tempting because redundancy also helps systems recover, but the stated goal is the uptime number itself, not how gracefully failures are absorbed. The tell: availability = uptime now; resilience = absorbing failure and bouncing back; responsiveness = how fast each request is answered; scalability = growing to meet load."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "Presenting a cloud migration to the board, a CFO emphasizes that the company will stop purchasing servers as capital assets and instead pay a monthly operating expense. Which of the following architecture considerations is being weighed?",
+    "options": [
+      "Cost",
+      "Risk transference",
+      "Ease of deployment",
+      "Scalability"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cost. Trading capital expense for operating expense is the classic financial framing of a cloud migration, and it is purely about how the architecture is paid for; risk transference is tempting because moving to a provider does shift some risk, but the CFO's argument is about spending structure, not shifting liability. The tell: cost = the capex/opex expense of the architecture; risk transference = shifting risk to a third party; ease of deployment = effort to stand it up; scalability = growing with load."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "During a flash sale, an e-commerce site never goes down, but every page takes 40 seconds to load and customers abandon their carts. Which of the following architecture considerations failed?",
+    "options": [
+      "Availability",
+      "Resilience",
+      "Ease of recovery",
+      "Responsiveness"
+    ],
+    "correctIndex": 3,
+    "explanation": "Responsiveness. The site stayed up, so the failure is in how quickly it answers each request - latency, the heart of responsiveness; availability is tempting because slow feels like broken, but by definition the service remained reachable the entire time. The tell: availability = up and reachable now; responsiveness = answers fast; resilience = bounces back from failure; ease of recovery = how simply the environment is restored afterward."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "A tax preparation service must expand its infrastructure to absorb filing-deadline traffic many times its normal volume, then contract afterward to control spending. Which of the following architecture considerations does this requirement describe?",
+    "options": [
+      "Responsiveness",
+      "Scalability",
+      "Availability",
+      "Compute"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scalability. Growing to meet a load surge and shrinking back afterward is the ability to scale, which cloud elasticity automates; responsiveness is tempting because the surge threatens page speed, but the requirement is about adding and removing capacity, not the latency of each answer. The tell: scalability = grow (and shrink) with load; responsiveness = how fast requests are answered; availability = uptime; compute = the raw processing capacity a platform can offer."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "A startup must launch a new customer portal within five days and cannot wait for hardware procurement or rack installation. Which of the following architecture considerations favors a cloud-based design in this scenario?",
+    "options": [
+      "Patch availability",
+      "Ease of recovery",
+      "Ease of deployment",
+      "Power"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ease of deployment. The deciding factor is how quickly the solution can be stood up, and cloud with infrastructure as code deploys in hours while on-premises hardware takes weeks; ease of recovery is tempting because it also favors cloud, but the stem's constraint is launch speed, not restoring after a failure. The tell: ease of deployment = effort to stand the solution up initially; ease of recovery = effort to restore it after failure; patch availability = whether the vendor still ships fixes; power = electrical supply constraints."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "An architect designs the environment so nightly snapshots plus infrastructure as code templates can rebuild every server within one hour of a total failure. Which of the following considerations does this design optimize?",
+    "options": [
+      "Ease of recovery",
+      "Ease of deployment",
+      "Resilience",
+      "Availability"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ease of recovery. Snapshots plus redeployable templates make restoring the whole environment fast and simple after a failure, which is exactly what this consideration measures; resilience is tempting because recovery is part of bouncing back, but resilience describes the system continuing to serve through failure, while this design addresses how easily it is rebuilt afterward. The tell: ease of recovery = how quickly/simply you restore after failure; ease of deployment = initial stand-up effort; resilience = absorbing failure while serving; availability = the uptime outcome."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "An engineer comparing two firewall appliance lines notes that one vendor still releases regular security fixes while the other line is end-of-sale with no further updates promised. Which of the following architecture considerations differentiates the two options?",
+    "options": [
+      "Inability to patch",
+      "Compute",
+      "Resilience",
+      "Patch availability"
+    ],
+    "correctIndex": 3,
+    "explanation": "Patch availability. Whether the vendor still supplies security fixes is a vendor-side supply question, and it separates a supported product line from one heading to end-of-life; inability to patch is tempting but that describes a system that cannot practically be updated at all, while both appliances here can apply patches if the vendor ships them. The tell: patch availability = does the vendor still supply fixes (vendor-side); inability to patch = the system itself cannot be updated (system-side), which drives compensating controls."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "An industrial controller on the production line has no mechanism to receive software updates of any kind, so the security team surrounds it with firewalled segmentation and monitoring. Which of the following considerations forced the compensating controls?",
+    "options": [
+      "Patch availability",
+      "Inability to patch",
+      "Ease of recovery",
+      "Compute"
+    ],
+    "correctIndex": 1,
+    "explanation": "Inability to patch. A device with no update mechanism can never be fixed directly, so protection must be wrapped around it with segmentation and monitoring instead; patch availability is tempting but that concerns whether a vendor still ships fixes, and no fix could be applied to this controller even if one existed. The tell: inability to patch = the system itself cannot be updated (system-side constraint driving compensating controls); patch availability = whether the vendor supplies fixes (vendor-side)."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "Battery-operated field sensors along a pipeline cannot sustain always-on encrypted radio links without exhausting their batteries within days. Which of the following architecture considerations constrains the security design?",
+    "options": [
+      "Compute",
+      "Cost",
+      "Power",
+      "Resilience"
+    ],
+    "correctIndex": 2,
+    "explanation": "Power. The limiting factor is the energy budget of battery devices, which decides whether always-on encrypted communication is even feasible; compute is tempting because small sensors are also processor-limited, but the stem's stated failure is battery drain, not processing capacity. The tell: power = the electrical supply/consumption constraint of the architecture; compute = available processing capacity; cost = the expense trade-off; resilience = bouncing back from failure."
+  },
+  {
+    "domain": "D3",
+    "family": "arch-considerations",
+    "question": "A security architect finds that the low-cost microcontroller inside each smart meter cannot perform TLS handshakes or host any monitoring agent. Which of the following architecture considerations limits the controls that are even possible?",
+    "options": [
+      "Power",
+      "Responsiveness",
+      "Patch availability",
+      "Compute"
+    ],
+    "correctIndex": 3,
+    "explanation": "Compute. The microcontroller lacks the processing capacity for cryptographic handshakes or agent software, so the available controls are dictated by what the hardware can execute; power is tempting because constrained devices often face both limits, but the stem describes processing shortfalls, not battery drain. The tell: compute = processing capacity shapes which controls can run at all; power = the energy budget; patch availability = vendor-supplied fixes; responsiveness = how fast the system answers."
+  }
+]

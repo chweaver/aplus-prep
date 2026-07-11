@@ -1,0 +1,366 @@
+[
+  {
+    "domain": "D4",
+    "family": "hardening-targets",
+    "question": "An OT engineer must harden programmable logic controllers that run a vendor real-time OS: no endpoint agents can be installed, and patches arrive only at annual maintenance windows. Which of the following actions BEST reduces the risk?",
+    "options": [
+      "Deploy endpoint detection and response agents to each controller",
+      "Apply operating system patches as soon as the vendor releases them",
+      "Isolate the controllers on a restricted network segment",
+      "Enroll the controllers in the mobile device management platform"
+    ],
+    "correctIndex": 2,
+    "explanation": "Segmentation with strict access rules. When ICS/SCADA gear cannot take agents or timely patches, compensating network controls shrink what can reach the flaw; agents and immediate patching both violate the stated constraints. The tell: match the hardening action to the device class: agents and rapid patching fit servers and workstations, while unpatchable ICS, embedded, and IoT gear gets segmentation and compensating controls."
+  },
+  {
+    "domain": "D4",
+    "family": "hardening-targets",
+    "question": "A network technician is racking new access switches for a branch office. Before connecting them to the production network, which of the following hardening steps should the technician perform FIRST?",
+    "options": [
+      "Change the default administrative credentials",
+      "Disable all unused switch ports",
+      "Restrict management sessions to SSH only",
+      "Move management traffic to a dedicated VLAN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Change the default credentials. Out-of-box passwords are published and actively scanned for, so eliminating them precedes every other step; disabling unused ports matters, but a default admin login undoes all of it instantly. The tell: all four are legitimate switch hardening moves, and default credentials come first because they are the fastest, best-known way in."
+  },
+  {
+    "domain": "D4",
+    "family": "hardening-targets",
+    "question": "A security engineer inherits a cloud environment where the management console accepts password-only logins and a storage bucket is publicly readable. Which of the following BEST hardens this environment?",
+    "options": [
+      "Disable unused physical ports on the data center core switches",
+      "Install host-based firewalls on all employee workstations",
+      "Push signed firmware updates to the wireless access points",
+      "Require console MFA and remove public access from the bucket"
+    ],
+    "correctIndex": 3,
+    "explanation": "MFA on the console plus closing the public bucket. Cloud hardening targets identity and exposed storage because the console and buckets are the internet-facing attack surface; the other actions harden switches, workstations, and access points, none of which the findings involve. The tell: match the hardening action to the device class: console MFA and bucket permissions are cloud infrastructure moves, while port and firmware work belongs to network gear."
+  },
+  {
+    "domain": "D4",
+    "family": "hardening-targets",
+    "question": "An office installs smart TVs and connected thermostats that cannot run the corporate endpoint agent. Which of the following BEST limits the risk these devices introduce?",
+    "options": [
+      "Install the endpoint agent using a lightweight configuration",
+      "Change the default credentials and use a dedicated VLAN",
+      "Enable full-disk encryption and screen locks on each device",
+      "Require the devices to authenticate through the VPN concentrator"
+    ],
+    "correctIndex": 1,
+    "explanation": "Change defaults and isolate on a dedicated VLAN. IoT devices ship with well-known passwords and cannot host security software, so credential hygiene plus segmentation contains whatever they catch; any agent option contradicts the stated constraint. The tell: match the hardening action to the device class: where software cannot be installed, network isolation and default-credential changes carry the load."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-connections",
+    "question": "Several hotel guests report stolen credentials after their laptops joined an attacker's access point broadcasting the same network name as the hotel's. Which of the following connection methods was exploited?",
+    "options": [
+      "Wi-Fi",
+      "Cellular",
+      "Bluetooth",
+      "NFC"
+    ],
+    "correctIndex": 0,
+    "explanation": "Wi-Fi. A rogue access point imitating a legitimate network name is an evil twin, an attack unique to Wi-Fi association; cellular's rogue equivalent is a fake base station, not a named access point. The tell: match the radio to its attack: evil twins and open hotspots are Wi-Fi, rogue base stations are cellular, unsolicited pairing is Bluetooth."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-connections",
+    "question": "While waiting at an airport gate, a user's phone repeatedly displays pairing requests from an unknown nearby device. Which of the following settings changes BEST stops the unwanted requests?",
+    "options": [
+      "Disable automatic joining of open Wi-Fi networks",
+      "Turn off cellular data roaming",
+      "Set Bluetooth to non-discoverable mode",
+      "Remove all saved wireless network profiles"
+    ],
+    "correctIndex": 2,
+    "explanation": "Set Bluetooth to non-discoverable. Pairing requests arrive over Bluetooth, and hiding the device from discovery stops strangers from initiating them; the Wi-Fi and cellular options adjust radios that play no part in pairing. The tell: match the radio to its attack: unsolicited pairing while discoverable is Bluetooth, evil twins and open hotspots are Wi-Fi, rogue base stations are cellular."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-connections",
+    "question": "A security manager reviewing egress controls realizes some smartphone traffic never passes through the corporate firewall or web filter, even when users are inside the building. Which of the following connection methods MOST likely explains this?",
+    "options": [
+      "Corporate Wi-Fi",
+      "Guest Wi-Fi",
+      "Bluetooth",
+      "Cellular"
+    ],
+    "correctIndex": 3,
+    "explanation": "Cellular. Traffic over the carrier's network goes straight to the internet and never touches the corporate perimeter, so on-premises controls cannot see or filter it; guest Wi-Fi is tempting but still rides equipment the company controls. The tell: cellular bypasses the corporate perimeter entirely, both Wi-Fi networks traverse company infrastructure, and Bluetooth is short-range pairing, not an internet path."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-security",
+    "question": "A penetration tester captures a WPA2 four-way handshake at a small office and cracks the passphrase offline overnight. The office has no RADIUS server and must keep using a shared passphrase. Which of the following upgrades BEST prevents a repeat?",
+    "options": [
+      "WPA2-Enterprise",
+      "WPA3-Personal",
+      "A longer WPA2 passphrase",
+      "Disabling SSID broadcast"
+    ],
+    "correctIndex": 1,
+    "explanation": "WPA3-Personal. SAE replaces the WPA2 four-way handshake, so a captured exchange cannot be brute-forced offline even with a modest passphrase; WPA2-Enterprise would also remove the shared secret but requires the RADIUS server the office lacks. The tell: SAE defeats offline dictionary attacks on captured handshakes, while longer passphrases only slow the same crack and hidden SSIDs stop nothing."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-security",
+    "question": "A build checklist for a new enterprise WLAN has two blank fields: the cryptographic protocol and the authentication protocol. Which of the following correctly fills both fields?",
+    "options": [
+      "Cryptographic: WPA3, authentication: 802.1X with EAP",
+      "Cryptographic: 802.1X with EAP, authentication: WPA3",
+      "Cryptographic: RADIUS, authentication: AES",
+      "Cryptographic: SAE, authentication: WEP"
+    ],
+    "correctIndex": 0,
+    "explanation": "WPA3 for encryption with 802.1X/EAP for authentication. WPA3 defines how traffic is encrypted while 802.1X carries EAP to prove who is connecting, so each blank gets the knob that does that job; the second option is tempting because it lists the right names with the roles swapped. The tell: the encryption choice and the identity-proving choice are two separate settings: WPA3/AES encrypts, 802.1X/EAP authenticates, RADIUS is the server behind 802.1X, and WEP is a broken legacy cipher."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-security",
+    "question": "A hospital requires every clinician to join the wireless network with individual directory credentials checked by a central server, so a departing employee's access can be revoked without re-keying any devices. Which of the following should be deployed?",
+    "options": [
+      "WPA3-Personal",
+      "Enhanced Open",
+      "WPA3-Enterprise",
+      "WPA2-Personal"
+    ],
+    "correctIndex": 2,
+    "explanation": "WPA3-Enterprise. It authenticates each user through 802.1X against a RADIUS server, so access is per-person and individually revocable; WPA3-Personal is tempting for the modern encryption but still shares one passphrase everyone would have to change. The tell: Personal modes share a passphrase, Enterprise modes authenticate individuals against a central server, and Enhanced Open encrypts open networks without authenticating anyone."
+  },
+  {
+    "domain": "D4",
+    "family": "wireless-security",
+    "question": "A wireless engineer proposes replacing WPA2-Personal across the campus network. Which of the following BEST describes the security improvement WPA3's SAE handshake provides over the WPA2 pre-shared key exchange?",
+    "options": [
+      "It hides the network name from unauthorized clients",
+      "It requires each user to present individual directory credentials",
+      "It removes the need for any passphrase on the network",
+      "Captured handshakes cannot be cracked offline for the passphrase"
+    ],
+    "correctIndex": 3,
+    "explanation": "Offline cracking resistance. SAE's exchange never exposes material an attacker can grind through a dictionary, so capturing the handshake yields nothing, unlike WPA2's crackable four-way handshake; individual credentials describe Enterprise mode, a separate choice from SAE. The tell: SAE defeats offline dictionary attacks on captured handshakes but still uses a shared passphrase, so the passphrase-free and per-user options describe Enhanced Open and WPA3-Enterprise instead."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-deployment",
+    "question": "Staff will enroll personal phones for work email only if the company can never view or erase their personal photos and messages. Which of the following MDM configurations BEST satisfies the staff and the security team?",
+    "options": [
+      "Full-device remote wipe whenever a phone is reported lost",
+      "A work container with selective wipe of corporate data",
+      "Blocking installation of all non-approved personal applications",
+      "Continuous location tracking of every enrolled device"
+    ],
+    "correctIndex": 1,
+    "explanation": "A work container with selective wipe. Containerization walls corporate mail and files off from personal content, so the company can erase only its own data; a full-device wipe is exactly the personal-data destruction employees refused to accept. The tell: selective wipe removes the corporate container alone, full wipe factory-resets the whole personal phone, and app blocking or tracking control the device rather than separating the data."
+  },
+  {
+    "domain": "D4",
+    "family": "mobile-deployment",
+    "question": "An organization is ending its employee-owned phone program because support costs are unsustainable, but employees insist on keeping a choice of handset. Which of the following deployment models BEST meets both goals?",
+    "options": [
+      "CYOD",
+      "COPE",
+      "BYOD",
+      "MDM"
+    ],
+    "correctIndex": 0,
+    "explanation": "CYOD. Employees pick from a short company-purchased, supported list, preserving choice while the help desk supports only approved models; COPE keeps company ownership but the company picks the device, dropping the choice employees demanded. The tell: BYOD = employee-owned, COPE = company-owned and company-chosen with personal use allowed, CYOD = employee choice from a company-owned approved list, and MDM is the management tool, not a deployment model."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "A web team receives two findings in the same week: the login form is bypassed with the input ' OR 1=1 and the comment field stores script tags that later run in visitors' browsers. Which of the following practices remediates BOTH findings?",
+    "options": [
+      "Code signing certificates",
+      "Secure cookie attributes",
+      "Server-side input validation",
+      "Application sandboxing"
+    ],
+    "correctIndex": 2,
+    "explanation": "Server-side input validation. Rejecting or sanitizing untrusted input before processing defeats both SQL injection and cross-site scripting, the two findings described; secure cookies protect the session token but stop neither injection. The tell: input validation stops injected input at the door, secure cookies protect tokens in transit, code signing proves who shipped a binary, and sandboxing contains untrusted code you choose to run."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "An analyst reviewing a capture of the employee portal sees the following sent over TCP port 80: GET /account HTTP/1.1 with Cookie: session=9d41acb2. Which of the following changes BEST protects the session?",
+    "options": [
+      "Set the Secure attribute on the session cookie",
+      "Set the HttpOnly attribute on the session cookie",
+      "Add server-side input validation to the portal forms",
+      "Sign the portal's application code before each release"
+    ],
+    "correctIndex": 0,
+    "explanation": "The Secure attribute with HTTPS enforced. The capture shows the session cookie traveling in cleartext on port 80, and Secure makes browsers send it only over encrypted connections; HttpOnly is tempting but stops script access to the cookie, not cleartext transmission. The tell: Secure = transport protection against capture on the wire, HttpOnly = protection from script theft, and this artifact shows a wire exposure, not a script problem."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "Field technicians download a diagnostic utility from a vendor portal and must confirm before installing that each copy truly came from the vendor and was not altered in transit. Which of the following provides this assurance?",
+    "options": [
+      "Running the utility inside an isolated sandbox first",
+      "Performing static analysis on the utility",
+      "Validating input before the utility processes it",
+      "Verifying the code signature on the download"
+    ],
+    "correctIndex": 3,
+    "explanation": "Code signing verification. A valid signature made with the vendor's private key proves origin and that the file is unmodified since signing; a sandbox would reveal bad behavior but cannot prove who published the file or whether it is authentic. The tell: code signing = verified origin plus integrity, sandboxing = safe observation of behavior, static analysis = examining code without running it, input validation = filtering untrusted user input."
+  },
+  {
+    "domain": "D4",
+    "family": "app-security",
+    "question": "During an investigation, an analyst obtains a suspicious installer and needs to watch exactly what it does when executed, with no chance of it reaching production systems. Which of the following should the analyst use?",
+    "options": [
+      "A honeypot",
+      "A sandbox",
+      "Static code analysis",
+      "File quarantine"
+    ],
+    "correctIndex": 1,
+    "explanation": "A sandbox. Detonating the sample in an isolated environment lets the analyst observe its runtime behavior while it can touch nothing real; a honeypot is tempting but is a decoy that lures attackers in, not a place to test your own suspicious file. The tell: sandbox = you run untrusted code safely, honeypot = bait for attackers, static analysis = never executes the code, quarantine = locks the file away without observing it."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "A marketing team subscribes to a cloud file-sharing service on a corporate credit card, and the security team first learns of it when customer data is found there. Which of the following asset management processes MOST likely failed?",
+    "options": [
+      "Enumeration",
+      "Disposal and decommissioning",
+      "Acquisition and procurement",
+      "Assignment and accounting"
+    ],
+    "correctIndex": 2,
+    "explanation": "Acquisition/procurement. Security review belongs in the purchasing process, and bypassing it with a credit card produced unvetted shadow IT; assignment and accounting would fail later in the lifecycle, but this asset never entered the lifecycle at all. The tell: acquisition = security vetting before purchase, assignment = naming an owner after purchase, enumeration = actively discovering what is on the network, disposal = securely retiring the asset."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "During an access review of an aging file server used by several departments, nobody can say who is responsible for approving or removing user access. Which of the following asset management elements is missing?",
+    "options": [
+      "Classification",
+      "An assigned owner",
+      "An enumeration scan",
+      "A sanitization procedure"
+    ],
+    "correctIndex": 1,
+    "explanation": "An assigned owner. Assignment and accounting give every asset a named, accountable person who approves access and lifecycle decisions, which is exactly the void described; classification is tempting but only labels the data's sensitivity and names no decision-maker. The tell: ownership = who is accountable, classification = how sensitive, enumeration = discovering what exists, sanitization = wiping media at disposal."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "After an incident involving an unmanaged host, a security manager wants to actively discover every device currently connected to the network and reconcile the results against the asset database. Which of the following activities accomplishes this?",
+    "options": [
+      "Inventory",
+      "Classification",
+      "Procurement",
+      "Enumeration"
+    ],
+    "correctIndex": 3,
+    "explanation": "Enumeration. Active discovery scanning identifies what is really on the network so unknown or rogue devices can be reconciled against the records; inventory is tempting but is the maintained list itself, the very record the manager suspects is incomplete. The tell: inventory = the record you keep, enumeration = the active discovery that tests the record against reality."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-management",
+    "question": "Attackers compromise an internet-facing server that IT staff deployed two years earlier but never added to the asset records, so it was skipped by patching and monitoring. Which of the following practices failed?",
+    "options": [
+      "Inventory",
+      "Enumeration",
+      "Certification",
+      "Data retention"
+    ],
+    "correctIndex": 0,
+    "explanation": "Inventory. The organization cannot patch or monitor an asset missing from its authoritative record, and this server was known at deployment yet never recorded; enumeration is the discovery scan that could later catch the gap, but the practice that broke was record-keeping. The tell: inventory = the record of what you own, enumeration = actively discovering what is out there; a machine your own staff deployed and lost track of is a record failure."
+  },
+  {
+    "domain": "D4",
+    "family": "asset-disposal",
+    "question": "A compliance auditor asks for proof that hard drives retired last year and collected by a disposal vendor were actually destroyed. Which of the following should the organization produce?",
+    "options": [
+      "The corporate data retention schedule",
+      "The vendor's service level agreement",
+      "Certificates of destruction from the vendor",
+      "Chain of custody forms from past investigations"
+    ],
+    "correctIndex": 2,
+    "explanation": "Certificates of destruction. Certification is the documented proof that sanitization or destruction actually occurred, naming each serial number, the method, and the date; the service level agreement is tempting but promises the service without proving anything about any specific drive. The tell: certification = proof disposal happened, retention = how long data must be kept first, chain of custody = evidence handling for legal proceedings, not disposal."
+  },
+  {
+    "domain": "D4",
+    "family": "threat-intel",
+    "question": "A regional credit union wants early warning of fraud campaigns already hitting peer financial institutions, with indicators exchanged member to member under formal sharing agreements. Which of the following threat intelligence sources BEST fits this need?",
+    "options": [
+      "Open-source intelligence",
+      "An information-sharing organization",
+      "Dark web monitoring",
+      "A proprietary third-party feed"
+    ],
+    "correctIndex": 1,
+    "explanation": "An information-sharing organization. Sector bodies such as ISACs let industry peers exchange indicators under membership agreements, giving exactly the peer-to-peer early warning described; a proprietary feed is tempting but is purchased from one vendor rather than exchanged among peers. The tell: information-sharing organization = peers trading intel within a sector, proprietary = paid vendor product, OSINT = free public sources, dark web = watching criminal marketplaces."
+  },
+  {
+    "domain": "D4",
+    "family": "threat-intel",
+    "question": "A SOC finds free public advisories too noisy and too slow, and leadership approves budget for a curated subscription that includes vendor analyst context and confidence ratings. Which of the following source types is being acquired?",
+    "options": [
+      "Open-source intelligence",
+      "An information-sharing organization",
+      "Dark web monitoring",
+      "A proprietary third-party feed"
+    ],
+    "correctIndex": 3,
+    "explanation": "A proprietary third-party feed. Paid vendor intelligence trades money for curation, context, and fidelity beyond what free sources offer, which is the exact upgrade described; an information-sharing organization involves peer exchange under agreements, not a purchased vendor product. The tell: proprietary = commercial curated feed you pay for, OSINT = the free public sources being outgrown, information-sharing organization = sector peers, dark web = hidden marketplace monitoring."
+  },
+  {
+    "domain": "D4",
+    "family": "threat-intel",
+    "question": "After a competitor's breach, executives ask how the company would find out if its own employees' credentials were being offered for sale to criminals. Which of the following intelligence sources closes this gap?",
+    "options": [
+      "Dark web monitoring",
+      "Open-source intelligence",
+      "A proprietary third-party feed",
+      "An information-sharing organization"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dark web monitoring. Watching hidden marketplaces and closed criminal forums reveals stolen company credentials and data offered for sale before they are used in an attack; OSINT is tempting but covers openly published sources, which criminal markets are not. The tell: dark web = criminal marketplaces and hidden forums, OSINT = the free public web, proprietary = paid vendor curation, information-sharing organization = sector peer exchange."
+  },
+  {
+    "domain": "D4",
+    "family": "remediation-validation",
+    "question": "An analyst deployed the vendor patch for a critical finding across all web servers on Friday. Which of the following should the analyst do NEXT before closing the finding?",
+    "options": [
+      "Submit a formal exception for the finding",
+      "Run the vulnerability scanner against the servers again",
+      "Commission an independent audit of the patching process",
+      "Remove the servers from future scan scopes"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rescanning. A finding closes only when the scanner confirms it no longer appears, making the rescan the standard step between deployment and closure; an audit reviews whether the process was followed and comes later, if at all, not as the ticket-closure check. The tell: rescan = the tool re-check that gates closure, verification = hands-on confirmation the fix works, audit = independent review of the remediation process."
+  },
+  {
+    "domain": "D4",
+    "family": "remediation-validation",
+    "question": "A scanner still flags a host after patching, so an engineer logs in, confirms the installed version, and safely re-runs the exploit to prove it now fails. Which of the following validation activities does this describe?",
+    "options": [
+      "Rescanning",
+      "Auditing",
+      "Patching",
+      "Verification"
+    ],
+    "correctIndex": 3,
+    "explanation": "Verification. Directly inspecting the configuration and re-testing the exploit is hands-on confirmation that the fix really works, which settles whether the lingering alert is a false positive; rescanning is tempting but is the automated tool check that already ran and disagreed. The tell: rescan = tool re-check, verification = direct human confirmation the fix holds, audit = independent review that the process was followed."
+  },
+  {
+    "domain": "D4",
+    "family": "remediation-validation",
+    "question": "Each quarter, an independent reviewer samples closed vulnerability tickets to confirm every fix was approved, tested, and documented according to the remediation procedure. Which of the following validation activities is being performed?",
+    "options": [
+      "Rescanning",
+      "Verification",
+      "An audit",
+      "Reporting"
+    ],
+    "correctIndex": 2,
+    "explanation": "An audit. Independent, structured review of whether the remediation process was followed - approvals, testing, documentation - is auditing rather than re-testing any host; verification is tempting but means hands-on confirmation that a specific fix works. The tell: audit = independent review of process compliance, verification = direct confirmation a fix works, rescan = running the scanner again, reporting = communicating posture metrics to stakeholders."
+  }
+]

@@ -1,0 +1,392 @@
+[
+  {
+    "domain": "D4",
+    "family": "vuln-response",
+    "question": "Attackers are actively exploiting a critical flaw in a company's internet-facing VPN appliance, and the vendor released a fix this morning. Which of the following responses should the security team take FIRST?",
+    "options": [
+      "Purchase cyber insurance to transfer the financial risk",
+      "Apply the vendor fix through an emergency change window",
+      "Segment the appliance onto an isolated network",
+      "Deploy compensating controls until the next patch cycle"
+    ],
+    "correctIndex": 1,
+    "explanation": "Patching. A vendor fix exists and exploitation is active, so applying it through an emergency out-of-band change is the default response; compensating controls lose because they are the fallback for when the fix cannot be applied. The tell: patching = apply the available fix; segmentation and compensating controls = alternate protection when patching is not feasible; insurance = transfers financial risk and fixes nothing."
+  },
+  {
+    "domain": "D4",
+    "family": "vuln-response",
+    "question": "A CISO asks the vulnerability management team for a monthly view of how many critical findings have stayed open longer than 30 days, plus the current register of approved exceptions. Which of the following is the team being asked to produce?",
+    "options": [
+      "Vulnerability reporting",
+      "Rescanning",
+      "Alerting",
+      "Vulnerability classification"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vulnerability reporting. Aging metrics, trend views, and the exceptions register are the stakeholder-facing summaries that communicate remediation posture; alerting loses because it is a real-time push on a triggering condition, not a periodic rollup. The tell: reporting = periodic metrics and registers for stakeholders; rescanning = re-run the scan to confirm a fix; alerting = immediate notification when a condition fires; classification = grouping findings by type and severity."
+  },
+  {
+    "domain": "D4",
+    "family": "cve-cvss",
+    "question": "A hospital's scanner reports the same CVSS 8.1 flaw on the patient-facing scheduling system and on an isolated development box, and the team remediates the scheduling system first. Which of the following prioritization factors BEST justifies the order?",
+    "options": [
+      "The CVE identifier assigned to the flaw",
+      "The CVSS base score",
+      "Industry and organizational impact",
+      "The vulnerability classification"
+    ],
+    "correctIndex": 2,
+    "explanation": "Industry and organizational impact. With identical severity scores, what the affected system does for the business - patient-facing hospital care versus an isolated dev box - is the prioritization input that breaks the tie; the CVSS base score loses because the stem states it is the same on both hosts. The tell: CVE = the identifier; CVSS = the severity number; industry and organizational impact = business context that reorders equal scores; classification = grouping findings by type."
+  },
+  {
+    "domain": "D4",
+    "family": "security-assessments",
+    "question": "A security manager wants the most accurate report of missing patches on the server fleet with the fewest false positives, so the tool must read installed software versions from inside each host. Which of the following scan types should be scheduled?",
+    "options": [
+      "A credentialed scan",
+      "A non-credentialed scan",
+      "A penetration test",
+      "A system and process audit"
+    ],
+    "correctIndex": 0,
+    "explanation": "A credentialed scan. Logging in lets the scanner read installed versions and local settings directly, producing the most accurate patch picture with the fewest false positives; a penetration test loses because it proves exploitability rather than enumerating missing patches. The tell: credentialed = authenticated inside view, accurate; non-credentialed = the outside attacker's view; penetration test = actively exploits; audit = reviews process and controls, not patch levels."
+  },
+  {
+    "domain": "D4",
+    "family": "security-assessments",
+    "question": "Before an external review, a security analyst must document exactly which weaknesses on a public web server are visible to an unauthenticated attacker on the internet, without exploiting any of them. Which of the following methods provides this view?",
+    "options": [
+      "A credentialed vulnerability scan",
+      "A penetration test",
+      "A system and process audit",
+      "A non-credentialed vulnerability scan"
+    ],
+    "correctIndex": 3,
+    "explanation": "A non-credentialed vulnerability scan. Scanning without any login shows exactly what an unauthenticated outsider can see, and nothing gets exploited; a penetration test loses because the stem forbids exploitation. The tell: non-credentialed = the attacker's outside view; credentialed = authenticated inside view with local detail; penetration test = exploits to prove impact; audit = reviews procedures and controls."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "During a post-incident review, a SOC discovers an API abuse attack generated thousands of error entries in the web application's own logs but never registered in host or network telemetry. Which of the following monitoring layers was missing?",
+    "options": [
+      "Systems monitoring",
+      "Infrastructure monitoring",
+      "Application monitoring",
+      "Log archiving"
+    ],
+    "correctIndex": 2,
+    "explanation": "Application monitoring. The only evidence lived in the app's error and API logs, a layer the SOC was not watching; systems monitoring loses because host telemetry showed nothing to collect. The tell: systems = host and server events; applications = app errors, transactions, and API activity; infrastructure = network devices and links; archiving = long-term retention, not a visibility layer."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "A monitoring engineer is assigning new telemetry feeds to the correct resource bucket: firewall interface state changes, switch health metrics, and WAN link utilization. Which of the following monitoring categories covers these feeds?",
+    "options": [
+      "Systems monitoring",
+      "Application monitoring",
+      "Infrastructure monitoring",
+      "User behavior monitoring"
+    ],
+    "correctIndex": 2,
+    "explanation": "Infrastructure monitoring. Firewall interfaces, switch health, and WAN links are the network devices and connectivity that make up infrastructure telemetry; systems monitoring loses because no host or server metrics appear in the list. The tell: infrastructure = network devices and links; systems = hosts and servers; applications = app-level errors and transactions; user behavior monitoring = per-user activity baselines."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "A SOC already receives a monthly summary of authentication failures. Management now wants the on-call analyst notified within seconds whenever any service account records 10 failed logins in one minute. Which of the following activities must be configured?",
+    "options": [
+      "Reporting",
+      "Alerting",
+      "Scanning",
+      "Archiving"
+    ],
+    "correctIndex": 1,
+    "explanation": "Alerting. A near-real-time notification the moment a defined threshold is crossed is the alerting activity; reporting loses because it is the periodic summary the SOC already gets each month. The tell: alerting = event-driven push the instant a condition fires; reporting = scheduled rollup for review; scanning = proactive recurring checks; archiving = long-term retention."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "Every Sunday night an automated job probes all servers for missing patches and configuration drift and feeds the findings into the security dashboard. Which of the following monitoring activities does the weekly job represent?",
+    "options": [
+      "Alerting",
+      "Archiving",
+      "Reporting",
+      "Scanning"
+    ],
+    "correctIndex": 3,
+    "explanation": "Scanning. Scheduled automated checks for weaknesses and drift are the scanning activity inside the monitoring lifecycle, feeding dashboards and alerts; reporting loses because the job gathers findings rather than summarizing them for stakeholders. The tell: scanning = recurring proactive checks that feed the pipeline; alerting = condition-triggered notification; reporting = periodic human-consumable summary; archiving = retention."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "A junior analyst notices the monitoring platform pages the on-call engineer the instant a rule fires, yet also emails executives a quarterly package of incident trends and compliance status. Which of the following activities produces the quarterly package?",
+    "options": [
+      "Reporting",
+      "Alerting",
+      "Scanning",
+      "Log aggregation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Reporting. The quarterly executive package is a periodic, human-consumable summary that supports decisions and audits; alerting loses because it is the instant page, the other half of the contrast in the stem. The tell: reporting = periodic pull for stakeholders; alerting = real-time push to responders; scanning = proactive checking; log aggregation = collecting logs into one place."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "Investigators reconstruct a breach that began eight months ago only because the SIEM moves logs older than 90 days into low-cost long-term storage instead of deleting them. Which of the following monitoring activities made the investigation possible?",
+    "options": [
+      "Log aggregation",
+      "Archiving",
+      "Reporting",
+      "Alert tuning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Archiving. Retaining aged logs in long-term storage preserved evidence far past the active analysis window, which is exactly what a months-later investigation needs; log aggregation loses because central collection alone says nothing about keeping data for eight months. The tell: archiving = long-term retention for later investigation and compliance; aggregation = collecting into one place now; reporting = summaries; alert tuning = cutting false positives."
+  },
+  {
+    "domain": "D4",
+    "family": "monitoring",
+    "question": "EDR flags a workstation beaconing to a known command-and-control domain. The analyst must stop any spread immediately while keeping the malware available for later analysis. Which of the following actions should be taken FIRST?",
+    "options": [
+      "Reimage the workstation from a golden image",
+      "Delete the detected files from the disk",
+      "Quarantine the host from the network",
+      "Archive the host's logs to long-term storage"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quarantine. Isolating the host cuts the beaconing and any spread immediately while preserving the malware and its artifacts for analysis; deleting the files loses because it destroys the very evidence the analyst must keep. The tell: quarantine = contain and preserve; deletion and reimaging = eradication steps that erase evidence; archiving = retention, not containment."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "A defense contractor must verify thousands of hosts against a mandated configuration baseline using automated checks written in a standardized, machine-readable format that any conforming scanner can process. Which of the following should the contractor use?",
+    "options": [
+      "A CIS benchmark",
+      "SIEM",
+      "NetFlow",
+      "SCAP"
+    ],
+    "correctIndex": 3,
+    "explanation": "SCAP. The Security Content Automation Protocol defines the standardized machine-readable formats that let any conforming tool run and report the same configuration checks; a CIS benchmark loses because it is the recommended-settings content, not the automation format for checking. The tell: SCAP = the standard for expressing and exchanging checks; benchmark = the published settings to check against; SIEM = log correlation; NetFlow = traffic flow records."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "An administrator building the company's first hardened Windows Server image wants an authoritative, publicly published set of recommended secure configuration settings as the starting point. Which of the following BEST fits?",
+    "options": [
+      "SCAP",
+      "Group Policy",
+      "The security team's existing baseline",
+      "A CIS benchmark"
+    ],
+    "correctIndex": 3,
+    "explanation": "A CIS benchmark. Consensus-developed, published hardening guides are the authoritative starting point an organization then tailors into its own baseline; the existing internal baseline loses because the stem says this is the first hardened image, so none exists yet. The tell: benchmark = the published industry reference; baseline = the organization's adopted configuration built from it; SCAP = the automation format for checking compliance; Group Policy = the mechanism that pushes settings."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "A known trojan copied to a workstation is quarantined within seconds, yet a fileless attack running entirely in PowerShell memory on the same host goes undetected. Which of the following tools MOST likely produced both results?",
+    "options": [
+      "Antivirus",
+      "EDR",
+      "File integrity monitoring",
+      "DLP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Antivirus. Signature matching quarantines a known trojan file instantly but has nothing to match against an attack that lives only in PowerShell memory; EDR loses because behavioral endpoint detection is exactly what would be expected to flag the fileless activity, not miss it. The tell: antivirus = signature match on known malware files; EDR = behavioral detection and response, including fileless; FIM = alerts on file changes; DLP = stops sensitive data leaving."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "A network engineer explains that the management station normally learns device health by polling every five minutes, yet interface-down notifications arrive within one second of a failure. Which of the following MOST likely delivers the fast notifications?",
+    "options": [
+      "SNMP traps sent by the devices",
+      "More frequent SNMP polling",
+      "NetFlow records exported by the devices",
+      "A SIEM correlation rule"
+    ],
+    "correctIndex": 0,
+    "explanation": "SNMP traps. A trap is a device-initiated, unsolicited notification pushed to the management station the moment the event occurs, independent of any polling cycle; faster polling loses because even aggressive pulls cannot beat an immediate push. The tell: trap = device pushes on event; poll/get = manager pulls on schedule; NetFlow = traffic conversation records, not device health; SIEM correlation = analyzes data it already received."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "A SOC evaluates a platform that ingests logs from hundreds of sources, correlates related events into a single alert, and pages an analyst; every containment action is then performed manually. Which of the following BEST describes the platform?",
+    "options": [
+      "SOAR",
+      "EDR",
+      "SIEM",
+      "A NetFlow collector"
+    ],
+    "correctIndex": 2,
+    "explanation": "SIEM. Enterprise-wide log ingestion, cross-source correlation, and alerting with humans performing the response is the SIEM's role; SOAR loses because the stem says every containment step is manual, and SOAR's defining feature is automated playbook response. The tell: SIEM = collect, correlate, alert; SOAR = orchestrate and execute the response automatically; EDR = endpoint telemetry and response; NetFlow collector = flow records only."
+  },
+  {
+    "domain": "D4",
+    "family": "security-tools",
+    "question": "After integrating its alert platform with playbooks, a SOC handles a phished account automatically: the host is isolated, the account disabled, and a ticket opened with no analyst action, cutting containment from four hours to 90 seconds. Which of the following was implemented?",
+    "options": [
+      "SIEM",
+      "NAC",
+      "SCAP",
+      "SOAR"
+    ],
+    "correctIndex": 3,
+    "explanation": "SOAR. Playbook-driven automation that isolates the host, disables the account, and opens the ticket without analyst action is security orchestration, automation, and response; SIEM loses because it correlates and alerts but leaves the response steps to people. The tell: SOAR = machine-speed playbook response; SIEM = correlation and alerting; NAC = posture-checked admission when devices join the network; SCAP = the configuration check automation standard."
+  },
+  {
+    "domain": "D4",
+    "family": "firewall-config",
+    "question": "A firewall evaluates its access list top-down, first match wins:\n10 PERMIT TCP any -> 10.0.20.5 port 443\n20 DENY IP 172.16.0.0/16 -> any\n30 PERMIT TCP any -> 10.0.20.8 port 25\n40 PERMIT TCP 172.16.5.0/24 -> 10.0.20.9 port 22\nAdministrators in 172.16.5.0/24 added rule 40 but still cannot SSH to 10.0.20.9. Which of the following explains the failure?",
+    "options": [
+      "The implicit deny at the end of the list drops the sessions",
+      "Rule 20 matches the traffic before rule 40 is ever evaluated",
+      "Rule 10 limits the administrators to HTTPS destinations only",
+      "Rule 40 lacks a matching rule permitting the return traffic"
+    ],
+    "correctIndex": 1,
+    "explanation": "Rule 20 matches first. Processing is top-down with first match, and 172.16.5.0/24 falls inside 172.16.0.0/16, so the broad deny at rule 20 consumes the traffic before rule 40 is ever read; the implicit deny loses because a written rule already matched earlier in the list. The tell: first match wins = an earlier broad rule shadows a later specific one; implicit deny = only drops traffic no written rule matched; the fix is moving the specific permit above the broad deny."
+  },
+  {
+    "domain": "D4",
+    "family": "firewall-config",
+    "question": "A firewall's entire rule set is shown; an unwritten implicit deny follows rule 30:\n10 PERMIT TCP 10.1.1.0/24 -> any port 443\n20 PERMIT TCP 10.1.1.0/24 -> any port 80\n30 DENY TCP any -> any port 23\nA host at 10.1.2.15 attempts an HTTPS connection to an internet server. Which of the following will happen?",
+    "options": [
+      "The connection is permitted by rule 10",
+      "The connection is denied by rule 30",
+      "The connection is dropped by the implicit deny",
+      "The connection is permitted because no deny rule matches it"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dropped by the implicit deny. The source 10.1.2.15 is outside 10.1.1.0/24, so rules 10 and 20 never match, and rule 30 covers only port 23; unmatched traffic falls through to the silent default drop. The tell: implicit deny = anything no written rule matches is dropped by default; explicit deny = a written rule that matches; \"no deny matched, so it passes\" is exactly the misconception firewalls do not follow."
+  },
+  {
+    "domain": "D4",
+    "family": "firewall-config",
+    "question": "Policy requires that SSH management of the core firewall be possible only from the administrator subnets 192.168.10.0/24 and 192.168.20.0/24. Which of the following rule sets BEST enforces the policy?",
+    "options": [
+      "Permit the two administrator subnets to port 22, then deny all other sources to port 22",
+      "Deny all sources to port 22, then permit the two administrator subnets to port 22",
+      "Permit the two administrator subnets to all ports, then deny everything else",
+      "Permit any source to port 22, then deny the two administrator subnets on other ports"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permit the two administrator subnets to port 22, then deny everything else to port 22. With top-down first-match processing, the specific permits must come before the broad deny; the deny-first option loses because the deny would match every SSH session, including the administrators', before their permits are read. The tell: order = specific permits above broad denies; permitting all ports grants more than the policy; permitting any source to 22 inverts the requirement."
+  },
+  {
+    "domain": "D4",
+    "family": "firewall-config",
+    "question": "As part of a hardening change, a firewall administrator adds a rule denying TCP port 23 to all network devices while continuing to permit TCP port 22. Which of the following BEST describes the effect?",
+    "options": [
+      "Telnet is blocked while SSH management continues",
+      "HTTP is blocked while HTTPS browsing continues",
+      "FTP is blocked while SFTP transfers continue",
+      "SMTP is blocked while IMAP delivery continues"
+    ],
+    "correctIndex": 0,
+    "explanation": "Telnet is blocked while SSH management continues. TCP 23 is Telnet's cleartext management port and TCP 22 carries SSH; the FTP option loses because FTP control runs on TCP 21, which this change never touches. The tell: 23 = Telnet, 22 = SSH (and SFTP), 21 = FTP, 80/443 = HTTP/HTTPS, 25 = SMTP; blocking a port silences the service bound to it, nothing else."
+  },
+  {
+    "domain": "D4",
+    "family": "firewall-config",
+    "question": "A company must publish a web server to the internet, but a compromise of that server must not give attackers a direct path to the internal file servers. Which of the following placements BEST meets the requirement?",
+    "options": [
+      "On the internal LAN behind stricter host firewall rules",
+      "In a screened subnet between the internet and the internal network",
+      "Behind a jump server on the management network",
+      "On the same VLAN as the file servers with an IPS inline"
+    ],
+    "correctIndex": 1,
+    "explanation": "A screened subnet. Hosting the public server in a buffer network bounded by firewall interfaces lets internet users reach it while a compromise stays walled off from the LAN; the internal-LAN option loses because host rules on the same network still leave a direct path to the file servers. The tell: screened subnet = buffer network for public-facing servers; same-VLAN placement = no boundary at all; jump server = an administrative access pivot, not a public hosting zone."
+  },
+  {
+    "domain": "D3",
+    "family": "ips-ids",
+    "question": "An inline IPS with signatures updated hourly fails to block a brand-new exploit on its first day in the wild. Which of the following detection methods would have given the BEST chance of catching the attack?",
+    "options": [
+      "Increasing the signature update frequency",
+      "Deploying the same signatures on a second sensor",
+      "Mirroring traffic to an out-of-band IDS",
+      "Anomaly detection against a learned traffic baseline"
+    ],
+    "correctIndex": 3,
+    "explanation": "Anomaly detection against a learned baseline. Signatures can only match patterns someone has already written, so a first-day exploit stays invisible no matter how fresh the update; more frequent updates lose for exactly that reason. The tell: signature = matches known attack patterns, precise but blind to novel attacks; trend/anomaly = flags deviation from learned normal, so new activity can surface at the cost of more false positives; sensor placement changes response, not recognition."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "Sales laptops spend most of their time on home and hotel networks without connecting to the VPN, and users keep reaching phishing sites the on-premises filter would have blocked. Which of the following approaches BEST closes the gap?",
+    "options": [
+      "A centralized proxy",
+      "Agent-based web filtering",
+      "Content categorization",
+      "Block rules on the perimeter firewall"
+    ],
+    "correctIndex": 1,
+    "explanation": "Agent-based web filtering. Filtering software installed on each laptop enforces policy wherever the device connects, on or off the VPN; a centralized proxy loses because off-network traffic never transits the corporate choke point. The tell: agent-based = policy travels with the device; centralized proxy = enforcement only where traffic passes through; categorization and block rules = decision techniques, not deployment points."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "Attackers host phishing pages at specific paths on a popular file-sharing domain that the business must keep reachable. Which of the following web filter techniques can block the malicious pages while leaving the rest of the domain available?",
+    "options": [
+      "DNS filtering",
+      "Content categorization",
+      "URL scanning",
+      "Reputation-based filtering"
+    ],
+    "correctIndex": 2,
+    "explanation": "URL scanning. Examining the full requested URL lets the filter deny the specific malicious paths while permitting everything else on the domain; DNS filtering loses because refusing resolution is all-or-nothing for the whole domain. The tell: URL scanning = full-path awareness; DNS filtering = domain-level only; categorization = the site's topic class; reputation = the site's risk score."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "A new acceptable use policy bans access to all social media and streaming video sites from warehouse workstations, and the security team refuses to build or maintain lists of individual sites. Which of the following techniques BEST implements the policy?",
+    "options": [
+      "Content categorization",
+      "Block rules for each known site",
+      "Reputation-based filtering",
+      "URL scanning"
+    ],
+    "correctIndex": 0,
+    "explanation": "Content categorization. Blocking the social media and streaming categories enforces the policy across every site in those classes without listing a single address; per-site block rules lose because they require exactly the list maintenance the team rejected. The tell: categorization = allow or block whole topic classes; block rules = explicit entries per address; reputation = risk score, not topic; URL scanning = matching specific requested paths."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "Following an incident, a security analyst must immediately stop all users from reaching one specific malicious URL while the rest of that site stays reachable, even though the filter's category and reputation engines still rate it safe. Which of the following should the analyst create?",
+    "options": [
+      "A recategorization request to the filter vendor",
+      "An explicit block rule for the URL",
+      "A DNS filtering policy for the site's domain",
+      "A lower reputation threshold for all sites"
+    ],
+    "correctIndex": 1,
+    "explanation": "An explicit block rule. A written deny entry for the URL overrides whatever the category and reputation engines conclude and takes effect immediately; the recategorization request loses because it depends on the vendor and takes time the analyst does not have. The tell: block rule = the explicit policy entry that always wins; categorization and reputation = automated verdicts a rule can override; DNS filtering = would drop the whole domain, not one URL."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "A phishing campaign uses a domain registered six hours earlier that no vendor has categorized yet, but the web filter still denies the request based on the domain's age and hosting history. Which of the following techniques blocked the request?",
+    "options": [
+      "Content categorization",
+      "URL scanning",
+      "An explicit block rule",
+      "Reputation-based filtering"
+    ],
+    "correctIndex": 3,
+    "explanation": "Reputation-based filtering. A risk score built from domain age, hosting, and history can block brand-new domains no category database has seen; content categorization loses because the stem says the domain has not been categorized yet. The tell: reputation = score-based verdict that covers the never-before-seen; categorization = needs an assigned topic class; block rule = a manually written entry; URL scanning = checks the requested path against known-bad lists."
+  },
+  {
+    "domain": "D4",
+    "family": "web-filter",
+    "question": "A facility has hundreds of IoT sensors and printers that cannot run any client software, yet every device must be prevented from reaching known malicious domains. Which of the following protects all of them with a single network-level change?",
+    "options": [
+      "Agent-based filtering on each device",
+      "URL scanning within each device's browser",
+      "DNS filtering at the network resolver",
+      "A centralized proxy requiring per-device configuration"
+    ],
+    "correctIndex": 2,
+    "explanation": "DNS filtering. Refusing to resolve known-bad domains at the network resolver protects every device that uses it, with nothing installed or configured on the endpoints; agent-based filtering loses because these devices cannot take agents. The tell: DNS filtering = enforce at the resolver, domain-level, covers agentless devices; agent-based = requires client software; proxy = traffic must be steered through it per device; URL scanning = needs inspection of the full request."
+  }
+]

@@ -1,0 +1,327 @@
+[
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "A firm provides outside counsel with litigation strategy memos and draft settlement agreements. The security team warns that mishandling could forfeit attorney-client privilege in an active case. Which of the following data types BEST describes this material?",
+    "options": [
+      "Legal information",
+      "Regulated data",
+      "Intellectual property",
+      "Financial information"
+    ],
+    "correctIndex": 0,
+    "explanation": "Legal information. Litigation strategy, contracts, and privileged case material are legal information, and careless handling can destroy the privilege that shields them in court; regulated data is tempting, but no external statute dictates handling here - the risk is losing privilege, not a compliance penalty. The tell: legal = privileged case material; regulated = external law mandates handling; intellectual property = registered legal rights; financial = money and payment records."
+  },
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "During a data inventory, an analyst tags a repository holding quarterly earnings statements, accounts payable ledgers, and corporate banking details. Which of the following data types BEST describes the repository's contents?",
+    "options": [
+      "Legal information",
+      "Trade secret",
+      "Financial information",
+      "Regulated data"
+    ],
+    "correctIndex": 2,
+    "explanation": "Financial information. Earnings statements, ledgers, and banking details are records about the organization's money, which is exactly what the financial type labels; regulated data is tempting because rules such as SOX touch financial reporting, but that label describes an external handling mandate, not what the content is. The tell: financial = money and payment records; regulated = external law mandates handling; trade secret = value lives in secrecy alone; legal = privileged case material."
+  },
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "A DLP administrator proposes excluding a product's serialized binary telemetry from inspection, reasoning that no person could read it if it leaked. Which of the following BEST explains why the exclusion is a mistake?",
+    "options": [
+      "Binary encoding acts as encryption while the data is stored",
+      "Non-human-readable data still requires the same protection as readable data",
+      "DLP policies are only required to cover regulated data types",
+      "Telemetry data is classified as public unless labeled otherwise"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non-human-readable data still requires the same protection as readable data. Attackers' tools can parse serialized binary easily, so a leak discloses the contents regardless of readability; the encoding-as-encryption option is tempting, but a format change involves no key and anyone can decode it. The tell: readability never removes the need for protection - human- vs non-human-readable only describes whether a person can interpret the data directly, not whether it is sensitive."
+  },
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "A retailer's marketing team treats EU customers' personal data like any other contact list. Privacy counsel notes an external privacy law dictates exactly how it must be processed and disclosed, regardless of any internal label. Which of the following data types applies?",
+    "options": [
+      "Confidential data",
+      "Intellectual property",
+      "Legal information",
+      "Regulated data"
+    ],
+    "correctIndex": 3,
+    "explanation": "Regulated data. Handling requirements for EU personal data are imposed by external law (GDPR), so the obligations exist no matter what the organization calls the data internally; confidential is tempting, but that is an internal classification the organization chooses, not a mandate it inherits. The tell: regulated = external law mandates handling; confidential = an internal label for business harm; legal = privileged case material; intellectual property = registered legal rights."
+  },
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "A manufacturer patented one production method, publishing its details in the filing, but deliberately never filed its second method, which only five senior engineers know. Which of the following BEST describes the unfiled method?",
+    "options": [
+      "Patent",
+      "Trade secret",
+      "Copyright",
+      "Trademark"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trade secret. The unfiled method's protection comes entirely from staying secret - there is no registration, and the moment it leaks the advantage is gone; patent is the tempting contrast, but patents are publicly disclosed in exchange for registered legal rights. The tell: trade secret = value lives in secrecy alone; patent, copyright, and trademark = registered intellectual property rights that survive disclosure."
+  },
+  {
+    "domain": "D3",
+    "family": "data-types",
+    "question": "An awareness module asks employees which of the company's assets counts as intellectual property. Which of the following items belongs in that category?",
+    "options": [
+      "An unpatented internal pricing process",
+      "Quarterly revenue projections",
+      "A patented compression algorithm",
+      "A signed vendor NDA"
+    ],
+    "correctIndex": 2,
+    "explanation": "A patented compression algorithm. Intellectual property is the umbrella for registered creations of the mind such as patents, copyrights, and trademarks; the unpatented pricing process is the tempting pick, but with no registration its protection rests on secrecy alone, making it a trade secret. The tell: intellectual property = registered legal rights; trade secret = value lives in secrecy alone; financial = money records such as revenue projections; legal = privileged or contractual case material such as an NDA."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "An internal employee-morale survey is posted where any staff member can read it. Leadership notes a public leak would embarrass the company, though the data is not limited to need-to-know access. Which of the following classifications BEST fits?",
+    "options": [
+      "Public",
+      "Confidential",
+      "Restricted",
+      "Sensitive"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sensitive. Disclosure would cause harm or embarrassment, yet the data circulates broadly inside the company rather than on a need-to-know basis, which is exactly the sensitive tier; confidential is tempting but requires need-to-know limits and meaningful business harm. The tell: public = no harm if released; sensitive = harm or embarrassment, broadly internal; confidential = need-to-know business harm; restricted = severe harm, tightest circle."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "Merger negotiation documents are shared only with executives on a need-to-know basis. Disclosure would meaningfully damage the deal, but it would endanger no one and break no law. Which of the following labels should the data owner assign?",
+    "options": [
+      "Confidential",
+      "Restricted",
+      "Sensitive",
+      "Private"
+    ],
+    "correctIndex": 0,
+    "explanation": "Confidential. Need-to-know access plus meaningful business harm on disclosure places the documents in the confidential tier; restricted is the tempting step up, but the stem rules out the severe or legal harm that tier implies. The tell: confidential = need-to-know, meaningful business harm; restricted = tightest circle, severe or legal harm; sensitive = broadly internal, embarrassment-level harm; private = about a person, not the business."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "A subcontractor already labels its need-to-know business documents confidential. Weapon-system schematics go further: disclosure would bring severe harm and legal penalties, and only a handful of cleared engineers may open them. Which of the following labels applies to the schematics?",
+    "options": [
+      "Confidential",
+      "Critical",
+      "Restricted",
+      "Sensitive"
+    ],
+    "correctIndex": 2,
+    "explanation": "Restricted. The schematics sit above the existing confidential tier: the access circle is tighter and the harm is severe with legal consequences; critical is tempting in a defense context, but that label marks data whose loss halts operations, not data whose secrecy is paramount. The tell: restricted = tightest circle, severe or legal harm; confidential = need-to-know business harm; critical = loss stops operations regardless of secrecy; sensitive = embarrassment-level internal data."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "A new classification policy must distinguish records about individual employees from records about company operations. An HR system stores each employee's salary figures and medical-leave requests. Which of the following labels fits the HR records?",
+    "options": [
+      "Confidential",
+      "Private",
+      "Sensitive",
+      "Restricted"
+    ],
+    "correctIndex": 1,
+    "explanation": "Private. Salary and medical-leave records are information about individual people, which is what the private label marks; confidential is the tempting alternative, but that tier describes need-to-know information about the business itself. The tell: private = about a person; confidential = about the business, need-to-know; sensitive = embarrassment-level internal data; restricted = severe harm, tightest circle."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "An intern labels the company's published press releases confidential to be safe. The data owner overrides the label, noting the releases already appear on the investor site and stricter handling would waste money. Which of the following labels is MOST appropriate?",
+    "options": [
+      "Sensitive",
+      "Private",
+      "Confidential",
+      "Public"
+    ],
+    "correctIndex": 3,
+    "explanation": "Public. Already-published material can cause zero harm on further disclosure, and labeling it higher imposes costly handling controls it does not need - though public data still needs integrity protection, since an altered press release is still an incident; confidential is the tempting safe default, but overclassification has real cost. The tell: public = no harm if released; sensitive = embarrassment-level harm; confidential = need-to-know business harm; private = about a person."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "A parcel carrier's route-optimization dataset is compiled entirely from public map sources, so secrecy is irrelevant. Yet losing the dataset for even one hour stops every delivery nationwide. Which of the following classification labels BEST applies?",
+    "options": [
+      "Critical",
+      "Restricted",
+      "Public",
+      "Confidential"
+    ],
+    "correctIndex": 0,
+    "explanation": "Critical. This label is availability-centric: it marks data the business cannot operate without, regardless of whether the contents are secret; restricted is the tempting high-tier pick, but nothing here needs a tight secrecy circle - the stem is about loss, not disclosure. The tell: critical = loss halts operations regardless of secrecy; restricted = severe harm from disclosure, tightest access; public = no harm if released; confidential = need-to-know business harm."
+  },
+  {
+    "domain": "D3",
+    "family": "data-classification",
+    "question": "A workshop asks attendees to label three items in order: individual salary records, merger plans limited to executives, and a brochure published on the company website. Which of the following label sets is correct?",
+    "options": [
+      "Confidential, restricted, sensitive",
+      "Sensitive, private, public",
+      "Private, confidential, public",
+      "Private, public, confidential"
+    ],
+    "correctIndex": 2,
+    "explanation": "Private, confidential, public. Salary records are information about individual people, merger plans are need-to-know business information whose leak causes meaningful harm, and an already-published brochure can cause no harm; the set ending 'public, confidential' is the tempting scramble, but the published brochure, not the merger plan, is the zero-harm item. The tell: private = about a person; confidential = need-to-know business harm; public = no harm if released."
+  },
+  {
+    "domain": "D3",
+    "family": "data-states",
+    "question": "A sales laptop is stolen from a parked car, but the investigation closes quickly: full-disk encryption kept the thief from reading anything on the drive. Which of the following data states did the control protect?",
+    "options": [
+      "Data in transit",
+      "Data in use",
+      "Data sovereignty",
+      "Data at rest"
+    ],
+    "correctIndex": 3,
+    "explanation": "Data at rest. The files were sitting on storage, not moving or being processed, and full-disk encryption is the canonical at-rest control; data in use is the tempting miss for a laptop out in the field, but that state means actively processed in memory. The tell: at rest = stored on media (disk encryption); in transit = moving over a network (TLS); in use = processed in memory; data sovereignty = the laws of wherever data physically resides, not a state."
+  },
+  {
+    "domain": "D3",
+    "family": "data-states",
+    "question": "A retailer's point-of-sale terminals send card authorization requests across the public internet to a payment processor. An architect documents the data state on this path and its canonical control. Which of the following pairs is correct?",
+    "options": [
+      "Data at rest; full-disk encryption",
+      "Data in transit; TLS",
+      "Data in use; secure enclave",
+      "Data in transit; full-disk encryption"
+    ],
+    "correctIndex": 1,
+    "explanation": "Data in transit; TLS. Authorization requests crossing a network are in transit, and TLS is the canonical control that protects them on the wire; the pair matching in transit with full-disk encryption is the tempting trap - right state, but a storage control cannot protect moving packets. The tell: at rest = stored (full-disk encryption); in transit = moving over a network (TLS or IPSec); in use = processed in memory (secure enclave)."
+  },
+  {
+    "domain": "D3",
+    "family": "data-states",
+    "question": "Breach forensics show card numbers were scraped directly from an application server's memory during transaction processing, even though every disk uses full-disk encryption and every session uses TLS. Which of the following data states was left unprotected?",
+    "options": [
+      "Data in use",
+      "Data at rest",
+      "Data in transit",
+      "Non-human-readable data"
+    ],
+    "correctIndex": 0,
+    "explanation": "Data in use. Data must be decrypted to be processed, so the records loaded in memory sat in plaintext where the scraper found them - the hardest state to protect; data at rest is the tempting answer because encryption seemed to be everywhere, but disk and session controls simply do not cover memory. The tell: in use = actively processed in memory; at rest = stored on media; in transit = moving over a network; non-human-readable describes a data format, not a state."
+  },
+  {
+    "domain": "D3",
+    "family": "data-states",
+    "question": "A security architect must map one control to each data state: full-disk encryption, TLS, and secure enclave processing. Which of the following correctly matches the controls to at rest, in transit, and in use, in that order?",
+    "options": [
+      "TLS, full-disk encryption, secure enclave",
+      "Full-disk encryption, secure enclave, TLS",
+      "Full-disk encryption, TLS, secure enclave",
+      "Secure enclave, TLS, full-disk encryption"
+    ],
+    "correctIndex": 2,
+    "explanation": "Full-disk encryption, TLS, secure enclave. Stored data is protected on the disk, moving data is protected on the wire, and processed data is protected inside isolated hardware; the set swapping secure enclave and TLS is the tempting scramble, but an enclave protects computation, not network transport. The tell: at rest = stored (full-disk encryption); in transit = moving over a network (TLS); in use = processed in memory (secure enclave)."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "A compliance officer objects when the cloud provider enables cross-region replication that copies EU customers' records into a US region for durability. Which of the following concepts BEST explains the objection?",
+    "options": [
+      "Geofencing",
+      "Geolocation",
+      "Geographic restrictions",
+      "Data sovereignty"
+    ],
+    "correctIndex": 3,
+    "explanation": "Data sovereignty. Once the records physically reside in a US region they become subject to US law as well, which is exactly the legal exposure the officer is flagging; geographic restrictions is the tempting pick, but that is the technical control that could pin storage to approved regions - the fix, not the concern. The tell: data sovereignty = data is governed by the laws of wherever it physically resides; geolocation = determining physical position; geofencing = a virtual boundary that triggers policy; geographic restrictions = the allow-or-deny-by-location policy itself."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "Before allowing the corporate email app to open, an MDM platform first determines each phone's physical position from GPS and nearby Wi-Fi networks. Which of the following capabilities is the MDM using?",
+    "options": [
+      "Geolocation",
+      "Geofencing",
+      "Geographic restrictions",
+      "Data sovereignty"
+    ],
+    "correctIndex": 0,
+    "explanation": "Geolocation. Determining where the device physically is - via GPS, Wi-Fi, or IP - is the geolocation capability that other controls build on; geofencing is the tempting sibling, but that is the virtual boundary that triggers an action once the position is known. The tell: geolocation = determining physical position; geofencing = a virtual boundary that triggers policy; geographic restrictions = the allow-or-deny-by-location policy; data sovereignty = the legal jurisdiction over data where it resides."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "A SOC observes waves of credential stuffing from IP ranges in countries where the firm has no customers or employees. Which of the following would BEST reduce these attempts without affecting legitimate users?",
+    "options": [
+      "Permission restrictions",
+      "Geographic restrictions",
+      "Segmentation",
+      "Geolocation"
+    ],
+    "correctIndex": 1,
+    "explanation": "Geographic restrictions. Denying access from locations with zero legitimate users cuts the attack traffic at no cost to real customers; geolocation is the tempting near-miss, but it only determines where a connection comes from - the restriction is the policy that acts on that information. The tell: geographic restrictions = allow or deny by location; geolocation = determining position; permission restrictions = control by identity and access rights; segmentation = control by network reachability."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "To shrink its PCI DSS assessment scope, a retailer moves every system storing cardholder data onto a dedicated VLAN reachable only through a firewall, so most corporate systems cannot reach the data at all. Which of the following data protection methods is this?",
+    "options": [
+      "Tokenization",
+      "Permission restrictions",
+      "Encryption",
+      "Segmentation"
+    ],
+    "correctIndex": 3,
+    "explanation": "Segmentation. Isolating the cardholder data environment on its own firewalled network limits which systems can even reach the data, which is also how PCI scope shrinks; permission restrictions is the tempting sibling, but that controls who may access data through identity rights, not what can reach it over the network. The tell: segmentation = control by network reachability; permission restrictions = control by identity and access rights; encryption = reversible protection with a key; tokenization = swap values for vaulted tokens."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "An auditor investigating how a contractor opened HR salary files reviews the share's access control list:\n\\\\HR-FS01\\Salary\nHR-Payroll: Modify\nEveryone: Read\nWhich of the following data protection methods is missing?",
+    "options": [
+      "Segmentation",
+      "Permission restrictions",
+      "Encryption",
+      "Masking"
+    ],
+    "correctIndex": 1,
+    "explanation": "Permission restrictions. The 'Everyone: Read' entry grants the whole organization access to salary data, so the contractor needed no exploit - least-privilege access rights were never applied; segmentation is the tempting fix, but the contractor reached the share through a legitimate identity grant, not an open network path. The tell: permission restrictions = control by identity and access rights (ACLs, least privilege); segmentation = control by network reachability; encryption = protection with a key; masking = hide part of a displayed value."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "A code reviewer finds API keys stored as Base64 strings in a configuration file. The developer reports the keys are encrypted. Which of the following BEST describes the protection actually applied?",
+    "options": [
+      "Encryption",
+      "Tokenization",
+      "Obfuscation",
+      "Hashing"
+    ],
+    "correctIndex": 2,
+    "explanation": "Obfuscation. Base64 is a reversible encoding with no secret at all - anyone who finds the strings can decode them instantly, so the keys are merely obscured; encryption is the tempting claim, but encryption requires a key, and without one there is no real confidentiality. The tell: obfuscation = making data unclear without any key; encryption = reversible only with a key; hashing = one-way integrity digest; tokenization = substitute values redeemable through a secure vault."
+  },
+  {
+    "domain": "D3",
+    "family": "data-protection",
+    "question": "A records archive must be stored with a third-party service, but the contract requires that the provider can NEVER read the contents. Which of the following approaches meets the requirement?",
+    "options": [
+      "Encrypt the archive before upload and keep the keys in-house",
+      "Have the provider tokenize the records when they arrive",
+      "Apply irreversible data masking before uploading the archive",
+      "Require the provider to encrypt the archive at rest"
+    ],
+    "correctIndex": 0,
+    "explanation": "Encrypt the archive before upload and keep the keys in-house. Encryption is reversible only with the key, so retaining it means the provider stores ciphertext it can never open; provider-side encryption at rest is the tempting option, but then the provider holds the keys and can read the data, and provider tokenization fails the same way because its vault holds the real values. The tell: encryption = confidentiality controlled by whoever holds the key; tokenization = the vault owner can recover values; masking = display-time hiding that destroys recoverability."
+  },
+  {
+    "domain": "D3",
+    "family": "backups",
+    "question": "Ransomware encrypts a firm's primary storage array, and within seconds the near-real-time replica at the recovery site holds the same encrypted data. Which of the following additions would BEST enable recovery from this type of event?",
+    "options": [
+      "Synchronous replication to a third site",
+      "Shorter replication intervals",
+      "Relocating the replica farther from the primary",
+      "Point-in-time backups kept offline"
+    ],
+    "correctIndex": 3,
+    "explanation": "Point-in-time backups kept offline. Replication faithfully mirrors whatever happens to production - including the encryption - so recovery requires a copy frozen from before the attack that the malware cannot touch; a third replicated site is the tempting add-on, but it would hold the same encrypted data seconds later. The tell: replication = continuous live mirror that protects against hardware or site failure, not bad data; backups and snapshots = point-in-time copies you can roll back to; journaling = replay logged changes to a precise moment."
+  }
+]
