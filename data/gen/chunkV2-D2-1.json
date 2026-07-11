@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D2",
+    "family": "threat-actors",
+    "question": "A semiconductor firm uncovers a 14-month intrusion that used implant malware no security vendor has ever cataloged. The intruders copied proprietary chip designs but ignored payment systems and customer records entirely. Which of the following threat actors is MOST likely responsible?",
+    "options": ["Organized crime", "Hacktivist", "Nation-state", "Unskilled attacker"],
+    "correctIndex": 2,
+    "explanation": "Nation-state. A 14-month covert campaign using never-cataloged custom implants to steal strategic chip designs points to state-sponsored espionage; organized crime loses because nothing monetizable was touched. The tell: nation-state = deep funding, custom tooling, long persistence, espionage; organized crime = financial gain; hacktivist = public message for a cause; unskilled attacker = borrowed, noisy tools."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-actors",
+    "question": "A SOC analyst traces a burst of alerts to someone running an exploit script, downloaded from a public forum and unmodified, against random internet address ranges. The noisy traffic trips every IDS signature. Which of the following threat actors does this MOST likely indicate?",
+    "options": ["Unskilled attacker", "Nation-state", "Organized crime", "Insider threat"],
+    "correctIndex": 0,
+    "explanation": "Unskilled attacker. Running an unmodified public script against random ranges with zero stealth shows low skill and pure opportunism; organized crime loses because professionals customize tooling and pick profitable targets rather than spraying random addresses. The tell: unskilled attacker = others' tools, noisy and untargeted; nation-state = custom stealthy tooling; organized crime = professional profit-driven operations; insider threat = trusted internal access."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-actors",
+    "question": "A group breaches an agrochemical company, publishes its internal safety memos, and posts a manifesto demanding a product recall, announcing the breach itself on social media. No payment is demanded. Which of the following threat actors BEST fits this profile?",
+    "options": ["Organized crime", "Hacktivist", "Nation-state", "Insider threat"],
+    "correctIndex": 1,
+    "explanation": "Hacktivist. Leaking documents to force a policy change and self-publicizing the breach are ideology-driven acts seeking attention for a cause; organized crime loses because no money is sought anywhere. The tell: hacktivist = publicity for a philosophical or political cause; organized crime = financial gain; nation-state = covert espionage, never self-announced; insider threat = a trusted person inside the organization."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-actors",
+    "question": "Investigators map a ransomware operation in which one group sells initial network access, another develops the malware, a third staffs the payment negotiation portal, and money mules launder the proceeds. Which of the following threat actors does this structure indicate?",
+    "options": ["Nation-state", "Hacktivist", "Unskilled attacker", "Organized crime"],
+    "correctIndex": 3,
+    "explanation": "Organized crime. Access brokers, malware developers, negotiators, and money mules form a professional division of labor built entirely around ransom profits; nation-state loses because the whole structure exists to collect payments, not intelligence. The tell: organized crime = businesslike operations for financial gain; nation-state = espionage or war aims; hacktivist = cause and publicity; unskilled attacker = a lone actor with borrowed tools."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "A badge-holding maintenance contractor and a remote criminal group both copy the same payroll database using stolen credentials. An analyst notes only one of them already operated inside the company's trust boundary. Which of the following threat actor attributes separates the two?",
+    "options": ["Internal versus external", "Level of sophistication and capability", "Resources and funding", "Motivation"],
+    "correctIndex": 0,
+    "explanation": "Internal versus external. The contractor operates inside the trust boundary with a badge while the crime group attacks from outside, so position relative to the organization is what separates them; sophistication loses because the stem says both ran the identical attack. The tell: internal/external = position relative to the organization; resources/funding = the money behind the actor; sophistication/capability = the skill of the tooling; motivation = what the actor wants."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "A threat modeling workshop notes that an insider threat bypasses perimeter defenses entirely because of where the actor sits relative to the organization, not because of superior skill or budget. Which of the following actor attributes is being described?",
+    "options": ["Resources and funding", "Motivation", "Internal versus external", "Level of sophistication and capability"],
+    "correctIndex": 2,
+    "explanation": "Internal versus external. The workshop is describing the actor's position relative to the organization, which is exactly why an insider never has to cross the perimeter; sophistication loses because the stem explicitly rules out skill as the explanation. The tell: internal/external = where the actor sits relative to the org; resources/funding = money behind them; sophistication/capability = skill of their tooling; motivation = what they want."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "Two adversary groups run identical phishing campaigns, but an intelligence report notes only one can afford to purchase zero-day exploits and keep attack infrastructure running for years at a time. Which of the following actor attributes explains the difference?",
+    "options": ["Level of sophistication and capability", "Internal versus external", "Motivation", "Resources and funding"],
+    "correctIndex": 3,
+    "explanation": "Resources and funding. Affording zero-day purchases and years of infrastructure is a question of money, not skill - the stem says the campaigns are identical, which is why sophistication loses. The tell: resources/funding = the money behind the actor; sophistication/capability = the skill of the tooling and tradecraft; internal/external = position relative to the organization; motivation = what the actor wants."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "One adversary abandons its campaign after two weeks, while another sustains an identical campaign for three years, renting fresh infrastructure and buying new exploits whenever defenders adapt. Which of the following attributes BEST explains the difference?",
+    "options": ["Motivation", "Resources and funding", "Level of sophistication and capability", "Internal versus external"],
+    "correctIndex": 1,
+    "explanation": "Resources and funding. Sustaining a campaign for years by continually renting infrastructure and buying exploits takes deep pockets; sophistication loses because both groups ran the identical campaign and the difference was staying power, not skill. The tell: resources/funding = money behind the actor; sophistication/capability = skill of the tooling; internal/external = position relative to the org; motivation = the actor's goal."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "An incident review contrasts one intrusion that used custom implants and living-off-the-land techniques to evade every tool with another that reused a copy-pasted forum script and tripped alarms instantly. Which of the following actor attributes is being contrasted?",
+    "options": ["Resources and funding", "Internal versus external", "Level of sophistication and capability", "Motivation"],
+    "correctIndex": 2,
+    "explanation": "Level of sophistication and capability. Custom implants and living-off-the-land tradecraft versus a copy-pasted script is a contrast in skill, not budget - funding loses because the stem never mentions money, only the quality of execution. The tell: sophistication/capability = skill of the tooling and tradecraft; resources/funding = money behind the actor; internal/external = position relative to the organization; motivation = what the actor wants."
+  },
+  {
+    "domain": "D2",
+    "family": "actor-attributes",
+    "question": "A threat intelligence report rates an adversary group as high on the attribute reflecting its ability to develop original exploit code and adapt its tradecraft when detected, regardless of its budget or location. Which of the following attributes is being rated?",
+    "options": ["Level of sophistication and capability", "Resources and funding", "Motivation", "Internal versus external"],
+    "correctIndex": 0,
+    "explanation": "Level of sophistication and capability. Developing original exploits and adapting tradecraft under pressure measures skill; resources and funding loses because the rating is explicitly independent of budget. The tell: sophistication/capability = skill of the tooling and tradecraft; resources/funding = money behind the actor; internal/external = position relative to the org; motivation = the actor's goal."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "Analysts attribute a three-year covert intrusion at a foreign ministry to a state-backed group that quietly collected diplomatic cables on upcoming trade negotiations and never sold, leaked, or ransomed anything. Which of the following BEST describes the motivation?",
+    "options": ["Data exfiltration", "Espionage", "Financial gain", "Blackmail"],
+    "correctIndex": 1,
+    "explanation": "Espionage. Covert, long-term collection of a government's negotiating positions is spying for strategic advantage; data exfiltration loses because taking the cables was only the means - the purpose was intelligence, and nothing was sold or leaked. The tell: espionage = intelligence for a strategic or competitive sponsor; data exfiltration = the stolen data itself is the goal; financial gain = money; blackmail = a coercive threat."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "A manufacturer secretly pays an intrusion crew to monitor a competitor's research servers for two years, quietly relaying prototype specifications to guide its own product roadmap. Nothing is leaked or sold. Which of the following BEST describes the motivation?",
+    "options": ["Philosophical or political beliefs", "Data exfiltration", "Revenge", "Espionage"],
+    "correctIndex": 3,
+    "explanation": "Espionage. This is corporate spying: covert monitoring feeds a competitor's strategy, so the intelligence purpose defines the motivation; data exfiltration loses because the specifications are collected to inform a rival's plans, not as an end in themselves. The tell: espionage = spying for strategic or competitive advantage; data exfiltration = obtaining the data is the goal; philosophical/political = a public cause; revenge = punishing a perceived wrong."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "An intrusion at a retailer touches nothing but the customer database, a full copy of which appears for sale on a leak marketplace days later. No ransom, fraud, or destruction ever follows. Which of the following MOST specifically describes the attacker's motivation?",
+    "options": ["Data exfiltration", "Financial gain", "Espionage", "Service disruption"],
+    "correctIndex": 0,
+    "explanation": "Data exfiltration. The intrusion existed solely to obtain the dataset, which is the SY0-701 motivation naming the theft of data itself; financial gain loses only because the ask demands the MOST specific motivation, and exfiltration states exactly what the attacker came for. The tell: data exfiltration = the stolen data is the objective; financial gain = money by any method; espionage = intelligence for a sponsor; service disruption = taking services down."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "Hospital analysts discover gigabytes of patient records were compressed and moved to an external server over several nights. The attacker never contacts the hospital, encrypts nothing, and disrupts no services. Which of the following motivations does the activity MOST likely indicate?",
+    "options": ["Blackmail", "Service disruption", "Data exfiltration", "Espionage"],
+    "correctIndex": 2,
+    "explanation": "Data exfiltration. The sustained, quiet copying of records to an external server with no contact, encryption, or outage shows the data itself was the goal; espionage loses because no strategic sponsor or intelligence purpose is indicated. The tell: data exfiltration = the stolen data is the goal; espionage = covert intelligence for a rival or state; blackmail = coercive threat; service disruption = the outage is the objective."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "On the morning of its product launch, an online retailer is hit by wiper malware and a traffic flood that keep its storefront down all day. There is no demand or manifesto, only evidence of a crew hired by a rival. Which of the following BEST describes the motivation?",
+    "options": ["Blackmail", "Disruption or chaos", "Philosophical or political beliefs", "Service disruption"],
+    "correctIndex": 3,
+    "explanation": "Service disruption. The attack is engineered to take one victim's services down at the most damaging moment; disruption or chaos loses because timing the outage to the launch and hiring a crew against one target shows deliberate target logic, not random havoc. The tell: service disruption = a specific target's services taken down on purpose; disruption/chaos = havoc with no target logic; philosophical/political = cause plus manifesto; blackmail = pay-or-else threat."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "Which of the following scenarios BEST illustrates service disruption as a threat actor's motivation?",
+    "options": ["Quietly gathering a rival's strategic plans over many months", "Taking a target's online services down is itself the end goal", "Defacing random, unrelated websites purely for amusement and attention", "Threatening to publish stolen files unless the victim pays a demand"],
+    "correctIndex": 1,
+    "explanation": "Service disruption is the motivation when knocking a chosen target's services offline is itself the objective; the amusement option loses because its victims are random and attention is the point, which is disruption or chaos. The tell: service disruption = a chosen target's services down as the goal; disruption/chaos = untargeted havoc for attention; blackmail = threat plus demand; espionage = long-term covert collection."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "After stealing a law firm's case files, an attacker emails the managing partner: unless payment arrives within 72 hours, the files go to the press. Nothing was encrypted or damaged. Which of the following BEST describes the motivation?",
+    "options": ["Financial gain", "Data exfiltration", "Blackmail", "Service disruption"],
+    "correctIndex": 2,
+    "explanation": "Blackmail. The pay-or-we-publish threat coerces the victim under a deadline, and that coercive threat is the defining feature; financial gain loses because the motivation named for extortion by threat is blackmail, even though money changes hands. The tell: blackmail = a coercive threat unless the victim complies; financial gain = money through theft, fraud, or sale without coercion; data exfiltration = the data itself is the goal; service disruption = outage as the objective."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "A ransomware crew encrypts a logistics company's servers and separately threatens to publish customer data copied beforehand unless payment arrives. An analyst must classify the motivation behind the publication threat specifically. Which of the following applies?",
+    "options": ["Blackmail", "Financial gain", "Data exfiltration", "Disruption or chaos"],
+    "correctIndex": 0,
+    "explanation": "Blackmail. The leak threat coerces payment by holding the stolen data over the victim, which classifies that component of double extortion; financial gain loses because the analyst is asked about the publication threat specifically, and its mechanism is coercion. The tell: blackmail = a threat held over the victim to force compliance; financial gain = profit without a coercive threat; data exfiltration = taking the data is the goal; disruption/chaos = havoc for its own sake."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "A fraudster spoofs the CFO's mailbox and persuades an accounts payable clerk to wire 240,000 dollars to an attacker-controlled account. No threat is made and no data is taken. Which of the following BEST describes the motivation?",
+    "options": ["Blackmail", "Financial gain", "Data exfiltration", "Espionage"],
+    "correctIndex": 1,
+    "explanation": "Financial gain. Wire fraud through a spoofed executive mailbox is theft where money is the entire point; blackmail loses because the clerk was deceived, not threatened - no coercive demand was ever made. The tell: financial gain = money obtained by theft, fraud, or sale; blackmail = coercion via a threat; data exfiltration = the data itself is the goal; espionage = intelligence collection."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "An intrusion group compromises corporate VPN accounts at dozens of companies and sells the working access to ransomware operators for cryptocurrency, never using it themselves. Which of the following BEST describes the group's motivation?",
+    "options": ["Data exfiltration", "Blackmail", "Philosophical or political beliefs", "Financial gain"],
+    "correctIndex": 3,
+    "explanation": "Financial gain. The group is an access broker converting compromised accounts into cryptocurrency, so money is the end goal; data exfiltration loses because no dataset is taken - working access, not data, is the product being sold. The tell: financial gain = money is the point; data exfiltration = stealing the data itself; blackmail = coercive threat; philosophical/political = advancing a cause."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "An independent researcher discovers an authentication bypass in a vendor's mobile application and privately reports it through the vendor's coordinated disclosure program, asking only that it be fixed. Which of the following BEST describes the researcher's motivation?",
+    "options": ["Ethical", "Financial gain", "Philosophical or political beliefs", "Espionage"],
+    "correctIndex": 0,
+    "explanation": "Ethical. Privately reporting the flaw through coordinated disclosure so it gets fixed is the motivation of improving security; financial gain loses because the researcher asks for nothing but a fix. The tell: ethical = probing and disclosing responsibly to improve security; financial gain = money; philosophical/political = a public cause; espionage = covert intelligence collection."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "A hobbyist hacker stumbles on an exposed database belonging to a charity, downloads nothing, and immediately notifies the charity with steps to secure it, declining the reward the charity offers. Which of the following BEST describes the motivation?",
+    "options": ["Financial gain", "Revenge", "Ethical", "Data exfiltration"],
+    "correctIndex": 2,
+    "explanation": "Ethical. Notifying the victim, taking nothing, and turning down a reward shows the goal was making the charity safer; financial gain loses because the offered reward was refused outright. The tell: ethical = responsible disclosure to improve security; financial gain = money; revenge = punishing a perceived wrong; data exfiltration = taking the data is the goal."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "Over a single weekend, an attacker defaces dozens of unrelated small-business websites with joke images and brags about it on social media. The victims share no industry or cause, and no demands are made. Which of the following BEST describes the motivation?",
+    "options": ["Philosophical or political beliefs", "Service disruption", "Financial gain", "Disruption or chaos"],
+    "correctIndex": 3,
+    "explanation": "Disruption or chaos. Random unrelated victims, joke content, social media bragging, and zero demands mean havoc and attention are the point; philosophical or political loses because no cause or message accompanies the defacements. The tell: disruption/chaos = untargeted havoc for its own sake; philosophical/political = a cause and a manifesto; service disruption = one chosen target's services taken down deliberately; financial gain = money."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "An intruder with no known tie to a company roams its network deleting random files, changing desktop wallpapers, and crashing print servers. Nothing is stolen, no demand arrives, and no statement is published. Which of the following BEST describes the motivation?",
+    "options": ["Revenge", "Disruption or chaos", "Service disruption", "Blackmail"],
+    "correctIndex": 1,
+    "explanation": "Disruption or chaos. Random destruction by an outsider with no theft, no demand, and no statement is havoc for its own sake; revenge loses because the intruder has no known grievance or connection to the company to punish. The tell: disruption/chaos = havoc with no target logic or cause; revenge = punishing a perceived wrong by someone with a grievance; service disruption = the outage of a chosen target is the objective; blackmail = coercive demand."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "In the opening hours of a ground offensive, coordinated cyberattacks disable the defending nation's power grid operators and military communications networks. Which of the following BEST describes the motivation behind the cyberattacks?",
+    "options": ["Espionage", "Service disruption", "War", "Philosophical or political beliefs"],
+    "correctIndex": 2,
+    "explanation": "War. Cyberattacks synchronized with a military offensive against a defender's grid and communications support combat objectives, which is cyberwarfare; service disruption loses because the outages are the method serving a military campaign, not the end in itself. The tell: war = cyber operations supporting military objectives; service disruption = the outage itself is the goal; espionage = covert intelligence; philosophical/political = activism for a cause."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "After a county board approves a pipeline, a group doxxes the board members, leaks the planning documents, and publishes a manifesto demanding the approval be reversed. No payment is requested. Which of the following BEST describes the motivation?",
+    "options": ["Philosophical or political beliefs", "Blackmail", "Financial gain", "Disruption or chaos"],
+    "correctIndex": 0,
+    "explanation": "Philosophical or political beliefs. The campaign publicly pressures a policy reversal and explains itself in a manifesto, so the cause is the motivation; blackmail loses because nothing is held back in exchange for a demand - the leak already happened in service of the cause, and no payment is sought. The tell: philosophical/political = a cause plus a public message; blackmail = a threat withheld until the victim complies; financial gain = money; disruption/chaos = havoc with no cause."
+  },
+  {
+    "domain": "D2",
+    "family": "threat-motivations",
+    "question": "An engineer demoted in a reorganization uses his still-active credentials to corrupt the code repository of the project that replaced his former role. He gains nothing financially and tells no one. Which of the following BEST describes the motivation?",
+    "options": ["Financial gain", "Revenge", "Disruption or chaos", "Blackmail"],
+    "correctIndex": 1,
+    "explanation": "Revenge. Sabotaging exactly the project that replaced his role punishes the perceived wrong of the demotion; disruption or chaos loses because the precise target choice reveals a personal grievance, not random havoc. The tell: revenge = punishing a perceived wrong; disruption/chaos = havoc with no personal target logic; financial gain = money; blackmail = a coercive threat with a demand."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "After an email gateway blocks their phishing lures, attackers compromise a business partner's account on the corporate team messaging platform and deliver the same malicious link through chat, where employees trust it. Which of the following attack vectors are they now using?",
+    "options": ["Email", "Image-based", "Voice call", "Instant messaging"],
+    "correctIndex": 3,
+    "explanation": "Instant messaging. The lure now rides the corporate chat platform, where a known partner's account carries far more implicit trust than external mail; email loses because that channel is blocked and the delivery path has moved to chat. The tell: instant messaging = lure delivered through a chat platform; email = the classic gateway-filtered channel; image-based = payload inside a graphic file; voice call = spoken phone deception."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "Employees receive WhatsApp messages on their phones from an unknown number posing as the IT service desk, linking to a fake password reset page. Which of the following threat vector categories does this campaign use?",
+    "options": ["Instant messaging", "Short message service (SMS)", "Email", "Voice call"],
+    "correctIndex": 0,
+    "explanation": "Instant messaging. The lure arrives through a chat application, so the IM channel defines the vector; SMS loses because a WhatsApp message is app-based chat, not a carrier text, even though both appear on phones. The tell: message-based vectors map to their channel - email = mailbox, SMS = carrier text message, instant messaging = chat application, voice call = phone conversation."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A network diagram image uploaded to a company's internal wiki contains an embedded script that executes whenever a browser renders the page preview, hijacking viewers' sessions. Which of the following MOST specifically describes the attack vector?",
+    "options": ["File-based", "Message-based", "Image-based", "Removable device"],
+    "correctIndex": 2,
+    "explanation": "Image-based. The payload is embedded in a graphic that executes when the browser renders it, and image-based names that carrier precisely; file-based loses because the ask demands the MOST specific vector and the carrier here is specifically an image. The tell: image-based = payload inside a picture or graphic format; file-based = malicious files generally (documents, archives, executables); message-based = lure carried by email, SMS, or chat; removable device = USB media."
+  }
+]
