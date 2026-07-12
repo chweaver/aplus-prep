@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "A DevOps team's deployment pipeline automatically rejects any infrastructure template that disables storage encryption or opens administrative ports to the internet, no matter who submits it. Which of the following automation use cases does this describe?",
+    "options": ["Security groups", "Continuous integration and testing", "Guard rails", "Escalation"],
+    "correctIndex": 2,
+    "explanation": "Guard rails. Automated policy boundaries block dangerous actions before they deploy, keeping fast-moving teams inside policy without manual review; security groups lose because they are the network access rule sets themselves, not limits on what actions are allowed. The tell: guard rails = automated limits on actions, security groups = managed network access rules, continuous integration = automatic build and test of code changes, escalation = routing an item up when a threshold hits."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "A workflow reacts to each DLP alert by opening a pre-populated case in the tracking system; a later rule moves any case untouched for four hours to a senior analyst queue. Which of the following use cases does the case-opening step demonstrate?",
+    "options": ["Escalation", "Ticket creation", "Guard rails", "User provisioning"],
+    "correctIndex": 1,
+    "explanation": "Ticket creation. The alert automatically becomes a tracked, pre-filled work item so nothing is dropped or forgotten; escalation loses because it is the second behavior, the routing upward after the four-hour threshold passes. The tell: ticket creation = auto-open a tracked work item, escalation = auto-route it to a higher tier when severity or time thresholds hit, guard rails = automated limits that block dangerous actions."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "At 03:00 a SIEM flags logins to one account from two continents within minutes. Before any analyst responds, a workflow disables the account and terminates its active sessions. Which of the following automation use cases does this demonstrate?",
+    "options": ["Continuous integration and testing", "Ticket creation", "Guard rails", "Enabling and disabling services and access"],
+    "correctIndex": 3,
+    "explanation": "Enabling and disabling services and access. A scripted response action cuts off a likely compromised account at machine speed instead of waiting for a human; ticket creation loses because opening a work item tracks the event but does not stop it. The tell: enabling/disabling access = automated response that turns access off or on, ticket creation = auto-open a tracked item, guard rails = prevent dangerous configuration actions before they happen."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "Every time a developer commits code, the pipeline automatically compiles the change and runs static and dynamic security tests before it is allowed to merge. Which of the following automation use cases is in place?",
+    "options": ["Continuous integration and testing", "Guard rails", "Integrations and APIs", "User provisioning"],
+    "correctIndex": 0,
+    "explanation": "Continuous integration and testing. Every code change is automatically built and security-tested, catching flaws consistently before they reach production; guard rails lose because they block dangerous infrastructure actions rather than build and test code changes. The tell: continuous integration = automatic build plus test on every commit, guard rails = policy limits on actions, integrations and APIs = tools invoking each other programmatically."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "A security engineer needs 20 identical hardened web servers for a product launch. A template deploys all of them in minutes with the approved baseline already applied. Which of the following automation use cases does this illustrate?",
+    "options": ["User provisioning", "Resource provisioning", "Security groups", "Escalation"],
+    "correctIndex": 1,
+    "explanation": "Resource provisioning. Infrastructure is deployed automatically from a template with security baked in, so every server arrives configured the same way; user provisioning loses because it automates account creation and removal, not servers. The tell: resource provisioning = automated deployment of infrastructure, user provisioning = automated account lifecycle, security groups = programmatic network access rules, escalation = routing work items upward."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "A nightly script compares cloud firewall rule sets against policy, closes ports that were opened outside change control, and opens ports a newly approved service requires. Which of the following is being automated?",
+    "options": ["Security groups", "Guard rails", "Ticket creation", "Continuous integration and testing"],
+    "correctIndex": 0,
+    "explanation": "Security groups. The script programmatically manages the cloud network access rule groupings, opening and closing ports per policy; guard rails lose because they prevent noncompliant actions up front rather than manage the rule sets themselves. The tell: security groups = automated management of network access rules, guard rails = automated limits that block dangerous actions, ticket creation = auto-open a tracked work item."
+  },
+  {
+    "domain": "D4",
+    "family": "automation",
+    "question": "When the SIEM confirms beaconing from a workstation, it instructs the EDR platform through a documented programmatic interface to isolate the host, with no analyst involved. Which of the following makes this cross-tool workflow possible?",
+    "options": ["Escalation", "Guard rails", "Integrations and APIs", "Continuous integration and testing"],
+    "correctIndex": 2,
+    "explanation": "Integrations and APIs. The tools talk to each other programmatically, letting the SIEM trigger the EDR isolation action directly; escalation loses because it routes a work item to a higher tier of humans rather than connecting tools to each other. The tell: integrations and APIs = the glue that lets one tool invoke another, escalation = auto-route up the chain, continuous integration = automatic build and test of code changes."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-benefits",
+    "question": "After a security team automates its containment playbook, the time from malware alert to host isolation drops from three hours to under two minutes. Which of the following automation benefits does this BEST illustrate?",
+    "options": ["Workforce multiplier", "Enforcing baselines", "Employee retention", "Reaction time"],
+    "correctIndex": 3,
+    "explanation": "Reaction time. Automation responds to a single event at machine speed, shrinking the window an attacker has between alert and containment; workforce multiplier loses because the scenario measures speed on one event, not a small team producing big-team output. The tell: reaction time = machine-speed response to an event, workforce multiplier = small team achieving big-team output, enforcing baselines = drift auto-corrected over time."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-benefits",
+    "question": "A three-person security team uses automated patching, provisioning, and alert triage to manage 6,000 endpoints, work that comparable companies staff with teams five times larger. Which of the following benefits of automation does this show?",
+    "options": ["Reaction time", "Workforce multiplier", "Enforcing baselines", "Employee retention"],
+    "correctIndex": 1,
+    "explanation": "Workforce multiplier. Automation amplifies a small team into big-team output rather than replacing staff; reaction time loses because nothing here measures the speed of response to a single event, only sustained output per person. The tell: workforce multiplier = small team, big-team output; reaction time = machine-speed response to one event; employee retention = analysts freed from drudgery stay longer; enforcing baselines = drift auto-corrected."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-benefits",
+    "question": "A configuration job checks every server hourly against the approved build and automatically reverts any setting an administrator changed outside change control. Which of the following automation benefits does this BEST describe?",
+    "options": ["Enforcing baselines", "Standard infrastructure configurations", "Scaling in a secure manner", "Efficiency and time saving"],
+    "correctIndex": 0,
+    "explanation": "Enforcing baselines. Drift is detected and auto-corrected over the system's life so servers stay compliant long after deployment; standard infrastructure configurations lose because that benefit is about identical initial builds, and these servers were already built. The tell: enforcing baselines = drift auto-corrected over time, standard configurations = every new build identical, scaling securely = the 100th deployment as secure as the 1st."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-drawbacks",
+    "question": "An orchestration platform goes down for a day, and patch deployment, server provisioning, and incident response playbooks all stop across the company until it returns. Which of the following automation considerations does the outage expose?",
+    "options": ["Technical debt", "Complexity", "Single point of failure", "Cost"],
+    "correctIndex": 2,
+    "explanation": "Single point of failure. Everything the automation platform ran halts when the platform itself fails, and the manual alternatives have atrophied; complexity loses because the problem is not difficulty understanding the system but total dependence on one component. The tell: single point of failure = the platform outage stops everything it ran, technical debt = brittle accumulated shortcuts needing rework, complexity = hard to understand and debug."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-drawbacks",
+    "question": "A security team depends on dozens of quick one-off scripts written over five years, undocumented and interdependent; engineers refuse to modify them for fear of breaking unknown workflows. Which of the following considerations of automation does this represent?",
+    "options": ["Single point of failure", "Cost", "Ongoing supportability", "Technical debt"],
+    "correctIndex": 3,
+    "explanation": "Technical debt. Years of expedient shortcuts have accumulated into a brittle, undocumented tangle that now needs rework before anything can safely change; ongoing supportability loses because the authors are still on staff - the burden is the accumulated shortcuts themselves. The tell: technical debt = brittle accumulated shortcuts needing rework, supportability = the author leaves and nobody can maintain it, single point of failure = one platform outage stops everything."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-drawbacks",
+    "question": "The only engineer who understands the identity provisioning automation resigns. Within a month, onboarding errors pile up because nobody remaining can read or fix the code. Which of the following automation considerations was neglected?",
+    "options": ["Cost", "Single point of failure", "Ongoing supportability", "Complexity"],
+    "correctIndex": 2,
+    "explanation": "Ongoing supportability. Automations need maintenance forever, and without documentation and shared knowledge the system dies with its author; single point of failure loses because the platform still runs - the missing dependency is human expertise to maintain it. The tell: supportability = the author leaves and nobody can maintain it, single point of failure = the platform outage stops everything it ran, technical debt = brittle accumulated shortcuts."
+  },
+  {
+    "domain": "D4",
+    "family": "automation-drawbacks",
+    "question": "A CISO proposes a SOAR deployment. Finance notes the licensing, integration engineering, and playbook development will consume most of this year's budget before a single incident is handled faster. Which of the following automation considerations is finance raising?",
+    "options": ["Complexity", "Cost", "Technical debt", "Single point of failure"],
+    "correctIndex": 1,
+    "explanation": "Cost. Automation demands significant up-front build, licensing, and maintenance investment before the payoff arrives; complexity loses because the objection is the price tag, not the difficulty of understanding or debugging the system. The tell: cost = up-front investment before payoff, complexity = hard to understand and debug subtle failures, technical debt = accumulated shortcuts needing rework, single point of failure = one outage stops everything."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "A retention schedule will purge email older than three years this weekend. General counsel tells IT that a lawsuit from a former distributor is expected. Which of the following should be put in place FIRST?",
+    "options": ["E-discovery", "Legal hold", "Chain of custody", "Acquisition"],
+    "correctIndex": 1,
+    "explanation": "Legal hold. Anticipated litigation triggers a formal preservation order that suspends the normal retention schedule for relevant data, and letting the purge run risks spoliation sanctions; e-discovery loses because producing records comes later - the data must first be preserved from deletion. The tell: legal hold = preserve everything relevant when litigation is anticipated, overriding retention; e-discovery = locate and produce the records for the legal process; chain of custody = the handling log for collected evidence."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "An incident responder reaches a powered-on server suspected of compromise and must begin collecting evidence. Which of the following should be captured FIRST?",
+    "options": ["The contents of system memory", "A bit-for-bit image of the disk drive", "Archived backups of the server", "Exported copies of retained log archives"],
+    "correctIndex": 0,
+    "explanation": "The contents of system memory. Order of volatility requires collecting the most short-lived evidence first, and RAM disappears the moment power is lost; the disk image loses because disk contents persist after shutdown and can be acquired later. The tell: order of volatility runs CPU state and RAM first, then disk, then backups and archives - capture memory before anything that survives a power-off."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "A junior analyst boots a seized laptop, browses the file system, and copies the user's folders to a USB drive for review. Which of the following BEST describes the flaw in this evidence handling?",
+    "options": ["A legal hold was never issued by counsel before the collection began", "The laptop's transfers between handlers were never recorded in a custody log", "The recovered files were never produced to opposing counsel through e-discovery", "The original was altered because no write blocker or bit-for-bit image was used"],
+    "correctIndex": 3,
+    "explanation": "Acquisition was not forensically sound: booting the laptop and copying files changed timestamps and system state, where a write blocker and a hash-verified bit-for-bit image would have left the original untouched. The custody-log option loses because no undocumented transfer is described; the flaw shown is the alteration itself. The tell: sound acquisition = write blocker, bit-for-bit image, matching hashes; chain of custody = documenting who held the evidence; legal hold = a preservation order, not an imaging method."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "Which of the following BEST describes the reporting activity in a digital forensics investigation?",
+    "options": ["Documenting methods and findings so another examiner could reproduce them", "Logging every transfer of evidence between handlers with times and signatures", "Suspending deletion of data relevant to expected litigation", "Producing electronic records to the opposing party's counsel"],
+    "correctIndex": 0,
+    "explanation": "Reporting. The examiner documents methodology, evidence, and conclusions in a form a peer could reproduce and a court could scrutinize; the transfer log loses because that is chain of custody, which records who possessed evidence, not what the analysis found. The tell: reporting = reproducible documentation of findings, chain of custody = the who-held-it-when record, legal hold = the preservation order, e-discovery = producing records for the legal process."
+  },
+  {
+    "domain": "D4",
+    "family": "forensics",
+    "question": "Litigation support staff search preserved mailboxes and chat exports for messages matching case terms, then deliver the responsive items to the opposing party in an agreed format. Which of the following processes is being performed?",
+    "options": ["Chain of custody", "E-discovery", "Preservation", "Reporting"],
+    "correctIndex": 1,
+    "explanation": "E-discovery. Identifying, collecting, and producing electronically stored information for a legal proceeding is exactly this process, scoped by the legal hold; reporting loses because it documents an examiner's analytical findings rather than handing records to opposing counsel. The tell: e-discovery = locate and produce electronic records for litigation, preservation = keep collected evidence unaltered, chain of custody = document who handled evidence and when."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "Investigators need to determine which exploit was launched against a web server and whether the inline security appliance dropped the traffic or only raised an alert. Which of the following log sources answers BOTH questions?",
+    "options": ["Firewall logs", "Application logs", "IPS/IDS logs", "Network flow records"],
+    "correctIndex": 2,
+    "explanation": "IPS/IDS logs. They record which signature fired and the action taken, showing both the attack technique and whether it was blocked or merely alerted on; firewall logs lose because they show connections permitted or denied by rule, not which exploit payload was detected. The tell: IPS/IDS logs = attack signature plus action taken, firewall logs = connection dispositions by rule, flow records = who talked to whom and how much, application logs = events inside the app."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "During a post-incident review, the team finds the SIEM's weekly scheduled summary listed the attacker's account among anomalous logins ten days before detection, but nobody had opened it. Which of the following data sources contained the early warning?",
+    "options": ["Dashboards", "Automated reports", "Packet captures", "Vulnerability scan results"],
+    "correctIndex": 1,
+    "explanation": "Automated reports. The tool-generated periodic summary already held the indicator, so the failure was process, not visibility; dashboards lose because they are live displays watched in the moment, not scheduled documents that can sit unread. The tell: automated report = periodic generated document, dashboard = real-time visual status display, packet capture = raw traffic content, vulnerability scan = the state of known weaknesses."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "A security analyst reviews firewall log entries: DENY TCP 198.51.100.7 to 10.0.0.5:21; DENY TCP 198.51.100.7 to 10.0.0.5:22; DENY TCP 198.51.100.7 to 10.0.0.5:23; DENY TCP 198.51.100.7 to 10.0.0.5:25. Which of the following is MOST likely occurring?",
+    "options": ["A reconnaissance port scan", "A distributed denial-of-service attack", "Data exfiltration to an external host", "A successful brute-force login"],
+    "correctIndex": 0,
+    "explanation": "A reconnaissance port scan. One external source probing sequential service ports on a single host is classic scanning to map open services, and every attempt was denied; the denial-of-service option loses because that pattern shows overwhelming traffic from many sources, not one source touching each port once. The tell: one source sweeping many ports = scanning, many sources hammering one service = distributed denial of service, large outbound transfers = exfiltration - and firewall logs record attempts with dispositions, so denies prove probing, not compromise."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "A server's OS security log shows 40 failed logons for one service account between 02:01 and 02:13, a successful logon at 02:14, and creation of a new local administrator at 02:16. Which of the following MOST likely occurred?",
+    "options": ["A password spraying attempt was blocked by lockout policy", "An administrator completed scheduled overnight maintenance", "A replay attack reused a captured authentication token", "A brute-force attack succeeded and a persistence account was created"],
+    "correctIndex": 3,
+    "explanation": "A brute-force attack succeeded and a persistence account was created. Many failures against one account ending in a success, then an unexplained new administrator two minutes later, is the classic break-in timeline; password spraying loses because it tries a few passwords across many accounts, while this log shows many attempts against one. The tell: brute force = many passwords, one account; spraying = few passwords, many accounts; and the OS security log is the source that captures logons and account changes in one timeline."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "An analyst reviews a suspicious message showing From: ceo@company.com, a Received: header naming mx1.bulk-sender.example [203.0.113.9], and Authentication-Results: spf=fail for that IP. Which of the following BEST explains the finding?",
+    "options": ["The message is spoofed and came from an unauthorized server", "The CEO's mailbox was compromised and used to send the message", "The message was altered in transit after a legitimate send", "The gateway corrupted the headers while scanning the message"],
+    "correctIndex": 0,
+    "explanation": "The message is spoofed and came from an unauthorized server. Header metadata records the true sending IP, and the SPF failure proves that server is not permitted to send for the domain; the compromised-mailbox option loses because mail from the real mailbox would leave the company's authorized servers and pass SPF. The tell: email headers are metadata - the routing path and authentication results reveal the actual origin regardless of the displayed From address, and spf=fail on the real sending IP points to spoofing, not tampering."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "After a customer portal account is confirmed compromised, investigators must determine exactly which customer records the account viewed and exported through the portal. Which of the following log sources provides this?",
+    "options": ["OS security logs", "Firewall logs", "Application logs", "Endpoint logs"],
+    "correctIndex": 2,
+    "explanation": "Application logs. The portal software records in-app actions such as record views, searches, and exports tied to the account; firewall logs lose because they show connections to the server, not which records were touched inside the app. The tell: application logs = events inside the software, OS security logs = system logons and audit events, firewall logs = connection dispositions, endpoint logs = activity on the user's host."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "A user reports opening a phishing attachment. Investigators need to confirm whether the file actually executed on the laptop and what child processes it spawned. Which of the following sources provides this evidence?",
+    "options": ["Email metadata", "IPS/IDS logs", "Network logs", "Endpoint logs"],
+    "correctIndex": 3,
+    "explanation": "Endpoint logs. EDR and host telemetry record process execution chains on the machine itself, showing whether the attachment ran and what it launched; email metadata loses because headers show where the message came from, not what happened after it was opened. The tell: endpoint logs = what ran on the host, email metadata = the message's origin and routing, IPS/IDS logs = attacks detected on the wire, network logs = who connected where."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "An IDS alert names only the internal address 10.4.8.77 at 14:32. Investigators must identify which laptop held that address at that moment before any host analysis can start. Which of the following log sources resolves this?",
+    "options": ["Endpoint logs", "Application logs", "Network logs", "Metadata"],
+    "correctIndex": 2,
+    "explanation": "Network logs. DHCP lease records and switch logs map an IP address to a specific device and port at a point in time; endpoint logs lose because host telemetry cannot be pulled until the investigators know which host the address belonged to. The tell: network logs = DHCP, DNS, and flow records tying addresses to devices and lookups; endpoint logs = activity on an already-identified host; metadata = data about files and messages, not address leases."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "During a breach investigation, the team wants to know whether the exploited flaw had already been identified on the compromised host and left unremediated before the attack. Which of the following data sources answers this?",
+    "options": ["Packet captures", "Vulnerability scan results", "Dashboards", "Automated reports"],
+    "correctIndex": 1,
+    "explanation": "Vulnerability scan results. Prior scan data records which weaknesses were flagged on the host at the time, showing whether the exploited flaw was known and unfixed, which feeds root cause analysis; automated reports lose because they are scheduled summaries of tool output, while the scan data itself is the record of the host's flaws. The tell: vulnerability scans = the state of weaknesses at a point in time, logs and captures = events as they happened, dashboards = live status, automated reports = periodic summaries."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "During an active incident bridge, a SOC lead needs a continuously updating view of alert volume and affected segments to track spread, before assigning analysts to dig into raw logs. Which of the following BEST serves this need?",
+    "options": ["Automated reports", "Packet captures", "Vulnerability scan results", "Dashboards"],
+    "correctIndex": 3,
+    "explanation": "Dashboards. A live visual display gives moment-to-moment situational awareness during the incident and acts as the pivot point into deeper data; automated reports lose because a scheduled document cannot track a situation changing by the minute. The tell: dashboard = real-time glanceable status, automated report = periodic generated document, raw logs and packet captures = the detailed evidence analysts pivot into afterward."
+  },
+  {
+    "domain": "D4",
+    "family": "log-sources",
+    "question": "Flow records prove 40 GB left the network toward an unknown host overnight, but regulators require proof of exactly which files and contents were transferred. Which of the following sources can provide it?",
+    "options": ["Packet captures", "Network flow records", "Firewall logs", "IPS/IDS logs"],
+    "correctIndex": 0,
+    "explanation": "Packet captures. Full raw traffic includes payloads, letting investigators reconstruct sessions and recover the actual transferred content; flow records lose because they summarize who talked to whom and how much, never the bytes themselves. The tell: packet capture = full content, flow records = volume and endpoints only, firewall logs = permit and deny decisions, IPS/IDS logs = which signatures fired - and the capture must already have been running to hold the evidence."
+  }
+]
