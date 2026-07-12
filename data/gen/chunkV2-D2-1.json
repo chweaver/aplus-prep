@@ -98,10 +98,10 @@
   {
     "domain": "D2",
     "family": "threat-motivations",
-    "question": "An intrusion at a retailer touches nothing but the customer database, a full copy of which appears for sale on a leak marketplace days later. No ransom, fraud, or destruction ever follows. Which of the following MOST specifically describes the attacker's motivation?",
+    "question": "An intrusion at a retailer touches nothing but the customer database, a full copy of which is later recovered intact from attacker-controlled storage. No ransom, fraud, sale, destruction, or nation-state sponsor is ever tied to the incident. Which of the following MOST specifically describes the attacker's motivation?",
     "options": ["Data exfiltration", "Financial gain", "Espionage", "Service disruption"],
     "correctIndex": 0,
-    "explanation": "Data exfiltration. The intrusion existed solely to obtain the dataset, which is the SY0-701 motivation naming the theft of data itself; financial gain loses only because the ask demands the MOST specific motivation, and exfiltration states exactly what the attacker came for. The tell: data exfiltration = the stolen data is the objective; financial gain = money by any method; espionage = intelligence for a sponsor; service disruption = taking services down."
+    "explanation": "Data exfiltration. The operation touched only the database and existed solely to copy it out to attacker storage, with no sale, fraud, sponsor, or outage, so removing the data was itself the objective, which is exactly what the SY0-701 data exfiltration motivation names. The tell: data exfiltration = the stolen data is the objective; financial gain = money by any method such as ransom, fraud, or sale; espionage = intelligence for a sponsor; service disruption = taking services down."
   },
   {
     "domain": "D2",

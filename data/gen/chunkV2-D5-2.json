@@ -5,7 +5,7 @@
     "question": "A risk register row reads - Risk: data exfiltration via email; Owner: R. Cole; Key risk indicator: blocked DLP events per day; Action rule: escalate to treatment when blocked events exceed 500 in a day. Which risk concept does the action rule define?",
     "options": ["Risk tolerance", "Risk appetite", "Key risk indicator", "Risk threshold"],
     "correctIndex": 3,
-    "explanation": "Risk threshold. The preset level at which a specific tracked risk becomes unacceptable and treatment must begin is the threshold; the 'exceed 500' rule is that action trigger. Risk tolerance is tempting but names the organization's acceptable variance around risk generally, not one register entry's trigger line. The tell: threshold = the action-trigger level for one tracked risk; tolerance = acceptable variance around appetite; appetite = overall willingness to take risk; KRI = the early-warning metric being measured (here, blocked DLP events)."
+    "explanation": "Risk threshold. The preset level at which a specific tracked risk becomes unacceptable and treatment must begin is the threshold; the 'exceed 500' rule is that action trigger. Risk tolerance is tempting but names the organization's acceptable variance around risk generally, not one register entry's trigger line. The tell: threshold = the action-trigger level for one tracked risk; tolerance = acceptable variance around a specific risk; appetite = overall willingness to take risk; KRI = the early-warning metric being measured (here, blocked DLP events)."
   },
   {
     "domain": "D5",

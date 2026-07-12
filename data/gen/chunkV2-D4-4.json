@@ -50,10 +50,10 @@
   {
     "domain": "D4",
     "family": "automation",
-    "question": "When the SIEM confirms beaconing from a workstation, it instructs the EDR platform through a documented programmatic interface to isolate the host, with no analyst involved. Which of the following makes this cross-tool workflow possible?",
+    "question": "When the SIEM alerts on beaconing from a workstation, an automated SOAR playbook calls the EDR platform through a documented programmatic interface to isolate the host, with no analyst involved. Which of the following makes this cross-tool workflow possible?",
     "options": ["Escalation", "Guard rails", "Integrations and APIs", "Continuous integration and testing"],
     "correctIndex": 2,
-    "explanation": "Integrations and APIs. The tools talk to each other programmatically, letting the SIEM trigger the EDR isolation action directly; escalation loses because it routes a work item to a higher tier of humans rather than connecting tools to each other. The tell: integrations and APIs = the glue that lets one tool invoke another, escalation = auto-route up the chain, continuous integration = automatic build and test of code changes."
+    "explanation": "Integrations and APIs. The tools talk to each other programmatically, letting the SOAR playbook invoke the EDR isolation action directly; escalation loses because it routes a work item to a higher tier of humans rather than connecting tools to each other. The tell: integrations and APIs = the glue that lets one tool invoke another, escalation = auto-route up the chain, continuous integration = automatic build and test of code changes."
   },
   {
     "domain": "D4",

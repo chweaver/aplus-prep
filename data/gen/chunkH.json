@@ -231,7 +231,7 @@
    "Hybrid"
   ],
   "correctIndex": 1,
-  "explanation": "Quantitative. Hard dollar values and frequency math (SLE x ARO = ALE) are quantitative analysis, built for cost-benefit decisions; semi-quantitative loses because it uses numeric scales, not true currency calculations. The tell: quantitative = numbers and currency, qualitative = High/Medium/Low judgment, semi-quantitative/hybrid = mixtures of the two."
+  "explanation": "Quantitative. Hard dollar values and frequency math (SLE x ARO = ALE) are quantitative analysis, built for cost-benefit decisions; semi-quantitative loses because it uses numeric scales, not true currency calculations. The tell: quantitative = numbers and currency, qualitative = High/Medium/Low judgment, semi-quantitative = numeric scales or scores with no true currency, hybrid = a deliberate mix of qualitative and quantitative methods."
  },
  {
   "domain": "D5",
@@ -244,7 +244,7 @@
    "Semi-quantitative"
   ],
   "correctIndex": 0,
-  "explanation": "Qualitative. Subjective ratings on a matrix, no dollars, is qualitative analysis: faster and easier, less precise; quantitative loses the instant no monetary figure appears. The tell: qualitative = judgment categories, quantitative = calculated currency values, hybrid/semi-quantitative = blends."
+  "explanation": "Qualitative. Subjective ratings on a matrix, no dollars, is qualitative analysis: faster and easier, less precise; quantitative loses the instant no monetary figure appears. The tell: qualitative = judgment categories, quantitative = calculated currency values, semi-quantitative = numeric scales or scores with no true currency, hybrid = a deliberate mix of qualitative and quantitative methods."
  },
  {
   "domain": "D5",
