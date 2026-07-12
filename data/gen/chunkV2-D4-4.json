@@ -138,7 +138,7 @@
   {
     "domain": "D4",
     "family": "forensics",
-    "question": "Which of the following BEST describes the reporting activity in a digital forensics investigation?",
+    "question": "A forensic analyst has finished examining a compromised server and is preparing the case deliverable for the legal team. Which of the following BEST describes what the reporting activity must accomplish?",
     "options": ["Documenting methods and findings so another examiner could reproduce them", "Logging every transfer of evidence between handlers with times and signatures", "Suspending deletion of data relevant to expected litigation", "Producing electronic records to the opposing party's counsel"],
     "correctIndex": 0,
     "explanation": "Reporting. The examiner documents methodology, evidence, and conclusions in a form a peer could reproduce and a court could scrutinize; the transfer log loses because that is chain of custody, which records who possessed evidence, not what the analysis found. The tell: reporting = reproducible documentation of findings, chain of custody = the who-held-it-when record, legal hold = the preservation order, e-discovery = producing records for the legal process."

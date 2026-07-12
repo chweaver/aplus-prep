@@ -20,6 +20,10 @@ export const FAMILIES = [
   { key: "obfuscation",          domain: "D1", tier: "base",     min: 2, target: 2 },
   { key: "encryption-levels",    domain: "D1", tier: "base",     min: 2, target: 2 },
   { key: "certificates",         domain: "D1", tier: "high",     min: 3, target: 4 },
+  { key: "physical-sensors",     domain: "D1", tier: "base",     min: 2, target: 2 },
+  { key: "gap-analysis",         domain: "D1", tier: "base",     min: 2, target: 2 },
+  { key: "change-implications",  domain: "D1", tier: "base",     min: 6, target: 6 },
+  { key: "crypto-algorithms",    domain: "D1", tier: "base",     min: 2, target: 2 },
 
   // ---------------- Domain 2: Threats, Vulnerabilities, Mitigations ----------------
   { key: "threat-actors",        domain: "D2", tier: "base",     min: 2, target: 3 },
@@ -39,6 +43,10 @@ export const FAMILIES = [
   { key: "password-attacks",     domain: "D2", tier: "high",     min: 3, target: 3 },
   { key: "indicators",           domain: "D2", tier: "high",     min: 3, target: 4 },
   { key: "mitigations",          domain: "D2", tier: "base",     min: 2, target: 3 },
+  { key: "actor-attributes",     domain: "D2", tier: "base",     min: 6, target: 6 },
+  { key: "threat-motivations",   domain: "D2", tier: "base",     min: 17, target: 17 },
+  { key: "physical-attacks",     domain: "D2", tier: "base",     min: 4, target: 4 },
+  { key: "host-hardening",       domain: "D2", tier: "base",     min: 10, target: 10 },
 
   // ---------------- Domain 3: Security Architecture ----------------
   { key: "containerization",     domain: "D3", tier: "high",     min: 3, target: 3 },
@@ -61,6 +69,9 @@ export const FAMILIES = [
   { key: "continuity-testing",   domain: "D3", tier: "high",     min: 3, target: 4 },
   { key: "backups",              domain: "D3", tier: "priority", min: 8, target: 10 },
   { key: "power",                domain: "D3", tier: "base",     min: 2, target: 2 },
+  { key: "cloud-models",         domain: "D3", tier: "base",     min: 9, target: 9 },
+  { key: "infra-placement",      domain: "D3", tier: "base",     min: 7, target: 7 },
+  { key: "data-types",           domain: "D3", tier: "base",     min: 6, target: 6 },
 
   // ---------------- Domain 4: Security Operations ----------------
   { key: "baselines",            domain: "D4", tier: "base",     min: 2, target: 2 },
@@ -93,6 +104,13 @@ export const FAMILIES = [
   { key: "ir-testing",           domain: "D4", tier: "base",     min: 2, target: 2 },
   { key: "forensics",            domain: "D4", tier: "high",     min: 3, target: 3 },
   { key: "log-sources",          domain: "D4", tier: "base",     min: 2, target: 2 },
+  { key: "hardening-targets",    domain: "D4", tier: "base",     min: 4, target: 4 },
+  { key: "mobile-connections",   domain: "D4", tier: "base",     min: 3, target: 3 },
+  { key: "wireless-security",    domain: "D4", tier: "base",     min: 4, target: 4 },
+  { key: "remediation-validation",domain: "D4", tier: "base",     min: 3, target: 3 },
+  { key: "secure-protocols",     domain: "D4", tier: "base",     min: 6, target: 6 },
+  { key: "automation-benefits",  domain: "D4", tier: "base",     min: 3, target: 3 },
+  { key: "automation-drawbacks", domain: "D4", tier: "base",     min: 4, target: 4 },
 
   // ---------------- Domain 5: Program Management and Oversight ----------------
   { key: "governance-hierarchy", domain: "D5", tier: "high",     min: 3, target: 4 },
@@ -116,4 +134,13 @@ export const FAMILIES = [
   { key: "audits",               domain: "D5", tier: "base",     min: 2, target: 2 },
   { key: "pentest-types",        domain: "D5", tier: "high",     min: 3, target: 3 },
   { key: "awareness",            domain: "D5", tier: "base",     min: 2, target: 2 },
+  { key: "policy-lifecycle",     domain: "D5", tier: "base",     min: 2, target: 2 },
+  { key: "governance-structures",domain: "D5", tier: "base",     min: 4, target: 4 },
+  { key: "risk-process",         domain: "D5", tier: "base",     min: 2, target: 2 },
+  { key: "vendor-monitoring",    domain: "D5", tier: "base",     min: 2, target: 2 },
+  { key: "noncompliance-consequences",domain: "D5", tier: "base",     min: 5, target: 5 },
+  { key: "pentest-approaches",   domain: "D5", tier: "base",     min: 4, target: 4 },
+  { key: "phishing-response",    domain: "D5", tier: "base",     min: 2, target: 2 },
+  { key: "anomalous-behavior",   domain: "D5", tier: "base",     min: 3, target: 3 },
+  { key: "user-training-topics", domain: "D5", tier: "base",     min: 7, target: 7 },
 ];
