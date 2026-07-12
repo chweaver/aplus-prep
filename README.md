@@ -1,10 +1,13 @@
 # Security+ SY0-701 Twin-Term Drill
 
-A single-file drill app that attacks one specific failure mode on the CompTIA
-Security+ SY0-701 exam: confusing paired or sibling terms (CVE vs CVSS, SPF vs
-DMARC, MOU vs SLA, hot vs cold site, snapshots vs journaling, and about a
-hundred more). No lessons, no menus - one continuous shuffled stream of
-multiple-choice reps with instant feedback.
+A single-file drill app for the CompTIA Security+ SY0-701 exam. As of **v2.0**
+the bank covers every objective bullet in the official syllabus (1.1 through
+5.6), built to take a learner from zero to exam-ready on its own. Its signature
+is still the "tell": every explanation ends with a one-phrase discriminator for
+the sibling terms the exam loves to confuse (CVE vs CVSS, SPF vs DMARC, MOU vs
+SLA, hot vs cold site, snapshots vs journaling, and a hundred more). No lessons,
+no menus - one continuous shuffled stream of multiple-choice reps with instant
+feedback.
 
 ## Use it
 
@@ -51,22 +54,26 @@ per-family cheat sheet of all sibling terms and their tells.
 
 ## What is in the bank
 
-707 questions across 102 confusion families covering every sibling set in the
-official SY0-701 V7 objectives (`SY0-701-objectives.pdf`, the source of truth):
+1055 questions across 129 confusion families covering every objective bullet in
+the official SY0-701 V7 objectives (`SY0-701-objectives.pdf`, the source of
+truth), sampled roughly to the domain exam weights (12/22/18/28/20):
 
 | Domain | Questions |
 |---|---|
-| D1 General Security Concepts | 84 |
-| D2 Threats, Vulnerabilities, Mitigations | 154 |
-| D3 Security Architecture | 133 |
-| D4 Security Operations | 196 |
-| D5 Program Management and Oversight | 140 |
+| D1 General Security Concepts | 134 |
+| D2 Threats, Vulnerabilities, Mitigations | 227 |
+| D3 Security Architecture | 196 |
+| D4 Security Operations | 293 |
+| D5 Program Management and Oversight | 205 |
 
-Seven priority families get 20 questions each (they were the misses on a cold
-diagnostic): crypto key handling (TPM/HSM/escrow), sites (hot/warm/cold),
-backups (snapshots/replication/journaling), CVE/CVSS, email security
-(SPF/DKIM/DMARC), risk strategies (accept/transfer/avoid/mitigate), and
-agreements (MOU/SLA/MSA/SOW).
+Questions are written in real exam register: a short scenario naming a role and
+a concrete detail, then an ask ("Which of the following ... BEST / MOST likely /
+FIRST / NEXT") with exactly one defensible answer and distractors that are real
+terms failing on one stated constraint. Seven priority families run deep because
+they were the misses on a cold diagnostic: crypto key handling (TPM/HSM/escrow),
+sites (hot/warm/cold), backups (snapshots/replication/journaling), CVE/CVSS,
+email security (SPF/DKIM/DMARC), risk strategies (accept/transfer/avoid/mitigate),
+and agreements (MOU/SLA/MSA/SOW).
 
 Scope rules: SY0-701 vocabulary only. Retired SY0-601 terms (DMZ, MITM,
 white/black/gray box, whitelist/blacklist, mantrap, whaling, etc.) appear
@@ -99,9 +106,19 @@ on every deploy.
 
 ## Quality process
 
-Beyond the mechanical validator, the bank went through:
-- A per-chunk editorial polish pass (accuracy, single-defensible-answer,
-  tell consistency) against the official objectives PDF.
-- A blind-solve audit: independent solvers answered every question with the
-  key hidden; disagreements and ambiguity flags were fixed at the source.
+Beyond the mechanical validator, the v2.0 bank went through a multi-pass
+overhaul:
+- Coverage mapping: every objective bullet (1.1 through 5.6) was classified as
+  covered / thin / missing against the bank, and ~430 new questions were
+  authored to close the gaps, weighted toward high-yield topics.
+- External calibration: question style and topic weighting were benchmarked
+  against free SY0-701 material (Professor Messer, community practice tests,
+  tester exam reports) so stems read like the real exam. No third-party
+  question is copied; only patterns were extracted.
+- A per-chunk editorial audit (accuracy, single-defensible-answer, exam-style
+  restyle, near-duplicate removal) against the official objectives PDF; 76
+  weak or duplicate items were dropped and 104 revised.
+- A blind-solve audit: independent solvers answered all 1055 questions with the
+  key hidden and agreed with the key on 1054; the lone disagreement plus a
+  tell-coherence sweep across families were fixed at the source.
 - Hand-verified risk-math: every SLE/ALE/ARO calculation recomputed.

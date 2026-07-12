@@ -1,0 +1,379 @@
+[
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "A network administrator's packet capture of a device login shows two cleartext lines, 'Username: admin' and 'Password: Sw1tch1!', both sent to TCP port 23. Which of the following BEST secures this management access?",
+    "options": [
+      "Replace Telnet with SSH and allow only TCP 22",
+      "Replace Telnet with FTPS and allow only TCP 990",
+      "Keep Telnet but restrict it to TCP 8023",
+      "Replace Telnet with LDAPS and allow only TCP 636"
+    ],
+    "correctIndex": 0,
+    "explanation": "SSH. Telnet on TCP 23 carries credentials in cleartext, so its secure replacement is SSH, which encrypts the interactive session on TCP 22 and lets the old port be closed. FTPS loses because it secures file transfer, not an interactive device shell. The tell: Telnet 23 to SSH 22 for remote administration; FTPS and SFTP replace FTP file transfer, LDAPS replaces directory binds on 636."
+  },
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "A systems engineer must encrypt server-to-server file transfers and wants them to reuse the organization's existing SSH key infrastructure instead of deploying TLS certificates. Which of the following protocols BEST fits?",
+    "options": [
+      "FTPS",
+      "FTP over TCP 21",
+      "SFTP",
+      "HTTPS"
+    ],
+    "correctIndex": 2,
+    "explanation": "SFTP. It runs file transfer over SSH, so it reuses the existing SSH keys and listens on TCP 22, matching the stated constraint. FTPS loses because it secures FTP with TLS, requiring the certificate infrastructure the team wants to avoid. The tell: SFTP = file transfer over SSH on port 22; FTPS = file transfer over TLS with certificates; plain FTP has no encryption at all."
+  },
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "An auditor flags that domain controllers accept directory authentication binds over cleartext TCP port 389. Which of the following BEST remediates the finding?",
+    "options": [
+      "Migrate the binds to SSH on TCP 22",
+      "Migrate the binds to LDAPS on TCP 636",
+      "Migrate the binds to HTTPS on TCP 443",
+      "Migrate the binds to SNMPv3 on UDP 161"
+    ],
+    "correctIndex": 1,
+    "explanation": "LDAPS. Cleartext LDAP on 389 exposes directory credentials, so wrapping the directory protocol in TLS as LDAPS on TCP 636 protects the binds. SSH loses because it secures interactive shells, not directory lookups. The tell: LDAP 389 to LDAPS 636; SSH secures shells on 22, HTTPS secures web on 443, SNMPv3 secures device polling on 161."
+  },
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "A monitoring server polls switches with SNMP, and a scan shows the community strings crossing the network in cleartext. Which of the following BEST protects the polling data in transit?",
+    "options": [
+      "SNMP v2c with a longer community string",
+      "SNMP v1 restricted to a management VLAN",
+      "SNMP v2c allowed only from the poller's IP",
+      "SNMPv3"
+    ],
+    "correctIndex": 3,
+    "explanation": "SNMPv3. Only SNMPv3 adds authentication and encryption; v1 and v2c send community strings in cleartext no matter how complex the string or how the traffic is filtered. A restricted VLAN or source-IP rule narrows exposure but still transmits the strings in the clear, so those lose. The tell: SNMPv3 is the secure version on 161; a strong community string or an ACL is not encryption."
+  },
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "Attackers are feeding clients forged DNS responses that redirect them to malicious hosts. Which of the following BEST ensures the authenticity of DNS records, even though it does not encrypt the queries?",
+    "options": [
+      "DNS over TLS",
+      "HTTPS",
+      "DNSSEC",
+      "LDAPS"
+    ],
+    "correctIndex": 2,
+    "explanation": "DNSSEC. It signs DNS records so resolvers can validate that answers are authentic and unaltered, defeating forged responses; it provides integrity and authenticity, not confidentiality. DNS over TLS loses because it encrypts queries for privacy but does not sign the records to prove authenticity. The tell: DNSSEC = signed, authentic DNS answers for integrity; DNS over TLS or HTTPS = encrypted DNS for confidentiality."
+  },
+  {
+    "domain": "D4",
+    "family": "secure-protocols",
+    "question": "After replacing HTTP with HTTPS on a public web server, a firewall administrator must add a rule permitting the encrypted web traffic. Which of the following ports should the new rule permit?",
+    "options": [
+      "TCP 443",
+      "TCP 80",
+      "TCP 22",
+      "TCP 389"
+    ],
+    "correctIndex": 0,
+    "explanation": "TCP 443. HTTPS wraps HTTP in TLS and listens on port 443, so the rule must permit TCP 443 while the old TCP 80 is closed. Port 80 loses because it is the cleartext HTTP port being retired. The tell: HTTP 80 to HTTPS 443; SSH is 22 and LDAP is 389 - protocol choice and port choice are separate selection knobs."
+  },
+  {
+    "domain": "D3",
+    "family": "port-auth",
+    "question": "Contractors plugging into the wired network must first demonstrate patch and antivirus compliance as a condition of admission, and noncompliant machines are confined to a remediation segment. Which of the following BEST enforces this?",
+    "options": [
+      "802.1X port authentication",
+      "A next-generation firewall",
+      "A host-based intrusion prevention system",
+      "Network access control"
+    ],
+    "correctIndex": 3,
+    "explanation": "Network access control. NAC checks a device's identity and health posture - patch level and antivirus - before granting admission and confines failing devices to a remediation segment. 802.1X loses because it authenticates the port but does not evaluate patch or antivirus posture. The tell: NAC = admission based on device health; 802.1X = the port-auth gate it often rides on; a firewall filters traffic already on the network."
+  },
+  {
+    "domain": "D4",
+    "family": "endpoint-detection",
+    "question": "Attackers use phished credentials to log in as a valid employee and operate within that account's normal permissions, evading signature and static-threshold rules. Which of the following BEST detects this compromised account?",
+    "options": [
+      "Endpoint detection and response",
+      "User behavior analytics",
+      "Data loss prevention",
+      "A signature-based SIEM correlation rule"
+    ],
+    "correctIndex": 1,
+    "explanation": "User behavior analytics. UBA builds a per-user baseline and flags deviations from normal behavior, catching a compromised-but-authorized account that signatures and static thresholds miss. EDR loses because it watches endpoint process behavior, not the anomaly in a user's login and access pattern. The tell: UBA = learned per-user baselines; EDR = endpoint process telemetry; DLP = sensitive-data movement; SIEM rules = static thresholds."
+  },
+  {
+    "domain": "D4",
+    "family": "identity-lifecycle",
+    "question": "An access review finds a ten-year employee still holds permissions accumulated from four previous roles, far beyond what her current job requires. Which of the following BEST describes this condition?",
+    "options": [
+      "Privilege escalation",
+      "Least privilege",
+      "Privilege creep",
+      "Separation of duties"
+    ],
+    "correctIndex": 2,
+    "explanation": "Privilege creep. Rights accumulated across successive role changes and never revoked leave a user with far more access than the current role needs; the fix is periodic access review with role-based assignment. Privilege escalation loses because that is an attacker exploiting a flaw to gain higher rights, not the gradual buildup of legitimate grants. The tell: privilege creep = leftover access from old roles; privilege escalation = an attack raising privileges; least privilege = the principle being violated."
+  },
+  {
+    "domain": "D4",
+    "family": "identity-lifecycle",
+    "question": "A security architect notes that if the marketing team's shared account were compromised, the attacker could export the entire customer database. Which of the following BEST describes the risk created by the account's permissions?",
+    "options": [
+      "Privilege creep from stale role grants",
+      "Weak identity proofing at enrollment",
+      "Insufficient separation of duties",
+      "Excessive standing permissions"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excessive permissions. Granting an account more access than it needs enlarges the blast radius - the damage one compromised account can do - so least privilege would shrink what a single breach exposes. Privilege creep is close but describes access accumulated over time from role changes, whereas here the standing permission set is simply too broad. The tell: excessive permissions and blast radius = one account can reach too much now; privilege creep = leftover rights from past roles."
+  },
+  {
+    "domain": "D4",
+    "family": "identity-lifecycle",
+    "question": "A caller claiming to be a traveling executive pressures the help desk to reset the executive's password immediately. Which of the following controls BEST prevents an attacker from succeeding this way?",
+    "options": [
+      "Identity proofing",
+      "Access attestation",
+      "Multifactor authentication",
+      "Single sign-on"
+    ],
+    "correctIndex": 0,
+    "explanation": "Identity proofing. Verifying the caller's identity before issuing or resetting a credential stops social-engineered resets by an impostor. Multifactor authentication loses because the attacker is requesting a new credential, bypassing the victim's existing factors rather than presenting them. The tell: identity proofing = verify the person BEFORE issuing or resetting credentials; attestation = periodic review of EXISTING entitlements."
+  },
+  {
+    "domain": "D4",
+    "family": "identity-lifecycle",
+    "question": "An employee who transferred from finance to marketing kept her old finance access for a year. Which of the following recurring controls is designed to catch and remove such residual entitlements?",
+    "options": [
+      "Identity proofing",
+      "Attestation",
+      "Single sign-on",
+      "Provisioning"
+    ],
+    "correctIndex": 1,
+    "explanation": "Attestation. Periodic attestation has managers or data owners recertify that each user's existing entitlements are still appropriate, catching residual access after a transfer. Identity proofing loses because it verifies who a person is before issuing identity, not whether current access remains justified. The tell: attestation = recurring review of EXISTING access; identity proofing = verifying identity BEFORE issuance; provisioning = granting access."
+  },
+  {
+    "domain": "D4",
+    "family": "identity-lifecycle",
+    "question": "A newly purchased SaaS application cannot integrate with the company's identity provider because it supports no common federation standard, forcing employees to keep a separate password for it. Which of the following capabilities is the application missing?",
+    "options": [
+      "Federation",
+      "Attestation",
+      "Interoperability",
+      "Identity proofing"
+    ],
+    "correctIndex": 2,
+    "explanation": "Interoperability. It means IAM components support open standards such as SAML, OAuth/OIDC, and SCIM so tools from different vendors work together; without it the app cannot join the identity provider and becomes a silo. Federation is close but is the trust arrangement interoperability enables - the app cannot even federate because it speaks no common standard. The tell: interoperability = standards compatibility that lets systems connect; federation = the cross-organization trust built on that compatibility."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "On a classified system, even the analyst who authored a document cannot grant a cleared colleague access to it - only the system's labels and clearances decide. Which of the following access control models is enforced?",
+    "options": [
+      "Discretionary access control",
+      "Role-based access control",
+      "Rule-based access control",
+      "Mandatory access control"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mandatory access control. The system enforces classification labels and clearances that no user - not even the data's creator - can override or delegate. Discretionary access control loses because that is the model where the owner grants access at their own discretion, the opposite of what the scenario forbids. The tell: mandatory access control = system labels no one can override; discretionary access control = the owner decides."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "A bank grants each employee access based purely on their job title - every teller receives the identical teller permission set upon being assigned that position. Which of the following access control models is this?",
+    "options": [
+      "Rule-based access control",
+      "Role-based access control",
+      "Discretionary access control",
+      "Attribute-based access control"
+    ],
+    "correctIndex": 1,
+    "explanation": "Role-based access control. Permissions attach to the job role, so a user inherits a standard set by being assigned that role - here, teller. Rule-based access control loses because it applies system-wide if/then conditions to everyone regardless of role, whereas access here is defined by job function. The tell: role-based access control = permissions by job function; rule-based access control = an if/then condition that fires identically for all."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "A system enforces one blanket condition on everyone: any connection from outside the corporate IP range is denied, regardless of the user's identity or job. Which of the following access control models does this represent?",
+    "options": [
+      "Rule-based access control",
+      "Role-based access control",
+      "Mandatory access control",
+      "Discretionary access control"
+    ],
+    "correctIndex": 0,
+    "explanation": "Rule-based access control. A single system-wide if/then rule - deny anything from outside the corporate IP range - applies uniformly to every user irrespective of identity or role. Role-based access control loses because it would grant access by the user's job function, but this rule ignores who the user is. The tell: rule-based access control = a blanket if/then condition for everyone; role-based access control = permissions tied to job role."
+  },
+  {
+    "domain": "D4",
+    "family": "access-control-models",
+    "question": "A facility's badge system denies every employee entry between 22:00 and 05:00, regardless of who they are or what role they hold. Which of the following access control approaches BEST describes this restriction?",
+    "options": [
+      "Role-based access control",
+      "Mandatory access control",
+      "Time-of-day restriction",
+      "Discretionary access control"
+    ],
+    "correctIndex": 2,
+    "explanation": "Time-of-day restriction. Access is allowed or denied purely by the clock - blocked overnight here - independent of identity or role, a rule-based flavor keyed on time. Role-based access control loses because entry does not depend on the person's job function; the hour alone decides. The tell: time-of-day restriction = access gated by the clock for everyone; role-based access control = access by job function."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "An organization issues some staff a dedicated key-fob device that displays a rotating one-time code, while others generate the same code in a smartphone authenticator app. Which of the following BEST describes the key-fob implementation?",
+    "options": [
+      "Soft token",
+      "Hard token",
+      "Security key",
+      "Biometric factor"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hard token. A dedicated physical device that displays one-time codes is a hard token; generating the same code in a phone app is a soft token. Security key loses because that performs a cryptographic challenge-response rather than displaying a code to type. The tell: hard token = physical code-display device; soft token = authenticator app code; security key = phishing-resistant challenge-response."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "A phishing kit tricks users into typing their one-time passcodes into a fake portal, which relays them in real time to the attacker. Which of the following MFA implementations BEST defeats this technique?",
+    "options": [
+      "A time-based authenticator app",
+      "An SMS one-time passcode",
+      "A hardware token displaying codes",
+      "A FIDO2 security key"
+    ],
+    "correctIndex": 3,
+    "explanation": "Security key. A FIDO2 key uses origin-bound cryptographic challenge-response, so there is no code for a user to be tricked into relaying and it will not work on a fake site. A time-based authenticator app loses because its displayed code can still be phished and relayed within its validity window. The tell: security key = phishing-resistant challenge-response; soft-token, SMS, and hard-token codes are all relayable one-time codes."
+  },
+  {
+    "domain": "D4",
+    "family": "mfa",
+    "question": "A shared clinical workstation must verify each nurse quickly, but nothing can be carried between rooms and no secret can be memorized for the shared device. Which of the following authentication methods BEST fits?",
+    "options": [
+      "Biometrics",
+      "Hardware token",
+      "Soft-token app",
+      "SMS passcode"
+    ],
+    "correctIndex": 0,
+    "explanation": "Biometrics. A something-you-are factor requires nothing to carry and nothing to memorize, fitting a shared workstation where tokens would be passed around and passwords written down. A hardware token loses because it must be physically carried and could be shared or lost between rooms. The tell: biometrics = inherent factor with nothing to hold or recall; hard and soft tokens and SMS all require possessing a device."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A policy already forces a password change every 60 days. To also stop users from immediately changing a new password several times in a row to loop back to a favorite, which of the following settings must be added?",
+    "options": [
+      "Maximum password age",
+      "Minimum password age",
+      "Password history length",
+      "Password complexity"
+    ],
+    "correctIndex": 1,
+    "explanation": "Minimum password age. It sets how long a password must be kept before it can be changed again, blocking the rapid-cycling trick that exhausts password history to return to a favorite; the 60-day rule is the maximum age and does not stop cycling. Password history alone loses because users can still cycle through changes quickly to flush it without a minimum age. The tell: minimum age = enforced wait before changing again; maximum age or expiration = forced change after a period."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A security team documents the organization's traditional policy of requiring every user to change their password every 90 days. Which of the following password practices does this describe?",
+    "options": [
+      "Minimum password age",
+      "Password complexity",
+      "Password reuse limits",
+      "Password expiration"
+    ],
+    "correctIndex": 3,
+    "explanation": "Password expiration. A forced periodic change - the traditional 90-day rule - is expiration, or maximum password age; current NIST guidance favors changing only on evidence of compromise. Minimum age loses because that is the shortest time before a user may change again, not the forced-change interval. The tell: expiration = forced change after a set period; minimum age = enforced wait before the next change."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "After an unrelated retail website is breached, attackers use the leaked email-and-password pairs to log into the same employees' corporate accounts. Which of the following password weaknesses made this possible?",
+    "options": [
+      "Password reuse",
+      "Insufficient password length",
+      "Missing password expiration",
+      "Weak password complexity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Password reuse. Using the same password on the breached site and at work let attackers replay the leaked credentials against corporate accounts, a credential-stuffing attack. Insufficient length loses because the password could be long yet still fail once reused on a compromised third-party site. The tell: reuse = same password across sites enabling stuffing; length and complexity address guessing, not replay of a known-good password."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "To stop employees from reusing passwords across sites, a security team wants a tool that generates and stores a unique, strong password for every account behind one master secret. Which of the following BEST meets this need?",
+    "options": [
+      "Single sign-on",
+      "A passwordless scheme",
+      "A password manager",
+      "Multifactor authentication"
+    ],
+    "correctIndex": 2,
+    "explanation": "Password manager. It generates and vaults a unique strong password per site behind one master secret, directly eliminating reuse. Single sign-on loses because it reduces logins to one identity rather than storing many distinct site passwords. The tell: password manager = many unique vaulted credentials; single sign-on = one credential authenticating to many apps."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A team debates whether to require special characters in their 8-character passwords or to raise the minimum length to 16 characters. Which of the following changes MOST increases resistance to brute-force cracking?",
+    "options": [
+      "Adding special characters at 8 characters",
+      "Increasing the length to 16 characters",
+      "Requiring mixed-case letters at 8 characters",
+      "Forcing a password change every 30 days"
+    ],
+    "correctIndex": 1,
+    "explanation": "Length. Each added character multiplies the search space far more than adding character classes to a short password, so 16 characters beats an 8-character password with symbols. Adding special characters loses because it grows variety only modestly while length grows the keyspace exponentially. The tell: length = dominant strength driver from a larger keyspace; complexity = character variety, a weaker lever; expiration does not affect crack resistance."
+  },
+  {
+    "domain": "D4",
+    "family": "password-security",
+    "question": "A company rolls out passkeys so users sign in with a device biometric and a FIDO2 credential, with no shared secret ever typed or stored on the server. Which of the following BEST describes this authentication approach?",
+    "options": [
+      "A password manager",
+      "Password complexity enforcement",
+      "Single sign-on",
+      "Passwordless authentication"
+    ],
+    "correctIndex": 3,
+    "explanation": "Passwordless. Authentication uses a biometric plus a device-bound FIDO2 credential with no shared secret typed or stored, removing the phishing and reuse surface of passwords entirely. A password manager loses because it still stores and submits passwords - the secret persists. The tell: passwordless = no shared secret exists; password manager = secrets still exist, just vaulted."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-testing",
+    "question": "New SOC analysts walk through the incident response playbooks, tooling, and their assigned roles before they join the on-call rotation. Which of the following BEST describes this preparation activity?",
+    "options": [
+      "Tabletop exercise",
+      "Hands-on simulation exercise",
+      "Incident response training",
+      "Lessons-learned review"
+    ],
+    "correctIndex": 2,
+    "explanation": "Training. Teaching responders the plan, tools, and roles before an incident is IR training, part of preparation. A tabletop exercise loses because that gathers an already-trained team to talk through a scenario to test the plan, not to teach it for the first time. The tell: training = learn the plan and tools beforehand; tabletop = discuss a scenario to test readiness; simulation = act the scenario out."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "After service is restored, leadership asks what allowed the breach so it never recurs. The team traces past the phishing email to an unpatched VPN gateway with no MFA. Which of the following activities is this?",
+    "options": [
+      "Root cause analysis",
+      "Lessons-learned review",
+      "Threat hunting",
+      "Containment"
+    ],
+    "correctIndex": 0,
+    "explanation": "Root cause analysis. RCA identifies the underlying cause that made the incident possible - the unpatched, MFA-less VPN - rather than the phishing symptom, so the fix prevents recurrence. Lessons learned is close but is the broader retrospective on how the whole response went, not the technical causation finding. The tell: root cause analysis = why it was possible from the technical underlying cause; lessons learned = whole-response after-action review."
+  },
+  {
+    "domain": "D4",
+    "family": "ir-process",
+    "question": "Fresh indicators of compromise for a new campaign arrive, and although no alert has fired, analysts proactively sweep months of historical logs and EDR telemetry for matches. Which of the following activities is this?",
+    "options": [
+      "Incident response",
+      "Threat hunting",
+      "Root cause analysis",
+      "Continuous monitoring"
+    ],
+    "correctIndex": 1,
+    "explanation": "Threat hunting. It is a proactive, hypothesis-driven search through existing telemetry for threats that evaded detection, triggered by intelligence rather than an alert. Incident response loses because that reacts to an already-detected event, whereas here nothing has alerted and analysts go looking. The tell: threat hunting = proactive hunt with no alert; incident response = reaction to a confirmed detection; monitoring = automated alerting on rules."
+  }
+]

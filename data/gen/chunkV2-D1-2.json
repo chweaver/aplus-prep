@@ -1,0 +1,353 @@
+[
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "A change advisory board reviews two sections of a ticket: a written prediction of which downstream systems could break, and the captured output of a successful staging run. Which of the following pairings names these two elements?",
+    "options": [
+      "Test results; impact analysis",
+      "Impact analysis; backout plan",
+      "Impact analysis; test results",
+      "Backout plan; test results"
+    ],
+    "correctIndex": 2,
+    "explanation": "Impact analysis, then test results. The written prediction of what could break is the impact analysis, and the captured staging output is the test results section; the reversed pairing loses because a prediction is written before any testing, not produced by it. The tell: impact analysis = predicting what could break BEFORE the change; test results = evidence from staging or a sandbox; backout plan = the procedure to undo the change if it fails."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "At 02:30, midway through an approved window, a firmware upgrade leaves the application down and post-change validation fails. Which of the following should the change team do NEXT?",
+    "options": [
+      "Restore the latest full data backup",
+      "Execute the documented backout plan",
+      "Submit a new change request for approval",
+      "Revert the repository in version control"
+    ],
+    "correctIndex": 1,
+    "explanation": "Backout plan. Validation failed mid-window, so the team executes the procedure written before the change to reverse it and restore the prior working state; restoring a data backup loses because the failure is the firmware change itself, not lost data, and any restore step would already live inside the plan. The tell: backout plan = the pre-documented procedure to undo a failed change; backup = a copy of data; version control = the revision record that can support a rollback, not the emergency procedure."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "A manager wants monthly certificate renewals performed identically by every administrator, so new hires follow one documented step-by-step method for this routine change. Which of the following change management elements does this describe?",
+    "options": [
+      "Standard operating procedure",
+      "Security policy",
+      "Backout plan",
+      "Approval process"
+    ],
+    "correctIndex": 0,
+    "explanation": "Standard operating procedure. A documented, repeatable step-by-step method keeps a routine change consistent and reduces human error, even when new staff perform it; a security policy loses because it is a high-level mandate, not step-level instructions. The tell: SOP = how to do the routine change step by step; policy = the high-level requirement; backout plan = how to undo the change; approval process = the authorization gate before it runs."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "The morning after a new reporting tool rollout, a technician reviews an endpoint log: 09:02 process start reportgen.exe; 09:02 blocked by application execution policy. Which of the following change steps was MOST likely missed?",
+    "options": [
+      "Documenting a backout plan",
+      "Scheduling a maintenance window",
+      "Restarting the application service",
+      "Updating the application allow list"
+    ],
+    "correctIndex": 3,
+    "explanation": "Updating the application allow list. The endpoint only executes approved software, so deploying a new binary requires adding it to the allow list as part of the change; restarting the service loses because the block is a policy decision, not a hung process. The tell: a newly deployed app blocked by execution policy = allow list not updated; downtime, restarts, and dependency problems produce outages or ordering failures, not policy blocks."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "During an approved patching window for one database server, a technician also quickly reconfigures a storage switch that is not listed in the change ticket. Which of the following change management concepts was violated?",
+    "options": [
+      "Restricted activities",
+      "Maintenance window",
+      "Impact analysis",
+      "Ownership"
+    ],
+    "correctIndex": 0,
+    "explanation": "Restricted activities. The approval defines the scope of what may be touched, and work on a device outside the ticket is itself a violation even when performed inside the window; maintenance window loses because the timing was respected - the scope was not. The tell: restricted activities = staying within the approved scope; maintenance window = staying within the approved time; ownership = who is accountable for the change; impact analysis = predicting what could break."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "A ticket notes that a daemon configuration change is applied by bouncing only that daemon, while a code upgrade requires relaunching the whole application. Which of the following pairings names these two implications in order?",
+    "options": [
+      "Application restart; service restart",
+      "Service restart; application restart",
+      "Service restart; downtime",
+      "Dependency; application restart"
+    ],
+    "correctIndex": 1,
+    "explanation": "Service restart, then application restart. A daemon configuration change takes effect by restarting just that one service, the smallest disruption that applies it, while new code requires relaunching the entire application; the reversed pairing loses because it assigns the larger outage to the smaller change. The tell: service restart = bounce one daemon; application restart = relaunch the whole program; downtime = the planned unavailability itself; dependency = one component requiring another to change first."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "A cluster upgrade will make the customer portal unreachable for 40 minutes, so the change owner schedules the outage, announces it to users in advance, and works to minimize it. Which of the following technical implications is being managed?",
+    "options": [
+      "Dependencies",
+      "Restricted activities",
+      "Downtime",
+      "Legacy applications"
+    ],
+    "correctIndex": 2,
+    "explanation": "Downtime. Planned unavailability is a technical implication of the change that must be scheduled, communicated ahead of time, and kept as short as possible; dependencies loses because nothing here requires one component to change before another - the portal is simply offline while the upgrade runs. The tell: downtime = the planned unavailability itself; dependencies = required ordering between components; restricted activities = staying inside the approved scope; legacy applications = fragile unsupported software raising change risk."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "An operating system upgrade is repeatedly postponed because a 12-year-old billing application with no vendor support fails on anything newer than the current build. Which of the following technical implications of change does this illustrate?",
+    "options": [
+      "Dependencies",
+      "Downtime",
+      "Service restarts",
+      "Legacy applications"
+    ],
+    "correctIndex": 3,
+    "explanation": "Legacy applications. Old, unsupported, fragile software makes every change riskier and can pin the entire environment, blocking the OS upgrade; dependencies loses because that describes a required update ordering between supportable components, while here the blocker is the application's unsupported age itself. The tell: legacy application = unsupported and fragile, pins the environment; dependency = component A must change before component B; downtime = planned unavailability; service restart = the minimal action that applies a change."
+  },
+  {
+    "domain": "D1",
+    "family": "change-implications",
+    "question": "A web application fails after a database server patch. Investigation shows the middleware required its own update before the database patch, an ordering no one had documented. Which of the following technical implications caused the failure?",
+    "options": [
+      "Dependencies",
+      "Legacy applications",
+      "Downtime",
+      "Restricted activities"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dependencies. One component required another to be updated first, and the undocumented ordering broke the change; legacy applications loses because the middleware is supported and updatable - the problem is sequence, not age. The tell: dependency = required ordering between components, a top cause of failed changes; legacy application = unsupported fragile software; downtime = planned unavailability; restricted activities = working outside the approved scope."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "Weeks after a subnet migration, an on-call engineer troubleshoots from a network map that shows the old addressing, and the renewal procedure still lists retired IP addresses. Which of the following change closure tasks were skipped?",
+    "options": [
+      "Performing impact analysis; attaching test results",
+      "Updating diagrams; updating policies and procedures",
+      "Obtaining approval; identifying stakeholders",
+      "Writing a backout plan; scheduling a maintenance window"
+    ],
+    "correctIndex": 1,
+    "explanation": "Updating diagrams and updating policies/procedures. Documentation is part of the change itself, so closure requires revising the network map and every affected procedure; the impact analysis pairing loses because those are inputs prepared BEFORE approval, and this failure appears weeks after implementation. The tell: diagram and procedure updates = mandatory closure tasks after the change; impact analysis and test results = pre-approval inputs; approval, stakeholders, backout plan, and window = gates set before the change runs."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "Investigating a routing issue, an engineer compares stored router configurations: Tue 14:02 jsmith: gateway 10.0.0.1; Thu 09:15 mlopez: gateway 10.0.0.254. Which of the following practices makes this attributed comparison and a rollback to Tuesday's version possible?",
+    "options": [
+      "A backout plan",
+      "A full data backup",
+      "Version control",
+      "An impact analysis"
+    ],
+    "correctIndex": 2,
+    "explanation": "Version control. Storing every revision with author, timestamp, and content lets the engineer diff two points in time and revert to a known-good configuration; a backout plan loses because it is the undo procedure written for one specific change, not an ongoing attributed history. The tell: version control = the tracked revision history enabling diff, attribution, and revert; backout plan = the undo procedure for a single change; backup = a copy of data with no change-by-change attribution."
+  },
+  {
+    "domain": "D1",
+    "family": "encryption-levels",
+    "question": "A security engineer describes three encryption options: the whole physical drive including the OS, unlocked once at boot; a logical storage container; and one slice of a single disk. Which of the following pairings matches the options in order?",
+    "options": [
+      "Full-disk; volume; partition",
+      "Full-disk; partition; volume",
+      "Volume; full-disk; partition",
+      "Partition; volume; full-disk"
+    ],
+    "correctIndex": 0,
+    "explanation": "Full-disk, volume, partition. The entire physical drive with the OS unlocked at boot is full-disk encryption, a logical container is a volume, and one slice of a single disk is a partition; the second pairing loses by swapping the logical container with the physical slice. The tell: full-disk = whole physical drive including the OS; volume = logical storage unit that can span disks; partition = a physical slice of one disk."
+  },
+  {
+    "domain": "D1",
+    "family": "encryption-levels",
+    "question": "An administrator encrypts the logical unit holding project data, which spans two physical disks, while the operating system disk remains unencrypted. Which of the following encryption levels is in use?",
+    "options": [
+      "Partition",
+      "Full-disk",
+      "File",
+      "Volume"
+    ],
+    "correctIndex": 3,
+    "explanation": "Volume encryption. Only the logical storage unit holding the data is protected, and a volume can span multiple physical disks; partition loses because a partition is a slice of ONE disk and cannot span two. The tell: volume = a logical unit that may span disks; partition = a physical slice of a single disk; full-disk = the whole drive including the OS; file = individual documents."
+  },
+  {
+    "domain": "D1",
+    "family": "encryption-levels",
+    "question": "A database administrator compares two designs: transparent encryption of the entire customer data store at rest, and encrypting only the national ID column so analyst queries return unreadable values. Which of the following pairings of encryption levels is correct?",
+    "options": [
+      "Record; database",
+      "Database; record",
+      "Database; file",
+      "Volume; record"
+    ],
+    "correctIndex": 1,
+    "explanation": "Database, then record. Transparent encryption of the whole data store is database-level protection at rest, while keeping one column unreadable even in query results is record-level; database-level alone loses for the column goal because a running database decrypts everything a query touches. The tell: database = the whole store protected at rest; record = individual rows or columns stay unreadable even to queries; file and volume = filesystem granularities outside the database."
+  },
+  {
+    "domain": "D1",
+    "family": "encryption-levels",
+    "question": "A paralegal copies a protected contract from a laptop to a USB drive, and it remains unreadable at the destination because protection is applied to the document itself. Which of the following encryption levels is in use?",
+    "options": [
+      "Full-disk",
+      "Volume",
+      "File",
+      "Record"
+    ],
+    "correctIndex": 2,
+    "explanation": "File encryption. Protection applied to the document itself travels with the file wherever it is copied; full-disk loses because it protects data only while it sits on the encrypted drive, so a copy to USB would land in plaintext. The tell: file = protection travels with each document; full-disk = the whole drive, transparent once booted; volume = a logical container; record = a field or row inside a database."
+  },
+  {
+    "domain": "D1",
+    "family": "crypto-algorithms",
+    "question": "A security architect checks a junior engineer's cheat sheet that maps common algorithms to their uses. Which of the following mappings is correct?",
+    "options": [
+      "AES: asymmetric key operations; RSA: symmetric bulk encryption; SHA-256: one-way hashing",
+      "AES: one-way hashing; RSA: asymmetric key operations; SHA-256: symmetric bulk encryption",
+      "AES: symmetric bulk encryption; RSA: one-way hashing; SHA-256: asymmetric key operations",
+      "AES: symmetric bulk encryption; RSA: asymmetric key operations; SHA-256: one-way hashing"
+    ],
+    "correctIndex": 3,
+    "explanation": "AES symmetric, RSA asymmetric, SHA-256 hashing. AES is the fast shared-key standard for bulk data, RSA uses a public/private pair for key exchange and signatures, and SHA-256 produces a one-way digest; the first option loses by swapping AES and RSA, the most common name-to-type mistake. The tell: AES = symmetric bulk cipher; RSA = asymmetric key pair operations; SHA-256 = a one-way hash, not encryption at all."
+  },
+  {
+    "domain": "D1",
+    "family": "crypto-algorithms",
+    "question": "During a cryptography review, an auditor flags RSA-1024 as too weak while accepting AES-128 as strong. Which of the following BEST explains the finding?",
+    "options": [
+      "Symmetric and asymmetric key lengths are not directly comparable",
+      "A longer key always provides more protection regardless of algorithm",
+      "AES-128 applies key stretching to multiply its effective length",
+      "RSA-1024 is weak only when used for bulk data encryption"
+    ],
+    "correctIndex": 0,
+    "explanation": "Key lengths are not comparable across algorithm types. A 128-bit AES key resists brute force beyond any practical attack, while 1024-bit RSA falls to factoring advances and current guidance requires 2048 bits or more; the always-longer-is-stronger claim loses because it holds only within one algorithm family. The tell: compare key lengths only within the same algorithm type - AES-128 is strong, RSA-1024 is weak, RSA needs 2048+, and longer keys always cost performance."
+  },
+  {
+    "domain": "D1",
+    "family": "crypto-methods",
+    "question": "Reviewing an HTTPS handshake, an engineer notes that public key operations run only at the start of the session to establish a shared secret before fast symmetric encryption takes over. Which of the following processes occurs at the start?",
+    "options": [
+      "Key stretching",
+      "Key exchange",
+      "Salting",
+      "Hashing"
+    ],
+    "correctIndex": 1,
+    "explanation": "Key exchange. Asymmetric operations run once at session start to securely agree on the symmetric session key that then encrypts the bulk traffic - the hybrid model TLS uses; key stretching loses because it hardens stored passwords, not live sessions. The tell: key exchange = securely agreeing on a shared session key; key stretching = thousands of hash iterations to slow password guessing; salting = per-password randomness; hashing = a one-way integrity digest."
+  },
+  {
+    "domain": "D1",
+    "family": "crypto-methods",
+    "question": "A password storage review lists two protections: a random per-password value that defeats precomputed tables, and thousands of hash iterations that make each guess expensive. Which of the following pairings names them in order?",
+    "options": [
+      "Key stretching; salting",
+      "Salting; hashing",
+      "Salting; key stretching",
+      "Hashing; key stretching"
+    ],
+    "correctIndex": 2,
+    "explanation": "Salting, then key stretching. The random per-password value adds uniqueness so rainbow tables cannot be precomputed, and the iterations add cost so each offline guess is slow; the reversed pairing loses because iterations alone do nothing against tables precomputed for unsalted hashes. The tell: salting = uniqueness, kills rainbow tables; key stretching = cost per guess, slows brute force; hashing = the one-way function both protections build on."
+  },
+  {
+    "domain": "D1",
+    "family": "crypto-methods",
+    "question": "A vendor's download page publishes SHA-256: 3f7a9c21 next to an installer. A technician downloads the file, recomputes the digest, and gets the identical value. Which of the following functions and properties makes this integrity check work?",
+    "options": [
+      "Encryption; only the key holder can read the file",
+      "Digital signature; the vendor signs each file with its private key",
+      "Salting; a random value makes every digest unique",
+      "Hashing; any input change produces a different digest"
+    ],
+    "correctIndex": 3,
+    "explanation": "Hashing. A one-way function produces a fixed-length digest, and any alteration to the installer would yield a completely different value, so a matching digest confirms the file is unmodified; digital signature loses because nothing here is signed - the technician simply recomputes and compares a published hash. The tell: hashing = a one-way integrity fingerprint; digital signature = a hash encrypted with the sender's private key; encryption = reversible confidentiality; salting = per-password uniqueness for stored credentials."
+  },
+  {
+    "domain": "D1",
+    "family": "certificates",
+    "question": "A PKI training slide contrasts two revocation mechanisms: a list downloaded on a 24-hour cycle that can be stale between publishes, and a real-time query about one certificate during each handshake. Which of the following pairings is correct?",
+    "options": [
+      "CRL; OCSP",
+      "OCSP; CRL",
+      "CRL; CSR",
+      "OCSP; CSR"
+    ],
+    "correctIndex": 0,
+    "explanation": "CRL, then OCSP. The periodically downloaded list of revoked serial numbers can be stale until the next publish, while OCSP asks about one specific certificate in real time at handshake; the reversed pairing loses because OCSP never involves downloading the full list. The tell: CRL = batch downloaded revocation list with a staleness window; OCSP = real-time single-certificate status check; CSR = the request sent to obtain a certificate, unrelated to revocation."
+  },
+  {
+    "domain": "D1",
+    "family": "certificates",
+    "question": "An internal tool triggers the TLS error 'certificate verify failed: self signed certificate', while the company's public site presents a certificate issued by a publicly trusted authority. Which of the following pairings names the internal and public certificate types?",
+    "options": [
+      "Third-party; self-signed",
+      "Self-signed; third-party",
+      "Wildcard; third-party",
+      "Self-signed; wildcard"
+    ],
+    "correctIndex": 1,
+    "explanation": "Self-signed, then third-party. The internal tool's certificate is signed by its own key with no external authority vouching for it, which is exactly what the verify error reports, while the public site relies on an external, publicly trusted CA; the wildcard pairings lose because wildcard describes subdomain coverage, not who signed the certificate. The tell: self-signed = no third-party trust, browser warnings, acceptable internally; third-party = an external CA vouches, required for public services; wildcard = name coverage, orthogonal to the issuer."
+  },
+  {
+    "domain": "D1",
+    "family": "certificates",
+    "question": "An administrator generates a key pair on a web server and submits a request containing the public key and identity details to a certificate authority. Which of the following must remain on the server and NEVER be sent to the CA?",
+    "options": [
+      "The certificate signing request",
+      "The public key",
+      "The private key",
+      "The signed certificate"
+    ],
+    "correctIndex": 2,
+    "explanation": "The private key. The CSR carries only the public key and identity details, and the CA signs the certificate without ever needing the private key, which stays on the server it was generated on; the public key loses because distributing it is exactly the point of the request. The tell: CSR = public key plus identity sent to the CA; private key = never leaves the server; signed certificate = what the CA returns after validation."
+  },
+  {
+    "domain": "D1",
+    "family": "certificates",
+    "question": "A security review of *.example.com notes that one compromised private key would expose mail, shop, and portal simultaneously, since all three subdomains are secured by a single certificate. Which of the following certificate types carries this trade-off?",
+    "options": [
+      "A self-signed certificate",
+      "A root CA certificate",
+      "A third-party certificate",
+      "A wildcard certificate"
+    ],
+    "correctIndex": 3,
+    "explanation": "Wildcard certificate. One *.example.com certificate covers every subdomain at that level, which simplifies management but means a single stolen private key exposes mail, shop, and portal together; a root CA certificate loses because the risk described sits on a leaf certificate's subdomain coverage, not the trust anchor. The tell: wildcard = one certificate for all subdomains at one level, shared-key blast radius; self-signed vs third-party = who vouches for the certificate; root CA = the anchor of the chain."
+  },
+  {
+    "domain": "D1",
+    "family": "certificates",
+    "question": "A client fails validation with 'unable to get local issuer certificate' for this chain: leaf CN=app.example.com, Issuer=Example Issuing CA; intermediate CN=Example Issuing CA, Issuer=Example Root CA. Which of the following must the client's trust store contain as the trust anchor?",
+    "options": [
+      "The Example Root CA certificate",
+      "The Example Issuing CA certificate",
+      "The app.example.com leaf certificate",
+      "The server's certificate signing request"
+    ],
+    "correctIndex": 0,
+    "explanation": "The root CA certificate. Chain validation must terminate at a trust anchor already installed in the client's store, and this chain terminates at Example Root CA; the intermediate loses because issuing CAs are delivered in the presented chain and are vouched for by the root rather than preinstalled as anchors. The tell: root of trust/root CA = the preinstalled anchor the chain terminates at; intermediate CA = the issuing layer sent with the chain; leaf = the server's own certificate; CSR = the request, never part of validation."
+  },
+  {
+    "domain": "D1",
+    "family": "pki-signatures",
+    "question": "A logistics consortium wants every member and outside auditor able to read and independently verify the full history of shipment transactions, which no single party can alter. Which of the following BEST names that publicly verifiable record?",
+    "options": [
+      "A blockchain",
+      "A digital signature",
+      "A hash digest",
+      "An open public ledger"
+    ],
+    "correctIndex": 3,
+    "explanation": "Open public ledger. The publicly readable, independently verifiable record of all transactions that no single party can quietly alter is the open public ledger; blockchain loses because it names the underlying chained-hash technology that implements the ledger, not the publicly viewable record itself. The tell: open public ledger = the record anyone can read and verify; blockchain = the tamper-evident chained-block structure behind it; digital signature = per-message authenticity; hash digest = a single integrity fingerprint."
+  },
+  {
+    "domain": "D1",
+    "family": "obfuscation",
+    "question": "Before production customer data is copied into a developer test environment, an engineer irreversibly replaces names and card digits with scrambled values that no key or vault can ever recover. Which of the following techniques is being used?",
+    "options": [
+      "Tokenization",
+      "Data masking",
+      "Encryption",
+      "Steganography"
+    ],
+    "correctIndex": 1,
+    "explanation": "Data masking. The values are permanently obscured at the dataset level so developers can work with realistic-looking records while nothing can recover the originals; tokenization loses because tokens map back to the real values through a vault, which is exactly what this requirement forbids. The tell: masking = irreversible display or dataset obscuring; tokenization = reversible via the token vault; encryption = reversible with a key; steganography = hiding data inside other media."
+  }
+]

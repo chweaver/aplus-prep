@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D5",
+    "family": "governance-hierarchy",
+    "question": "An auditor compares two governance excerpts. Excerpt A reads: 'Staff are encouraged to consider using a password manager.' Excerpt B reads: 'All systems must enforce AES-256 for data at rest.' Which of the following document tiers does Excerpt A represent?",
+    "options": ["Guideline", "Standard", "Policy", "Procedure"],
+    "correctIndex": 0,
+    "explanation": "Guideline. 'Encouraged to consider' is recommended, non-mandatory language, the defining mark of a guideline. Standard is tempting because both excerpts name a technical practice, but Excerpt B's mandatory 'must enforce' with an exact spec is the standard. The tell: guideline = recommended and optional, standard = mandatory specific spec, policy = high-level mandatory intent, procedure = ordered steps."
+  },
+  {
+    "domain": "D5",
+    "family": "policies",
+    "question": "During onboarding, a new hire signs a document defining permitted use of company email, internet, and devices. Months later it is cited when she streams pirated media on her work laptop. Which of the following policies is this?",
+    "options": ["Acceptable use policy", "Information security policy", "Change management policy", "SDLC policy"],
+    "correctIndex": 0,
+    "explanation": "Acceptable use policy. The AUP defines acceptable and prohibited use of company systems and is signed at onboarding, so streaming pirated media on a work laptop violates it. Information security policy is broader, the umbrella protecting confidentiality, integrity, and availability, not the specific use rules. The tell: AUP = rules for using systems, information security policy = umbrella assigning roles and protecting the CIA triad, change management = controlling modifications, SDLC = secure development."
+  },
+  {
+    "domain": "D5",
+    "family": "policies",
+    "question": "An auditor asks for the single umbrella policy set that assigns security roles and responsibilities and mandates protection of the confidentiality, integrity, and availability of all information assets. Which of the following BEST fits this description?",
+    "options": ["Acceptable use policy", "Business continuity policy", "Information security policy", "Incident response policy"],
+    "correctIndex": 2,
+    "explanation": "Information security policy. It is the overarching policy set that assigns roles and mandates protecting confidentiality, integrity, and availability of information assets. Acceptable use policy is narrower, governing only how individuals may use systems. The tell: information security policy = umbrella covering the CIA triad and roles, AUP = acceptable use of systems, business continuity = keep the business running, incident response = handle security incidents."
+  },
+  {
+    "domain": "D5",
+    "family": "policies",
+    "question": "A governance document mandates secure-coding standards, peer code review, and security testing gates at each phase of building software. Which of the following policies does this describe?",
+    "options": ["Change management policy", "SDLC policy", "Acceptable use policy", "Disaster recovery policy"],
+    "correctIndex": 1,
+    "explanation": "SDLC policy. It mandates security activities such as secure coding, code review, and testing gates within each software development phase. Change management is tempting because both govern controlled processes, but change management controls modifications to production systems, not the build lifecycle. The tell: SDLC = security in software development phases, change management = approval and backout for production changes, AUP = acceptable use, disaster recovery = restore IT after a disaster."
+  },
+  {
+    "domain": "D5",
+    "family": "standards-procedures",
+    "question": "A binding document requires least privilege, 90-day access reviews, and defined provisioning rules for every account in the company. Which of the following BEST classifies this document?",
+    "options": ["Access control standard", "Access control policy", "Onboarding procedure", "Information security policy"],
+    "correctIndex": 0,
+    "explanation": "Access control standard. It is a mandatory, specific requirement, with an exact review cadence and provisioning rules, that supports a higher-level policy. Access control policy is the tempting runner-up, but a policy states high-level intent without the precise 90-day spec. The tell: standard = mandatory specific spec, policy = high-level intent, procedure = ordered steps, information security policy = the umbrella document."
+  },
+  {
+    "domain": "D5",
+    "family": "standards-procedures",
+    "question": "A mandatory specification states that a badge is required at every entrance, visitors are escorted at all times, and cameras cover every server-room door. Which of the following BEST classifies this document?",
+    "options": ["Physical security policy", "Physical security guideline", "Access control vestibule", "Physical security standard"],
+    "correctIndex": 3,
+    "explanation": "Physical security standard. It is a mandatory, specific set of physical requirements supporting a broader policy. Physical security policy is tempting, but a policy states intent while these exact required measures make it a standard; an access control vestibule is a physical control, not a governance document. The tell: standard = mandatory specific spec, policy = high-level intent, guideline = optional advice, access control vestibule = a control being specified, not the document itself."
+  },
+  {
+    "domain": "D5",
+    "family": "standards-procedures",
+    "question": "A SOC maintains an overall incident response plan plus a separate scripted document giving the exact ordered steps to run whenever ransomware is detected. Which of the following BEST names the ransomware-specific document?",
+    "options": ["Incident response plan", "Standard operating procedure", "Playbook", "Change management procedure"],
+    "correctIndex": 2,
+    "explanation": "Playbook. A playbook is the scenario-specific set of ordered response steps for one situation, such as ransomware detection. The incident response plan is tempting, but that is the overall program document the playbook sits under, not the per-scenario script. The tell: playbook = one-scenario response script, incident response plan = overall program document, standard operating procedure = general repeatable steps, change management procedure = steps for controlling production changes."
+  },
+  {
+    "domain": "D5",
+    "family": "external-governance",
+    "question": "Counsel flags e-discovery duties and contractual obligations arising from signed customer agreements. Which of the following categories of external consideration is this?",
+    "options": ["Regulatory", "Legal", "Industry", "Local/regional"],
+    "correctIndex": 1,
+    "explanation": "Legal. Contracts, statutes, liability, and e-discovery duties are legal considerations. Regulatory is tempting, but that means enforceable rules issued by a government agency, whereas these obligations flow from contract and civil litigation. The tell: legal = laws and contracts, regulatory = government agency rules with penalties, industry = sector frameworks like PCI DSS, local/regional = a jurisdiction scope rather than a source."
+  },
+  {
+    "domain": "D5",
+    "family": "external-governance",
+    "question": "A compliance officer explains that the company's duty to follow PCI DSS comes from the payment card brands enforcing it through the merchant contract, with no legislature or regulator behind it. Which of the following categories of external consideration is this?",
+    "options": ["Industry", "Regulatory", "Legal", "National"],
+    "correctIndex": 0,
+    "explanation": "Industry. PCI DSS is a sector framework imposed and enforced by the card brands through contract, not written by any government. Regulatory is the classic trap, but a regulation is a government rule with statutory penalties; card-brand enforcement is contractual. The tell: industry = sector frameworks like PCI DSS enforced by industry bodies, regulatory = government rules with penalties, legal = statutes and lawsuits broadly, national = a country-wide jurisdiction scope."
+  },
+  {
+    "domain": "D5",
+    "family": "external-governance",
+    "question": "A state breach-notification statute applies only to organizations doing business within that single state. Which of the following BEST describes the scope of this external consideration?",
+    "options": ["National", "Global", "Industry", "Local/regional"],
+    "correctIndex": 3,
+    "explanation": "Local/regional. A single-state statute binds only organizations operating in that state, which is a regional jurisdiction scope. National is the trap, but national law would apply country-wide rather than to one state. The tell: local/regional = a state or provincial scope, national = whole-country scope, global = extraterritorial worldwide reach, industry = a sector framework rather than a jurisdiction."
+  },
+  {
+    "domain": "D5",
+    "family": "external-governance",
+    "question": "A healthcare privacy law applies uniformly to organizations throughout the entire country but has no force beyond its borders. Which of the following BEST describes the scope of this external consideration?",
+    "options": ["Local/regional", "Global", "National", "Regulatory"],
+    "correctIndex": 2,
+    "explanation": "National. The law binds the whole country uniformly yet stops at the border, which is national scope, a HIPAA-style law. Global is the trap, but global considerations reach across borders to residents wherever they are. The tell: national = whole-country scope, local/regional = a single state or province, global = extraterritorial worldwide reach, regulatory = the government-rule source, not a scope."
+  },
+  {
+    "domain": "D5",
+    "family": "external-governance",
+    "question": "A company with no offices in the EU must still comply with GDPR because it processes the personal data of EU residents. Which of the following BEST describes the scope of this external consideration?",
+    "options": ["National", "Global", "Local/regional", "Legal"],
+    "correctIndex": 1,
+    "explanation": "Global. GDPR's extraterritorial reach binds an organization based on whose data it processes, regardless of where the company sits, which is a global consideration. National is the trap, but a national law would stop at its own border rather than follow EU residents' data abroad. The tell: global = extraterritorial worldwide reach, national = whole-country scope, local/regional = a state or province, legal = the source type rather than a scope."
+  },
+  {
+    "domain": "D5",
+    "family": "policy-lifecycle",
+    "question": "After a breach, a security committee's lessons-learned review exposes a gap, so the committee updates the incident response policy and re-publishes it with a new scheduled review date. Which of the following governance practices is this?",
+    "options": ["Initial policy development", "Policy monitoring and revision", "Policy publication and distribution", "Policy exception handling"],
+    "correctIndex": 1,
+    "explanation": "Policy monitoring and revision. Governance documents live on a review cycle, and an incident that exposes a gap is a classic trigger to revise and re-publish. Initial development is tempting, but the policy already existed; this is updating it, not creating it. The tell: monitoring and revision = updating a document on a trigger or review cycle, initial development = creating it the first time, publication = distributing it, exception handling = approving deviations from it."
+  },
+  {
+    "domain": "D5",
+    "family": "policy-lifecycle",
+    "question": "An audit finds a security policy that still references retired technology and has accumulated a stack of exception requests filed against it. Which of the following should the governance team do NEXT?",
+    "options": ["Grant a standing exemption for the retired technology", "Archive the policy and stop enforcing it", "Escalate each exception request to legal counsel", "Schedule a review and revise the policy"],
+    "correctIndex": 3,
+    "explanation": "Schedule a review and revise the policy. Outdated technology references and repeated exception requests are textbook signs a policy needs review and revision, since publishing is never the end state. Granting a standing exemption is tempting, but that only patches one gap while leaving the stale policy in force. The tell: revision is triggered by incidents, new regulations, review dates, or repeated exceptions; exemptions and archiving dodge fixing the document rather than updating it."
+  },
+  {
+    "domain": "D5",
+    "family": "governance-structures",
+    "question": "A panel of senior executives accountable to shareholders sets the organization's high-level mandate to reduce cyber risk and delegates the detailed design work to others. Which of the following governance structures is this panel?",
+    "options": ["Board of directors", "Security steering committee", "Government entity", "Centralized governance"],
+    "correctIndex": 0,
+    "explanation": "Board of directors. The board sets strategic direction and holds top accountability, then delegates the details. A security steering committee is the trap, but that is the subject-matter-expert subset that works the details rather than setting the top mandate. The tell: board = strategic direction and accountability, committee = SME subset working the details, government entity = external oversight body, centralized governance = one internal decision body for the whole org."
+  },
+  {
+    "domain": "D5",
+    "family": "governance-structures",
+    "question": "A security steering committee receives the board's direction and performs the detailed work of selecting the control framework and reviewing the program. Which of the following governance structures is described?",
+    "options": ["Board of directors", "Government entity", "Security steering committee", "Decentralized governance"],
+    "correctIndex": 2,
+    "explanation": "Security steering committee. A committee is the subject-matter-expert subset that takes board direction and works the details, such as choosing the framework. The board is the trap, but the board sets direction and accountability rather than doing the hands-on framework selection. The tell: committee = SME subset working the details, board = strategic direction and accountability, government entity = external oversight, decentralized governance = business units deciding independently."
+  },
+  {
+    "domain": "D5",
+    "family": "governance-structures",
+    "question": "A government-sponsored body issues binding cybersecurity rules for a critical-infrastructure sector and oversees the compliance of the firms operating in it. Which of the following governance structures is this body?",
+    "options": ["Board of directors", "Government entity", "Security steering committee", "Centralized governance"],
+    "correctIndex": 1,
+    "explanation": "Government entity. A government-sponsored body that imposes rules and oversees a sector is an external government entity, relevant even to private firms in that sector. A board is the trap, but a board governs a single organization internally rather than imposing external sector rules. The tell: government entity = external oversight imposing rules, board = internal strategic direction, committee = internal SME subset, centralized governance = one internal decision body."
+  },
+  {
+    "domain": "D5",
+    "family": "governance-structures",
+    "question": "Within a single corporation, each regional business unit writes its own security procedures independently, as long as they stay within the overarching corporate policy. Which of the following BEST classifies this governance model?",
+    "options": ["Centralized governance", "Board of directors", "Government entity", "Decentralized governance"],
+    "correctIndex": 3,
+    "explanation": "Decentralized governance. Letting each business unit make its own security decisions is decentralized: faster and closer to the work, but prone to inconsistency. Centralized governance is the trap, but that concentrates decisions in one body for consistency across the whole org. The tell: decentralized = business units decide (faster, inconsistent), centralized = one decision body (consistent, slower), board = strategic direction, government entity = external oversight."
+  },
+  {
+    "domain": "D5",
+    "family": "data-roles",
+    "question": "A senior executive is accountable for a customer data set, sets its classification, and accepts its risk; hiring a vendor to process the data does not transfer that accountability. Which of the following roles does the executive hold?",
+    "options": ["Data custodian", "Data processor", "Data owner", "Data controller"],
+    "correctIndex": 2,
+    "explanation": "Data owner. The owner is the accountable senior person who classifies the data and accepts risk, and accountability cannot be outsourced to a processor. Data controller is tempting in a privacy context, but the controller decides the purposes and means of processing, whereas ownership is the internal accountability role. The tell: owner = accountable, classifies, accepts risk; custodian = hands-on technical care; processor = acts on the controller's instructions; controller = decides why and how personal data is processed."
+  },
+  {
+    "domain": "D5",
+    "family": "data-roles",
+    "question": "A data-governance chart shows a role that executes the technical controls the data owner mandates, such as provisioning access, encrypting the database, and restoring from backup, while holding no say over classification. Which of the following roles is this?",
+    "options": ["Data custodian", "Data owner", "Data controller", "Data processor"],
+    "correctIndex": 0,
+    "explanation": "Data custodian. The custodian delivers hands-on technical protection, including encryption, backups, and permissions, exactly as the owner's rules dictate, without setting classification. Data owner is the trap, but the owner defines the rules and is accountable, while the custodian merely executes them. The tell: custodian = hands-on technical care, owner = accountable and sets classification, controller = decides why and how personal data is processed, processor = acts for the controller."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-process",
+    "question": "A newly hired CISO's first workshop catalogs every asset and what could go wrong with each, deliberately assigning no ratings or dollar figures yet. Which of the following risk management steps is this?",
+    "options": ["Risk assessment", "Risk identification", "Risk reporting", "Risk treatment"],
+    "correctIndex": 1,
+    "explanation": "Risk identification. The first step discovers and catalogs risks without scoring them, exactly as described. Risk assessment is the trap, but assessment scores or analyzes the risks, and here no ratings exist yet. The tell: identification = catalog risks with no scoring, assessment = score and analyze them, reporting = communicate posture to stakeholders, treatment = act on the risks."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-process",
+    "question": "Each quarter the security team delivers the board a deck summarizing the top risks, key risk indicator trends, and a treatment-status heat map. Which of the following risk management activities is this?",
+    "options": ["Risk assessment", "Risk register", "Risk identification", "Risk reporting"],
+    "correctIndex": 3,
+    "explanation": "Risk reporting. Communicating risk posture to stakeholders through dashboards and heat maps is reporting. The risk register is the trap, but that is the underlying log of risks and treatments, not the act of communicating posture to the board. The tell: reporting = communicate posture to stakeholders, register = the log or document of risks, assessment = score the risks, identification = catalog them."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-assessment-types",
+    "question": "A widely publicized zero-day is disclosed that hits the organization's exact technology stack, prompting the CISO to launch an immediate, unplanned assessment that same day. Which of the following risk assessment types is this?",
+    "options": ["One-time", "Recurring", "Ad hoc", "Continuous"],
+    "correctIndex": 2,
+    "explanation": "Ad hoc. An assessment triggered reactively by a surprise event and run on the spot is ad hoc. One-time is the trap, but a one-time assessment is planned in advance for a defined single purpose, whereas this one was forced by an unexpected trigger. The tell: ad hoc = triggered and reactive, one-time = planned single-scope engagement, recurring = fixed schedule, continuous = always-on automated."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-assessment-types",
+    "question": "For a pending acquisition, a firm commissions a due-diligence risk assessment scoped solely to that deal, planned in advance and never intended to repeat. Which of the following risk assessment types is this?",
+    "options": ["One-time", "Ad hoc", "Recurring", "Continuous"],
+    "correctIndex": 0,
+    "explanation": "One-time. A planned, single-scope assessment tied to one project and not meant to repeat is one-time. Ad hoc is the trap, but ad hoc assessments are reactive responses to surprise triggers, while this one was deliberately planned for the acquisition. The tell: one-time = planned single-scope engagement, ad hoc = triggered and reactive, recurring = fixed schedule, continuous = always-on automated."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-assessment-types",
+    "question": "To satisfy PCI DSS, a merchant runs the same-scope risk assessment on a fixed calendar every 12 months. Which of the following risk assessment types is this?",
+    "options": ["Continuous", "Recurring", "Ad hoc", "One-time"],
+    "correctIndex": 1,
+    "explanation": "Recurring. A compliance-driven assessment on a fixed, repeating schedule is recurring. Continuous is the trap, but continuous assessment is always-on automated evaluation, whereas this runs as discrete annual snapshots. The tell: recurring = fixed schedule and cadence, continuous = always-on automated, ad hoc = triggered, one-time = planned single-scope."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-assessment-types",
+    "question": "A platform updates each risk's score the instant an asset changes or a new weakness is disclosed, so leadership sees current risk rather than a periodic snapshot. Which of the following risk assessment types is this?",
+    "options": ["Recurring", "Ad hoc", "One-time", "Continuous"],
+    "correctIndex": 3,
+    "explanation": "Continuous. Automated, always-on evaluation that re-scores risk in near real time is continuous. Recurring is the trap, but recurring assessments capture discrete scheduled snapshots rather than updating the moment anything changes. The tell: continuous = always-on automated, recurring = fixed-schedule snapshots, ad hoc = triggered, one-time = planned single-scope."
+  },
+  {
+    "domain": "D5",
+    "family": "probability-impact",
+    "question": "An actuarial model uses decades of historical data to compute a 12 percent annual chance of a flood at a facility. Which of the following BEST names this numerically computed chance?",
+    "options": ["Likelihood", "Impact", "Probability", "Exposure factor"],
+    "correctIndex": 2,
+    "explanation": "Probability. A statistical, numerically computed chance of an event is probability. Likelihood is the trap, but likelihood is the qualitative rating such as high, medium, or low, whereas this is a computed percentage. The tell: probability = computed statistical chance, likelihood = qualitative chance rating, impact = magnitude of harm if it occurs, exposure factor = percent of asset value lost per event."
+  },
+  {
+    "domain": "D5",
+    "family": "probability-impact",
+    "question": "A risk committee places each threat on a five-point scale from rare to almost certain based purely on members' collective judgment, with no computed percentage behind the rating. Which of the following BEST names this qualitative expression of chance?",
+    "options": ["Likelihood", "Probability", "Impact", "Exposure factor"],
+    "correctIndex": 0,
+    "explanation": "Likelihood. A qualitative, judgment-based rating of how probable an event is, here a rare-to-almost-certain scale, is likelihood. Probability is the trap, but probability is a computed statistical number, not a judgment label. The tell: likelihood = qualitative chance rating, probability = computed statistical chance, impact = magnitude of harm if it occurs, exposure factor = percent of asset value lost."
+  },
+  {
+    "domain": "D5",
+    "family": "probability-impact",
+    "question": "An analysis concludes that a particular event is very unlikely to occur but would be catastrophic to the business if it ever did. Which of the following risk dimensions does 'catastrophic' measure?",
+    "options": ["Likelihood", "Impact", "Probability", "Exposure factor"],
+    "correctIndex": 1,
+    "explanation": "Impact. Impact is the magnitude of harm if the event occurs, so 'catastrophic' describes impact regardless of how unlikely the event is. Likelihood is the trap, but likelihood measures the chance of occurrence, which the stem already called very low. The tell: impact = magnitude of harm if it happens, likelihood = qualitative chance rating, probability = computed chance, exposure factor = percent of asset value lost."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-register",
+    "question": "An analyst must distinguish the person accountable for one specific entry in the risk register and its treatment from the executive accountable for classifying an entire data set. Which of the following names the first role?",
+    "options": ["Data owner", "Risk threshold", "Key risk indicator", "Risk owner"],
+    "correctIndex": 3,
+    "explanation": "Risk owner. The risk owner is accountable for a single register entry and for driving its treatment, distinct from the data owner who is accountable for a data set. Data owner is the trap, but that role owns a data set's classification, not one register line. The tell: risk owner = accountable for one register entry, data owner = accountable for a data set, risk threshold = the action-trigger level, key risk indicator = the early-warning metric."
+  }
+]

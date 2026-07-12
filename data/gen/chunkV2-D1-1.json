@@ -1,0 +1,341 @@
+[
+  {
+    "domain": "D1",
+    "family": "control-categories",
+    "question": "An IT team uses group policy to push password-complexity and session-timeout settings to every endpoint, while the written password standard is maintained separately by the governance office. Which control category BEST describes the enforced settings?",
+    "options": ["Managerial", "Technical", "Operational", "Physical"],
+    "correctIndex": 1,
+    "explanation": "Technical. The settings are enforced by software on the endpoints themselves, which is what defines the technical category; managerial loses because it covers the written standard behind the settings, not the enforcement pushed by the system. The tell: technical = implemented by systems and software, managerial = the policy and decision layer, operational = people performing day-to-day procedures, physical = tangible barriers."
+  },
+  {
+    "domain": "D1",
+    "family": "control-categories",
+    "question": "A CISO commissions and approves a new incident response plan. During the next incident, SOC analysts work through the plan's documented steps. Which of the following correctly categorizes the plan and the analysts' activity?",
+    "options": [
+      "The plan is managerial; executing the steps is operational",
+      "The plan is operational; executing the steps is managerial",
+      "The plan is technical; executing the steps is operational",
+      "The plan is managerial; executing the steps is technical"
+    ],
+    "correctIndex": 0,
+    "explanation": "The plan is managerial; executing the steps is operational. Commissioning and approving the plan is governance and decision-making, while analysts carrying out documented procedures is people-executed day-to-day work; reversing the pair fails because the document is the decision layer, not the hands-on activity. The tell: managerial = the decision and policy layer, operational = people performing the procedures, technical = enforced by systems, physical = tangible barriers."
+  },
+  {
+    "domain": "D1",
+    "family": "control-categories",
+    "question": "After several unauthorized entries, a warehouse security manager is directed to add a control from the physical category. Which of the following BEST meets that requirement?",
+    "options": [
+      "A next-generation firewall",
+      "An acceptable use policy",
+      "Perimeter fencing at the site boundary",
+      "A daily review of access logs"
+    ],
+    "correctIndex": 2,
+    "explanation": "Perimeter fencing at the site boundary. A fence is a tangible barrier that physically limits entry, which defines the physical category; the firewall is a real control but it is technical, implemented in software. The tell: physical = tangible barriers, technical = implemented by systems, managerial = policies such as an AUP, operational = people-run processes such as log review."
+  },
+  {
+    "domain": "D1",
+    "family": "control-types",
+    "question": "A company enforces endpoint settings that block all removable media outright and adds a login banner warning that unauthorized access will be prosecuted. Which of the following correctly pairs each measure with its control type?",
+    "options": [
+      "Blocking is deterrent; the banner is preventive",
+      "Blocking is preventive; the banner is directive",
+      "Blocking is preventive; the banner is deterrent",
+      "Blocking is corrective; the banner is deterrent"
+    ],
+    "correctIndex": 2,
+    "explanation": "Blocking is preventive; the banner is deterrent. The device control stops the action outright before it can occur, while the banner only discourages an intruder who could still proceed; directive loses for the banner because it targets would-be attackers, not the behavior of authorized users. The tell: preventive = blocks the attempt, deterrent = discourages without stopping, directive = mandates authorized users' behavior, corrective = fixes after the incident."
+  },
+  {
+    "domain": "D1",
+    "family": "control-types",
+    "question": "A web server is exploited on Friday through an unpatched flaw. Over the weekend the team re-images the host and applies the vendor fix that closes the exploited vulnerability. Which control type BEST describes these post-incident actions?",
+    "options": ["Preventive", "Compensating", "Detective", "Corrective"],
+    "correctIndex": 3,
+    "explanation": "Corrective. The re-image and patch restore the system and fix the flaw after a successful exploit, and that timing is what classifies them; preventive loses because the same patch applied before any incident would be preventive, but here the damage already happened. The tell: corrective = fixes and restores after the incident, preventive = stops it beforehand, compensating = alternative when the primary control is not feasible, detective = finds it but does not fix it."
+  },
+  {
+    "domain": "D1",
+    "family": "control-types",
+    "question": "A new requirement states that all staff must complete secure-data-handling training and follow the posted media-handling procedure before working with customer records. Which control type does this requirement represent?",
+    "options": ["Directive", "Deterrent", "Preventive", "Compensating"],
+    "correctIndex": 0,
+    "explanation": "Directive. The requirement mandates how authorized employees must behave, which is the defining trait of a directive control; deterrent loses because it aims to discourage would-be attackers, not to instruct legitimate staff. The tell: directive = mandates authorized users' behavior, deterrent = discourages attackers, preventive = blocks the action outright, compensating = substitute when the primary control is infeasible."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "A zero trust architect asks the team to map three duties: render the grant-or-deny decision, issue and relay the session token, and open or drop the connection. Which of the following mappings is correct?",
+    "options": [
+      "Policy Engine decides; Policy Administrator relays the token; the PEP opens or drops",
+      "Policy Administrator decides; Policy Engine relays the token; the PEP opens or drops",
+      "Policy Engine decides; the PEP relays the token; Policy Administrator opens or drops",
+      "The PEP decides; Policy Administrator relays the token; Policy Engine opens or drops"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy Engine decides; Policy Administrator relays the token; the PEP opens or drops. The PE evaluates policy and signals to render the decision, the PA turns that decision into a session token it passes to the enforcement point, and the PEP is the gate in the traffic path; swapping PE and PA fails because the Administrator executes decisions rather than making them. The tell: Policy Engine = decides, Policy Administrator = generates and relays the session token, Policy Enforcement Point = allows or blocks the actual connection."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "While labeling a zero trust architecture diagram, an engineer must place the Policy Engine, Policy Administrator, and Policy Enforcement Point on the correct planes. Which of the following placements is correct?",
+    "options": [
+      "PE in the control plane; PA and PEP in the data plane",
+      "PE, PA, and PEP all in the control plane",
+      "PE and PA in the control plane; PEP in the data plane",
+      "PE and PA in the data plane; PEP in the control plane"
+    ],
+    "correctIndex": 2,
+    "explanation": "PE and PA in the control plane; PEP in the data plane. Decision making and session management live in the control plane, while the PEP sits in the data plane with the subject's traffic even though it takes orders from the control plane; placing all three in the control plane fails because enforcement happens where the traffic actually flows. The tell: control plane = where access decisions are made and managed, data plane = where the subject's traffic flows and is enforced."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "A security analyst reviews two access-log entries: user=jsmith geo=new country device=unmanaged action=step-up MFA required, then user=jsmith geo=home office device=managed action=password only. Which zero trust concept do these entries demonstrate?",
+    "options": [
+      "Threat scope reduction",
+      "Policy-driven access control",
+      "Implicit trust zones",
+      "Adaptive identity"
+    ],
+    "correctIndex": 3,
+    "explanation": "Adaptive identity. The authentication requirement changes with risk signals: a new country on an unmanaged device forces step-up MFA while the usual managed device needs only a password; policy-driven access control loses because it names the general rule evaluation for authorization, not varying authentication strength with risk. The tell: adaptive identity = authentication strength varies with risk, policy-driven access control = identity-plus-context rules decide access, threat scope reduction = limit blast radius, implicit trust zones = the minimized area behind the PEP."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "A company retires a VPN that gave every remote user full internal network reach, replacing it with per-application grants so a stolen credential exposes almost nothing. Which zero trust principle does this change apply?",
+    "options": [
+      "Adaptive identity",
+      "Threat scope reduction",
+      "Policy-driven access control",
+      "Implicit trust zones"
+    ],
+    "correctIndex": 1,
+    "explanation": "Threat scope reduction. Shrinking each subject's reach from the whole network to specific applications limits the blast radius of any compromise; policy-driven access control loses because the stated goal is minimizing what a stolen credential can touch, not the rule-evaluation mechanism itself. The tell: threat scope reduction = shrink what any one subject can reach, adaptive identity = vary authentication strength with risk, policy-driven access control = identity-plus-context rules decide access, implicit trust zones = the minimized trusted area behind the PEP."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "In a new zero trust deployment, every access decision is produced by evaluating rules that combine the requester's identity, device posture, and current context. Which zero trust concept does this describe?",
+    "options": [
+      "Policy-driven access control",
+      "Adaptive identity",
+      "Implicit trust zones",
+      "Threat scope reduction"
+    ],
+    "correctIndex": 0,
+    "explanation": "Policy-driven access control. Granting or denying access by evaluating rules over identity, device posture, and context is the general zero trust authorization mechanism; adaptive identity loses because it specifically means varying the authentication strength with risk, not the overall rule evaluation. The tell: policy-driven access control = rule evaluation over identity and context decides access, adaptive identity = authentication strength varies with risk, implicit trust zones = minimized trusted area behind the PEP, threat scope reduction = limit blast radius."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "Once a zero trust gateway admits a session, traffic is allowed to flow freely only within one small segment behind the enforcement point. Which zero trust term names that minimized trusted area?",
+    "options": [
+      "Data plane",
+      "Threat scope reduction",
+      "Policy Enforcement Point",
+      "Implicit trust zone"
+    ],
+    "correctIndex": 3,
+    "explanation": "Implicit trust zone. It is the area behind the PEP where communication flows without further checks once access is granted, and zero trust keeps these zones as small as possible; data plane loses because it names the layer where all subject traffic flows, not the minimized trusted segment. The tell: implicit trust zone = the small trusted area behind the PEP, data plane = where the traffic flows, Policy Enforcement Point = the gate itself, threat scope reduction = the principle of shrinking those zones."
+  },
+  {
+    "domain": "D1",
+    "family": "zero-trust",
+    "question": "In NIST zero trust terminology, a contractor's laptop requests access to an internal application, and the enforcement point carries its session. Which term names the requesting entity?",
+    "options": [
+      "Policy Engine",
+      "Subject/system",
+      "Policy Administrator",
+      "Implicit trust zone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Subject/system. NIST zero trust calls the user, device, or application requesting access the subject (or system for a device), and it sits in the data plane alongside the PEP; Policy Engine loses because it makes access decisions rather than requesting access. The tell: subject/system = the requester in the data plane, Policy Engine = decides, Policy Administrator = relays the session token, Policy Enforcement Point = enforces the connection."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "An electrical substation operator needs a barrier around the entire yard to keep people out, not to stop vehicles at a single entry point. Which of the following BEST meets this requirement?",
+    "options": [
+      "Bollards",
+      "Access control vestibule",
+      "Video surveillance",
+      "Fencing"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fencing. A fence forms a continuous perimeter barrier that keeps people from crossing the boundary anywhere along it; bollards lose because they stop vehicles at specific points while letting people walk right past. The tell: fencing = perimeter barrier against people, bollards = stop vehicles, access control vestibule = one-person-at-a-time interlocked doors, video surveillance = observes and records but blocks nothing."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "A facility wants a control at its reception area that can verify photo IDs, question visitors who seem out of place, and physically respond to problems as they happen. Which of the following provides this?",
+    "options": [
+      "Video surveillance",
+      "Access badge readers",
+      "A security guard",
+      "An access control vestibule"
+    ],
+    "correctIndex": 2,
+    "explanation": "A security guard. Only a human control can exercise judgment: checking IDs, challenging anomalies, and adapting a response in real time; video surveillance loses because it records and deters but cannot question anyone or intervene. The tell: security guard = judgment and real-time response, video surveillance = watch and record, access badge = automated credential check with a log, vestibule = admits one person per authentication."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "After an incident, an investigation team needs an attributable record of exactly who entered the server room and when, generated automatically at each door event. Which physical control produces this?",
+    "options": [
+      "Video surveillance",
+      "Access badges with readers",
+      "A security guard",
+      "An access control vestibule"
+    ],
+    "correctIndex": 1,
+    "explanation": "Access badges with readers. Each badge swipe writes a per-person, time-stamped entry record, giving attributable accounting for every door event; video surveillance loses because footage must be reviewed manually and does not automatically tie each entry to a credentialed identity. The tell: access badge = logged per-person entry record, video surveillance = recorded footage to review, security guard = human judgment and response, vestibule = enforces one person per authentication."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "A distribution yard needs one control at its vehicle gate that visibly discourages theft and also captures license plates and motion events for later review. Which of the following BEST fits?",
+    "options": [
+      "Security lighting",
+      "Bollards",
+      "Video surveillance",
+      "Pressure sensors"
+    ],
+    "correctIndex": 2,
+    "explanation": "Video surveillance. Modern camera systems offer motion recognition and license plate capture, deter when visibly installed, and produce reviewable evidence; lighting loses because it discourages intruders and helps other controls see, but it records nothing. The tell: video surveillance = deters when visible and records evidence, lighting = discourages and improves visibility only, bollards = stop vehicles, pressure sensor = detects weight on a surface."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "A security consultant recommends one addition to a dark parking area that will both discourage intruders, who avoid being seen, and make the existing cameras and patrols more effective at night. Which control is recommended?",
+    "options": [
+      "Additional cameras",
+      "Exterior lighting",
+      "An access control vestibule",
+      "Infrared sensors"
+    ],
+    "correctIndex": 1,
+    "explanation": "Exterior lighting. Lighting deters intruders who avoid lit areas and simultaneously improves what cameras and guards can see at night; additional cameras lose because the stated need is to make the existing cameras effective, which darkness currently prevents. The tell: lighting = deters and multiplies the effectiveness of cameras and guards, cameras = record and deter but need visibility, infrared sensor = detects body heat, vestibule = controls entry one person at a time."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-security",
+    "question": "A data center entrance must guarantee that the outer door fully closes before the inner door can open, and that each person authenticates alone in the space between them. Which of the following meets this requirement?",
+    "options": [
+      "A turnstile",
+      "Double swing doors",
+      "An access control vestibule",
+      "A badge reader on the inner door"
+    ],
+    "correctIndex": 2,
+    "explanation": "An access control vestibule. Its two interlocked doors never open at the same time, holding a single person between them to authenticate alone; a turnstile loses because it admits one person per rotation but has no interlocked second door or holding space. The tell: vestibule = interlocked double doors admitting one authenticated person at a time, turnstile = single rotating gate, badge reader alone = checks credentials but cannot stop someone slipping through behind an employee."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-sensors",
+    "question": "An alarm vendor asks a technician to match three motion sensors to their detection principles: body heat, reflected radio waves, and reflected sound above human hearing. Which of the following matches is correct?",
+    "options": [
+      "Infrared = sound; microwave = heat; ultrasonic = radio waves",
+      "Infrared = heat; microwave = radio waves; ultrasonic = sound",
+      "Infrared = radio waves; microwave = sound; ultrasonic = heat",
+      "Infrared = heat; microwave = sound; ultrasonic = radio waves"
+    ],
+    "correctIndex": 1,
+    "explanation": "Infrared = heat; microwave = radio waves; ultrasonic = sound. Infrared sensors detect body heat and work in darkness, microwave sensors emit radio waves and detect changes in the reflections (covering large areas and penetrating some walls), and ultrasonic sensors emit sound above human hearing and detect its reflection; swapping microwave and ultrasonic is the classic error since both work by reflected emissions. The tell: infrared = body heat, microwave = reflected radio waves, ultrasonic = reflected sound waves, pressure = weight or contact."
+  },
+  {
+    "domain": "D1",
+    "family": "physical-sensors",
+    "question": "A raised-floor pad beneath a restricted server aisle must alert the moment anyone steps on it, including a slow-moving intruder who emits very little detectable heat. Which sensor type fits this requirement?",
+    "options": ["Infrared", "Microwave", "Ultrasonic", "Pressure"],
+    "correctIndex": 3,
+    "explanation": "Pressure. A pressure sensor triggers on weight or contact with the pad, so it catches anyone who steps there regardless of heat or motion signature; infrared loses because it depends on detecting body heat, which the stem rules out. The tell: pressure = weight or contact, infrared = body heat, microwave = reflected radio waves, ultrasonic = reflected sound waves."
+  },
+  {
+    "domain": "D1",
+    "family": "deception",
+    "question": "A security engineer commits a fake cloud API key to an internal code repository. Months later an alert fires the instant the key is used from an unknown IP address. Which deception technique is this?",
+    "options": ["Honeyfile", "Honeypot", "Honeynet", "Honeytoken"],
+    "correctIndex": 3,
+    "explanation": "Honeytoken. The bait is a piece of data, a credential with no legitimate use, so any attempt to use it proves theft and traces the leak; honeyfile loses because a honeyfile alerts when a bait file is opened or copied, while this alert fired on the credential being used. The tell: honeytoken = bait data or credential that alerts on use, honeyfile = bait file that alerts on access, honeypot = one decoy system, honeynet = a whole decoy network."
+  },
+  {
+    "domain": "D1",
+    "family": "deception",
+    "question": "A SOC training slide lists three deception tools: a single decoy server, an entire simulated environment of fake hosts and traffic, and a planted bait document. Which of the following names them in order?",
+    "options": [
+      "Honeypot, honeynet, honeyfile",
+      "Honeynet, honeypot, honeytoken",
+      "Honeypot, honeyfile, honeynet",
+      "Honeyfile, honeynet, honeypot"
+    ],
+    "correctIndex": 0,
+    "explanation": "Honeypot, honeynet, honeyfile. One decoy system is a honeypot, a whole simulated network of decoys is a honeynet, and a planted bait document is a honeyfile; honeytoken loses for the third item because it is bait data or a credential that alerts on use, not a document. The tell: honeypot = one decoy system, honeynet = a decoy network, honeyfile = a bait file, honeytoken = bait credential or record."
+  },
+  {
+    "domain": "D1",
+    "family": "aaa",
+    "question": "Hundreds of new IoT sensors must prove their identity to the network switch before they are allowed to send any data. Which of the following BEST accomplishes this?",
+    "options": [
+      "Multifactor authentication for the operations team",
+      "Device certificates validated through 802.1X",
+      "A single pre-shared password reused across all sensors",
+      "Biometric readers at the network closet door"
+    ],
+    "correctIndex": 1,
+    "explanation": "Device certificates validated through 802.1X. Systems authenticate with certificates issued to each device, and 802.1X keeps the switch port closed until that proof succeeds; a shared pre-configured password loses because a credential reused across every sensor cannot uniquely prove any one device's identity. The tell: authenticating systems = device certificates (802.1X), authenticating people = passwords, biometrics, and MFA; a shared static secret proves neither."
+  },
+  {
+    "domain": "D1",
+    "family": "gap-analysis",
+    "question": "An organization adopting the NIST Cybersecurity Framework documents which required controls it lacks today and builds a prioritized remediation roadmap toward the framework. Which of the following BEST describes this activity?",
+    "options": [
+      "Risk assessment",
+      "Vulnerability scan",
+      "Penetration test",
+      "Gap analysis"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gap analysis. It compares the current security posture against a defined target state, here the NIST CSF, and outputs a prioritized plan to close the shortfalls; risk assessment loses because it identifies and rates threats and impacts rather than measuring distance from a chosen framework. The tell: gap analysis = current state vs defined target state, risk assessment = identify and rate threats and impacts, vulnerability scan = find technical flaws, penetration test = exploit flaws to prove impact."
+  },
+  {
+    "domain": "D1",
+    "family": "gap-analysis",
+    "question": "After acquiring a subsidiary, a security team maps the subsidiary's existing controls against the corporate security baseline to list every shortfall for internal planning. Which of the following BEST describes this exercise?",
+    "options": [
+      "Gap analysis",
+      "External audit",
+      "Vulnerability scan",
+      "Risk assessment"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gap analysis. Comparing the subsidiary's current controls against the corporate baseline to produce a list of shortfalls is a control-level, current-versus-target comparison used for internal planning; an external audit loses because it is a formal conformance examination by an outside party, not an internal planning tool. The tell: gap analysis = internal comparison against a target state with a remediation roadmap, audit = formal conformance examination, vulnerability scan = technical flaw discovery, risk assessment = rate threats and impacts."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "A security analyst reviewing production change records finds this entry: 14:02 firewall rule 88 modified by jdoe; change ticket: none; CAB record: none. Which change management process was bypassed?",
+    "options": [
+      "Approval process",
+      "Backout plan",
+      "Impact analysis",
+      "Maintenance window"
+    ],
+    "correctIndex": 0,
+    "explanation": "Approval process. A production rule changed with no ticket and no change advisory board record means the change was never authorized, and formal approval is the first gate every change must pass; maintenance window loses because the log shows missing authorization, not work performed outside an approved time slot. The tell: approval process = authorization before the change, maintenance window = the approved time to make it, impact analysis = predicting what could break, backout plan = how to undo it."
+  },
+  {
+    "domain": "D1",
+    "family": "change-management",
+    "question": "A change ticket names one engineer accountable for driving the change through to completion and separately lists the business units the change could affect. Which of the following pairs the two entries with the correct change management elements?",
+    "options": [
+      "The engineer is a stakeholder; the business units are owners",
+      "The engineer is the approver; the business units are owners",
+      "The engineer is the owner; the business units are stakeholders",
+      "The engineer is the owner; the business units are approvers"
+    ],
+    "correctIndex": 2,
+    "explanation": "The engineer is the owner; the business units are stakeholders. Ownership names the individual accountable end to end for the change being completed and documented, while stakeholders are the affected parties who must be identified and consulted; reversing the pair fails because affected departments are consulted, not accountable. The tell: ownership = the accountable driver of the change, stakeholders = the affected parties, approval = the change advisory board's authorization to proceed."
+  }
+]

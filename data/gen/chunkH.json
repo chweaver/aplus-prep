@@ -2,7 +2,7 @@
  {
   "domain": "D5",
   "family": "governance-hierarchy",
-  "question": "A security document reads: \"Step 1 - open the admin console. Step 2 - navigate to Users. Step 3 - disable the account and record the ticket number.\" Which governance document type is this?",
+  "question": "A security document reads: \"Step 1 - open the admin console. Step 2 - navigate to Users. Step 3 - disable the account and record the ticket number.\" Which of the following governance document types is this?",
   "options": [
    "Policy",
    "Standard",
@@ -10,12 +10,12 @@
    "Guideline"
   ],
   "correctIndex": 2,
-  "explanation": "Procedure. Numbered, exact, do-this-then-that steps are a procedure - the how. The tell: policy = the high-level what and why, standard = the mandatory specific requirement, procedure = the step-by-step how, guideline = the recommended-but-optional advice."
+  "explanation": "Procedure. Numbered, exact, do-this-then-that steps are a procedure - the how; a standard loses because it states a required specification, not the steps to perform it. The tell: policy = the high-level what and why, standard = the mandatory specific requirement, procedure = the step-by-step how, guideline = the recommended-but-optional advice."
  },
  {
   "domain": "D5",
   "family": "governance-hierarchy",
-  "question": "A governance framework includes one document type that offers recommended best practices staff are encouraged to follow - but compliance is not mandatory. Which document type is this?",
+  "question": "A governance framework includes one document type that offers recommended best practices staff are encouraged to follow - but compliance is not mandatory. Which of the following document types is this?",
   "options": [
    "Guideline",
    "Policy",
@@ -23,12 +23,12 @@
    "Procedure"
   ],
   "correctIndex": 0,
-  "explanation": "Guideline. Recommended and optional is the guideline's defining trait; everything else in the hierarchy binds. The tell: guideline = should, not must, policy = the mandatory intent, standard = the mandatory specifics, procedure = the mandatory steps."
+  "explanation": "Guideline. Recommended and optional is the guideline's defining trait; everything else in the hierarchy binds, so a standard loses the moment compliance is not mandatory. The tell: guideline = should, not must, policy = the mandatory intent, standard = the mandatory specifics, procedure = the mandatory steps."
  },
  {
   "domain": "D5",
   "family": "governance-hierarchy",
-  "question": "Executives publish a one-page statement declaring that all company data must be protected and that security is every employee's responsibility. It names no technologies and gives no technical specifics. Which document type is this?",
+  "question": "Executives publish a one-page statement declaring that all company data must be protected and that security is every employee's responsibility. It names no technologies and gives no technical specifics. Which of the following document types is this?",
   "options": [
    "Standard",
    "Policy",
@@ -36,12 +36,12 @@
    "Procedure"
   ],
   "correctIndex": 1,
-  "explanation": "Policy. High-level management intent stating what must happen and why, without technical detail, is a policy. The tell: policy = broad mandatory intent from leadership, standard = the specific required settings beneath it, procedure = the steps, guideline = optional advice."
+  "explanation": "Policy. High-level management intent stating what must happen and why, without technical detail, is a policy; a standard loses because it pins down specific technical requirements. The tell: policy = broad mandatory intent from leadership, standard = the specific required settings beneath it, procedure = the steps, guideline = optional advice."
  },
  {
   "domain": "D5",
   "family": "governance-hierarchy",
-  "question": "A mandatory rule requires stored passwords to use a defined bcrypt work factor and all disk encryption to use AES-256. This specific, binding document supporting the broader security policy is a:",
+  "question": "A mandatory rule requires stored passwords to use a defined bcrypt work factor and all disk encryption to use AES-256, supporting the broader security policy. Which of the following document types is this?",
   "options": [
    "Guideline",
    "Procedure",
@@ -49,12 +49,12 @@
    "Standard"
   ],
   "correctIndex": 3,
-  "explanation": "Standard. Specific mandatory technical requirements that implement a policy's intent are standards. The tell: standard = exact required specifics (AES-256, work factors), policy = the general mandate above it, procedure = how to carry it out, guideline = optional recommendation."
+  "explanation": "Standard. Specific mandatory technical requirements that implement a policy's intent are standards; a policy loses because it states the general mandate without naming algorithms. The tell: standard = exact required specifics (AES-256, work factors), policy = the general mandate above it, procedure = how to carry it out, guideline = optional recommendation."
  },
  {
   "domain": "D5",
   "family": "policies",
-  "question": "A hurricane floods corporate headquarters. One plan keeps order fulfillment, payroll, and customer support running from alternate locations for the weeks the building is unusable. Which plan is this?",
+  "question": "A hurricane floods corporate headquarters. One plan keeps order fulfillment, payroll, and customer support running from alternate locations for the weeks the building is unusable. Which of the following plans is this?",
   "options": [
    "Disaster recovery policy",
    "Business continuity policy",
@@ -62,12 +62,12 @@
    "Acceptable use policy"
   ],
   "correctIndex": 1,
-  "explanation": "Business continuity. Keeping the BUSINESS functions operating through disruption is continuity; rebuilding the IT systems is disaster recovery's slice of it. The tell: business continuity = keep operations running, disaster recovery = restore the technology, incident response = handle the security event, acceptable use = rules for users."
+  "explanation": "Business continuity. Keeping the BUSINESS functions operating through disruption is continuity; rebuilding the IT systems is disaster recovery's slice of it, so DR loses when the focus is operations, not technology. The tell: business continuity = keep operations running, disaster recovery = restore the technology, incident response = handle the security event, acceptable use = rules for users."
  },
  {
   "domain": "D5",
   "family": "policies",
-  "question": "After a fire destroys the server room, the team executes a documented plan: rebuild servers, restore databases from backup, bring IT systems back online in priority order. Which plan are they following?",
+  "question": "After a fire destroys the server room, the team executes a documented plan: rebuild servers, restore databases from backup, bring IT systems back online in priority order. Which of the following plans is the team following?",
   "options": [
    "Business continuity policy",
    "Change management policy",
@@ -75,12 +75,12 @@
    "Incident response policy"
   ],
   "correctIndex": 2,
-  "explanation": "Disaster recovery. Restoring the technology stack after a catastrophe is DR, the IT-focused subset of continuity planning. The tell: disaster recovery = rebuild and restore systems, business continuity = keep the business functioning meanwhile, incident response = security-event handling, change management = controlled routine changes."
+  "explanation": "Disaster recovery. Restoring the technology stack after a catastrophe is DR, the IT-focused subset of continuity planning; business continuity loses because it keeps operations moving rather than rebuilding systems. The tell: disaster recovery = rebuild and restore systems, business continuity = keep the business functioning meanwhile, incident response = security-event handling, change management = controlled routine changes."
  },
  {
   "domain": "D5",
   "family": "policies",
-  "question": "An employee is disciplined for running a personal side business from a company laptop. The policy cited defines what staff may and may not do with corporate laptops, email, and internet access. Which policy is it?",
+  "question": "An employee is disciplined for running a personal side business from a company laptop. The policy cited defines what staff may and may not do with corporate laptops, email, and internet access. Which of the following policies is it?",
   "options": [
    "Acceptable use policy",
    "Incident response policy",
@@ -93,7 +93,7 @@
  {
   "domain": "D5",
   "family": "policies",
-  "question": "A policy document defines the exact phases the security team follows once a breach is confirmed: preparation, detection, analysis, containment, eradication, recovery. Which policy is this?",
+  "question": "A policy document defines the phases the security team follows for handling security incidents: preparation, detection, analysis, containment, eradication, recovery, and lessons learned. Which of the following policies is this?",
   "options": [
    "Business continuity policy",
    "Disaster recovery policy",
@@ -101,12 +101,12 @@
    "Incident response policy"
   ],
   "correctIndex": 3,
-  "explanation": "Incident response policy. The phased lifecycle for handling security events is the IR policy's content. The tell: incident response = the breach-handling phases, disaster recovery = restoring systems after catastrophe, business continuity = keeping operations alive, acceptable use = user conduct rules."
+  "explanation": "Incident response policy. The phased lifecycle for handling security events, ending in lessons learned, is the IR policy's content; disaster recovery loses because it restores technology after a catastrophe rather than defining event-handling phases. The tell: incident response = the breach-handling phases, disaster recovery = restoring systems after catastrophe, business continuity = keeping operations alive, acceptable use = user conduct rules."
  },
  {
   "domain": "D5",
   "family": "standards-procedures",
-  "question": "The SOC maintains a document titled \"Phishing Report Response\" that scripts exactly what to do, in order, whenever a phishing report arrives - who verifies, who blocks the sender, who notifies. This scenario-specific response script is a:",
+  "question": "The SOC maintains a document titled \"Phishing Report Response\" that scripts exactly what to do, in order, whenever a phishing report arrives - who verifies, who blocks the sender, who notifies. Which of the following BEST describes this document?",
   "options": [
    "Playbook",
    "Onboarding procedure",
@@ -114,12 +114,12 @@
    "Password standard"
   ],
   "correctIndex": 0,
-  "explanation": "Playbook. A step-by-step response script for one specific scenario type is a playbook, the SOC's per-scenario procedure. The tell: playbook = scenario-specific response steps, onboarding/offboarding = personnel procedures, change management procedure = how changes get approved, password standard = required password specifics."
+  "explanation": "Playbook. A step-by-step response script for one specific scenario type is a playbook, the SOC's per-scenario procedure; a change management procedure loses because it governs approving system changes, not responding to events. The tell: playbook = scenario-specific response steps, onboarding/offboarding = personnel procedures, change management procedure = how changes get approved, password standard = required password specifics."
  },
  {
   "domain": "D5",
   "family": "standards-procedures",
-  "question": "An employee resigns. HR's notification triggers the procedure that revokes all system access, disables accounts, and collects equipment on the person's last day. This procedure is:",
+  "question": "An employee resigns. HR's notification triggers the procedure that revokes all system access, disables accounts, and collects equipment on the person's last day. Which of the following BEST describes this process?",
   "options": [
    "Onboarding",
    "Offboarding",
@@ -127,12 +127,12 @@
    "Access control standard"
   ],
   "correctIndex": 1,
-  "explanation": "Offboarding. The structured exit process - access revoked, accounts disabled, assets returned - is offboarding, and gaps in it create lingering-access risk. The tell: offboarding = the exit process, onboarding = the entry process, change management = system changes, access control standard = the required access rules."
+  "explanation": "Offboarding. The structured exit process - access revoked, accounts disabled, assets returned - is offboarding, and gaps in it create lingering-access risk; onboarding loses because it grants access at hire, the mirror image. The tell: offboarding = the exit process, onboarding = the entry process, change management = system changes, access control standard = the required access rules."
  },
  {
   "domain": "D5",
   "family": "external-governance",
-  "question": "A retailer must comply with PCI DSS because it accepts card payments. The requirement is imposed and enforced by the payment card brands through contracts - no government wrote it. Which external governance source is this?",
+  "question": "A retailer must comply with PCI DSS because it accepts card payments. The requirement is imposed and enforced by the payment card brands through contracts - no government wrote it. Which of the following external governance sources is this?",
   "options": [
    "Regulatory",
    "Industry",
@@ -140,12 +140,12 @@
    "National"
   ],
   "correctIndex": 1,
-  "explanation": "Industry. PCI DSS is the textbook industry requirement: binding through business relationships, not law. The tell: industry = imposed by the sector itself (PCI DSS), regulatory = imposed by a government agency with penalties, legal = statutes and liability, national/local = the jurisdiction level of the rule."
+  "explanation": "Industry. PCI DSS is the textbook industry requirement: binding through business relationships, not law; regulatory loses because no government agency imposes or enforces it. The tell: industry = imposed by the sector itself (PCI DSS), regulatory = imposed by a government agency with penalties, legal = statutes and liability, national/local = the jurisdiction level of the rule."
  },
  {
   "domain": "D5",
   "family": "external-governance",
-  "question": "A government agency issues enforceable cybersecurity rules for the sector it oversees and can levy fines on organizations that fail to comply. Which category of external governance is this?",
+  "question": "A government agency issues enforceable cybersecurity rules for the sector it oversees and can levy fines on organizations that fail to comply. Which of the following external governance categories is this?",
   "options": [
    "Industry",
    "Legal",
@@ -153,12 +153,12 @@
    "Local"
   ],
   "correctIndex": 2,
-  "explanation": "Regulatory. Rules issued and enforced by a government agency with penalty power are regulatory requirements (HIPAA, GDPR enforcement). The tell: regulatory = agency-enforced rules and fines, industry = sector-imposed standards like PCI DSS, legal = the broader body of law and liability, local = the jurisdiction tier."
+  "explanation": "Regulatory. Rules issued and enforced by a government agency with penalty power are regulatory requirements (HIPAA, GDPR enforcement); industry loses because sector-imposed standards bind through contracts, not agency fines. The tell: regulatory = agency-enforced rules and fines, industry = sector-imposed standards like PCI DSS, legal = the broader body of law and liability, local = the jurisdiction tier."
  },
  {
   "domain": "D5",
   "family": "data-roles",
-  "question": "A marketing company decides which customer data to collect and exactly what it will be used for, then hires an outside email vendor to execute the campaigns with that data. Under GDPR, the marketing company is the:",
+  "question": "A marketing company decides which customer data to collect and exactly what it will be used for, then hires an outside email vendor to execute the campaigns with that data. Which of the following BEST describes the marketing company under GDPR?",
   "options": [
    "Data processor",
    "Data controller",
@@ -166,12 +166,12 @@
    "Data owner"
   ],
   "correctIndex": 1,
-  "explanation": "Data controller. Deciding the purposes and means of processing personal data makes it the controller, regardless of who does the hands-on work. The tell: controller = decides why and how, processor = processes on the controller's instructions, custodian = the day-to-day technical caretaker, owner = the internal accountability role for a dataset."
+  "explanation": "Data controller. Deciding the purposes and means of processing personal data makes it the controller, regardless of who does the hands-on work; processor loses because the vendor, not the company, acts on instructions. The tell: controller = decides why and how, processor = processes on the controller's instructions, custodian = the day-to-day technical caretaker, owner = the internal accountability role for a dataset."
  },
  {
   "domain": "D5",
   "family": "data-roles",
-  "question": "The email vendor sends campaigns using only the customer data and instructions its client supplies, making zero decisions about why or how the personal data is used. Under GDPR, the vendor is the:",
+  "question": "The email vendor sends campaigns using only the customer data and instructions its client supplies, making zero decisions about why or how the personal data is used. Which of the following BEST describes the vendor under GDPR?",
   "options": [
    "Data processor",
    "Data controller",
@@ -179,12 +179,12 @@
    "Data custodian"
   ],
   "correctIndex": 0,
-  "explanation": "Data processor. Handling personal data strictly on another party's instructions is processing; the client remains the controller. The tell: processor = acts only on instructions, controller = sets purpose and means, owner = internal accountable executive, custodian = the technical caretaker role."
+  "explanation": "Data processor. Handling personal data strictly on another party's instructions is processing; the client remains the controller, so controller loses because the vendor decides nothing about purpose or means. The tell: processor = acts only on instructions, controller = sets purpose and means, owner = internal accountable executive, custodian = the technical caretaker role."
  },
  {
   "domain": "D5",
   "family": "data-roles",
-  "question": "One role delivers the hands-on technical protection of data every day - running backups, applying access controls, patching the storage systems - while never deciding the data's classification or purpose. Which role is this?",
+  "question": "One role delivers the hands-on technical protection of data every day - running backups, applying access controls, patching the storage systems - while never deciding the data's classification or purpose. Which of the following roles is this?",
   "options": [
    "Data owner",
    "Data controller",
@@ -192,12 +192,12 @@
    "Data processor"
   ],
   "correctIndex": 2,
-  "explanation": "Data custodian/steward. The custodian implements protection technically; owners and controllers make the classification and purpose decisions the custodian enforces. The tell: custodian = hands-on caretaker, owner = accountable decision-maker for the dataset, controller = decides purpose under privacy law, processor = external party processing on instructions."
+  "explanation": "Data custodian/steward. The custodian implements protection technically; owners and controllers make the classification and purpose decisions the custodian enforces, so data owner loses because ownership means accountability, not hands-on care. The tell: custodian = hands-on caretaker, owner = accountable decision-maker for the dataset, controller = decides purpose under privacy law, processor = external party processing on instructions."
  },
  {
   "domain": "D5",
   "family": "risk-assessment-types",
-  "question": "Automated tooling watches the environment around the clock, recalculating risk scores in real time as configurations drift and new vulnerabilities appear. Which risk assessment cadence is this?",
+  "question": "Automated tooling watches the environment around the clock, recalculating risk scores in real time as configurations drift and new vulnerabilities appear. Which of the following risk assessment types is this?",
   "options": [
    "Ad hoc",
    "Recurring",
@@ -205,12 +205,12 @@
    "One-time"
   ],
   "correctIndex": 2,
-  "explanation": "Continuous. Real-time, always-on automated assessment is continuous, catching risk changes the moment they happen. The tell: continuous = constant automated monitoring, recurring = on a fixed schedule (annual, quarterly), ad hoc = triggered by an event, one-time = a single point-in-time exercise."
+  "explanation": "Continuous. Real-time, always-on automated assessment is continuous, catching risk changes the moment they happen; recurring loses because it runs on a fixed schedule, not around the clock. The tell: continuous = constant automated monitoring, recurring = on a fixed schedule (annual, quarterly), ad hoc = triggered by an event, one-time = a single point-in-time exercise."
  },
  {
   "domain": "D5",
   "family": "risk-assessment-types",
-  "question": "The morning after a direct competitor discloses a major breach, the CISO orders an immediate, unplanned risk assessment prompted specifically by that news. Which assessment type is this?",
+  "question": "The morning after a direct competitor discloses a major breach, the CISO orders an immediate, unplanned risk assessment prompted specifically by that news. Which of the following assessment types is this?",
   "options": [
    "Ad hoc",
    "Recurring",
@@ -218,12 +218,12 @@
    "One-time"
   ],
   "correctIndex": 0,
-  "explanation": "Ad hoc. An unscheduled assessment triggered by a specific event or concern is ad hoc. The tell: ad hoc = event-driven, unplanned, recurring = calendar-driven, continuous = automated and constant, one-time = single occasion, such as before an acquisition."
+  "explanation": "Ad hoc. An unscheduled assessment triggered by a specific event or concern is ad hoc; one-time loses because it describes a planned single exercise, not an event-driven reaction. The tell: ad hoc = event-driven, unplanned, recurring = calendar-driven, continuous = automated and constant, one-time = single occasion, such as before an acquisition."
  },
  {
   "domain": "D5",
   "family": "qual-quant",
-  "question": "An analyst calculates that a server failure costs $40,000 per event and strikes about twice a year, producing an $80,000 expected annual loss to weigh against the cost of controls. Which risk analysis approach is this?",
+  "question": "An analyst calculates that a server failure costs $40,000 per event and strikes about twice a year, producing an $80,000 expected annual loss to weigh against the cost of controls. Which of the following risk analysis approaches is this?",
   "options": [
    "Qualitative",
    "Quantitative",
@@ -231,12 +231,12 @@
    "Hybrid"
   ],
   "correctIndex": 1,
-  "explanation": "Quantitative. Hard dollar values and frequency math (SLE x ARO = ALE) are quantitative analysis, built for cost-benefit decisions. The tell: quantitative = numbers and currency, qualitative = High/Medium/Low judgment, semi-quantitative/hybrid = mixtures of the two."
+  "explanation": "Quantitative. Hard dollar values and frequency math (SLE x ARO = ALE) are quantitative analysis, built for cost-benefit decisions; semi-quantitative loses because it uses numeric scales, not true currency calculations. The tell: quantitative = numbers and currency, qualitative = High/Medium/Low judgment, semi-quantitative = numeric scales or scores with no true currency, hybrid = a deliberate mix of qualitative and quantitative methods."
  },
  {
   "domain": "D5",
   "family": "qual-quant",
-  "question": "A workshop team rates each risk High, Medium, or Low on a likelihood-versus-impact matrix using expert judgment alone - not one monetary figure appears anywhere. Which approach is this?",
+  "question": "A workshop team rates each risk High, Medium, or Low on a likelihood-versus-impact matrix using expert judgment alone - not one monetary figure appears anywhere. Which of the following approaches is this?",
   "options": [
    "Qualitative",
    "Quantitative",
@@ -244,25 +244,25 @@
    "Semi-quantitative"
   ],
   "correctIndex": 0,
-  "explanation": "Qualitative. Subjective ratings on a matrix, no dollars, is qualitative analysis: faster and easier, less precise. The tell: qualitative = judgment categories, quantitative = calculated currency values, hybrid/semi-quantitative = blends."
+  "explanation": "Qualitative. Subjective ratings on a matrix, no dollars, is qualitative analysis: faster and easier, less precise; quantitative loses the instant no monetary figure appears. The tell: qualitative = judgment categories, quantitative = calculated currency values, semi-quantitative = numeric scales or scores with no true currency, hybrid = a deliberate mix of qualitative and quantitative methods."
  },
  {
   "domain": "D5",
   "family": "qual-quant",
-  "question": "An auditor asks which risk analysis method relies on subjective ratings and expert opinion rather than objective monetary calculation. Which is it?",
+  "question": "Which of the following risk analysis methods expresses risk purely as descriptive categories such as High, Medium, or Low based on expert judgment, using neither numeric scores nor monetary values?",
   "options": [
    "Quantitative",
    "Semi-quantitative",
-   "Qualitative",
-   "Hybrid"
+   "Hybrid",
+   "Qualitative"
   ],
-  "correctIndex": 2,
-  "explanation": "Qualitative. Expert judgment expressed in categories rather than currency defines qualitative analysis. The tell: qualitative = subjective ratings, quantitative = objective dollars and math, semi-quantitative = numeric scales without true currency, hybrid = deliberate mix."
+  "correctIndex": 3,
+  "explanation": "Qualitative. Purely descriptive categories from expert judgment, with no numbers of any kind, define qualitative analysis; semi-quantitative loses because it assigns numeric scale scores even though it stops short of real currency. The tell: qualitative = descriptive labels only, semi-quantitative = numeric scales without true currency, quantitative = calculated monetary values, hybrid = a deliberate mix of methods."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "A production database server is valued at $200,000. Fire modeling says a single fire would destroy 25 percent of its value. What is the single loss expectancy (SLE)?",
+  "question": "A production database server is valued at $200,000. Fire modeling says a single fire would destroy 25 percent of its value. Which of the following is the single loss expectancy (SLE)?",
   "options": [
    "$100,000",
    "$25,000",
@@ -270,12 +270,12 @@
    "$50,000"
   ],
   "correctIndex": 3,
-  "explanation": "$50,000. SLE = asset value x exposure factor = $200,000 x 0.25. The tell: SLE = cost of ONE event (AV x EF), ALE = cost per YEAR (SLE x ARO), EF = the percentage lost, ARO = events per year."
+  "explanation": "$50,000. SLE = asset value x exposure factor = $200,000 x 0.25; $200,000 loses because that is the full asset value, not the per-event loss. The tell: SLE = cost of ONE event (AV x EF), ALE = cost per YEAR (SLE x ARO), EF = the percentage lost, ARO = events per year."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "A warehouse is valued at $500,000. A flood would destroy 40 percent of it, and floods are expected once every 2 years. What is the annualized loss expectancy (ALE)?",
+  "question": "A warehouse is valued at $500,000. A flood would destroy 40 percent of it, and floods are expected once every 2 years. Which of the following is the annualized loss expectancy (ALE)?",
   "options": [
    "$200,000",
    "$250,000",
@@ -283,12 +283,12 @@
    "$100,000"
   ],
   "correctIndex": 3,
-  "explanation": "$100,000. SLE = $500,000 x 0.40 = $200,000; ARO = once per 2 years = 0.5; ALE = $200,000 x 0.5. The tell: ALE = SLE x ARO, and an every-other-year event has ARO 0.5, not 2."
+  "explanation": "$100,000. SLE = $500,000 x 0.40 = $200,000; ARO = once per 2 years = 0.5; ALE = $200,000 x 0.5; $200,000 loses because stopping at the SLE skips the annualization step. The tell: ALE = SLE x ARO, and an every-other-year event has ARO 0.5, not 2."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "A risk register lists a server's single loss expectancy as $40,000 and its annualized loss expectancy as $10,000. How often is the loss event expected to occur?",
+  "question": "A risk register lists a server's single loss expectancy as $40,000 and its annualized loss expectancy as $10,000. Which of the following is the expected frequency of the loss event?",
   "options": [
    "Once every 4 years",
    "Four times per year",
@@ -296,12 +296,12 @@
    "Twice per year"
   ],
   "correctIndex": 0,
-  "explanation": "Once every 4 years. ARO = ALE / SLE = 10,000 / 40,000 = 0.25 events per year, i.e., one event per 4 years. The tell: the ALE formula runs both ways - divide ALE by SLE to recover the frequency."
+  "explanation": "Once every 4 years. ARO = ALE / SLE = 10,000 / 40,000 = 0.25 events per year, i.e., one event per 4 years; four times per year loses because it inverts the division. The tell: the ALE formula runs both ways - divide ALE by SLE to recover the frequency."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "Hydrology data says a data center flood should occur once every 5 years. What is the annualized rate of occurrence (ARO)?",
+  "question": "Hydrology data says a data center flood should occur once every 5 years. Which of the following is the annualized rate of occurrence (ARO)?",
   "options": [
    "0.2",
    "5",
@@ -309,12 +309,12 @@
    "0.5"
   ],
   "correctIndex": 0,
-  "explanation": "0.2. ARO expresses events per single year: 1 event / 5 years = 0.2. The tell: ARO = yearly frequency, so rarer-than-annual events have AROs below 1 - never write 5 for a once-in-5-years event."
+  "explanation": "0.2. ARO expresses events per single year: 1 event / 5 years = 0.2; 5 loses because it counts the years between events, not events per year. The tell: ARO = yearly frequency, so rarer-than-annual events have AROs below 1 - never write 5 for a once-in-5-years event."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "A facility is valued at $1,200,000. Each occurrence of a particular event destroys 15 percent of its value, and the event strikes about 3 times per year. What is the annualized loss expectancy (ALE)?",
+  "question": "A facility is valued at $1,200,000. Each occurrence of a particular event destroys 15 percent of its value, and the event strikes about 3 times per year. Which of the following is the annualized loss expectancy (ALE)?",
   "options": [
    "$180,000",
    "$540,000",
@@ -322,12 +322,12 @@
    "$60,000"
   ],
   "correctIndex": 1,
-  "explanation": "$540,000. SLE = $1,200,000 x 0.15 = $180,000; ALE = SLE x ARO = $180,000 x 3. The tell: two multiplications, in order - value x EF gives one event's cost, then x ARO annualizes it."
+  "explanation": "$540,000. SLE = $1,200,000 x 0.15 = $180,000; ALE = SLE x ARO = $180,000 x 3; $180,000 loses because it is only the single-event cost. The tell: two multiplications, in order - value x EF gives one event's cost, then x ARO annualizes it."
  },
  {
   "domain": "D5",
   "family": "risk-math",
-  "question": "Company laptops worth $60,000 in total keep walking out the door: each theft incident wipes out 30 percent of that value, and history shows about two incidents per year. What annualized loss expectancy (ALE) should the risk register show?",
+  "question": "Company laptops worth $60,000 in total keep walking out the door: each theft incident wipes out 30 percent of that value, and history shows about two incidents per year. Which of the following annualized loss expectancy (ALE) values should the risk register show?",
   "options": [
    "$18,000",
    "$72,000",
@@ -340,7 +340,7 @@
  {
   "domain": "D5",
   "family": "probability-impact",
-  "question": "A risk analysis concludes that IF a breach occurs, the resulting harm - lawsuits, regulatory fines, customer exodus - would be severe. Which dimension of risk does this describe?",
+  "question": "A risk analysis concludes that IF a breach occurs, the resulting harm - lawsuits, regulatory fines, customer exodus - would be severe. Which of the following risk dimensions does this describe?",
   "options": [
    "Probability",
    "Likelihood",
@@ -348,12 +348,12 @@
    "Impact"
   ],
   "correctIndex": 3,
-  "explanation": "Impact. How bad the consequences would be is impact; how likely it is to happen is probability/likelihood. The tell: impact = severity of the harm, probability/likelihood = chance it occurs, exposure factor = the percentage of asset value lost per event."
+  "explanation": "Impact. How bad the consequences would be is impact; likelihood loses because it rates the chance something happens, not the severity when it does. The tell: impact = severity of the harm, probability = the computed statistical chance, likelihood = the qualitative chance rating, exposure factor = percent of asset value lost per event."
  },
  {
   "domain": "D5",
   "family": "probability-impact",
-  "question": "In a quantitative risk model, one variable expresses the percentage of an asset's value that would be lost in a single event. Which term names it?",
+  "question": "In a quantitative risk model, one variable expresses the percentage of an asset's value that would be lost in a single event. Which of the following terms names this variable?",
   "options": [
    "Probability",
    "Likelihood",
@@ -361,12 +361,12 @@
    "Impact"
   ],
   "correctIndex": 2,
-  "explanation": "Exposure factor. The per-event loss percentage is the EF, multiplied by asset value to produce SLE. The tell: exposure factor = percent of value lost, impact = the overall severity concept, probability/likelihood = the chance of occurrence."
+  "explanation": "Exposure factor. The per-event loss percentage is the EF, multiplied by asset value to produce SLE; impact loses because it names the overall severity concept, not a percentage variable. The tell: exposure factor = percent of value lost, impact = severity of the harm, probability = computed statistical chance, likelihood = qualitative chance rating."
  },
  {
   "domain": "D5",
   "family": "risk-register",
-  "question": "The security team tracks \"number of overdue critical patches\" because when that number climbs, it signals a specific risk is growing before any incident occurs. In risk register terms, this early-warning metric is a:",
+  "question": "The security team tracks \"number of overdue critical patches\" because when that number climbs, it signals a specific risk is growing before any incident occurs. Which of the following risk register elements BEST describes this early-warning metric?",
   "options": [
    "Key risk indicator (KRI)",
    "Risk owner",
@@ -374,12 +374,12 @@
    "Risk appetite"
   ],
   "correctIndex": 0,
-  "explanation": "Key risk indicator. A measurable metric that warns a risk is rising is a KRI, the register's smoke detector. The tell: KRI = the early-warning metric, risk owner = the accountable person, risk threshold = the trigger line that demands action, risk appetite = how much risk the org wants overall."
+  "explanation": "Key risk indicator. A measurable metric that warns a risk is rising is a KRI, the register's smoke detector; risk threshold loses because it is the preset level that triggers action, not the metric being watched. The tell: KRI = the early-warning metric, risk owner = the accountable person, risk threshold = the trigger line that demands action, risk appetite = how much risk the org wants overall."
  },
  {
   "domain": "D5",
   "family": "risk-register",
-  "question": "Every entry in the risk register names exactly one accountable manager responsible for monitoring that risk and driving its treatment. That named individual is the:",
+  "question": "Every entry in the risk register names exactly one accountable manager responsible for monitoring that risk and driving its treatment. Which of the following BEST describes that named individual?",
   "options": [
    "Key risk indicator (KRI)",
    "Risk threshold",

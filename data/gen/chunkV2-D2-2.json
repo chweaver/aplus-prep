@@ -1,0 +1,247 @@
+[
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "An email filter passes a message because its invoice.zip attachment cannot be scanned. Inside is a macro-enabled spreadsheet that installs a trojan when opened. Which of the following BEST identifies the specific vector that carried the payload?",
+    "options": ["Message-based (email)", "File-based", "Image-based", "Removable device"],
+    "correctIndex": 1,
+    "explanation": "File-based. The payload is the macro-enabled document itself, smuggled past filtering inside an archive; message-based loses because the ask is the most specific vector and email was only the transport for the malicious file. The tell: file-based = the malicious file (macro doc, PDF, archive) is the carrier; message-based = the lure arrives by email/SMS/IM; image-based = payload hidden inside an image; removable device = USB media carries it in."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "Several machines are infected after users double-click quarterly-report.pdf.exe, a disguised executable that a compromised account uploaded to a department file share. Which of the following attack vectors did the malware use?",
+    "options": ["Removable device", "Client-based software", "File-based", "Image-based"],
+    "correctIndex": 2,
+    "explanation": "File-based. A disguised executable planted on a share is a malicious file waiting to be run; client-based loses because no installed agent was exploited - users executed a rogue file. The tell: file-based = a malicious file is the carrier; client-based = vulnerable installed software is the way in; image-based = script hidden in an image file; removable device = plugged-in USB media."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "After an off-site meeting, an employee plugs in a phone charging cable found in the conference room. The cable registers as a keyboard and rapidly types commands that download malware. Which of the following attack vectors does this describe?",
+    "options": ["Unsecure wired network", "File-based", "Bluetooth", "Removable device"],
+    "correctIndex": 3,
+    "explanation": "Removable device. The malicious cable is plugged-in hardware that injects keystrokes the moment it connects, the same vector class as a dropped USB drive; unsecure wired network loses because the laptop's network connection was never the path. The tell: removable device = plugged-in hardware (USB drive, rogue cable) carries the attack; unsecure wired network = an exposed live Ethernet jack; file-based = a malicious file is opened."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "Threat intelligence shows an attacker scanning a retailer's branch offices specifically for self-service kiosks running an operating system whose vendor stopped issuing security patches years ago. Which of the following attack vectors is being targeted?",
+    "options": ["Open service ports", "Default credentials", "Unsupported systems", "Unsecure wireless networks"],
+    "correctIndex": 2,
+    "explanation": "Unsupported systems. The kiosks will never receive patches, so every new flaw stays exploitable forever, which is exactly why the attacker hunts for them; open service ports loses because the scan targets the retired platform itself, not one exposed service. The tell: unsupported systems = patches ended, exposure is permanent; open service ports = a reachable listening service; default credentials = factory logins never changed."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A hospital's imaging console is certified only for an operating system release that no longer receives security updates, and it must remain connected to the clinical network. Which of the following BEST describes the attack vector this device presents?",
+    "options": ["Removable device", "Client-based software", "Open service ports", "Unsupported system"],
+    "correctIndex": 3,
+    "explanation": "Unsupported system. Because the certified OS gets no updates, any newly disclosed flaw remains exploitable for the device's whole networked life; client-based loses because the risk is the unpatchable platform, not a vulnerable installed agent. The tell: unsupported systems = no patches will ever come; client-based = installed software that is exploitable but also patchable; open service ports = one specific listening service is exposed."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A visitor waiting in a lobby plugs a laptop into an unused wall jack and immediately reaches internal file servers. The switch port required no authentication of any kind. Which of the following attack vectors does this demonstrate?",
+    "options": ["Unsecure wireless network", "Unsecure wired network", "Open service ports", "Default credentials"],
+    "correctIndex": 1,
+    "explanation": "Unsecure wired network. A live Ethernet jack that grants inside access to any plugged-in device is the exposed path; open service ports loses because the finding is the unauthenticated network port, not a particular listening service on a host. The tell: unsecure wired = exposed live jacks with no port authentication; unsecure wireless = open or weakly encrypted Wi-Fi; open service ports = a reachable listening service on a system."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "During a walkthrough, an assessor finds a live network drop behind a hallway printer that connects any device straight to the internal VLAN, noting an implanted rogue device could sit there unnoticed. Which of the following vectors should the report cite?",
+    "options": ["Removable device", "Open service ports", "Unsecure wired network", "Bluetooth"],
+    "correctIndex": 2,
+    "explanation": "Unsecure wired network. The unprotected live drop lets any rogue device join the internal VLAN with no authentication; removable device loses because nothing is plugged into a computer's USB port - the exposure is the network jack itself. The tell: unsecure wired = exposed Ethernet access with no port control; removable device = hardware plugged into a host; open service ports = a listening service reachable on a system."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A sales manager leaves a phone's Bluetooth in discoverable mode at a cafe. A nearby attacker silently pairs with the phone and copies its contact list and messages. Which of the following attack vectors was exploited?",
+    "options": ["Bluetooth", "Unsecure wireless (Wi-Fi) network", "Unsecure wired network", "Open service ports"],
+    "correctIndex": 0,
+    "explanation": "Bluetooth. Discoverable mode let a nearby attacker pair and pull data over the short-range radio link; Wi-Fi loses because the phone's wireless LAN connection was never involved - the pairing channel was. The tell: Bluetooth = short-range pairing exposure on the device itself; unsecure Wi-Fi = open or weak wireless LAN traffic interception; unsecure wired = exposed Ethernet jacks."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A security administrator reviews an external scan of an internet-facing web server: 22/tcp open ssh, 23/tcp open telnet, 80/tcp open http, 443/tcp open https. Management is performed over SSH. Which of the following services should be disabled FIRST?",
+    "options": ["22/tcp ssh", "23/tcp telnet", "80/tcp http", "443/tcp https"],
+    "correctIndex": 1,
+    "explanation": "Telnet on 23/tcp. It carries credentials and sessions in cleartext and is redundant because SSH already provides encrypted management, so it is pure unneeded attack surface; HTTP on 80 loses because web servers routinely keep it just to redirect users to HTTPS. The tell: open service ports = every listening service is attack surface; disable the unneeded cleartext ones first and keep the encrypted equivalents (SSH, HTTPS) that serve a purpose."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "An IP camera joins a botnet on the day it goes online. The investigation pulls its configuration, which reads: username admin, password admin (factory default). Which of the following attack vectors did the botnet exploit?",
+    "options": ["Open service ports", "Unsupported systems", "Unsecure wireless network", "Default credentials"],
+    "correctIndex": 3,
+    "explanation": "Default credentials. The camera still used its out-of-box factory login, which botnets try automatically from published default lists; open service ports loses because the config excerpt shows the way in was the unchanged password, not merely a reachable service. The tell: default credentials = factory logins never changed at deployment; open service ports = an exposed listening service; unsupported systems = a platform that no longer receives patches."
+  },
+  {
+    "domain": "D2",
+    "family": "attack-vectors",
+    "question": "A post-incident report states that attackers entered through one phished email account, and it separately inventories every open port, stale account, and exposed application the company presents. Which of the following correctly labels the two concepts?",
+    "options": [
+      "The phished account is the threat vector, and the full inventory of exposed points is the attack surface",
+      "The phished account is the attack surface, and the full inventory of exposed points is the threat vector",
+      "Both the account and the inventory are threat vectors, differing only in size",
+      "Both the account and the inventory are attack surfaces, differing only in size"
+    ],
+    "correctIndex": 0,
+    "explanation": "Threat vector vs attack surface. The vector is the specific path the attacker actually used (the phished account), while the attack surface is the total set of points that could be attacked (every port, account, and application). The tell: vector = the path taken in; attack surface = everything attackable; shrinking the surface (closing ports, removing software) eliminates potential vectors."
+  },
+  {
+    "domain": "D2",
+    "family": "impersonation",
+    "question": "An analyst reviews a reported email. Header excerpt: From: \"IT Support\" <helpdesk@deskhelp-mail.com>, Reply-To: itteam@freemail.example. Body: \"Your password expires today. Reply with your current one to keep access.\" No branding, no backstory. Which of the following BEST describes this technique?",
+    "options": ["Pretexting", "Business email compromise", "Impersonation", "Brand impersonation"],
+    "correctIndex": 2,
+    "explanation": "Impersonation. The sender simply claims a trusted identity (IT support) from an external mailbox with nothing else built around it; pretexting loses because no fabricated scenario justifies the request - the false identity is the whole play. The tell: impersonation = the assumed identity alone; pretexting = an invented backstory that justifies the ask; brand impersonation = faked corporate look and branding; BEC = a compromised or spoofed internal executive mailbox."
+  },
+  {
+    "domain": "D2",
+    "family": "app-vulns",
+    "question": "A threat hunter investigates a signed process making unusual outbound connections. Memory analysis reveals an executable region in the process that does not exist in its on-disk image, and no new files were written. Which of the following vulnerabilities was exploited?",
+    "options": ["Buffer overflow", "Memory injection", "Malicious update", "SQL injection"],
+    "correctIndex": 1,
+    "explanation": "Memory injection. Attack code was placed directly into the running process's address space, which is why memory no longer matches the signed binary and nothing touched disk; buffer overflow loses because nothing describes input overrunning a fixed-length buffer - overflow is one technique that can enable injection, not this finding. The tell: memory injection = code inserted into a live process's memory; buffer overflow = writing past a buffer boundary to corrupt adjacent memory; malicious update = a trojanized update channel."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A worm moves between servers by exploiting an unpatched flaw in the operating system's built-in file-sharing service. No third-party application is involved anywhere in the chain. Which of the following vulnerability categories does the flaw belong to?",
+    "options": ["Application vulnerability", "Web-based vulnerability", "Firmware vulnerability", "Operating system-based vulnerability"],
+    "correctIndex": 3,
+    "explanation": "Operating system-based vulnerability. The flaw sits in a service the platform itself ships, so the OS, not any application, is what needs patching; application loses because the stem rules out third-party software entirely. The tell: OS-based = the flaw is in the platform and its built-in services; application = a program running on top; web-based = flaws reached through a web app (SQLi, XSS); firmware = code below the OS in the hardware."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A vulnerability bulletin describes a kernel flaw that lets any local user on the affected platform elevate to administrator rights, regardless of which applications are installed. Which of the following BEST categorizes this vulnerability?",
+    "options": ["Operating system-based", "Application-based", "Cloud-specific", "Web application-based"],
+    "correctIndex": 0,
+    "explanation": "Operating system-based. A kernel privilege escalation flaw lives in the platform itself, which is why it applies no matter what software sits on top; application loses because the bulletin explicitly makes installed programs irrelevant. The tell: OS-based = kernel and platform service flaws; application = flaws in individual programs; web-based = exploited through a web application; cloud-specific = weaknesses of the cloud management plane and shared tenancy."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A developer commits the company's cloud management API key to a public repository. Anyone holding the key can create, modify, or delete resources across the entire tenant. Which of the following vulnerability categories MOST specifically describes this exposure?",
+    "options": ["Misconfiguration", "Cloud-specific", "Zero-day", "Resource reuse"],
+    "correctIndex": 1,
+    "explanation": "Cloud-specific. Exposed management-plane keys are a signature cloud weakness because one credential controls the provider's API for the whole tenant; misconfiguration loses because the ask is the MOST specific category and the exposure lives in the cloud management interface, not a general settings error. The tell: cloud-specific = management API/key exposure, weak IAM, public buckets, shared tenancy; misconfiguration = correct software with wrong settings anywhere; resource reuse = leftover tenant data in reallocated resources."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "After moving workloads to an IaaS provider, a company assumes the provider patches the guest operating systems, so its instances receive no updates for six months. Which of the following vulnerability categories is the root cause of this exposure?",
+    "options": ["Cloud-specific", "Operating system-based", "End-of-life hardware", "Zero-day"],
+    "correctIndex": 0,
+    "explanation": "Cloud-specific. Misunderstanding the shared responsibility model is a cloud-specific weakness: the provider secures the cloud, but the customer must patch what runs in it; OS-based loses because the missing OS patches are the symptom and the stem asks for the root cause. The tell: cloud-specific = shared responsibility confusion, exposed keys, weak IAM; OS-based = a flaw in the platform code itself; zero-day = no patch exists yet for anyone."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A penetration test reports that the company VPN still accepts an export-grade legacy cipher suite and 1024-bit RSA keys. No exploitation was attempted or observed. Which of the following BEST describes the finding?",
+    "options": ["Cryptographic downgrade attack", "Hash collision attack", "Cryptographic vulnerability", "On-path attack"],
+    "correctIndex": 2,
+    "explanation": "Cryptographic vulnerability. Weak ciphers and short keys are a weakness present in the configuration, reportable even though nothing was exploited; downgrade attack loses because no one forced the endpoints onto the weaker suite - it is merely accepted. The tell: cryptographic vulnerability = a weak algorithm, key, or implementation exists; downgrade attack = actively forcing negotiation onto the weaker option; collision = two inputs producing the same hash."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A code review finds a desktop client encrypts stored credentials with a single hardcoded key embedded in the binary and shared by every installation, so extracting it once decrypts them all. Which of the following vulnerability categories is this?",
+    "options": ["Misconfiguration", "Cryptographic downgrade attack", "Malicious update", "Cryptographic vulnerability"],
+    "correctIndex": 3,
+    "explanation": "Cryptographic vulnerability. A hardcoded, reused key is a flawed crypto implementation baked into the code; misconfiguration loses because no setting is wrong - the weakness ships inside the software and no configuration change can remove it. The tell: cryptographic vulnerability = weak algorithms, short keys, or flawed implementations (hardcoded or reused keys); misconfiguration = correct software with wrong settings; downgrade attack = forcing a weaker negotiation at runtime."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "Returned loaner laptops keep reinfecting users even after full disk wipes and operating system reinstalls. Forensics locates an implant in the UEFI code that executes before the OS loads. Which of the following vulnerability categories enabled this persistence?",
+    "options": ["Operating system-based", "Firmware", "Zero-day", "Misconfiguration"],
+    "correctIndex": 1,
+    "explanation": "Firmware. The implant lives below the operating system in the board's UEFI, which is why reimaging the disk never removes it; OS-based loses because everything the reinstall replaces is clean - the compromise sits underneath it. The tell: firmware = code embedded in the hardware below the OS that survives reimaging; OS-based = flaws in platform software a reinstall would replace; zero-day = describes patch availability, not persistence depth."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A cloud provider confirms that code running inside one customer's guest virtual machine abused a hypervisor flaw to read live memory belonging to another customer's VM on the same host. Which of the following vulnerabilities does this describe?",
+    "options": ["Resource reuse", "Memory injection", "VM escape", "Misconfiguration"],
+    "correctIndex": 2,
+    "explanation": "VM escape. The guest actively broke through the hypervisor boundary to reach another tenant's running VM; resource reuse loses because the data was taken from live memory by exploitation, not recovered from unwiped resources handed to a new tenant. The tell: VM escape = active breakout from a guest through the hypervisor; resource reuse = passive leftovers in reallocated memory or storage; memory injection = code placed into a process on a system already under control."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A company deletes its cloud volumes while decommissioning a workload. Weeks later, another tenant assigned the same underlying storage recovers intact fragments of the company's files because the blocks were reallocated without being wiped. Which of the following vulnerabilities does this demonstrate?",
+    "options": ["Resource reuse", "VM escape", "Cryptographic vulnerability", "Side loading"],
+    "correctIndex": 0,
+    "explanation": "Resource reuse. The provider reallocated storage that still held the previous tenant's data, so the new tenant inherited the remnants; VM escape loses because nothing broke out of a guest - the data leaked passively through unwiped blocks. The tell: resource reuse = leftover data in reallocated memory or storage, fixed by sanitizing before reassignment; VM escape = an active breakout through the hypervisor."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A breach review finds a production database accepted connections with no authentication because the deployment template shipped with authentication disabled. The database software itself contains no code flaw. Which of the following vulnerability categories applies?",
+    "options": ["Misconfiguration", "Zero-day", "Operating system-based", "Malicious update"],
+    "correctIndex": 0,
+    "explanation": "Misconfiguration. Correct software was deployed with the wrong settings - authentication off - a human-error class fixed by configuration enforcement, not a patch; zero-day loses because there is no flaw in the code for any vendor to fix. The tell: misconfiguration = right software, wrong settings (auth disabled, open permissions, debug left on); zero-day = an unknown code flaw with no patch; malicious update = a trojanized update channel."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A corporate Android phone joins a botnet. The investigation shows the user enabled the install-unknown-apps setting and installed a game downloaded from a forum; the device was never rooted. Which of the following vulnerabilities enabled the installation?",
+    "options": ["Jailbreaking", "Malicious update", "Zero-day", "Side loading"],
+    "correctIndex": 3,
+    "explanation": "Side loading. The app came from outside the official store, bypassing its vetting and signing review, which on Android needs only a settings toggle; jailbreaking loses because no OS restrictions were removed - the phone was never rooted. The tell: side loading = installing apps from outside the official store; jailbreaking/rooting = removing OS restrictions to gain root control; malicious update = a legitimate update channel delivering trojanized code."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A fully patched server is compromised through a flaw that has no CVE entry, no vendor advisory, and no available fix from anyone. Which of the following BEST describes the vulnerability that was exploited?",
+    "options": ["A missed patch for a known vulnerability", "A zero-day vulnerability", "An end-of-life platform flaw", "A misconfiguration"],
+    "correctIndex": 1,
+    "explanation": "Zero-day vulnerability. The vendor does not yet know the flaw exists, so no patch or signature can exist anywhere; a missed patch loses because the server is fully patched - there was no fix to miss. The tell: zero-day = no patch exists YET because the flaw is unknown to the vendor; missed patch = a fix exists but was not applied (patch management failure); end-of-life = no patch will EVER come again."
+  },
+  {
+    "domain": "D2",
+    "family": "system-vulns",
+    "question": "A CISO asks which control still provides protection against exploitation of zero-day vulnerabilities, for which no patch or detection signature can exist yet. Which of the following BEST meets the requirement?",
+    "options": ["Signature-based antivirus", "Accelerated patch deployment", "Application allow list", "Subscribing to vendor advisories"],
+    "correctIndex": 2,
+    "explanation": "Application allow list. Default-deny execution blocks unapproved payloads regardless of whether the flaw they exploit is known, so it still works when no patch or signature exists; accelerated patching loses because there is nothing to deploy for an unknown flaw. The tell: zero-day defenses are compensating by nature - allow lists, behavior detection, segmentation, least privilege; signatures and patches both require the vulnerability to be known first."
+  },
+  {
+    "domain": "D2",
+    "family": "physical-attacks",
+    "question": "Overnight, an intruder crowbars open a data closet door and smashes the lock off a server rack, tripping the forced-entry alarm. Nothing was cloned, badged, or logged in. Which of the following attacks occurred?",
+    "options": ["Physical brute force", "Brute-force password attack", "RFID cloning", "Environmental attack"],
+    "correctIndex": 0,
+    "explanation": "Physical brute force. Forced entry with visible damage - pried doors, smashed locks - is the physical version of brute force; a brute-force password attack loses because no credentials were guessed anywhere, the same words just live in a different domain. The tell: physical brute force = forced-entry damage; RFID cloning = duplicated badge credentials open doors cleanly; environmental attack = sabotage of the facility's power or HVAC systems."
+  },
+  {
+    "domain": "D2",
+    "family": "physical-attacks",
+    "question": "A security analyst reviews badge logs: 07:58 badge 4417 enters Building A; 08:09 badge 4417 enters Building C, 30 km away. The badge's owner is abroad on vacation. Which of the following attacks MOST likely occurred?",
+    "options": ["Physical brute force", "Environmental attack", "RFID cloning", "Credential replay"],
+    "correctIndex": 2,
+    "explanation": "RFID cloning. One badge appearing at two distant readers minutes apart while its owner is away means the credential was duplicated - the physical twin of impossible travel; credential replay loses because it describes resending captured network authentication, not presenting a copied physical badge at doors. The tell: RFID cloning = duplicated badge credentials; physical brute force = forced-entry damage; environmental attack = sabotage of the facility's power or HVAC systems."
+  },
+  {
+    "domain": "D2",
+    "family": "physical-attacks",
+    "question": "A stranger repeatedly rides an office elevator standing unusually close to employees while holding a small device near their badge pockets. Days later, an unissued fob opens the lab door. Which of the following attacks does this indicate?",
+    "options": ["Environmental attack", "RFID cloning", "Physical brute force", "On-path attack"],
+    "correctIndex": 1,
+    "explanation": "RFID cloning. The handheld reader skimmed badge data at close range, and the copy written to a blank fob now opens doors as if legitimate; on-path loses because nothing intercepted network traffic between two parties - a physical credential was duplicated. The tell: RFID cloning = duplicated badge credentials; physical brute force = forced-entry damage; environmental attack = sabotage of the facility's power or HVAC systems."
+  },
+  {
+    "domain": "D2",
+    "family": "physical-attacks",
+    "question": "An intruder enters a mechanical room and manually shuts off the data center's cooling loop. No systems are touched and no data alarms fire, but the server hall overheats until hardware fails. Which of the following attack types is this?",
+    "options": ["Distributed denial-of-service", "Physical brute force", "RFID cloning", "Environmental attack"],
+    "correctIndex": 3,
+    "explanation": "Environmental attack. Sabotaging the facility's HVAC takes systems down by attacking their environment rather than the systems themselves; DDoS loses because availability was destroyed through heat, not traffic floods. The tell: environmental attack = sabotage of the facility's power or HVAC systems; physical brute force = forced-entry damage; RFID cloning = duplicated badge credentials."
+  }
+]

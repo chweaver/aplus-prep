@@ -1,0 +1,242 @@
+[
+  {
+    "domain": "D5",
+    "family": "risk-register",
+    "question": "A risk register row reads - Risk: data exfiltration via email; Owner: R. Cole; Key risk indicator: blocked DLP events per day; Action rule: escalate to treatment when blocked events exceed 500 in a day. Which risk concept does the action rule define?",
+    "options": ["Risk tolerance", "Risk appetite", "Key risk indicator", "Risk threshold"],
+    "correctIndex": 3,
+    "explanation": "Risk threshold. The preset level at which a specific tracked risk becomes unacceptable and treatment must begin is the threshold; the 'exceed 500' rule is that action trigger. Risk tolerance is tempting but names the organization's acceptable variance around risk generally, not one register entry's trigger line. The tell: threshold = the action-trigger level for one tracked risk; tolerance = acceptable variance around a specific risk; appetite = overall willingness to take risk; KRI = the early-warning metric being measured (here, blocked DLP events)."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "A venture-backed gaming company's leadership deliberately pursues high-risk bets - shipping unproven features fast and outspending rivals - accepting large potential losses to capture users first. Which risk appetite posture BEST describes this?",
+    "options": ["Conservative", "Neutral", "Expansionary", "Risk tolerance"],
+    "correctIndex": 2,
+    "explanation": "Expansionary. An expansionary risk appetite deliberately accepts more risk in pursuit of growth and reward, exactly this aggressive market-grab stance; it is a chosen strategy, not recklessness. Conservative is its opposite and neutral sits between them. The tell: expansionary = high appetite for reward; conservative = low, minimizes risk; neutral = balanced; risk tolerance = the acceptable variance around a specific risk, not an overall posture."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "A regional water utility's board rejects any initiative carrying meaningful downside and approves only projects with near-certain outcomes, accepting slower growth to guarantee reliability. Which risk appetite posture is this?",
+    "options": ["Conservative", "Expansionary", "Neutral", "Risk tolerance"],
+    "correctIndex": 0,
+    "explanation": "Conservative. A conservative risk appetite minimizes risk-taking, favoring predictable, near-certain outcomes even at the cost of growth, which is this utility's stance. Neutral would accept measured risk when justified, and expansionary would embrace it for reward. The tell: conservative = low appetite, avoids downside; expansionary = high appetite for reward; neutral = balanced; risk tolerance = the acceptable variance around a specific risk before acting."
+  },
+  {
+    "domain": "D5",
+    "family": "risk-appetite",
+    "question": "A logistics company evaluates each expansion on its own merits, taking risk when a solid business case supports it and declining when it does not, with no built-in lean toward boldness or caution. Which risk appetite posture fits?",
+    "options": ["Expansionary", "Neutral", "Conservative", "Risk tolerance"],
+    "correctIndex": 1,
+    "explanation": "Neutral. A neutral risk appetite takes balanced, measured risks justified by analysis, leaning neither aggressive nor risk-averse, which is this case-by-case stance. Conservative would refuse meaningful downside outright; expansionary would chase reward aggressively. The tell: neutral = balanced and justified; expansionary = high appetite for reward; conservative = low appetite, avoids downside; risk tolerance = acceptable variance around one specific risk."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "Before drafting any recovery plan, a continuity team ranks which business functions would cause unacceptable harm if they went down and maps the systems each one depends on. Which analysis are they performing?",
+    "options": ["Disaster recovery plan", "Risk assessment", "Business continuity plan", "Business impact analysis"],
+    "correctIndex": 3,
+    "explanation": "Business impact analysis. A BIA identifies critical business functions, quantifies the harm of their disruption over time, and maps dependencies, producing the inputs recovery planning needs. A disaster recovery plan is tempting but is the later technical plan to restore IT, not the analysis that prioritizes functions. The tell: BIA = find and rank critical functions and dependencies; DRP = restore IT systems after a disaster; BCP = keep the business running during disruption; risk assessment = score threats to assets."
+  },
+  {
+    "domain": "D5",
+    "family": "bia",
+    "question": "An airline's BIA sets two targets for its booking platform: it must be restored within 2 hours of any outage, and no more than 15 minutes of reservation data may be lost. The 2-hour target represents which metric?",
+    "options": ["Recovery point objective", "Recovery time objective", "Mean time to repair", "Mean time between failures"],
+    "correctIndex": 1,
+    "explanation": "Recovery time objective. The RTO is the maximum tolerable time to restore service after an outage, here 2 hours; the 15-minute data-loss limit is the RPO. Recovery point objective is the trap because both numbers sit in the same sentence. The tell: RTO = how fast you restore service (time forward); RPO = how much data you can lose (time backward to last backup); MTTR = average actual repair time; MTBF = average uptime between failures."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "A retailer's contract with its cloud platform vendor authorizes the retailer to hire an external team to actively attack and attempt to exploit the vendor's hosted systems, validating the vendor's security claims. Which vendor-assessment method is this?",
+    "options": ["Right-to-audit clause", "Evidence of internal audits", "Penetration testing", "Independent assessment"],
+    "correctIndex": 2,
+    "explanation": "Penetration testing. Contractually authorized active exploitation of the vendor's systems to prove real-world security is penetration testing. A right-to-audit clause is tempting but only grants inspection of controls and records, not active attack. The tell: penetration testing = authorized simulated attack to prove exploitability; right-to-audit = contractual right to inspect records and controls; evidence of internal audits = the vendor's own self-reported audit results; independent assessment = a neutral third party's review."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "A hospital negotiates a clause letting its own compliance staff inspect the electronic-health-record vendor's controls, logs, and facilities whenever the hospital chooses throughout the contract. Which vendor-assessment element does this clause provide?",
+    "options": ["Independent assessment", "Penetration testing", "Supply chain analysis", "Right-to-audit clause"],
+    "correctIndex": 3,
+    "explanation": "Right-to-audit clause. This contractual provision lets the customer inspect the vendor's controls and records on demand; the customer's own staff perform the review. Independent assessment is the trap - it looks similar but is performed by a neutral third party, not the customer. The tell: right-to-audit = the customer inspects; independent assessment = an unaffiliated firm reviews; penetration testing = active attack to prove exploitability; supply chain analysis = evaluating the vendor's own suppliers."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "Asked to prove its security, a vendor hands over the results of its OWN internal audit team's reviews rather than any outside report. A risk analyst notes this is the weakest form of assurance offered. Which vendor-assessment element is it?",
+    "options": ["Evidence of internal audits", "Independent assessment", "Right-to-audit clause", "Penetration testing"],
+    "correctIndex": 0,
+    "explanation": "Evidence of internal audits. Supplying the vendor's own internal audit results is self-reported proof, the weakest assurance tier because the vendor grades itself. Independent assessment is the contrast: a neutral third party with no stake performs it, which is why it carries more weight. The tell: evidence of internal audits = the vendor's self-reported audit findings; independent assessment = unaffiliated third-party review; right-to-audit = the customer's contractual right to inspect; penetration testing = authorized active attack."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "Before investing, a venture firm demands that a SaaS startup provide a SOC 2 report produced by an outside auditing firm with no stake in the outcome, valuing it precisely for that objectivity. Which vendor-assessment element is this?",
+    "options": ["Right-to-audit clause", "Evidence of internal audits", "Independent assessment", "Penetration testing"],
+    "correctIndex": 2,
+    "explanation": "Independent assessment. A report from an unaffiliated firm with no stake (SOC 2 style) is prized for objectivity because no self-interest colors the findings. Evidence of internal audits is the tempting near-miss, but those are self-reported and far weaker. The tell: independent assessment = neutral third-party review; evidence of internal audits = the vendor's self-reported findings; right-to-audit = the customer inspects directly; penetration testing = authorized active attack."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "A defense contractor evaluates not only its direct software vendor but the third-party code libraries and offshore subcontractors that vendor depends on, hunting for weaknesses upstream. Which vendor-assessment activity is this?",
+    "options": ["Independent assessment", "Right-to-audit clause", "Due diligence", "Supply chain analysis"],
+    "correctIndex": 3,
+    "explanation": "Supply chain analysis. Assessing risk beyond the direct vendor - its own suppliers, subcontractors, and dependencies (fourth-party risk) - is supply chain analysis. Due diligence is tempting but describes investigating the direct vendor before signing, not tracing the chain behind it. The tell: supply chain analysis = evaluate the vendor's own suppliers; due diligence = investigate the vendor before signing; independent assessment = a neutral third party's review; right-to-audit = the customer's right to inspect the vendor."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-assessment",
+    "question": "During a vendor selection, an evaluator scoring the proposals also earns money moonlighting as a paid consultant for one of the bidding companies. Which concern does this raise, remedied by disclosure and recusal?",
+    "options": ["Due diligence", "Conflict of interest", "Right-to-audit clause", "Supply chain analysis"],
+    "correctIndex": 1,
+    "explanation": "Conflict of interest. A personal or financial stake that could bias the evaluator's scoring is a conflict of interest, handled by disclosing it and recusing from the decision. Due diligence is a real vendor-selection step but names the pre-signing investigation, not the bias itself. The tell: conflict of interest = a personal stake that could bias a decision (fix: disclose and recuse); due diligence = investigate the vendor before signing; right-to-audit = contractual inspection right; supply chain analysis = assessing the vendor's suppliers."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-monitoring",
+    "question": "A year into a contract, a company holds quarterly reviews of its vendor's SLA performance metrics and runs a full security reassessment each year to confirm nothing has slipped. Which third-party risk activity is this?",
+    "options": ["Vendor monitoring", "Due diligence", "Independent assessment", "Security questionnaire"],
+    "correctIndex": 0,
+    "explanation": "Vendor monitoring. Ongoing oversight after signing - periodic SLA reviews, reassessments, and scorecards - is vendor monitoring. Due diligence is the trap, but it is the homework done before signing; the timing gives it away. The tell: due diligence = investigate before signing; vendor monitoring = ongoing oversight after signing; independent assessment = a neutral third party's one-time review; security questionnaire = cheap self-attested input at either stage."
+  },
+  {
+    "domain": "D5",
+    "family": "vendor-monitoring",
+    "question": "Ahead of a contract renewal, procurement emails the vendor a standard 200-item control questionnaire for the vendor to fill in itself. A reviewer flags that these answers are self-reported, not verified. Which assurance method is this?",
+    "options": ["Independent assessment", "Right-to-audit clause", "Penetration testing", "Security questionnaire"],
+    "correctIndex": 3,
+    "explanation": "Security questionnaire. A standardized set of control questions the vendor answers itself is cheap but self-attested, useful input rather than verified assurance. Independent assessment is the contrast the reviewer wants: a neutral third party verifies the controls. The tell: security questionnaire = self-reported vendor answers; independent assessment = neutral third-party verification; right-to-audit = the customer inspects directly; penetration testing = authorized active attack to prove exploitability."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Before a scheduled security test, both parties sign a document stating: in-scope IP ranges 10.4.0.0/16; testing permitted 6 p.m. to 6 a.m. only; no denial-of-service techniques; emergency stop contact is the on-call NOC. Which document is this?",
+    "options": ["Statement of work", "Service-level agreement", "Rules of engagement", "Non-disclosure agreement"],
+    "correctIndex": 2,
+    "explanation": "Rules of engagement. The document fixing the operational boundaries and conduct of a security test - scope, permitted hours, banned techniques, and a stop contact - is the rules of engagement, signed before testing begins. A statement of work is the trap, but it defines commercial scope, deliverables, and schedule, not testing conduct. The tell: rules of engagement = what testers may and may not do, and when; SOW = the specific job's deliverables and timeline; SLA = measurable service targets with penalties; NDA = confidentiality only."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "Each quarter a company's compliance team delivers a control-status dashboard to the audit committee and department heads to drive internal remediation. No regulator or outside party receives it. Which type of compliance reporting is this?",
+    "options": ["Internal compliance reporting", "External compliance reporting", "Risk reporting", "Attestation"],
+    "correctIndex": 0,
+    "explanation": "Internal compliance reporting. Reporting compliance status to management, the board, or an audit committee to drive remediation inside the org is internal reporting; the audience is internal. External reporting, by contrast, goes to regulators or the public. The tell: internal reporting = to management and board; external reporting = to regulators, auditors, or the public; risk reporting = communicating risk posture, not compliance status; attestation = a formal signed statement that controls are in place."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "A bank submits its mandated annual compliance report to the federal banking regulator and files the required disclosures with the securities authority, as the law demands. Which type of compliance reporting is this?",
+    "options": ["Internal compliance reporting", "External compliance reporting", "Self-assessment", "Risk reporting"],
+    "correctIndex": 1,
+    "explanation": "External compliance reporting. Legally mandated reporting to regulators and authorities outside the organization is external reporting; the audience sits outside the company. Internal reporting is the contrast: it goes to management and the board to drive remediation. The tell: external reporting = to regulators or the public, often legally required; internal reporting = to management and board; self-assessment = a team grading its own controls; risk reporting = communicating risk posture to stakeholders."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "A company's own compliance function continuously tracks the status of its security controls against policy and flags gaps for fixing, with no regulator or outside auditor involved in the watching. Which activity is this?",
+    "options": ["External compliance monitoring", "Independent assessment", "Regulatory examination", "Internal compliance monitoring"],
+    "correctIndex": 3,
+    "explanation": "Internal compliance monitoring. When the organization's own compliance function tracks control status and flags gaps, the monitoring is internal because it happens inside the org. External monitoring is the sibling, performed by regulators, auditors, or partners from outside. The tell: internal monitoring = the org watches its own controls; external monitoring = an outside party (regulator, auditor, partner) watches; independent assessment = a neutral third party's formal review; regulatory examination = an authority's official inspection."
+  },
+  {
+    "domain": "D5",
+    "family": "compliance",
+    "question": "A GRC platform automatically pulls control evidence from systems every night, flags any configuration drift, and generates the compliance status report with no analyst effort. Which element of compliance monitoring does this illustrate?",
+    "options": ["Attestation", "Self-assessment", "Automation", "Independent assessment"],
+    "correctIndex": 2,
+    "explanation": "Automation. A platform that continuously collects control evidence, detects drift, and generates reports on its own is automation of compliance monitoring; it scales oversight and cuts manual error. Self-assessment is tempting but is a manual checklist a team fills in itself. The tell: automation = tooling continuously gathers evidence and reports; self-assessment = a team manually rates its own controls; attestation = a formal signed statement of compliance; independent assessment = a neutral third party's review."
+  },
+  {
+    "domain": "D5",
+    "family": "noncompliance-consequences",
+    "question": "A data-protection authority orders a company to pay a monetary penalty equal to 4 percent of its global annual turnover for mishandling personal data. Which consequence of non-compliance is this penalty?",
+    "options": ["Sanctions", "Fines", "Loss of license", "Contractual impacts"],
+    "correctIndex": 1,
+    "explanation": "Fines. A monetary penalty imposed by a regulator, here up to 4 percent of global turnover, is a fine; the defining feature is that it is money owed. Sanctions are broader imposed restrictions rather than a straight monetary penalty. The tell: fines = money owed; sanctions = imposed restrictions or exclusions short of shutdown; loss of license = authorization to operate revoked entirely; contractual impacts = private-party consequences like termination."
+  },
+  {
+    "domain": "D5",
+    "family": "noncompliance-consequences",
+    "question": "After compliance failures, a regulator bars a firm from bidding on new government contracts for two years, but the firm keeps running its existing business. Which consequence of non-compliance is this restriction?",
+    "options": ["Loss of license", "Fines", "Reputational damage", "Sanctions"],
+    "correctIndex": 3,
+    "explanation": "Sanctions. An imposed restriction or exclusion - here a ban on new government contracts - that stops short of shutting the business down is a sanction. Loss of license is the trap, but that would revoke the firm's authorization to operate at all; this firm keeps running. The tell: sanctions = imposed restrictions or exclusions short of shutdown; loss of license = authorization to operate revoked entirely; fines = money owed; reputational damage = brand and customer-trust harm."
+  },
+  {
+    "domain": "D5",
+    "family": "noncompliance-consequences",
+    "question": "Weeks after a widely reported privacy failure, a company's app-store ratings crater, its social channels fill with angry customers, and its brand-trust scores plunge - all before any fine or lawsuit is filed. Which consequence of non-compliance is this?",
+    "options": ["Reputational damage", "Fines", "Sanctions", "Loss of license"],
+    "correctIndex": 0,
+    "explanation": "Reputational damage. Erosion of brand trust and customer loyalty from a publicized failure, occurring even with no regulatory action, is reputational damage. Fines and sanctions require an authority to act; here none has. The tell: reputational damage = brand and customer-trust harm; fines = money owed to a regulator; sanctions = imposed restrictions short of shutdown; loss of license = authorization to operate revoked entirely."
+  },
+  {
+    "domain": "D5",
+    "family": "noncompliance-consequences",
+    "question": "A national aviation regulator pulls a charter airline's operating certificate after safety-compliance failures, so the airline may no longer fly passengers or run any operations. Which consequence of non-compliance is this?",
+    "options": ["Sanctions", "Fines", "Loss of license", "Contractual impacts"],
+    "correctIndex": 2,
+    "explanation": "Loss of license. Pulling the operating certificate strips the airline's authorization to operate at all, which is loss of license, the most severe regulatory consequence. Sanctions is the near-miss, but sanctions impose lesser restrictions while the entity keeps operating. The tell: loss of license = authorization to operate revoked entirely; sanctions = imposed restrictions short of shutdown; fines = money owed; contractual impacts = private-party consequences like termination."
+  },
+  {
+    "domain": "D5",
+    "family": "noncompliance-consequences",
+    "question": "A merchant fails its PCI DSS assessment, and its acquiring bank - not any government - invokes the contract to strip the merchant of its ability to process card payments. Which consequence of non-compliance is this?",
+    "options": ["Sanctions", "Loss of license", "Fines", "Contractual impacts"],
+    "correctIndex": 3,
+    "explanation": "Contractual impacts. Losing card-processing ability because a private acquiring bank enforces a contract term is a contractual consequence, not a government action. Sanctions is the trap, but sanctions are imposed by a regulator or authority; PCI DSS is industry-contractual, enforced by the card brands and banks. The tell: contractual impacts = private-party consequences (termination, PCI DSS card-processing loss); sanctions = government or regulator restrictions; fines = money owed; loss of license = authorization to operate revoked entirely."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A single US state's consumer-privacy act grants data-deletion rights only to residents of that state and applies only to companies doing business there. Which legal scope does this privacy law have?",
+    "options": ["Local or regional", "National", "Global", "Industry-specific"],
+    "correctIndex": 0,
+    "explanation": "Local or regional. A privacy law that binds only within one state or province and protects only that jurisdiction's residents has local/regional scope. National is the trap, but that would apply across the whole country, not a single state. The tell: local/regional = one state or province; national = the entire country but stops at the border; global = extraterritorial reach across countries (GDPR-style); industry-specific = tied to a sector rather than a jurisdiction."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A country enacts a privacy statute covering all of its citizens' data anywhere within its borders, but the law has no force once data crosses into another country. Which legal scope does this law have?",
+    "options": ["Global", "Local or regional", "National", "Industry-specific"],
+    "correctIndex": 2,
+    "explanation": "National. A law that applies uniformly across an entire country but stops at its border has national scope. Global is the trap, but global scope reaches beyond borders to a country's residents wherever their data goes. The tell: national = the whole country but stops at the border; local/regional = a single state or province; global = extraterritorial reach across countries; industry-specific = tied to a sector, not a jurisdiction."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A cloud firm based outside the EU processes EU residents' data, so GDPR still binds it, yet a data-localization law in another market forbids exactly the cross-border transfer GDPR would allow. Which privacy legal implication does this clash illustrate?",
+    "options": ["National", "Global", "Local or regional", "Industry-specific"],
+    "correctIndex": 1,
+    "explanation": "Global. Privacy duties that reach across borders - GDPR binding a non-EU firm while a foreign data-localization law pulls the other way - are a global legal implication, the multinational compliance pain point. National is tempting, but a national law stops at one border; the conflict here spans jurisdictions. The tell: global = extraterritorial reach and conflicting jurisdictions; national = one whole country only; local/regional = a single state or province; industry-specific = tied to a sector, not geography."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A retailer stores purchase and contact records describing its customer Priya. In privacy terms, Priya - the identifiable person the records are about - is which party?",
+    "options": ["Data owner", "Data subject", "Data controller", "Data custodian"],
+    "correctIndex": 1,
+    "explanation": "Data subject. In privacy law the data subject is the identifiable natural person the personal data describes, here Priya. Data owner is the trap: it is an internal accountability role for a data set, not the person the data is about. The tell: data subject = the person the data describes; data owner = the internal role accountable for the data set; data controller = decides why and how data is processed; data custodian = provides hands-on technical care."
+  },
+  {
+    "domain": "D5",
+    "family": "privacy",
+    "question": "A company's policy is to keep customer data for five years and then delete it. Separately, a customer submits a formal demand to erase her data now. Her demand invokes which right, as distinct from the company's disposal schedule?",
+    "options": ["Right to be forgotten", "Data retention", "Data inventory", "Data minimization"],
+    "correctIndex": 0,
+    "explanation": "Right to be forgotten. A subject-initiated demand to erase personal data exercises the right to be forgotten; the company must locate and delete it. Data retention is the trap, but that is the organization's own scheduled keep-then-dispose policy, not a right the subject exercises. The tell: right to be forgotten = the subject's erasure right; data retention = how long the org keeps data by schedule; data inventory = knowing what personal data you hold; data minimization = collecting only what you need."
+  },
+  {
+    "domain": "D5",
+    "family": "audits",
+    "question": "After completing its fieldwork, an audit firm issues a signed letter stating: 'We affirm that the controls operated effectively throughout the period.' The signed sign-off itself, as opposed to the evidence-gathering, is which type of engagement output?",
+    "options": ["Assessment", "Attestation", "Regulatory examination", "Self-assessment"],
+    "correctIndex": 1,
+    "explanation": "Attestation. The formal signed opinion affirming that controls operated effectively is an attestation, the sign-off distinct from the audit fieldwork that gathered the evidence. An assessment is the trap, but an assessment is an advisory gap-finding evaluation, not a formal signed opinion. The tell: attestation = the formal signed statement or opinion of compliance; assessment = advisory evaluation to find gaps; regulatory examination = an authority's official inspection; self-assessment = a team rating its own controls."
+  }
+]

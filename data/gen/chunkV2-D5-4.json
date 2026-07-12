@@ -1,0 +1,28 @@
+[
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "Two independent firms agree to jointly run a new venture and sign a document setting out each partner's capital contribution, profit-sharing split, and decision-making authority. Which of the following BEST describes this document?",
+    "options": [
+      "MOA",
+      "MSA",
+      "BPA",
+      "MOU"
+    ],
+    "correctIndex": 2,
+    "explanation": "BPA. A business partnership agreement fixes the financial and governance terms between business partners, such as ownership and profit split. A MOA loses because it defines roles for a shared effort, not the economics of a partnership. The tell: BPA = terms of a business partnership, MOA = binding roles and responsibilities, MSA = master framework other contracts hang off, MOU = non-binding statement of intent."
+  },
+  {
+    "domain": "D5",
+    "family": "agreements",
+    "question": "A company already has a master services agreement with a consultancy. For one specific website redesign, it now needs a document that spells out the exact deliverables, milestones, and timeline for that single project. Which of the following BEST fits?",
+    "options": [
+      "MSA",
+      "SOW",
+      "SLA",
+      "BPA"
+    ],
+    "correctIndex": 1,
+    "explanation": "SOW. A statement of work defines the scope, deliverables, and schedule for one specific engagement that hangs off a master agreement. An MSA loses because it is the overarching framework, not the per-project detail. The tell: SOW/WO = the specific job's scope and timeline, MSA = the master framework it hangs off, SLA = measurable service targets with penalties, BPA = terms of a business partnership."
+  }
+]
