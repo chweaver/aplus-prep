@@ -49,7 +49,10 @@ never-seen (3x) > shaky (2x) > solid (1x) > mastered (0.4x), multiplied up for
 families under 80% accuracy and damped for questions seen very recently. Exam
 answers feed the same stats, so drills target what exams expose. Lifetime
 stats persist in localStorage; the home screen shows seen/mastered progress
-and your recent exam scores. The "Reference" button opens a searchable
+and your recent exam scores. **Sync devices** (home screen footer) moves
+progress between devices: export as a copyable code or a downloadable file,
+then import on the other device - imports MERGE (attempts summed, best
+streaks kept, exam history combined), so nothing is ever overwritten. The "Reference" button opens a searchable
 per-family cheat sheet of all sibling terms and their tells.
 
 ## What is in the bank

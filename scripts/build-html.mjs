@@ -135,6 +135,12 @@ const html = `<!doctype html>
   .link{color:var(--muted); text-decoration:underline; cursor:pointer; font-size:13px; background:none; border:none; padding:0}
   .foot{margin-top:22px; display:flex; justify-content:space-between; align-items:center}
   .hint{color:var(--muted); font-size:12px; margin-top:10px; text-align:center}
+  /* sync devices */
+  .iobox{width:100%; box-sizing:border-box; margin-top:8px; padding:10px; border-radius:10px;
+    background:var(--option); color:var(--text); border:1px solid var(--border);
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; word-break:break-all; resize:vertical}
+  .xrow{display:flex; gap:10px; margin-top:10px}
+  .xrow button{flex:1}
   /* home */
   .modebtn{display:flex; flex-direction:column; align-items:flex-start; gap:2px; width:100%;
     background:var(--option); color:var(--text); border:1px solid var(--border); border-radius:14px;
@@ -243,9 +249,7 @@ const html = `<!doctype html>
   var PASS_SCALED = 750;
 
   // ---------- stats (v2 with v1 migration) ----------
-  function loadStats(){
-    var s;
-    try{ s = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ s=null; }
+  function normalizeStats(s){
     if(!s) s = {v:2, seq:0, perQuestion:{}, perFamily:{}, exams:[]};
     if(!s.v){ // migrate v1 {perQuestion:{id:{attempts,correct}}, perFamily}
       var pq={}, k;
@@ -254,10 +258,67 @@ const html = `<!doctype html>
       for(k in s.perFamily||{}){ var f=s.perFamily[k]; pf[k]={a:f.attempts||0,c:f.correct||0}; }
       s = {v:2, seq:0, perQuestion:pq, perFamily:pf, exams:[]};
     }
+    s.seq = s.seq||0;
+    s.perQuestion = s.perQuestion||{};
+    s.perFamily = s.perFamily||{};
     s.exams = s.exams||[];
     return s;
   }
+  function loadStats(){
+    var s;
+    try{ s = JSON.parse(localStorage.getItem(STORE_KEY)); }catch(e){ s=null; }
+    return normalizeStats(s);
+  }
   function saveStats(s){ try{ localStorage.setItem(STORE_KEY, JSON.stringify(s)); }catch(e){} }
+  // merge imported stats into local: sums attempts/correct, keeps best streak,
+  // unions exam history. Only ids present in the current bank are merged.
+  function mergeStats(local, imported){
+    var out = normalizeStats(JSON.parse(JSON.stringify(local)));
+    var imp = normalizeStats(imported);
+    var known = {}; ALL.forEach(function(q){ known[q.id]=1; });
+    out.seq = Math.max(out.seq, imp.seq);
+    var k;
+    for(k in imp.perQuestion){
+      if(!known[k]) continue;
+      var a = out.perQuestion[k] || {a:0,c:0,s:0,last:0};
+      var b = imp.perQuestion[k];
+      out.perQuestion[k] = {
+        a:(a.a||0)+(b.a||0),
+        c:(a.c||0)+(b.c||0),
+        s:Math.max(a.s||0, b.s||0),
+        last:Math.min(Math.max(a.last||0, b.last||0), out.seq)
+      };
+    }
+    for(k in imp.perFamily){
+      var fa = out.perFamily[k] || {a:0,c:0};
+      var fb = imp.perFamily[k];
+      out.perFamily[k] = {a:(fa.a||0)+(fb.a||0), c:(fa.c||0)+(fb.c||0)};
+    }
+    var seen = {};
+    out.exams.forEach(function(e){ seen[(e.t||0)+":"+(e.scaled||0)]=1; });
+    imp.exams.forEach(function(e){
+      var key=(e.t||0)+":"+(e.scaled||0);
+      if(!seen[key]){ seen[key]=1; out.exams.push(e); }
+    });
+    out.exams.sort(function(x,y){ return (x.t||0)-(y.t||0); });
+    if(!out.pref && imp.pref) out.pref = imp.pref;
+    return out;
+  }
+  function exportPayload(){
+    return {app:"secplus-drill", v:2, exported:Date.now(), stats:loadStats()};
+  }
+  function parseImport(text){
+    text = (text||"").trim();
+    if(!text) return null;
+    var obj = null;
+    try{ obj = JSON.parse(text); }catch(e){
+      try{ obj = JSON.parse(atob(text.replace(/\\s+/g,""))); }catch(e2){ obj = null; }
+    }
+    if(!obj) return null;
+    var s = (obj.app==="secplus-drill" && obj.stats) ? obj.stats : obj;
+    if(typeof s!=="object" || (!s.perQuestion && !s.exams)) return null;
+    return normalizeStats(s);
+  }
   function getPref(){ var s=loadStats(); return (s.pref&&s.pref.feedback)||"instant"; }
   function setPref(v){ var s=loadStats(); s.pref=s.pref||{}; s.pref.feedback=v; saveStats(s); }
   function recordStat(q, correct){
@@ -388,7 +449,7 @@ const html = `<!doctype html>
       }).join(" \\u00b7 ");
       h+=' <span style="opacity:.7">(pass '+PASS_SCALED+')</span></div>';
     }
-    h+='<div class="foot"><span class="hint" style="margin:0;text-align:left">Stats saved on this device</span><button class="link" id="reset">reset stats</button></div>';
+    h+='<div class="foot"><span class="hint" style="margin:0;text-align:left">Stats saved on this device</span><span><button class="link" id="xfer">sync devices</button> \\u00b7 <button class="link" id="reset">reset stats</button></span></div>';
     h+='</div>';
     app.innerHTML=h;
     document.getElementById("m-exam").addEventListener("click", startExam);
@@ -399,6 +460,68 @@ const html = `<!doctype html>
     document.getElementById("fb-end").addEventListener("click", function(){ setPref("end"); showHome(); });
     document.getElementById("reset").addEventListener("click", function(){
       if(confirm("Erase all saved stats on this device?")){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} showHome(); }
+    });
+    document.getElementById("xfer").addEventListener("click", showTransfer);
+    window.scrollTo(0,0);
+  }
+
+  // ---------- sync devices (export / import progress) ----------
+  function showTransfer(){
+    go("transfer");
+    header("Sync devices","",0);
+    var s=loadStats();
+    var answered=0; for(var k in s.perQuestion){ if(s.perQuestion[k].a>0) answered++; }
+    var payload = exportPayload();
+    var json = JSON.stringify(payload);
+    var code = btoa(json);
+    var h='<div class="card">';
+    h+='<h1 class="big">Sync devices</h1>';
+    h+='<div class="sub">Move your progress between phone and computer. Export here, then import on the other device. Importing MERGES: attempts are added together, best streaks kept, exam history combined. Nothing is overwritten.</div>';
+    h+='<div class="seglabel">Export from this device</div>';
+    h+='<div class="hint" style="text-align:left">'+answered+' questions answered \\u00b7 '+s.exams.length+' exam scores</div>';
+    h+='<textarea class="iobox" id="x-code" readonly rows="4">'+code+'</textarea>';
+    h+='<div class="xrow"><button class="primary" id="x-copy">Copy code</button><button class="ghost" id="x-file">Download file</button></div>';
+    h+='<div class="hint" style="text-align:left">On a phone: Copy code, then paste it into a note or message to yourself. Or Download file and AirDrop it.</div>';
+    h+='<div class="seglabel" style="margin-top:18px">Import to this device</div>';
+    h+='<textarea class="iobox" id="i-code" rows="4" placeholder="Paste a code or file contents from your other device"></textarea>';
+    h+='<div class="xrow"><button class="primary" id="i-merge">Merge into this device</button><button class="ghost" id="i-file">Load from file</button></div>';
+    h+='<input type="file" id="i-fileinput" accept=".json,.txt,application/json,text/plain" style="display:none">';
+    h+='<div class="hint" id="i-msg" style="text-align:left"></div>';
+    h+='</div>';
+    document.getElementById("app").innerHTML=h;
+    document.getElementById("x-copy").addEventListener("click", function(){
+      var ta=document.getElementById("x-code");
+      var done=function(){ document.getElementById("x-copy").textContent="Copied!"; setTimeout(function(){ var b=document.getElementById("x-copy"); if(b) b.textContent="Copy code"; },1500); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(code).then(done, function(){ ta.select(); document.execCommand("copy"); done(); }); }
+      else { ta.select(); document.execCommand("copy"); done(); }
+    });
+    document.getElementById("x-file").addEventListener("click", function(){
+      var blob=new Blob([JSON.stringify(payload,null,1)],{type:"application/json"});
+      var a=document.createElement("a");
+      a.href=URL.createObjectURL(blob);
+      var d=new Date(), pad=function(n){ return (n<10?"0":"")+n; };
+      a.download="secplus-progress-"+d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+".json";
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); },0);
+    });
+    function doMerge(text){
+      var msg=document.getElementById("i-msg");
+      var imp=parseImport(text);
+      if(!imp){ msg.textContent="That does not look like a progress code or file from this app."; return; }
+      var ia=0; for(var k in imp.perQuestion){ if(imp.perQuestion[k].a>0) ia++; }
+      if(!confirm("Merge "+ia+" answered questions and "+imp.exams.length+" exam scores into this device?")) return;
+      saveStats(mergeStats(loadStats(), imp));
+      alert("Merged. Your progress now combines both devices.");
+      showHome();
+    }
+    document.getElementById("i-merge").addEventListener("click", function(){ doMerge(document.getElementById("i-code").value); });
+    document.getElementById("i-file").addEventListener("click", function(){ document.getElementById("i-fileinput").click(); });
+    document.getElementById("i-fileinput").addEventListener("change", function(ev){
+      var f=ev.target.files && ev.target.files[0];
+      if(!f) return;
+      var r=new FileReader();
+      r.onload=function(){ doMerge(String(r.result)); };
+      r.readAsText(f);
     });
     window.scrollTo(0,0);
   }
